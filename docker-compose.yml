@@ -1,0 +1,72 @@
+version: "3.9"
+services:
+    db:
+        image: postgres:13
+        container_name: db16
+        restart: always
+        #ports: 
+        #- "5432:5432" 
+        environment:
+            - POSTGRES_DB=postgres
+            - POSTGRES_USER=odoo
+            - POSTGRES_PASSWORD=odoo
+            - PGDATA=/var/lib/postgresql/data/pgdata
+        # networks:
+        #     - odoo
+        volumes:
+            - odoo-db-data:/var/lib/postgresql/data/pgdata
+    odoo:
+        #image: '03152510fe42'
+        build: ./docker
+        image: astratech:16.0
+        container_name: odoo16
+        restart: always
+        ports:
+            - "1689:8069"
+            - "1672:8072"
+            - "1678:5678"
+        environment:
+            - PORT=5432
+            - USER=odoo
+            - PASSWORD=odoo
+        volumes:
+            - ./addons:/mnt/extra-addons
+            - ./enterprise:/mnt/enterprise
+            - ./config:/etc/odoo/
+            - odoo-web-data:/var/lib/odoo
+            # - ./debug:/usr/lib/python3.9
+            # - odoo-web-src:/usr/lib/python3/dist-packages/odoo
+            #- ./odoo:/usr/lib/python3/dist-packages/odoo
+
+        # networks:
+        #     - odoo
+        links:
+            - "db:db"
+        depends_on:
+            - db
+        command: --dev=all
+        #command: bash -c 'pip3 install -U debugpy'
+        #command: /usr/bin/odoo --db_user=odoo --db_host=db --db_password=odoo -u all
+
+    # api:
+    #     image: api_dgii
+    #     container_name: api_dgii
+    #     restart: unless-stopped
+    #     ports: [ "9090:80", "9091:8080" ]
+    #     depends_on:
+    #         - odoo
+    #     networks:
+    #         - odoo
+volumes:
+    odoo-web-data:
+    #   odoo-web-src:
+    #       driver: local
+    #       driver_opts:
+    #           type: none
+    #           o: bind
+    #           device: ./odoo
+    odoo-db-data:
+# networks:
+#     odoo:
+#         driver: bridge
+
