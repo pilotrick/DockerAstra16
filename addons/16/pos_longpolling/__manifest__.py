@@ -1,0 +1,37 @@
+{
+    "name": """POS: Longpolling support""",
+    "summary": """Technical module to implement instant updates in POS""",
+    "category": "Point of Sale",
+    "images": [],
+    "version": "14.0.2.3.0",
+    "application": False,
+    "author": "Astratech",
+    "support": "help@itpp.dev",
+    "website": "https://github.com/itpp-labs/pos-addons",
+    "license": "Other OSI approved licence",  # MIT
+    # "price": 0.00,
+    # "currency": "EUR",
+    "depends": ["bus", "point_of_sale"],
+    "external_dependencies": {"python": [], "bin": []},
+    "data": ["views/pos_longpolling_view.xml"],
+    # "qweb": ["static/src/xml/SyncNotification.xml"],
+    'assets': {
+        'point_of_sale.assets': [
+            "pos_longpolling/static/src/js/LongpollingBus.js",
+            "pos_longpolling/static/src/js/LongpollingModel.js",
+            "pos_longpolling/static/src/js/SyncBusService.js",
+            "pos_longpolling/static/src/js/SyncNotification.js",
+            "pos_longpolling/static/src/js/PosConnection.js",
+            "pos_longpolling/static/src/js/pos.js",
+        ],
+        'web.assets_qweb': [
+            'pos_longpolling/static/src/xml/**/*',
+        ],
+    },
+    "demo": [],
+    "post_load": None,
+    "pre_init_hook": None,
+    "post_init_hook": None,
+    "auto_install": False,
+    "installable": True,
+}

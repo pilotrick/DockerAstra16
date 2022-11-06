@@ -7,7 +7,7 @@
     "summary": """
         Este módulo extiende las funcionalidades del l10n_do_accounting,
         integrando los reportes de declaraciones fiscales""",
-    "author": "Indexa, SRL, " "iterativo SRL, " "Astra Tech SRL",
+    "author": "Astratech",
     "license": "LGPL-3",
     "category": "Accounting",
     "version": "16.0.1.1.0",

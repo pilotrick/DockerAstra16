@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+	<data>
+		<record id="groups_update_vendor_feature" model="res.groups" >
+        	<field name="name">Update Vendor in Purchase Order</field>
+        </record>
+	</data>
+</odoo>
