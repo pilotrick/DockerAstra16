@@ -32,7 +32,7 @@
                    "Proft and Loss, Cash Flow Statements, Partner Ledger,"
                    "Partner Ageing, Day book"
                    "Bank book and Cash book reports in Odoo 14 community edition.",
-    'author': 'Cybrosys Techno Solutions',
+    "author": "Astratech",
     'website': "https://www.cybrosys.com",
     'company': 'Cybrosys Techno Solutions',
     'maintainer': 'Cybrosys Techno Solutions',

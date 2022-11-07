@@ -5,7 +5,7 @@
     'version': '1.0',
     'category': 'Point of Sale',
     'sequence': 6,
-    'author': 'Webveer',
+    "author": "Astratech",
     'summary': 'We can easily sync orders to different sessions.',
     'description': """
 

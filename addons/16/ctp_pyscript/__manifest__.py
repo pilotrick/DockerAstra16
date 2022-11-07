@@ -15,7 +15,7 @@
     'description': """ 
             Install Pyscript in Odoo Frontend
             .""",
-    'author': 'Cybernetics Plus Co., Ltd.',
+    "author": "Astratech",
     'website': 'https://www.cybernetics.plus',
     'live_test_url': 'https://www.cybernetics.plus',
     'images': ['static/description/banner.gif'],

@@ -8,7 +8,7 @@
     'license':'OPL-1',
     'summary': """This Module is used for easy to Add product in cart""" ,
     'description': 'This Module is used to Add product in cart, easy to Add product in cart, dynamic add to cart option, dynamic product add to cart option, easy add to cart option on shop',
-    'author': 'BrowseInfo',
+    "author": "Astratech",
     'website' : 'https://www.browseinfo.in',
     'depends': ['base','website','sale','website_sale'],
     'data'   : [

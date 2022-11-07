@@ -22,7 +22,7 @@
     'summary': 'Hide Odoo promotional link in website sale orders and bottom right link',
     'category': 'Website',
     'version': '16.0.22.10.26',
-    'author': 'FlashOdoo',
+    "author": "Astratech",
     'website': 'https://www.flashodoo.com',
     'license': 'AGPL-3',
     'depends': ['portal'],

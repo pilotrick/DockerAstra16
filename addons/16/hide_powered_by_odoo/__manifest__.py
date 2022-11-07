@@ -13,7 +13,7 @@
         Hide Odoo, Disable Powered By Odoo in Login Page, Disable Odoo Powered By Login, Web Odoo Login Page Odoo Page Login,
     """,
     'description': "Hide Powered By Odoo in login screen.",
-    'author': 'NEWAY Solutions',
+    "author": "Astratech",
     'maintainer': 'NEWAY Solutions',
     'price': '0.0',
     'currency': 'USD',

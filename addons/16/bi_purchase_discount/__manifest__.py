@@ -13,7 +13,7 @@
         You will get discount on purhcase reports.
         Discounts in Purchase order lines
 """,
-    'author': 'BrowseInfo',
+    "author": "Astratech",
     'website': 'https://www.browseinfo.in',
     'images': [],
     'depends': ['base','purchase'],

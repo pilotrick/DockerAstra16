@@ -7,7 +7,7 @@
     'license':'OPL-1',
     'summary': 'This app help to create automatic sequence of project task',
     'description':"""Auto Sequence on Project Task, Auto Sequence Task, Project Task Sequance, Auto numbering on task, Task numbering, Auto generate sequnce on task""", 
-    'author': 'BrowseInfo',
+    "author": "Astratech",
     'website': 'https://www.browseinfo.in',
     'depends':['project'],
     'data':[

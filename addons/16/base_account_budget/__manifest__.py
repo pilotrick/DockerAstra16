@@ -44,7 +44,7 @@
      Odoo 15 Budget Management,Odoo 15, Odoo 15 Budget, Odoo 15 Accounting, 
      Odoo 15 Account,Budget Management, Budget""",
     'category': 'Accounting',
-    'author': 'Cybrosys Techno Solutions',
+    "author": "Astratech",
     'company': 'Cybrosys Techno Solutions',
     'maintainer': 'Cybrosys Techno Solutions',
     'depends': ['base', 'account'],

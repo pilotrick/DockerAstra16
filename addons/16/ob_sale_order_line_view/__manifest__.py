@@ -2,7 +2,7 @@
 
 {
     'name': 'Sale Order Line Views',
-    'author': 'Odoo Bin',
+    "author": "Astratech",
     'company': 'Odoo Bin',
     'maintainer': 'Odoo Bin',
     'description': """ This module allow you to display sale/quotation line views.Sale order line view with custom filters

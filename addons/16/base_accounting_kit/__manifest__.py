@@ -46,7 +46,7 @@
                     Reconciliation Widget For Odoo16,
                     Payments Matching
                     """,
-    'author': 'Cybrosys Techno Solutions, Odoo SA',
+    "author": "Astratech",
     'website': "https://www.cybrosys.com",
     'company': 'Cybrosys Techno Solutions',
     'maintainer': 'Cybrosys Techno Solutions',
