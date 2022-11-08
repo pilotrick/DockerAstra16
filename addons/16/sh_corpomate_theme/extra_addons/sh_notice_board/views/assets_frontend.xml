@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+<!--     <template id="sh_nb_notice_board_assets_editor" inherit_id="website.assets_editor" name="SH News Editor">
+        <xpath expr="." position="inside">
+            <script src="/sh_corpomate_theme/static/src/js/extra_addons/sh_notice_board/editor.js" type="text/javascript" />
+        </xpath>
+    </template>
+
+    <template id="sh_nb_notice_board_assets_frontend" inherit_id="website.assets_frontend" name="SH News Front-end assets">
+        <xpath expr="." position="inside">
+            <link rel="stylesheet" type="text/css" href="/sh_corpomate_theme/static/src/css/extra_addons/sh_notice_board/snippets.css" />
+            <script src="/sh_corpomate_theme/static/src/js/extra_addons/sh_notice_board/snippets.js" type="text/javascript" />
+        </xpath>
+    </template> -->
+</odoo>

@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="template_stock_picking_report">
+        <t t-call="web.html_container">
+           <t t-foreach='docs' t-as='doc'>
+                <t t-foreach='doc.move_ids_without_package' t-as='line'>
+                    <t t-if="line.move_line_ids and doc.picking_type_id.code == 'outgoing'">
+                        <t t-foreach='line.move_line_ids' t-as='lot'>
+                            <t t-call="wt_stock_picking_report.template_stock_picking_report_table"/>
+                        </t>
+                    </t>
+                    <t t-if="line.move_line_nosuggest_ids and doc.picking_type_id.code == 'incoming'">
+                        <t t-foreach='line.move_line_nosuggest_ids' t-as='lot'>
+                            <t t-call="wt_stock_picking_report.template_stock_picking_report_table"/>
+                        </t>
+                    </t>
+                
+                    <t t-else="">
+                        <t t-call="wt_stock_picking_report.template_stock_picking_report_table"/>
+                    </t>
+                </t>
+            </t>  
+        </t>
+    </template>
+    
+    <template id="template_stock_picking_report_table">
+        <t t-call="web.basic_layout">
+            <div style="border: 1px solid;text-align:center">
+                <table width="100%">
+                    <t t-if="line.product_id.barcode">
+                        <tr>
+                            <td align="center" colspan="2" style="padding-top: 5px;font-size:12px;border-bottom:1px solid">
+                                <img t-att-src="'/report/barcode/?type=%s&amp;value=%s&amp;width=%s&amp;height=%s' % ('Code128', line.product_id.barcode, 600, 150)" style="width:50%;height:4rem" alt="Barcode"/>
+                                <br/>
+                            <span t-esc="line.product_id.barcode"/>
+                            </td>
+                        </tr>
+                    </t>
+                    <tr>
+                        <td align="center" colspan="2" style="padding-top: 5px;font-size:50px;border-bottom:1px solid">
+                            <b> 
+                                <span>[</span><span t-esc="line.product_id.default_code"/><span>]</span><span t-esc="line.product_id.name"/>
+                            </b>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td align="center" colspan="2" style="padding-top: 5px;font-size:64px;border-bottom:1px solid">
+                            <strong> 
+                                <span t-esc='doc.name'/> 
+                            </strong>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td align="left" style="font-size:50px ;padding:5px 0px 0px 30px;border-bottom:1px solid;width:50%;border-right:1px solid;">
+                            <b>LOTE</b>
+                        </td>
+                        <td align="right" style="font-size:50px;padding:5px 30px 0px 0px;border-bottom:1px solid;width:50%;">
+                            <t t-if='lot'>
+                                <t t-if="doc.picking_type_id.code == 'incoming'">
+                                <b>
+                                    <span t-esc='lot.lot_name'/>
+                                </b>
+                                </t>
+                                <t t-else="">
+                                <b>
+                                    <span t-esc='lot.lot_id.name'/>
+                                </b>
+                                </t>
+                            </t>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td align="left" style="padding:5px 0px 0px 30px;border-bottom:1px solid;width:50%;border-right:1px solid; font-size:22px">
+                            <b>UNDS X BULTOS</b>
+                        </td>
+                        <td align="right" style="padding:5px 30px 0px 0px;border-bottom:1px solid;width:50%;font-size:22px">
+                            <t t-if='lot'>
+                                <b><span t-esc='lot.qty_done'/></b>
+                            </t>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td align="left" style="padding:5px 0px 0px 30px;border-bottom:1px solid;width:50%;font-size:22px;border-right:1px solid;">
+                            <b>BULTOS X PALETA</b>
+                        </td>
+                        <td align="right" style="padding:5px 30px 0px 0px;border-bottom:1px solid;width:50%;font-size:22px">
+                            <b><span t-esc='line.product_id.pallet_size'/></b>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td align="left" style="padding:5px 0px 0px 30px;border-bottom:1px solid;width:50%;font-size:22px;border-right:1px solid;">
+                            <b>TOTAL UNDS</b>
+                        </td>
+                        <td align="right" style="padding:5px 30px 0px 0px;border-bottom:1px solid;width:50%;font-size:22px">
+                            <b><span t-field='line.product_uom'/></b>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td align="left" style="padding:5px 0px 0px 30px;border-bottom:1px solid;width:50%;font-size:22px;border-right:1px solid;">
+                            <b>FETCHA DE</b>
+                        </td>
+                        <td align="right" style="padding:5px 30px 0px 0px;border-bottom:1px solid;width:50%;font-size:22px">
+                            <b><span t-esc="context_timestamp(datetime.datetime.now()).strftime('%d-%m-%Y')"/></b>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </t>
+    </template>
+</odoo>
+

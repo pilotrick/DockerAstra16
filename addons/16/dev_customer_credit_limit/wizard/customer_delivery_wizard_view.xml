@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="view_delivery_wizard" model="ir.ui.view">
+            <field name="name">customer.delivery.wizard.form</field>
+            <field name="model">customer.delivery.wizard</field>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+            <form string="Alerta al Despachar">
+                <span></span>
+                <group>
+                    <group>
+                        <field name="message" />
+                        <field name="users_ids" widget="many2many_tags" options="{'no_create': True, 'no_create_edit':True}"/>
+                    </group>
+                </group>
+                <footer>
+		    	<button string="Notify" name="action_create_activity" type="object" class="oe_highlight"/>
+                </footer>
+            </form>
+            </field>
+        </record>
+        <record id="action_delivery_wizard" model="ir.actions.act_window">
+            <field name="name">Delivery Wizard</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">customer.delivery.wizard</field>
+            <field name="binding_view_types">form</field>
+            <field name="view_mode">form</field>
+            <field name="target">new</field>
+        </record>
+    </data>
+</odoo>

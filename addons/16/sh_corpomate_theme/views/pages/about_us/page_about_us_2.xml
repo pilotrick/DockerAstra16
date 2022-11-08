@@ -1,0 +1,300 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+
+  <!-- ABOUT US PAGE 2 -->
+  <template id="sh_corpomate_tmpl_about_us_2" name="about us">
+    <t t-call="website.layout">
+      <div id="wrap" class="oe_structure">
+        <div class="oe_structure" />
+
+
+        <section id="sh_corpomate_theme_section_156" class="s_banner parallax s_parallax_no_overflow_hidden o_colored_level" data-name="about us2 about 1" style="background-image: none;">
+          <span class="s_parallax_bg oe_img_bg oe_custom_bg" style="background-image: url('/sh_corpomate_theme/static/src/img/team-banner.png'); background-position: 50% 0; background-attachment: fixed;" />
+          <div class="o_we_bg_filter bg-black-75" style="" />
+          <style class="o_default_snippet_text"></style>
+          <div class="yolo-page-title-overlay" />
+          <div class="content-page-title">
+            <div class="container">
+              <div class="page-title-inner block-center">
+                <div class="block-inner">
+                  <h1 style="color: #ffffff;" class="o_default_snippet_text">Our Team</h1>
+                </div>
+              </div>
+              <div class="yolo-breadcrumb-wrap s-color">
+                <ul class="breadcrumbs" data-original-title="" title="" aria-describedby="tooltip319235">
+                  <li>
+                    <a href="/" class="home o_default_snippet_text">Home</a>
+                  </li>
+                  <li>
+                    <span class="o_default_snippet_text">Our Team</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section id="sh_corpomate_theme_section_138" data-snippet="sh_corpomate_theme_tmpl_138" class="o_colored_level" data-name="Our Team" style="background-image: none;">
+          <div class="container">
+            <div class="row">
+              <div class="sh_disable_hover_part col-lg-3 col-md-6 col-sm-12 o_colored_level">
+                <div class="sh_team">
+                  <img src="/sh_corpomate_theme/static/src/img/6.jpg" alt="" loading="lazy" />
+                  <section class="social o_colored_level" style="background-image: none;">
+                    <li>
+                      <a href="#" class="bnt">
+                        <span class="fa fa-facebook" />
+                      </a>
+                    </li>
+                    <li>
+                      <a href="#" class="bnt">
+                        <span class="fa fa-twitter" />
+                      </a>
+                    </li>
+                    <li>
+                      <a href="#" class="bnt">
+                        <span class="fa fa-google-plus" />
+                      </a>
+                    </li>
+                    <li>
+                      <a href="#" class="bnt">
+                        <span class="fa fa-pinterest" />
+                      </a>
+                    </li>
+                  </section>
+                  <div class="sh_team_content">
+                    <h3 class="title o_default_snippet_text">Lorem Ipsum</h3>
+                    <span class="post o_default_snippet_text">Lorem Ipsum</span>
+                  </div>
+                </div>
+              </div>
+              <div class="sh_disable_hover_part col-lg-3 col-md-6 col-sm-12 o_colored_level">
+                <div class="sh_team">
+                  <img src="/sh_corpomate_theme/static/src/img/7.jpg" alt="" loading="lazy" />
+                  <section class="social o_colored_level" style="background-image: none;">
+                    <li>
+                      <a href="#" class="bnt ">
+                        <span class="fa fa-facebook" />
+                      </a>
+                    </li>
+                    <li>
+                      <a href="#" class="bnt ">
+                        <span class="fa fa-twitter" />
+                      </a>
+                    </li>
+                    <li>
+                      <a href="#" class="bnt ">
+                        <span class="fa fa-google-plus" />
+                      </a>
+                    </li>
+                    <li>
+                      <a href="#" class="bnt ">
+                        <span class="fa fa-pinterest" />
+                      </a>
+                    </li>
+                  </section>
+                  <div class="sh_team_content">
+                    <h3 class="title o_default_snippet_text">Lorem Ipsum</h3>
+                    <span class="post o_default_snippet_text">Lorem Ipsum</span>
+                  </div>
+                </div>
+              </div>
+              <div class="sh_disable_hover_part col-lg-3 col-md-6 col-sm-12 o_colored_level">
+                <div class="sh_team">
+                  <img src="/sh_corpomate_theme/static/src/img/8.jpg" alt="" loading="lazy" />
+                  <section class="social o_colored_level" style="background-image: none;">
+                    <li>
+                      <a href="#" class="bnt ">
+                        <span class="fa fa-facebook" />
+                      </a>
+                    </li>
+                    <li>
+                      <a href="#" class="bnt">
+                        <span class="fa fa-twitter" />
+                      </a>
+                    </li>
+                    <li>
+                      <a href="#" class="bnt ">
+                        <span class="fa fa-google-plus" />
+                      </a>
+                    </li>
+                    <li>
+                      <a href="#" class="bnt ">
+                        <span class="fa fa-pinterest" />
+                      </a>
+                    </li>
+                  </section>
+                  <div class="sh_team_content">
+                    <h3 class="title o_default_snippet_text">Lorem Ipsum</h3>
+                    <span class="post o_default_snippet_text">Lorem Ipsum</span>
+                  </div>
+                </div>
+              </div>
+              <div class="sh_disable_hover_part col-lg-3 col-md-6 col-sm-12 o_colored_level">
+                <div class="sh_team">
+                  <img src="/sh_corpomate_theme/static/src/img/9.jpg" alt="" loading="lazy" />
+                  <section class="social o_colored_level" style="background-image: none;">
+                    <li>
+                      <a href="#" class="bnt ">
+                        <span class="fa fa-facebook" />
+                      </a>
+                    </li>
+                    <li>
+                      <a href="#" class="bnt ">
+                        <span class="fa fa-twitter" />
+                      </a>
+                    </li>
+                    <li>
+                      <a href="#" class="bnt ">
+                        <span class="fa fa-google-plus" />
+                      </a>
+                    </li>
+                    <li>
+                      <a href="#" class="bnt ">
+                        <span class="fa fa-pinterest" />
+                      </a>
+                    </li>
+                  </section>
+                  <div class="sh_team_content">
+                    <h3 class="title o_default_snippet_text">Lorem Ipsum</h3>
+                    <span class="post o_default_snippet_text">Lorem Ipsum</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="row second-row">
+              <div class="sh_disable_hover_part col-lg-3 col-md-6 col-sm-12 o_colored_level">
+                <div class="sh_team">
+                  <img src="/sh_corpomate_theme/static/src/img/6.jpg" alt="" loading="lazy" />
+                  <section class="social o_colored_level" style="background-image: none;">
+                    <li>
+                      <a href="#" class="bnt">
+                        <span class="fa fa-facebook" />
+                      </a>
+                    </li>
+                    <li>
+                      <a href="#" class="bnt">
+                        <span class="fa fa-twitter" />
+                      </a>
+                    </li>
+                    <li>
+                      <a href="#" class="bnt">
+                        <span class="fa fa-google-plus" />
+                      </a>
+                    </li>
+                    <li>
+                      <a href="#" class="bnt">
+                        <span class="fa fa-pinterest" />
+                      </a>
+                    </li>
+                  </section>
+                  <div class="sh_team_content">
+                    <h3 class="title o_default_snippet_text">Lorem Ipsum</h3>
+                    <span class="post o_default_snippet_text">Lorem Ipsum</span>
+                  </div>
+                </div>
+              </div>
+              <div class="sh_disable_hover_part col-lg-3 col-md-6 col-sm-12 o_colored_level">
+                <div class="sh_team">
+                  <img src="/sh_corpomate_theme/static/src/img/7.jpg" alt="" loading="lazy" />
+                  <section class="social o_colored_level" style="background-image: none;">
+                    <li>
+                      <a href="#" class="bnt ">
+                        <span class="fa fa-facebook" />
+                      </a>
+                    </li>
+                    <li>
+                      <a href="#" class="bnt ">
+                        <span class="fa fa-twitter" />
+                      </a>
+                    </li>
+                    <li>
+                      <a href="#" class="bnt ">
+                        <span class="fa fa-google-plus" />
+                      </a>
+                    </li>
+                    <li>
+                      <a href="#" class="bnt ">
+                        <span class="fa fa-pinterest" />
+                      </a>
+                    </li>
+                  </section>
+                  <div class="sh_team_content">
+                    <h3 class="title o_default_snippet_text">Lorem Ipsum</h3>
+                    <span class="post o_default_snippet_text">Lorem Ipsum</span>
+                  </div>
+                </div>
+              </div>
+              <div class="sh_disable_hover_part col-lg-3 col-md-6 col-sm-12 o_colored_level">
+                <div class="sh_team">
+                  <img src="/sh_corpomate_theme/static/src/img/8.jpg" alt="" loading="lazy" />
+                  <section class="social o_colored_level" style="background-image: none;">
+                    <li>
+                      <a href="#" class="bnt ">
+                        <span class="fa fa-facebook" />
+                      </a>
+                    </li>
+                    <li>
+                      <a href="#" class="bnt">
+                        <span class="fa fa-twitter" />
+                      </a>
+                    </li>
+                    <li>
+                      <a href="#" class="bnt ">
+                        <span class="fa fa-google-plus" />
+                      </a>
+                    </li>
+                    <li>
+                      <a href="#" class="bnt ">
+                        <span class="fa fa-pinterest" />
+                      </a>
+                    </li>
+                  </section>
+                  <div class="sh_team_content">
+                    <h3 class="title o_default_snippet_text">Lorem Ipsum</h3>
+                    <span class="post o_default_snippet_text">Lorem Ipsum</span>
+                  </div>
+                </div>
+              </div>
+              <div class="sh_disable_hover_part col-lg-3 col-md-6 col-sm-12 o_colored_level">
+                <div class="sh_team">
+                  <img src="/sh_corpomate_theme/static/src/img/9.jpg" alt="" loading="lazy" />
+                  <section class="social o_colored_level" style="background-image: none;">
+                    <li>
+                      <a href="#" class="bnt ">
+                        <span class="fa fa-facebook" />
+                      </a>
+                    </li>
+                    <li>
+                      <a href="#" class="bnt ">
+                        <span class="fa fa-twitter" />
+                      </a>
+                    </li>
+                    <li>
+                      <a href="#" class="bnt ">
+                        <span class="fa fa-google-plus" />
+                      </a>
+                    </li>
+                    <li>
+                      <a href="#" class="bnt ">
+                        <span class="fa fa-pinterest" />
+                      </a>
+                    </li>
+                  </section>
+                  <div class="sh_team_content">
+                    <h3 class="title o_default_snippet_text">Lorem Ipsum</h3>
+                    <span class="post o_default_snippet_text">Lorem Ipsum</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+
+      </div>
+    </t>
+  </template>
+
+
+</odoo>

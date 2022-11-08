@@ -1,0 +1,315 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+<!-- common header inherit -->
+<template id='sh_common_header_zoom_toggle' inherit_id='website.navbar_nav' name='zoom toggle in header'>
+    <xpath expr="//ul[@id='top_menu']" position="after">
+        <div t-if='website.sh_is_enable_toggle_zoom'>
+            <button class='btn btn-primary js_cls_zoom_toggle_btn zoom_in' >
+                <img height="20px" width="20px" src="/sh_corpomate_theme/static/src/img/svg/expand.svg"/>
+            </button>
+            <button class='btn btn-primary js_cls_zoom_toggle_btn zoom_out d-none'>
+                <img height="20px" width="20px" src="/sh_corpomate_theme/static/src/img/svg/compress.svg"/>
+            </button>
+        </div>
+    </xpath>
+</template>
+	
+<record id="sh_corpomate_theme.sh_corpomate_theme_style_header_scss_1" model="ir.asset">
+    <field name="key">sh_corpomate_theme.sh_corpomate_theme_style_header_scss_1</field>
+    <field name="name">Corpomate Header 1 SCSS</field>
+    <field name="bundle">web.assets_frontend</field>
+    <field name="path">sh_corpomate_theme/static/src/scss/style_header/style_header_1.scss</field>
+    <field name="active" eval="False"/>
+    
+</record>
+	
+	
+	
+
+<record id="sh_corpomate_theme.sh_corpomate_theme_style_header_scss_2" model="ir.asset">
+    <field name="key">sh_corpomate_theme.sh_corpomate_theme_style_header_scss_2</field>
+    <field name="name">Corpomate Header 2 SCSS</field>
+    <field name="bundle">web.assets_frontend</field>
+    <field name="path">sh_corpomate_theme/static/src/scss/style_header/style_header_2.scss</field>
+    <field name="active" eval="False"/>
+    
+</record>
+	
+	
+	
+
+
+	
+<record id="sh_corpomate_theme.sh_corpomate_theme_style_header_scss_3" model="ir.asset">
+    <field name="key">sh_corpomate_theme.sh_corpomate_theme_style_header_scss_3</field>
+    <field name="name">Corpomate Header 3 SCSS</field>
+    <field name="bundle">web.assets_frontend</field>
+    <field name="path">sh_corpomate_theme/static/src/scss/style_header/style_header_3.scss</field>
+    <field name="active" eval="False"/>
+      
+</record>
+	
+	
+
+
+<record id="sh_corpomate_theme.sh_corpomate_theme_style_header_scss_4" model="ir.asset">
+    <field name="key">sh_corpomate_theme.sh_corpomate_theme_style_header_scss_4</field>
+    <field name="name">Corpomate Header 4 SCSS</field>
+    <field name="bundle">web.assets_frontend</field>
+    <field name="path">sh_corpomate_theme/static/src/scss/style_header/style_header_4.scss</field>
+    <field name="active" eval="False"/>    
+</record>
+
+
+
+<record id="sh_corpomate_theme.sh_corpomate_theme_style_header_scss_5" model="ir.asset">
+    <field name="key">sh_corpomate_theme.sh_corpomate_theme_style_header_scss_5</field>
+    <field name="name">Corpomate Header 5 SCSS</field>
+    <field name="bundle">web.assets_frontend</field>
+    <field name="path">sh_corpomate_theme/static/src/scss/style_header/style_header_5.scss</field>
+    <field name="active" eval="False"/>    
+</record>
+
+<record id="sh_corpomate_theme.sh_corpomate_theme_style_header_scss_6" model="ir.asset">
+    <field name="key">sh_corpomate_theme.sh_corpomate_theme_style_header_scss_6</field>
+    <field name="name">Corpomate Header 6 SCSS</field>
+    <field name="bundle">web.assets_frontend</field>
+    <field name="path">sh_corpomate_theme/static/src/scss/style_header/style_header_6.scss</field>
+    <field name="active" eval="False"/>    
+</record>
+
+
+
+
+<record id="sh_corpomate_theme.sh_corpomate_theme_style_header_scss_7" model="ir.asset">
+    <field name="key">sh_corpomate_theme.sh_corpomate_theme_style_header_scss_7</field>
+    <field name="name">Corpomate Header 7 SCSS</field>
+    <field name="bundle">web.assets_frontend</field>
+    <field name="path">sh_corpomate_theme/static/src/scss/style_header/style_header_7.scss</field>
+    <field name="active" eval="False"/>    
+</record>
+
+
+<record id="sh_corpomate_theme.sh_corpomate_theme_style_header_scss_8" model="ir.asset">
+    <field name="key">sh_corpomate_theme.sh_corpomate_theme_style_header_scss_8</field>
+    <field name="name">Corpomate Header 8 SCSS</field>
+    <field name="bundle">web.assets_frontend</field>
+    <field name="path">sh_corpomate_theme/static/src/scss/style_header/style_header_8.scss</field>
+    <field name="active" eval="False"/>    
+</record>
+
+
+
+	
+<record id="sh_corpomate_theme.sh_corpomate_theme_style_header_scss_9" model="ir.asset">
+    <field name="key">sh_corpomate_theme.sh_corpomate_theme_style_header_scss_9</field>
+    <field name="name">Corpomate Header 9 SCSS</field>
+    <field name="bundle">web.assets_frontend</field>
+    <field name="path">sh_corpomate_theme/static/src/scss/style_header/style_header_9.scss</field>
+    <field name="active" eval="False"/>    
+</record>
+
+	
+
+<record id="sh_corpomate_theme.sh_corpomate_theme_style_header_scss_10" model="ir.asset">
+    <field name="key">sh_corpomate_theme.sh_corpomate_theme_style_header_scss_10</field>
+    <field name="name">Corpomate Header 10 SCSS</field>
+    <field name="bundle">web.assets_frontend</field>
+    <field name="path">sh_corpomate_theme/static/src/scss/style_header/style_header_10.scss</field>
+    <field name="active" eval="False"/>    
+</record>
+
+
+
+
+<record id="sh_corpomate_theme.sh_corpomate_theme_style_header_scss_11" model="ir.asset">
+    <field name="key">sh_corpomate_theme.sh_corpomate_theme_style_header_scss_11</field>
+    <field name="name">Corpomate Header 11 SCSS</field>
+    <field name="bundle">web.assets_frontend</field>
+    <field name="path">sh_corpomate_theme/static/src/scss/style_header/style_header_11.scss</field>
+    <field name="active" eval="False"/>    
+</record>
+
+
+
+<record id="sh_corpomate_theme.sh_corpomate_theme_style_header_scss_12" model="ir.asset">
+    <field name="key">sh_corpomate_theme.sh_corpomate_theme_style_header_scss_12</field>
+    <field name="name">Corpomate Header 12 SCSS</field>
+    <field name="bundle">web.assets_frontend</field>
+    <field name="path">sh_corpomate_theme/static/src/scss/style_header/style_header_12.scss</field>
+    <field name="active" eval="False"/>    
+</record>
+
+
+
+
+<record id="sh_corpomate_theme.sh_corpomate_theme_style_header_scss_13" model="ir.asset">
+    <field name="key">sh_corpomate_theme.sh_corpomate_theme_style_header_scss_13</field>
+    <field name="name">Corpomate Header 13 SCSS</field>
+    <field name="bundle">web.assets_frontend</field>
+    <field name="path">sh_corpomate_theme/static/src/scss/style_header/style_header_13.scss</field>
+    <field name="active" eval="False"/>    
+</record>
+
+
+
+<record id="sh_corpomate_theme.sh_corpomate_theme_style_header_scss_14" model="ir.asset">
+    <field name="key">sh_corpomate_theme.sh_corpomate_theme_style_header_scss_14</field>
+    <field name="name">Corpomate Header 14 SCSS</field>
+    <field name="bundle">web.assets_frontend</field>
+    <field name="path">sh_corpomate_theme/static/src/scss/style_header/style_header_14.scss</field>
+    <field name="active" eval="False"/>    
+</record>
+
+
+
+
+<record id="sh_corpomate_theme.sh_corpomate_theme_style_header_scss_15" model="ir.asset">
+    <field name="key">sh_corpomate_theme.sh_corpomate_theme_style_header_scss_15</field>
+    <field name="name">Corpomate Header 15 SCSS</field>
+    <field name="bundle">web.assets_frontend</field>
+    <field name="path">sh_corpomate_theme/static/src/scss/style_header/style_header_15.scss</field>
+    <field name="active" eval="False"/>    
+</record>
+
+
+<record id="sh_corpomate_theme.sh_corpomate_theme_style_header_scss_16" model="ir.asset">
+    <field name="key">sh_corpomate_theme.sh_corpomate_theme_style_header_scss_16</field>
+    <field name="name">Corpomate Header 16 SCSS</field>
+    <field name="bundle">web.assets_frontend</field>
+    <field name="path">sh_corpomate_theme/static/src/scss/style_header/style_header_16.scss</field>
+    <field name="active" eval="False"/>    
+</record>
+
+
+
+<record id="sh_corpomate_theme.sh_corpomate_theme_style_header_scss_17" model="ir.asset">
+    <field name="key">sh_corpomate_theme.sh_corpomate_theme_style_header_scss_17</field>
+    <field name="name">Corpomate Header 17 SCSS</field>
+    <field name="bundle">web.assets_frontend</field>
+    <field name="path">sh_corpomate_theme/static/src/scss/style_header/style_header_17.scss</field>
+    <field name="active" eval="False"/>    
+</record>
+
+
+<record id="sh_corpomate_theme.sh_corpomate_theme_style_header_scss_18" model="ir.asset">
+    <field name="key">sh_corpomate_theme.sh_corpomate_theme_style_header_scss_18</field>
+    <field name="name">Corpomate Header 18 SCSS</field>
+    <field name="bundle">web.assets_frontend</field>
+    <field name="path">sh_corpomate_theme/static/src/scss/style_header/style_header_18.scss</field>
+    <field name="active" eval="False"/>    
+</record>
+
+
+<record id="sh_corpomate_theme.sh_corpomate_theme_style_header_scss_19" model="ir.asset">
+    <field name="key">sh_corpomate_theme.sh_corpomate_theme_style_header_scss_19</field>
+    <field name="name">Corpomate Header 19 SCSS</field>
+    <field name="bundle">web.assets_frontend</field>
+    <field name="path">sh_corpomate_theme/static/src/scss/style_header/style_header_19.scss</field>
+    <field name="active" eval="False"/>    
+</record>
+
+
+<!-- Theme 20 -->
+<record id="sh_corpomate_theme.sh_corpomate_theme_style_header_scss_20" model="ir.asset">
+    <field name="key">sh_corpomate_theme.sh_corpomate_theme_style_header_scss_20</field>
+    <field name="name">Corpomate Header 20 SCSS</field>
+    <field name="bundle">web.assets_frontend</field>
+    <field name="path">sh_corpomate_theme/static/src/scss/style_header/style_header_20.scss</field>
+    <field name="active" eval="False"/>    
+</record>
+
+<template id="sh_corpomate_theme_custom_header_20" priority="18" active="False" inherit_id="website.header_call_to_action" name="Custom Header for theme 20">
+    <xpath expr="//div" position="replace">
+        <div t-attf-class="oe_structure oe_structure_solo #{_div_classes} sh_header_custom_20">
+            <section class="s_text_block d-none" data-snippet="s_text_block" data-name="Text">
+                <div class="container">
+                    <a href="/contactus" class="btn btn-primary btn_cta">Contact Us</a>
+                </div>
+            </section>
+            <section class='header_20 '>
+                <span>Get Quote <i class='fa fa-arrow-right '/></span>
+                <a href='#'><i class='fa fa-share-alt'/></a>
+                <ul class='header_link_share' style='display:none;'>
+                    <li t-if='website.social_facebook'><a t-att-href="website.social_facebook" class='facebbok' data-toggle="popover" data-trigger="hover" data-content="Facebook" ><i class='fa fa-facebook'/></a></li>
+                    <li t-if='website.social_twitter'><a t-att-href="website.social_twitter" class='twitter' data-toggle="popover" data-trigger="hover" data-content="Twitter"><i class='fa fa-twitter'/></a></li>
+                    <li t-if='website.social_instagram'><a t-att-href="website.social_instagram" class='instagram' data-toggle="popover" data-trigger="hover" data-content="Instagram"><i class='fa fa-instagram'/></a></li>
+                    <li t-if='website.social_linkedin'><a t-att-href="website.social_linkedin" class='linkedin' data-toggle="popover" data-trigger="hover" data-content="Linkedin"><i class='fa fa-linkedin'/></a></li>
+                </ul>
+            </section>
+        </div>
+    </xpath>
+</template>
+
+
+
+
+
+<!-- Theme 21 -->
+
+ <record id="sh_corpomate_theme.sh_corpomate_theme_style_header_scss_21" model="ir.asset">
+    <field name="key">sh_corpomate_theme.sh_corpomate_theme_style_header_scss_21</field>
+    <field name="name">Corpomate Header 21 SCSS</field>
+    <field name="bundle">web.assets_frontend</field>
+    <field name="path">sh_corpomate_theme/static/src/scss/style_header/style_header_21.scss</field>
+    <field name="active" eval="False"/>    
+</record>
+
+<template id="sh_corpomate_theme_custom_header_21" priority="18" active="False" inherit_id="website.navbar_nav" name="Custom Header for theme 21 header">
+    <xpath expr="//ul[@id='top_menu']" position="inside">
+        <div>
+            <li><a href="/contactus" class="btn btn-primary btn_cta">Contact Us</a></li>
+            <h5 class="sh_social_text">We Are Available On :</h5>
+            <div class="social_icons">
+                <div class="social_icon icon_1"><a href="https://www.facebook.com/softhealertechnologies" target="_blank"><span class="fa fa-facebook"></span></a></div>
+                <div class="social_icon icon_2"><a href="https://www.instagram.com/softhealer_technologies/?hl=en" target="_blank"><span class="fa fa-instagram"></span></a></div>
+                <div class="social_icon icon_3"><a href="https://twitter.com/SofthealerTech" target="_blank"><span class="fa fa-twitter"></span></a></div>
+                <div class="social_icon icon_4"><a href="https://www.linkedin.com/in/softhealer-technologies/" target="_blank"><span class="fa fa-linkedin"></span></a></div>
+            </div>
+            <h5 class="sh_social_text_1">Contact Us On : </h5>
+            <div class="sh_contact_details_1">
+                <div><a href="#+91 7984575681"><span class="fa fa-phone"></span>+7984575681</a></div>
+            </div>
+            <div class="sh_contact_details_1">
+                <div><a href="#info@softhealer.com"><span class="fa fa-envelope-o"></span>info@softhealer.com</a></div>
+            </div>
+        </div>
+    </xpath>
+    <xpath expr="//ul[@id='top_menu']" position="before">
+        <button type="button" class="cls_sh_menu_close_btn" 
+            data-toggle="collapse" data-target="#top_menu_collapse"></button>
+    </xpath>
+    
+</template> 
+
+
+<template id="sh_corpomate_theme_custom_header_21_toggler" priority="18" active="False" inherit_id="website.navbar_toggler" name="Custom Header for theme 21 header toggler">
+    <xpath expr="//button" position="replace">
+      
+         <t t-call="portal.placeholder_user_sign_in">
+            <t t-set="_item_class" t-value="'nav-item '" />
+            <t t-set="_link_class" t-value="'nav-link font-weight-bold'" />
+        </t>
+        <t t-call="portal.user_dropdown">
+            <t t-set="_user_name" t-value="true" />
+            <t t-set="_icon" t-value="false" />
+
+            <t t-set="_item_class" t-value="'nav-item dropdown'" />
+            <t t-set="_link_class" t-value="'nav-link font-weight-bold sh-hide-auth'" />
+        </t>
+       
+
+        <button type="button" class="navbar_icon" t-attf-class="navbar-toggler #{_toggler_class}" data-toggle="collapse" data-target="#top_menu_collapse">
+            <span class="o_not_editable">
+                <svg xmlns="http://www.w3.org/2000/svg" width="21" height="21" viewBox="0 0 21 21"><g class="right_bar" transform="translate(-2124 -2665)"><g transform="translate(2124 2665)" fill="none" stroke-width="1.5"><circle cx="2.5" cy="2.5" r="2.5" stroke="none"></circle><circle cx="2.5" cy="2.5" r="1.75" fill="none"></circle></g><g transform="translate(2132 2665)" fill="none" stroke-width="1.5"><circle cx="2.5" cy="2.5" r="2.5" stroke="none"></circle><circle cx="2.5" cy="2.5" r="1.75" fill="none"></circle></g><g transform="translate(2140 2665)" fill="none" stroke-width="1.5"><circle cx="2.5" cy="2.5" r="2.5" stroke="none"></circle><circle cx="2.5" cy="2.5" r="1.75" fill="none"></circle></g><g transform="translate(2124 2673)" fill="none" stroke-width="1.5"><circle cx="2.5" cy="2.5" r="2.5" stroke="none"></circle><circle cx="2.5" cy="2.5" r="1.75" fill="none"></circle></g><g transform="translate(2132 2673)" fill="none" stroke-width="1.5"><circle cx="2.5" cy="2.5" r="2.5" stroke="none"></circle><circle cx="2.5" cy="2.5" r="1.75" fill="none"></circle></g><g transform="translate(2140 2673)" fill="none" stroke-width="1.5"><circle cx="2.5" cy="2.5" r="2.5" stroke="none"></circle><circle cx="2.5" cy="2.5" r="1.75" fill="none"></circle></g><g transform="translate(2124 2681)" fill="none" stroke-width="1.5"><circle cx="2.5" cy="2.5" r="2.5" stroke="none"></circle><circle cx="2.5" cy="2.5" r="1.75" fill="none"></circle></g><g transform="translate(2132 2681)" fill="none" stroke-width="1.5"><circle cx="2.5" cy="2.5" r="2.5" stroke="none"></circle><circle cx="2.5" cy="2.5" r="1.75" fill="none"></circle></g><g transform="translate(2140 2681)" fill="none" stroke-width="1.5"><circle cx="2.5" cy="2.5" r="2.5" stroke="none"></circle><circle cx="2.5" cy="2.5" r="1.75" fill="none"></circle></g></g></svg>
+            </span>
+        </button>
+        
+    </xpath>
+</template>
+
+
+</odoo>
+	
+	

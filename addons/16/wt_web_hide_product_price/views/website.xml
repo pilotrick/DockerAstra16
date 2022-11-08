@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="wt_inherit_view_website_form_view_themes_modal" model="ir.ui.view">
+            <field name="name">website.modal.form</field>
+            <field name="model">website</field>
+            <field name="inherit_id" ref="website.view_website_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='domain']" position="after">
+                        <field name="is_hide_price"/>
+                        <field name="price_support_email" widget="email" attrs="{'required': [('is_hide_price', '=', True)]}"/>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>

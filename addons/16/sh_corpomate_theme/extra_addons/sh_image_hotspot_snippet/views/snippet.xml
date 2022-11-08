@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <!-- Snippets -->
+    <template id="sh_image_hotspot_snippet_image_hospot" inherit_id="website.snippets">
+        <!-- Slider snippets  -->
+        <xpath expr="//div[@id='snippet_structure']" position="before">
+            <div id="slider_snippet_menu" class="o_panel">
+                <div class="o_panel_header">
+                    Hotspot Snippet
+                </div>
+                <div class="o_panel_body">
+                    <t t-snippet="sh_corpomate_theme.sh_image_hotspot" t-thumbnail="/sh_corpomate_theme/static/src/img/extra_addons/sh_image_hotspot_snippet/hotspot.svg" />
+                </div>
+            </div>
+        </xpath>
+    </template>
+    
+    
+</odoo>

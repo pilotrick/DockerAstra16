@@ -1,0 +1,2 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_down_payment_line_all,sale.advance.payment.inv.line.all,model_sale_advance_payment_inv_line,,1,1,1,1

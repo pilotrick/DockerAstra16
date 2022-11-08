@@ -1,0 +1,201 @@
+<odoo>
+    <template id="wt_products_item" inherit_id="website_sale.products_item" name="Hide product item">
+        <!-- only put meter on first "new password" field since both must be identical -->
+        <xpath expr="//div[@class='product_price']" position="replace">
+            
+            <t t-if="request.website.is_hide_price == True and request.env.user._is_public()">
+                <address>
+                    <!-- <t t-set="email" t-value="request.website.price_support_email" /> -->
+                    <a class="btn btn-primary ml-4" style="background-color: #3aadaa;color: white;padding: 1%;text-decoration: none;" t-attf-href="mailto:{{request.website.price_support_email}}">Ask Price</a>
+                </address>
+            </t>
+
+            <t t-else="">
+                <div class="product_price" itemprop="offers" itemscope="itemscope" itemtype="http://schema.org/Offer">
+                    <del t-attf-class="text-danger mr-2 {{'' if combination_info['has_discounted_price'] else 'd-none'}}" style="white-space: nowrap;" t-esc="combination_info['list_price']" t-options="{'widget': 'monetary', 'display_currency': website.currency_id}" />
+                    <span t-if="combination_info['price']" t-esc="combination_info['price']" t-options="{'widget': 'monetary', 'display_currency': website.currency_id}"/>
+                    <span itemprop="price" style="display:none;" t-esc="combination_info['price']" />
+                    <span itemprop="priceCurrency" style="display:none;" t-esc="website.currency_id.name" />
+                </div>
+            </t>
+        </xpath>
+    </template>
+
+    <template id="wt_products_item" inherit_id="website_design.products" name="Hide product item">
+        <xpath expr="//h5[@name='product_price']" position="replace">
+            <t t-if="request.website.is_hide_price == True and request.env.user._is_public()">
+                <address>
+                    <!-- <t t-set="email" t-value="request.website.price_support_email" /> -->
+                    <a class="btn btn-primary ml-4" style="background-color: #3aadaa;color: white;padding: 1%;text-decoration: none;" t-attf-href="mailto:{{request.website.price_support_email}}">Ask Price</a>
+                </address>
+            </t>
+            <t t-else="">
+                <h5 class="card-title p-2" name="product_price">
+                    <t t-if="website.currency_id.position == 'before'">
+                        <span t-esc="website.currency_id.symbol"/>
+                    </t>
+                    <span t-esc="product.price"/>
+                    <t t-if="website.currency_id.position == 'after'">
+                        <span t-esc="website.currency_id.symbol"/>
+                    </t><br/>
+                </h5>
+            </t>
+        </xpath>
+    </template>
+
+    <template id="wt_product_price" inherit_id="website_sale.product_price" name="Hide product item">
+        <xpath expr="//*[hasclass('product_price')]" position="replace">
+            <t t-if="request.website.is_hide_price == True and request.env.user._is_public()">
+                <address>
+                    <!-- <t t-set="email" t-value="request.website.price_support_email" /> -->
+                    <a class="btn btn-primary btn-lg mt16" style="background-color: #3aadaa;color: white;padding: 1%;text-decoration: none;" t-attf-href="mailto:{{request.website.price_support_email}}">Ask Price</a>
+                </address>
+            </t>
+            <t t-else="">
+                <div itemprop="offers" itemscope="itemscope" itemtype="http://schema.org/Offer" class="product_price mt16">
+                  <h4 class="oe_price_h4 css_editable_mode_hidden">
+                      <span t-attf-class="text-danger oe_default_price {{'' if combination_info['has_discounted_price'] else 'd-none'}}" style="text-decoration: line-through; white-space: nowrap;"
+                          t-esc="combination_info['list_price']" t-options="{'widget': 'monetary', 'display_currency': website.currency_id}"
+                      />
+                      <b class="oe_price" style="white-space: nowrap;" t-esc="combination_info['price']" t-options="{'widget': 'monetary', 'display_currency': website.currency_id}"/>
+                      <span itemprop="price" style="display:none;" t-esc="combination_info['price']"/>
+                      <span itemprop="priceCurrency" style="display:none;" t-esc="website.currency_id.name"/>
+                  </h4>
+                  <h4 class="css_non_editable_mode_hidden decimal_precision" t-att-data-precision="str(website.currency_id.decimal_places)">
+                    <span t-field="product.list_price"
+                        t-options='{
+                           "widget": "monetary",
+                           "display_currency": product.currency_id,
+                       }'/>
+                  </h4>
+              </div>
+            </t>
+        </xpath>
+    </template>
+
+    <template id="wt_cart_lines" inherit_id="website_sale.cart_lines" name="Shopping Cart Lines">
+        <xpath expr="/t[1]/table[1]/tbody[1]/t[1]/tr[1]/td[5]/span[1]" position="replace">
+            <t t-if="request.website.is_hide_price == True and request.env.user._is_public()">
+                <address>
+                    <!-- <t t-set="email" t-value="request.website.price_support_email" /> -->
+                    <a class="btn btn-primary sm" style="background-color: #3aadaa;color: white;padding: 1%;text-decoration: none;" t-attf-href="mailto:{{request.website.price_support_email}}">Ask Price</a>
+                </address>
+            </t>
+            <t t-else="">
+            <span t-field="line.price_reduce_taxexcl" style="white-space: nowrap;" t-options="{'widget': 'monetary', 'display_currency': website_sale_order.currency_id}" groups="account.group_show_line_subtotals_tax_excluded" />
+        </t>
+        </xpath>
+    </template>
+
+    <template id="wt_short_cart_summary" inherit_id="website_sale.short_cart_summary" name="Shopping Cart Lines">
+        <xpath expr="/t[1]/div[1]/div[1]" position="replace">
+            <t t-if="request.website.is_hide_price != True and not request.env.user._is_public()">
+                <div class="card js_cart_summary" t-if="website_sale_order and website_sale_order.website_order_line" >
+                    <div class="card-body">
+                        <h4 class="d-none d-xl-block">Order Total</h4>
+                        <hr class="d-none d-xl-block"/>
+                        <div>
+                            <t t-call="website_sale.total">
+                                <t t-set="no_rowspan" t-value="1"/>
+                            </t>
+                            <a role="button" t-if="website_sale_order and website_sale_order.website_order_line" class="btn btn-secondary float-right d-none d-xl-inline-block" href="/shop/checkout?express=1">
+                                <span>Process Checkout</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </t>
+        </xpath>
+    </template>
+
+    <template id="wt_total" inherit_id="website_sale.total" name="Shopping Cart Lines">
+        <xpath expr="div[@id='cart_total']" position="replace">
+            <t t-if="request.website.is_hide_price == True and request.env.user._is_public()">
+                 <address>
+                    <!-- <t t-set="email" t-value="request.website.price_support_email" /> -->
+                    <a class="btn btn-primary ml-4" style="background-color: #3aadaa;color: white;padding: 1%;text-decoration: none;" t-attf-href="mailto:{{request.website.price_support_email}}">Ask Price</a>
+                </address>
+            </t>
+            <t t-else="">
+                 <div id="cart_total" t-att-class="extra_class or ''" t-if="website_sale_order and website_sale_order.website_order_line">
+                <table class="table">
+                      <tr id="empty">
+                          <t t-if='not no_rowspan'><td rowspan="10" class="border-0"/></t>
+                          <td class="col-md-2 col-3 border-0"></td>
+                          <td class="col-md-2 col-3 border-0" ></td>
+                      </tr>
+                      <tr id="order_total_untaxed">
+                          <td class="text-right border-0">Subtotal:</td>
+                          <td class="text-xl-right border-0" >
+                              <span t-field="website_sale_order.amount_untaxed" class="monetary_field" style="white-space: nowrap;" t-options="{'widget': 'monetary', 'display_currency': website_sale_order.currency_id}"/>
+                          </td>
+                      </tr>
+                      <tr id="order_total_taxes">
+                          <td class="text-right border-0">Taxes:</td>
+                          <td class="text-xl-right border-0">
+                               <span t-field="website_sale_order.amount_tax" class="monetary_field" style="white-space: nowrap;" t-options="{'widget': 'monetary', 'display_currency': website_sale_order.currency_id}" />
+                          </td>
+                      </tr>
+                      <tr id="order_total">
+                          <td class="text-right"><strong>Total:</strong></td>
+                          <td class="text-xl-right">
+                              <strong t-field="website_sale_order.amount_total" class="monetary_field"
+                                  t-options='{"widget": "monetary", "display_currency": website_sale_order.pricelist_id.currency_id}'/>
+                          </td>
+                      </tr>
+                </table>
+            </div>
+        </t>
+        </xpath>
+    </template>
+
+    <template id="wt_cart_summary" inherit_id="website_sale.cart_summary" name="Shopping Cart Lines">
+        <xpath expr="/t[1]/div[1]/div[1]/div[3]/table[1]/tbody[1]/tr[1]/td[5]/span[1]" position="replace">
+            <t t-if="request.website.is_hide_price != True and not request.env.user._is_public()">
+             <span t-field="line.price_reduce_taxexcl" style="white-space: nowrap;" t-options="{'widget': 'monetary', 'display_currency': website_sale_order.currency_id}" groups="account.group_show_line_subtotals_tax_excluded" />   
+            </t>
+        </xpath>
+        <xpath expr="/t[1]/div[1]/div[1]/div[3]/table[1]/thead[1]/tr/th[4]" position="replace">
+            <t t-if="request.website.is_hide_price != True and not request.env.user._is_public()">
+                <th class="border-top-0 text-center td-price">Price</th>
+            </t>
+        </xpath>
+    </template>
+
+    <template id="wt_wishlist" inherit_id="website_sale_wishlist.product_wishlist" name="wishlist view">
+      <xpath expr="//table/body/t/tr/td[3]" position="replace">
+        <t t-if="request.website.is_hide_price == True and request.env.user._is_public()">
+        </t>
+
+        <t t-else="">
+          <td>
+              <t t-set="combination_info" t-value="wish.product_id._get_combination_info_variant()"/>
+              <t t-esc="combination_info['price']" t-options="{'widget': 'monetary', 'display_currency': website.pricelist_id.currency_id}"/>
+          </td>
+        </t>
+            
+        </xpath>
+        <xpath expr="//table/body/t/tr/td[@class='text-center td-wish-btn']" position="replace">
+          <t t-if="request.website.is_hide_price == True and request.env.user._is_public()">
+              <td class='text-center td-wish-btn'>
+                <address>
+                    <a class="btn btn-primary ml-4" style="background-color: #3aadaa;color: white;padding: 1%;text-decoration: none;" t-attf-href="mailto:{{request.website.price_support_email}}">Ask Price</a>
+                  </address>
+                </td>
+                
+          </t>
+          <t t-else="">
+            <td class='text-center td-wish-btn'>
+              <input name="product_id" t-att-value="wish.product_id.id" type="hidden"/>
+              <button type="button" role="button" class="btn btn-secondary btn-block o_wish_add mb4" >Add <span class='d-none d-md-inline'>to Cart</span></button>
+            </td>
+        </t>
+        </xpath>
+    </template>
+    
+    <!-- <template id="wt_suggested_products_list" inherit_id="website_sale.suggested_products_list" name="Shopping Cart Lines">
+        <xpath expr="//td[@class='td-price']" position="replace">
+            
+        </xpath>
+    </template>  -->
+</odoo>

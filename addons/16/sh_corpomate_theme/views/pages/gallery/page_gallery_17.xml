@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+	<!-- gallery PAGE 17 -->
+	<template id="sh_corpomate_tmpl_gallery_17" name="gallery">
+		<t t-call="website.layout">
+			<div id="wrap" class="oe_structure">
+				<section id="sh_corpomate_theme_section_432" data-snippet="sh_corpomate_theme_tmpl_432" class="o_colored_level" data-name="Gallery-Banner">
+					<div class="sh_banner">
+						<img src="/sh_corpomate_theme/static/src/img/theme_17/images/pexels-photo-167676.jpeg" loading="lazy" />
+					</div>
+					<div class="sh_banner_content">
+						<ul>
+							<li>
+								<a href="/home17" class="o_default_snippet_text">
+									Home
+								</a>
+							</li>
+							<li>
+								<span href="#" class="active o_default_snippet_text">
+									Gallery
+								</span>
+							</li>
+						</ul>
+						<div class="shape">
+							<img src="/sh_corpomate_theme/static/src/img/theme_17/images/shape.png" loading="lazy" />
+						</div>
+						<h1 class="o_default_snippet_text">
+							Gallery
+						</h1>
+					</div>
+				</section>
+				<section id="sh_corpomate_theme_section_433" data-snippet="sh_corpomate_theme_tmpl_433" class="o_colored_level" data-name="Gallery-Portfolio">
+					<div class="container">
+						<div class="row mt-3" style="">
+							<div class="col-xl-4 col-lg-6 col-md-6 col-sm-12 col-12 mt-3 o_colored_level">
+								<div class="gallery-details">
+									<span class="effect">
+									</span>
+									<img src="/sh_corpomate_theme/static/src/img/theme_17/images/pexels-photo-4483608.jpeg" loading="lazy" />
+								</div>
+							</div>
+							<div class="col-xl-4 col-lg-6 col-md-6 col-sm-12 col-12 mt-3 o_colored_level">
+								<div class="gallery-details">
+									<span class="effect">
+									</span>
+									<img src="/sh_corpomate_theme/static/src/img/theme_17/images/pexels-photo-4483559.jpeg" loading="lazy" />
+								</div>
+							</div>
+							<div class="col-xl-4 col-lg-6 col-md-6 col-sm-12 col-12 mt-3 o_colored_level">
+								<div class="gallery-details">
+									<span class="effect">
+									</span>
+									<img src="/sh_corpomate_theme/static/src/img/theme_17/images/pexels-photo-4483556.jpeg" loading="lazy" />
+								</div>
+							</div>
+							<div class="col-xl-4 col-lg-6 col-md-6 col-sm-12 col-12 mt-3 o_colored_level">
+								<div class="gallery-details">
+									<span class="effect">
+									</span>
+									<img src="/sh_corpomate_theme/static/src/img/theme_17/images/pexels-photo-2019833.jpeg" loading="lazy" />
+								</div>
+							</div>
+							<div class="col-xl-4 col-lg-6 col-md-6 col-sm-12 col-12 mt-3 o_colored_level">
+								<div class="gallery-details">
+									<span class="effect">
+									</span>
+									<img src="/sh_corpomate_theme/static/src/img/theme_17/images/pexels-photo-1117211.jpeg" loading="lazy" />
+								</div>
+							</div>
+							<div class="col-xl-4 col-lg-6 col-md-6 col-sm-12 col-12 mt-3 o_colored_level">
+								<div class="gallery-details">
+									<span class="effect">
+									</span>
+									<img src="/sh_corpomate_theme/static/src/img/theme_17/images/pexels-photo-1267337.jpeg" loading="lazy" />
+								</div>
+							</div>
+						</div>
+					</div>
+				</section>
+			</div>
+		</t>
+	</template>
+	<!-- gallery PAGE 17 -->
+</odoo>

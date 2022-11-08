@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+	<!-- HIDE OR SHOW MENU FOR READYMADE THEME 1 -->
+	<template id="sh_corpomate_theme_layout_readymade_1" name="readymade theme 1" active="False"></template>
+
+
+	<!-- HIDE OR SHOW MENU FOR READYMADE THEME 2  -->
+	<template id="sh_corpomate_theme_layout_readymade_2" name="readymade theme 2" active="False"></template>
+
+
+	<!-- HIDE OR SHOW MENU FOR READYMADE THEME 3  -->
+	<template id="sh_corpomate_theme_layout_readymade_3" name="readymade theme 2" active="False"></template>
+
+
+	<!-- HIDE OR SHOW MENU FOR READYMADE THEME 4  -->
+	<template id="sh_corpomate_theme_layout_readymade_4" name="readymade theme 2" active="False"></template>
+
+
+	<!-- HIDE OR SHOW MENU FOR READYMADE THEME 5  -->
+	<template id="sh_corpomate_theme_layout_readymade_5" name="readymade theme 2" active="False"></template>
+
+
+	<!-- HIDE OR SHOW MENU FOR READYMADE THEME 6  -->
+	<template id="sh_corpomate_theme_layout_readymade_6" name="readymade theme 6" active="False"></template>
+
+
+	<!-- HIDE OR SHOW MENU FOR READYMADE THEME 7  -->
+	<template id="sh_corpomate_theme_layout_readymade_7" name="readymade theme 7" active="False"></template>
+
+
+	<!-- HIDE OR SHOW MENU FOR READYMADE THEME 8  -->
+	<template id="sh_corpomate_theme_layout_readymade_8" name="readymade theme 8" active="False"></template>
+
+
+	<!-- HIDE OR SHOW MENU FOR READYMADE THEME 9  -->
+	<template id="sh_corpomate_theme_layout_readymade_9" name="readymade theme 9" active="False"></template>
+
+
+
+	<!-- HIDE OR SHOW MENU FOR READYMADE THEME 10  -->
+	<template id="sh_corpomate_theme_layout_readymade_10" name="readymade theme 10" active="False"></template>
+
+
+	<!-- HIDE OR SHOW MENU FOR READYMADE THEME 11  -->
+	<template id="sh_corpomate_theme_layout_readymade_11" name="readymade theme 11" active="False"></template>
+
+
+	<!-- HIDE OR SHOW MENU FOR READYMADE THEME 12  -->
+	<template id="sh_corpomate_theme_layout_readymade_12" name="readymade theme 12" active="False"></template>
+
+	<!-- HIDE OR SHOW MENU FOR READYMADE THEME 13  -->
+	<template id="sh_corpomate_theme_layout_readymade_13" name="readymade theme 13" active="False"></template>
+
+	<!-- HIDE OR SHOW MENU FOR READYMADE THEME 14  -->
+	<template id="sh_corpomate_theme_layout_readymade_14" name="readymade theme 14" active="False"></template>
+
+	<!-- HIDE OR SHOW MENU FOR READYMADE THEME 15  -->
+	<template id="sh_corpomate_theme_layout_readymade_15" name="readymade theme 15" active="False"></template>
+
+	<!-- HIDE OR SHOW MENU FOR READYMADE THEME 16  -->
+	<template id="sh_corpomate_theme_layout_readymade_16" name="readymade theme 16" active="False"></template>
+	<!-- HIDE OR SHOW MENU FOR READYMADE THEME 17  -->
+	<template id="sh_corpomate_theme_layout_readymade_17" name="readymade theme 17" active="False"></template>
+
+	<!-- HIDE OR SHOW MENU FOR READYMADE THEME 18  -->
+	<template id="sh_corpomate_theme_layout_readymade_18" name="readymade theme 18" active="False"></template>
+
+	<!-- HIDE OR SHOW MENU FOR READYMADE THEME 19  -->
+	<template id="sh_corpomate_theme_layout_readymade_19" name="readymade theme 19" active="False"></template>
+
+	<!-- HIDE OR SHOW MENU FOR READYMADE THEME 20  -->
+	<template id="sh_corpomate_theme_layout_readymade_20" name="readymade theme 20" active="False"></template>
+
+	<!-- HIDE OR SHOW MENU FOR READYMADE THEME 21  -->
+	<template id="sh_corpomate_theme_layout_readymade_21" name="readymade theme 21" active="False"></template>
+
+	<!-- HIDE OR SHOW MENU FOR READYMADE THEME 8  -->
+	<template id="sh_corpomate_theme_layout_readymade_none" name="readymade theme None" active="False"></template>
+
+</odoo>

@@ -1,0 +1,218 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- ABOUT US PAGE 19 -->
+    <template id="sh_corpomate_tmpl_about_us_19" name="about us">
+        <t t-call="website.layout">
+            <div id="wrap" class="oe_structure">
+                <section id="sh_corpomate_theme_section_483" class="js_cls_sh_corpomate_s_counter o_colored_level" data-snippet="sh_corpomate_theme_tmpl_483" data-name="About-us" style="background-image: none;">
+                    <div class="container">
+                        <h1 data-watermark="About" class="o_default_snippet_text">
+                            <span class="o_default_snippet_text">About </span>
+                            Us
+                        </h1>
+                        <div class="main-row">
+                            <div class="row">
+                                <div class="col-lg-6 col-md-12 o_colored_level">
+                                    <div class="sh_about_content">
+                                        <h2 class="o_default_snippet_text">Our Mission &amp;amp; Vission</h2>
+                                        <p class="first o_default_snippet_text">
+                                            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                                            tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                                            quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                                            consequat. Duis aute irure dolor in reprehenderit in voluptate.
+                                        </p>
+                                        <p class="second o_default_snippet_text">
+                                            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                                            tempor incididunt ut labore et dolore magna aliqua.
+                                        </p>
+                                    </div>
+                                    <div class="sh_about_sub_content">
+                                        <h4 class="o_default_snippet_text">
+                                            Why Crypto is best theme of your ICO
+                                        </h4>
+                                        <p class="o_default_snippet_text">
+                                            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                                            tempor incididunt ut labore et dolore magna aliqua.
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6 col-md-12 o_colored_level">
+                                    <div class="sh_about_img">
+                                        <img src="/sh_corpomate_theme/static/src/img/theme_19/images/about.png" loading="lazy" />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="main-row-1">
+                            <div class="row">
+                                <div class="col-xl-3 col-lg-3 col-md-6 col-12 o_colored_level">
+                                    <div class="sh_about_box">
+                                        <div>
+                                            <div class="sh_about_icon d-flex flex-wrap justify-content-center align-items-center">
+                                                <img src="/sh_corpomate_theme/static/src/img/theme_19/icon/001.png" alt="" width="60" height="60" loading="lazy" />
+                                            </div>
+                                            <div class="sh_about_text">
+                                                <h3 class="js_cls_counter_number o_default_snippet_text">8452</h3>
+                                                <p class="o_default_snippet_text">Cyber Security Projects</p>
+                                                <div class="sh_divider" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-xl-3 col-lg-3 col-md-6 col-12 o_colored_level">
+                                    <div class="sh_about_box">
+                                        <div>
+                                            <div class="sh_about_icon d-flex flex-wrap justify-content-center align-items-center">
+                                                <img src="/sh_corpomate_theme/static/src/img/theme_19/icon/002.png" alt="" width="60" height="60" loading="lazy" />
+                                            </div>
+                                            <div class="sh_about_text">
+                                                <h3 class="js_cls_counter_number o_default_snippet_text">100</h3>
+                                                <p class="o_default_snippet_text">Service Guarantee</p>
+                                                <div class="sh_divider" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-xl-3 col-lg-3 col-md-6 col-12 o_colored_level">
+                                    <div class="sh_about_box">
+                                        <div>
+                                            <div class="sh_about_icon d-flex flex-wrap justify-content-center align-items-center">
+                                                <img src="/sh_corpomate_theme/static/src/img/theme_19/icon/003.png" alt="" width="60" height="60" loading="lazy" />
+                                            </div>
+                                            <div class="sh_about_text">
+                                                <h3 class="js_cls_counter_number o_default_snippet_text">1658</h3>
+                                                <p class="o_default_snippet_text">Clients Protections </p>
+                                                <div class="sh_divider" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-xl-3 col-lg-3 col-md-6 col-12 o_colored_level">
+                                    <div class="sh_about_box">
+                                        <div>
+                                            <div class="sh_about_icon d-flex flex-wrap justify-content-center align-items-center">
+                                                <img src="/sh_corpomate_theme/static/src/img/theme_19/icon/004.png" alt="" width="60" height="60" loading="lazy" />
+                                            </div>
+                                            <div class="sh_about_text">
+                                                <h3 class="js_cls_counter_number o_default_snippet_text">150</h3>
+                                                <p class="o_default_snippet_text">Team Experts</p>
+                                                <div class="sh_divider" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <section id="sh_corpomate_theme_section_484" data-snippet="sh_corpomate_theme_tmpl_484" class="o_colored_level" data-name="About-service" style="background-image: none;">
+                    <div class="container">
+                        <div class="main-row">
+                            <div class="row">
+                                <div class="col-lg-6 col-md-12 o_colored_level">
+                                    <div class="sh_about-img">
+                                        <img src="/sh_corpomate_theme/static/src/img/theme_19/images/about-1.png" loading="lazy" />
+                                    </div>
+                                </div>
+                                <div class="col-lg-6 col-md-12 align-self-center o_colored_level">
+                                    <div class="sh_about-text">
+                                        <h3 class="o_default_snippet_text">
+                                                A simple platform give u lot of Solution
+                                            </h3>
+                                        <p class="o_default_snippet_text">
+                                                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                                                tempor incididunt ut labore et dolore magna aliqua.
+                                            </p>
+                                        <h4 class="o_default_snippet_text">
+                                            <div class="sub-div">
+                                                <img src="/sh_corpomate_theme/static/src/img/theme_19/icon/7-2.png" loading="lazy" />
+                                            </div>
+                                            Lorem Ipsum Dolor Sit Amet
+                                        </h4>
+                                        <h4 class="o_default_snippet_text">
+                                            <div class="sub-div">
+                                                <img src="/sh_corpomate_theme/static/src/img/theme_19/icon/7-2.png" loading="lazy" />
+                                            </div>
+                                            Lorem Ipsum Dolor Sit Amet
+                                        </h4>
+                                        <h4 class="o_default_snippet_text">
+                                            <div class="sub-div">
+                                                <img src="/sh_corpomate_theme/static/src/img/theme_19/icon/7-2.png" loading="lazy" />
+                                            </div>
+                                            Lorem Ipsum Dolor Sit Amet
+                                        </h4>
+                                        <h4 class="o_default_snippet_text">
+                                            <div class="sub-div">
+                                                <img src="/sh_corpomate_theme/static/src/img/theme_19/icon/7-2.png" loading="lazy" />
+                                            </div>
+                                            Lorem Ipsum Dolor Sit Amet
+                                        </h4>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <section id="sh_corpomate_theme_section_485" data-snippet="sh_corpomate_theme_tmpl_485" class="o_colored_level" data-name="About-Trust" style="background-image: none;">
+                    <div class="container">
+                        <div class="sub-div">
+                            <img src="/sh_corpomate_theme/static/src/img/theme_19/icon/line.png" loading="lazy" />
+                        </div>
+                        <h1 data-watermark="Trust Us" class="o_default_snippet_text">
+                            <span class="o_default_snippet_text">Why All </span>
+                            Trust Us
+                        </h1>
+                        <div class="main-row">
+                            <div class="row">
+                                <div class="col-xl-3 col-md-6 col-12 text-center o_colored_level">
+                                    <div class="sh_control-box">
+                                        <div class="sh_tumb">
+                                            <img src="/sh_corpomate_theme/static/src/img/theme_19/icon/-01.png" alt="" loading="lazy" />
+                                        </div>
+                                        <h3 class="sh_subtitle o_default_snippet_text">Safe &amp;amp; Confidential</h3>
+                                        <p class="sh_text o_default_snippet_text">
+                                            Lorem ipsum dolor sit amet consectur.
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="col-xl-3 col-md-6 col-12 text-center o_colored_level">
+                                    <div class="sh_control-box">
+                                        <div class="sh_tumb">
+                                            <img src="/sh_corpomate_theme/static/src/img/theme_19/icon/-02.png" alt="" loading="lazy" />
+                                        </div>
+                                        <h3 class="sh_subtitle o_default_snippet_text">Fast Solutions</h3>
+                                        <p class="sh_text o_default_snippet_text">
+                                            Lorem ipsum dolor sit amet consectur.
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="col-xl-3 col-md-6 col-12 text-center o_colored_level">
+                                    <div class="sh_control-box">
+                                        <div class="sh_tumb">
+                                            <img src="/sh_corpomate_theme/static/src/img/theme_19/icon/-03.png" alt="" loading="lazy" />
+                                        </div>
+                                        <h3 class="sh_subtitle o_default_snippet_text">Customer Care</h3>
+                                        <p class="sh_text o_default_snippet_text">
+                                            Lorem ipsum dolor sit amet consectur.
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="col-xl-3 col-md-6 col-12 text-center o_colored_level">
+                                    <div class="sh_control-box">
+                                        <div class="sh_tumb">
+                                            <img src="/sh_corpomate_theme/static/src/img/theme_19/icon/-04.png" alt="" loading="lazy" />
+                                        </div>
+                                        <h3 class="sh_subtitle o_default_snippet_text">Cashback Program</h3>
+                                        <p class="sh_text o_default_snippet_text">
+                                            Lorem ipsum dolor sit amet consectur.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </t>
+    </template>
+</odoo>

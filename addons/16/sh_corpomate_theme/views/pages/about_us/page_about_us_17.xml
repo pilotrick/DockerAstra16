@@ -1,0 +1,516 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+	<!-- ABOUT US PAGE 17 -->
+	<template id="sh_corpomate_tmpl_about_us_17" name="about us">
+		<t t-call="website.layout">
+			<div id="wrap" class="oe_structure">
+				<section id="sh_corpomate_theme_section_421" data-snippet="sh_corpomate_theme_tmpl_421" class="o_colored_level" data-name=" About-Banner">
+					<div class="sh_banner">
+						<img src="/sh_corpomate_theme/static/src/img/theme_17/images/pexels-photo-167676.jpeg" loading="lazy" />
+					</div>
+					<div class="sh_banner_content">
+						<ul>
+							<li>
+								<a href="/home17" class="o_default_snippet_text">
+									Home
+								</a>
+							</li>
+							<li>
+								<span href="#" class="active o_default_snippet_text">
+									About
+								</span>
+							</li>
+						</ul>
+						<div class="shape">
+							<img src="/sh_corpomate_theme/static/src/img/theme_17/images/shape.png" loading="lazy" />
+						</div>
+						<h1 class="o_default_snippet_text">
+							About Us
+						</h1>
+					</div>
+				</section>
+				<section id="sh_corpomate_theme_section_422" data-snippet="sh_corpomate_theme_tmpl_422" class="o_colored_level" data-name="About Us">
+					<div class="container">
+						<div class="row" style="">
+							<div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12 mt-5 o_colored_level">
+								<div class="about-us-img">
+									<div class="about-us-img-sub-content">
+										<p class="o_default_snippet_text">
+											Trusted By
+										</p>
+										<h3 class="o_default_snippet_text">
+											4880
+										</h3>
+									</div>
+									<img src="/sh_corpomate_theme/static/src/img/theme_17/images/pexels-photo-4483558.jpeg" loading="lazy" />
+									<div class="about-us-img-content">
+										<h3 class="o_default_snippet_text">
+											25 Years Of Experience
+										</h3>
+									</div>
+								</div>
+							</div>
+							<div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12 mt-5 o_colored_level">
+								<div class="about-us-content">
+									<div class="sub-content">
+										<div class="sub-content-text o_default_snippet_text">
+											About Us
+										</div>
+									</div>
+									<h3 class="o_default_snippet_text">
+										We Provide Best Dispatched And
+										<br />
+										Parcel Services
+									</h3>
+									<p class="o_default_snippet_text">
+										Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+										tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.
+										quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+										consequat.
+									</p>
+									<div class="about-us-sub-content">
+										<div class="about-us-sub-content-1">
+											<img src="/sh_corpomate_theme/static/src/img/theme_17/images/stock.png" loading="lazy" />
+											<span class="icon-details o_default_snippet_text">
+												Door to Door Service
+											</span>
+											<p class="o_default_snippet_text">
+												Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+											</p>
+										</div>
+										<div class="about-us-sub-content-1">
+											<img src="/sh_corpomate_theme/static/src/img/theme_17/images/stock.png" loading="lazy" />
+											<span class="icon-details o_default_snippet_text">
+												Door to Door Service
+											</span>
+											<p class="o_default_snippet_text">
+												Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+											</p>
+										</div>
+									</div>
+									<div class="about-us-content-button">
+										<a href="#" class="btn btn-md service_button o_default_snippet_text">
+											Read More
+										</a>
+										<a href="#" class="btn btn-md about_button o_default_snippet_text">
+											About us
+										</a>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</section>
+				<section id="sh_corpomate_theme_section_423" data-snippet="sh_corpomate_theme_tmpl_423" class="o_colored_level" data-name="About-Services">
+					<div class="container">
+						<div class="row" style=" margin-top:20px;">
+							<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 mt-3 o_colored_level">
+								<div class="main-row">
+									<div class="sh_sec_heading">
+										<div class="sh_left">
+											<div class="sub-content">
+												<div class="sub-content-text o_default_snippet_text">
+													Real Solutions, Real Fast!
+												</div>
+											</div>
+											<h3 class="o_default_snippet_text">
+												Delivering the best global
+												<br />
+												logistics solutions.
+											</h3>
+										</div>
+										<div class="about-us-button">
+											<a href="#" class="btn btn-md service_button o_default_snippet_text">
+												All Services
+											</a>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="unique-bg">
+							<div class="unique-bg-1">
+							</div>
+							<div class="unique-bg-2 rotateme">
+							</div>
+							<div class="row mt-3 third-row">
+								<div class="col-xl-3 col-lg-6 col-md-6 col-sm-12 col-12 mt-4 o_colored_level">
+									<div class="inspiration-card">
+										<div class="insporation-card-sub-div">
+											<img src="/sh_corpomate_theme/static/src/img/theme_17/images/plane.png" loading="lazy" />
+										</div>
+										<div class="inspiration-card-icon">
+											<img src="/sh_corpomate_theme/static/src/img/theme_17/images/plane.png" loading="lazy" />
+										</div>
+										<div class="inspiration-card-heading">
+											<h4 class="o_default_snippet_text">
+												Get Insight Inspiration
+											</h4>
+										</div>
+										<div class="inspiration-card-text o_default_snippet_text">
+											Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+											tempor incididunt.
+										</div>
+										<div class="inspiration-card-btn">
+											<div class="inspiration-card-btn-icon">
+												<span class="fa fa-arrow-right">
+												</span>
+												<span class="inspiration-card-link">
+													<a href="#" class="o_default_snippet_text">
+														Read More
+													</a>
+												</span>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="col-xl-3 col-lg-6 col-md-6 col-sm-12 col-12 mt-4 o_colored_level">
+									<div class="inspiration-card">
+										<div class="insporation-card-sub-div">
+											<img src="/sh_corpomate_theme/static/src/img/theme_17/images/boat.png" loading="lazy" />
+										</div>
+										<div class="inspiration-card-icon">
+											<img src="/sh_corpomate_theme/static/src/img/theme_17/images/boat.png" loading="lazy" />
+										</div>
+										<div class="inspiration-card-heading">
+											<h4 class="o_default_snippet_text">
+												Get Insight Inspiration
+											</h4>
+										</div>
+										<div class="inspiration-card-text o_default_snippet_text">
+											Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+											tempor incididunt.
+										</div>
+										<div class="inspiration-card-btn">
+											<div class="inspiration-card-btn-icon">
+												<span class="fa fa-arrow-right">
+												</span>
+												<span class="inspiration-card-link">
+													<a href="#" class="o_default_snippet_text">
+														Read More
+													</a>
+												</span>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="col-xl-3 col-lg-6 col-md-6 col-sm-12 col-12 mt-4 o_colored_level">
+									<div class="inspiration-card">
+										<div class="insporation-card-sub-div">
+											<img src="/sh_corpomate_theme/static/src/img/theme_17/images/truck.png" loading="lazy" />
+										</div>
+										<div class="inspiration-card-icon">
+											<img src="/sh_corpomate_theme/static/src/img/theme_17/images/truck.png" loading="lazy" />
+										</div>
+										<div class="inspiration-card-heading">
+											<h4 class="o_default_snippet_text">
+												Get Insight Inspiration
+											</h4>
+										</div>
+										<div class="inspiration-card-text o_default_snippet_text">
+											Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+											tempor incididunt.
+										</div>
+										<div class="inspiration-card-btn">
+											<div class="inspiration-card-btn-icon">
+												<span class="fa fa-arrow-right">
+												</span>
+												<span class="inspiration-card-link">
+													<a href="#" class="o_default_snippet_text">
+														Read More
+													</a>
+												</span>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="col-xl-3 col-lg-6 col-md-6 col-sm-12 col-12 mt-4 o_colored_level">
+									<div class="inspiration-card">
+										<div class="insporation-card-sub-div">
+											<img src="/sh_corpomate_theme/static/src/img/theme_17/images/parcel.png" loading="lazy" />
+										</div>
+										<div class="inspiration-card-icon">
+											<img src="/sh_corpomate_theme/static/src/img/theme_17/images/parcel.png" loading="lazy" />
+										</div>
+										<div class="inspiration-card-heading">
+											<h4 class="o_default_snippet_text">
+												Get Insight Inspiration
+											</h4>
+										</div>
+										<div class="inspiration-card-text o_default_snippet_text">
+											Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+											tempor incididunt.
+										</div>
+										<div class="inspiration-card-btn">
+											<div class="inspiration-card-btn-icon">
+												<span class="fa fa-arrow-right">
+												</span>
+												<span class="inspiration-card-link">
+													<a href="#" class="o_default_snippet_text">
+														Read More
+													</a>
+												</span>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</section>
+				<section id="sh_corpomate_theme_section_424" data-snippet="sh_corpomate_theme_tmpl_424" class="o_colored_level" data-name="About-Team">
+					<div class="container">
+						<div class="sub-content mx-auto d-block">
+							<div class="sub-content-text o_default_snippet_text">
+								Our Team Members
+							</div>
+						</div>
+						<h4 class="text-center o_default_snippet_text">
+							Meet Our Expert Team
+							<br />
+							Members
+						</h4>
+						<div class="row mt-3" style="">
+							<div class="col-xl-3 col-lg-3 col-md-3 col-sm-12 col-12 mt-4 o_colored_level" style="padding:0px;">
+								<div class="our-team">
+									<div class="our-team-img">
+										<div class="layer">
+											<img src="/sh_corpomate_theme/static/src/img/theme_17/images/male-worker-factory_1303-14088.jpg" loading="lazy" />
+										</div>
+										<div class="team-icon">
+											<a href="#" tabindex="0">
+												<span class="fa fa-facebook-f">
+												</span>
+											</a>
+											<a href="#" tabindex="0">
+												<span class="fa fa-twitter">
+												</span>
+											</a>
+											<a href="#" tabindex="0">
+												<span class="fa fa-instagram">
+												</span>
+											</a>
+											<a href="#" tabindex="0">
+												<span class="fa fa-google">
+												</span>
+											</a>
+										</div>
+										<div class="our-team-img-icon">
+											<a href="#">
+												<span class="fa fa-plus">
+												</span>
+											</a>
+										</div>
+									</div>
+									<h4 class="o_default_snippet_text">
+										Blaine H. Vallego
+									</h4>
+									<p class="o_default_snippet_text">
+										CEO &amp;amp; Founder
+									</p>
+									<div class="unique-bg-2 rotateme">
+									</div>
+								</div>
+							</div>
+							<div class="col-xl-3 col-lg-3 col-md-3 col-sm-12 col-12 mt-4 o_colored_level" style="padding:0px;">
+								<div class="our-team">
+									<div class="our-team-img">
+										<div class="layer">
+											<img src="/sh_corpomate_theme/static/src/img/theme_17/images/portrait-young-worker-hard-hat-large-metalworking-plant_146671-19570.jpg" loading="lazy" />
+										</div>
+										<div class="team-icon">
+											<a href="#" tabindex="0">
+												<span class="fa fa-facebook-f">
+												</span>
+											</a>
+											<a href="#" tabindex="0">
+												<span class="fa fa-twitter">
+												</span>
+											</a>
+											<a href="#" tabindex="0">
+												<span class="fa fa-instagram">
+												</span>
+											</a>
+											<a href="#" tabindex="0">
+												<span class="fa fa-google">
+												</span>
+											</a>
+										</div>
+										<div class="our-team-img-icon">
+											<a href="#">
+												<span class="fa fa-plus">
+												</span>
+											</a>
+										</div>
+									</div>
+									<h4 class="o_default_snippet_text">
+										Olivier D. Dummer
+									</h4>
+									<p class="o_default_snippet_text">
+										Genral Manager
+									</p>
+									<div class="unique-bg-2 rotateme">
+									</div>
+								</div>
+							</div>
+							<div class="col-xl-3 col-lg-3 col-md-3 col-sm-12 col-12 mt-4 o_colored_level" style="padding:0px;">
+								<div class="our-team">
+									<div class="our-team-img">
+										<div class="layer">
+											<img src="/sh_corpomate_theme/static/src/img/theme_17/images/portrait-professional-architect-woman-wearing-yellow-helmet-standing-outdoors-engineer-architect-concept_58466-12277.jpg" loading="lazy" />
+										</div>
+										<div class="team-icon">
+											<a href="#" tabindex="0">
+												<span class="fa fa-facebook-f">
+												</span>
+											</a>
+											<a href="#" tabindex="0">
+												<span class="fa fa-twitter">
+												</span>
+											</a>
+											<a href="#" tabindex="0">
+												<span class="fa fa-instagram">
+												</span>
+											</a>
+											<a href="#" tabindex="0">
+												<span class="fa fa-google">
+												</span>
+											</a>
+										</div>
+										<div class="our-team-img-icon">
+											<a href="#">
+												<span class="fa fa-plus">
+												</span>
+											</a>
+										</div>
+									</div>
+									<h4 class="o_default_snippet_text">
+										Sandra Johnson
+									</h4>
+									<p class="o_default_snippet_text">
+										Web Designer
+									</p>
+									<div class="unique-bg-2 rotateme">
+									</div>
+								</div>
+							</div>
+							<div class="col-xl-3 col-lg-3 col-md-3 col-sm-12 col-12 mt-4 o_colored_level" style="padding:0px;">
+								<div class="our-team">
+									<div class="our-team-img">
+										<div class="layer">
+											<img src="/sh_corpomate_theme/static/src/img/theme_17/images/portrait-young-worker-hard-hat-large-metalworking-plant_146671-19538.jpg" loading="lazy" />
+										</div>
+										<div class="team-icon">
+											<a href="#" tabindex="0">
+												<span class="fa fa-facebook-f">
+												</span>
+											</a>
+											<a href="#" tabindex="0">
+												<span class="fa fa-twitter">
+												</span>
+											</a>
+											<a href="#" tabindex="0">
+												<span class="fa fa-instagram">
+												</span>
+											</a>
+											<a href="#" tabindex="0">
+												<span class="fa fa-google">
+												</span>
+											</a>
+										</div>
+										<div class="our-team-img-icon">
+											<a href="#">
+												<span class="fa fa-plus">
+												</span>
+											</a>
+										</div>
+									</div>
+									<h4 class="o_default_snippet_text">
+										Mitchell T Garret
+									</h4>
+									<p class="o_default_snippet_text">
+										Assistant Manager
+									</p>
+									<div class="unique-bg-2 rotateme">
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</section>
+				<section id="sh_corpomate_theme_section_425" class="js_cls_sh_corpomate_s_counter oe_img_bg o_colored_level" style="background: url(&quot;/sh_corpomate_theme/static/src/img/theme_17/images/bg-11.jpg&quot;) center top / cover fixed;" data-snippet="sh_corpomate_theme_tmpl_425" data-name="counter">
+					<div class="container">
+						<div class="sub-content mx-auto d-block">
+							<div class="sub-content-text o_default_snippet_text">
+								Company Statatics
+							</div>
+						</div>
+						<h4 class="text-center o_default_snippet_text">
+							We are Proffesional logostics &amp;amp;
+							<br />
+							Transportations Agency
+						</h4>
+						<div class="row mt-4" style="">
+							<div class="col-xl-3 col-lg-3 col-md-3 col-sm-12 col-12 mt-3 o_colored_level" style="padding:0px;">
+								<div class="counter-details text-center">
+									<div class="counter-details-icon">
+										<img src="/sh_corpomate_theme/static/src/img/theme_17/images/truck.png" loading="lazy" />
+									</div>
+									<h5 clsas="js_cls_counter_number text-light font-weight-bold" class="o_default_snippet_text">
+										3,214M
+									</h5>
+									<div class="counter-border">
+										<div class="sub-counter-border">
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="col-xl-3 col-lg-3 col-md-3 col-sm-12 col-12 mt-3 o_colored_level" style="padding:0px;">
+								<div class="counter-details text-center">
+									<div class="counter-details-icon">
+										<img src="/sh_corpomate_theme/static/src/img/theme_17/images/stock.png" loading="lazy" />
+									</div>
+									<h5 clsas="js_cls_counter_number text-light font-weight-bold" class="o_default_snippet_text">
+										5,154M
+									</h5>
+									<div class="counter-border">
+										<div class="sub-counter-border">
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="col-xl-3 col-lg-3 col-md-3 col-sm-12 col-12 mt-3 o_colored_level" style="padding:0px;">
+								<div class="counter-details text-center">
+									<div class="counter-details-icon">
+										<img src="/sh_corpomate_theme/static/src/img/theme_17/images/boat.png" loading="lazy" />
+									</div>
+									<h5 clsas="js_cls_counter_number text-light font-weight-bold" class="o_default_snippet_text">
+										7,145M
+									</h5>
+									<div class="counter-border">
+										<div class="sub-counter-border">
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="col-xl-3 col-lg-3 col-md-3 col-sm-12 col-12 mt-3 o_colored_level" style="padding:0px;">
+								<div class="counter-details text-center">
+									<div class="counter-details-icon">
+										<img src="/sh_corpomate_theme/static/src/img/theme_17/images/plane.png" loading="lazy" />
+									</div>
+									<h5 clsas="js_cls_counter_number text-light font-weight-bold" class="o_default_snippet_text">
+										4,541M
+									</h5>
+									<div class="counter-border">
+										<div class="sub-counter-border">
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</section>
+			</div>
+		</t>
+	</template>
+</odoo>

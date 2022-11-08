@@ -1,0 +1,200 @@
+//------------------------------------------------------------------------------
+// Colors
+//------------------------------------------------------------------------------
+// *{font-family: 'Titillium Web', sans-serif;}
+/*-----top-bar---*/
+$tp-primary:#2b47bd;
+$tp-text:#fff;
+/*-----top-bar---*/
+
+/*-----header-bar---*/
+$hd-primary:#fff;
+$hd-text:#585b60;
+$hd-primary-active:#3d60f4;
+/*-----header-bar---*/
+
+/*---coyright--*/
+$cr-primary:#001529;
+$cr-text:#fff;
+/*---coyright--*/
+
+/*---Language--*/
+$sh_is_show_lang:False;
+/*---Language--*/
+
+
+
+$o-color-palettes: map-merge($o-color-palettes,
+    (
+        'corpomate-1': (
+	        'o-color-1': #5967ef,
+	        'o-color-2': #edeef4,
+	        'o-color-3': #F6F6F6,
+	        'o-color-4': #FFFFFF,
+	        'o-color-5': #383E45,       
+        ),
+
+        'corpomate-2': (
+	        'o-color-1': #ef6c00,
+	        'o-color-2': #eaeaea,
+	        'o-color-3': #F6F6F6,
+	        'o-color-4': #FFFFFF,
+	        'o-color-5': #383E45,       
+        ),
+
+        'corpomate-3': (
+	        'o-color-1': #e3b000,
+	        'o-color-2': #333333,
+	        'o-color-3': #F6F6F6,
+	        'o-color-4': #FFFFFF,
+	        'o-color-5': #383E45,    
+        ),
+
+        'corpomate-4': (
+	        'o-color-1': #2196f3,
+	        'o-color-2': #cad8e3,
+	        'o-color-3': #F6F6F6,
+	        'o-color-4': #FFFFFF,
+	        'o-color-5': #383E45,      
+        ),
+
+        'corpomate-5': (
+	        'o-color-1': #f53c79,
+	        'o-color-2': #f35d46,
+	        'o-color-3': #F6F6F6,
+	        'o-color-4': #FFFFFF,
+	        'o-color-5': #383E45,    
+        ),
+
+		'corpomate-6': (
+	        'o-color-1': #ff4458,
+	        'o-color-2': #ff4458,
+	        'o-color-3': #F6F6F6,
+	        'o-color-4': #FFFFFF,
+	        'o-color-5': #383E45,    
+        ),
+
+		'corpomate-7': (
+	        'o-color-1': #7450a9,
+	        'o-color-2': #7450a9,
+	        'o-color-3': #F6F6F6,
+	        'o-color-4': #FFFFFF,
+	        'o-color-5': #383E45,    
+        ),
+
+		'corpomate-8': (
+	        'o-color-1': #445ee9,
+	        'o-color-2': #7450a9,
+	        'o-color-3': #F6F6F6,
+	        'o-color-4': #FFFFFF,
+	        'o-color-5': #383E45,    
+        ),
+
+		'corpomate-9': (
+	        'o-color-1': #333a4d,
+	        'o-color-2': #7450a9,
+	        'o-color-3': #F6F6F6,
+	        'o-color-4': #FFFFFF,
+	        'o-color-5': #383E45,    
+        ),
+
+		'corpomate-10': (
+	        'o-color-1': #3190e7,
+	        'o-color-2': #7450a9,
+	        'o-color-3': #F6F6F6,
+	        'o-color-4': #FFFFFF,
+	        'o-color-5': #383E45,    
+        ),
+
+		'corpomate-11': (
+	        'o-color-1': #3190e7,
+	        'o-color-2': #7450a9,
+	        'o-color-3': #F6F6F6,
+	        'o-color-4': #FFFFFF,
+	        'o-color-5': #383E45,    
+        ),
+
+		'corpomate-12': (
+	        'o-color-1': #00235a,
+	        'o-color-2': #ff5e14,
+	        'o-color-3': #F6F6F6,
+	        'o-color-4': #FFFFFF,
+	        'o-color-5': #383E45,    
+        ),
+
+		'corpomate-13': (
+	        'o-color-1': #911439,
+	        'o-color-2': #919191,
+	        'o-color-3': #F6F6F6,
+	        'o-color-4': #FFFFFF,
+	        'o-color-5': #383E45,    
+        ),
+
+		'corpomate-14': (
+	        'o-color-1': #FF4880,
+	        'o-color-2': #393D72,
+	        'o-color-3': #F6F6F6,
+	        'o-color-4': #FFFFFF,
+	        'o-color-5': #383E45,    
+        ),
+
+		'corpomate-15': (
+	        'o-color-1': #F35C27,
+	        'o-color-2': #020E28,
+	        'o-color-3': #020E28,
+	        'o-color-4': #FFFFFF,
+	        'o-color-5': #383E45,    
+        ),
+
+		'corpomate-16': (
+	        'o-color-1': #3368c6,
+	        'o-color-2': #031b4e,
+	        'o-color-3': #F6F6F6,
+	        'o-color-4': #FFFFFF,
+	        'o-color-5': #383E45,    
+        ),
+
+		'corpomate-17': (
+	        'o-color-1': #ff5d2c,
+	        'o-color-2': #05103b,
+	        'o-color-3': #F6F6F6,
+	        'o-color-4': #FFFFFF,
+	        'o-color-5': #383E45,    
+        ),
+
+		'corpomate-18': (		
+	        'o-color-1': #104cba,
+	        'o-color-2': #414141,
+	        'o-color-3': #F6F6F6,
+	        'o-color-4': #FFFFFF,
+	        'o-color-5': #383E45,    
+        ),
+
+		'corpomate-19': (		
+	        'o-color-1': #181a99,
+	        'o-color-2': #616161,
+	        'o-color-3': #F6F6F6,
+	        'o-color-4': #FFFFFF,
+	        'o-color-5': #383E45,    
+        ),
+
+		'corpomate-20': (		
+	        'o-color-1': #fe5b04,
+	        'o-color-2': #9a9a9a,
+	        'o-color-3': #F6F6F6,
+	        'o-color-4': #FFFFFF,
+	        'o-color-5': #383E45,    
+        ),
+		'corpomate-21': (		
+	        'o-color-1': #2F39D3,
+	        'o-color-2': #fd4431,
+	        'o-color-3': #222222,
+	        'o-color-4': #FFFFFF,
+	        'o-color-5': #383E45,    
+        ),
+                                        
+
+    )
+);
+
+

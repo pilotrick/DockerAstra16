@@ -1,0 +1,923 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- HOME PAGE 19 -->
+    <template id="sh_corpomate_tmpl_home_19" name="home">
+        <t t-call="website.layout">
+            <div id="wrap" class="oe_structure">
+                <section id="sh_corpomate_theme_section_475" style="background: url(&quot;/sh_corpomate_theme/static/src/img/theme_19/images/Banner-overly.png&quot;) right top / cover no-repeat; position: relative;" data-snippet="sh_corpomate_theme_tmpl_475" class="o_colored_level oe_img_bg o_bg_img_center" data-name="Banner" data-original-title="" title="" aria-describedby="tooltip329942">
+                    <div class="container">
+                        <div class="banner">
+                            <div class="main-banner-row">
+                                <div class="header-content">
+                                    <h1 class="o_default_snippet_text">
+                                        Buy &amp;amp;  Sell Crypto Currency
+                                        <br />
+                                        Easy,Fast And Secure!
+                                    </h1>
+                                    <p class="o_default_snippet_text">
+                                        The Platform helps to investors to Make easy
+                                        <br />
+                                        to Purchase and Sell their tokens
+                                    </p>
+                                    <div class="header-button">
+                                        <a href="#" class="btn o_default_snippet_text">
+                                                                        Resigster Now
+                                                                    </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="header-content-image text-center text-lg-start">
+                        <img src="/sh_corpomate_theme/static/src/img/theme_19/images/banner.png" alt="image" loading="lazy" />
+                    </div>
+                </section>
+                <section id="sh_corpomate_theme_section_476" data-snippet="sh_corpomate_theme_tmpl_476" class="o_colored_level" data-name="About us" style="background-image: none;">
+                    <div class="container">
+                        <h1 data-watermark="Information" class="o_default_snippet_text">
+                            <span class="o_default_snippet_text">Why</span>
+                            Choose Us
+                        </h1>
+                        <div class="main-row">
+                            <div class="row">
+                                <div class="col-xl-4 col-lg-4 col-md-4 col-12 o_colored_level">
+                                    <div class="sh_about_box">
+                                        <div>
+                                            <div class="sh_about_icon d-flex flex-wrap justify-content-center align-items-center">
+                                                <img src="/sh_corpomate_theme/static/src/img/theme_19/icon/1.png" alt="" width="60" height="60" loading="lazy" />
+                                            </div>
+                                            <div class="sh_about_text">
+                                                <h3 class="o_default_snippet_text">Rapid ICO Growth</h3>
+                                                <p class="o_default_snippet_text">Curabitur erat tortor, condimentum ut ultricies id, faucibus in dui. Vi vamus fringilla mollis sem.</p>
+                                                <div class="sh_divider" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-xl-4 col-lg-4 col-md-4 col-12 o_colored_level">
+                                    <div class="sh_about_box">
+                                        <div>
+                                            <div class="sh_about_icon d-flex flex-wrap justify-content-center align-items-center">
+                                                <img src="/sh_corpomate_theme/static/src/img/theme_19/icon/2.png" alt="" width="60" height="60" loading="lazy" />
+                                            </div>
+                                            <div class="sh_about_text">
+                                                <h3 class="o_default_snippet_text">Easy Payment</h3>
+                                                <p class="o_default_snippet_text">Curabitur erat tortor, condimentum ut ultricies id, faucibus in dui. Vi vamus fringilla mollis sem.</p>
+                                                <div class="sh_divider" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-xl-4 col-lg-4 col-md-4 col-12 o_colored_level">
+                                    <div class="sh_about_box">
+                                        <div>
+                                            <div class="sh_about_icon d-flex flex-wrap justify-content-center align-items-center">
+                                                <img src="/sh_corpomate_theme/static/src/img/theme_19/icon/3.png" alt="" width="60" height="60" loading="lazy" />
+                                            </div>
+                                            <div class="sh_about_text">
+                                                <h3 class="o_default_snippet_text">Security Layer</h3>
+                                                <p class="o_default_snippet_text">Curabitur erat tortor, condimentum ut ultricies id, faucibus in dui. Vi vamus fringilla mollis sem.</p>
+                                                <div class="sh_divider" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="second-row">
+                            <div class="row">
+                                <div class="col-lg-6 col-md-12 col-12 o_colored_level">
+                                    <div class="sh_box">
+                                        <img src="/sh_corpomate_theme/static/src/img/theme_19/images/feature-img-1.png" loading="lazy" />
+                                    </div>
+                                </div>
+                                <div class="col-lg-6 col-md-12 col-12 o_colored_level">
+                                    <div class="sh_box_content">
+                                        <h2 class="o_default_snippet_text">
+                                                                        Multiple Payments Easier On One Platform
+                                                                    </h2>
+                                        <p class="o_default_snippet_text">
+                                                                        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                                                                        tempor incididunt ut labore et dolore magna aliqua.
+                                                                    </p>
+                                        <div class="sh_icon_box">
+                                            <ul class="sh_list">
+                                                <li class="list-item">
+                                                    <span class="sh_icon">
+                                                        <img src="/sh_corpomate_theme/static/src/img/theme_19/icon/4.png" alt="" loading="lazy" />
+                                                    </span>
+                                                    <div class="sh_content">
+                                                        <h3 class="sh_subtitle o_default_snippet_text">Secure Payments</h3>
+                                                        <p class="sh_text o_default_snippet_text"> Lorem ipsum dolor sit amet consect</p>
+                                                    </div>
+                                                </li>
+                                                <li class="list-item">
+                                                    <span class="sh_icon">
+                                                        <img src="/sh_corpomate_theme/static/src/img/theme_19/icon/5.png" alt="" loading="lazy" />
+                                                    </span>
+                                                    <div class="sh_content">
+                                                        <h3 class="sh_subtitle o_default_snippet_text">Transaction Anywhere Any Time</h3>
+                                                        <p class="sh_text o_default_snippet_text"> Lorem ipsum dolor sit amet consect</p>
+                                                    </div>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <section id="sh_corpomate_theme_section_477" data-snippet="sh_corpomate_theme_tmpl_477" class="o_colored_level" data-name="About Expense" style="background-image: none;">
+                    <div class="container">
+                        <h1 data-watermark="Expenses" class="o_default_snippet_text">
+                            <span class="o_default_snippet_text">About</span>
+                            Expenses
+                        </h1>
+                        <div class="main-row">
+                            <div class="row">
+                                <div class="col-xl-3 col-md-6 col-12 text-center o_colored_level">
+                                    <div class="sh_control-box">
+                                        <div class="sh_tumb">
+                                            <img src="/sh_corpomate_theme/static/src/img/theme_19/icon/6.png" alt="" loading="lazy" />
+                                        </div>
+                                        <h3 class="sh_subtitle o_default_snippet_text">Your Earnings</h3>
+                                        <p class="sh_text o_default_snippet_text">
+                                                                        Lorem ipsum dolor sit amet
+                                                                    </p>
+                                    </div>
+                                </div>
+                                <div class="col-xl-3 col-md-6 col-12 text-center o_colored_level">
+                                    <div class="sh_control-box">
+                                        <div class="sh_tumb">
+                                            <img src="/sh_corpomate_theme/static/src/img/theme_19/icon/7.png" alt="" loading="lazy" />
+                                        </div>
+                                        <h3 class="sh_subtitle o_default_snippet_text">Easy Payments</h3>
+                                        <p class="sh_text o_default_snippet_text">
+                                                                        Lorem ipsum dolor sit amet
+                                                                    </p>
+                                    </div>
+                                </div>
+                                <div class="col-xl-3 col-md-6 col-12 text-center o_colored_level">
+                                    <div class="sh_control-box">
+                                        <div class="sh_tumb">
+                                            <img src="/sh_corpomate_theme/static/src/img/theme_19/icon/8.png" alt="" loading="lazy" />
+                                        </div>
+                                        <h3 class="sh_subtitle o_default_snippet_text">Track Expenses</h3>
+                                        <p class="sh_text o_default_snippet_text">
+                                                                        Lorem ipsum dolor sit amet
+                                                                    </p>
+                                    </div>
+                                </div>
+                                <div class="col-xl-3 col-md-6 col-12 text-center o_colored_level">
+                                    <div class="sh_control-box">
+                                        <div class="sh_tumb">
+                                            <img src="/sh_corpomate_theme/static/src/img/theme_19/icon/9.png" alt="" loading="lazy" />
+                                        </div>
+                                        <h3 class="sh_subtitle o_default_snippet_text">Get Report</h3>
+                                        <p class="sh_text o_default_snippet_text">
+                                                                        Lorem ipsum dolor sit amet
+                                                                    </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <section id="sh_corpomate_theme_section_478" data-snippet="sh_corpomate_theme_tmpl_478" class="o_colored_level" data-name="Token" style="background-image: none;">
+                    <div class="container">
+                        <h1 data-watermark="Token" class="o_default_snippet_text">
+                            <span class="o_default_snippet_text">Token</span>
+                            Info
+                        </h1>
+                        <div class="main-row">
+                            <div class="sub-div">
+                                <img class="img" src="/sh_corpomate_theme/static/src/img/theme_19/images/fdot-1.png" loading="lazy" />
+                                <img class="img-1" src="/sh_corpomate_theme/static/src/img/theme_19/images/fdot-3.png" loading="lazy" />
+                            </div>
+                            <div class="sub-div-1">
+                                <img src="/sh_corpomate_theme/static/src/img/theme_19/images/fdot-2.png" loading="lazy" />
+                            </div>
+                            <div class="row">
+                                <div class="col-lg-6 col-md-12 col-12 o_colored_level">
+                                    <div class="token_content">
+                                        <h3 class="o_default_snippet_text">Information of Token</h3>
+                                    </div>
+                                    <div class="token_text">
+                                        <div class="token_item o_default_snippet_text">Token Id</div>
+                                        <div class="token_data o_default_snippet_text">BT-123-AG-2021</div>
+                                    </div>
+                                    <div class="token_text">
+                                        <div class="token_item o_default_snippet_text">Token Name</div>
+                                        <div class="token_data o_default_snippet_text">Crypto Token</div>
+                                    </div>
+                                    <div class="token_text">
+                                        <div class="token_item o_default_snippet_text">Price</div>
+                                        <div class="token_data o_default_snippet_text">0.780 USD</div>
+                                    </div>
+                                    <div class="token_text">
+                                        <div class="token_item o_default_snippet_text">Type of Token </div>
+                                        <div class="token_data o_default_snippet_text">BIT-C 75</div>
+                                    </div>
+                                    <div class="token_text">
+                                        <div class="token_item o_default_snippet_text">Transaction Amount</div>
+                                        <div class="token_data o_default_snippet_text">1 ETR/1 BTC</div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6 col-md-12 col-12 o_colored_level">
+                                    <div class="token_img">
+                                        <img src="/sh_corpomate_theme/static/src/img/theme_19/images/token copy.png" loading="lazy" />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <section id="sh_corpomate_theme_section_479" class="js_cls_sh_corpomate_section_479 sh_animation_part oe_img_bg o_bg_img_center o_colored_level" data-date_start="2021-01-01" data-date_end="2030-12-29" data-snippet="sh_corpomate_theme_tmpl_479" data-name="Counter" style="background-image: url(&quot;/sh_corpomate_theme/static/src/img/theme_19/images/curve-bg.png&quot;);">
+                    <div class="sub-div">
+                        <img src="/sh_corpomate_theme/static/src/img/theme_19/images/shape-02-1.png" loading="lazy" />
+                    </div>
+                    <div class="sub-div-1">
+                        <img src="/sh_corpomate_theme/static/src/img/theme_19/images/shape-02-1.png" loading="lazy" />
+                    </div>
+                    <div class="sub-div-2" />
+                    <div class="container">
+                        <h1 data-watermark="Time" class="o_default_snippet_text">
+                            <span class="o_default_snippet_text">Time</span>
+                            Left
+                        </h1>
+                        <div class="main-row">
+                            <div class="sh_corpomate_counter_timer_main_div">
+                                <div class="row">
+                                    <div class="col-lg-3 col-md-6 col-12 o_colored_level">
+                                        <div class="countdown-item">
+                                            <div class="counter_inner">
+                                                <div class="counter sh_corpomate_timer_day_counter o_default_snippet_text">42</div>
+                                            </div>
+                                            <h4 class="o_default_snippet_text">Days</h4>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-3 col-md-6 col-12 o_colored_level">
+                                        <div class="countdown-item">
+                                            <div class="counter_inner">
+                                                <div class="counter sh_corpomate_timer_hour_counter o_default_snippet_text">20</div>
+                                            </div>
+                                            <h4 class="o_default_snippet_text">Hours</h4>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-3 col-md-6 col-12 o_colored_level">
+                                        <div class="countdown-item">
+                                            <div class="counter_inner">
+                                                <div class="counter sh_corpomate_timer_minute_counter o_default_snippet_text">22</div>
+                                            </div>
+                                            <h4 class="o_default_snippet_text">Minutes</h4>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-3 col-md-6 col-12 o_colored_level">
+                                        <div class="countdown-item">
+                                            <div class="counter_inner">
+                                                <div class="counter sh_corpomate_timer_second_counter o_default_snippet_text">12</div>
+                                            </div>
+                                            <h4 class="o_default_snippet_text">Seconds</h4>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-lg-9 col-md-10 col-12 mx-auto d-block mt-5 o_colored_level">
+                                    <div class="sh_field">
+                                        <div class="sh_left">
+                                            <h4 class="o_default_snippet_text">Join Today &amp;amp; Buy a Token</h4>
+                                        </div>
+                                        <div class="sh_right">
+                                            <a href="" class="btn btn-primary o_default_snippet_text">
+                                                Buy Token
+                                                <span class="fa fa-long-arrow-right sh_icon" />
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <section id="sh_corpomate_theme_section_480" data-snippet="sh_corpomate_theme_tmpl_480" class="o_colored_level" data-name="Experts" style="background-image: none;">
+                    <div class="sub-div-2" />
+                    <div class="container">
+                        <h1 data-watermark="Experts" class="o_default_snippet_text">
+                            <span class="o_default_snippet_text">Our</span>
+                            Experts
+                        </h1>
+                        <div class="main-row">
+                            <div class="row">
+                                <div class="col-xl-4 col-lg-4 col-md-4 col-12 o_colored_level">
+                                    <div class="sh_about_box">
+                                        <div>
+                                            <div class="sh_about_icon d-flex flex-wrap justify-content-center align-items-center">
+                                                <img src="sh_corpomate_theme/static/src/img/theme_19/images/team_2.jpg" alt="" width="60" height="60" loading="lazy" />
+                                            </div>
+                                            <div class="sh_about_text">
+                                                <h3 class="o_default_snippet_text">Sarah Jenifer</h3>
+                                                <p class="o_default_snippet_text">Lead Developer</p>
+                                                <div class="sh_divider" />
+                                                <div class="social-icon">
+                                                    <ul>
+                                                        <li>
+                                                            <a href="#">
+                                                                <span class="fa fa-facebook" />
+                                                            </a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="#">
+                                                                <span class="fa fa-twitter" />
+                                                            </a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="#">
+                                                                <span class="fa fa-pinterest-p" />
+                                                            </a>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-xl-4 col-lg-4 col-md-4 col-12 o_colored_level">
+                                    <div class="sh_about_box">
+                                        <div>
+                                            <div class="sh_about_icon d-flex flex-wrap justify-content-center align-items-center">
+                                                <img src="sh_corpomate_theme/static/src/img/theme_19/images/team_3.jpg" alt="" width="60" height="60" loading="lazy" />
+                                            </div>
+                                            <div class="sh_about_text">
+                                                <h3 class="o_default_snippet_text">Jane Doe</h3>
+                                                <p class="o_default_snippet_text">CEO</p>
+                                                <div class="sh_divider" />
+                                                <div class="social-icon">
+                                                    <ul>
+                                                        <li>
+                                                            <a href="#">
+                                                                <span class="fa fa-facebook" />
+                                                            </a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="#">
+                                                                <span class="fa fa-twitter" />
+                                                            </a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="#">
+                                                                <span class="fa fa-pinterest-p" />
+                                                            </a>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-xl-4 col-lg-4 col-md-4 col-12 o_colored_level">
+                                    <div class="sh_about_box">
+                                        <div>
+                                            <div class="sh_about_icon d-flex flex-wrap justify-content-center align-items-center">
+                                                <img src="sh_corpomate_theme/static/src/img/theme_19/images/team_4.jpg" alt="" width="60" height="60" loading="lazy" />
+                                            </div>
+                                            <div class="sh_about_text">
+                                                <h3 class="o_default_snippet_text">Paula Neilson</h3>
+                                                <p class="o_default_snippet_text">Advisor</p>
+                                                <div class="sh_divider" />
+                                                <div class="social-icon">
+                                                    <ul>
+                                                        <li>
+                                                            <a href="#">
+                                                                <span class="fa fa-facebook" />
+                                                            </a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="#">
+                                                                <span class="fa fa-twitter" />
+                                                            </a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="#">
+                                                                <span class="fa fa-pinterest-p" />
+                                                            </a>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="second-row">
+                            <div class="sub-div">
+                                <img class="img" src="/sh_corpomate_theme/static/src/img/theme_19/images/fdot-1.png" loading="lazy" />
+                                <img class="img-1" src="/sh_corpomate_theme/static/src/img/theme_19/images/fdot-3.png" loading="lazy" />
+                            </div>
+                            <div class="sub-div-1">
+                                <img src="/sh_corpomate_theme/static/src/img/theme_19/images/fdot-2.png" loading="lazy" />
+                            </div>
+                            <div class="row">
+                                <div class="col-lg-6 col-md-12 o_colored_level">
+                                    <div class="sh_tab_img">
+                                        <img src="/sh_corpomate_theme/static/src/img/theme_19/images/copy.png" loading="lazy" />
+                                    </div>
+                                </div>
+                                <div class="col-lg-6 col-md-12 o_colored_level">
+                                    <div class="sh_tab_content">
+                                        <h3 class="o_default_snippet_text">Frenquently Questions</h3>
+                                        <div class="sh_tabs">
+                                            <ul class="nav nav-tabs" role="tablist">
+                                                <li class="nav-item">
+                                                    <a class="nav-link active o_default_snippet_text" href="#general" role="tab" data-toggle="tab">General</a>
+                                                </li>
+                                                <li class="nav-item">
+                                                    <a class="nav-link o_default_snippet_text" href="#token" role="tab" data-toggle="tab">Token</a>
+                                                </li>
+                                                <li class="nav-item">
+                                                    <a class="nav-link o_default_snippet_text" href="#bitcoin" role="tab" data-toggle="tab">BitCoin</a>
+                                                </li>
+                                                <li class="nav-item">
+                                                    <a class="nav-link o_default_snippet_text" href="#crypto" role="tab" data-toggle="tab">Crypto currency</a>
+                                                </li>
+                                            </ul>
+                                            <div class="tab-content">
+                                                <div role="tabpanel" class="tab-pane fade in active show" id="general">
+                                                    <div id="main">
+                                                        <div class="container">
+                                                            <div class="accordion" id="faq">
+                                                                <div class="card">
+                                                                    <div class="card-header" id="faqhead1">
+                                                                        <a href="#" class="btn btn-header-link o_default_snippet_text" data-toggle="collapse" data-target="#faq1" aria-expanded="true" aria-controls="faq1">What is ICO?</a>
+                                                                    </div>
+                                                                    <div id="faq1" class="collapse show" aria-labelledby="faqhead1" data-parent="#faq">
+                                                                        <div class="card-body o_default_snippet_text">
+                                                                                                                 Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                                                                                                                 tempor incididunt ut labore et dolore magna aliqua.
+                                                                                                              </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="card">
+                                                                    <div class="card-header" id="faqhead2">
+                                                                        <a href="#" class="btn btn-header-link collapsed o_default_snippet_text" data-toggle="collapse" data-target="#faq2" aria-expanded="true" aria-controls="faq2">What cryptocurrencies can I use to purchase?</a>
+                                                                    </div>
+                                                                    <div id="faq2" class="collapse" aria-labelledby="faqhead2" data-parent="#faq">
+                                                                        <div class="card-body o_default_snippet_text">
+                                                                                                                 Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                                                                                                                 tempor incididunt ut labore et dolore magna aliqua.
+                                                                                                              </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="card">
+                                                                    <div class="card-header" id="faqhead3">
+                                                                        <a href="#" class="btn btn-header-link collapsed o_default_snippet_text" data-toggle="collapse" data-target="#faq3" aria-expanded="true" aria-controls="faq3">How can I participate in the ICO Token sale?</a>
+                                                                    </div>
+                                                                    <div id="faq3" class="collapse" aria-labelledby="faqhead3" data-parent="#faq">
+                                                                        <div class="card-body o_default_snippet_text">
+                                                                                                                 Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                                                                                                                 tempor incididunt ut labore et dolore magna aliqua.
+                                                                                                              </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="card">
+                                                                    <div class="card-header" id="faqhead4">
+                                                                        <a href="#" class="btn btn-header-link collapsed o_default_snippet_text" data-toggle="collapse" data-target="#faq4" aria-expanded="true" aria-controls="faq4">How do I benefit from the ICO Token?</a>
+                                                                    </div>
+                                                                    <div id="faq4" class="collapse" aria-labelledby="faqhead4" data-parent="#faq">
+                                                                        <div class="card-body o_default_snippet_text">
+                                                                                                                 Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                                                                                                                 tempor incididunt ut labore et dolore magna aliqua.
+                                                                                                              </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div role="tabpanel" class="tab-pane fade" id="token">
+                                                    <div id="main">
+                                                        <div class="container">
+                                                            <div class="accordion" id="faq">
+                                                                <div class="card">
+                                                                    <div class="card-header" id="faqhead1">
+                                                                        <a href="#" class="btn btn-header-link o_default_snippet_text" data-toggle="collapse" data-target="#faq1" aria-expanded="true" aria-controls="faq1">How can I participate in the ICO Token sale?</a>
+                                                                    </div>
+                                                                    <div id="faq1" class="collapse show" aria-labelledby="faqhead1" data-parent="#faq">
+                                                                        <div class="card-body o_default_snippet_text">
+                                                                                                                 Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                                                                                                                 tempor incididunt ut labore et dolore magna aliqua.
+                                                                                                              </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="card">
+                                                                    <div class="card-header" id="faqhead2">
+                                                                        <a href="#" class="btn btn-header-link collapsed o_default_snippet_text" data-toggle="collapse" data-target="#faq2" aria-expanded="true" aria-controls="faq2">Why choose ICO?</a>
+                                                                    </div>
+                                                                    <div id="faq2" class="collapse" aria-labelledby="faqhead2" data-parent="#faq">
+                                                                        <div class="card-body o_default_snippet_text">
+                                                                                                                 Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                                                                                                                 tempor incididunt ut labore et dolore magna aliqua.
+                                                                                                              </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="card">
+                                                                    <div class="card-header" id="faqhead3">
+                                                                        <a href="#" class="btn btn-header-link collapsed o_default_snippet_text" data-toggle="collapse" data-target="#faq3" aria-expanded="true" aria-controls="faq3">How do I benefit from the ICO Token?</a>
+                                                                    </div>
+                                                                    <div id="faq3" class="collapse" aria-labelledby="faqhead3" data-parent="#faq">
+                                                                        <div class="card-body o_default_snippet_text">
+                                                                                                                 Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                                                                                                                 tempor incididunt ut labore et dolore magna aliqua.
+                                                                                                              </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="card">
+                                                                    <div class="card-header" id="faqhead4">
+                                                                        <a href="#" class="btn btn-header-link collapsed o_default_snippet_text" data-toggle="collapse" data-target="#faq4" aria-expanded="true" aria-controls="faq4">What cryptocurrencies can I use to purchase?</a>
+                                                                    </div>
+                                                                    <div id="faq4" class="collapse" aria-labelledby="faqhead4" data-parent="#faq">
+                                                                        <div class="card-body o_default_snippet_text">
+                                                                                                                 Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                                                                                                                 tempor incididunt ut labore et dolore magna aliqua.
+                                                                                                              </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div role="tabpanel" class="tab-pane fade" id="bitcoin">
+                                                    <div id="main">
+                                                        <div class="container">
+                                                            <div class="accordion" id="faq">
+                                                                <div class="card">
+                                                                    <div class="card-header" id="faqhead1">
+                                                                        <a href="#" class="btn btn-header-link o_default_snippet_text" data-toggle="collapse" data-target="#faq1" aria-expanded="true" aria-controls="faq1">Why choose ICO?</a>
+                                                                    </div>
+                                                                    <div id="faq1" class="collapse show" aria-labelledby="faqhead1" data-parent="#faq">
+                                                                        <div class="card-body o_default_snippet_text">
+                                                                                                                 Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                                                                                                                 tempor incididunt ut labore et dolore magna aliqua.
+                                                                                                              </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="card">
+                                                                    <div class="card-header" id="faqhead2">
+                                                                        <a href="#" class="btn btn-header-link collapsed o_default_snippet_text" data-toggle="collapse" data-target="#faq2" aria-expanded="true" aria-controls="faq2">How do I benefit from the ICO Token?</a>
+                                                                    </div>
+                                                                    <div id="faq2" class="collapse" aria-labelledby="faqhead2" data-parent="#faq">
+                                                                        <div class="card-body o_default_snippet_text">
+                                                                                                                 Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                                                                                                                 tempor incididunt ut labore et dolore magna aliqua.
+                                                                                                              </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="card">
+                                                                    <div class="card-header" id="faqhead3">
+                                                                        <a href="#" class="btn btn-header-link collapsed o_default_snippet_text" data-toggle="collapse" data-target="#faq3" aria-expanded="true" aria-controls="faq3">How can I participate in the ICO Token sale?</a>
+                                                                    </div>
+                                                                    <div id="faq3" class="collapse" aria-labelledby="faqhead3" data-parent="#faq">
+                                                                        <div class="card-body o_default_snippet_text">
+                                                                                                                 Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                                                                                                                 tempor incididunt ut labore et dolore magna aliqua.
+                                                                                                              </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="card">
+                                                                    <div class="card-header" id="faqhead4">
+                                                                        <a href="#" class="btn btn-header-link collapsed o_default_snippet_text" data-toggle="collapse" data-target="#faq4" aria-expanded="true" aria-controls="faq4">What cryptocurrencies can I use to purchase?</a>
+                                                                    </div>
+                                                                    <div id="faq4" class="collapse" aria-labelledby="faqhead4" data-parent="#faq">
+                                                                        <div class="card-body o_default_snippet_text">
+                                                                                                                 Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                                                                                                                 tempor incididunt ut labore et dolore magna aliqua.
+                                                                                                              </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div role="tabpanel" class="tab-pane fade" id="crypto">
+                                                    <div id="main">
+                                                        <div class="container">
+                                                            <div class="accordion" id="faq">
+                                                                <div class="card">
+                                                                    <div class="card-header" id="faqhead1">
+                                                                        <a href="#" class="btn btn-header-link o_default_snippet_text" data-toggle="collapse" data-target="#faq1" aria-expanded="true" aria-controls="faq1">What cryptocurrencies can I use to purchase?</a>
+                                                                    </div>
+                                                                    <div id="faq1" class="collapse show" aria-labelledby="faqhead1" data-parent="#faq">
+                                                                        <div class="card-body o_default_snippet_text">
+                                                                                                                 Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                                                                                                                 tempor incididunt ut labore et dolore magna aliqua.
+                                                                                                              </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="card">
+                                                                    <div class="card-header" id="faqhead2">
+                                                                        <a href="#" class="btn btn-header-link collapsed o_default_snippet_text" data-toggle="collapse" data-target="#faq2" aria-expanded="true" aria-controls="faq2">What is ICO?</a>
+                                                                    </div>
+                                                                    <div id="faq2" class="collapse" aria-labelledby="faqhead2" data-parent="#faq">
+                                                                        <div class="card-body o_default_snippet_text">
+                                                                                                                 Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                                                                                                                 tempor incididunt ut labore et dolore magna aliqua.
+                                                                                                              </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="card">
+                                                                    <div class="card-header" id="faqhead3">
+                                                                        <a href="#" class="btn btn-header-link collapsed o_default_snippet_text" data-toggle="collapse" data-target="#faq3" aria-expanded="true" aria-controls="faq3">How can I participate in the ICO Token sale?</a>
+                                                                    </div>
+                                                                    <div id="faq3" class="collapse" aria-labelledby="faqhead3" data-parent="#faq">
+                                                                        <div class="card-body o_default_snippet_text">
+                                                                                                                 Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                                                                                                                 tempor incididunt ut labore et dolore magna aliqua.
+                                                                                                              </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="card">
+                                                                    <div class="card-header" id="faqhead4">
+                                                                        <a href="#" class="btn btn-header-link collapsed o_default_snippet_text" data-toggle="collapse" data-target="#faq4" aria-expanded="true" aria-controls="faq4">How do I benefit from the ICO Token?</a>
+                                                                    </div>
+                                                                    <div id="faq4" class="collapse" aria-labelledby="faqhead4" data-parent="#faq">
+                                                                        <div class="card-body o_default_snippet_text">
+                                                                                                                 Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                                                                                                                 tempor incididunt ut labore et dolore magna aliqua.
+                                                                                                              </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <section id="sh_corpomate_theme_section_481" data-snippet="sh_corpomate_theme_tmpl_481" class="o_colored_level" data-name="Testimonials" style="background-image: none;">
+                    <div class="container">
+                        <h1 data-watermark="Testimonials" class="o_default_snippet_text">
+                            <span class="o_default_snippet_text">Trusted By </span>
+                            Thousands
+                        </h1>
+                        <div class="main-row">
+                            <section class="testimonial o_colored_level" style="background-image: none;">
+                                <div class="row">
+                                    <div class="col-lg-6 col-md-12 d-lg-block o_colored_level" style="order:2;">
+                                        <div class="sh_testimonial">
+                                            <div class="sub-div">
+                                                <img src="/sh_corpomate_theme/static/src/img/theme_19/images/testimonial.png" loading="lazy" />
+                                            </div>
+                                            <ol class="carousel-indicators tabs">
+                                                <li data-target="#carouselExampleIndicators" data-slide-to="0">
+                                                    <figure>
+                                                        <img src="/sh_corpomate_theme/static/src/img/theme_19/images/team_2.jpg" class="img-fluid" alt="" loading="lazy" />
+                                                    </figure>
+                                                </li>
+                                                <li data-target="#carouselExampleIndicators" data-slide-to="1">
+                                                    <figure>
+                                                        <img src="/sh_corpomate_theme/static/src/img/theme_19/images/team_3.jpg" class="img-fluid" alt="" loading="lazy" />
+                                                    </figure>
+                                                </li>
+                                                <li data-target="#carouselExampleIndicators" data-slide-to="2">
+                                                    <figure>
+                                                        <img src="/sh_corpomate_theme/static/src/img/theme_19/images/team_4.jpg" class="img-fluid" alt="" loading="lazy" />
+                                                    </figure>
+                                                </li>
+                                                <li data-target="#carouselExampleIndicators" data-slide-to="3">
+                                                    <figure>
+                                                        <img src="/sh_corpomate_theme/static/src/img/theme_19/images/team_4.jpg" class="img-fluid" alt="" loading="lazy" />
+                                                    </figure>
+                                                </li>
+                                                <li data-target="#carouselExampleIndicators" data-slide-to="4">
+                                                    <figure>
+                                                        <img src="/sh_corpomate_theme/static/src/img/theme_19/images/team_4.jpg" class="img-fluid" alt="" loading="lazy" />
+                                                    </figure>
+                                                </li>
+                                                <li data-target="#carouselExampleIndicators" data-slide-to="5" class="active">
+                                                    <figure>
+                                                        <img src="/sh_corpomate_theme/static/src/img/theme_19/images/team_4.jpg" class="img-fluid" alt="" loading="lazy" />
+                                                    </figure>
+                                                </li>
+                                                <li data-target="#carouselExampleIndicators" data-slide-to="6">
+                                                    <figure>
+                                                        <img src="/sh_corpomate_theme/static/src/img/theme_19/images/team_4.jpg" class="img-fluid" alt="" loading="lazy" />
+                                                    </figure>
+                                                </li>
+                                            </ol>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-6 d-flex justify-content-center o_colored_level" style="order:1;">
+                                        <div class="sh_testimonial_content">
+                                            <div class="sub-div-1">
+                                                <img src="/sh_corpomate_theme/static/src/img/theme_19/images/quote.png" loading="lazy" />
+                                            </div>
+                                            <div id="carouselExampleIndicators" data-interval="false" class="carousel slide pointer-event" data-ride="carousel">
+                                                <h1 class="o_default_snippet_text">Lorem Ipsum Dolor Sit Amet</h1>
+                                                <div class="sh_divider" />
+                                                <div class="carousel-inner">
+                                                    <div class="carousel-item o_colored_level" style="background-image: none;">
+                                                        <div class="quote-wrapper">
+                                                            <p class="o_default_snippet_text">I have tried a lot of food delivery services but Plate is something out of this world! Their food is really healthy and it tastes great, which is why I recommend this company to all my friends!I have tried a lot of food delivery services but Plate is something out of this world! Their food is really healthy and it tastes great, which is why I recommend this company to all my friends!</p>
+                                                            <h3 class="o_default_snippet_text">Carla Stevens</h3>
+                                                            <h6 class="o_default_snippet_text">Director</h6>
+                                                        </div>
+                                                    </div>
+                                                    <div class="carousel-item o_colored_level" style="background-image: none;">
+                                                        <div class="quote-wrapper">
+                                                            <p class="o_default_snippet_text">I have tried a lot of food delivery services but Plate is something out of this world! Their food is really healthy and it tastes great, which is why I recommend this company to all my friends! I have tried a lot of food delivery services but Plate is something out of this world! Their food is really healthy and it tastes great, which is why I recommend this company to all my friends!</p>
+                                                            <h3 class="o_default_snippet_text">Carla Stevens</h3>
+                                                            <h6 class="o_default_snippet_text">Director</h6>
+                                                        </div>
+                                                    </div>
+                                                    <div class="carousel-item o_colored_level" style="background-image: none;">
+                                                        <div class="quote-wrapper">
+                                                            <p class="o_default_snippet_text">I have tried a lot of food delivery services but Plate is something out of this world! Their food is really healthy and it tastes great, which is why I recommend this company to all my friends! I have tried a lot of food delivery services but Plate is something out of this world! Their food is really healthy and it tastes great, which is why I recommend this company to all my friends!</p>
+                                                            <h3 class="o_default_snippet_text">Carla Stevens</h3>
+                                                            <h6 class="o_default_snippet_text">Director</h6>
+                                                        </div>
+                                                    </div>
+                                                    <div class="carousel-item o_colored_level" style="background-image: none;">
+                                                        <div class="quote-wrapper">
+                                                            <p class="o_default_snippet_text">I have tried a lot of food delivery services but Plate is something out of this world! Their food is really healthy and it tastes great, which is why I recommend this company to all my friends! I have tried a lot of food delivery services but Plate is something out of this world! Their food is really healthy and it tastes great, which is why I recommend this company to all my friends!</p>
+                                                            <h3 class="o_default_snippet_text">Carla Stevens</h3>
+                                                            <h6 class="o_default_snippet_text">Director</h6>
+                                                        </div>
+                                                    </div>
+                                                    <div class="carousel-item o_colored_level" style="background-image: none;">
+                                                        <div class="quote-wrapper">
+                                                            <p class="o_default_snippet_text">I have tried a lot of food delivery services but Plate is something out of this world! Their food is really healthy and it tastes great, which is why I recommend this company to all my friends! I have tried a lot of food delivery services but Plate is something out of this world! Their food is really healthy and it tastes great, which is why I recommend this company to all my friends!</p>
+                                                            <h3 class="o_default_snippet_text">Carla Stevens</h3>
+                                                            <h6 class="o_default_snippet_text">Director</h6>
+                                                        </div>
+                                                    </div>
+                                                    <div class="carousel-item o_colored_level active" style="background-image: none;">
+                                                        <div class="quote-wrapper">
+                                                            <p class="o_default_snippet_text">I have tried a lot of food delivery services but Plate is something out of this world! Their food is really healthy and it tastes great, which is why I recommend this company to all my friends! I have tried a lot of food delivery services but Plate is something out of this world! Their food is really healthy and it tastes great, which is why I recommend this company to all my friends!</p>
+                                                            <h3 class="o_default_snippet_text">Carla Stevens</h3>
+                                                            <h6 class="o_default_snippet_text">Director</h6>
+                                                        </div>
+                                                    </div>
+                                                    <div class="carousel-item o_colored_level" style="background-image: none;">
+                                                        <div class="quote-wrapper">
+                                                            <p class="o_default_snippet_text">I have tried a lot of food delivery services but Plate is something out of this world! Their food is really healthy and it tastes great, which is why I recommend this company to all my friends! I have tried a lot of food delivery services but Plate is something out of this world! Their food is really healthy and it tastes great, which is why I recommend this company to all my friends!</p>
+                                                            <h3 class="o_default_snippet_text">Carla Stevens</h3>
+                                                            <h6 class="o_default_snippet_text">Director</h6>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <ol class="carousel-indicators indicators">
+                                                    <li data-target="#carouselExampleIndicators" data-slide-to="0" />
+                                                    <li data-target="#carouselExampleIndicators" data-slide-to="1" />
+                                                    <li data-target="#carouselExampleIndicators" data-slide-to="2" />
+                                                </ol>
+                                                <a class="left carousel-control" href="#carouselExampleIndicators" data-slide="prev">
+                                                    <span class="fa fa-chevron-left" />
+                                                </a>
+                                                <a class="right carousel-control" href="#carouselExampleIndicators" data-slide="next">
+                                                    <span class="fa fa-chevron-right" />
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </section>
+                        </div>
+                    </div>
+                </section>
+                <section id="sh_corpomate_theme_section_482" class="js_cls_corpomate_blog_slider_section_482 sh_animation_part o_colored_level sh_slider_1_send" data-snippet="sh_corpomate_theme_tmpl_482" data-name="blog 19" style="background-image: none;">
+                    <div class="container">
+                        <div class="heading text-center">
+                            <h1 data-watermark="Updates">
+                                <span class="o_default_snippet_text">Latest</span>
+                                News
+                            </h1>
+                        </div>
+                        <div class="card js_cls_corpomate_blog_slider_main_div_482">
+                            <div class="sub-div">
+                                <img class="img" src="/sh_corpomate_theme/static/src/img/theme_19/images/fdot-1.png" loading="lazy" />
+                                <img class="img-1" src="/sh_corpomate_theme/static/src/img/theme_19/images/fdot-3.png" loading="lazy" />
+                            </div>
+                            <div class="sub-div-1">
+                                <img src="/sh_corpomate_theme/static/src/img/theme_19/images/fdot-2.png" loading="lazy" />
+                            </div>
+                            <div class="card-header">
+                                <ul class="nav nav-tabs card-header-tabs js_cls_corpomate_blog_slider_nav_tabs_ul_482" role="tablist">
+                                    <li class="nav-item">
+                                        <a data-toggle="tab" role="tab" aria-controls="all" aria-selected="true" class="nav-link active" data-tab_id="1" href="#nav_tab_1784735096">
+                                        Tab A
+                                    </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a data-toggle="tab" role="tab" aria-controls="all" aria-selected="true" class="nav-link " data-tab_id="2" href="#nav_tab_2299847420">
+                                        Tab B
+                                    </a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="card-body tab-content js_cls_corpomate_blog_slider_tab_content_482">
+                                <div role="tabpanel" aria-labelledby="all-tab" class="tab-pane fade show js_cls_corpomate_blog_slider_tab_pane_482 active" id="nav_tab_1784735096">
+                                    <div class="row">
+                                        <div class="col-md-6 col-12">
+                                            <div class="sh_box">
+                                                <div class="sh_content">
+                                                    <div class="sh_img">
+                                                        <a href="/blog/3/post/10">
+                                                            <div class="o_blog_cover_container o_record_has_cover o_half_screen_height loading_container thumb">
+                                                                <div class="o_blog_cover_component o_blog_cover_image" style="background-size: cover;background-position: center;background-repeat: no-repeat;height:200px;width: 180px;background-image: url('/sh_corpomate_theme/static/src/img/demo_data/blog/cover_3.jpg');" />
+                                                                <div class="o_blog_cover_component o_blog_cover_filter " style="opacity: 0.4;" />
+                                                            </div>
+                                                        </a>
+                                                    </div>
+                                                    <div class="sh_des">
+                                                        <p class="sh_date">
+                                                      11 January 2022
+                                                </p>
+                                                        <p>
+                                                        Corpomate blog post subtitle 3    
+                                                </p>
+                                                        <div class="sh_btn">
+                                                            <a href="/blog/3/post/10">
+                                                                Read More
+                                                                <span class="fa fa-arrow-right" />
+                                                            </a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6 col-12">
+                                            <div class="sh_box">
+                                                <div class="sh_content">
+                                                    <div class="sh_img">
+                                                        <a href="/blog/3/post/9">
+                                                            <div class="o_blog_cover_container o_record_has_cover o_half_screen_height loading_container thumb">
+                                                                <div class="o_blog_cover_component o_blog_cover_image" style="background-size: cover;background-position: center;background-repeat: no-repeat;height:200px;width: 180px;background-image: url('/sh_corpomate_theme/static/src/img/demo_data/blog/cover_2.jpg');" />
+                                                                <div class="o_blog_cover_component o_blog_cover_filter " style="opacity: 0.4;" />
+                                                            </div>
+                                                        </a>
+                                                    </div>
+                                                    <div class="sh_des">
+                                                        <p class="sh_date">
+                                                      11 January 2022
+                                                </p>
+                                                        <p>
+                                                        Corpomate blog post subtitle 2    
+                                                </p>
+                                                        <div class="sh_btn">
+                                                            <a href="/blog/3/post/9">
+                                                                Read More
+                                                                <span class="fa fa-arrow-right" />
+                                                            </a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6 col-12">
+                                            <div class="sh_box">
+                                                <div class="sh_content">
+                                                    <div class="sh_img">
+                                                        <a href="/blog/3/post/8">
+                                                            <div class="o_blog_cover_container o_record_has_cover o_half_screen_height loading_container thumb">
+                                                                <div class="o_blog_cover_component o_blog_cover_image" style="background-size: cover;background-position: center;background-repeat: no-repeat;height:200px;width: 180px;background-image: url('/sh_corpomate_theme/static/src/img/demo_data/blog/cover_1.jpg');" />
+                                                                <div class="o_blog_cover_component o_blog_cover_filter " style="opacity: 0.4;" />
+                                                            </div>
+                                                        </a>
+                                                    </div>
+                                                    <div class="sh_des">
+                                                        <p class="sh_date">
+                                                      11 January 2022
+                                                </p>
+                                                        <p>
+                                                        Corpomate blog post subtitle 1    
+                                                </p>
+                                                        <div class="sh_btn">
+                                                            <a href="/blog/3/post/8">
+                                                                Read More
+                                                                <span class="fa fa-arrow-right" />
+                                                            </a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div role="tabpanel" aria-labelledby="all-tab" class="tab-pane fade show js_cls_corpomate_blog_slider_tab_pane_482 " id="nav_tab_2299847420">
+                                    <div class="row"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </t>
+    </template>
+</odoo>

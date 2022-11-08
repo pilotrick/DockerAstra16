@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+	<data>
+		<record id="view_sale_advance_payment_inv_extended" model="ir.ui.view">
+            <field name="name">Invoice Orders</field>
+            <field name="model">sale.advance.payment.inv</field>
+			<field name="inherit_id" ref="sale.view_sale_advance_payment_inv"/>
+            <field name="arch" type="xml">
+				<xpath expr="//group" position="after">
+					<group colspan="4" string="Lines">
+						<field name="lines" nolabel="1">
+							<tree editable="bottom">
+								<!-- <field name="product_id"></field> -->
+								<field name="name"></field>
+								<!-- <field name="product_uom_qty"></field>
+								<field name="price_unit"></field> -->
+								<field name="price_subtotal" sum="Subtotal"></field>
+								<field name="tax_id" widget="many2many_tags"></field>
+								<field name="price_tax" sum="Total Tax"></field>
+								<field name="price_total" sum="Total"></field>
+								<field name="dp_subtotal" sum="Dp Subtotal"></field>
+								<field name="dp_tax_amount" sum="Dp Taxes"></field>
+								<field name="dp_total" sum="Dp Total"></field>
+							</tree>
+						</field>
+					</group>
+				</xpath>
+			</field>
+        </record>
+	</data>
+</odoo>

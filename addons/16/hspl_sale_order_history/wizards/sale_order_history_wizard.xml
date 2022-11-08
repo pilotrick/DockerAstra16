@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <data>
+        <record id="sale_order_history_wizard_form_view" model="ir.ui.view">
+            <field name="name">sale.order.history.wizard.form</field>
+            <field name="model">sale.order.history.wizard</field>
+            <field name="arch" type="xml">
+                <form string="Order Line">
+                    <group>
+                        <group>
+                            <field
+                                name="order_id"
+                                force_save="1"
+                                options="{'no_open': True}"
+                            />
+                        </group>
+                        <group>
+                            <field
+                                name="partner_id"
+                                force_save="1"
+                                options="{'no_open': True}"
+                            />
+                        </group>
+                    </group>
+                    <notebook>
+                        <page string="Orders">
+                            <group>
+                                <field name="order_line_ids" nolabel="1">
+                                    <tree editable="top" delete="0" create="0">
+                                        <field
+                                            name="select_bool"
+                                            force_save="1"
+                                            widget="boolean_toggle"
+                                        />
+                                        <field
+                                            name="date_order"
+                                            force_save="1"
+                                            widget="date"
+                                        />
+                                        <field
+                                            name="order_id"
+                                            force_save="1"
+                                            options="{'no_open': True}"
+                                            readonly="1"
+                                        />
+                                        <field
+                                            name="product_id"
+                                            force_save="1"
+                                            options="{'no_open': True}"
+                                            readonly="1"
+                                        />
+                                        <field name="qty" force_save="1" readonly="1" />
+                                        <field
+                                            name="name"
+                                            force_save="1"
+                                            invisible="1"
+                                        />
+                                        <field
+                                            name="price"
+                                            force_save="1"
+                                            readonly="1"
+                                        />
+                                        <field
+                                            name="subtotal"
+                                            force_save="1"
+                                            readonly="1"
+                                        />
+                                        <field
+                                            name="product_uom"
+                                            force_save="1"
+                                            invisible="1"
+                                        />
+                                        <field
+                                            name="display_type"
+                                            force_save="1"
+                                            invisible="1"
+                                        />
+                                    </tree>
+                                </field>
+                            </group>
+                        </page>
+                    </notebook>
+                    <footer>
+                        <button
+                            name='add_lines'
+                            string="Add lines"
+                            type="object"
+                            class="btn btn-primary"
+                        />
+                    </footer>
+                </form>
+            </field>
+        </record>
+
+        <!--Action for wizard -->
+        <record id="sale_order_history_wizard_action" model="ir.actions.act_window">
+            <field name="name">Order Line Wiz</field>
+            <field name="res_model">sale.order.history.wizard</field>
+            <field name="view_mode">form</field>
+            <field name="target">new</field>
+            <field name="context">{
+                'default_program_type': 'promotion_program',
+                }
+            </field>
+        </record>
+    </data>
+</odoo>

@@ -38,8 +38,8 @@ class StockReport(models.TransientModel):
     _name = "wizard.stock.history"
     _description = "Current Stock History"
 
-    warehouse_ids = fields.Many2many('stock.warehouse', 'wh_wiz_rel', 'wh', 'wiz', string='Warehouse', required=True)
-    category_ids = fields.Many2many('product.category', 'categ_wiz_rel', 'categ', 'wiz', string='Category')
+    warehouse_ids = fields.Many2many('stock.warehouse', 'wh_wiz_rel', 'wh', 'wiz', string='Almacen', required=True)
+    category_ids = fields.Many2many('product.category', 'categ_wiz_rel', 'categ', 'wiz', string='Categoria')
 
     def export_xls(self):
         data = {

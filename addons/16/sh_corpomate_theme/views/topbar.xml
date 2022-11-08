@@ -1,0 +1,1017 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+  
+    <!-- 
+  
+    Theme Customize Templates   
+    Top Bar
+     
+    -->
+    
+
+    <template id="sh_corpomate_theme_style_top_bar_1" name="Top Bar Style 1" inherit_id="website.layout" active="False">
+  
+        <xpath expr="//header" position="before">   
+ 
+ 		<!-- 
+        <xpath expr="//div[@id='wrapwrap']//header" position="before">  
+              -->
+                 
+        <div class="oe_structure">
+            <section id="sh_top_bar_1">
+				<div class="container">
+					<div class="row">
+						<div class="sh_tb_left col-lg-7 col-md-12">
+							<span><a t-att-href="'tel: %s' %(res_company.phone)"><i class="fa fa-phone-square"></i>
+							<t t-esc="res_company.phone"/>
+							</a></span>|
+							<span><i class="fa fa-clock-o"></i>Mon - Sat: 7:00 - 17:00</span>|
+							<span><a t-att-href="'mailto: %s' %(res_company.email)"><i class="fa fa-envelope-o"></i>
+							<t t-esc="res_company.email"/>
+							</a></span>
+						</div>
+						<div class="sh_tb_right col-lg-5 col-md-12">
+							<div class="sh_social_icon">
+							<a t-if="website.social_facebook" t-att-href="website.social_facebook" target="_blank"><i class="fa fa-facebook"></i></a>
+							</div>
+							<div class="sh_social_icon">
+							<a t-if="website.social_twitter" t-att-href="website.social_twitter" target="_blank"><i class="fa fa-twitter"></i></a>
+							</div>
+							<div class="sh_social_icon">
+							<a t-if="website.social_youtube" t-att-href="website.social_youtube" target="_blank"><i class="fa fa-youtube"></i></a>
+							</div>
+							<div class="sh_social_icon m-r-0">
+							<a t-if="website.social_instagram" t-att-href="website.social_instagram" target="_blank"><i class="fa fa-instagram"></i></a>
+							</div>
+							
+
+			<!-- LANGUAGE SELECTOR -->
+			<t t-set="flags" t-value="True"/>
+				<t t-call="website.language_selector">
+				<t t-set="_div_classes" t-value="(_div_classes or '') + ' dropdown'"/>
+            </t>
+            
+
+											
+						</div>
+											
+					
+						    
+						
+				
+						
+						
+						
+					</div>
+				</div>
+			</section>  	 
+		</div>
+	    	<!-- End your code -->
+        </xpath>
+    </template>
+
+
+
+    <template id="sh_corpomate_theme_style_top_bar_2" name="Top Bar Style 2" inherit_id="website.layout" active="False">
+        <xpath expr="//header" position="before">   
+           
+        <div class="oe_structure">
+			
+			<!--  start your code from here -->
+			<section id="sh_top_bar_2">
+				<div class="container">
+					<div class="row">
+						<div class="col-lg-6 col-sm-12 col-12 align-left">
+						
+							<div class="sh-element element-editor phone">
+								<a t-att-href="'tel: %s' %(res_company.phone)">
+									<t t-esc="res_company.phone"/>
+									
+								</a>
+							</div>
+							
+							<div class="sh-element element-editor email">
+								<a t-att-href="'mailto: %s' %(res_company.email)">
+									<t t-esc="res_company.email"/>
+								</a>								
+							</div>
+							
+						</div>
+						<div class="col-lg-6 col-sm-12 col-12 align-right">
+							<ul class="social">
+							<li>
+							<a t-if="website.social_facebook" t-att-href="website.social_facebook" target="_blank"><i class="fa fa-facebook"></i></a>
+							</li>
+							<li><a t-if="website.social_twitter" t-att-href="website.social_twitter" target="_blank"><i class="fa fa-twitter"></i></a></li>
+
+							</ul>
+							<div class="sh-element custom-login">
+							<a groups="base.group_public" href="/web/login" title="Login">Login</a>
+							
+							<!-- <t t-if="website.auth_signup_uninvited == 'b2c'">
+								<span>or</span>
+								<a href="/web/signup?" title="Register">Register</a>
+							</t> -->
+							</div>
+							
+			<!-- LANGUAGE SELECTOR -->
+			<t t-set="flags" t-value="True"/>
+            <t t-call="website.language_selector">
+                <t t-set="_div_classes" t-value="(_div_classes or '') + ' dropdown'"/>
+            </t>
+						    						
+						</div>
+					</div><!--row -->
+				</div><!--container -->
+			</section>
+	    	</div>
+	    	<!-- End your code -->
+			
+        </xpath>
+    </template>
+
+
+
+
+    
+    <template id="sh_corpomate_theme_style_top_bar_3" name="Top Bar Style 3" inherit_id="website.layout" active="False">
+        <xpath expr="//header" position="before">    
+        <div class="oe_structure">
+		<section id="sh_top_bar_3">
+			<div class="container">
+				      <!-- Top Left -->
+				      <div class="top-left">
+				         <ul class="clearfix">
+				            <li><a href="#">We have more than 25 years of experiences</a></li>
+				         </ul>
+				      </div>
+				      <!-- Top Right -->
+				      <div class="top-right">
+				         <ul class="clearfix">
+				            <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-270">
+				            <a title="sitemap" href="#" >sitemap</a>
+				            </li>
+				            <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-271">
+				            <a title="quick links" href="#" >quick links</a>
+				            </li>
+				            <li  class="menu-item menu-item-type-custom menu-item-object-custom menu-item-272">
+				            <a title="support" href="/contactus">support</a>
+				            </li>
+			            
+				         </ul>
+				         
+			<!-- LANGUAGE SELECTOR -->
+			<t t-set="flags" t-value="True"/>
+            <t t-call="website.language_selector">
+                <t t-set="_div_classes" t-value="(_div_classes or '') + ' dropdown'"/>
+            </t>
+						    
+						    					
+				      </div>
+	            </div>
+		</section>
+		</div>
+	    	
+	    	<!-- End your code -->
+        </xpath>
+    </template>  
+
+    <template id="sh_corpomate_theme_style_top_bar_4" name="Top Bar Style 4" inherit_id="website.layout" active="False">
+        <xpath expr="//header" position="before">    
+        <div class="oe_structure">
+        
+			<section id="sh_top_bar_4">
+				<div class="container">
+					<div class="row">
+						<div class="col-lg-5 col-md-12 col-sm-12 col-12 header-column justify-content-start">
+							<span class="d-none phone">
+								<a t-att-href="'tel: %s' %(res_company.phone)">
+									<t t-esc="res_company.phone"/>
+								</a>
+							</span>
+							<span class="d-none email">
+								<a t-att-href="'mailto: %s' %(res_company.email)">
+									<t t-esc="res_company.email"/>
+								</a>	
+							</span>
+						</div>
+						<div class="col-lg-7 col-md-12 col-sm-12 col-12 header-column justify-content-end" style="display: flex;align-items: center;">
+							<ul class="nav">
+								<li class="nav-item">
+									<a href="/my/home" class="nav-link">MY ACCOUNT</a>
+								</li>
+								
+							
+								<li class="nav-item">
+									<a href="#" class="nav-link">DAILY DEAL</a>
+								</li>
+							
+								<li class="nav-item">
+									<a href="/shop/wishlist" class="nav-link">MY WISHLIST</a>
+								</li>
+								 
+								<li class="nav-item d-none d-sm-block">
+									<a href="/blog" class="nav-link">BLOG</a>
+								</li>
+								
+								
+							</ul>
+							
+
+			<!-- LANGUAGE SELECTOR -->
+			<t t-set="flags" t-value="True"/>
+            <t t-call="website.language_selector">
+                <t t-set="_div_classes" t-value="(_div_classes or '') + ' dropdown'"/>
+            </t>
+
+
+				</div>
+							</div>
+				</div>
+			</section>
+			</div>
+			
+        </xpath>
+    </template>
+    
+    <template id="sh_corpomate_theme_style_top_bar_5" name="Top Bar Style 5" inherit_id="website.layout" active="False">
+        <xpath expr="//header" position="before">   
+        <div class="oe_structure">
+			
+			<section id="sh_top_bar_5">
+				<div class="container">
+					<div class="row">
+							  <div class="col-lg-4 col-md-12 col-sm-12 col-12 d-none d-md-block sh_left_part">
+									<nav class="header-nav-top">
+										<ul class="nav nav-pills text-uppercase text-2">
+											<li class="nav-item nav-item-anim-icon d-none d-md-block">
+												<a class="nav-link pl-0" href="/aboutus5">
+												<i class="fa fa-angle-right"></i> About Us</a>
+												</li>
+												<li class="nav-item nav-item-anim-icon d-none d-md-block">
+												<a class="nav-link" href="/contactus5">
+												<i class="fa fa-angle-right"></i> Contact Us</a>
+											</li>
+										</ul>
+									</nav>
+								</div>
+								<div class="col-lg-8 col-md-12 col-sm-12 col-12 sh_right_part">
+									<nav class="header-nav-top">
+									   <ul class="nav sh-nav-pills">
+									      <li class="nav-item">									  
+									     	 <a t-att-href="'tel: %s' %(res_company.phone)">
+									     	    <i class="fa fa-whatsapp text-4 text-color-primary" style="top: 0;"></i>
+												<t t-esc="res_company.phone"/>
+											</a>									         
+									      </li>
+									      <li class="nav-item">
+									   	        <a t-att-href="'mailto: %s' %(res_company.email)">
+									   	        	<i class="fa fa-envelope text-4 text-color-primary" style="top: 1px;"></i>
+													<t t-esc="res_company.email"/>
+												</a>	
+									      </li>
+									   </ul>
+									</nav>
+									
+									
+			<!-- LANGUAGE SELECTOR -->
+			<t t-set="flags" t-value="True"/>
+            <t t-call="website.language_selector">
+                <t t-set="_div_classes" t-value="(_div_classes or '') + ' dropdown'"/>
+            </t>
+						    
+						    
+						    				
+								</div>
+							</div>
+				</div>
+			</section>	
+			</div>
+			
+					
+        </xpath>
+    </template>          
+    
+    
+    
+    
+    
+    
+    
+    
+    
+<template id="sh_corpomate_theme_style_top_bar_7" name="Top Bar Style 7" inherit_id="website.layout" active="False">
+        <xpath expr="//header" position="before">   
+        <div class="oe_structure">
+        
+			<section id="sh_top_bar_7">
+				<div class="container">
+					
+					
+					
+					<div class="row">
+						<div class="sh_tb_left col-lg-7 col-md-12">
+							<span><a t-att-href="'tel: %s' %(res_company.phone)"><i class="fa fa-phone-square"></i>
+							<t t-esc="res_company.phone"/>
+							</a></span>|
+							<span><i class="fa fa-clock-o"></i>Mon - Sat: 7:00 - 17:00</span>|
+							<span><a t-att-href="'mailto: %s' %(res_company.email)"><i class="fa fa-envelope-o"></i>
+							<t t-esc="res_company.email"/>
+							</a></span>
+						</div>
+						<div class="sh_tb_right col-lg-5 col-md-12">
+							<div class="sh_social_icon">
+							<a t-if="website.social_facebook" t-att-href="website.social_facebook" target="_blank"><i class="fa fa-facebook"></i></a>
+							</div>
+							<div class="sh_social_icon">
+							<a t-if="website.social_twitter" t-att-href="website.social_twitter" target="_blank"><i class="fa fa-twitter"></i></a>
+							</div>
+							<div class="sh_social_icon">
+							<a t-if="website.social_youtube" t-att-href="website.social_youtube" target="_blank"><i class="fa fa-youtube"></i></a>
+							</div>
+							<div class="sh_social_icon m-r-0">
+							<a t-if="website.social_instagram" t-att-href="website.social_instagram" target="_blank"><i class="fa fa-instagram"></i></a>
+							</div>
+							
+			<!-- LANGUAGE SELECTOR -->
+			<t t-set="flags" t-value="True"/>
+            <t t-call="website.language_selector">
+                <t t-set="_div_classes" t-value="(_div_classes or '') + ' dropdown'"/>
+            </t>
+											
+						</div>
+											
+					
+						    
+						
+				
+						
+						
+						
+					</div>
+					
+					
+					
+					
+				</div>
+			</section>		
+			</div>
+				
+        </xpath>
+    </template>         
+    
+    
+    
+    
+    
+
+<template id="sh_corpomate_theme_style_top_bar_8" name="Top Bar Style 8" inherit_id="website.layout" active="False">
+        <xpath expr="//header" position="before">    
+        <div class="oe_structure"> 
+			
+			<!--  start your code from here -->
+			<section id="sh_top_bar_8">
+				<div class="container">
+					<div class="row">
+						<div class="sh_tb_left col-lg-7 col-md-12">
+							<span><a t-att-href="'tel: %s' %(res_company.phone)"><i class="fa fa-phone-square"></i>
+							<t t-esc="res_company.phone"/>
+							</a></span>|
+							<span><i class="fa fa-clock-o"></i>Mon - Sat: 7:00 - 17:00</span>|
+							<span><a t-att-href="'mailto: %s' %(res_company.email)"><i class="fa fa-envelope-o"></i>
+							<t t-esc="res_company.email"/>
+							</a></span>
+						</div>
+						<div class="sh_tb_right col-lg-5 col-md-12">
+							<div class="sh_social_icon">
+							<a t-if="website.social_facebook" t-att-href="website.social_facebook" target="_blank"><i class="fa fa-facebook"></i></a>
+							</div>
+							<div class="sh_social_icon">
+							<a t-if="website.social_twitter" t-att-href="website.social_twitter" target="_blank"><i class="fa fa-twitter"></i></a>
+							</div>
+							<div class="sh_social_icon">
+							<a t-if="website.social_youtube" t-att-href="website.social_youtube" target="_blank"><i class="fa fa-youtube"></i></a>
+							</div>
+							<div class="sh_social_icon m-r-0">
+							<a t-if="website.social_instagram" t-att-href="website.social_instagram" target="_blank"><i class="fa fa-instagram"></i></a>
+							</div>
+							
+			<!-- LANGUAGE SELECTOR -->
+			<t t-set="flags" t-value="True"/>
+            <t t-call="website.language_selector">
+                <t t-set="_div_classes" t-value="(_div_classes or '') + ' dropdown'"/>
+            </t>
+											
+						</div>
+											
+											
+					</div>
+				</div>
+			</section>    
+			</div>
+			 	
+	    	<!-- End your code -->
+        </xpath>
+    </template>    
+    
+    
+    
+  
+  
+  
+  
+  
+  
+  
+  
+  <!-- topbar 10 -->
+    <template id="sh_corpomate_theme_style_top_bar_10" name="Top Bar Style 10" inherit_id="website.layout" active="False">
+        
+        <xpath expr="//header" position="before">   
+        
+        <div class="oe_structure">
+			
+			<!--  start your code from here -->
+			<section id="sh_top_bar_10">
+				<div class="container">
+					
+					<div class="sh_topbar_content">
+					   <div class="sh_logo">
+					      <a class="navbar-brand" href="index.html">
+							  <img t-att-src="image_data_uri(website.logo)" id="logo-footer" class="img-fluid" alt="logo icon" style=""/>
+				 		  </a>
+					   </div>
+					   
+					   <div class="sh_des">
+					      <div class="sh_phone">
+					         <span class="fa fa-phone"></span>
+					         <div class="sh_number">
+					            
+					            <h4>
+					            
+							<span><a t-att-href="'tel: %s' %(res_company.phone)">
+							<t t-esc="res_company.phone"/>
+							</a></span>
+					            
+					            </h4>
+					            
+					            
+					            <p>
+							
+							<span><a t-att-href="'mailto: %s' %(res_company.email)">
+							<t t-esc="res_company.email"/>
+							</a></span>
+												            
+					            </p>
+					         
+					         </div>
+					      </div>
+					      
+					      <div class="sh_time">
+					         <span class="fa fa-clock-o"></span>
+					         <div class="sh_number">
+					            <h4>Mon-Sat 9:30 - 7:00</h4>
+					            <p>Sunday Closed</p>
+					         </div>
+					      </div>					      
+					   </div>					   
+					</div>
+					
+				</div>
+			</section>     
+			</div>	
+	    	<!-- End your code -->
+        </xpath>
+    </template> 
+  <!-- topbar 10 -->
+  
+  
+  
+  <!-- topbar 11 -->
+    <template id="sh_corpomate_theme_style_top_bar_11" name="Top Bar Style 11" inherit_id="website.layout" active="False">
+
+        <xpath expr="//header" position="before">   
+ 
+        <div class="oe_structure">
+			
+			<!--  start your code from here -->
+			<section id="sh_top_bar_11">
+				<div class="container">
+				   <div class="sh_topbar_content">
+				      <div class="sh_left_content">
+				         <ul>
+		                    <!--  <li>
+		                         <a href="#" class="sh_btn"><span class="fa fa-map-marker"></span>
+					
+					<span  t-field="res_company.partner_id" t-options='{
+		                "widget": "contact",
+		                "fields": [ "address"],
+		                "no_marker": True,
+		                }'/>	
+		                		                         
+		                         </a>
+		                     </li> -->
+		                     <li>
+		                         <a t-att-href="'tel: %s' %(res_company.phone)" class="sh_btn"><span class="fa fa-phone"></span> any question: 
+		                         <t t-esc="res_company.phone"/>
+		                         </a>
+		                     </li>
+		                     <li>
+		                         <a t-att-href="'mailto: %s' %(res_company.email)" class="sh_btn"><span class="fa fa-envelope"></span>
+		                         <t t-esc="res_company.email"/>
+		                         </a>
+		                     </li>		         
+				         </ul>
+				      </div>
+				      
+				      <div class="sh_right_content">
+				         <ul>
+		                     <li t-if="website.social_facebook">
+		                         <a t-att-href="website.social_facebook" target="_blank" class="sh_btn"><span class="fa fa-facebook"></span></a>
+		                     </li>
+		                     <li t-if="website.social_twitter">
+		                         <a t-att-href="website.social_twitter"  target="_blank"  class="sh_btn"><span class="fa fa-twitter"></span></a>
+		                     </li>
+		                     <li t-if="website.social_linkedin">
+		                         <a t-att-href="website.social_linkedin" target="_blank" class="sh_btn"><span class="fa fa-linkedin"></span></a>
+		                     </li>
+		                     <li t-if="website.social_youtube">
+		                         <a t-att-href="website.social_youtube" target="_blank" class="sh_btn"><span class="fa fa-youtube"></span></a>
+		                     </li>		         
+				         </ul>
+				      </div>
+				      
+				   </div>
+				</div>
+			</section>
+			</div>
+		</xpath>
+	</template>			
+   <!-- topbar 11 -->
+  
+  
+  
+  
+  
+  <!-- topbar 12 -->
+    <template id="sh_corpomate_theme_style_top_bar_12" name="Top Bar Style 12" inherit_id="website.layout" active="False">
+
+        <xpath expr="//header" position="before">   
+
+        <div class="oe_structure">
+			<!--  start your code from here -->
+			<section id="sh_top_bar_12">
+				<div class="container">
+					
+					<div class="sh_topbar_content">
+					   <div class="sh_logo">
+					      <a class="navbar-brand" href="/">
+							  <img t-att-src="image_data_uri(website.logo)" id="logo-footer" class="img-fluid" alt="logo icon" style=""/>
+				 		  </a>
+							
+
+					   </div>
+					   
+					   <div class="sh_des">
+					      <div class="sh_phone">
+					         <span class="fa fa-phone"></span>
+					         <div class="sh_number">
+					            
+					            <h4>
+					            
+							<span><a t-att-href="'tel: %s' %(res_company.phone)">
+							<t t-esc="res_company.phone"/>
+							</a></span>
+					            
+					            </h4>
+					            
+					            
+					            <p>
+							
+							
+												            
+					            </p>
+					         
+					         </div>
+					      </div>
+					      
+					      <div class="sh_time">
+					         <span class="fa fa-envelope"><a t-att-href="'mailto: %s' %(res_company.email)">
+								<t t-esc="res_company.email"/></a>
+							 </span>
+					      </div>	
+
+						  <!-- LANGUAGE SELECTOR -->
+						  <t t-set="flags" t-value="True"/>
+							<t t-call="website.language_selector">
+						   	<t t-set="_div_classes" t-value="(_div_classes or '') + ' dropdown'"/>
+						  </t>
+
+					   </div>					   
+					</div>
+					
+				</div>
+			</section>    
+			</div> 	
+	    	<!-- End your code -->
+        </xpath>
+    </template> 
+  <!-- topbar 12 -->
+    
+   <!-- topbar 13 -->
+    <template id="sh_corpomate_theme_style_top_bar_13" name="Top Bar Style 13" inherit_id="website.layout" active="False">
+        
+        
+        <xpath expr="//header" position="before">     
+			
+			<!--  start your code from here -->
+			<section id="sh_top_bar_13">
+				<div class="container">
+				   <div class="sh_topbar_content">
+				      <div class="sh_left_content">
+				         <ul>
+				         	<li>
+		                         <a class="sh_btn" t-att-href="'mailto: %s' %(res_company.email)"><span class="fa fa-envelope" data-oe-model="ir.ui.view" data-oe-id="1648" data-oe-field="arch" data-oe-xpath="/data/xpath/section/div[1]/div[1]/div[1]/ul[1]/li[2]/a[1]/span[1]"></span>
+		                         <t t-esc="res_company.email"></t>
+		                         </a>
+		                     </li>
+		                    <li>
+		                         <a class="sh_btn" t-att-href="'tel: %s' %(res_company.phone)"><span class="fa fa-phone" data-oe-model="ir.ui.view" data-oe-id="1648" data-oe-field="arch" data-oe-xpath="/data/xpath/section/div[1]/div[1]/div[1]/ul[1]/li[1]/a[1]/span[1]"></span> 
+		                         <t t-esc="res_company.phone"></t> 
+		                         </a>
+		                     </li>
+				         </ul>
+				      </div>
+				      
+				      <div class="sh_right_content">
+				         <ul>
+		                     <li>
+		                         <a target="_blank" class="sh_btn" data-oe-model="ir.ui.view" data-oe-id="1648" data-oe-field="arch" data-oe-xpath="/data/xpath/section/div[1]/div[1]/div[2]/ul[1]/li[1]/a[1]" href="https://www.facebook.com/Odoo"><span class="fa fa-facebook"></span></a>
+		                     </li>
+		                     <li>
+		                         <a target="_blank" class="sh_btn" data-oe-model="ir.ui.view" data-oe-id="1648" data-oe-field="arch" data-oe-xpath="/data/xpath/section/div[1]/div[1]/div[2]/ul[1]/li[2]/a[1]" href="https://twitter.com/Odoo"><span class="fa fa-twitter"></span></a>
+		                     </li>
+		                     <li>
+		                         <a target="_blank" class="sh_btn" data-oe-model="ir.ui.view" data-oe-id="1648" data-oe-field="arch" data-oe-xpath="/data/xpath/section/div[1]/div[1]/div[2]/ul[1]/li[3]/a[1]" href="https://www.linkedin.com/company/odoo"><span class="fa fa-linkedin"></span></a>
+		                     </li>
+		                     <li>
+		                         <a target="_blank" class="sh_btn" data-oe-model="ir.ui.view" data-oe-id="1648" data-oe-field="arch" data-oe-xpath="/data/xpath/section/div[1]/div[1]/div[2]/ul[1]/li[4]/a[1]" href="https://www.youtube.com/user/OpenERPonline"><span class="fa fa-youtube"></span></a>
+		                     </li>		         
+				         </ul>
+				      </div>
+				      
+				   </div>
+				</div>
+			</section>
+	    	<!-- End your code -->
+        </xpath>
+    </template> 
+  <!-- topbar 13 -->
+  
+  
+  <!-- topbar 14 -->
+    <template id="sh_corpomate_theme_style_top_bar_14" name="Top Bar Style 14" inherit_id="website.layout" active="False">
+        
+        
+        <xpath expr="//header" position="before">   
+			
+			<!--  start your code from here -->
+			<section id="sh_top_bar_14">
+				<div class="container">
+				   <div class="sh_topbar_content">
+				      <div class="sh_left_content">
+				         <ul>
+				         	<li>
+		                         <a class="sh_btn" ><span class="fa fa-clock-o"></span>
+		                         9:00 AM to 7:00 PM
+		                         </a>
+		                     </li>
+				         	<li>
+		                         <a class="sh_btn" t-att-href="'mailto: %s' %(res_company.email)"><span class="fa fa-envelope" data-oe-model="ir.ui.view" data-oe-id="1648" data-oe-field="arch" data-oe-xpath="/data/xpath/section/div[1]/div[1]/div[1]/ul[1]/li[2]/a[1]/span[1]"></span>
+                                 <t t-esc="res_company.email"></t>
+                                 </a>
+		                     </li>		                   
+				         </ul>
+				      </div>
+				      
+				      <div class="sh_right_content">
+				         <ul>
+		                     <li>
+		                         <a href="#" class="sh_btn">FAQ</a>
+		                     </li>
+		                     
+		                     <li>
+		                         <a href="#" class="sh_btn">T&amp;C</a>
+		                     </li>
+		                     
+		                     <li>
+		                         <a href="#" class="sh_btn">Privacy Policy</a>
+		                     </li>
+		                           
+				         </ul>
+				      </div>				      
+				   </div>
+
+				   </div>
+
+				    <div class="sh_bottom_part">
+				   	    <div class="container">
+						   	<div class="sh_main_part">    
+						   	    <div class="sh_mail-box">
+						   	   	    <span class="fa fa-envelope"></span>
+						   	   	    <div class="sh_text">
+						   	   	   	  <h5>Mail us</h5>
+						   	   	   	  <p>
+                                        <a class="sh_btn" t-att-href="'mailto: %s' %(res_company.email)">
+                                           <t t-esc="res_company.email"></t>
+                                        </a>
+                                      </p>
+						   	   	    </div>
+						   	    </div>
+						   	    <div class="sh_mail-box">
+						   	   	    <span class="fa fa-phone"></span>
+						   	   	    <div class="sh_text">
+						   	   	   	  <h5>call us</h5>
+						   	   	   	  <p>
+                                         <a class="sh_btn" t-att-href="'tel: %s' %(res_company.phone)"> 
+                                            <t t-esc="res_company.phone"></t> 
+                                         </a>
+                                      </p>
+						   	   	    </div>
+						   	    </div>
+						   	    <div class="sh_box_btn">
+						   	   	    <a href="#" class="btn btn-primary">request an appointment</a>	
+						   	    </div>
+						   	</div>
+						</div>   	
+				    </div>
+
+				
+			</section>
+	    	<!-- End your code -->
+        </xpath>
+    </template> 
+  <!-- topbar 14 -->  
+     
+
+
+
+<!-- topbar 15 -->
+<template id="sh_corpomate_theme_style_top_bar_15" name="Top Bar Style 15" inherit_id="website.layout" active="False">     
+
+        <xpath expr="//header" position="before">   
+
+		<section id="sh_top_bar_15">
+    		<div class="container">
+    			<div class="sh_topbar_content">
+    				<div class="sh_logo">
+    					<a class="navbar-brand" href="index.html">
+							<img t-att-src="image_data_uri(website.logo)" id="logo-footer" class="img-fluid" alt="logo icon" style=""/>
+				 		</a>
+    				</div>
+    				<div class="sh_info">
+    					<div class="sh_call_info">
+    						<div class="sh_icon">
+    							<span class="fa fa-phone"></span>
+    						</div>
+    						<div class="sh_callus">
+    							<h4>call us on:</h4>
+    							<p><a t-att-href="'tel: %s' %(res_company.phone)">
+									<t t-esc="res_company.phone"/></a>
+								</p>
+    						</div>
+    					</div>
+
+    					<div class="sh_call_info">
+    						<div class="sh_icon">
+    							<span class="fa fa-envelope"></span>
+    						</div>
+    						<div class="sh_callus">
+    							<h4>mail us on:</h4>
+    							<p><a t-att-href="'mailto: %s' %(res_company.email)">
+									<t t-esc="res_company.email"/></a>
+								</p>
+    						</div>
+    					</div>
+
+    				</div>
+    			</div>
+    		</div>
+    	</section>
+    </xpath>
+</template>    
+<!-- topbar 15 -->
+
+
+
+<!-- topbar 16 -->
+<template id="sh_corpomate_theme_style_top_bar_16" name="Top Bar Style 16" inherit_id="website.layout" active="False">     
+        <xpath expr="//header" position="before">     
+    
+		<section id="sh_top_bar_16">
+    		<div class="container">
+    			<div class="sh_topbar_content">
+    				<div class="sh_logo">
+    					<a class="navbar-brand" href="index.html">
+							<img t-att-src="image_data_uri(website.logo)" id="logo-footer" class="img-fluid" alt="logo icon" style=""/>
+				 		</a>
+    				</div>
+    				<div class="sh_info">
+    					<div class="sh_call_info">
+    						<div class="sh_icon">
+    							<span class="fa fa-phone"></span>
+    						</div>
+    						<div class="sh_callus">
+    							<h4>call us on:</h4>
+    							<p><a t-att-href="'tel: %s' %(res_company.phone)">
+									<t t-esc="res_company.phone"/></a>
+								</p>
+    						</div>
+    					</div>
+
+    					<div class="sh_call_info">
+    						<div class="sh_icon">
+    							<span class="fa fa-envelope"></span>
+    						</div>
+    						<div class="sh_callus">
+    							<h4>mail us on:</h4>
+    							<p><a t-att-href="'mailto: %s' %(res_company.email)">
+									<t t-esc="res_company.email"/></a>
+								</p>
+    						</div>
+    					</div>
+
+    				</div>
+    			</div>
+    		</div>
+    	</section>
+    </xpath>
+</template>    
+<!-- topbar 16 -->
+
+<!-- topbar 17 -->
+<template id="sh_corpomate_theme_style_top_bar_17" name="Top Bar Style 17" inherit_id="website.layout" active="False">
+        
+        
+        <xpath expr="//header" position="before">   
+		
+		<!--  start your code from here -->
+		<section id="sh_top_bar_17">
+			<div class="container">
+			   <div class="sh_topbar_content">
+				  <div class="sh_left_content">
+					 <ul>
+						 <li>
+							 <a class="sh_btn" t-att-href="'mailto: %s' %(res_company.email)"><span class="fa fa-envelope" data-oe-model="ir.ui.view" data-oe-id="1648" data-oe-field="arch" data-oe-xpath="/data/xpath/section/div[1]/div[1]/div[1]/ul[1]/li[2]/a[1]/span[1]"></span>
+							 <t t-esc="res_company.email"></t>
+							 </a>
+						 </li>
+						<li>
+							 <a class="sh_btn" t-att-href="'tel: %s' %(res_company.phone)"><span class="fa fa-phone" data-oe-model="ir.ui.view" data-oe-id="1648" data-oe-field="arch" data-oe-xpath="/data/xpath/section/div[1]/div[1]/div[1]/ul[1]/li[1]/a[1]/span[1]"></span> 
+							 <t t-esc="res_company.phone"></t> 
+							 </a>
+						 </li>
+					 </ul>
+				  </div>
+				  <!-- <div class="sh_center_content">
+					<a href="/" class="logo">
+						<img t-att-src="image_data_uri(website.logo)" style="max-width: 40%; height: auto;" class="image wp-image-2059  attachment-full size-full" t-att-alt="website.name"/>
+				  
+				   </a>
+			 
+				  </div> -->
+				  
+				  <div class="sh_right_content">
+					 <ul>
+						 <li>
+							 <a target="_blank" class="sh_btn" data-oe-model="ir.ui.view" data-oe-id="1648" data-oe-field="arch" data-oe-xpath="/data/xpath/section/div[1]/div[1]/div[2]/ul[1]/li[1]/a[1]" href="https://www.facebook.com/Odoo"><span class="fa fa-facebook"></span></a>
+						 </li>
+						 <li>
+							 <a target="_blank" class="sh_btn" data-oe-model="ir.ui.view" data-oe-id="1648" data-oe-field="arch" data-oe-xpath="/data/xpath/section/div[1]/div[1]/div[2]/ul[1]/li[2]/a[1]" href="https://twitter.com/Odoo"><span class="fa fa-twitter"></span></a>
+						 </li>
+						 <li>
+							<a target="_blank" class="sh_btn" data-oe-model="ir.ui.view" data-oe-id="1648" data-oe-field="arch" data-oe-xpath="/data/xpath/section/div[1]/div[1]/div[2]/ul[1]/li[3]/a[1]" href="https://www.pinterest.com/company/odoo"><span class="fa fa-pinterest-p"></span></a>
+						</li>
+						 <li>
+							 <a target="_blank" class="sh_btn" data-oe-model="ir.ui.view" data-oe-id="1648" data-oe-field="arch" data-oe-xpath="/data/xpath/section/div[1]/div[1]/div[2]/ul[1]/li[3]/a[1]" href="https://www.linkedin.com/company/odoo"><span class="fa fa-linkedin"></span></a>
+						 </li>
+						 <li>
+							 <a target="_blank" class="sh_btn" data-oe-model="ir.ui.view" data-oe-id="1648" data-oe-field="arch" data-oe-xpath="/data/xpath/section/div[1]/div[1]/div[2]/ul[1]/li[4]/a[1]" href="https://www.youtube.com/user/OpenERPonline"><span class="fa fa-share-alt"></span></a>
+						 </li>		         
+					 </ul>
+				  </div>
+				  
+			   </div>
+			</div>
+		</section>
+		<!-- End your code -->
+	</xpath>
+</template> 
+<!-- topbar 17 -->
+
+
+
+<!-- topbar 19 -->
+    
+<template id="sh_corpomate_theme_style_top_bar_19" name="Top Bar Style 19" inherit_id="website.layout" active="False">
+	<xpath expr="//header" position="before">    
+	<div class="oe_structure">
+	<section id="sh_top_bar_19">
+		<div class="container">
+				  <!-- Top Left -->
+				  <div class="top-left">
+					 <ul class="clearfix">
+						<li><a href="#">Bitcoin Rate  $1756.38 <span class="fa fa-long-arrow-up"></span> 17.65%</a></li>
+					 </ul>
+				  </div>
+				  <!-- Top Right -->
+				  <div class="top-right">
+					 
+					 
+		<!-- LANGUAGE SELECTOR -->
+		<t t-set="flags" t-value="True"/>
+		<t t-call="website.language_selector">
+			<t t-set="_div_classes" t-value="(_div_classes or '') + ' dropdown'"/>
+		</t>
+						
+											
+				  </div>
+			</div>
+	</section>
+	</div>
+		
+		<!-- End your code -->
+	</xpath>
+</template>
+    
+<!-- topbar 19 end -->
+<template id="sh_corpomate_theme_style_top_bar_20" name="Top Bar Style 20" inherit_id="website.layout" active="False">
+  
+	<xpath expr="//header" position="before">   
+
+	 <!-- 
+	<xpath expr="//div[@id='wrapwrap']//header" position="before">  
+		  -->
+			 
+	<div class="oe_structure">
+		<section id="sh_top_bar_20">
+			<div class="container-fluid">
+				<div class="sh_topbar_content">
+					<div class="sh_tb_left">
+						<div class="sh_main_content">
+							<div class="sh_icon">
+								<span class="fa fa-tachometer"></span>
+							</div>
+							<div class="sh_text">
+								Raise your website traffic with invess <span>Free Site Analysis</span>
+							</div>
+						</div>
+					</div>
+					<div class="sh_tb_right">
+						<div class="row">
+							<div class="col-md-6">
+								<div class="sh_contact_details bdr">
+									<div class="sh_icon">
+										<span class=" fa fa-phone"></span>
+									</div>
+									<div class="sh_content">
+									<a href="+917984575681">	+917984575681 </a>
+									</div>
+								</div>
+							</div>
+							<div class="col-md-6">
+								<div class="sh_contact_details">
+									<div class="sh_icon">
+										<span class=" fa fa-envelope"></span>
+									</div>
+									<div class="sh_content">
+									<a href="info@softhealer.com">	info@softhealer.com </a>
+									</div>
+								</div>
+							</div>
+						</div>
+						
+
+		
+		
+
+										
+					</div>
+										
+				
+						
+					
+			
+					
+					
+					
+				</div>
+			</div>
+		</section>  	 
+	</div>
+		<!-- End your code -->
+	</xpath>
+</template>
+
+</odoo>

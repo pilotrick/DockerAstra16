@@ -1,0 +1,54 @@
+/* header .navbar a.navbar-brand{display: none;} */
+header.o_affix_enabled ul{margin-left: 0 !important;width: 100%;}
+header .navbar{background-color: #363636 !important;padding: 0 !important;}
+header ul li > a{color: #fff !important;text-transform: capitalize;padding: 15px 22px;font-weight: 600;letter-spacing: 0.7px;}
+header ul li > a.active,
+header ul li > a:hover,
+header ul li > a.show{background: o-color('o-color-1');}
+header ul li:last-child .js_usermenu{right: auto;}
+header ul li.o_extra_menu_items ul li a{color: #212529 !important;padding: 0.25rem 1.5rem !important;}
+header ul li.o_extra_menu_items ul{min-width: 14rem;} 
+
+
+
+
+@media screen and (max-width:768px) {
+  header.o_header_standard .oe_structure.oe_structure_solo .s_text_block a.btn {
+    white-space: nowrap;
+    display: none;
+}
+}
+
+
+
+
+@media (max-width: 767px){
+header .navbar a.navbar-brand {display: block;padding: 15px 10px !important;}
+header .navbar{background-color: #ffffff !important;}
+}
+
+@media screen and (max-width:567px) {
+  .navbar .btn {
+    white-space: nowrap;
+    display: none;
+}
+}
+
+
+
+.sh_corpomate_main_navbar_section_style_1{
+    z-index: 1;
+  }
+
+
+
+
+
+/* ----------------------
+ODOO v14c 12-10-2020 
+------------------------ */
+.navbar-brand.logo{visibility: hidden;width: 0px;margin:0px!important;}
+.o_header_affixed.o_header_is_scrolled .navbar-brand img{height: 2.3rem;}
+@media only screen and (max-width: 767.98px){
+   .o_header_standard.o_top_menu_collapse_shown .navbar #top_menu_container #top_menu_collapse .nav.navbar-nav .nav-item .nav-link{color: rgba(0, 0, 0, 0.5) !important;}
+}

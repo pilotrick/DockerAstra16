@@ -2,7 +2,7 @@
 
 {
     'name': 'Generic Read Only User Access',
-    "author": "Edge Technologies",
+    "author": "Astratech",
     'version': '16.0.1.0',
     'summary': "Read Only Access to User Limited Access Rights to User User Limited Access Read Only User Access User Read Only Access User Restricted Access Restriction On User Access Read Only User Read Only Access Login User Read Only Access Limited Portal User Access",
     'description': """ This App Provides A Functionality to Make Generic User Access Read Only for A Particular Login User Set User Read Only

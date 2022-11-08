@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- 
+    Theme Customize Templates   
+    Color     
+    -->
+
+    <record id="sh_corpomate_theme.sh_corpomate_theme_primary_variable_font_scss_1" model="ir.asset">
+        <field name="name">Corpomate primary variable font 1 SCSS</field>
+        <field name="bundle">web._assets_primary_variables</field>
+        <field name="path">sh_corpomate_theme/static/src/scss/theme/font/font_01.scss</field>
+    </record>
+
+    <record id="sh_corpomate_theme.sh_corpomate_theme_primary_variable_font_scss_2" model="ir.asset">
+        <field name="name">Corpomate primary variable font 2 SCSS</field>
+        <field name="bundle">web._assets_primary_variables</field>
+        <field name="path">sh_corpomate_theme/static/src/scss/theme/font/font_02.scss</field>
+    </record>
+    
+</odoo>
+    

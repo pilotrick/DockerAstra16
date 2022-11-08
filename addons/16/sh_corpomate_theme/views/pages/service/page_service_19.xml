@@ -1,0 +1,254 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- SERVICE 19 -->
+    <template id="sh_corpomate_tmpl_service_19" name="service">
+        <t t-call="website.layout">
+            <div id="wrap" class="oe_structure">
+                <section id="sh_corpomate_theme_section_486" data-snippet="sh_corpomate_theme_tmpl_486" class="o_colored_level" data-name="Services us" style="background-image: none;">
+                    <div class="container">
+                        <h1 data-watermark="Services" class="o_default_snippet_text">
+                            <span class="o_default_snippet_text">Our</span>
+                            Services
+                        </h1>
+                        <div class="main-row">
+                            <div class="row">
+                                <div class="col-xl-4 col-lg-4 col-md-6 col-12 o_colored_level">
+                                    <div class="sh_about_box">
+                                        <div>
+                                            <div class="sh_about_icon d-flex flex-wrap justify-content-center align-items-center">
+                                                <img src="/sh_corpomate_theme/static/src/img/theme_19/icon/1-4.png" alt="" width="60" height="60" loading="lazy" />
+                                            </div>
+                                            <div class="sh_about_text">
+                                                <h3 class="o_default_snippet_text">
+                                                    Decentralized
+                                                    <br />
+                                                    Finance(DeFi)
+                                                </h3>
+                                                <p class="o_default_snippet_text">Lorem ipsum dolor sit amet consectur.</p>
+                                                <div class="sh_divider" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-xl-4 col-lg-4 col-md-6 col-12 o_colored_level">
+                                    <div class="sh_about_box">
+                                        <div>
+                                            <div class="sh_about_icon d-flex flex-wrap justify-content-center align-items-center">
+                                                <img src="/sh_corpomate_theme/static/src/img/theme_19/icon/1-5.png" alt="" width="60" height="60" loading="lazy" />
+                                            </div>
+                                            <div class="sh_about_text">
+                                                <h3 class="o_default_snippet_text">
+                                                    Optimization Of
+                                                    <br />
+                                                    Crypto Stratergy
+                                                </h3>
+                                                <p class="o_default_snippet_text">Lorem ipsum dolor sit amet consectur.</p>
+                                                <div class="sh_divider" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-xl-4 col-lg-4 col-md-6 col-12 o_colored_level">
+                                    <div class="sh_about_box">
+                                        <div>
+                                            <div class="sh_about_icon d-flex flex-wrap justify-content-center align-items-center">
+                                                <img src="/sh_corpomate_theme/static/src/img/theme_19/icon/1-6.png" alt="" width="60" height="60" loading="lazy" />
+                                            </div>
+                                            <div class="sh_about_text">
+                                                <h3 class="o_default_snippet_text">
+                                                    IEO On Exchanges
+                                                    <br />
+                                                    Liquidity of IEO
+                                                </h3>
+                                                <p class="o_default_snippet_text">Lorem ipsum dolor sit amet consectur.</p>
+                                                <div class="sh_divider" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-xl-4 col-lg-4 col-md-6 col-12 o_colored_level">
+                                    <div class="sh_about_box">
+                                        <div>
+                                            <div class="sh_about_icon d-flex flex-wrap justify-content-center align-items-center">
+                                                <img src="/sh_corpomate_theme/static/src/img/theme_19/icon/1-7.png" alt="" width="60" height="60" loading="lazy" />
+                                            </div>
+                                            <div class="sh_about_text">
+                                                <h3 class="o_default_snippet_text">
+                                                    Cryptocurrency
+                                                    <br />
+                                                    Analytical Review
+                                                </h3>
+                                                <p class="o_default_snippet_text">Lorem ipsum dolor sit amet consectur.</p>
+                                                <div class="sh_divider" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-xl-4 col-lg-4 col-md-6 col-12 o_colored_level">
+                                    <div class="sh_about_box">
+                                        <div>
+                                            <div class="sh_about_icon d-flex flex-wrap justify-content-center align-items-center">
+                                                <img src="/sh_corpomate_theme/static/src/img/theme_19/icon/1-8.png" alt="" width="60" height="60" loading="lazy" />
+                                            </div>
+                                            <div class="sh_about_text">
+                                                <h3 class="o_default_snippet_text">
+                                                    White Paper
+                                                    <br />
+                                                    Development
+                                                </h3>
+                                                <p class="o_default_snippet_text">Lorem ipsum dolor sit amet consectur.</p>
+                                                <div class="sh_divider" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-xl-4 col-lg-4 col-md-6 col-12 o_colored_level">
+                                    <div class="sh_about_box">
+                                        <div>
+                                            <div class="sh_about_icon d-flex flex-wrap justify-content-center align-items-center">
+                                                <img src="/sh_corpomate_theme/static/src/img/theme_19/icon/1-9.png" alt="" width="60" height="60" loading="lazy" />
+                                            </div>
+                                            <div class="sh_about_text">
+                                                <h3 class="o_default_snippet_text">
+                                                    Listing the Top
+                                                    <br />
+                                                    Exchanges
+                                                </h3>
+                                                <p class="o_default_snippet_text">Lorem ipsum dolor sit amet consectur.</p>
+                                                <div class="sh_divider" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <section id="sh_corpomate_theme_section_487" class="js_cls_sh_corpomate_section_479 sh_animation_part oe_img_bg o_bg_img_center o_colored_level" data-date_start="2021-01-01" data-date_end="2030-12-29" data-snippet="sh_corpomate_theme_tmpl_487" data-name="Counter" style="background-image: url(&quot;/sh_corpomate_theme/static/src/img/theme_19/images/curve-bg.png&quot;);">
+                    <div class="sub-div-3">
+                        <img src="/sh_corpomate_theme/static/src/img/theme_19/images/shape-02-1.png" loading="lazy" />
+                    </div>
+                    <div class="sub-div-1">
+                        <img src="/sh_corpomate_theme/static/src/img/theme_19/images/shape-02-1.png" loading="lazy" />
+                    </div>
+                    <div class="sub-div-2" />
+                    <div class="container">
+                        <h1 data-watermark="Road Map" class="o_default_snippet_text">
+                            <span class="o_default_snippet_text">Token Sale</span>
+                            Roadmap
+                        </h1>
+                        <div class="main-row">
+                            <div class="row">
+                                <div class="col-10 mx-auto d-block o_colored_level">
+                                    <div class="progress sh_progress">
+                                        <div class="progress-bar wow fadeInLeft js_cls_s_progress_percent_auto_style sh_progress_bar" data-wow-duration="1.5s" data-wow-delay="1s" style="width: 90%; visibility: visible; animation-duration: 1.5s; animation-delay: 1s;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100" />
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="second-row">
+                                <div class="row">
+                                    <div class="col-md-3 col-6 o_colored_level">
+                                        <div class="sh_box">
+                                            <h4 class="o_default_snippet_text">Pre-ICO Opens</h4>
+                                            <h6 class="o_default_snippet_text">August 23, 2021</h6>
+                                            <div class="sub-div inner1" />
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3 col-6 o_colored_level">
+                                        <div class="sh_box">
+                                            <h4 class="o_default_snippet_text">Private Token Round</h4>
+                                            <h6 class="o_default_snippet_text">September 10, 2021</h6>
+                                            <div class="sub-div inner2" />
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3 col-6 o_colored_level">
+                                        <div class="sh_box">
+                                            <h4 class="o_default_snippet_text">ICO Opens</h4>
+                                            <h6 class="o_default_snippet_text">September 28, 2021</h6>
+                                            <div class="sub-div inner3" />
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3 col-6 o_colored_level">
+                                        <div class="sh_box">
+                                            <h4 class="o_default_snippet_text">Crowdsale ends</h4>
+                                            <h6 class="o_default_snippet_text">October 10, 2021</h6>
+                                            <div class="sub-div inner4" />
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="third-row">
+                                <div class="row">
+                                    <div class="col-lg-10 col-12 mx-auto d-block o_colored_level">
+                                        <div class="sh_main_box">
+                                            <div class="row">
+                                                <div class="col-lg-3 col-md-6 col-12s o_colored_level">
+                                                    <h2 class="sh_corpomate_timer_day_counter o_default_snippet_text">45</h2>
+                                                    <h5 class="o_default_snippet_text">Days</h5>
+                                                </div>
+                                                <div class="col-lg-3 col-md-6 col-12s o_colored_level">
+                                                    <h2 class="sh_corpomate_timer_hour_counter o_default_snippet_text">36</h2>
+                                                    <h5 class="o_default_snippet_text">Hours</h5>
+                                                </div>
+                                                <div class="col-lg-3 col-md-6 col-12s o_colored_level">
+                                                    <h2 class="sh_corpomate_timer_minute_counter o_default_snippet_text">11</h2>
+                                                    <h5 class="o_default_snippet_text">Minutes</h5>
+                                                </div>
+                                                <div class="col-lg-3 col-md-6 col-12s o_colored_level">
+                                                    <h2 class="sh_corpomate_timer_second_counter o_default_snippet_text">21</h2>
+                                                    <h5 class="o_default_snippet_text">Seconds</h5>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <section id="sh_corpomate_theme_section_488" data-snippet="sh_corpomate_theme_tmpl_488" class="o_colored_level" data-name="About-service" style="background-image: none;">
+                    <div class="container">
+                        <div class="main-row">
+                            <div class="row">
+                                <div class="col-lg-6 col-md-12 o_colored_level" style="order:2;">
+                                    <div class="sh_about-img">
+                                        <img src="/sh_corpomate_theme/static/src/img/theme_19/images/cypto.png" loading="lazy" />
+                                    </div>
+                                </div>
+                                <div class="col-lg-6 col-md-12 align-self-center o_colored_level" style="order:1;">
+                                    <div class="sh_about-text">
+                                        <h3 class="o_default_snippet_text">
+                                                          Need More Answers?
+                                                        </h3>
+                                        <p class="o_default_snippet_text">
+                                                            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                                                            tempor incididunt ut labore et dolore magna aliqua.
+                                                        </p>
+                                        <h4 class="o_default_snippet_text">
+                                            <div class="sub-div">
+                                                <img src="/sh_corpomate_theme/static/src/img/theme_19/icon/7-2.png" loading="lazy" />
+                                            </div>
+                                            Lorem Ipsum Dolor Sit Amet
+                                        </h4>
+                                        <h4 class="o_default_snippet_text">
+                                            <div class="sub-div">
+                                                <img src="/sh_corpomate_theme/static/src/img/theme_19/icon/7-2.png" loading="lazy" />
+                                            </div>
+                                            Lorem Ipsum Dolor Sit Amet
+                                        </h4>
+                                        <h4 class="o_default_snippet_text">
+                                            <div class="sub-div">
+                                                <img src="/sh_corpomate_theme/static/src/img/theme_19/icon/7-2.png" loading="lazy" />
+                                            </div>
+                                            Lorem Ipsum Dolor Sit Amet
+                                        </h4>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </t>
+    </template>
+</odoo>

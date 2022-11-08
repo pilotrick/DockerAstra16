@@ -1,0 +1,456 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+
+	<!-- assets_primary_variables -->
+	<template id="assets_primary_variables_1" inherit_id="sh_corpomate_theme._assets_primary_variables" active="False">
+		<xpath expr="//link[last()]" position="after">
+			<link rel="stylesheet" type="text/scss" href="/sh_corpomate_theme/static/src/scss/theme/color/color_01.scss" />
+		</xpath>
+	</template>
+
+
+	<template id="assets_primary_variables_2" inherit_id="sh_corpomate_theme._assets_primary_variables" active="False">
+		<xpath expr="//link[last()]" position="after">
+			<link rel="stylesheet" type="text/scss" href="/sh_corpomate_theme/static/src/scss/theme/color/color_02.scss" />
+		</xpath>
+	</template>
+
+
+	<template id="assets_primary_variables_3" inherit_id="sh_corpomate_theme._assets_primary_variables" active="False">
+		<xpath expr="//link[last()]" position="after">
+			<link rel="stylesheet" type="text/scss" href="/sh_corpomate_theme/static/src/scss/theme/color/color_03.scss" />
+		</xpath>
+	</template>
+
+
+	<template id="assets_primary_variables_4" inherit_id="sh_corpomate_theme._assets_primary_variables" active="False">
+		<xpath expr="//link[last()]" position="after">
+			<link rel="stylesheet" type="text/scss" href="/sh_corpomate_theme/static/src/scss/theme/color/color_04.scss" />
+		</xpath>
+	</template>
+
+
+	<template id="assets_primary_variables_5" inherit_id="sh_corpomate_theme._assets_primary_variables" active="False">
+		<xpath expr="//link[last()]" position="after">
+			<link rel="stylesheet" type="text/scss" href="/sh_corpomate_theme/static/src/scss/theme/color/color_05.scss" />
+		</xpath>
+	</template>
+
+
+	<template id="assets_primary_variables_6" inherit_id="sh_corpomate_theme._assets_primary_variables" active="False">
+		<xpath expr="//link[last()]" position="after">
+			<link rel="stylesheet" type="text/scss" href="/sh_corpomate_theme/static/src/scss/theme/color/color_06.scss" />
+		</xpath>
+	</template>
+
+
+	<template id="assets_primary_variables_7" inherit_id="sh_corpomate_theme._assets_primary_variables" active="False">
+		<xpath expr="//link[last()]" position="after">
+			<link rel="stylesheet" type="text/scss" href="/sh_corpomate_theme/static/src/scss/theme/color/color_07.scss" />
+		</xpath>
+	</template>
+
+
+	<template id="assets_primary_variables_8" inherit_id="sh_corpomate_theme._assets_primary_variables" active="False">
+		<xpath expr="//link[last()]" position="after">
+			<link rel="stylesheet" type="text/scss" href="/sh_corpomate_theme/static/src/scss/theme/color/color_08.scss" />
+		</xpath>
+	</template>
+
+
+	<template id="assets_primary_variables_9" inherit_id="sh_corpomate_theme._assets_primary_variables" active="False">
+		<xpath expr="//link[last()]" position="after">
+			<link rel="stylesheet" type="text/scss" href="/sh_corpomate_theme/static/src/scss/theme/color/color_09.scss" />
+		</xpath>
+	</template>
+
+
+	<template id="assets_primary_variables_10" inherit_id="sh_corpomate_theme._assets_primary_variables" active="False">
+		<xpath expr="//link[last()]" position="after">
+			<link rel="stylesheet" type="text/scss" href="/sh_corpomate_theme/static/src/scss/theme/color/color_10.scss" />
+		</xpath>
+	</template>
+
+
+	<template id="assets_primary_variables_11" inherit_id="sh_corpomate_theme._assets_primary_variables" active="False">
+		<xpath expr="//link[last()]" position="after">
+			<link rel="stylesheet" type="text/scss" href="/sh_corpomate_theme/static/src/scss/theme/color/color_11.scss" />
+		</xpath>
+	</template>
+
+	<template id="assets_primary_variables_12" inherit_id="sh_corpomate_theme._assets_primary_variables" active="False">
+		<xpath expr="//link[last()]" position="after">
+			<link rel="stylesheet" type="text/scss" href="/sh_corpomate_theme/static/src/scss/theme/color/color_12.scss" />
+		</xpath>
+	</template>
+
+	<template id="assets_primary_variables_13" inherit_id="sh_corpomate_theme._assets_primary_variables" active="False">
+		<xpath expr="//link[last()]" position="after">
+			<link rel="stylesheet" type="text/scss" href="/sh_corpomate_theme/static/src/scss/theme/color/color_13.scss" />
+		</xpath>
+	</template>
+
+	<template id="assets_primary_variables_14" inherit_id="sh_corpomate_theme._assets_primary_variables" active="False">
+		<xpath expr="//link[last()]" position="after">
+			<link rel="stylesheet" type="text/scss" href="/sh_corpomate_theme/static/src/scss/theme/color/color_14.scss" />
+		</xpath>
+	</template>
+
+	<template id="assets_primary_variables_15" inherit_id="sh_corpomate_theme._assets_primary_variables" active="False">
+		<xpath expr="//link[last()]" position="after">
+			<link rel="stylesheet" type="text/scss" href="/sh_corpomate_theme/static/src/scss/theme/color/color_15.scss" />
+			<link rel="stylesheet" type="text/scss" href="/sh_corpomate_theme/static/src/scss/theme/font/font_15.scss" />
+
+		</xpath>
+	</template>
+
+	<template id="assets_primary_variables_16" inherit_id="sh_corpomate_theme._assets_primary_variables" active="False">
+		<xpath expr="//link[last()]" position="after">
+			<link rel="stylesheet" type="text/scss" href="/sh_corpomate_theme/static/src/scss/theme/color/color_16.scss" />
+		</xpath>
+	</template>
+	<template id="assets_primary_variables_17" inherit_id="sh_corpomate_theme._assets_primary_variables" active="False">
+		<xpath expr="//link[last()]" position="after">
+			<link rel="stylesheet" type="text/scss" href="/sh_corpomate_theme/static/src/scss/theme/color/color_17.scss" />
+		</xpath>
+	</template>
+	<template id="assets_primary_variables_18" inherit_id="sh_corpomate_theme._assets_primary_variables" active="False">
+		<xpath expr="//link[last()]" position="after">
+			<link rel="stylesheet" type="text/scss" href="/sh_corpomate_theme/static/src/scss/theme/color/color_18.scss" />
+		</xpath>
+	</template>
+	<template id="assets_primary_variables_19" inherit_id="sh_corpomate_theme._assets_primary_variables" active="False">
+		<xpath expr="//link[last()]" position="after">
+			<link rel="stylesheet" type="text/scss" href="/sh_corpomate_theme/static/src/scss/theme/color/color_19.scss" />
+		</xpath>
+	</template>
+
+	<template id="assets_primary_variables_20" inherit_id="sh_corpomate_theme._assets_primary_variables" active="False">
+		<xpath expr="//link[last()]" position="after">
+			<link rel="stylesheet" type="text/scss" href="/sh_corpomate_theme/static/src/scss/theme/color/color_20.scss" />
+		</xpath>
+	</template>
+
+
+
+	<template id="sh_corpomate_theme_style_lang_show" name="Show Language" inherit_id="website.assets_frontend" active="False">
+		<xpath expr="//link[last()]" position="after">
+			<link rel="stylesheet" type="text/scss" href="/sh_corpomate_theme/static/src/scss/style_lang/lang_show.scss" />
+		</xpath>
+	</template>
+
+	<template id="sh_corpomate_theme_style_lang_hide" name="Hide Language" inherit_id="website.assets_frontend" active="False">
+		<xpath expr="//link[last()]" position="after">
+			<link rel="stylesheet" type="text/scss" href="/sh_corpomate_theme/static/src/scss/style_lang/lang_hide.scss" />
+		</xpath>
+	</template>
+
+
+	<!-- 
+  
+    Theme Customize Templates   
+    Copyrights Bar
+     
+    -->
+
+
+	<template id="sh_corpomate_theme_style_copyright_hide" name="Hide Copyrights" inherit_id="website.assets_frontend" active="False">
+		<xpath expr="//link[last()]" position="after">
+			<link rel="stylesheet" type="text/scss" href="/sh_corpomate_theme/static/src/scss/style_copyright/copyright_hide.scss" />
+		</xpath>
+	</template>
+
+
+
+	<!--   
+    Theme Customize Templates   
+    Header
+    -->
+	<template id="sh_corpomate_theme_style_header_1" name="Header 1" inherit_id="website.assets_frontend" active="False">
+		<xpath expr="//link[last()]" position="after">
+			<link rel="stylesheet" type="text/scss" href="/sh_corpomate_theme/static/src/scss/style_header/style_header_1.scss" />
+		</xpath>
+	</template>
+
+	<template id="sh_corpomate_theme_style_header_2" name="Header 2" inherit_id="website.assets_frontend" active="False">
+		<xpath expr="//link[last()]" position="after">
+			<link rel="stylesheet" type="text/scss" href="/sh_corpomate_theme/static/src/scss/style_header/style_header_2.scss" />
+		</xpath>
+	</template>
+
+	<template id="sh_corpomate_theme_style_header_3" name="Header 3" inherit_id="website.assets_frontend" active="False">
+		<xpath expr="//link[last()]" position="after">
+			<link rel="stylesheet" type="text/scss" href="/sh_corpomate_theme/static/src/scss/style_header/style_header_3.scss" />
+		</xpath>
+	</template>
+
+	<template id="sh_corpomate_theme_style_header_4" name="Header 4" inherit_id="website.assets_frontend" active="False">
+		<xpath expr="//link[last()]" position="after">
+			<link rel="stylesheet" type="text/scss" href="/sh_corpomate_theme/static/src/scss/style_header/style_header_4.scss" />
+		</xpath>
+	</template>
+
+	<template id="sh_corpomate_theme_style_header_5" name="Header 5" inherit_id="website.assets_frontend" active="False">
+		<xpath expr="//link[last()]" position="after">
+			<link rel="stylesheet" type="text/scss" href="/sh_corpomate_theme/static/src/scss/style_header/style_header_5.scss" />
+		</xpath>
+	</template>
+
+
+	<!-- Header 2 layout -->
+<!-- 	<template id="sh_corpomate_theme_portal_frontend_layout_header_2" name="Frontend Layout Header 2" inherit_id="portal.frontend_layout" active="False">
+
+		<xpath expr="//header" position="replace">
+
+			<header>
+				<nav class="navbar navbar-expand-md navbar-light bg-light">
+					<div class="container">
+						<a href="/" class="navbar-brand logo">
+							<span t-field="website.logo" t-options="{'widget': 'image'}" role="img" t-att-aria-label="'Logo of %s' % website.name" t-att-title="website.name" />
+						</a>
+						<button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#top_menu_collapse">
+							<span class="navbar-toggler-icon" />
+						</button>
+						<div class="collapse navbar-collapse" id="top_menu_collapse">
+							FIXME We want menu to open to the right by default (except cases handled in JS)
+							<ul class="nav navbar-nav ml-auto text-right" id="top_menu">
+								<li class="nav-item divider" t-ignore="true" t-if="not user_id._is_public()" />
+								<li class="nav-item dropdown" t-ignore="true" t-if="not user_id._is_public()">
+									<a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">
+										<b>
+											<span t-esc="user_id.name[:23] + '...' if user_id.name and len(user_id.name) &gt; 25 else user_id.name" />
+										</b>
+									</a>
+									<div class="dropdown-menu js_usermenu" role="menu">
+										<a id="o_logout" class="dropdown-item" t-attf-href="/web/session/logout?redirect=/" role="menuitem">Logout</a>
+									</div>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</nav>
+			</header>
+		</xpath>
+	</template> -->
+
+
+	<template id="sh_corpomate_theme_style_header_7" name="Header 7" inherit_id="website.assets_frontend" active="False">
+		<xpath expr="//link[last()]" position="after">
+			<link rel="stylesheet" type="text/scss" href="/sh_corpomate_theme/static/src/scss/style_header/style_header_7.scss" />
+		</xpath>
+	</template>
+
+
+	<template id="sh_corpomate_theme_style_header_8" name="Header 8" inherit_id="website.assets_frontend" active="False">
+		<xpath expr="//link[last()]" position="after">
+			<link rel="stylesheet" type="text/scss" href="/sh_corpomate_theme/static/src/scss/style_header/style_header_8.scss" />
+		</xpath>
+	</template>
+
+	<template id="sh_corpomate_theme_style_header_9" name="Header 9" inherit_id="website.assets_frontend" active="False">
+		<xpath expr="//link[last()]" position="after">
+			<link rel="stylesheet" type="text/scss" href="/sh_corpomate_theme/static/src/scss/style_header/style_header_9.scss" />
+		</xpath>
+	</template>
+	<template id="sh_corpomate_theme_style_header_10" name="Header 10" inherit_id="website.assets_frontend" active="False">
+		<xpath expr="//link[last()]" position="after">
+			<link rel="stylesheet" type="text/scss" href="/sh_corpomate_theme/static/src/scss/style_header/style_header_10.scss" />
+		</xpath>
+	</template>
+
+	<template id="sh_corpomate_theme_style_header_11" name="Header 11" inherit_id="website.assets_frontend" active="False">
+		<xpath expr="//link[last()]" position="after">
+			<link rel="stylesheet" type="text/scss" href="/sh_corpomate_theme/static/src/scss/style_header/style_header_11.scss" />
+		</xpath>
+	</template>
+
+	<template id="sh_corpomate_theme_style_header_12" name="Header 12" inherit_id="website.assets_frontend" active="False">
+		<xpath expr="//link[last()]" position="after">
+			<link rel="stylesheet" type="text/scss" href="/sh_corpomate_theme/static/src/scss/style_header/style_header_12.scss" />
+		</xpath>
+	</template>
+
+	<template id="sh_corpomate_theme_style_header_13" name="Header 13" inherit_id="website.assets_frontend" active="False">
+		<xpath expr="//link[last()]" position="after">
+			<link rel="stylesheet" type="text/scss" href="/sh_corpomate_theme/static/src/scss/style_header/style_header_13.scss" />
+		</xpath>
+	</template>
+
+	<template id="sh_corpomate_theme_style_header_14" name="Header 14" inherit_id="website.assets_frontend" active="False">
+		<xpath expr="//link[last()]" position="after">
+			<link rel="stylesheet" type="text/scss" href="/sh_corpomate_theme/static/src/scss/style_header/style_header_14.scss" />
+		</xpath>
+	</template>
+
+	<template id="sh_corpomate_theme_style_header_15" name="Header 15" inherit_id="website.assets_frontend" active="False">
+		<xpath expr="//link[last()]" position="after">
+			<link rel="stylesheet" type="text/scss" href="/sh_corpomate_theme/static/src/scss/style_header/style_header_15.scss" />
+		</xpath>
+	</template>
+
+	<template id="sh_corpomate_theme_style_header_16" name="Header 16" inherit_id="website.assets_frontend" active="False">
+		<xpath expr="//link[last()]" position="after">
+			<link rel="stylesheet" type="text/scss" href="/sh_corpomate_theme/static/src/scss/style_header/style_header_16.scss" />
+		</xpath>
+	</template>
+
+
+	<template id="sh_corpomate_theme_style_header_17" name="Header 17" inherit_id="website.assets_frontend" active="False">
+		<xpath expr="//link[last()]" position="after">
+			<link rel="stylesheet" type="text/scss" href="/sh_corpomate_theme/static/src/scss/style_header/style_header_17.scss" />
+		</xpath>
+	</template>
+	<template id="sh_corpomate_theme_style_header_18" name="Header 18" inherit_id="website.assets_frontend" active="False">
+		<xpath expr="//link[last()]" position="after">
+			<link rel="stylesheet" type="text/scss" href="/sh_corpomate_theme/static/src/scss/style_header/style_header_18.scss" />
+		</xpath>
+	</template>
+	<template id="sh_corpomate_theme_style_header_19" name="Header 19" inherit_id="website.assets_frontend" active="False">
+		<xpath expr="//link[last()]" position="after">
+			<link rel="stylesheet" type="text/scss" href="/sh_corpomate_theme/static/src/scss/style_header/style_header_19.scss" />
+		</xpath>
+	</template>
+
+	<template id="sh_corpomate_theme_style_header_20" name="Header 20" inherit_id="website.assets_frontend" active="False">
+		<xpath expr="//link[last()]" position="after">
+			<link rel="stylesheet" type="text/scss" href="/sh_corpomate_theme/static/src/scss/style_header/style_header_20.scss" />
+		</xpath>
+	</template>
+
+
+	<template id="sh_corpomate_theme_style_header_21" name="Header 21" inherit_id="website.assets_frontend" active="False">
+		<xpath expr="//link[last()]" position="after">
+			<link rel="stylesheet" type="text/scss" href="/sh_corpomate_theme/static/src/scss/style_header/style_header_21.scss" />
+		</xpath>
+	</template>
+
+
+	<!-- 
+    Theme Customize Templates   
+    Footer     
+    -->
+	<template id="sh_corpomate_theme_style_footer_1" name="Footer 1" inherit_id="website.assets_frontend" active="False">
+		<xpath expr="//link[last()]" position="after">
+			<link rel="stylesheet" type="text/scss" href="/sh_corpomate_theme/static/src/scss/style_footer/style_footer_1.scss" />
+		</xpath>
+	</template>
+	<template id="sh_corpomate_theme_style_footer_2" name="Footer 2" inherit_id="website.assets_frontend" active="False">
+		<xpath expr="//link[last()]" position="after">
+			<link rel="stylesheet" type="text/scss" href="/sh_corpomate_theme/static/src/scss/style_footer/style_footer_2.scss" />
+		</xpath>
+	</template>
+	<template id="sh_corpomate_theme_style_footer_3" name="Footer 3" inherit_id="website.assets_frontend" active="False">
+		<xpath expr="//link[last()]" position="after">
+			<link rel="stylesheet" type="text/scss" href="/sh_corpomate_theme/static/src/scss/style_footer/style_footer_3.scss" />
+		</xpath>
+	</template>
+	<template id="sh_corpomate_theme_style_footer_4" name="Footer 4" inherit_id="website.assets_frontend" active="False">
+		<xpath expr="//link[last()]" position="after">
+			<link rel="stylesheet" type="text/scss" href="/sh_corpomate_theme/static/src/scss/style_footer/style_footer_4.scss" />
+		</xpath>
+	</template>
+
+	<template id="sh_corpomate_theme_style_footer_5" name="Footer 5" inherit_id="website.assets_frontend" active="False">
+		<xpath expr="//link[last()]" position="after">
+			<link rel="stylesheet" type="text/scss" href="/sh_corpomate_theme/static/src/scss/style_footer/style_footer_5.scss" />
+		</xpath>
+	</template>
+
+
+	<template id="sh_corpomate_theme_style_footer_6" name="Footer 6" inherit_id="website.assets_frontend" active="False">
+		<xpath expr="//link[last()]" position="after">
+			<link rel="stylesheet" type="text/scss" href="/sh_corpomate_theme/static/src/scss/style_footer/style_footer_6.scss" />
+		</xpath>
+	</template>
+
+
+	<template id="sh_corpomate_theme_style_footer_7" name="Footer 7" inherit_id="website.assets_frontend" active="False">
+		<xpath expr="//link[last()]" position="after">
+			<link rel="stylesheet" type="text/scss" href="/sh_corpomate_theme/static/src/scss/style_footer/style_footer_7.scss" />
+		</xpath>
+	</template>
+
+	<template id="sh_corpomate_theme_style_footer_8" name="Footer 8" inherit_id="website.assets_frontend" active="False">
+		<xpath expr="//link[last()]" position="after">
+			<link rel="stylesheet" type="text/scss" href="/sh_corpomate_theme/static/src/scss/style_footer/style_footer_8.scss" />
+		</xpath>
+	</template>
+
+	<template id="sh_corpomate_theme_style_footer_9" name="Footer 9" inherit_id="website.assets_frontend" active="False">
+		<xpath expr="//link[last()]" position="after">
+			<link rel="stylesheet" type="text/scss" href="/sh_corpomate_theme/static/src/scss/style_footer/style_footer_9.scss" />
+		</xpath>
+	</template>
+
+	<template id="sh_corpomate_theme_style_footer_10" name="Footer 10" inherit_id="website.assets_frontend" active="False">
+		<xpath expr="//link[last()]" position="after">
+			<link rel="stylesheet" type="text/scss" href="/sh_corpomate_theme/static/src/scss/style_footer/style_footer_10.scss" />
+		</xpath>
+	</template>
+
+	<template id="sh_corpomate_theme_style_footer_11" name="Footer 11" inherit_id="website.assets_frontend" active="False">
+		<xpath expr="//link[last()]" position="after">
+			<link rel="stylesheet" type="text/scss" href="/sh_corpomate_theme/static/src/scss/style_footer/style_footer_11.scss" />
+		</xpath>
+	</template>
+
+	<template id="sh_corpomate_theme_style_footer_12" name="Footer 12" inherit_id="website.assets_frontend" active="False">
+		<xpath expr="//link[last()]" position="after">
+			<link rel="stylesheet" type="text/scss" href="/sh_corpomate_theme/static/src/scss/style_footer/style_footer_12.scss" />
+		</xpath>
+	</template>
+
+	<template id="sh_corpomate_theme_style_footer_13" name="Footer 13" inherit_id="website.assets_frontend" active="False">
+		<xpath expr="//link[last()]" position="after">
+			<link rel="stylesheet" type="text/scss" href="/sh_corpomate_theme/static/src/scss/style_footer/style_footer_13.scss" />
+		</xpath>
+	</template>
+
+	<template id="sh_corpomate_theme_style_footer_14" name="Footer 14" inherit_id="website.assets_frontend" active="False">
+		<xpath expr="//link[last()]" position="after">
+			<link rel="stylesheet" type="text/scss" href="/sh_corpomate_theme/static/src/scss/style_footer/style_footer_14.scss" />
+		</xpath>
+	</template>
+
+	<template id="sh_corpomate_theme_style_footer_15" name="Footer 15" inherit_id="website.assets_frontend" active="False">
+		<xpath expr="//link[last()]" position="after">
+			<link rel="stylesheet" type="text/scss" href="/sh_corpomate_theme/static/src/scss/style_footer/style_footer_15.scss" />
+		</xpath>
+	</template>
+
+	<template id="sh_corpomate_theme_style_footer_16" name="Footer 16" inherit_id="website.assets_frontend" active="False">
+		<xpath expr="//link[last()]" position="after">
+			<link rel="stylesheet" type="text/scss" href="/sh_corpomate_theme/static/src/scss/style_footer/style_footer_16.scss" />
+		</xpath>
+	</template>
+	<template id="sh_corpomate_theme_style_footer_17" name="Footer 17" inherit_id="website.assets_frontend" active="False">
+		<xpath expr="//link[last()]" position="after">
+			<link rel="stylesheet" type="text/scss" href="/sh_corpomate_theme/static/src/scss/style_footer/style_footer_17.scss" />
+		</xpath>
+	</template>
+
+	<template id="sh_corpomate_theme_style_footer_18" name="Footer 18" inherit_id="website.assets_frontend" active="False">
+		<xpath expr="//link[last()]" position="after">
+			<link rel="stylesheet" type="text/scss" href="/sh_corpomate_theme/static/src/scss/style_footer/style_footer_18.scss" />
+		</xpath>
+	</template>
+	<template id="sh_corpomate_theme_style_footer_19" name="Footer 19" inherit_id="website.assets_frontend" active="False">
+		<xpath expr="//link[last()]" position="after">
+			<link rel="stylesheet" type="text/scss" href="/sh_corpomate_theme/static/src/scss/style_footer/style_footer_19.scss" />
+		</xpath>
+	</template>
+	<template id="sh_corpomate_theme_style_footer_20" name="Footer 20" inherit_id="website.assets_frontend" active="False">
+		<xpath expr="//link[last()]" position="after">
+			<link rel="stylesheet" type="text/scss" href="/sh_corpomate_theme/static/src/scss/style_footer/style_footer_20.scss" />
+		</xpath>
+	</template>
+	<template id="sh_corpomate_theme_style_footer_21" name="Footer 21" inherit_id="website.assets_frontend" active="False">
+		<xpath expr="//link[last()]" position="after">
+			<link rel="stylesheet" type="text/scss" href="/sh_corpomate_theme/static/src/scss/style_footer/style_footer_21.scss" />
+		</xpath>
+	</template>
+
+
+
+</odoo>

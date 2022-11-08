@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+
+    <!-- SERVICE 3 -->
+    <template id="sh_corpomate_tmpl_service_3" name="service">
+        <t t-call="website.layout">
+            <div id="wrap" class="oe_structure">
+                <div class="oe_structure" />
+
+
+                <section id="sh_corpomate_theme_section_115" class="section-main bg-img-3 s_banner parallax s_parallax_is_fixed o_colored_level" data-snippet="sh_corpomate_theme_tmpl_115" data-name="Service Snippet 1 (Banner)" style="background-image: none;">
+                    <span class="s_parallax_bg oe_img_bg oe_custom_bg" style="background-image: url('/sh_corpomate_theme/static/src/img/b3.jpeg'); background-position: 50% 0;background-attachment: fixed;" />
+                    <div class="o_we_bg_filter bg-black-75" style="" />
+                    <section id="breadcrumb-section" class="breadcrumb-section clearfix o_colored_level" style="background-image: none;">
+                        <div class="jarallax" style="background-image: none; position: relative; z-index: 0;" data-jarallax-original-styles="background-image: url(/sh_corpomate_theme/static/src/img/services-banner.png);">
+                            <div class="overlay-black">
+                                <div class="container">
+                                    <div class="row justify-content-center">
+                                        <div class="col-lg-12 col-md-12 col-sm-12 o_colored_level">
+                                            <div class="breadcrumb-title text-center mb-50">
+                                                <span class="sub-title o_default_snippet_text">all you need to know</span>
+                                                <h2 class="big-title o_default_snippet_text">
+                                                    <strong class="o_default_snippet_text">about</strong>
+                                                    Lorem
+                                                </h2>
+                                            </div>
+                                            <div class="breadcrumb-list">
+                                                <ul>
+                                                    <li class="breadcrumb-item">
+                                                        <a href="/" class="breadcrumb-link o_default_snippet_text">Home</a>
+                                                    </li>
+                                                    <li class="breadcrumb-item active o_default_snippet_text" aria-current="page">about us</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                </section>
+                <section id="sh_corpomate_theme_section_98" data-snippet="sh_corpomate_theme_tmpl_98" class="o_colored_level" data-name="Service Snippet 2" style="background-image: none;">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-xl-4 col-lg-4 col-md-6 col-12 o_colored_level">
+                                <div class="sh_content">
+                                    <div class="sh_img_content">
+                                        <img src="https://www.radiustheme.com/demo/html/finance/multi-page/img/services/service1_1.jpg" loading="lazy" />
+                                    </div>
+                                    <div class="sh_description">
+                                        <h3>
+                                            <a href="#" class="o_default_snippet_text">Lorem Ipsum</a>
+                                        </h3>
+                                        <p class="o_default_snippet_text">Lorem Ipsum is simply dummy text of the printing and typesetting industry</p>
+                                        <a href="#" class="sh_more_btn o_default_snippet_text">
+                                            Read More
+                                            <span class="fa fa-chevron-right" />
+                                        </a>
+                                        <a href="#" class="sh_icon">
+                                            <span class="fa fa-chevron-circle-up sh_first_icon" />
+                                            <span class="fa fa-chevron-circle-down sh_two_icon" />
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xl-4 col-lg-4 col-md-6 col-12 o_colored_level">
+                                <div class="sh_content">
+                                    <div class="sh_img_content">
+                                        <img src="https://www.radiustheme.com/demo/html/finance/multi-page/img/services/service1_4.jpg" loading="lazy" />
+                                    </div>
+                                    <div class="sh_description">
+                                        <h3>
+                                            <a href="#" class="o_default_snippet_text">Lorem Ipsum</a>
+                                        </h3>
+                                        <p class="o_default_snippet_text">Lorem Ipsum is simply dummy text of the printing and typesetting industry</p>
+                                        <a href="#" class="sh_more_btn o_default_snippet_text">
+                                            Read More
+                                            <span class="fa fa-chevron-right" />
+                                        </a>
+                                        <a href="#" class="sh_icon">
+                                            <span class="fa fa-chevron-circle-up sh_first_icon" />
+                                            <span class="fa fa-chevron-circle-down sh_two_icon" />
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xl-4 col-lg-4 col-md-6 col-12 o_colored_level">
+                                <div class="sh_content">
+                                    <div class="sh_img_content">
+                                        <img src="https://www.radiustheme.com/demo/html/finance/multi-page/img/services/service1_7.jpg" loading="lazy" />
+                                    </div>
+                                    <div class="sh_description">
+                                        <h3>
+                                            <a href="#" class="o_default_snippet_text">Lorem Ipsum</a>
+                                        </h3>
+                                        <p class="o_default_snippet_text">Lorem Ipsum is simply dummy text of the printing and typesetting industry</p>
+                                        <a href="#" class="sh_more_btn o_default_snippet_text">
+                                            Read More
+                                            <span class="fa fa-chevron-right" />
+                                        </a>
+                                        <a href="#" class="sh_icon">
+                                            <span class="fa fa-chevron-circle-up sh_first_icon" />
+                                            <span class="fa fa-chevron-circle-down sh_two_icon" />
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xl-4 col-lg-4 col-md-6 col-12 o_colored_level">
+                                <div class="sh_content">
+                                    <div class="sh_img_content">
+                                        <img src="https://www.radiustheme.com/demo/html/finance/multi-page/img/services/service1_2.jpg" loading="lazy" />
+                                    </div>
+                                    <div class="sh_description">
+                                        <h3>
+                                            <a href="#" class="o_default_snippet_text">Lorem Ipsum</a>
+                                        </h3>
+                                        <p class="o_default_snippet_text">Lorem Ipsum is simply dummy text of the printing and typesetting industry</p>
+                                        <a href="#" class="sh_more_btn o_default_snippet_text">
+                                            Read More
+                                            <span class="fa fa-chevron-right" />
+                                        </a>
+                                        <a href="#" class="sh_icon">
+                                            <span class="fa fa-chevron-circle-up sh_first_icon" />
+                                            <span class="fa fa-chevron-circle-down sh_two_icon" />
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xl-4 col-lg-4 col-md-6 col-12 o_colored_level">
+                                <div class="sh_content">
+                                    <div class="sh_img_content">
+                                        <img src="https://www.radiustheme.com/demo/html/finance/multi-page/img/services/service1_5.jpg" loading="lazy" />
+                                    </div>
+                                    <div class="sh_description">
+                                        <h3>
+                                            <a href="#" class="o_default_snippet_text">Lorem Ipsum</a>
+                                        </h3>
+                                        <p class="o_default_snippet_text">Lorem Ipsum is simply dummy text of the printing and typesetting industry</p>
+                                        <a href="#" class="sh_more_btn o_default_snippet_text">
+                                            Read More
+                                            <span class="fa fa-chevron-right" />
+                                        </a>
+                                        <a href="#" class="sh_icon">
+                                            <span class="fa fa-chevron-circle-up sh_first_icon" />
+                                            <span class="fa fa-chevron-circle-down sh_two_icon" />
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xl-4 col-lg-4 col-md-6 col-12 o_colored_level">
+                                <div class="sh_content">
+                                    <div class="sh_img_content">
+                                        <img src="https://www.radiustheme.com/demo/html/finance/multi-page/img/services/service1_8.jpg" loading="lazy" />
+                                    </div>
+                                    <div class="sh_description">
+                                        <h3>
+                                            <a href="#" class="o_default_snippet_text">Lorem Ipsum</a>
+                                        </h3>
+                                        <p class="o_default_snippet_text">Lorem Ipsum is simply dummy text of the printing and typesetting industry</p>
+                                        <a href="#" class="sh_more_btn o_default_snippet_text">
+                                            Read More
+                                            <span class="fa fa-chevron-right" />
+                                        </a>
+                                        <a href="#" class="sh_icon">
+                                            <span class="fa fa-chevron-circle-up sh_first_icon" />
+                                            <span class="fa fa-chevron-circle-down sh_two_icon" />
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <section id="sh_corpomate_theme_section_99" data-snippet="sh_corpomate_theme_tmpl_99" class="o_colored_level" data-name="Service Snippet 3" style="background-image: none;">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-8 o_colored_level">
+                                <div class="sh_left_content">
+                                    <h3 class="o_default_snippet_text">Waste No More Time!</h3>
+                                    <p class="o_default_snippet_text">Rimply dummy text of the printing and typesetting industry Ipsum has been the industry's.</p>
+                                </div>
+                            </div>
+                            <div class="col-md-4 o_colored_level">
+                                <div class="sh_right_content">
+                                    <a href="#" class="btn-primary btn sh_btn_cm_3 o_default_snippet_text">
+                                        Get a Quote
+                                        <span class="fa fa-angle-right" />
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+
+            </div>
+        </t>
+    </template>
+
+
+</odoo>

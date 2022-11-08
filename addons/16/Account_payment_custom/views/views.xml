@@ -1,0 +1,16 @@
+<odoo>
+  <data>
+
+    <record id="account_payment_custom_salesperson"  model="ir.ui.view">
+      <field name="name">account.payment.custom.salesperson</field>
+      <field name="model">account.payment</field>
+      <field name="inherit_id" ref="account.view_account_payment_tree"/>
+      <field name="arch" type="xml">
+       <field name="partner_id" position="after">
+       <field name="salesperson"/>
+       </field>
+      </field>
+    </record>
+
+  </data>
+</odoo>

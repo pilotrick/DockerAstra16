@@ -1,0 +1,393 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- CONTACT US PAGE 19 -->
+    <template id="sh_corpomate_tmpl_contact_us_21" name="contact us">
+        <t t-call="website.layout">
+            <div id="wrap" class="oe_structure">
+                <section id="sh_corpomate_theme_section_564" style="background: url(&quot;/sh_corpomate_theme/static/src/img/theme_21/image/businesspeople-having-discussion-office_107420-84849.jpg&quot;);" data-snippet="sh_corpomate_theme_tmpl_564" class="o_colored_level oe_img_bg o_bg_img_center" data-name="Contact Banner">
+                    <div class="container">
+                        <div class="h2 o_default_snippet_text">
+                                                       Contact
+                                                    </div>
+                        <div class="sh_text o_default_snippet_text">
+                                                        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                                                        tempor incididunt Ut labore.  
+                                                    </div>
+                        <div class="sh_banner_icon">
+                            <span class="fa fa-chevron-down" />
+                        </div>
+                    </div>
+                </section>
+                <section id="sh_corpomate_theme_section_565" data-snippet="sh_corpomate_theme_tmpl_565" class="o_colored_level" data-name="Contact Us" style="background-image: none;">
+                    <div class="container">
+                        <div class="main-row">
+                            <div class="row">
+                                <div class="col-lg-6 col-12 o_colored_level">
+                                    <h5 class="o_default_snippet_text">Contact Us</h5>
+                                    <h2 class="o_default_snippet_text">Get In Touch</h2>
+                                    <div class="sh_text o_default_snippet_text">
+                                                        Adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim. Adipiscing elit, sed do eiusmod tempor incididunt ut labore.
+                                                    </div>
+                                </div>
+                                <div class="col-lg-6 col-12 o_colored_level">
+                                    <div class="inner_row">
+                                        <div class="row">
+                                            <div class="col-md-6 col-12 o_colored_level">
+                                                <div class="sh_box">
+                                                    <div class="sh_icon">
+                                                        <span>
+                                                            <svg xmlns="http://www.w3.org/2000/svg" id="Layer_1" data-name="Layer 1" viewbox="0 0 734.22 558.16">
+                                                                <title class="o_default_snippet_text">7</title>
+                                                                <path d="M498.34,779q-147.36,0-294.74,0c-44.67,0-70.79-26-70.8-70.37q0-208.43,0-416.85c0-44.65,25.95-70.85,70.4-70.87q296.85-.07,593.69,0c42,0,69.91,27.29,70,69.08q.28,209.82,0,419.64c0,42-27.75,69.36-69.58,69.38Q647.82,779,498.34,779ZM494.73,552,782.49,265H215.31ZM213.45,734.91H786.91L583.44,531.78c-19.89,20.32-41.34,42.37-63,64.26-14.85,15.05-24.32,15.16-39,0-21.77-22.47-43.22-45.24-63.23-66.22ZM822.94,299.1,622.67,498.51,822.94,699.86ZM382.83,498.72,177.41,295.07V701.76Z" transform="translate(-132.78 -220.81)" />
+                                                            </svg>
+                                                        </span>
+                                                    </div>
+                                                    <div class="sh_content">
+                                                        <h3 class="o_default_snippet_text">Address</h3>
+                                                        <p>
+                                                            <a href="#" class="o_default_snippet_text">
+                                                                905,Corporate,Levels
+                                                                <br />
+                                                                Ayodhya Chowk
+                                                                <br />
+                                                                150Ft.Ring Road, Rajkot.
+                                                            </a>
+                                                        </p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6 col-12 o_colored_level">
+                                                <div class="sh_box">
+                                                    <div class="sh_icon">
+                                                        <span>
+                                                            <svg xmlns="http://www.w3.org/2000/svg" id="Layer_1" data-name="Layer 1" viewbox="0 0 460.9 795.5">
+                                                                <title class="o_default_snippet_text">17</title>
+                                                                <path d="M729.4,500.6q0,152.3,0,304.6c-.1,54.8-35.5,91.5-90.1,91.8q-140.5.9-281,0c-52.9-.4-89.6-37.8-89.6-90.8q-.4-306.9,0-613.9c0-53.4,36.3-89.7,89.7-90q140.4-.6,281,0c55.5.3,89.9,35.6,90,91.3ZM318.7,430.9c0,79.3.6,158.7-.5,238.1-.2,19.2,6.1,24.3,24.5,24.1q156.2-1.1,312.2.1c19.4.1,25.9-5.2,25.8-25.3-.7-157.2-.3-314.4-.4-471.5-.1-36.4-10.8-47.3-46.7-47.4q-134.6-.3-269.3,0c-33.9.1-45.5,11.9-45.6,46.1Q318.6,313,318.7,430.9Zm.1,310.1c0,24.8-.7,47.7.2,70.4.9,24.6,14.4,38.6,39.1,38.7,94.5.6,189,.4,283.4.1,19.8-.1,35.2-9.9,37-30,2.3-25.7.6-51.8.6-79.2ZM509,184c-51.9,51.2-103.7,102.6-154.8,154.6-10.9,11-12,27,1.7,34.9,8.1,4.6,18.7,5.8,26.9.1,16-11.1,34.9-29.8,48.9-43.8,36-35.7,72.5-71,107.4-107.8,6.3-6.7,12.6-17.9,11-27.1-1.1-7-7.1-16.9-21.9-20.6C519,174,513.1,179.9,509,184ZM389.4,263.7c19-18.4,38.6-36.3,55.9-56.2,3-3.4,2.7-15.5-6.4-24.3s-20.4-6.7-24.7-3.2c-18.7,15.3-36.8,32.2-51.7,51.1-10.3,13,3.1,33,20.9,33.8C384.9,264.7,388,265.1,389.4,263.7Zm129,528.8c-4.4-12.8-8.3-14.2-18.2-16-15.3-2.8-23.2,7.1-23.6,20.3s7.9,23.3,22.7,21.5c9.9-1.3,14.7-2.9,18.9-15.6C518.3,799.3,518.4,795.9,518.4,792.5Z" transform="translate(-268.5 -102)" />
+                                                            </svg>
+                                                        </span>
+                                                    </div>
+                                                    <div class="sh_content_1">
+                                                        <h3 class="o_default_snippet_text">Contact Details</h3>
+                                                        <p>
+                                                            <a href="#info@softhealer.com" class="sh_mail o_default_snippet_text">info@softhealer.com</a>
+                                                        </p>
+                                                        <p>
+                                                            <a href="#+7984575681" class="o_default_snippet_text">+7984575681</a>
+                                                        </p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <section id="sh_corpomate_theme_section_566" data-snippet="sh_corpomate_theme_tmpl_566" class="o_colored_level" data-name="Contact Map" style="background-image: none;">
+                    <div class="sh_map">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d70227.65434047743!2d70.7602027234682!3d22.32013474156899!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xc5d2508a38a14110!2sSofthealer%20Technologies!5e0!3m2!1sen!2sin!4v1650255094902!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" />
+                    </div>
+                    <div class="map-marker">
+                        <div class="sh_1" />
+                        <div />
+                    </div>
+                </section>
+                <section id="sh_corpomate_theme_section_567" data-snippet="sh_corpomate_theme_tmpl_567" class="o_colored_level" data-name="Contact Form" style="background-image: none;">
+                    <div class="container">
+                        <div class="sh_main_row">
+                            <div class="row">
+                                <div class="col-lg-6 col-12 o_colored_level">
+                                    <h5 class="o_default_snippet_text">Contact Us</h5>
+                                    <h2 class="o_default_snippet_text">
+                                        Have Questions?
+                                        <br />
+                                        Get In Touch
+                                    </h2>
+                                    <div class="sh_text o_default_snippet_text">
+                                            Adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim.
+                                        </div>
+                                    <div class="sh_contact_details">
+                                        <div class="sh_contact_box">
+                                            <div class="sh_icon">
+                                                <svg xmlns="http://www.w3.org/2000/svg" id="Layer_1" data-name="Layer 1" viewbox="0 0 533.6 753.5">
+                                                    <title class="o_default_snippet_text">16</title>
+                                                    <path d="M768.8,388.2c-4.1,74.8-30.5,139.9-64,202.5C669.6,656.5,629,718.6,572.7,768.9c-6.2,5.4-12.7,10.6-19.4,15.4-40.5,28.6-66.7,28.8-106.4-1.7-65.7-50.5-111.5-117.7-148-190.6-23.3-46.6-44.6-95.9-56.7-146.3-34.7-144.8,62.7-288.9,209-316.1,148.9-27.7,291.2,72.7,313,220.9C766.2,363.9,767.5,377.3,768.8,388.2Zm-46.7,5.5c-1.6-.4.9-.9-.7-1.4-1.1-13.5-1.1-27.1-3.5-40.4C695.7,230.2,575.5,150.7,453.8,177.1S256.7,324.9,288.2,444.5C317.4,555.1,377.3,649,455.9,730.8c38.3,39.7,55.6,38,96.1-5.2C614.2,659.2,663.5,584,696.3,499,709.4,465.1,722,438,722.1,393.7ZM362.4,809.6c5.2-7.8,9.9-12.8,12.2-18.8,6.3-15.9-6.5-35.2-21.4-29.4s-33.3,18.3-41.9,32.7c-9.9,16.5-1.9,36.3,15.6,46.6s33.3,18.1,51.1,22.5c81.6,20.3,163.7,20.3,245.3.3,17.2-4.2,33.9-12.1,49.5-20.8,17.4-9.7,24.7-26.4,19.6-46.1s-20.8-31.4-39.9-35.3c-6.8-1.3-17.8,4.1-22.4,9.9s-2.2,15.2-.9,22.7c.8,4.5,5.7,8.2,11.1,15.6C546,841.7,455.3,842,362.4,809.6ZM503.3,223.3A144.3,144.3,0,0,0,356.6,365.9c-1.3,81.6,57.6,146.5,134.7,148.6,82.7,2.2,154.4-63.8,155.2-143.1C647.5,288.9,585.2,224.5,503.3,223.3ZM502,467.6c-55.1.3-98.7-42.8-99-98s42.1-99.9,96.9-100.5,99.1,44.2,99.9,98.5S556.1,467.2,502,467.6Z" transform="translate(-235.2 -125)" />
+                                                </svg>
+                                            </div>
+                                            <div class="sh_content">
+                                                <a href="#" class="o_default_snippet_text">  905,Corporate Levels,150ft Ring Road, Rajkot.</a>
+                                            </div>
+                                        </div>
+                                        <div class="sh_contact_box">
+                                            <div class="sh_icon">
+                                                <svg xmlns="http://www.w3.org/2000/svg" id="Layer_1" data-name="Layer 1" viewbox="0 0 460.9 795.5">
+                                                    <title class="o_default_snippet_text">17</title>
+                                                    <path d="M729.4,500.6q0,152.3,0,304.6c-.1,54.8-35.5,91.5-90.1,91.8q-140.5.9-281,0c-52.9-.4-89.6-37.8-89.6-90.8q-.4-306.9,0-613.9c0-53.4,36.3-89.7,89.7-90q140.4-.6,281,0c55.5.3,89.9,35.6,90,91.3ZM318.7,430.9c0,79.3.6,158.7-.5,238.1-.2,19.2,6.1,24.3,24.5,24.1q156.2-1.1,312.2.1c19.4.1,25.9-5.2,25.8-25.3-.7-157.2-.3-314.4-.4-471.5-.1-36.4-10.8-47.3-46.7-47.4q-134.6-.3-269.3,0c-33.9.1-45.5,11.9-45.6,46.1Q318.6,313,318.7,430.9Zm.1,310.1c0,24.8-.7,47.7.2,70.4.9,24.6,14.4,38.6,39.1,38.7,94.5.6,189,.4,283.4.1,19.8-.1,35.2-9.9,37-30,2.3-25.7.6-51.8.6-79.2ZM509,184c-51.9,51.2-103.7,102.6-154.8,154.6-10.9,11-12,27,1.7,34.9,8.1,4.6,18.7,5.8,26.9.1,16-11.1,34.9-29.8,48.9-43.8,36-35.7,72.5-71,107.4-107.8,6.3-6.7,12.6-17.9,11-27.1-1.1-7-7.1-16.9-21.9-20.6C519,174,513.1,179.9,509,184ZM389.4,263.7c19-18.4,38.6-36.3,55.9-56.2,3-3.4,2.7-15.5-6.4-24.3s-20.4-6.7-24.7-3.2c-18.7,15.3-36.8,32.2-51.7,51.1-10.3,13,3.1,33,20.9,33.8C384.9,264.7,388,265.1,389.4,263.7Zm129,528.8c-4.4-12.8-8.3-14.2-18.2-16-15.3-2.8-23.2,7.1-23.6,20.3s7.9,23.3,22.7,21.5c9.9-1.3,14.7-2.9,18.9-15.6C518.3,799.3,518.4,795.9,518.4,792.5Z" transform="translate(-268.5 -102)" />
+                                                </svg>
+                                            </div>
+                                            <div class="sh_content number">
+                                                <a href="#+91 7984575681" class="o_default_snippet_text">   +91 7984575681 </a>
+                                            </div>
+                                        </div>
+                                        <div class="sh_contact_box">
+                                            <div class="sh_icon">
+                                                <svg xmlns="http://www.w3.org/2000/svg" id="Layer_1" data-name="Layer 1" viewbox="0 0 734.22 558.16">
+                                                    <title class="o_default_snippet_text">7</title>
+                                                    <path d="M498.34,779q-147.36,0-294.74,0c-44.67,0-70.79-26-70.8-70.37q0-208.43,0-416.85c0-44.65,25.95-70.85,70.4-70.87q296.85-.07,593.69,0c42,0,69.91,27.29,70,69.08q.28,209.82,0,419.64c0,42-27.75,69.36-69.58,69.38Q647.82,779,498.34,779ZM494.73,552,782.49,265H215.31ZM213.45,734.91H786.91L583.44,531.78c-19.89,20.32-41.34,42.37-63,64.26-14.85,15.05-24.32,15.16-39,0-21.77-22.47-43.22-45.24-63.23-66.22ZM822.94,299.1,622.67,498.51,822.94,699.86ZM382.83,498.72,177.41,295.07V701.76Z" transform="translate(-132.78 -220.81)" />
+                                                </svg>
+                                            </div>
+                                            <div class="sh_content">
+                                                <a href="#info@softhealer.com" class="o_default_snippet_text">  info@softhealer.com</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6 col-12 o_colored_level">
+                                    <div class="sh_website_form">
+                                        <section class="s_website_form" data-vcss="001" data-snippet="s_website_form">
+                                            <div class="container">
+                                                <form id="contactus_form" action="/website/form/" method="post" enctype="multipart/form-data" class="o_mark_required" data-mark="*" data-model_name="mail.mail" data-success-mode="redirect" data-success-page="/contactus-thank-you" data-pre-fill="true">
+                                                    <div class="s_website_form_rows row s_col_no_bgcolor">
+                                                        <div class="form-group col-12 s_website_form_field s_website_form_custom s_website_form_required" style="padding:0px 0.7rem !important;" data-type="char" data-name="Field" data-visibility-condition="" data-visibility-between="">
+                                                            <div class="row s_col_no_resize s_col_no_bgcolor">
+                                                                <label class="d-none col-form-label col-sm-auto s_website_form_label" style="width: 200px" for="contact1">
+                                                                    <span class="s_website_form_label_content" />
+                                                                </label>
+                                                                <div class="col-md-6 col-12">
+                                                                    <i class="fa fa-user" />
+                                                                    <input id="contact1" type="text" class="form-control s_website_form_input" name="name" placeholder="Name" required="" />
+                                                                    <span class="sh_line" />
+                                                                </div>
+                                                                <div class="col-md-6 col-12">
+                                                                    <i class="fa fa-envelope" />
+                                                                    <input id="contact3" type="email" class="form-control s_website_form_input" name="email_from" required="" placeholder="Email" />
+                                                                    <span class="sh_line" />
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="form-group col-12 s_website_form_field s_website_form_required" style="padding:0px 0.7rem !important;" data-type="email" data-name="Field">
+                                                            <div class="row s_col_no_resize s_col_no_bgcolor">
+                                                                <label class="d-none col-form-label col-sm-auto s_website_form_label" style="width: 200px" for="contact1">
+                                                                    <span class="s_website_form_label_content" />
+                                                                </label>
+                                                                <div class="col-md-6 col-12">
+                                                                    <i class="fa fa-phone" />
+                                                                    <input id="contact2" type="tel" class="form-control s_website_form_input" placeholder="Phone" name="phone" />
+                                                                    <span class="sh_line" />
+                                                                </div>
+                                                                <div class="col-md-6 col-12">
+                                                                    <i class="fa fa-info-circle" />
+                                                                    <input id="contact5" type="text" class="form-control s_website_form_input" placeholder="Subject" name="subject" required="" />
+                                                                    <span class="sh_line" />
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="form-group col-12 s_website_form_field s_website_form_custom s_website_form_required" data-type="text" style="padding:0px 0.7rem !important;" data-name="Field">
+                                                            <div class="row s_col_no_resize s_col_no_bgcolor">
+                                                                <label class="d-none col-form-label col-sm-auto s_website_form_label" style="width: 200px" for="contact1">
+                                                                    <span class="s_website_form_label_content" />
+                                                                </label>
+                                                                <div class="col-sm">
+                                                                    <i class="fa fa-pencil" />
+                                                                    <textarea id="contact6" class="form-control s_website_form_input" name="description" placeholder="how can we help you? Feel free to get in touch" required="" />
+                                                                    <span class="sh_line" />
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="form-group s_website_form_field col-12    s_website_form_dnone" data-name="Field">
+                                                            <div class="row s_col_no_resize s_col_no_bgcolor">
+                                                                <label class="col-form-label col-sm-auto s_website_form_label " style="width: 200px">
+                                                                    <span class="s_website_form_label_content" />
+                                                                </label>
+                                                                <div class="col-sm">
+                                                                    <input type="hidden" class="form-control s_website_form_input" name="email_to" value="info@yourcompany.example.com" />
+                                                                    <div class="s_website_form_field_description small form-text text-muted">
+                        Separate email addresses with a comma.
+                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="form-group col-12 s_website_form_submit" style="padding:0px 0.7rem !important;" data-name="Submit Button">
+                                                            <div class="s_website_form_label" />
+                                                            <a href="#" role="button" class="btn btn-primary btn-lg sh_btn s_website_form_send o_default_snippet_text">
+                                                                <span class="fa fa-paper-plane-o" />
+                                                                Get In Touch
+                                                            </a>
+                                                            <span id="s_website_form_result" />
+                                                            <label>
+                                                                <input type="checkbox" name="acceptance" value="1" aria-invalid="false" class="inited" />
+                                                                <span class="wpcf7-list-item-label o_default_snippet_text">
+                                                                    I agree that my data is
+                                                                    <a href="/privacy-policy" class="o_default_snippet_text">collected and stored</a>
+                                                                    .
+                                                                </span>
+                                                            </label>
+                                                        </div>
+                                                    </div>
+                                                </form>
+                                            </div>
+                                        </section>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <section id="sh_corpomate_theme_section_568" data-snippet="sh_corpomate_theme_tmpl_568" class="o_colored_level" data-name="Contact Testimonial" style="background-image: none;">
+                    <div class="container">
+                        <div class="main-row">
+                            <div class="row">
+                                <div class="col-lg-6 col-12 o_colored_level">
+                                    <div class="sh_about_details">
+                                        <h5 class="o_default_snippet_text">Testimonials</h5>
+                                        <h2 class="o_default_snippet_text">
+                                            We Develop &amp;amp;
+                                                            Create
+                                            <br />
+                                            Digital
+                                                            Future.
+                                        </h2>
+                                        <p class="o_default_snippet_text"> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                                        tempor incididunt Ut labore.
+                                    </p>
+                                        <div class="sh_about_btn">
+                                            <a href="/aboutus21" class="btn btn-primary sh_btn o_default_snippet_text">About Us</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6 col-12 o_colored_level">
+                                    <div class="inner-row">
+                                        <div class="sh_div_1">
+                                            <img src="/sh_corpomate_theme/static/src/img/theme_21/image/image_2021_10_13T13_10_53_883Z.png" loading="lazy" />
+                                        </div>
+                                        <div class="sh_div_2">
+                                            <img src="/sh_corpomate_theme/static/src/img/theme_21/image/image_2021_10_13T13_10_59_097Z.png" loading="lazy" />
+                                        </div>
+                                        <div class="sh_div_3">
+                                            <img src="/sh_corpomate_theme/static/src/img/theme_21/image/image_2021_10_13T13_10_59_097Z.png" loading="lazy" />
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-6 col-12 o_colored_level">
+                                                <div class="sh_main_box">
+                                                    <div class="sh_img">
+                                                        <a href="#">
+                                                            <img id="sh_img_1" src="/sh_corpomate_theme/static/src/img/theme_21/image/test5-copyright-120x120.jpg" loading="lazy" />
+                                                        </a>
+                                                        <div class="sh_sub_div">
+                                                            <span class="fa fa-quote-right" />
+                                                        </div>
+                                                    </div>
+                                                    <div class="sh_box_text o_default_snippet_text">
+                                                                        This website is going to change your perception of WordPress website templates. It’s unique and multi-functional
+                                                                    </div>
+                                                    <div class="sh_box_title o_default_snippet_text">
+                                                                        Henry Jones
+                                                                    </div>
+                                                    <div class="sh_sub_title o_default_snippet_text">
+                                                                        Expert
+                                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6 col-12 o_colored_level">
+                                                <div class="sh_main_box main_box_1">
+                                                    <div class="sh_img">
+                                                        <a href="#">
+                                                            <img id="sh_img_2" src="/sh_corpomate_theme/static/src/img/theme_21/image/test4-copyright-120x120.jpg" loading="lazy" />
+                                                        </a>
+                                                        <div class="sh_sub_div">
+                                                            <span class="fa fa-quote-right" />
+                                                        </div>
+                                                    </div>
+                                                    <div class="sh_box_text o_default_snippet_text">
+                                                                        This website is going to change your perception of WordPress website templates. It’s unique and multi-functional
+                                                                    </div>
+                                                    <div class="sh_box_title o_default_snippet_text">
+                                                                        Henry Jones
+                                                                    </div>
+                                                    <div class="sh_sub_title o_default_snippet_text">
+                                                                        Expert
+                                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <section id="sh_corpomate_theme_section_569" data-snippet="sh_corpomate_theme_tmpl_569" class="o_colored_level" data-name="Contact Partners" style="background-image: none;">
+                    <div class="container">
+                        <h5 class="o_default_snippet_text">our clients</h5>
+                        <h2 class="o_default_snippet_text">
+                            Check our top
+                            <br />
+                            Clients &amp;amp; partners
+                        </h2>
+                        <div class="main-row">
+                            <div class="row">
+                                <div class="col-lg-4 col-md-6 col-12 o_colored_level">
+                                    <div class="sh_box">
+                                        <div class="sh_img">
+                                            <img src="/sh_corpomate_theme/static/src/img/theme_21/image/client-hover-9-2-copyright.png" loading="lazy" />
+                                        </div>
+                                        <div class="sh_text o_default_snippet_text">
+                                                                    Adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                                                                </div>
+                                        <a href="#" class="sh_link">
+                                            <span class="link_text o_default_snippet_text">Read More</span>
+                                            <span class="fa fa-arrow-right link_icon" />
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="col-lg-4 col-md-6 col-12 o_colored_level">
+                                    <div class="sh_box">
+                                        <div class="sh_img">
+                                            <img src="/sh_corpomate_theme/static/src/img/theme_21/image/client-hover-11-copyright.png" loading="lazy" />
+                                        </div>
+                                        <div class="sh_text o_default_snippet_text">
+                                                                    Adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                                                                </div>
+                                        <a href="#" class="sh_link">
+                                            <span class="link_text o_default_snippet_text">Read More</span>
+                                            <span class="fa fa-arrow-right link_icon" />
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="col-lg-4 col-md-6 col-12 o_colored_level">
+                                    <div class="sh_box">
+                                        <div class="sh_img">
+                                            <img src="/sh_corpomate_theme/static/src/img/theme_21/image/client-hover-14-2-copyright.png" loading="lazy" />
+                                        </div>
+                                        <div class="sh_text o_default_snippet_text">
+                                                                    Adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                                                                </div>
+                                        <a href="#" class="sh_link">
+                                            <span class="link_text o_default_snippet_text">Read More</span>
+                                            <span class="fa fa-arrow-right link_icon" />
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="col-lg-4 col-md-6 col-12 sh_remove o_colored_level">
+                                    <div class="sh_box">
+                                        <div class="sh_img">
+                                            <img src="/sh_corpomate_theme/static/src/img/theme_21/image/client-hover-14-2-copyright.png" loading="lazy" />
+                                        </div>
+                                        <div class="sh_text o_default_snippet_text">
+                                                                    Adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                                                                </div>
+                                        <a href="#" class="sh_link">
+                                            <span class="link_text o_default_snippet_text">Read More</span>
+                                            <span class="fa fa-arrow-right link_icon" />
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </t>
+    </template>
+</odoo>

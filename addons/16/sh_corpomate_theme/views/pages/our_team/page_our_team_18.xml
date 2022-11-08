@@ -1,0 +1,465 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+
+    <!-- OUR TEAM 18 -->
+    <template id="sh_corpomate_tmpl_our_team_18" name="our team">
+        <t t-call="website.layout">
+            <div id="wrap" class="oe_structure">
+                <div class="oe_structure" />
+
+                <section id="sh_corpomate_theme_section_464" style="background: url(&quot;/sh_corpomate_theme/static/src/img/theme_18/images/banner-bg.png&quot;) right center / contain no-repeat, rgb(242, 245, 251);" data-snippet="sh_corpomate_theme_tmpl_464" class="oe_img_bg o_bg_img_center o_colored_level" data-name="Team-Banner">
+                    <div class="about-banner-main">
+                        <h1 class="o_default_snippet_text">
+                            Our
+                            <span class="o_default_snippet_text">Team</span>
+                        </h1>
+                        <div class="banner-page-link">
+                            <ul>
+                                <li>
+                                    <a href="/home18" class="o_default_snippet_text">
+                                            Home
+                                        </a>
+                                </li>
+                                <li>
+                                    <a href="#" class="active o_default_snippet_text disabled">
+                                            Team
+                                        </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </section>
+                <section id="sh_corpomate_theme_section_465" style="background: url(&quot;/sh_corpomate_theme/static/src/img/theme_18/images/bg_shapes/bg-shape-1%20-2%20-%20Copy.png&quot;) right top / contain no-repeat;" data-snippet="sh_corpomate_theme_tmpl_465" class="oe_img_bg o_colored_level" data-name="Team-progress">
+                    <div class="container">
+                        <h3 class="o_default_snippet_text">Team Of Secures</h3>
+                        <h2 class="o_default_snippet_text">Meet A Team Professionals</h2>
+                        <div class="main-row">
+                            <div class="row">
+                                <section class="col-xl-5 col-lg-5 col-md-12 col-sm-12 col-12 mt-5 o_colored_level">
+                                    <div class="our-company-service-img-shape">
+                                        <div class="our-company-service-img">
+                                            <img src="/sh_corpomate_theme/static/src/img/theme_18/images/image_2021_07_26T10_02_50_930Z.png" loading="lazy" />
+                                            <div class="sh_corpomate_hide_shape_part">
+                                                <div class="shape" />
+                                                <div class="shape-2" />
+                                                <div class="shape-3" />
+                                                <div class="shape-4">
+                                                    <div class="shape-icon">
+                                                        <span class="fa fa-lock" />
+                                                    </div>
+                                                    <h5 class="o_default_snippet_text">411</h5>
+                                                    <p class="o_default_snippet_text">Network Expert</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </section>
+                                <section class="col-xl-6 col-lg-6 mx-auto d-block col-md-12 col-sm-12 col-12 mt-5 o_colored_level" style="align-self:center;">
+                                    <div class="our-team-progrees-content">
+                                        <h2 class="o_default_snippet_text">Dmitriy Allian</h2>
+                                        <h3 class="o_default_snippet_text">Cyber Expert</h3>
+                                        <p class="o_default_snippet_text">
+                                                            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                                                            tempor incididunt ut labore et dolore magna aliqua.  tempor incididunt ut labore et dolore magna aliqua. 
+                                                        </p>
+                                        <div class="our-team-progrees-bar">
+                                            <section class="sh_left_progress sh_animation_part js_cls_render_dynamic_progress_area o_colored_level">
+                                                <p class="o_default_snippet_text">
+                                                    Safe Connection
+                                                    <span class="sh_right_pers o_default_snippet_text js_cls_s_progress_percent_manual_span">80%</span>
+                                                </p>
+                                                <div class="progress">
+                                                    <div class="progress-bar wow fadeInLeft js_cls_s_progress_percent_auto_style" data-wow-duration="1.5s" data-wow-delay="1s" style="visibility: visible; animation-duration: 1.5s; animation-delay: 1s; width: 80%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100" />
+                                                </div>
+                                            </section>
+                                            <section class="sh_left_progress sh_animation_part js_cls_render_dynamic_progress_area o_colored_level">
+                                                <p class="o_default_snippet_text">
+                                                    Privacy Protection
+                                                    <span class="sh_right_pers o_default_snippet_text js_cls_s_progress_percent_manual_span">90%</span>
+                                                </p>
+                                                <div class="progress">
+                                                    <div class="progress-bar wow fadeInLeft js_cls_s_progress_percent_auto_style" data-wow-duration="1.5s" data-wow-delay="1s" style="visibility: visible; animation-duration: 1.5s; animation-delay: 1s; width: 90%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100" />
+                                                </div>
+                                            </section>
+                                            <section class="sh_left_progress sh_animation_part js_cls_render_dynamic_progress_area o_colored_level">
+                                                <p class="o_default_snippet_text">
+                                                    Firewall
+                                                    <span class="sh_right_pers o_default_snippet_text js_cls_s_progress_percent_manual_span">94%</span>
+                                                </p>
+                                                <div class="progress">
+                                                    <div class="progress-bar wow fadeInLeft js_cls_s_progress_percent_auto_style" data-wow-duration="1.5s" data-wow-delay="1s" style="visibility: visible; animation-duration: 1.5s; animation-delay: 1s; width: 94%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100" />
+                                                </div>
+                                            </section>
+                                        </div>
+                                    </div>
+                                </section>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <section id="sh_corpomate_theme_section_466" class="js_cls_sh_corpomate_s_counter sh_animation_part o_colored_level oe_img_bg" style="background-position: center center; background-size: cover; background-image: url(&quot;/sh_corpomate_theme/static/src/img/theme_18/images/map_bg2.png&quot;);" data-snippet="sh_corpomate_theme_tmpl_466" data-name="Team-Service">
+                    <div class="container">
+                        <h3 class="o_default_snippet_text">Security Count</h3>
+                        <h2 class="o_default_snippet_text">Strong Team To Secure You</h2>
+                        <p class="o_default_snippet_text">
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                                        tempor incididunt ut labore et dolore magna
+                            <br />
+                            aliqua.  tempor incididunt ut labore et dolore magna aliqua.
+                        </p>
+                        <div class="main-row">
+                            <div class="row">
+                                <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12 col-12 mt-5 o_colored_level">
+                                    <div class="counter-item-content about-section-counter">
+                                        <div class="counter-content-list">
+                                            <div class="counter-content-icon">
+                                                <span class="fa fa-shield" />
+                                            </div>
+                                            <div class="counter-content-text">
+                                                <h3 class="main">
+                                                    <span class="counter js_cls_counter_number o_default_snippet_text">2700</span>
+                                                </h3>
+                                                <p class="o_default_snippet_text">Cybersecurity Projects</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12 col-12 mt-5 o_colored_level">
+                                    <div class="counter-item-content about-section-counter">
+                                        <div class="counter-content-list">
+                                            <div class="counter-content-icon">
+                                                <span class="fa fa-user" />
+                                            </div>
+                                            <div class="counter-content-text">
+                                                <h3 class="main">
+                                                    <span class="counter js_cls_counter_number o_default_snippet_text">1350</span>
+                                                </h3>
+                                                <p class="o_default_snippet_text">Customer Served</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12 col-12 mt-5 o_colored_level">
+                                    <div class="counter-item-content about-section-counter">
+                                        <div class="counter-content-list">
+                                            <div class="counter-content-icon">
+                                                <span class="fa fa-tasks" />
+                                            </div>
+                                            <div class="counter-content-text">
+                                                <h3 class="main">
+                                                    <span class="counter js_cls_counter_number o_default_snippet_text">350</span>
+                                                </h3>
+                                                <p class="o_default_snippet_text">Cybersecurity Experts</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <section id="sh_corpomate_theme_section_467" data-snippet="sh_corpomate_theme_tmpl_467" class="o_colored_level" data-name="Our-Experts">
+                    <div class="sub-div" />
+                    <div class="container">
+                        <div class="shape" />
+                        <h3 class="o_default_snippet_text">Our Experts</h3>
+                        <h2 class="o_default_snippet_text">Meet Our Leaders</h2>
+                        <div class="first-row mt-3">
+                            <div class="row">
+                                <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12 col-12 mt-5 o_colored_level">
+                                    <div class="our-team">
+                                        <div class="our-team-img">
+                                            <img src="/sh_corpomate_theme/static/src/img/theme_18/images/vecteezy_young-asian-business-person_1392142.jpg" loading="lazy" />
+                                            <div class="our-team-sub-content">
+                                                <span class="o_default_snippet_text">Founder</span>
+                                                <h5 class="o_default_snippet_text">Dalcy Lucy</h5>
+                                                <div class="icon-sub-div">
+                                                    <div class="our-team-sub-icon">
+                                                        <a href="#">
+                                                            <span class="fa fa-share-alt" />
+                                                        </a>
+                                                    </div>
+                                                    <div class="social-icons">
+                                                        <ul>
+                                                            <li>
+                                                                <a href="#">
+                                                                    <span class="fa fa-facebook" />
+                                                                </a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="#">
+                                                                    <span class="fa fa-twitter" />
+                                                                </a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="#">
+                                                                    <span class="fa fa-linkedin" />
+                                                                </a>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12 col-12 mt-5 o_colored_level">
+                                    <div class="our-team">
+                                        <div class="our-team-img">
+                                            <img src="/sh_corpomate_theme/static/src/img/theme_18/images/vecteezy_asian-business-woman-writes-down-marketing-information_2214955.jpg" loading="lazy" />
+                                            <div class="our-team-sub-content">
+                                                <span class="o_default_snippet_text">Director</span>
+                                                <h5 class="o_default_snippet_text">Amy Jose</h5>
+                                                <div class="icon-sub-div">
+                                                    <div class="our-team-sub-icon">
+                                                        <a href="#">
+                                                            <span class="fa fa-share-alt" />
+                                                        </a>
+                                                    </div>
+                                                    <div class="social-icons">
+                                                        <ul>
+                                                            <li>
+                                                                <a href="#">
+                                                                    <span class="fa fa-facebook" />
+                                                                </a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="#">
+                                                                    <span class="fa fa-twitter" />
+                                                                </a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="#">
+                                                                    <span class="fa fa-linkedin" />
+                                                                </a>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12 col-12 mt-5 o_colored_level">
+                                    <div class="our-team">
+                                        <div class="our-team-img">
+                                            <img src="/sh_corpomate_theme/static/src/img/theme_18/images/vecteezy_happy-young-asia-business-woman-entrepreneur-using-computer-looking-at-screen.jpg" loading="lazy" />
+                                            <div class="our-team-sub-content">
+                                                <span class="o_default_snippet_text">Hr Manager</span>
+                                                <h5 class="o_default_snippet_text">Sara Taylor</h5>
+                                                <div class="icon-sub-div">
+                                                    <div class="our-team-sub-icon">
+                                                        <a href="#">
+                                                            <span class="fa fa-share-alt" />
+                                                        </a>
+                                                    </div>
+                                                    <div class="social-icons">
+                                                        <ul>
+                                                            <li>
+                                                                <a href="#">
+                                                                    <span class="fa fa-facebook" />
+                                                                </a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="#">
+                                                                    <span class="fa fa-twitter" />
+                                                                </a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="#">
+                                                                    <span class="fa fa-linkedin" />
+                                                                </a>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12 col-12 mt-5 o_colored_level">
+                                    <div class="our-team">
+                                        <div class="our-team-img">
+                                            <img src="/sh_corpomate_theme/static/src/img/theme_18/images/pexels-photo-2897883.jpeg" loading="lazy" />
+                                            <div class="our-team-sub-content">
+                                                <span class="o_default_snippet_text">Advisor</span>
+                                                <h5 class="o_default_snippet_text">Kolin C. Ward</h5>
+                                                <div class="icon-sub-div">
+                                                    <div class="our-team-sub-icon">
+                                                        <a href="#">
+                                                            <span class="fa fa-share-alt" />
+                                                        </a>
+                                                    </div>
+                                                    <div class="social-icons">
+                                                        <ul>
+                                                            <li>
+                                                                <a href="#">
+                                                                    <span class="fa fa-facebook" />
+                                                                </a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="#">
+                                                                    <span class="fa fa-twitter" />
+                                                                </a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="#">
+                                                                    <span class="fa fa-linkedin" />
+                                                                </a>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12 col-12 mt-5 o_colored_level">
+                                    <div class="our-team">
+                                        <div class="our-team-img">
+                                            <img src="/sh_corpomate_theme/static/src/img/theme_18/images/pexels-photo-927022.jpeg" loading="lazy" />
+                                            <div class="our-team-sub-content">
+                                                <span class="o_default_snippet_text">Head</span>
+                                                <h5 class="o_default_snippet_text">Ciaran H. Jet</h5>
+                                                <div class="icon-sub-div">
+                                                    <div class="our-team-sub-icon">
+                                                        <a href="#">
+                                                            <span class="fa fa-share-alt" />
+                                                        </a>
+                                                    </div>
+                                                    <div class="social-icons">
+                                                        <ul>
+                                                            <li>
+                                                                <a href="#">
+                                                                    <span class="fa fa-facebook" />
+                                                                </a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="#">
+                                                                    <span class="fa fa-twitter" />
+                                                                </a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="#">
+                                                                    <span class="fa fa-linkedin" />
+                                                                </a>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12 col-12 mt-5 o_colored_level">
+                                    <div class="our-team">
+                                        <div class="our-team-img">
+                                            <img src="/sh_corpomate_theme/static/src/img/theme_18/images/pexels-photo-6405066.jpeg" loading="lazy" />
+                                            <div class="our-team-sub-content">
+                                                <span class="o_default_snippet_text">Director</span>
+                                                <h5 class="o_default_snippet_text">Jecton N. Gill</h5>
+                                                <div class="icon-sub-div">
+                                                    <div class="our-team-sub-icon">
+                                                        <a href="#">
+                                                            <span class="fa fa-share-alt" />
+                                                        </a>
+                                                    </div>
+                                                    <div class="social-icons">
+                                                        <ul>
+                                                            <li>
+                                                                <a href="#">
+                                                                    <span class="fa fa-facebook" />
+                                                                </a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="#">
+                                                                    <span class="fa fa-twitter" />
+                                                                </a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="#">
+                                                                    <span class="fa fa-linkedin" />
+                                                                </a>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <section id="sh_corpomate_theme_section_468" data-snippet="sh_corpomate_theme_tmpl_468" class="o_colored_level" data-name="Our-Expert-Services">
+                    <div class="sub-div" />
+                    <div class="sub-div-1" />
+                    <div class="container">
+                        <h3 class="o_default_snippet_text">Security For You</h3>
+                        <h2 class="o_default_snippet_text">Professional Security Services</h2>
+                        <div class="first-row mt-3">
+                            <div class="row">
+                                <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12 col-12 mt-3 o_colored_level">
+                                    <div class="our-team">
+                                        <div class="our-team-img">
+                                            <img src="/sh_corpomate_theme/static/src/img/theme_18/images/pexels-photo-7176317.jpeg" loading="lazy" />
+                                            <div class="shape">
+                                                <span class="fa fa-shield" />
+                                            </div>
+                                        </div>
+                                        <div class="our-team-text">
+                                            <h5 class="o_default_snippet_text">Security Consulting</h5>
+                                            <p class="o_default_snippet_text">
+                                                            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                                                            tempor.
+                                                        </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12 col-12 mt-3 o_colored_level">
+                                    <div class="our-team">
+                                        <div class="our-team-img">
+                                            <img src="/sh_corpomate_theme/static/src/img/theme_18/images/vecteezy_man-hands-on-the-keyboard-laptop_1901261.jpg" loading="lazy" />
+                                            <div class="shape">
+                                                <span class="fa fa-shield" />
+                                            </div>
+                                        </div>
+                                        <div class="our-team-text">
+                                            <h5 class="o_default_snippet_text">Personal Protection</h5>
+                                            <p class="o_default_snippet_text">
+                                                            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                                                            tempor.
+                                                        </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12 col-12 mt-3 o_colored_level">
+                                    <div class="our-team">
+                                        <div class="our-team-img">
+                                            <img src="/sh_corpomate_theme/static/src/img/theme_18/images/pexels-photo-5473298.jpeg" loading="lazy" />
+                                            <div class="shape">
+                                                <span class="fa fa-shield" />
+                                            </div>
+                                        </div>
+                                        <div class="our-team-text">
+                                            <h5 class="o_default_snippet_text">Commercial Security</h5>
+                                            <p class="o_default_snippet_text">
+                                                            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                                                            tempor.
+                                                        </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+
+            </div>
+        </t>
+    </template>
+
+</odoo>

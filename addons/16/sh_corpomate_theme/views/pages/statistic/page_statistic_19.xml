@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+
+    <!-- statistic 19 -->
+    <template id="sh_corpomate_tmpl_statistics_19" name="statistic">
+        <t t-call="website.layout">
+            <div id="wrap" class="oe_structure">
+                <div class="oe_structure" />
+
+                <section id="sh_corpomate_theme_section_489" data-snippet="sh_corpomate_theme_tmpl_489" class="o_colored_level" data-name="Statastic banner" style="background-image: none;">
+                    <div class="container">
+                        <h1 data-watermark="Statistic" class="o_default_snippet_text">
+                            <span class="o_default_snippet_text">Statistic</span>
+                            Report
+                        </h1>
+                        <div class="main-row">
+                            <div class="row">
+                                <div class="col-lg-7 mx-auto d-block col-12 o_colored_level">
+                                    <div class="sh_main_box">
+                                        <img src="/sh_corpomate_theme/static/src/img/theme_19/images/state.png" loading="lazy" />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="second-row">
+                            <div class="row">
+                                <div class="col-lg-10 col-12 mx-auto d-block o_colored_level">
+                                    <div class="sh_main_box">
+                                        <div class="row">
+                                            <div class="col-lg-3 col-md-6 col-12s o_colored_level">
+                                                <h2 class="sh_corpomate_timer_day_counter o_default_snippet_text">165567</h2>
+                                                <h5 class="o_default_snippet_text">Daily User</h5>
+                                            </div>
+                                            <div class="col-lg-3 col-md-6 col-12s o_colored_level">
+                                                <h2 class="sh_corpomate_timer_hour_counter o_default_snippet_text">0.759</h2>
+                                                <h5 class="o_default_snippet_text">Average Rate</h5>
+                                            </div>
+                                            <div class="col-lg-3 col-md-6 col-12s o_colored_level">
+                                                <h2 class="sh_corpomate_timer_minute_counter o_default_snippet_text">5.87</h2>
+                                                <h5 class="o_default_snippet_text">Total Batches</h5>
+                                            </div>
+                                            <div class="col-lg-3 col-md-6 col-12s o_colored_level">
+                                                <h2 class="sh_corpomate_timer_second_counter o_default_snippet_text">
+                                                    70
+                                                    <span class="o_default_snippet_text">%</span>
+                                                </h2>
+                                                <h5 class="o_default_snippet_text">Success Rate</h5>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <section id="sh_corpomate_theme_section_490" data-snippet="sh_corpomate_theme_tmpl_490" class="o_colored_level" data-name="Statastic video" style="background-image: none;">
+                    <div class="container">
+                        <h1 data-watermark="Videos" class="o_default_snippet_text">
+                            <span class="o_default_snippet_text">Check</span>
+                            Video
+                        </h1>
+                        <p class="sh_text o_default_snippet_text">
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                    consequat.
+                </p>
+                        <div class="main-row">
+                            <div class="row">
+                                <div class="col-lg-7 mx-auto d-block col-12 o_colored_level">
+                                    <div class="sh_img">
+                                        <img src="/sh_corpomate_theme/static/src/img/theme_19/images/bit-coin.jpg" loading="lazy" />
+                                        <div class="shape-1">
+                                            <a href="https://www.youtube.com/watch?v=O33uuBh6nXA" target="_blank" class="sh_video_play">
+                                                <span class="fa fa-play" />
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <section id="sh_corpomate_theme_section_491" data-snippet="sh_corpomate_theme_tmpl_491" class="o_colored_level" data-name="Services us" style="background-image: none;">
+                    <div class="container">
+                        <div class="main-row">
+                            <div class="row">
+                                <div class="col-xl-4 col-lg-4 col-md-4 col-12 o_colored_level">
+                                    <div class="sh_about_box">
+                                        <div>
+                                            <div class="sh_about_icon d-flex flex-wrap justify-content-center align-items-center">
+                                                <img src="/sh_corpomate_theme/static/src/img/theme_19/icon/1-1.png" alt="" width="60" height="60" loading="lazy" />
+                                            </div>
+                                            <div class="sh_about_text">
+                                                <h3 class="o_default_snippet_text">Exchange Balance</h3>
+                                                <p class="o_default_snippet_text">Lorem ipsum dolor sit amet consectur.</p>
+                                                <div class="sh_divider" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-xl-4 col-lg-4 col-md-4 col-12 o_colored_level">
+                                    <div class="sh_about_box">
+                                        <div>
+                                            <div class="sh_about_icon d-flex flex-wrap justify-content-center align-items-center">
+                                                <img src="/sh_corpomate_theme/static/src/img/theme_19/icon/1-2.png" alt="" width="60" height="60" loading="lazy" />
+                                            </div>
+                                            <div class="sh_about_text">
+                                                <h3 class="o_default_snippet_text">Block Chain</h3>
+                                                <p class="o_default_snippet_text">Lorem ipsum dolor sit amet consectur.</p>
+                                                <div class="sh_divider" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-xl-4 col-lg-4 col-md-4 col-12 o_colored_level">
+                                    <div class="sh_about_box">
+                                        <div>
+                                            <div class="sh_about_icon d-flex flex-wrap justify-content-center align-items-center">
+                                                <img src="/sh_corpomate_theme/static/src/img/theme_19/icon/1-3.png" alt="" width="60" height="60" loading="lazy" />
+                                            </div>
+                                            <div class="sh_about_text">
+                                                <h3 class="o_default_snippet_text">Mining Currency</h3>
+                                                <p class="o_default_snippet_text">Lorem ipsum dolor sit amet consectur.</p>
+                                                <div class="sh_divider" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+
+            </div>
+        </t>
+    </template>
+
+
+</odoo>

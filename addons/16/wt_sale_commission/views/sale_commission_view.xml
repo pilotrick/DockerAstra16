@@ -1,0 +1,117 @@
+<odoo>
+    <data>
+        <!--  Sale Commissions list view  -->
+        <record model="ir.ui.view" id="view_sale_commission_list">
+            <field name="name">sale.commission.list</field>
+            <field name="model">sale.commission</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="name"/>
+                </tree>
+            </field>
+        </record>
+
+    <!--  Sale Commissions form view  -->
+    <record id="view_sale_commission_form" model="ir.ui.view">
+        <field name="name">sale.commission.form</field>
+        <field name="model">sale.commission</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="name"/>
+                            <field name="based_on"/>
+                            <field name="minimum_margin_percent"/>
+                        </group>
+                    </group>
+                    <notebook>
+                        <page string="Commission Periods" name="commission_line_ids">
+                            <field name="commission_line_ids" required="1">
+                                <tree string="Commission lines" editable="bottom">
+                                    <field name="period_from"/>
+                                    <field name="period_to"/>
+                                    <field name="commission"/>
+                                </tree>
+                            </field>
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!--  Commissions actions opening views on models  -->
+    <record model="ir.actions.act_window" id="sale_commission_action_window">
+        <field name="name">Sale Commissions</field>
+        <field name="res_model">sale.commission</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <!--  Users actions opening views on models  -->
+    <record model="ir.actions.act_window" id="wt_res_users_action_window">
+        <field name="name">Sales Person</field>
+        <field name="res_model">res.users</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <!--  Top menu item  -->
+    <menuitem name="Sale Commissions" id="sale_commission_menu_root" web_icon="wt_sale_commission,static/description/icon.png"/>
+
+    <!--  actions  -->
+    <menuitem name="Commissions" id="sale_commission_menu_list" parent="sale_commission_menu_root"
+              action="sale_commission_action_window"/>
+    <menuitem name="Sales Person" id="res_users_menu_list" parent="sale_commission_menu_root"
+              action="wt_res_users_action_window"/>
+
+
+    <!-- User Commission Lines -->
+    <record model="ir.ui.view" id="view_user_commission_line_list">
+        <field name="name">user.commission.line.list</field>
+        <field name="model">user.commission.line</field>
+        <field name="arch" type="xml">
+            <tree string="Commission Report" create="false" expand="context.get('expand', False)" multi_edit="1">
+                <field name="customer_name"/>
+                <field name="user_id"/>
+                <field name="move_id"/>
+                <field name="move_create_date"/>
+                <field name="move_payment_date"/>
+                <field name="paid_amount"/>
+                <field name="move_amount"/>
+                <field name="tax_amount"/>
+                <field name="margin_amount"/>
+                <field name="margin_percentage"/>
+                <field name="payment_interval"/>
+                <field name="commission_perc"/>
+                <field name="commission_amount" sum="Toatal Commission"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="view_user_commission_line_filter" model="ir.ui.view">
+        <field name="name">user.commission.line.search</field>
+        <field name="model">user.commission.line</field>
+        <field name="arch" type="xml">
+            <search string="Commission Report">
+                <group expand="0" string="Group By">
+                    <filter string="Salesperson" name="group_by_user_id" domain="[]" context="{'group_by': 'user_id'}"/>
+                    <filter string="Invoice Date" name="group_by_move_create_date" domain="[]" context="{'group_by': 'move_create_date'}"/>
+                    <filter string="Invoice" name="group_by_move" domain="[]" context="{'group_by': 'move_id'}"/>
+                    <filter string="Payment Date" name="group_by_move_payment_date" domain="[]" context="{'group_by': 'move_payment_date'}"/>
+                </group>
+            </search>
+        </field>
+    </record>
+
+    <record model="ir.actions.act_window" id="user_commission_line_action_window">
+        <field name="name">Reporting</field>
+        <field name="res_model">user.commission.line</field>
+        <field name="context">{'search_default_group_by_user_id': 1, 'search_default_group_by_move_payment_date':1, 'expand': 1}</field>
+        <field name="search_view_id" ref="view_user_commission_line_filter"/>
+        <field name="view_mode">tree</field>
+    </record>
+
+    <menuitem name="Reporting" id="res_users_commission_line_menu_list" parent="sale_commission_menu_root"
+              action="user_commission_line_action_window"/>
+    </data>
+</odoo>

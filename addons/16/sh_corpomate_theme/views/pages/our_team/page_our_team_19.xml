@@ -1,0 +1,340 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+
+    <!-- OUR TEAM 19 -->
+    <template id="sh_corpomate_tmpl_our_team_19" name="our team">
+        <t t-call="website.layout">
+            <div id="wrap" class="oe_structure">
+                <div class="oe_structure" />
+                <section id="sh_corpomate_theme_section_492" data-snippet="sh_corpomate_theme_tmpl_492" class="o_colored_level" data-name="Experts SH 2" style="background-image: none;">
+                    <div class="container">
+                        <h1 data-watermark="Experts" class="o_default_snippet_text">
+                            <span class="o_default_snippet_text">Our</span>
+                            Experts
+                        </h1>
+                        <div class="main-row">
+                            <div class="row">
+                                <div class="col-xl-4 col-lg-4 col-md-6 col-12 o_colored_level">
+                                    <div class="sh_about_box">
+                                        <div>
+                                            <div class="sh_about_icon d-flex flex-wrap justify-content-center align-items-center">
+                                                <img src="/sh_corpomate_theme/static/src/img/theme_19/images/team_2.jpg" alt="" width="60" height="60" loading="lazy" />
+                                            </div>
+                                            <div class="sh_about_text">
+                                                <h3 class="o_default_snippet_text">Sarah Jenifer</h3>
+                                                <p class="o_default_snippet_text">Lead Developer</p>
+                                                <div class="sh_divider" />
+                                                <div class="social-icon">
+                                                    <ul>
+                                                        <li>
+                                                            <a href="#">
+                                                                <span class="fa fa-facebook" />
+                                                            </a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="#">
+                                                                <span class="fa fa-twitter" />
+                                                            </a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="#">
+                                                                <span class="fa fa-pinterest-p" />
+                                                            </a>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-xl-4 col-lg-4 col-md-6 col-12 o_colored_level">
+                                    <div class="sh_about_box">
+                                        <div>
+                                            <div class="sh_about_icon d-flex flex-wrap justify-content-center align-items-center">
+                                                <img src="/sh_corpomate_theme/static/src/img/theme_19/images/team_3.jpg" alt="" width="60" height="60" loading="lazy" />
+                                            </div>
+                                            <div class="sh_about_text">
+                                                <h3 class="o_default_snippet_text">Jane Doe</h3>
+                                                <p class="o_default_snippet_text">CEO</p>
+                                                <div class="sh_divider" />
+                                                <div class="social-icon">
+                                                    <ul>
+                                                        <li>
+                                                            <a href="#">
+                                                                <span class="fa fa-facebook" />
+                                                            </a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="#">
+                                                                <span class="fa fa-twitter" />
+                                                            </a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="#">
+                                                                <span class="fa fa-pinterest-p" />
+                                                            </a>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-xl-4 col-lg-4 col-md-6 col-12 o_colored_level">
+                                    <div class="sh_about_box">
+                                        <div>
+                                            <div class="sh_about_icon d-flex flex-wrap justify-content-center align-items-center">
+                                                <img src="/sh_corpomate_theme/static/src/img/theme_19/images/team_4.jpg" alt="" width="60" height="60" loading="lazy" />
+                                            </div>
+                                            <div class="sh_about_text">
+                                                <h3 class="o_default_snippet_text">Paula Neilson</h3>
+                                                <p class="o_default_snippet_text">Advisor</p>
+                                                <div class="sh_divider" />
+                                                <div class="social-icon">
+                                                    <ul>
+                                                        <li>
+                                                            <a href="#">
+                                                                <span class="fa fa-facebook" />
+                                                            </a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="#">
+                                                                <span class="fa fa-twitter" />
+                                                            </a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="#">
+                                                                <span class="fa fa-pinterest-p" />
+                                                            </a>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-xl-4 col-lg-4 col-md-6 col-12 o_colored_level">
+                                    <div class="sh_about_box">
+                                        <div>
+                                            <div class="sh_about_icon d-flex flex-wrap justify-content-center align-items-center">
+                                                <img src="/sh_corpomate_theme/static/src/img/theme_19/images/team_2.jpg" alt="" width="60" height="60" loading="lazy" />
+                                            </div>
+                                            <div class="sh_about_text">
+                                                <h3 class="o_default_snippet_text">Sarah Jenifer</h3>
+                                                <p class="o_default_snippet_text">Lead Developer</p>
+                                                <div class="sh_divider" />
+                                                <div class="social-icon">
+                                                    <ul>
+                                                        <li>
+                                                            <a href="#">
+                                                                <span class="fa fa-facebook" />
+                                                            </a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="#">
+                                                                <span class="fa fa-twitter" />
+                                                            </a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="#">
+                                                                <span class="fa fa-pinterest-p" />
+                                                            </a>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-xl-4 col-lg-4 col-md-6 col-12 o_colored_level">
+                                    <div class="sh_about_box">
+                                        <div>
+                                            <div class="sh_about_icon d-flex flex-wrap justify-content-center align-items-center">
+                                                <img src="/sh_corpomate_theme/static/src/img/theme_19/images/team_3.jpg" alt="" width="60" height="60" loading="lazy" />
+                                            </div>
+                                            <div class="sh_about_text">
+                                                <h3 class="o_default_snippet_text">Jane Doe</h3>
+                                                <p class="o_default_snippet_text">CEO</p>
+                                                <div class="sh_divider" />
+                                                <div class="social-icon">
+                                                    <ul>
+                                                        <li>
+                                                            <a href="#">
+                                                                <span class="fa fa-facebook" />
+                                                            </a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="#">
+                                                                <span class="fa fa-twitter" />
+                                                            </a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="#">
+                                                                <span class="fa fa-pinterest-p" />
+                                                            </a>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-xl-4 col-lg-4 col-md-6 col-12 o_colored_level">
+                                    <div class="sh_about_box">
+                                        <div>
+                                            <div class="sh_about_icon d-flex flex-wrap justify-content-center align-items-center">
+                                                <img src="/sh_corpomate_theme/static/src/img/theme_19/images/team_4.jpg" alt="" width="60" height="60" loading="lazy" />
+                                            </div>
+                                            <div class="sh_about_text">
+                                                <h3 class="o_default_snippet_text">Paula Neilson</h3>
+                                                <p class="o_default_snippet_text">Advisor</p>
+                                                <div class="sh_divider" />
+                                                <div class="social-icon">
+                                                    <ul>
+                                                        <li>
+                                                            <a href="#">
+                                                                <span class="fa fa-facebook" />
+                                                            </a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="#">
+                                                                <span class="fa fa-twitter" />
+                                                            </a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="#">
+                                                                <span class="fa fa-pinterest-p" />
+                                                            </a>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <section id="sh_corpomate_theme_section_493" class="js_cls_sh_corpomate_section_479 sh_animation_part oe_img_bg o_bg_img_center o_colored_level" data-date_start="2021-01-01" data-date_end="2030-12-29" data-snippet="sh_corpomate_theme_tmpl_493" data-name="Service offer" style="background-image: url(&quot;/sh_corpomate_theme/static/src/img/theme_19/images/curve-bg.png&quot;);">
+                    <div class="sub-div">
+                        <img src="/sh_corpomate_theme/static/src/img/theme_19/images/shape-02-1.png" loading="lazy" />
+                    </div>
+                    <div class="sub-div-1">
+                        <img src="/sh_corpomate_theme/static/src/img/theme_19/images/shape-02-1.png" loading="lazy" />
+                    </div>
+                    <div class="sub-div-2">
+                        <img src="/sh_corpomate_theme/static/src/img/theme_19/images/shape-02-1.png" loading="lazy" />
+                    </div>
+                    <div class="container">
+                        <h1 data-watermark="Services" class="o_default_snippet_text">
+                            <span class="o_default_snippet_text">Service</span>
+                            Offer
+                        </h1>
+                        <div class="main-row">
+                            <div class="row">
+                                <div class="col-xl-3 col-md-6 col-12 o_colored_level">
+                                    <div class="sh_box">
+                                        <img src="/sh_corpomate_theme/static/src/img/theme_19/icon/008.png" loading="lazy" />
+                                        <h4 class="o_default_snippet_text">Secure Wallet</h4>
+                                        <p class="o_default_snippet_text">Lorem Ipsum Dolor Sit Amet</p>
+                                    </div>
+                                    <div class="sh_box">
+                                        <img src="/sh_corpomate_theme/static/src/img/theme_19/icon/0010.png" loading="lazy" />
+                                        <h4 class="o_default_snippet_text">Analysis And Planing</h4>
+                                        <p class="o_default_snippet_text">Lorem Ipsum Dolor Sit Amet</p>
+                                    </div>
+                                </div>
+                                <div class="col-xl-6 col-md-12 o_colored_level">
+                                    <div class="sh_box_img">
+                                        <img src="/sh_corpomate_theme/static/src/img/theme_19/images/image.png" loading="lazy" />
+                                    </div>
+                                </div>
+                                <div class="col-xl-3 col-md-6 col-12 o_colored_level">
+                                    <div class="sh_box">
+                                        <img src="/sh_corpomate_theme/static/src/img/theme_19/icon/009.png" loading="lazy" />
+                                        <h4 class="o_default_snippet_text">Fully Protection</h4>
+                                        <p class="o_default_snippet_text">Lorem Ipsum Dolor Sit Amet</p>
+                                    </div>
+                                    <div class="sh_box">
+                                        <img src="/sh_corpomate_theme/static/src/img/theme_19/icon/0011.png" loading="lazy" />
+                                        <h4 class="o_default_snippet_text">Crypto Trading</h4>
+                                        <p class="o_default_snippet_text">Lorem Ipsum Dolor Sit Amet</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <section id="sh_corpomate_theme_section_494" class="js_cls_sh_corpomate_s_counter o_colored_level" data-snippet="sh_corpomate_theme_tmpl_494" data-name="About-us" style="background-image: none;">
+                    <div class="container">
+                        <div class="main-row-1">
+                            <div class="row">
+                                <div class="col-xl-3 col-lg-3 col-md-6 col-12 o_colored_level">
+                                    <div class="sh_about_box">
+                                        <div>
+                                            <div class="sh_about_icon d-flex flex-wrap justify-content-center align-items-center">
+                                                <img src="/sh_corpomate_theme/static/src/img/theme_19/icon/001.png" alt="" width="60" height="60" loading="lazy" />
+                                            </div>
+                                            <div class="sh_about_text">
+                                                <h3 class="js_cls_counter_number o_default_snippet_text">8452</h3>
+                                                <p class="o_default_snippet_text">Cyber Security Projects</p>
+                                                <div class="sh_divider" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-xl-3 col-lg-3 col-md-6 col-12 o_colored_level">
+                                    <div class="sh_about_box">
+                                        <div>
+                                            <div class="sh_about_icon d-flex flex-wrap justify-content-center align-items-center">
+                                                <img src="/sh_corpomate_theme/static/src/img/theme_19/icon/002.png" alt="" width="60" height="60" loading="lazy" />
+                                            </div>
+                                            <div class="sh_about_text">
+                                                <h3 class="js_cls_counter_number o_default_snippet_text">100</h3>
+                                                <p class="o_default_snippet_text">Service Guarantee</p>
+                                                <div class="sh_divider" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-xl-3 col-lg-3 col-md-6 col-12 o_colored_level">
+                                    <div class="sh_about_box">
+                                        <div>
+                                            <div class="sh_about_icon d-flex flex-wrap justify-content-center align-items-center">
+                                                <img src="/sh_corpomate_theme/static/src/img/theme_19/icon/003.png" alt="" width="60" height="60" loading="lazy" />
+                                            </div>
+                                            <div class="sh_about_text">
+                                                <h3 class="js_cls_counter_number o_default_snippet_text">1658</h3>
+                                                <p class="o_default_snippet_text">Clients Protections </p>
+                                                <div class="sh_divider" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-xl-3 col-lg-3 col-md-6 col-12 o_colored_level">
+                                    <div class="sh_about_box">
+                                        <div>
+                                            <div class="sh_about_icon d-flex flex-wrap justify-content-center align-items-center">
+                                                <img src="/sh_corpomate_theme/static/src/img/theme_19/icon/004.png" alt="" width="60" height="60" loading="lazy" />
+                                            </div>
+                                            <div class="sh_about_text">
+                                                <h3 class="js_cls_counter_number o_default_snippet_text">150</h3>
+                                                <p class="o_default_snippet_text">Team Experts</p>
+                                                <div class="sh_divider" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+
+            </div>
+        </t>
+    </template>
+
+</odoo>

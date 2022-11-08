@@ -1,0 +1,61 @@
+#sh_footer19{padding: 50px 0  0px;  background-size: cover; background-position:center; position: relative;}
+#sh_footer19::before{height: 165%;width: 100%;top: -8rem; transform:rotate(180deg);background-repeat: no-repeat;left: 0;content: '';position: absolute;background: url('/sh_corpomate_theme/static/src/img/theme_19/images/Banner-overly.png');background-size: cover;background-position: bottom;overflow: visible;}
+.o_footer_copyright{display: none;}
+.o_footer{background: transparent;}
+#sh_footer19 .sh_main{background:transparent; display: flex;justify-content: space-between; padding: 20px 0px; border-bottom: 2px solid #e7e7e7; border-radius: 0px;margin-bottom: 0px;position: relative;  padding-bottom: 50px;}
+#sh_footer19 .sh_main .sh_text h2{color: #181a99;margin: 0;font-size: 35px !important;font-weight: 600;}
+#sh_footer19 .sh_main .js_subscribe{justify-content:center; width: 80%;}
+#sh_footer19 .sh_main .js_subscribe input{height: 80px;max-width: 100%;border-radius:0px; border-radius: 40px; background:#fff;font-size: 18px;padding-left: 20px; border: 0px; box-shadow: 0px 10px 30px rgba(0,0,0,0.1);}
+#sh_footer19 .sh_main .js_subscribe .input-group-append a{padding-top: 0;padding-bottom: 0;padding-left: 20px;padding-right: 20px;position: absolute;right:4%;top: 14px; background: transparent !important; border-color: transparent !important;    border-radius: 20px; box-shadow: none;     padding: 14px 40px;}
+#sh_footer19 .sh_main .js_subscribe .input-group-append a::before{content: "";height: 100%;width: 100%;background:linear-gradient(to right, #6504f8,#e9208d);position: absolute;z-index: -1;left: 0;top: 0;transition: .4s;transition: all 0.5s;  border-radius: 40px;}
+#sh_footer19 .sh_main .js_subscribe .input-group-append a:hover:before{background:linear-gradient(to left, #6504f8,#e9208d);}
+#sh_footer19 .sh_main .sh_text{width: 70%;display: flex;justify-content:flex-start;align-items: center;}
+#sh_footer19 .sh_main .btn-primary {color: #FFFFFF;background-color: o-color('o-color-1');border-color: o-color('o-color-1');margin-left: 10px;text-align: center;display: flex;justify-content: center;align-items: center;padding: 10px 20px;border-radius: 0px;}
+#sh_footer19 .main-row{margin-top: 50px; margin-bottom: 50px;}
+#sh_footer19 .main-row h4{font-size: 25px; font-weight: 600; color: #181a99;}
+#sh_footer19 .main-row p{margin-bottom: 0.5rem;}
+#sh_footer19 .main-row p a{text-decoration: none; color: #636363; font-weight: 600;}
+
+
+
+#sh_footer19 .sub-div{    position: absolute;top: 2%;left: 7%;height: 60px;width: 60px;}
+#sh_footer19 .sub-div img{height: 100%; width: 100%;}
+#sh_footer19 .sub-div-1{position: absolute;top: 32%;left: 72%;height: 30px;opacity: 0.6;transform: rotate(60deg);width: 30px;}
+#sh_footer19 .sub-div-1 img{height: 100%; width: 100%;}
+#sh_footer19 .sub-div-2{    position: absolute;bottom: 7%;left: 90%;height: 30px;transform: rotate(152deg);width: 30px;}
+#sh_footer19 .sub-div-2 img{height: 100%; width: 100%;}
+#sh_footer19 .sub-div-3{position: absolute;bottom: 0;left: 2%;height: 30px;transform: rotate(282deg);width: 30px;}
+#sh_footer19 .sub-div-3 img{height: 100%; width: 100%;}
+
+
+
+@media (max-width:768px) {
+    #sh_footer19::before {height: 165%;width: 100%;top: -14rem;transform: rotate(180deg);background-repeat: no-repeat;left: 0;content: '';position: absolute;}
+    #sh_footer19 .sh_main .sh_text h2{font-size: 25px !important;}
+    #sh_footer19 .sh_main .js_subscribe{width: 100%;}
+    #sh_footer19 .sh_main .js_subscribe .input-group-append a{    padding: 14px 30px;}
+    #sh_footer19 .sh_main .js_subscribe input{font-size: 14px;}
+    #sh_footer19 .sub-div-1{top:23%;}
+    #sh_footer19 .sub-div{left:3%;}
+    #sh_footer19 .sub-div-2{    bottom: 7%;left: 79%;}
+    #sh_footer19 .main-row .col-md-6{margin-bottom: 20px;}
+    #sh_footer19 .sh_main{padding: 20px 0px;}
+
+
+}
+
+@media(max-width:567px){
+    #sh_footer19{padding:0;}
+    #sh_footer19 .sh_main{flex-direction: column;}
+    #sh_footer19 .sub-div{display:none;}
+    #sh_footer19 .main-row{text-align:left;}
+    #sh_footer19 .sub-div-1{display:none;}
+    #sh_footer19 .sub-div-2{display:none;}
+    #sh_footer19 .sh_main .sh_text{width:100%; justify-content: center; margin-bottom: 10px;}
+    #sh_footer19 .sub-div-3{display:none;}
+    #sh_footer19 .sh_main .js_subscribe input{font-size: 12px; height:60px;}
+    #sh_footer19 .sh_main .js_subscribe .input-group-append a{padding: 10px 25px; right:8%;  top:8px;}
+    #sh_footer19::before{top:-18rem; height: 157%;}
+    #sh_footer19 .sh_main .js_subscribe input{max-width: 90%;}
+
+}

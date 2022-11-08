@@ -2,7 +2,7 @@
     "name": "Stock Analytic",
     "summary": "Add Analytic to Picking",
     "version": "15.0.1.0.1",
-    "author": "Jeffry J. De La Rosa "
+    "author": "Astratech"
     "Astra Tech SRL",
     "website": "https://astratech.com.do",
     "category": "Warehouse Management",

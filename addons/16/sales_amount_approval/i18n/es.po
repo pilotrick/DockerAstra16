@@ -1,0 +1,22 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* sales_amount_approval
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 14.0+e-20201109\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-03-19 09:32+0000\n"
+"PO-Revision-Date: 2021-03-19 09:32+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: sales_amount_approval
+#: model:ir.model.fields,field_description:sales_amount_approval.field_res_users__sale_user_approver
+msgid "User for Head of Sales"
+msgstr "Usuario para Jefa de Ventas"
+

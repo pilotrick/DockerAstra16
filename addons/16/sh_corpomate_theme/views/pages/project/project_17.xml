@@ -1,0 +1,274 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+	<!-- project PAGE 17 -->
+	<template id="sh_corpomate_tmpl_project_17" name="project">
+		<t t-call="website.layout">
+			<div id="wrap" class="oe_structure">
+				<section id="sh_corpomate_theme_section_429" data-snippet="sh_corpomate_theme_tmpl_429" class="o_colored_level" data-name="Project-Banner">
+					<div class="sh_banner">
+						<img src="/sh_corpomate_theme/static/src/img/theme_17/images/pexels-photo-167676.jpeg" loading="lazy" />
+					</div>
+					<div class="sh_banner_content">
+						<ul>
+							<li>
+								<a href="#" class="o_default_snippet_text">
+									Home
+								</a>
+							</li>
+							<li>
+								<span href="#" class="active o_default_snippet_text">
+									Project
+								</span>
+							</li>
+						</ul>
+						<div class="shape">
+							<img src="/sh_corpomate_theme/static/src/img/theme_17/images/shape.png" loading="lazy" />
+						</div>
+						<h1 class="o_default_snippet_text">
+							Project
+						</h1>
+					</div>
+				</section>
+				<section id="sh_corpomate_theme_section_430" data-snippet="sh_corpomate_theme_tmpl_430" class="o_colored_level" data-name="Project-Gallery">
+					<div class="container">
+						<div class="row mt-3" style="">
+							<div class="col-xl-4 col-lg-6 col-md-6 col-sm-12 col-12 mt-3 o_colored_level">
+								<div class="project-details">
+									<div class="project-sub-details">
+										<p class="text-light o_default_snippet_text">
+											Shopping
+										</p>
+										<h4 class="text-light o_default_snippet_text">
+											Port Shipping
+										</h4>
+										<div class="project-sub-details-link">
+											<a href="#">
+												<span class="fa fa-link">
+												</span>
+											</a>
+										</div>
+									</div>
+									<img src="/sh_corpomate_theme/static/src/img/theme_17/images/pexels-photo-4481528.jpeg" loading="lazy" />
+								</div>
+							</div>
+							<div class="col-xl-4 col-lg-6 col-md-6 col-sm-12 col-12 mt-3 o_colored_level">
+								<div class="project-details">
+									<div class="project-sub-details">
+										<p class="text-light o_default_snippet_text">
+											Shopping
+										</p>
+										<h4 class="text-light o_default_snippet_text">
+											Port Shipping
+										</h4>
+										<div class="project-sub-details-link">
+											<a href="#">
+												<span class="fa fa-link">
+												</span>
+											</a>
+										</div>
+									</div>
+									<img src="/sh_corpomate_theme/static/src/img/theme_17/images/pexels-photo-906982.jpeg" loading="lazy" />
+								</div>
+							</div>
+							<div class="col-xl-4 col-lg-6 col-md-6 col-sm-12 col-12 mt-3 o_colored_level">
+								<div class="project-details">
+									<div class="project-sub-details">
+										<p class="text-light o_default_snippet_text">
+											Shopping
+										</p>
+										<h4 class="text-light o_default_snippet_text">
+											Port Shipping
+										</h4>
+										<div class="project-sub-details-link">
+											<a href="#">
+												<span class="fa fa-link">
+												</span>
+											</a>
+										</div>
+									</div>
+									<img src="/sh_corpomate_theme/static/src/img/theme_17/images/pexels-photo-4483775.jpeg" loading="lazy" />
+								</div>
+							</div>
+							<div class="col-xl-4 col-lg-6 col-md-6 col-sm-12 col-12 mt-3 o_colored_level">
+								<div class="project-details">
+									<div class="project-sub-details">
+										<p class="text-light o_default_snippet_text">
+											Shopping
+										</p>
+										<h4 class="text-light o_default_snippet_text">
+											Port Shipping
+										</h4>
+										<div class="project-sub-details-link">
+											<a href="#">
+												<span class="fa fa-link">
+												</span>
+											</a>
+										</div>
+									</div>
+									<img src="/sh_corpomate_theme/static/src/img/theme_17/images/pexels-photo-1095814.jpeg" loading="lazy" />
+								</div>
+							</div>
+							<div class="col-xl-4 col-lg-6 col-md-6 col-sm-12 col-12 mt-3 o_colored_level">
+								<div class="project-details">
+									<div class="project-sub-details">
+										<p class="text-light o_default_snippet_text">
+											Shopping
+										</p>
+										<h4 class="text-light o_default_snippet_text">
+											Port Shipping
+										</h4>
+										<div class="project-sub-details-link">
+											<a href="#">
+												<span class="fa fa-link">
+												</span>
+											</a>
+										</div>
+									</div>
+									<img src="/sh_corpomate_theme/static/src/img/theme_17/images/pexels-photo-2199293.jpeg" loading="lazy" />
+								</div>
+							</div>
+							<div class="col-xl-4 col-lg-6 col-md-6 col-sm-12 col-12 mt-3 o_colored_level">
+								<div class="project-details">
+									<div class="project-sub-details">
+										<p class="text-light o_default_snippet_text">
+											Shopping
+										</p>
+										<h4 class="text-light o_default_snippet_text">
+											Port Shipping
+										</h4>
+										<div class="project-sub-details-link">
+											<a href="#">
+												<span class="fa fa-link">
+												</span>
+											</a>
+										</div>
+									</div>
+									<img src="/sh_corpomate_theme/static/src/img/theme_17/images/pexels-photo-358220.jpeg" loading="lazy" />
+								</div>
+							</div>
+						</div>
+						<div class="row mt-3" style="">
+						</div>
+					</div>
+				</section>
+				<section id="sh_corpomate_theme_section_431" data-snippet="sh_corpomate_theme_tmpl_431" class="o_colored_level" data-name=" Project-Testimonials">
+					<div class="container">
+						<div class="unique-bg">
+							<div class="unique-bg-1 rotateme">
+							</div>
+							<div class="unique-bg-2 rotateme">
+							</div>
+							<div class="row" style="">
+								<div class="col-xl-5 col-lg-5 col-md-5 col-sm-12 col-12 mt-3 o_colored_level">
+									<div class="testimonial-details">
+										<div class="sub-content">
+											<div class="sub-content-text o_default_snippet_text">
+												Testimonials
+											</div>
+										</div>
+										<h3 class="o_default_snippet_text">
+											Know What People's Say
+											<br />
+											About us
+										</h3>
+										<p class="o_default_snippet_text">
+											Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+											tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.
+										</p>
+										<div class="testimonial-details-img">
+											<img src="/sh_corpomate_theme/static/src/img/theme_17/images/factory-worker-holding-clipboard-checking-inventory-warehouse-storage-department.jpg" loading="lazy" />
+											<div class="testimonial-play-icon">
+												<a href="#">
+													<span class="fa fa-caret-right">
+													</span>
+												</a>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="col-xl-6 col-lg-6 col-md-6 mx-auto d-block col-sm-12 col-12 mt-3 o_colored_level">
+									<div class="testimonial-content mt-5">
+										<p class="o_default_snippet_text">
+											Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+											tempor incididunt.
+										</p>
+										<div class="testimonial-content-details">
+											<div class="testimonial-content-details-img">
+												<img src="/sh_corpomate_theme/static/src/img/theme_17/images/handsome-young-businessman-shirt-eyeglasses_85574-6228.jpg" loading="lazy" />
+											</div>
+											<div class="testimonial-content-details-text">
+												<p class="o_default_snippet_text">
+													Olivier D. Dummer
+												</p>
+												<div class="sub-content">
+													<div class="sub-content-text o_default_snippet_text">
+														Genral Manager
+													</div>
+												</div>
+											</div>
+										</div>
+										<div class="sub-icon">
+											<span class="fa fa-quote-left">
+											</span>
+										</div>
+									</div>
+									<div class="testimonial-content mt-5">
+										<p class="o_default_snippet_text">
+											Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+											tempor incididunt.
+										</p>
+										<div class="testimonial-content-details">
+											<div class="testimonial-content-details-img">
+												<img src="/sh_corpomate_theme/static/src/img/theme_17/images/attractive-dark-haired-man-is-working-table-office-he-wears-blue-shirt-with-black-jacket-he-is-taking-cup-coffee-smiling-camera_197531-516.jpg" loading="lazy" />
+											</div>
+											<div class="testimonial-content-details-text">
+												<p class="o_default_snippet_text">
+													Roseanne M. Lewis
+												</p>
+												<div class="sub-content">
+													<div class="sub-content-text o_default_snippet_text">
+														Application designer
+													</div>
+												</div>
+											</div>
+										</div>
+										<div class="sub-icon">
+											<span class="fa fa-quote-left">
+											</span>
+										</div>
+									</div>
+									<div class="testimonial-content mt-5">
+										<p class="o_default_snippet_text">
+											Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+											tempor incididunt.
+										</p>
+										<div class="testimonial-content-details">
+											<div class="testimonial-content-details-img">
+												<img src="/sh_corpomate_theme/static/src/img/theme_17/images/portrait-handsome-smiling-stylish-young-man-model-dressed-red-checkered-shirt-fashion-man-posing_158538-4914.jpg" loading="lazy" />
+											</div>
+											<div class="testimonial-content-details-text">
+												<p class="o_default_snippet_text">
+													Steven M. Jones
+												</p>
+												<div class="sub-content">
+													<div class="sub-content-text o_default_snippet_text">
+														CEO &amp;amp; Founder
+													</div>
+												</div>
+											</div>
+										</div>
+										<div class="sub-icon">
+											<span class="fa fa-quote-left">
+											</span>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</section>
+			</div>
+		</t>
+	</template>
+	<!-- project PAGE 17 -->
+</odoo>

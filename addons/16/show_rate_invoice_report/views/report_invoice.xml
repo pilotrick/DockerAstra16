@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <template id="rate_report_invoice_document_inherited" inherit_id="l10n_do_accounting.l10n_do_report_invoice_document">
+        <xpath expr="//div[@id='total']" position="after">
+            <div class="text-muted text-right">
+                <t t-set="currency_info" t-value="o._get_currency_rate()"/>
+                <span>
+                    <strong>Tasa:</strong>
+                    <span class="text-nowrap" t-esc="'{0:,.2f}'.format(currency_info.get('rate'))"/>
+                </span>
+                <br/>
+                <span>
+                    <strong>Conversión:</strong>
+                    <span class="text-nowrap" t-esc="'{0:,.2f}'.format(currency_info.get('amount'))"/>
+                </span>
+                <br/>
+                <br/>
+            </div>
+        </xpath>
+    </template>
+</odoo>

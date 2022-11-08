@@ -1,0 +1,242 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+	
+	<!-- ABOUT US PAGE 3 -->
+	<template id="sh_corpomate_tmpl_about_us_7" name="about us">
+	    <t t-call="website.layout">
+	      <div id="wrap" class="oe_structure">
+	        <div class="oe_structure"/>
+			
+
+<section id="sh_corpomate_theme_section_182" data-name="theme7 all banner">
+    <style>
+	  
+	</style>
+    <div class="container">
+        <div class="content text-center sh_animation_part">
+            <h1 class="o_default_snippet_text">About Us</h1>
+            <div class="sh_breadcrumb">
+                <a href="/"><span class="fa fa-home sh_home" /></a>
+                <a href="/"><span class="fa fa-chevron-right" /></a>
+                <span class="sh_banner_name o_default_snippet_text">About Us</span>
+            </div>
+            <p class="o_default_snippet_text">Lorem ipsum dolar sit amet, consectetur adipisicing</p>
+        </div>
+    </div>
+</section>
+<section id="sh_corpomate_theme_section_46" data-name="About Snippet 1">
+    
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6">
+                <div class="sh_img_video sh_animation_part">
+                    <img src="/sh_corpomate_theme/static/src/img/2.jpg" />
+                    <div class="sh_video">
+                        <a href="https://www.youtube.com/watch?v=O33uuBh6nXA" target="_blank" class="sh_video_play">
+                            <span class="fa fa-play" />
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="sh_description sh_animation_part">
+                    <h3 class="o_default_snippet_text">Lorem Ipsum is simply dummy text printing</h3>
+                    <p class="o_default_snippet_text">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+                    <div class="sh_about_detail">
+                        <ul>
+                            <li class="o_default_snippet_text">The phrasal sequence of the Lorem Ipsum text.</li>
+                            <li class="o_default_snippet_text">ducimus adipisci voluptas consectetur adipisicing.</li>
+                            <li class="o_default_snippet_text">consectetur adipisicing elit praesentium maxime.</li>
+                            <li class="o_default_snippet_text">programmes can generate dummy text using..</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section id="sh_corpomate_theme_section_47" data-name="About Snippet 2">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="sh_left_content sh_animation_part">
+                    <h2 class="o_default_snippet_text">Why to choose us?</h2>
+                    <h4 class="o_default_snippet_text">Who we are and what we stand for?</h4>
+                    <p class="o_default_snippet_text">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</p>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <section class="sh_content_right sh_animation_part">
+                    <div class="sh_bg">
+                        <div class="sh_img_content">
+                            <h2 class="o_default_snippet_text">Lorem Ipsum is simply</h2>
+                            <h4 class="o_default_snippet_text">Lorem Ipsum is simply dummy the printing.</h4>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </div>
+</section>
+<section id="sh_corpomate_theme_section_183" data-name="theme7 heading">
+    <div class="container">
+        <h3 class="heading text-center o_default_snippet_text">LOREM</h3>
+        <h1 class="title text-center o_default_snippet_text"><strong class="o_default_snippet_text">Lorem Ipsum</strong> is simply dummy</h1>
+        <p class="sub-heading text-center o_default_snippet_text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
+            <br/> dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex</p>
+    </div>
+</section>
+<section id="sh_corpomate_theme_section_48" data-name="About Snippet 3">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 ">
+                <section class="sh_left_progress sh_animation_part js_cls_render_dynamic_progress_area">
+                    <p class="o_default_snippet_text">HTML <span class="sh_right_pers o_default_snippet_text js_cls_s_progress_percent_manual_span">60%</span></p>
+                    <div class="progress">
+                        <div class="progress-bar wow fadeInLeft js_cls_s_progress_percent_auto_style" data-wow-duration="1.5s" data-wow-delay="1s" style="visibility: visible; animation-duration: 1.5s; animation-delay: 1s;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100" />
+                    </div>
+                </section>
+                <section class="sh_left_progress mt-5 sh_animation_part js_cls_render_dynamic_progress_area">
+                    <p class="o_default_snippet_text">PHP <span class="sh_right_pers o_default_snippet_text js_cls_s_progress_percent_manual_span">80%</span></p>
+                    <div class="progress">
+                        <div class="progress-bar wow fadeInLeft js_cls_s_progress_percent_auto_style" data-wow-duration="1.5s" data-wow-delay="1s" style="visibility: visible; animation-duration: 1.5s; animation-delay: 1s;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100" />
+                    </div>
+                </section>
+            </div>
+            <div class="col-md-6">
+                <section class="sh_left_progress sh_animation_part js_cls_render_dynamic_progress_area">
+                    <p class="o_default_snippet_text">Photoshop <span class="sh_right_pers o_default_snippet_text js_cls_s_progress_percent_manual_span">70%</span></p>
+                    <div class="progress">
+                        <div class="progress-bar wow fadeInLeft js_cls_s_progress_percent_auto_style" data-wow-duration="1.5s" data-wow-delay="1s" style="visibility: visible; animation-duration: 1.5s; animation-delay: 1s;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100" />
+                    </div>
+                </section>
+                <section class="sh_left_progress mt-5 sh_animation_part js_cls_render_dynamic_progress_area">
+                    <p class="o_default_snippet_text">WordPress <span class="sh_right_pers o_default_snippet_text js_cls_s_progress_percent_manual_span">90%</span></p>
+                    <div class="progress">
+                        <div class="progress-bar wow fadeInLeft js_cls_s_progress_percent_auto_style" data-wow-duration="1.5s" data-wow-delay="1s" style="visibility: visible; animation-duration: 1.5s; animation-delay: 1s;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100" />
+                    </div>
+                </section>
+            </div>
+        </div>
+    </div>
+    
+</section>
+<section id="sh_corpomate_theme_section_49" data-name="About Snippet 4">
+    <div class="sh_bg sh_animation_part">
+        <div class="container">
+            <div class="sh_content">
+                <h4 class="o_default_snippet_text">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</h4>
+                <a href="#" class="btn btn-primary sh_btn_cm_7 o_default_snippet_text">Contact Us</a>
+            </div>
+        </div>
+    </div>
+</section>
+<section id="sh_corpomate_theme_section_50" data-name="About Snippet 5">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 sh_disable_hover_part sh_animation_part">
+                <div class="sh_left_img">
+                    <img src="/sh_corpomate_theme/static/src/img/b3.jpeg" />
+                    <div class="sh_hover_part">
+                        <div class="sh_icon">
+                            <a href="#">
+                                <span class="fa fa-arrow-right" />
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 d-flex align-items-center">
+                <div class="sh_right_content sh_animation_part">
+                    <h2 class="o_default_snippet_text">Our Mission</h2>
+                    <p class="o_default_snippet_text">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section id="sh_corpomate_theme_section_51" data-name="About snippet 6">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 d-flex align-items-center">
+                <div class="sh_left_content sh_animation_part">
+                    <h2 class="o_default_snippet_text">Our Vision</h2>
+                    <p class="o_default_snippet_text">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</p>
+                </div>
+            </div>
+            <div class="col-md-6 sh_disable_hover_part sh_animation_part">
+                <div class="sh_right_content">
+                    <img src="/sh_corpomate_theme/static/src/img/b3.jpeg" />
+                    <div class="sh_hover_part">
+                        <div class="sh_icon">
+                            <a href="#">
+                                <span class="fa fa-arrow-right" />
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section id="sh_corpomate_theme_section_183" data-name="theme7 heading">
+    <div class="container">
+        <h3 class="heading text-center o_default_snippet_text">LOREM</h3>
+        <h1 class="title text-center o_default_snippet_text"><strong class="o_default_snippet_text">Lorem Ipsum</strong> is simply dummy</h1>
+        <p class="sub-heading text-center o_default_snippet_text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
+            <br/> dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex</p>
+    </div>
+</section>
+<section id="sh_corpomate_theme_section_52" data-name="About snippet 7">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-4 col-md-4">
+                <div class="sh_content sh_animation_part">
+                    <div class="sh_number">
+                        <span class="sh_num o_default_snippet_text">01</span>
+                    </div>
+                    <div class="sh_description">
+                        <h3 class="o_default_snippet_text">Lorem Ipsum</h3>
+                        <p class="o_default_snippet_text">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-4">
+                <div class="sh_content sh_animation_part">
+                    <div class="sh_number">
+                        <span class="sh_num o_default_snippet_text">02</span>
+                    </div>
+                    <div class="sh_description">
+                        <h3 class="o_default_snippet_text">Lorem Ipsum</h3>
+                        <p class="o_default_snippet_text">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-4">
+                <div class="sh_content sh_animation_part">
+                    <div class="sh_number">
+                        <span class="sh_num o_default_snippet_text">03</span>
+                    </div>
+                    <div class="sh_description">
+                        <h3 class="o_default_snippet_text">Lorem Ipsum</h3>
+                        <p class="o_default_snippet_text">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+      
+			
+	      </div>
+	    </t>
+	</template>	
+<!-- ABOUT US PAGE 3 -->
+
+</odoo>
+
+
+
+

@@ -1,0 +1,250 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+
+    <!-- CONTACT US PAGE 4 -->
+    <template id="sh_corpomate_tmpl_contact_us_4" name="contact us">
+        <t t-call="website.layout">
+            <div id="wrap" class="oe_structure">
+                <div class="oe_structure" />
+
+
+                <section id="sh_corpomate_theme_section_111">
+                    <style class="o_default_snippet_text" />
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-12 col-lg-8">
+                                <h3 class="section-title section-space-t o_default_snippet_text">
+                                    <font style="color: rgba(255, 255, 255);">Contact Us</font>
+                                </h3>
+                                <p class="section-subtitle o_default_snippet_text">
+                                    <font style="color: rgba(255, 255, 255);">EXTRAORDINARY ART TEAM &amp;amp; CREATIVE MINIMALISM LOVERS</font>
+                                </p>
+                                <div class="route">
+                                    <ul>
+                                        <li>
+                                            <a href="/">
+                                                <span class="fa fa-home" />
+                                            </a>
+                                        </li>
+                                        <li class="o_default_snippet_text">Contact Us</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <section id="sh_corpomate_theme_section_120" class="padding-section bg-grey">
+                    <div id="home" class="tatsu-BymQ5H-IE tatsu-section    tatsu-clearfix" data-title="" data-headerscheme="background--dark">
+                        <div class="tatsu-section-pad clearfix" data-padding="{&quot;d&quot;:&quot;60px 0px 90px 0px&quot;}" data-padding-top="60px" />
+                        <div class="tatsu-shape-divider tatsu-bottom-divider tatsu-shape-over">
+                            <svg preserveaspectratio="none" width="1920" height="217" viewbox="0 0 1920 217">
+                                <g fill-rule="evenodd" transform="matrix(-1 0 0 1 1920 0)">
+                                    <path d="M0,57.46875 C203.364583,135.217754 494.835938,156.564108 874.414062,121.507813 C1192.61198,-13.9827666 1541.14063,-35.3291208 1920,57.46875 L1920,207 L0,207 L0,57.46875 Z" opacity=".3" />
+                                    <path d="M0,79 C292.46875,165.453125 612.46875,165.453125 960,79 C1307.53125,-7.453125 1627.53125,-7.453125 1920,79 L1920,207 L0,207 L0,79 Z" opacity=".6" />
+                                    <path d="M0,89 C288.713542,146.786458 608.713542,146.786458 960,89 C1311.28646,31.2135417 1631.28646,31.2135417 1920,89 L1920,217 L0,217 L0,89 Z" />
+                                </g>
+                            </svg>
+                        </div>
+                    </div>
+                </section>
+                <section id="sh_corpomate_theme_section_92" style="background-image: none;" class="o_colored_level" data-original-title="" title="" aria-describedby="tooltip161821">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-lg-3 col-md-6 col-sm-6 col-12">
+                                <div class="sh_content">
+                                    <div class="sh_content_box">
+                                        <div class="sh_icon">
+                                            <span class="fa fa-mobile" />
+                                        </div>
+                                        <div class="sh_description">
+                                            <h2 class="o_default_snippet_text">Call Us</h2>
+                                            <a href="#" class="sh_number">
+                                                <p class="o_default_snippet_text">
+                                                    <span class="fa fa-phone" />
+                                                    +917984575681
+                                                </p>
+                                            </a>
+                                            <a href="#" class="sh_number">
+                                                <p class="o_default_snippet_text">
+                                                    <span class="fa fa-phone" />
+                                                    +917984575681
+                                                </p>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-3 col-md-6 col-sm-6 col-12">
+                                <div class="sh_content">
+                                    <div class="sh_content_box">
+                                        <div class="sh_icon">
+                                            <span class="fa fa-map-marker " />
+                                        </div>
+                                        <div class="sh_description">
+                                            <h2 class="o_default_snippet_text">Visit Us</h2>
+                                            <a href="#" class="sh_number">
+                                                <p class="o_default_snippet_text">313, Hira Panna Complex, Dr. Yagnik Road, Rajkot, Gujarat, India 360001</p>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-3 col-md-6 col-sm-6 col-12">
+                                <div class="sh_content">
+                                    <div class="sh_content_box">
+                                        <div class="sh_icon">
+                                            <span class="fa fa-envelope-o" />
+                                        </div>
+                                        <div class="sh_description">
+                                            <h2 class="o_default_snippet_text">Mail Us</h2>
+                                            <a href="#" class="sh_number">
+                                                <p class="o_default_snippet_text">info@softhealer.com</p>
+                                            </a>
+                                            <a href="#" class="sh_number">
+                                                <p class="o_default_snippet_text">info@softhealer.com</p>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-3 col-md-6 col-sm-6 col-12">
+                                <div class="sh_content">
+                                    <div class="sh_content_box">
+                                        <div class="sh_icon">
+                                            <span class="fa fa-headphones" />
+                                        </div>
+                                        <div class="sh_description">
+                                            <h2 class="o_default_snippet_text">Live Chat</h2>
+                                            <a href="#" class="sh_number">
+                                                <p class="o_default_snippet_text">Chat with Us 24/7</p>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <section id="sh_corpomate_theme_section_151" style="background-image: none;" class="o_colored_level">
+                    <div class="container">
+                        <div class="sh_title sh_animation_part">
+                            <h2>Lorem Ipsum</h2>
+                            <p class="o_default_snippet_text">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+                        </div>
+                    </div>
+                </section>
+                <section id="sh_corpomate_theme_section_93" data-snippet="sh_corpomate_theme_tmpl_93" class="o_colored_level" data-name="Contact Us Snippet 3" style="background-image: none;">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-8 sh_animation_part">
+                                <section class="s_website_form" data-vcss="001" data-snippet="s_website_form">
+                                    <div class="container">
+                                        <form id="contactus_form" action="/website/form/" method="post" enctype="multipart/form-data" class="o_mark_required" data-mark="*" data-model_name="mail.mail" data-success-mode="redirect" data-success-page="/contactus-thank-you" data-pre-fill="true">
+                                            <div class="s_website_form_rows row s_col_no_bgcolor">
+                                                <div class="form-group col-12 s_website_form_field s_website_form_custom s_website_form_required" data-type="char" data-name="Field">
+                                                    <div class="row s_col_no_resize s_col_no_bgcolor">
+                                                        <label class="d-none col-form-label col-sm-auto s_website_form_label" style="width: 200px" for="contact1">
+                                                            <span class="s_website_form_label_content" />
+                                                        </label>
+                                                        <div class="col-md-6 col-12">
+                                                            <input id="contact1" type="text" class="form-control s_website_form_input" name="name" placeholder="Name" required="" />
+                                                            <div class="sh_border">
+                                                                <div class="sh_left_right_border" />
+                                                            </div>
+                                                            <span class="fa fa-user" />
+                                                        </div>
+                                                        <div class="col-md-6 col-12">
+                                                            <input id="contact2" type="tel" class="form-control s_website_form_input" placeholder="Phone" name="phone" />
+                                                            <div class="sh_border">
+                                                                <div class="sh_left_right_border" />
+                                                            </div>
+                                                            <span class="fa fa-phone" />
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="form-group col-12 s_website_form_field s_website_form_required" data-type="email" data-name="Field">
+                                                    <div class="row s_col_no_resize s_col_no_bgcolor">
+                                                        <label class="d-none col-form-label col-sm-auto s_website_form_label" style="width: 200px" for="contact1">
+                                                            <span class="s_website_form_label_content" />
+                                                        </label>
+                                                        <div class="col-md-6 col-12">
+                                                            <input id="contact3" type="email" class="form-control s_website_form_input" name="email_from" placeholder="Email" required="" />
+                                                            <div class="sh_border">
+                                                                <div class="sh_left_right_border" />
+                                                            </div>
+                                                            <span class="fa fa-envelope" />
+                                                        </div>
+                                                        <div class="col-md-6 col-12">
+                                                            <input id="contact4" type="text" class="form-control s_website_form_input" name="company" placeholder="Company" />
+                                                            <div class="sh_border">
+                                                                <div class="sh_left_right_border" />
+                                                            </div>
+                                                            <span class="fa fa-file" />
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="form-group col-12 s_website_form_field s_website_form_required" data-type="email" data-name="Field">
+                                                    <div class="row s_col_no_resize s_col_no_bgcolor">
+                                                        <label class="d-none col-form-label col-sm-auto s_website_form_label" style="width: 200px" for="contact1">
+                                                            <span class="s_website_form_label_content" />
+                                                        </label>
+                                                        <div class="col-md-6 col-12">
+                                                            <input id="contact5" type="text" class="form-control s_website_form_input" name="subject" placeholder="Subject" required="" />
+                                                            <div class="sh_border">
+                                                                <div class="sh_left_right_border" />
+                                                            </div>
+                                                            <span class="fa fa-file" />
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="form-group col-12 s_website_form_field s_website_form_custom s_website_form_required" data-type="text" data-name="Field">
+                                                    <div class="row s_col_no_resize s_col_no_bgcolor">
+                                                        <label class="d-none col-form-label col-sm-auto s_website_form_label" style="width: 200px" for="contact1">
+                                                            <span class="s_website_form_label_content" />
+                                                        </label>
+                                                        <div class="col-sm">
+                                                            <textarea id="contact6" class="form-control s_website_form_input" name="description" placeholder="Message.." required="" />
+                                                            <div class="sh_border">
+                                                                <div class="sh_left_right_border" />
+                                                            </div>
+                                                            <span class="fa fa-commenting" />
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="form-group col-12 s_website_form_field s_website_form_dnone">
+                                                    <div class="row s_col_no_resize s_col_no_bgcolor">
+                                                        <label class="d-none col-form-label col-sm-auto s_website_form_label" style="width: 200px" for="contact1">
+                                                            <span class="s_website_form_label_content" />
+                                                        </label>
+                                                        <div class="col-sm">
+                                                            <input id="contact7" type="hidden" class="form-control s_website_form_input" name="email_to" />
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="form-group col-12 s_website_form_submit" data-name="Submit Button">
+                                                    <div class="s_website_form_label" />
+                                                    <a href="#" role="button" class="btn btn-primary sh_send_btn sh_btn_cm_4 btn-lg s_website_form_send o_default_snippet_text">Send Message</a>
+                                                    <span id="s_website_form_result" />
+                                                </div>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </section>
+                            </div>
+                            <div class="col-md-4 sh_animation_part">
+                                <div class="sh_right_content">
+                                    <img src="/sh_corpomate_theme/static/src/img/contact-4.jpg" loading="lazy" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+
+            </div>
+        </t>
+    </template>
+
+
+</odoo>

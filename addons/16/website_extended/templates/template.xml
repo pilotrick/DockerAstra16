@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!--Implement Product Image in Sale Order in Customer Portal    -->
+    <template id="product_image_sale_order_portal_content" inherit_id="sale.sale_order_portal_content">
+        <xpath expr="//thead[hasclass('bg-100')]/tr/th[1]" position="before">
+            <th class="text-left"></th>
+        </xpath>
+        <xpath expr="//thead[hasclass('bg-100')]/tr/th[3]" position="before">
+            <th class="text-left">UOM</th>
+        </xpath>
+        <xpath expr="//td[@id='product_name']" position="before">
+            <td id="product_image">
+                <img t-att-src="'/web/image/product.product/%s/image_1920/120x120' % line.sudo().product_id.id"
+                     class="d-block"
+                     alt="Product Image"/>
+            </td>
+        </xpath>
+        <xpath expr="//td[@id='product_name']" position="after">
+            <td id="product_uom">
+                <span t-field="line.sudo().product_uom.name"/>
+            </td>
+        </xpath>
+    </template>
+    <template id="product_price_extended" inherit_id="website_sale.product_price">
+        <xpath expr="//h3[hasclass('css_non_editable_mode_hidden')]" position="after">
+            <h5>UOM:
+                <t t-esc="product.uom_id.name"/>
+            </h5>
+        </xpath>
+    </template>
+    <template id="products_item_extended" inherit_id="website_sale.product">
+        <xpath expr="//div[@id='product_details']/h1" position="replace">
+            <h1 itemprop="name" t-field="product.name" class="titulos font-weight-bold" style="font-size: 2.5rem;">Product Name</h1>
+            <br/>
+            <span t-if="not request.env.user._is_public()">
+                <t t-esc="product.uom_id.name"/>
+            </span>
+            <br/>
+            <t t-if="not request.env.user._is_public()">
+                <t t-foreach="warehouses" t-as="w">
+                    <span t-field="w.sudo().name"/>:
+                    <span class="badge badge-primary">
+                        <t t-esc="request.env['stock.quant']._get_available_quantity(product,w.lot_stock_id)"/>
+                    </span>
+                    <br/>
+                </t>
+            </t>
+        </xpath>
+    </template>
+    <template id="product" name="Product" inherit_id="website_sale.product">
+        <xpath expr="//div[@id='product_attributes_simple']" position="before">
+            <div class="warehouse_stock_product_page">
+                <t t-set="warehouses"
+                   t-value="request.env['stock.warehouse'].sudo().search([('display_stock_webshop','=',True)])"/>
+                <t t-foreach="warehouses" t-as="w" t-if="warehouses">
+                    <span t-field="w.sudo().name"/>:
+                    <span class="">
+                        <t t-esc="request.env['stock.quant']._get_available_quantity(product,w.lot_stock_id)"/>
+                    </span>
+                    <br/>
+                </t>
+            </div>
+        </xpath>
+    </template>
+</odoo>

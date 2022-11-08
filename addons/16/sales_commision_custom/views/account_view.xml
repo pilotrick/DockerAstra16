@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="invoice_sale_commission_inheritform1_view" model="ir.ui.view">
+			<field name="name">invoice.sale.commission.inherit.form</field>
+			<field name="model">invoice.sale.commission</field>
+            <field name="inherit_id" ref="sales_commission_generic.invoice_sale_commission_form1_view"/>
+			<field name="arch" type="xml">
+                 <field name="invoice_id" position="after">
+                    <field name="invoice_date"/>
+                    <field name="overdue_days"/>
+                    <field name="payment_date"/>
+                </field>
+            </field>
+    </record>
+
+    <record id="invoice_sale_commission_tree_view_tree__fields_view" model="ir.ui.view">
+        <field name="name">invoice.sale.commission.form.group.button</field>
+        <field name="model">invoice.sale.commission</field>
+        <field name="inherit_id" ref="sales_commission_generic.invoice_sale_commission_tree_view"/>
+        <field name="arch" type="xml">
+            <field name="invoice_id" position="after">
+                <field name="invoice_date"/>
+                <field name="overdue_days"/>
+                <field name="payment_date"/>
+            </field>
+
+        </field>
+    </record>
+
+    <record id="view_account_payment_register_form_view_tree__fields_view" model="ir.ui.view">
+        <field name="name">account.payment.register.form.group.button</field>
+        <field name="model">account.payment.register</field>
+        <field name="inherit_id" ref="account.view_account_payment_register_form"/>
+        <field name="arch" type="xml">
+            <field name="partner_bank_id" position="after">
+                <field name="commission_margin"/>
+                <field name="commission_amount"/>
+            </field>
+
+        </field>
+    </record>
+
+</odoo>

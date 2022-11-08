@@ -3,7 +3,7 @@
 
 {
     'name': 'Customer Amount Due and Amount Pay Details',
-    'version': '16.0.0.1',
+    'version': '15.0.0.0',
     'category': 'Accounting',
     'summary': 'Customer Amount Due Customer Amount Pay Details on Partner Amount Due Partner Amount Pay Details on customer amount to pay on partner amount to pay on customer total amount due for customer total amount to pay on customer due amount on customer',
     'description' :"""
@@ -16,7 +16,7 @@
         Amount Due and Amount Pay Details on Customer's Tree View in odoo,
    
     """,
-    "author": "Astratech",
+    'author': 'BrowseInfo',
     'website': 'https://www.browseinfo.in',
     'depends': ['base', 'account', 'mail'],
     'data': [

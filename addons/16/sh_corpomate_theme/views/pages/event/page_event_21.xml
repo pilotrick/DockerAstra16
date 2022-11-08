@@ -1,0 +1,279 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- HOME PAGE 19 -->
+    <template id="sh_corpomate_tmpl_event_21" name="Event">
+        <t t-call="website.layout">
+            <div id="wrap" class="oe_structure">
+                <section id="sh_corpomate_theme_section_562" style="background: url(&quot;/sh_corpomate_theme/static/src/img/theme_21/image/businesspeople-having-discussion-office_107420-84849.jpg&quot;);" data-snippet="sh_corpomate_theme_tmpl_562" class="o_colored_level oe_img_bg o_bg_img_center" data-name="Event Banner">
+                    <div class="container">
+                        <div class="h2 o_default_snippet_text">
+                               Event
+                            </div>
+                        <div class="sh_text o_default_snippet_text">
+                                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                                tempor incididunt Ut labore.  
+                            </div>
+                        <div class="sh_banner_icon">
+                            <span class="fa fa-chevron-down" />
+                        </div>
+                    </div>
+                </section>
+                <section id="sh_corpomate_theme_section_563" data-snippet="sh_corpomate_theme_tmpl_563" class="o_colored_level" data-name="Events" style="background-image: none;">
+                    <div class="container">
+                        <div class="sh_search_box">
+                            <form class="example">
+                                <input type="text" placeholder="Search.." name="search" />
+                                <button type="submit">
+                                    <a href="#" class="o_default_snippet_text"> Find Events</a>
+                                </button>
+                            </form>
+                        </div>
+                        <div class="sh_date">
+                            <div class="sh_icon">
+                                <span class="fa fa-chevron-left" />
+                                <span class="fa fa-chevron-right" />
+                            </div>
+                            <div class="sh_box">
+                                <a href="#" class="o_default_snippet_text">Today</a>
+                            </div>
+                            <div class="sh_content">
+                                <div class="text o_default_snippet_text">
+                                    Now - Aug 12, 2022
+                                    <span class="fa fa-chevron-down" />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="sh_month">
+                            <span class="o_default_snippet_text">March 2022</span>
+                        </div>
+                        <div class="sh_main_row">
+                            <div class="row">
+                                <div class="col-1 o_colored_level">
+                                    <div class="sh_day">
+                                        <span class="o_default_snippet_text">Thu</span>
+                                        <span class="o_default_snippet_text">10</span>
+                                    </div>
+                                </div>
+                                <div class="col-lg-7 col-12 order o_colored_level">
+                                    <div class="sh_date_time o_default_snippet_text">
+                                        <span class="fa fa-calendar" />
+                                        April 10 @ 10:00 am - May 10 @ 1:30 pm
+                                    </div>
+                                    <h3 class="title o_default_snippet_text">Minimalist Trends 2020</h3>
+                                    <h4 class="sub-title o_default_snippet_text">Manhattan Club 350 5th Ave, New York, NY</h4>
+                                    <p class="sh-text o_default_snippet_text">
+                                            Dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernaturaut odit aut fugit, sed quia consequuntur. Dicta sunt explicabo.
+                                        </p>
+                                    <h6 class="sh_price o_default_snippet_text">$200</h6>
+                                </div>
+                                <div class="col-lg-4 col-md-11 col-10 order-1 o_colored_level">
+                                    <div class="sh_img">
+                                        <img src="/sh_corpomate_theme/static/src/img/theme_21/image/pexels-photo-5325104.jpeg" loading="lazy" />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="sh_month">
+                            <span class="o_default_snippet_text">April 2022</span>
+                        </div>
+                        <div class="sh_main_row">
+                            <div class="row">
+                                <div class="col-1 o_colored_level">
+                                    <div class="sh_day">
+                                        <span class="o_default_snippet_text">MON</span>
+                                        <span class="o_default_snippet_text">2</span>
+                                    </div>
+                                </div>
+                                <div class="col-lg-7 col-12 order o_colored_level">
+                                    <div class="sh_date_time o_default_snippet_text">
+                                        <span class="fa fa-calendar" />
+                                        April 10 @ 10:00 am - May 10 @ 1:30 pm
+                                    </div>
+                                    <h3 class="title o_default_snippet_text">Beginners Guide to Design</h3>
+                                    <h4 class="sub-title o_default_snippet_text">Manhattan Club 350 5th Ave, New York, NY</h4>
+                                    <p class="sh-text o_default_snippet_text">
+                                            Dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernaturaut odit aut fugit, sed quia consequuntur. Dicta sunt explicabo.
+                                        </p>
+                                    <h6 class="sh_price o_default_snippet_text">$250</h6>
+                                </div>
+                                <div class="col-lg-4 col-md-11 col-10 order-1 o_colored_level">
+                                    <div class="sh_img">
+                                        <img src="/sh_corpomate_theme/static/src/img/theme_21/image/pexels-photo-5324977.jpeg" loading="lazy" />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="sh_main_row">
+                            <div class="row">
+                                <div class="col-1 o_colored_level">
+                                    <div class="sh_day">
+                                        <span class="o_default_snippet_text">Fri</span>
+                                        <span class="o_default_snippet_text">15</span>
+                                    </div>
+                                </div>
+                                <div class="col-lg-7 col-12 order o_colored_level">
+                                    <div class="sh_date_time o_default_snippet_text">
+                                        <span class="fa fa-calendar" />
+                                        April 10 @ 10:00 am - May 10 @ 1:30 pm
+                                    </div>
+                                    <h3 class="title o_default_snippet_text">Photography Course</h3>
+                                    <h4 class="sub-title o_default_snippet_text">Manhattan Club 350 5th Ave, New York, NY</h4>
+                                    <p class="sh-text o_default_snippet_text">
+                                            Dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernaturaut odit aut fugit, sed quia consequuntur. Dicta sunt explicabo.
+                                        </p>
+                                    <h6 class="sh_price o_default_snippet_text">$200</h6>
+                                </div>
+                                <div class="col-lg-4 col-md-11 col-10 order-1 o_colored_level">
+                                    <div class="sh_img">
+                                        <img src="/sh_corpomate_theme/static/src/img/theme_21/image/pexels-photo-3810760.jpeg" loading="lazy" />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="sh_month">
+                            <span class="o_default_snippet_text">June 2022</span>
+                        </div>
+                        <div class="sh_main_row">
+                            <div class="row">
+                                <div class="col-1 o_colored_level">
+                                    <div class="sh_day">
+                                        <span class="o_default_snippet_text">Fri</span>
+                                        <span class="o_default_snippet_text">13</span>
+                                    </div>
+                                </div>
+                                <div class="col-lg-7 col-12 order o_colored_level">
+                                    <div class="sh_date_time o_default_snippet_text">
+                                        <span class="fa fa-calendar" />
+                                        April 10 @ 10:00 am - May 10 @ 1:30 pm
+                                    </div>
+                                    <h3 class="title o_default_snippet_text">Upgrading social media profiles: modern designer tools.</h3>
+                                    <h4 class="sub-title o_default_snippet_text">Manhattan Club 350 5th Ave, New York, NY</h4>
+                                    <p class="sh-text o_default_snippet_text">
+                                            Dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernaturaut odit aut fugit, sed quia consequuntur. Dicta sunt explicabo.
+                                        </p>
+                                    <h6 class="sh_price o_default_snippet_text">Free</h6>
+                                </div>
+                                <div class="col-lg-4 col-md-11 col-10 order-1 o_colored_level">
+                                    <div class="sh_img">
+                                        <img src="/sh_corpomate_theme/static/src/img/theme_21/image/pexels-photo-5668842.jpeg" loading="lazy" />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="sh_main_row">
+                            <div class="row">
+                                <div class="col-1 o_colored_level">
+                                    <div class="sh_day">
+                                        <span class="o_default_snippet_text">SUN</span>
+                                        <span class="o_default_snippet_text">15</span>
+                                    </div>
+                                </div>
+                                <div class="col-lg-7 col-12 order o_colored_level">
+                                    <div class="sh_date_time o_default_snippet_text">
+                                        <span class="fa fa-calendar" />
+                                        April 10 @ 10:00 am - May 10 @ 1:30 pm
+                                    </div>
+                                    <h3 class="title o_default_snippet_text">UI/UX Design Course</h3>
+                                    <h4 class="sub-title o_default_snippet_text">Manhattan Club 350 5th Ave, New York, NY</h4>
+                                    <p class="sh-text o_default_snippet_text">
+                                            Dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernaturaut odit aut fugit, sed quia consequuntur. Dicta sunt explicabo.
+                                        </p>
+                                    <h6 class="sh_price o_default_snippet_text">$285</h6>
+                                </div>
+                                <div class="col-lg-4 col-md-11 col-10 order-1 o_colored_level">
+                                    <div class="sh_img">
+                                        <img src="/sh_corpomate_theme/static/src/img/theme_21/image/pexels-photo-3576345.jpeg" loading="lazy" />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="sh_main_row">
+                            <div class="row">
+                                <div class="col-1 o_colored_level">
+                                    <div class="sh_day">
+                                        <span class="o_default_snippet_text">SAT</span>
+                                        <span class="o_default_snippet_text">28</span>
+                                    </div>
+                                </div>
+                                <div class="col-lg-7 col-12 order o_colored_level">
+                                    <div class="sh_date_time o_default_snippet_text">
+                                        <span class="fa fa-calendar" />
+                                        April 10 @ 10:00 am - May 10 @ 1:30 pm
+                                    </div>
+                                    <h3 class="title o_default_snippet_text">Ultimate Design Course</h3>
+                                    <h4 class="sub-title o_default_snippet_text">Manhattan Club 350 5th Ave, New York, NY</h4>
+                                    <p class="sh-text o_default_snippet_text">
+                                            Dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernaturaut odit aut fugit, sed quia consequuntur. Dicta sunt explicabo.
+                                        </p>
+                                    <h6 class="sh_price o_default_snippet_text">$230</h6>
+                                </div>
+                                <div class="col-lg-4 col-md-11 col-10 order-1 o_colored_level">
+                                    <div class="sh_img">
+                                        <img src="/sh_corpomate_theme/static/src/img/theme_21/image/pexels-photo-7163354.jpeg" loading="lazy" />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="sh_month">
+                            <span class="o_default_snippet_text">june 2022</span>
+                        </div>
+                        <div class="sh_main_row">
+                            <div class="row">
+                                <div class="col-1 o_colored_level">
+                                    <div class="sh_day">
+                                        <span class="o_default_snippet_text">MON</span>
+                                        <span class="o_default_snippet_text">6</span>
+                                    </div>
+                                </div>
+                                <div class="col-lg-7 col-12 order o_colored_level">
+                                    <div class="sh_date_time o_default_snippet_text">
+                                        <span class="fa fa-calendar" />
+                                        April 10 @ 10:00 am - May 10 @ 1:30 pm
+                                    </div>
+                                    <h3 class="title o_default_snippet_text">Design Masterclass</h3>
+                                    <h4 class="sub-title o_default_snippet_text">Manhattan Club 350 5th Ave, New York, NY</h4>
+                                    <p class="sh-text o_default_snippet_text">
+                                            Dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernaturaut odit aut fugit, sed quia consequuntur. Dicta sunt explicabo.
+                                        </p>
+                                    <h6 class="sh_price o_default_snippet_text">Free</h6>
+                                </div>
+                                <div class="col-lg-4 col-md-11 col-10 order-1 o_colored_level">
+                                    <div class="sh_img">
+                                        <img src="/sh_corpomate_theme/static/src/img/theme_21/image/pexels-photo-3931551.jpeg" loading="lazy" />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="sh_main_row">
+                            <div class="row">
+                                <div class="col-1 o_colored_level">
+                                    <div class="sh_day">
+                                        <span class="o_default_snippet_text">WED</span>
+                                        <span class="o_default_snippet_text">8</span>
+                                    </div>
+                                </div>
+                                <div class="col-lg-7 col-12 order o_colored_level">
+                                    <div class="sh_date_time o_default_snippet_text">
+                                        <span class="fa fa-calendar" />
+                                        April 10 @ 10:00 am - May 10 @ 1:30 pm
+                                    </div>
+                                    <h3 class="title o_default_snippet_text">New Project Strategy</h3>
+                                    <h4 class="sub-title o_default_snippet_text">Manhattan Club 350 5th Ave, New York, NY</h4>
+                                    <p class="sh-text o_default_snippet_text">
+                                            Dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernaturaut odit aut fugit, sed quia consequuntur. Dicta sunt explicabo.
+                                        </p>
+                                    <h6 class="sh_price o_default_snippet_text">$270</h6>
+                                </div>
+                                <div class="col-lg-4 col-md-11 col-10 order-1 o_colored_level">
+                                    <div class="sh_img">
+                                        <img src="/sh_corpomate_theme/static/src/img/theme_21/image/pexels-photo-7550303.jpeg" loading="lazy" />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </t>
+    </template>
+</odoo>

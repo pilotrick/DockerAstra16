@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+
+    <template id="print_filter_customer_statement_inherit_excel" inherit_id="portal_customer_statement_ent.print_filter_customer_statement">
+        <xpath expr="//div[hasclass('class_button')]" position="inside">
+            <button type="submit" class="btn btn-default btn-primary mb32 pull-center" name="report_type" value="excel">
+                Print Excel
+            </button>
+        </xpath>
+    </template>
+
+</odoo>

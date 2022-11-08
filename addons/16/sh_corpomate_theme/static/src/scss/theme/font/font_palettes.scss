@@ -1,0 +1,56 @@
+$o-theme-font-configs-corpomate: (
+    'Poppins': (
+        'family': ('Poppins', sans-serif),
+        'url': 'Roboto:300,300i,400,400i,700,700i',
+    ),
+    'Bonheur Royale': (
+        'family': ('Bonheur Royale', cursive),
+        'url': 'Bonheur Royale:400',
+    ),
+
+);
+
+
+
+/* 
+-------------------------------------------------------------------------------------------------------
+Add custom font in font selection.
+-------------------------------------------------------------------------------------------------------
+*/
+
+$o-theme-font-configs: map-merge($o-theme-font-configs, $o-theme-font-configs-corpomate );
+
+
+
+
+
+/* 
+-------------------------------------------------------------------------------------------------------
+Add Font in Website Value palettes
+-------------------------------------------------------------------------------------------------------
+*/
+
+$o-website-values-palettes: (
+    //Default website palette,
+    (),
+    // Theme 1
+    (
+        // Font
+        'font':                             'Poppins',
+        'headings-font':                    'Poppins',
+        'navbar-font':                      'Poppins',
+        'buttons-font':                     'Poppins',
+    ),
+
+    // Theme 2
+    (
+        // Font
+        'font':                             'Poppins',
+        'headings-font':                    'Poppins',
+        'navbar-font':                      'Poppins',
+        'buttons-font':                     'Poppins',
+    ),
+);
+
+
+

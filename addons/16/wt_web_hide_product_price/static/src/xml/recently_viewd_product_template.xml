@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates id="template" xml:space="preserve">
+
+	<t t-extend="website_sale.productsRecentlyViewed">
+		<t t-jquery=".o_carousel_product_card_footer" t-operation="replace">
+     <t t-if="product.hide_price == true and product.user == true">
+      <address>
+        <a class="btn btn-primary ml-4" style="background-color: #3aadaa;color: white;padding: 1%;text-decoration: none;" t-attf-href="mailto:{{product.email}}" >Ask Price</a>
+      </address>
+    </t>
+    <t t-else="">
+     <div class="o_carousel_product_card_footer card-footer d-flex align-items-center">
+      <div class="d-block font-weight-bold" t-raw="product.price"/>
+      <button type="button" role="button" class="btn btn-primary js_add_cart ml-auto" title="Add to Cart">
+        <i class="fa fa-fw fa-shopping-cart"/>
+      </button>
+    </div>
+  </t>
+</t>
+</t>
+
+<t t-extend="website_sale.productsSearchBar.autocomplete">
+  <t t-jquery="div:last" t-operation="replace">
+    <t t-if="hide_price == true and user == true">
+
+    </t>
+    <t t-elif="hide_price == false or user == false">
+      <div t-if="widget.displayPrice" class="flex-shrink-0">
+        <t t-if="product['has_discounted_price']">
+          <span class="text-danger text-nowrap" style="text-decoration: line-through;">
+            <t t-raw="product['list_price']"/>
+          </span>
+          <br/>
+        </t>
+        <b class="text-nowrap">
+          <t t-raw="product['price']"/>
+        </b>
+      </div>
+    </t>
+    </t>
+  </t>
+</templates>

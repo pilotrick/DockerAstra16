@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+	
+	<record id="services_cost_11" model="fleet.vehicle.cost" >
+		<field name="vehicle_id" ref="vehicle_2" />
+		<field name="amount">50</field>
+		<field name="cost_subtype_id" ref="type_service_7"/>
+		<field name="date">2012-09-02</field>
+		<field name="parent_id" ref="log_service_1_fleet_vehicle_cost" />
+	</record>
+
+	<record id="services_cost_12" model="fleet.vehicle.cost" >
+		<field name="vehicle_id" ref="vehicle_2" />
+		<field name="amount">25</field>
+		<field name="cost_subtype_id" ref="type_service_8"/>
+		<field name="date">2012-09-02</field>
+		<field name="parent_id" ref="log_service_1_fleet_vehicle_cost" />
+	</record>
+	
+	<record id="services_cost_13" model="fleet.vehicle.cost" >
+		<field name="vehicle_id" ref="vehicle_2" />
+		<field name="amount">100</field>
+		<field name="cost_subtype_id" ref="type_service_9"/>
+		<field name="date">2012-09-02</field>
+		<field name="parent_id" ref="log_service_1_fleet_vehicle_cost" />
+	</record>
+
+	<record id="services_cost_21" model="fleet.vehicle.cost" >
+		<field name="vehicle_id" ref="vehicle_2" />
+		<field name="amount">100</field>
+		<field name="cost_subtype_id" ref="type_service_10"/>
+		<field name="date">2012-11-02</field>
+		<field name="parent_id" ref="log_service_2_fleet_vehicle_cost" />
+	</record>
+
+	<record id="services_cost_22" model="fleet.vehicle.cost" >
+		<field name="vehicle_id" ref="vehicle_2" />
+		<field name="amount">150</field>
+		<field name="cost_subtype_id" ref="type_service_11"/>
+		<field name="date">2012-11-02</field>
+		<field name="parent_id" ref="log_service_2_fleet_vehicle_cost" />
+	</record>
+	
+	<record id="services_cost_23" model="fleet.vehicle.cost" >
+		<field name="vehicle_id" ref="vehicle_2" />
+		<field name="amount">100</field>
+		<field name="cost_subtype_id" ref="type_service_12"/>
+		<field name="date">2012-11-02</field>
+		<field name="parent_id" ref="log_service_2_fleet_vehicle_cost" />
+	</record>
+
+  	<record id="contract_cost_11" model="fleet.vehicle.cost" >
+		<field name="vehicle_id" ref="vehicle_2" />
+		<field name="amount">50</field>
+		<field name="cost_subtype_id" ref="type_service_service_2"/>
+		<field name="date">2012-01-01</field>
+		<field name="parent_id" ref="log_contract_1_fleet_vehicle_cost" />
+	</record>
+
+ 	<record id="contract_cost_12" model="fleet.vehicle.cost" >
+		<field name="vehicle_id" ref="vehicle_2" />
+		<field name="amount">25</field>
+		<field name="cost_subtype_id" ref="type_service_service_3"/>
+		<field name="date">2012-01-01</field>
+		<field name="parent_id" ref="log_contract_1_fleet_vehicle_cost" />
+	</record>
+
+  	<record id="contract_cost_13" model="fleet.vehicle.cost" >
+		<field name="vehicle_id" ref="vehicle_2" />
+		<field name="amount">100</field>
+		<field name="cost_subtype_id" ref="type_contract_omnium"/>
+		<field name="date">2012-01-01</field>
+		<field name="parent_id" ref="log_contract_1_fleet_vehicle_cost" />
+	</record>
+
+	<record id="contract_cost_21" model="fleet.vehicle.cost" >
+        <field name="vehicle_id" ref="vehicle_1" />
+        <field name="amount">50</field>
+        <field name="cost_subtype_id" ref="type_service_service_2"/>
+        <field name="date">2012-01-01</field>
+        <field name="parent_id" ref="log_contract_2_fleet_vehicle_cost" />
+      </record>
+
+	<record id="contract_cost_22" model="fleet.vehicle.cost" >
+		<field name="vehicle_id" ref="vehicle_1" />
+		<field name="amount">25</field>
+		<field name="cost_subtype_id" ref="type_service_service_3"/>
+		<field name="date">2012-01-01</field>
+		<field name="parent_id" ref="log_contract_2_fleet_vehicle_cost" />
+	</record>
+
+	<record id="contract_cost_23" model="fleet.vehicle.cost" >
+		<field name="vehicle_id" ref="vehicle_1" />
+		<field name="amount">100</field>
+		<field name="cost_subtype_id" ref="type_contract_omnium"/>
+		<field name="date">2012-01-01</field>
+		<field name="parent_id" ref="log_contract_2_fleet_vehicle_cost" />
+	</record>
+
+
+	<record id="contract_cost_31" model="fleet.vehicle.cost" >
+		<field name="vehicle_id" ref="vehicle_3" />
+		<field name="amount">50</field>
+		<field name="cost_subtype_id" ref="type_service_service_2"/>
+		<field name="date">2012-01-01</field>
+		<field name="parent_id" ref="log_contract_3_fleet_vehicle_cost" />
+	</record>
+
+	<record id="contract_cost_32" model="fleet.vehicle.cost" >
+		<field name="vehicle_id" ref="vehicle_3" />
+		<field name="amount">25</field>
+		<field name="cost_subtype_id" ref="type_service_service_3"/>
+		<field name="date">2012-01-01</field>
+		<field name="parent_id" ref="log_contract_3_fleet_vehicle_cost" />
+	</record>
+
+	<record id="contract_cost_33" model="fleet.vehicle.cost" >
+		<field name="vehicle_id" ref="vehicle_3" />
+		<field name="amount">100</field>
+		<field name="cost_subtype_id" ref="type_contract_omnium"/>
+		<field name="date">2012-01-01</field>
+		<field name="parent_id" ref="log_contract_3_fleet_vehicle_cost" />
+	</record>
+
+	<record id="contract_cost_41" model="fleet.vehicle.cost" >
+		<field name="vehicle_id" ref="vehicle_4" />
+		<field name="amount">50</field>
+		<field name="cost_subtype_id" ref="type_service_service_2"/>
+		<field name="date">2012-01-01</field>
+		<field name="parent_id" ref="log_contract_4_fleet_vehicle_cost" />
+	</record>
+
+	<record id="contract_cost_42" model="fleet.vehicle.cost" >
+		<field name="vehicle_id" ref="vehicle_4" />
+		<field name="amount">25</field>
+		<field name="cost_subtype_id" ref="type_service_service_3"/>
+		<field name="date">2012-01-01</field>
+		<field name="parent_id" ref="log_contract_4_fleet_vehicle_cost" />
+	</record>
+
+	<record id="contract_cost_43" model="fleet.vehicle.cost" >
+		<field name="vehicle_id" ref="vehicle_4" />
+		<field name="amount">100</field>
+		<field name="cost_subtype_id" ref="type_contract_omnium"/>
+		<field name="date">2012-01-01</field>
+		<field name="parent_id" ref="log_contract_4_fleet_vehicle_cost" />
+	</record>
+
+	<record id="contract_cost_51" model="fleet.vehicle.cost" >
+		<field name="vehicle_id" ref="vehicle_5" />
+		<field name="amount">50</field>
+		<field name="cost_subtype_id" ref="type_service_service_2"/>
+		<field name="date">2012-01-01</field>
+		<field name="parent_id" ref="log_contract_5_fleet_vehicle_cost" />
+	</record>
+
+	<record id="contract_cost_52" model="fleet.vehicle.cost" >
+		<field name="vehicle_id" ref="vehicle_5" />
+		<field name="amount">25</field>
+		<field name="cost_subtype_id" ref="type_service_service_3"/>
+		<field name="date">2012-01-01</field>
+		<field name="parent_id" ref="log_contract_5_fleet_vehicle_cost" />
+	</record>
+
+	<record id="contract_cost_53" model="fleet.vehicle.cost" >
+		<field name="vehicle_id" ref="vehicle_5" />
+		<field name="amount">100</field>
+		<field name="cost_subtype_id" ref="type_contract_omnium"/>
+		<field name="date">2012-01-01</field>
+		<field name="parent_id" ref="log_contract_5_fleet_vehicle_cost" />
+	</record>
+</odoo>

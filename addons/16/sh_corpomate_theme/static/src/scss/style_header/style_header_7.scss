@@ -1,0 +1,109 @@
+// *{font-family: 'Titillium Web', sans-serif;}
+/*-----top-bar---*/
+$tp-primary:#2b47bd;
+$tp-text:#fff;
+/*-----top-bar---*/
+
+/*-----header-bar---*/
+$hd-primary:#fff;
+$hd-text:#585b60;
+$hd-primary-active:#3d60f4;
+/*-----header-bar---*/
+
+/*---coyright--*/
+$cr-primary:#001529;
+$cr-text:#fff;
+/*---coyright--*/
+
+/*---Language--*/
+$sh_is_show_lang:False;
+/*---Language--*/
+
+
+#sh_header{position: absolute;z-index: 2;top: 9%;left: 0;right: 0;}
+#sh_header .navbar-brand{color: #fff;text-decoration: none;font-weight: bold;font-size: 30px;}
+#sh_header ul li a{text-decoration: none;color: #fff;font-size: 14px;}
+#sh_header ul li .nav-link{position:  relative;}
+#sh_header ul li{padding-left: 8px;padding-right: 8px;}
+#sh_header .btn{background: transparent;border-radius: 30px;border: 1px solid #fff;padding: 5px 25px;transition: all .3s ease;}
+#sh_header .btn:hover{background: #fff;color: #7450a9;}
+#sh_header ul li .nav-link:after {background: none repeat scroll 0 0 transparent;
+  bottom: 0;content: "";display: block;height: 2px;left: 50%;position: absolute;background: #fff;transition: width 0.3s ease 0s, left 0.3s ease 0s;width: 0;}
+#sh_header ul li .nav-link:hover:after {width: 100%;left: 0;}
+#sh_header ul li a:hover span{color:#7450a9;}
+#sh_header ul li .nav-link.active span{color:#7450a9;}
+#sh_header .navbar-nav .nav-item .nav-link:hover span{color:#7450a9;}
+.o_header_standard .navbar-light .navbar-nav .nav-link:hover{border-bottom:3px solid #fff}
+.o_header_standard .navbar-light .navbar-nav .nav-link.active{border-bottom:3px solid #fff}
+
+@media (max-width: 768px){
+	#sh_header button span{color: #000;background: #fff;border: 1px solid #fff;}
+}
+
+
+
+
+header.o_affix_enabled{z-index: 5;position: relative;color: #fff;}
+.o_affix_enabled .navbar-light{background: transparent !important;}
+.o_affix_enabled .navbar-light .navbar-nav .nav-link{color: #000 !important;text-transform: uppercase;font-weight: 600;padding-left: 12px;padding-right: 12px;}
+
+
+
+
+.o_header_affix.affix.affixed .navbar {background: o-color('o-color-1') !important;}
+.o_header_affix.affix.affixed .navbar-light .navbar-nav .nav-link{color: #fff !important;text-transform: uppercase;font-weight: 600;padding-left: 12px;padding-right: 12px;}
+#top_menu .nav-item.dropdown .dropdown-menu.js_usermenu{right: auto;}
+#top_menu .nav-item.dropdown.o_extra_menu_items .dropdown-menu{min-width: 13rem;}
+#top_menu .nav-item.dropdown.o_extra_menu_items .dropdown-menu li a.dropdown-item {text-transform: uppercase;}
+
+header#top .navbar{padding: 15px 0;}
+
+
+
+
+.sh_corpomate_main_navbar_section_style_1{
+	z-index: 1;
+  }
+
+@media only screen and (max-width: 768px){
+	.o_header_standard .navbar-light .navbar-nav .nav-link{color: #333 !important;}
+	header.o_header_standard .oe_structure.oe_structure_solo .s_text_block a.btn {
+		white-space: nowrap;
+		display: none;
+	}
+}
+@media screen and (max-width:567px) {
+	.navbar .btn {
+	  white-space: nowrap;
+	  display: none;
+  }
+  }
+
+/* -------------------------------
+ODOO v14c 10-10-2020 
+--------------------------------- */
+
+.o_header_standard .navbar.navbar-light{background: rgba(0, 0, 0, 0.15) !important;box-shadow: none !important;text-transform: uppercase;font-size: 14px;font-weight: bold;}
+
+.o_header_standard .navbar-light .navbar-nav .nav-link{color: #fff;}
+
+.o_header_standard.o_header_affixed > .navbar-light .navbar-nav .nav-link{color: $hd-text !important;}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

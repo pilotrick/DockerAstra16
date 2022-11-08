@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="snippet_options_margin_widgets">
+        <we-multi data-css-property="margin">
+            <we-input string="Margin Top" data-css-property="" data-select-style="" data-unit="px" />
+            <we-input string="Margin Right" data-css-property="" data-select-style="" data-unit="px" />
+            <we-input string="Margin Bottom" data-css-property="" data-select-style="" data-unit="px" />
+            <we-input string="Margin Left" data-css-property="" data-select-style="" data-unit="px" />
+        </we-multi>
+    </template>
+    <template id="snippet_options_padding_widgets">
+        <we-multi data-css-property="padding">
+            <we-input string="Padding Top" data-css-property="" data-select-style="" data-unit="px" />
+            <we-input string="Padding Right" data-css-property="" data-select-style="" data-unit="px" />
+            <we-input string="Padding Bottom" data-css-property="" data-select-style="" data-unit="px" />
+            <we-input string="Padding Left" data-css-property="" data-select-style="" data-unit="px" />
+        </we-multi>
+    </template>
+    <!-- TODO: FINALIZE DATA SELECTOR -->
+    <!-- FIXME: FINALIZE DATA SELECTOR -->
+    <!-- options (data-selector, data-drop-in, data-drop-near, data-js to link js object ) -->
+    <template id="snippet_options_animation" inherit_id="web_editor.snippet_options">
+        <xpath expr="." position="inside">
+            <div data-selector="section, section .row > div, .note-editable > div:not(.o_layout),.note-editable .oe_structure > div, img, .fa, [class^='col-md'], .btn, .sh_animation_part, .sh_timeline_snippet_animation_part, .sh_as_apps_snippets_animation, .sh_team_snippet_animation_part" >
+                <!-- ===================== AOS ANIMATION ====================== -->
+                <we-select string="Animation" data-name="sh_aos_anim_type_opt" data-attribute-name="aos">
+                    <we-button data-select-data-attribute="">None</we-button>
+                    <!-- =============== AOS Fade Animation -->
+                    <we-button data-select-data-attribute="fade">Fade</we-button>
+                    <we-button data-select-data-attribute="fade-up">Fade up</we-button>
+                    <we-button data-select-data-attribute="fade-down">Fade down</we-button>
+                    <we-button data-select-data-attribute="fade-left">Fade left</we-button>
+                    <we-button data-select-data-attribute="fade-right">Fade right</we-button>
+                    <we-button data-select-data-attribute="fade-up-right">Fade up right</we-button>
+                    <we-button data-select-data-attribute="fade-up-left">Fade up left</we-button>
+                    <we-button data-select-data-attribute="fade-down-right">Fade down right</we-button>
+                    <we-button data-select-data-attribute="fade-down-left">Fade down left</we-button>
+                    <!-- Flip Animation -->
+                    <we-button data-select-data-attribute="flip-up">Flip up</we-button>
+                    <we-button data-select-data-attribute="flip-down">Flip down</we-button>
+                    <we-button data-select-data-attribute="flip-right">Flip right</we-button>
+                    <we-button data-select-data-attribute="flip-left">Flip left</we-button>
+                    <!-- Slide Animation -->
+                    <we-button data-select-data-attribute="slide-up">Slide up</we-button>
+                    <we-button data-select-data-attribute="slide-down">Slide down</we-button>
+                    <we-button data-select-data-attribute="slide-right">Slide right</we-button>
+                    <we-button data-select-data-attribute="slide-left">Slide left</we-button>
+                    <!-- Zoom Animation -->
+                    <we-button data-select-data-attribute="zoom-in">Zoom in</we-button>
+                    <we-button data-select-data-attribute="zoom-in-up">Zoom in up</we-button>
+                    <we-button data-select-data-attribute="zoom-in-down">Zoom in down</we-button>
+                    <we-button data-select-data-attribute="zoom-in-left">Zoom in left</we-button>
+                    <we-button data-select-data-attribute="zoom-in-right">Zoom in right</we-button>
+                    <we-button data-select-data-attribute="zoom-out">Zoom out</we-button>
+                    <we-button data-select-data-attribute="zoom-out-up">Zoom out up</we-button>
+                    <we-button data-select-data-attribute="zoom-out-down">Zoom out down</we-button>
+                    <we-button data-select-data-attribute="zoom-out-left">Zoom out left</we-button>
+                    <we-button data-select-data-attribute="zoom-out-right">Zoom out right</we-button>
+                    <!-- ====================== AOS -->
+                    <!-- ====================== VOV Fading Animations -->
+                    <we-button data-select-data-attribute="fade-in-bottom-left">Fade in bottom left</we-button>
+                    <we-button data-select-data-attribute="fade-in-bottom-right">Fade in bottom right</we-button>
+                    <we-button data-select-data-attribute="fade-in-down">Fade in down</we-button>
+                    <we-button data-select-data-attribute="fade-in-up">Fade in up</we-button>
+                    <we-button data-select-data-attribute="fade-in-left">Fade in left</we-button>
+                    <we-button data-select-data-attribute="fade-in-right">Fade in right</we-button>
+                    <we-button data-select-data-attribute="fade-in-top-left">Fade in top left</we-button>
+                    <we-button data-select-data-attribute="fade-in-top-right">Fade in top right</we-button>
+                    <we-button data-select-data-attribute="fade-in">Fade in</we-button>
+                    <!-- Roll Animation <we-button data-select-data-attribute="roll-in-left">Roll in left</we-button><we-button data-select-data-attribute="roll-in-right">Roll in right</we-button> -->
+                    <!-- Shake Animation -->
+                    <we-button data-select-data-attribute="shake-horizontal">Shake horizontal</we-button>
+                    <we-button data-select-data-attribute="shake-vertical">Shake vertical</we-button>
+                    <!-- Sliding Animation -->
+                    <we-button data-select-data-attribute="slide-in-left">Slide in left</we-button>
+                    <we-button data-select-data-attribute="slide-in-right">Slide in right</we-button>
+                    <!-- Zooming Animations-->
+                    <we-button data-select-data-attribute="zoom-in">Zoom in</we-button>
+                    <we-button data-select-data-attribute="zoom-in-up">Zoom in up</we-button>
+                    <we-button data-select-data-attribute="zoom-in-down">Zoom in down</we-button>
+                    <we-button data-select-data-attribute="zoom-in-left">Zoom in left</we-button>
+                    <we-button data-select-data-attribute="zoom-in-right">Zoom in right</we-button>
+                    <!-- Blur Animation -->
+                    <we-button data-select-data-attribute="blur-in">Blur in</we-button>
+                    <!-- Other Animations -->
+                    <we-button data-select-data-attribute="flash">Flash</we-button>
+                    <!-- <we-button data-select-data-attribute="fade-in-right">Fade in right</we-button><we-button data-select-data-attribute="fade-in-top-left">Fade in top left</we-button><we-button data-select-data-attribute="fade-out-bottom-left ">Fade out bottom left</we-button><we-button data-select-data-attribute="fade-in">Fade in</we-button><we-button data-select-data-attribute="fade-out-left">Fade out left</we-button><we-button data-select-data-attribute="fade-out-up">Fade out up</we-button><we-button data-select-data-attribute="fade-out-right">Fade out right</we-button><we-button data-select-data-attribute="fade-out">Fade out</we-button><we-button data-select-data-attribute="fade-in-down ">Fade in down</we-button><we-button data-select-data-attribute="fade-in-top-right">Fade in top right</we-button><we-button data-select-data-attribute="fade-out-bottom-right">Fade out bottom right</we-button><we-button data-select-data-attribute="fade-out-top-left">Fade out top left</we-button><we-button data-select-data-attribute="fade-in-left">Fade in left</we-button><we-button data-select-data-attribute="fade-in-up">Fade in up</we-button><we-button data-select-data-attribute="fade-out-down">Fade out down</we-button><we-button data-select-data-attribute="fade-out-top-right">Fade out top right</we-button> -->
+                    <!-- Rolling Animations <we-button data-select-data-attribute="roll-in-left">Roll in left</we-button><we-button data-select-data-attribute="roll-in-right">Roll in right</we-button><we-button data-select-data-attribute="roll-out-left">Roll out left</we-button><we-button data-select-data-attribute="roll-out-right">Roll out right</we-button> -->
+                    <!-- Shaking Animations <we-button data-select-data-attribute="shake-vertical">Shake vertical</we-button><we-button data-select-data-attribute="shake-horizontal">Shake horizontal</we-button><we-button data-select-data-attribute="shake-diagonally">Shake diagonally</we-button><we-button data-select-data-attribute="shake-i-diagonally">Shake i diagonally</we-button> -->
+                    <!-- Blur Animations <we-button data-select-data-attribute="blur-in">Blur in</we-button><we-button data-select-data-attribute="blur-out">Blur out</we-button>-->
+                    <!-- Sliding Animations <we-button data-select-data-attribute="slide-in-down">Slide in down</we-button><we-button data-select-data-attribute="slide-out-down">Slide out down</we-button><we-button data-select-data-attribute="slide-in-left">Slide in left</we-button><we-button data-select-data-attribute="slide-out-left">Slide out left</we-button><we-button data-select-data-attribute="slide-in-right">Slide in right</we-button><we-button data-select-data-attribute="slide-out-right">Slide out right</we-button><we-button data-select-data-attribute="slide-in-up">Slide in up</we-button><we-button data-select-data-attribute="slide-out-up">Slide out up</we-button> -->
+                    <!-- Zooming Animations <we-button data-select-data-attribute="zoom-in-down">Zoom in down</we-button><we-button data-select-data-attribute="zoom-in">Zoom in</we-button><we-button data-select-data-attribute="zoom-out-up">Zoom out up</we-button><we-button data-select-data-attribute="zoom-in-left">Zoom in left</we-button><we-button data-select-data-attribute="zoom-out-down">Zoom out down</we-button><we-button data-select-data-attribute="zoom-out">Zoom out</we-button><we-button data-select-data-attribute="zoom-in-right">Zoom in right</we-button><we-button data-select-data-attribute="zoom-out-left">Zoom out left</we-button><we-button data-select-data-attribute="zoom-in-up">Zoom in up</we-button><we-button data-select-data-attribute="zoom-out-right">Zoom out right</we-button> -->
+                    <!-- Throbing Animations <we-button data-select-data-attribute="throb">Throb</we-button><we-button data-select-data-attribute="i-throb">I-throb</we-button>-->
+                    <!-- Swivel Animations <we-button data-select-data-attribute="swivel-horizontal">Swivel horizontal</we-button><we-button data-select-data-attribute="swivel-horizontal-double">Swivel horizontal double</we-button><we-button data-select-data-attribute="swivel-vertical">Swivel vertical</we-button><we-button data-select-data-attribute="swivel-vertical-double">Swivel vertical double</we-button> -->
+                    <!-- Wheel Animations <we-button data-select-data-attribute="wheel-in-left">Wheel in left</we-button><we-button data-select-data-attribute="wheel-in-right">Wheel in right</we-button><we-button data-select-data-attribute="wheel-out-left">Wheel out left</we-button><we-button data-select-data-attribute="wheel-out-right">Wheel out right</we-button>-->
+                    <!-- Other Animations <we-button data-select-data-attribute="flash">Flash</we-button>-->
+                    <!-- ====================== VOV -->
+                </we-select>
+                <!-- ===================== AOS ANIMATION ====================== -->
+            </div>
+            <!-- Box Shadow -->
+            <div data-selector="section, section .row > div, .note-editable > div:not(.o_layout),.note-editable .oe_structure > div, td, th">
+                <t t-call="sh_corpomate_theme.snippet_options_margin_widgets" />
+                <t t-call="sh_corpomate_theme.snippet_options_padding_widgets" />
+                <we-select string="Box Shadow">
+                    <we-button data-select-class="">None</we-button>
+                    <we-button data-select-class="sh_snippet_adv_shadow_1">Shadow 1</we-button>
+                    <we-button data-select-class="sh_snippet_adv_shadow_2">Shadow 2</we-button>
+                    <we-button data-select-class="sh_snippet_adv_shadow_3">Shadow 3</we-button>
+                    <we-button data-select-class="sh_snippet_adv_shadow_4">Shadow 4</we-button>
+                    <we-button data-select-class="sh_snippet_adv_shadow_5">Shadow 5</we-button>
+                </we-select>
+            </div>
+            <!-- Box Shadow Hover -->
+            <div data-selector="section, section .row > div,.note-editable > div:not(.o_layout),.note-editable .oe_structure > div, td, th">
+                <we-select string="Box Shadow Hover">
+                    <we-button data-select-class="">None</we-button>
+                    <we-button data-select-class="sh_snippet_adv_shadow_hover_1">Shadow Hover 1</we-button>
+                    <we-button data-select-class="sh_snippet_adv_shadow_hover_2">Shadow Hover 2</we-button>
+                    <we-button data-select-class="sh_snippet_adv_shadow_hover_3">Shadow Hover 3</we-button>
+                    <we-button data-select-class="sh_snippet_adv_shadow_hover_4">Shadow Hover 4</we-button>
+                    <we-button data-select-class="sh_snippet_adv_shadow_hover_5">Shadow Hover 5</we-button>
+                </we-select>
+            </div>
+        </xpath>
+    </template>
+</odoo>
+ 
