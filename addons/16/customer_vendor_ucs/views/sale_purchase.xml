@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="account.res_partner_action_customer" model="ir.actions.act_window">
+            <field name="domain">[('customer_rank','>',0)]</field>
+        </record>
+
+        <record id="account.res_partner_action_supplier" model="ir.actions.act_window">
+            <field name="domain">[('supplier_rank','>',0)]</field>
+        </record>
+    </data>
+</odoo>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates xml:space="preserve">
+
+    <t t-name="dx_whatsapp.SendWAButton" owl="1">
+        <a
+            t-if="props.value"
+            t-att-href="'https://wa.me/'+formattedPhone+'?text=Hi!'"
+            class="ms-3 d-inline-flex align-items-center o_field_phone_sms"
+            target="_blank"
+        ><i class="fa fa-whatsapp"></i><small class="fw-bold ms-1">WA</small></a>
+    </t>
+
+</templates>
