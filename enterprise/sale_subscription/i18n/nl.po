@@ -5,6 +5,7 @@
 # Translators:
 # Yenthe Van Ginneken <yenthespam@gmail.com>, 2022
 # Martin Trigaux, 2022
+# Jolien De Paepe, 2022
 # Erwin van der Ploeg <erwin@odooexperts.nl>, 2022
 # 
 msgid ""
@@ -592,7 +593,7 @@ msgstr ""
 "    <!-- INHOUD -->\n"
 "    <tr>\n"
 "        <td align=\"center\" style=\"min-width: 590px;\">\n"
-"            <table border=\"0\" cellpadding=\"0\" cellspacing=\"0\" width=\"590\" style=\"min-width: 590px; background-color: white; padding: 0px 8px 0px 8px; border-collapse:separate; \">\n"
+"            <table border=\"0\" cellpadding=\"0\" cellspacing=\"0\" width=\"590\" style=\"min-width: 590px; background-color: white; font-size: 11px; padding: 0px 8px 0px 8px; border-collapse:separate;\">\n"
 "                <tr><td valign=\"top\" style=\"font-size: 13px;\">\n"
 "                    Beste <t t-out=\"object.partner_id.name of ''\">Brandon Freeman</t>,<br/><br/>\n"
 "                    Je abonnement (<t t-out=\"ctx.get('subscription_name') of ''\">CODE</t>\n"
@@ -603,7 +604,7 @@ msgstr ""
 "                        via een betaling van <t t-out=\"ctx.get('total_amount') of ''\">100</t> <t t-out=\"ctx.get('currency_name') of ''\">$ </t> in rekening gebracht op <t t-out=\"ctx.get('payment_token') of ''\">PAYMENT_TOKEN</t>.\n"
 "                    </t>\n"
 "                    <br/><br/>\n"
-"                    U vindt je factuur als bijlage.\n"
+"                    Je vindt je factuur als bijlage.\n"
 "                    <t t-if=\"ctx.get('volgende_datum')\">\n"
 "                        Je volgende factuur is op <t t-out=\"format_date(ctx.get('next_date')) of ''\">05/05/2021</t>.\n"
 "                    </t>\n"
@@ -1279,7 +1280,7 @@ msgstr "Annuleren"
 #: model:product.product,name:sale_subscription.product_car_leasing
 #: model:product.template,name:sale_subscription.product_car_leasing_product_template
 msgid "Car Leasing (SUB)"
-msgstr ""
+msgstr "Autoleasing (SUB)"
 
 #. module: sale_subscription
 #: model:ir.model.fields,field_description:sale_subscription.field_sale_order__stage_category
@@ -2442,7 +2443,7 @@ msgstr ""
 #: model:sale.order.template.line,name:sale_subscription.montly_template_line
 #: model:sale.order.template.line,name:sale_subscription.yearly_template_line
 msgid "Office Cleaning Service (SUB)"
-msgstr ""
+msgstr "Schoonmaakdienst Kantoren (SUB)"
 
 #. module: sale_subscription
 #: model:ir.model.fields,field_description:sale_subscription.field_sale_order_alert__on_change_field_ids
@@ -3044,23 +3045,29 @@ msgstr "Verzenden als (SMS)"
 msgid ""
 "Sent automatically with subscription invoice when payment is successful"
 msgstr ""
+"Automatisch verzonden met de abonnementsfactuur als de betaling succesvol "
+"werd gedaan"
 
 #. module: sale_subscription
 #: model:mail.template,description:sale_subscription.mail_template_subscription_invoice
 msgid "Sent manually to customers with the invoice in attachment"
-msgstr ""
+msgstr "Handmatig verzonden naar klanten met hun factuur in bijlage"
 
 #. module: sale_subscription
 #: model:mail.template,description:sale_subscription.email_payment_close
 msgid ""
 "Sent to customer to indicate that subscription is automatically terminated"
 msgstr ""
+"Verzonden naar klanten om te melden dat hun abonnement automatisch werd "
+"beëindigd"
 
 #. module: sale_subscription
 #: model:mail.template,description:sale_subscription.email_payment_reminder
 msgid ""
 "Sent to customer when payment failed but subscription is not yet cancelled"
 msgstr ""
+"Verzonden naar klanten als hun betaling is mislukt, maar hun abonnement nog "
+"niet geannuleerd werd"
 
 #. module: sale_subscription
 #: model:ir.model.fields,field_description:sale_subscription.field_sale_order_alert__sequence
@@ -3090,6 +3097,8 @@ msgid ""
 "Set on subscription's stage (e.g. Closed, Upsell) to ask a rating to "
 "customers"
 msgstr ""
+"Ingesteld op een fase van een abonnement (bijv. Gesloten, Upsell) om de "
+"klant om een beoordeling te vragen"
 
 #. module: sale_subscription
 #: model:ir.model.fields,help:sale_subscription.field_sale_order_alert__binding_model_id
@@ -3354,7 +3363,7 @@ msgstr "Abonnement: betalingsherinnering"
 #. module: sale_subscription
 #: model:mail.template,name:sale_subscription.email_payment_success
 msgid "Subscription: Payment Success And Invoice"
-msgstr ""
+msgstr "Abonnement: betaling succesvol en factuur"
 
 #. module: sale_subscription
 #: model:sms.template,name:sale_subscription.sms_template_data_payment_failure
@@ -3374,7 +3383,7 @@ msgstr "Abonnement: beoordelingsverzoek"
 #. module: sale_subscription
 #: model:mail.template,name:sale_subscription.mail_template_subscription_invoice
 msgid "Subscription: Subscription Invoice"
-msgstr ""
+msgstr "Abonnement: abonnementsfactuur"
 
 #. module: sale_subscription
 #: code:addons/sale_subscription/models/sale_order_alert.py:0
@@ -3478,6 +3487,8 @@ msgid ""
 "Template to be used on customized alerts for subscriptions requiring "
 "attention"
 msgstr ""
+"Sjabloon die gebruikt wordt op gepersonaliseerde waarschuwingen voor "
+"abonnementen die aandacht vragen"
 
 #. module: sale_subscription
 #: model_terms:ir.actions.act_window,help:sale_subscription.sale_subscription_template_action
@@ -3958,6 +3969,8 @@ msgid ""
 "You can not upsell a subscription that has not been invoiced yet. Please, "
 "update directly the %s contract or invoice it first."
 msgstr ""
+"Je kan een abonnement dat nog niet werd gefactureerd niet upsellen. Gelieve "
+"het %s contract rechtstreeks te updaten of het eerst te factureren."
 
 #. module: sale_subscription
 #: code:addons/sale_subscription/models/res_partner.py:0

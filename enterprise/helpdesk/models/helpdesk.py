@@ -687,7 +687,7 @@ class HelpdeskTeam(models.Model):
             'search_default_is_open': not is_ticket_closed,
             'default_team_id': self.id,
         }
-        view_mode = 'tree,kanban,activity'
+        view_mode = 'tree,form,kanban,activity'
         if is_ticket_closed:
             domain = expression.AND([domain, [
                 ('close_date', '>=', datetime.date.today() - datetime.timedelta(days=6)),
@@ -723,7 +723,7 @@ class HelpdeskTeam(models.Model):
 
     def action_view_customer_satisfaction(self):
         action = self._action_view_rating(period='seven_days')
-        action['context'] = {**self.env.context, **action['context'], 'search_default_my_ratings': True}
+        action['context'] = {**self.env.context, **action['context'], 'search_default_my_ratings': False}
         return action
 
     def action_view_open_ticket(self):
@@ -1084,7 +1084,7 @@ class HelpdeskSLA(models.Model):
         help="The time spent in these stages won't be taken into account in the calculation of the SLA.")
     priority = fields.Selection(
         TICKET_PRIORITY, string='Priority',
-        default='1', required=True)
+        default='0', required=True)
     partner_ids = fields.Many2many(
         'res.partner', string="Customers")
     company_id = fields.Many2one('res.company', 'Company', related='team_id.company_id', readonly=True, store=True)

@@ -552,7 +552,6 @@ class AccountMove(models.Model):
                 raise Exception(error)
             if 'credit_error' in response and response['credit_error']:
                 _logger.warning("Credit error on partner_autocomplete call")
-                return False
         except KeyError:
             _logger.warning("Partner autocomplete isn't installed, supplier creation from VAT is disabled")
             return False
@@ -564,22 +563,18 @@ class AccountMove(models.Model):
             country_id = self.env['res.country'].search([('code', '=', response.get('company_data').get('country_code',''))])
             state_id = self.env['res.country.state'].search([('name', '=', response.get('company_data').get('state_name',''))])
             resp_values = response.get('company_data')
+
+            values = {field: resp_values[field] for field in ('name', 'vat', 'street', 'city', 'zip', 'phone', 'email', 'partner_gid') if field in resp_values}
+            values['is_company'] = True
+
             if 'bank_ids' in resp_values:
-                resp_values['bank_ids'] = [(0, 0, vals) for vals in resp_values['bank_ids']]
-            values = {
-                'name': resp_values.get('name', ''),
-                'vat': resp_values.get('vat', ''),
-                'bank_ids': resp_values.get('bank_ids', ''),
-                'street': resp_values.get('street', ''),
-                'city': resp_values.get('city', ''),
-                'zip': resp_values.get('zip', ''),
-                'state_id': state_id and state_id.id,
-                'country_id': country_id and country_id.id,
-                'phone': resp_values.get('phone', ''),
-                'email': resp_values.get('email', ''),
-                'is_company': True,
-                'partner_gid': resp_values.get('partner_gid', ''),
-            }
+                values['bank_ids'] = [(0, 0, vals) for vals in resp_values['bank_ids']]
+
+            if country_id:
+                values['country_id'] = country_id.id
+                if state_id:
+                    values['state_id'] = state_id.id
+
             new_partner = self.env["res.partner"].with_context(clean_context(self.env.context)).create(values)
             return new_partner
         return False
@@ -820,30 +815,30 @@ class AccountMove(models.Model):
                 ocr_results = result['results'][0]
                 if 'full_text_annotation' in ocr_results:
                     self.message_main_attachment_id.index_content = ocr_results['full_text_annotation']
-                self.extract_word_ids.unlink()
 
                 self._save_form(ocr_results, force_write=force_write)
 
-                fields_with_boxes = ['supplier', 'date', 'due_date', 'invoice_id', 'currency', 'VAT_Number', 'total']
-                for field in fields_with_boxes:
-                    if field in ocr_results:
-                        value = ocr_results[field]
-                        data = []
-                        for word in value["words"]:
-                            ocr_chosen = value["selected_value"] == word
-                            data.append((0, 0, {
-                                "field": field,
-                                "ocr_selected": ocr_chosen,
-                                "user_selected": ocr_chosen,
-                                "word_text": word['content'],
-                                "word_page": word['page'],
-                                "word_box_midX": word['coords'][0],
-                                "word_box_midY": word['coords'][1],
-                                "word_box_width": word['coords'][2],
-                                "word_box_height": word['coords'][3],
-                                "word_box_angle": word['coords'][4],
-                            }))
-                        self.write({'extract_word_ids': data})
+                if not self.extract_word_ids:  # We don't want to recreate the boxes when the user clicks on "Reload AI data"
+                    fields_with_boxes = ['supplier', 'date', 'due_date', 'invoice_id', 'currency', 'VAT_Number', 'total']
+                    for field in fields_with_boxes:
+                        if field in ocr_results:
+                            value = ocr_results[field]
+                            data = []
+                            for word in value["words"]:
+                                ocr_chosen = value["selected_value"] == word
+                                data.append((0, 0, {
+                                    "field": field,
+                                    "ocr_selected": ocr_chosen,
+                                    "user_selected": ocr_chosen,
+                                    "word_text": word['content'],
+                                    "word_page": word['page'],
+                                    "word_box_midX": word['coords'][0],
+                                    "word_box_midY": word['coords'][1],
+                                    "word_box_width": word['coords'][2],
+                                    "word_box_height": word['coords'][3],
+                                    "word_box_angle": word['coords'][4],
+                                }))
+                            self.write({'extract_word_ids': data})
             elif result['status_code'] == NOT_READY:
                 self.extract_state = 'extract_not_ready'
             else:

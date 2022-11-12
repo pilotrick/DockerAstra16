@@ -6,7 +6,7 @@ from dateutil.relativedelta import relativedelta
 import logging
 import pytz
 import uuid
-from math import ceil, modf
+from math import modf
 from random import randint
 
 from odoo import api, fields, models, _
@@ -460,15 +460,16 @@ class Planning(models.Model):
                 slot.repeat_interval = slot.recurrency_id.repeat_interval
         (self - recurrency_slots).update(self.default_get(['repeat_interval']))
 
-    @api.depends('recurrency_id.repeat_until', 'repeat')
+    @api.depends('recurrency_id.repeat_until', 'repeat', 'repeat_type')
     def _compute_repeat_until(self):
         for slot in self:
-            if slot.recurrency_id:
-                slot.repeat_until = slot.recurrency_id.repeat_until
-            elif slot.repeat:
-                slot.repeat_until = slot.start_datetime + relativedelta(weeks=1)
-            else:
-                slot.repeat_until = False
+            repeat_until = False
+            if slot.repeat and slot.repeat_type == 'until':
+                if slot.recurrency_id and slot.recurrency_id.repeat_until:
+                    repeat_until = slot.recurrency_id.repeat_until
+                elif slot.start_datetime:
+                    repeat_until = slot.start_datetime + relativedelta(weeks=1)
+            slot.repeat_until = repeat_until
 
     @api.depends('recurrency_id.repeat_number', 'repeat_type')
     def _compute_repeat_number(self):
@@ -853,6 +854,41 @@ class Planning(models.Model):
     # ----------------------------------------------------
     # Gantt - Calendar view
     # ----------------------------------------------------
+
+    @api.model
+    def gantt_resource_work_interval(self, slot_ids):
+        """ Returns the work intervals of the resources corresponding to the provided slots
+
+            This method is used in a rpc call
+
+        :param slot_ids: The slots the work intervals have to be returned for.
+        :return: a dict of { resource_id: [Intervals] }.
+        """
+        # Get the oldest start date and latest end date from the slots.
+        domain = [("id", "in", slot_ids)]
+        fields = ["start_datetime:min", "end_datetime:max", "resource_ids:array_agg(resource_id)"]
+        planning_slot_read_group = self.env["planning.slot"]._read_group(domain, fields, [])
+        if not planning_slot_read_group[0]['__count']:
+            return [{}]
+
+        start_datetime = planning_slot_read_group[0]["start_datetime"].replace(tzinfo=pytz.utc)
+        end_datetime = planning_slot_read_group[0]["end_datetime"].replace(tzinfo=pytz.utc)
+
+        # Get slots' resources and current company work intervals.
+        resources = self.env["resource.resource"].browse(planning_slot_read_group[0]["resource_ids"])
+        work_intervals_per_resource, dummy = resources._get_valid_work_intervals(start_datetime, end_datetime)
+        company_calendar = self.env.company.resource_calendar_id
+        company_calendar_work_intervals = company_calendar._work_intervals_batch(start_datetime, end_datetime)
+
+        # Export work intervals in UTC
+        work_intervals_per_resource[False] = company_calendar_work_intervals[False]
+        work_interval_per_resource = defaultdict(list)
+        for resource_id, resource_work_intervals in work_intervals_per_resource.items():
+            for resource_work_interval in resource_work_intervals:
+                work_interval_per_resource[resource_id].append(
+                    (resource_work_interval[0].astimezone(pytz.UTC), resource_work_interval[1].astimezone(pytz.UTC))
+                )
+        return [work_interval_per_resource]
 
     @api.model
     def gantt_unavailability(self, start_date, end_date, scale, group_bys=None, rows=None):
@@ -1682,7 +1718,7 @@ class Planning(models.Model):
                 self._gantt_progress_bar_resource_id(res_ids, start, stop),
                 warning=_("As there is no running contract during this period, this resource is not expected to work a shift. Planned hours:")
             )
-        raise NotImplementedError("This Progress Bar is not implemented.")
+        raise NotImplementedError(_("This Progress Bar is not implemented."))
 
     @api.model
     def gantt_progress_bar(self, fields, res_ids, date_start_str, date_stop_str):

@@ -17,7 +17,6 @@ var bus = require('web_studio.bus');
 var EditorMixin = require('web_studio.EditorMixin');
 var EditorMixinOwl = require('web_studio.EditorMixinOwl');
 
-var KanbanEditor = require('web_studio.KanbanEditor');
 var ListEditor = require('web_studio.ListEditor');
 var SearchEditor = require('web_studio.SearchEditor');
 var SearchRenderer = require('web_studio.SearchRenderer');
@@ -47,18 +46,17 @@ const { getNodesFromXpath, getLegacyNode, xpathToLegacyXpathInfo, serializeXmlTo
 const CONVERTED_VIEWS = [
     "calendar",
     "cohort",
-    "dashboard",
     "graph",
     "map",
     "pivot",
     "form",
+    "kanban",
 ];
 
 var _t = core._t;
 var QWeb = core.qweb;
 
 var Editors = {
-    kanban: KanbanEditor,
     list: ListEditor,
     search: SearchEditor,
 };
@@ -1195,20 +1193,17 @@ var ViewEditorManager = AbstractEditorManager.extend(WidgetAdapterMixin, {
             arch = getSubArch(arch, `${fullXpath}/${nextViewType}`);
         }
 
-        // determine view and controller classes
-        const view = editorsRegistry.contains(nextViewType) && this.mode === "edition"
-            ? editorsRegistry.get(nextViewType)
-            : viewRegistry.get(nextViewType);
+        // Get the editor, it should honor the View Interface
+        // We also need the original view, in case we are not in edition mode
+        let editor = editorsRegistry.contains(nextViewType) ? editorsRegistry.get(nextViewType) : null;
+        const view = viewRegistry.get(nextViewType);
+        const getControllerProps = editor ? editor.props : view.props;
+        editor = editor && this.mode === "edition" ? editor : view;
 
-        if (view.type === "form") {
-            const newModel = class newModel extends view.Model {};
-            newModel.Record = class newRecord extends view.Model.Record {
-                get isInEdition() {
-                    return false;
-                }
-            };
-            view.Model = newModel;
-        }
+        const parser = new DOMParser();
+        const archXml = parser.parseFromString(arch, "text/xml");
+        const rootArchXmlNode = archXml.documentElement;
+
         if (this.mode !== "edition") {
             resetViewCompilerCache();
         }
@@ -1243,10 +1238,6 @@ var ViewEditorManager = AbstractEditorManager.extend(WidgetAdapterMixin, {
             controllerProps.parentRecord = x2ManyInfo.parentRecord;
         }
 
-        if (nextViewType === "form") {
-            controllerProps.preventEdit = true;
-        }
-
         if (custom_view_id) {
             // for dashboard
             controllerProps.info.customViewId = custom_view_id;
@@ -1265,14 +1256,17 @@ var ViewEditorManager = AbstractEditorManager.extend(WidgetAdapterMixin, {
             x2mField: this.x2mField,
             type: nextViewType,
             breadcrumbs: [],
+            isStudioInEdition: this.mode === "edition",
         };
 
         config.onNodeClicked = (params) => {
             this.wowlEditor.setLastClickedXpath(params.xpath);
-            const legacyNode = getLegacyNode(params.xpath, controllerProps.archInfo.xmlDoc)
+            const legacyNode = getLegacyNode(params.xpath, archXml)
+            const $node = $(params.target);
             this._onNodeClicked({data: {
                 node: legacyNode,
                 isWowl: true,
+                $node,
             }})
         }
         config.onViewChange = (data) => {
@@ -1312,23 +1306,33 @@ var ViewEditorManager = AbstractEditorManager.extend(WidgetAdapterMixin, {
         }
 
         config.structureChange = (params) => {
-            const legacyNode = getLegacyNode(params.xpath, controllerProps.archInfo.xmlDoc)
+            const legacyNode = getLegacyNode(params.xpath, archXml);
             const xpathInfo = xpathToLegacyXpathInfo(params.xpath);
             const data = {...params, node: legacyNode, xpathInfo }
             resetViewCompilerCache();
             this._onViewChange({data});
         }
 
-        controllerProps = view.props ? view.props(controllerProps, view, config) : controllerProps;
+        controllerProps = getControllerProps ? getControllerProps(controllerProps, editor, config) : controllerProps;
 
-        const Controller = view.Controller;
-        const SearchModelClass = view.SearchModel || SearchModel;
+        const Controller = editor.Controller;
+        const SearchModelClass = editor.SearchModel || SearchModel;
+
+        let searchViewArch, searchViewFields, searchViewIrFilters, globalState;
+        if (this.viewDescriptions.views.search && !x2ManyInfo) {
+            searchViewArch = this.viewDescriptions.views.search.arch;
+            searchViewIrFilters = this.viewDescriptions.views.search.irFilters;
+            searchViewFields = this.viewDescriptions.fields;
+            globalState = viewParams.action.globalState;
+        }
 
         const env = extendEnv(this.wowlEnv, { config });
         const studioViewProps = {
             Controller,
             SearchModelClass,
             context: viewParams.context,
+            globalState,
+            searchViewArch, searchViewFields, searchViewIrFilters,
             domain: viewParams.domain || [], // bug in cohort domain = false???
             env, // deleted by ComponentWrapper (see owl_compatibility)
             controllerProps,
@@ -1341,12 +1345,8 @@ var ViewEditorManager = AbstractEditorManager.extend(WidgetAdapterMixin, {
         const Wrapper = wrapperRegistry.get(nextViewType, GenericWowlEditor);
         this.wowlEditor = new Wrapper(this, StudioView, studioViewProps);
 
-        const parser = new DOMParser();
-        const xml = parser.parseFromString(controllerProps.arch, "text/xml");
-        const rootNode = xml.documentElement;
-
         const attrs = {};
-        for (const { name, value } of rootNode.attributes) {
+        for (const { name, value } of rootArchXmlNode.attributes) {
             attrs[name] = value;
         }
         if (attrs.sample) {
@@ -1355,9 +1355,10 @@ var ViewEditorManager = AbstractEditorManager.extend(WidgetAdapterMixin, {
 
         this.view = {
             //  in case we pass line: const arch = Editors[this.view_type].prototype.preprocessArch(this.view.arch);
-            arch: Object.assign({}, viewUtils.parseArch(controllerProps.arch), { mode: "view"}),
+            arch: Object.assign({}, viewUtils.parseArch(arch), { mode: "view"}),
             controllerProps,
             loadParams: {},
+            fieldsInfo: this.wowlEditor.state.fieldsInfo,
         };
         return this.wowlEditor;
     },

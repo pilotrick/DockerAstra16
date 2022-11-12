@@ -198,7 +198,7 @@ class AccountAsset(models.Model):
         for asset in self:
             distribution_asset = {}
             amount_total = sum(asset.original_move_line_ids.mapped("balance"))
-            if not float_is_zero(amount_total, precision_rounding=self.currency_id.rounding):
+            if not float_is_zero(amount_total, precision_rounding=asset.currency_id.rounding):
                 for line in asset.original_move_line_ids._origin:
                     if line.analytic_distribution:
                         for account, distribution in line.analytic_distribution.items():
@@ -432,6 +432,12 @@ class AccountAsset(models.Model):
                     dict(self._fields['state']._description_selection(self.env)).get(asset.state)
                 ))
 
+            posted_amount = len(asset.depreciation_move_ids.filtered(lambda x: x.state == 'posted'))
+            if posted_amount > 0:
+                raise UserError(_('You cannot delete an asset linked to posted entries.'
+                                  '\nYou should either confirm the asset, then, sell or dispose of it,'
+                                  ' or cancel the linked journal entries.'))
+
     def unlink(self):
         for asset in self:
             for line in asset.original_move_line_ids:
@@ -510,15 +516,16 @@ class AccountAsset(models.Model):
                 amount = min(linear_amount, 0)
 
         if self.method == 'degressive_then_linear' and days_left_to_depreciated != 0:
-            linear_amount = number_days * residual_declining / days_left_to_depreciated
-            if float_compare(residual_amount, 0, precision_rounding=self.currency_id.rounding) >= 0:
-                amount = max(linear_amount, amount)
-            else:
-                amount = min(linear_amount, amount)
-        # TODO new method
-        # elif self.method == 'degressive_à_la_française' and days_left_to_depreciated != 0:
-        #     linear_amount = number_days * self.total_depreciable_value / self.asset_lifetime_days
-        #     amount = max(linear_amount, amount)
+            linear_amount = number_days * self.total_depreciable_value / self.asset_lifetime_days
+            amount = max(linear_amount, amount, key=abs)
+
+        # if self.method == 'degressif_chelou' and days_left_to_depreciated != 0:
+        #     linear_amount = number_days * residual_declining / days_left_to_depreciated
+        #     if float_compare(residual_amount, 0, precision_rounding=self.currency_id.rounding) >= 0:
+        #         amount = max(linear_amount, amount)
+        #     else:
+        #         amount = min(linear_amount, amount)
+
 
         if abs(residual_amount) < abs(amount) or total_days >= self.asset_lifetime_days:
             # If the residual amount is less than the computed amount, we keep the residual amount
@@ -865,6 +872,10 @@ class AccountAsset(models.Model):
         else:
             asset_type = self[0].asset_type
         views = [v for v in self._get_views(asset_type) if v[1] in view_mode]
+        ctx = dict(self._context,
+                asset_type=asset_type,
+                default_asset_type=asset_type)
+        ctx.pop('default_move_type')
         action = {
             'name': _('Asset'),
             'view_mode': ','.join(view_mode),
@@ -873,11 +884,7 @@ class AccountAsset(models.Model):
             'res_model': 'account.asset',
             'views': views,
             'domain': [('id', 'in', self.ids)],
-            'context': {
-                **self._context,
-                'asset_type': asset_type,
-                'default_asset_type': asset_type
-            }
+            'context': ctx
         }
         if asset_type == 'sale':
             action['name'] = _('Deferred Revenue')

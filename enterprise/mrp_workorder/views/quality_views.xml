@@ -30,7 +30,7 @@
             </field>
             <xpath expr="//field[@name='note']" position="after">
                 <field name="worksheet_document" help="Upload your PDF file." widget="pdf_viewer" attrs="{'invisible': [('source_document', '=', 'operation')]}"/>
-                <field name="worksheet_url" placeholder="Google Slide Link" widget="embed_viewer"/>
+                <field name="worksheet_url" placeholder="Google Slide Link" widget="embed_viewer" attrs="{'invisible': [('source_document', '=', 'operation')]}"/>
             </xpath>
         </field>
     </record>
@@ -85,7 +85,7 @@
                                 <field name="lot_id" class="text-center" context="{'default_product_id': component_id, 'default_company_id': company_id, 'active_mo_id': test_type == 'register_consumed_materials' and production_id or False}" attrs="{'invisible': [('component_tracking', '=', 'none')]}" domain="[('product_id', '=', component_id), '|', ('company_id', '=', False), ('company_id', '=', company_id)]"/>
                             </div>
                         </div>
-                        <div class="o_workorder_bar_content">
+                        <div class="d-block">
                             <field name="note" readonly="1"/>
                         </div>
                         <div class="o_workorder_bar_content">
@@ -182,7 +182,7 @@
                     <field name="workorder_id" invisible="1"/>
                     <field name="title" string="Title"/>
                     <field name="note" string="Instruction"/>
-                    <field name="worksheet_document" string="Document"/>
+                    <field name="worksheet_document" string="Document" options="{'accepted_file_extensions': '.pdf'}"/>
                 </group>
                 <footer>
                     <button class="btn btn-primary" type="object" name="add_check_in_chain" string="Propose Change"/>

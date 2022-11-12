@@ -230,6 +230,9 @@ class AccountJournal(models.Model):
         BankStatement = self.env['account.bank.statement']
         BankStatementLine = self.env['account.bank.statement.line']
 
+        ir_actions_report_sudo = self.env['ir.actions.report'].sudo()
+        statement_report = self.env.ref('account.action_report_account_statement').sudo()
+
         # Filter out already imported transactions and create statements
         statement_ids = []
         statement_line_ids = []
@@ -250,18 +253,26 @@ class AccountJournal(models.Model):
             if len(filtered_st_lines) > 0:
                 # Remove values that won't be used to create records
                 st_vals.pop('transactions', None)
-                number = st_vals.pop('number', None)
                 # Create the statement
                 st_vals['line_ids'] = [[0, False, line] for line in filtered_st_lines]
                 statement = BankStatement.with_context(default_journal_id=self.id).create(st_vals)
+                if not statement.name:
+                    statement.name = st_vals['reference']
                 statement_ids.append(statement.id)
-                if number and number.isdecimal():
-                    statement._set_next_sequence()
-                    format, format_values = statement._get_sequence_format_param(statement.name)
-                    format_values['seq'] = int(number)
-                    #build the full name like BNK/2016/00135 by just giving the number '135'
-                    statement.name = format.format(**format_values)
                 statement_line_ids.extend(statement.line_ids.ids)
+
+                # Create the report.
+                if statement.is_complete:
+                    content, _content_type = ir_actions_report_sudo._render_qweb_pdf(statement_report, res_ids=statement.ids)
+                    statement.attachment_ids |= self.env['ir.attachment'].create({
+                        'name': _("Bank Statement %s.pdf", statement.name) if statement.name else _("Bank Statement.pdf"),
+                        'type': 'binary',
+                        'mimetype': 'application/pdf',
+                        'raw': content,
+                        'res_model': statement._name,
+                        'res_id': statement.id,
+                    })
+
         if len(statement_line_ids) == 0:
             raise UserError(_('You already have imported that file.'))
 

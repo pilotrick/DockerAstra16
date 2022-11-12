@@ -624,6 +624,8 @@ class HrPayslip(models.Model):
     def _get_payslip_lines(self):
         line_vals = []
         for payslip in self:
+            if not payslip.contract_id:
+                raise UserError(_("There's no contract set on payslip %s for %s. Check that there is at least a contract set on the employee form.", payslip.name, payslip.employee_id.name))
 
             localdict = self.env.context.get('force_payslip_localdict', None)
             if localdict is None:
@@ -750,7 +752,7 @@ class HrPayslip(models.Model):
             return
         valid_slips = self.filtered(lambda p: p.employee_id and p.date_from and p.date_to and p.contract_id and p.struct_id)
         # Make sure to reset invalid payslip's worked days line
-        self.write({'worked_days_line_ids': [(5, 0, 0)]})
+        self.update({'worked_days_line_ids': [(5, 0, 0)]})
         # Ensure work entries are generated for all contracts
         generate_from = min(p.date_from for p in self)
         current_month_end = date_utils.end_of(fields.Date.today(), 'month')
@@ -761,7 +763,7 @@ class HrPayslip(models.Model):
             if not slip.struct_id.use_worked_day_lines:
                 continue
             # YTI Note: We can't use a batched create here as the payslip may not exist
-            slip.write({'worked_days_line_ids': slip._get_new_worked_days_lines()})
+            slip.update({'worked_days_line_ids': slip._get_new_worked_days_lines()})
 
     def _get_new_worked_days_lines(self):
         if self.struct_id.use_worked_day_lines:

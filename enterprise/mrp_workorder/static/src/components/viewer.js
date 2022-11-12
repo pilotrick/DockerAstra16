@@ -17,12 +17,17 @@ class DocumentViewer extends Component {
             'P': 'svg+xml',
         };
         this.pdfIFrame = useRef('pdf_viewer');
+        this.slideIFrame = useRef('slide_viewer');
         useEffect(() => {
             this.updatePdf();
         });
     }
 
     updatePdf() {
+        if (this.slideIFrame.el) {
+            // Hide the slide url
+            this.slideIFrame.el.firstElementChild.classList.add("d-none");
+        }
         if (this.pdfIFrame.el) {
             const iframe = this.pdfIFrame.el.firstElementChild;
             iframe.removeAttribute('style');
@@ -31,7 +36,7 @@ class DocumentViewer extends Component {
                     iframe.contentDocument.querySelector('.toolbar').style.display = 'none';
                     iframe.contentDocument.querySelector('body').style.background = 'none';
                     iframe.contentDocument.querySelector('#viewerContainer').style.boxShadow = 'none';
-                    iframe.contentDocument.querySelector('#mainContainer').style.margin = '-2.5em';
+                    iframe.contentDocument.querySelector('#mainContainer').style.marginTop = '-2.5em';
                 });
         }
     }
@@ -62,7 +67,8 @@ class DocumentViewer extends Component {
             readonly: true,
         };
         viewerProps['record']['data'][this.props.resField] = this.props.resField;
-        viewerProps['record']['data'][`$(this.props.resField)_page`] = this.props.page || 1;
+        viewerProps['record']['data'][`${this.props.resField}_page`] = this.props.page || 1;
+        viewerProps["record"].isInvalid = () => false;
         if (this.type === 'pdf') {
             viewerProps['fileNameField'] = this.props.resField;
         }

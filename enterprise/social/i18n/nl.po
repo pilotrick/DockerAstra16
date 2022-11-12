@@ -4,6 +4,7 @@
 # 
 # Translators:
 # Martin Trigaux, 2022
+# Jolien De Paepe, 2022
 # Erwin van der Ploeg <erwin@odooexperts.nl>, 2022
 # 
 msgid ""
@@ -441,7 +442,7 @@ msgstr "Schermnaam"
 #: code:addons/social/static/src/js/stream_post_comment.js:0
 #, python-format
 msgid "Do you really want to delete %s"
-msgstr ""
+msgstr "Wil je %s echt verwijderen?"
 
 #. module: social
 #: model:ir.model.fields.selection,name:social.selection__social_post__state__draft
@@ -995,7 +996,7 @@ msgstr "Nieuwe post"
 #: code:addons/social/static/src/xml/social_templates.xml:0
 #, python-format
 msgid "New content available"
-msgstr ""
+msgstr "Nieuwe inhoud beschikbaar"
 
 #. module: social
 #. openerp-web
@@ -1854,7 +1855,7 @@ msgid ""
 "You cannot delete these UTM Mediums as they are linked to the following social accounts in Social:\n"
 "%(social_accounts)s"
 msgstr ""
-"U kunt deze UTM-mediums niet verwijderen omdat ze zijn gekoppeld aan de volgende sociale accounts in Sociaal:\n"
+"Je kunt deze UTM-mediums niet verwijderen omdat ze zijn gekoppeld aan de volgende sociale accounts in Sociaal:\n"
 "%(social_accounts)s"
 
 #. module: social
@@ -1864,7 +1865,7 @@ msgid ""
 "You cannot delete these UTM Sources as they are linked to social posts in Social:\n"
 "%(utm_sources)s"
 msgstr ""
-"U kunt deze UTM-bronnen niet verwijderen omdat ze zijn gekoppeld aan sociale berichten in Sociaal:\n"
+"Je kunt deze UTM-bronnen niet verwijderen omdat ze zijn gekoppeld aan sociale berichten in Sociaal:\n"
 "%(utm_sources)s"
 
 #. module: social
