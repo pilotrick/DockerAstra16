@@ -10,7 +10,7 @@
         Long description of module's purpose
     """,
 
-    'author': "My Company",
+    'author': "Astratech",
     'website': "http://www.yourcompany.com",
 
      'category': 'Uncategorized',
