@@ -21,7 +21,7 @@
 
 {
     'name': "Customer Invoice Margin",
-    ''author': 'Astratech',
+    'author': 'Astratech',
     'category': 'Account',
     'summary': """Margin Percentage in Customer Invoice""",
     'license': 'AGPL-3',
