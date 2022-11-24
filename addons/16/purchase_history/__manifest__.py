@@ -21,7 +21,7 @@
 
 {
     'name': "Purchase History Of Products",
-    'author': 'Ascetic Business Solution',
+    ''author': 'Astratech',
     'category': 'Purchase',
     'summary': """Purchase history of products in Purchase Order""",
     'license': 'AGPL-3',

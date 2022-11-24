@@ -21,7 +21,7 @@
 
 {
     'name': "Customer Invoice Margin",
-    'author': 'Ascetic Business Solution',
+    ''author': 'Astratech',
     'category': 'Account',
     'summary': """Margin Percentage in Customer Invoice""",
     'license': 'AGPL-3',

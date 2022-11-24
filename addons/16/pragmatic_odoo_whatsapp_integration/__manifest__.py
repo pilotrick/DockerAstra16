@@ -2,7 +2,7 @@
     'name': 'Whatsapp Odoo All In One Integration',
     'version': '15.0.9',
     'category': 'Connector',
-    'author': 'Pragmatic TechSoft Pvt Ltd.',
+    'author': 'Astratech',
     'website': 'pragtech.co.in',
     'summary': 'whatsapp connector whatsapp integration odoo Whatsapp crm Whatsapp lead Whatsapp task Whatsapp sale order Whatsapp purchase order Whatsapp invoice Whatsapp payment reminder Whatsapp pos Whatsapp so Whatsapp point of sale whats app communication',
     'description': """

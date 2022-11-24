@@ -2,7 +2,7 @@
 {
     'name': "Invoice Posting Restriction",
     'summary': "Restrict the confirmation of invoices, bills and journal entries for some users.",
-    'author': 'Hossam Zaki',
+    'author': 'Astratech',
     'support': 'hossamzaki616@gmail.com',
     'website': 'www.linkedin.com/in/hhz25',
     'category': 'Accounting/Accounting',

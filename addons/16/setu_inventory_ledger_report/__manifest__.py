@@ -23,7 +23,7 @@
         So we introduced a solution for that and built an Inventory Ledger Report where users can track each day's transactions or summary of all dates together with real calculated opening and closing. 
         This app helps you to track the inventory for specific periods or up to a certain date.
     """,
-    'author': 'Setu Consulting Services Pvt. Ltd.',
+    'author': 'Astratech',
     'license': 'OPL-1',
     'sequence': 25,
     'depends': ['stock','base'],

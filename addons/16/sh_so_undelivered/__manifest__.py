@@ -2,7 +2,7 @@
 # Copyright (C) Softhealer Technologies.
 {
     'name': 'Sales Order Undelivered',
-    'author': 'Softhealer Technologies',
+    'author': 'Astratech',
     'website': 'https://www.softhealer.com',
     "support": "support@softhealer.com",
     'version': '15.0.0',

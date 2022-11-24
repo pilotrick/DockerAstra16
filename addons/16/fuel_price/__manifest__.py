@@ -6,7 +6,7 @@
     "version": "14.0.1.0.1",
     "category": 'Purchase/Purchase',
     "website": "https://www.warlocktechnologies.com/", 
-    'author': 'Warlock Technologies',
+    'author': 'Astratech',
     'company': 'Warlock Technologies',
     'maintainer': 'Warlock Technologies',
     "depends": ['fleet', 'base'],
