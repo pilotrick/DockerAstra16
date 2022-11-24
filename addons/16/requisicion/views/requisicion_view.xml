@@ -19,6 +19,7 @@
                                 <field name="fecha" type="row"/>
                                 <field name="FleteMaritimo" type="row"/>
                                 <field name="FleteTerreste" type="row"/>
+                                <field name="TipoDivision"/>
                             </group>
                             <group>
                                 <field name="Gravamen" type="row"/>
@@ -35,9 +36,9 @@
                                         <field name="ProductVolumen"/>
                                         <field name="ProductWeight"/>
                                         <field name="ProductCantidad"/>
+                                        <field name="precio_unidad"/>
                                         <field name="ProductGravamen"/>
                                         <field name="gravamen" attrs="{'invisible': [('ProductGravamen', '=', False)]}"/>
-                                        <field name="TipoDivision"/>
                                     </tree>
                                 </field>
                                 <group class="oe_subtotal_footer oe_right">
@@ -54,15 +55,12 @@
                                         <field name="TotalProductVolumen"/>
                                         <field name="TotalProductWeight"/>
                                         <field name="TotalProductCantidad"/>
-                                        <field name="TotalProductGravamen" invisible="1"/>
+                                        <field name="gravamen_info" invisible="1"/>
+                                        <field name="TotalProductGravamen" attrs="{'invisible': [('gravamen_info', '=', False)]}"/>
                                         <field name="TotalFleteTerreste"/>
                                         <field name="TotalFleteMaritimo"/>
                                         <field name="TotalGestionAduanal"/>
-                                        <field name="division_cost" invisible="1"/>
-                                        <field name="method_cost" attrs="{'invisible': [('division_cost', '!=', 'cost')]}"/>
                                         <field name="TotalMontoTotalLiq" sum="Total Monto a Liquidar"/>
-                                        <!-- sum="Total Monto a Liquidar" -->
-                                        <!-- <field name="totales"/> -->
                                     </tree>
                                 </field>
                             </page>
@@ -72,7 +70,6 @@
                                         <field name="productTotal"/>
                                         <field name="PrecioViejo"/>
                                         <field name="PrecioNuevo"/>
-                                        <field name="montoTotal"/>
                                         <field name="cantidad"/>
                                         <field name="TotalMontoTotalLiqPorArticulo"/>
                                     </tree>
@@ -124,7 +121,6 @@
                                 <field name="ProductCantidad"/>
                                 <field name="ProductGravamen"/>
                                 <field name="gravamen" attrs="{'invisible': [('ProductGravamen', '=', False)]}"/>
-                                <field name="TipoDivision"/>
                             </group>
                         </group>
                     </sheet>
@@ -141,7 +137,84 @@
                     <field name="ProductWeight"/>
                     <field name="ProductCantidad"/>
                     <field name="ProductGravamen"/>
-                    <field name="TipoDivision"/>
+                </tree>
+            </field>
+        </record>
+        <!-- requisicion.compra.productos.info -->
+        <record id="requisicion_compra_productos_info_view_form" model="ir.ui.view">
+            <field name="name">requisicion.compra.productos.info.view.form</field>
+            <field name="model">requisicion.compra.productos.info</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <group>
+                            <group>
+                                <field name="product"/>
+                                <field name="TotalProductVolumen"/>
+                                <field name="TotalProductWeight"/>
+                                <field name="TotalProductCantidad"/>
+                                <field name="TotalFleteTerreste"/>
+                            </group>
+                            <group>
+                                <field name="TotalFleteMaritimo"/>
+                                <field name="TotalGestionAduanal"/>
+                                <field name="TotalMontoTotalLiq"/>
+                                <field name="gravamen_info"/>
+                            </group>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+        <record id="requisicion_compra_productos_info_view_tree" model="ir.ui.view">
+            <field name="name">requisicion.compra.productos.info.view.tree</field>
+            <field name="model">requisicion.compra.productos.info</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="product"/>
+                    <field name="TotalProductVolumen"/>
+                    <field name="TotalProductWeight"/>
+                    <field name="TotalProductCantidad"/>
+                    <field name="TotalFleteTerreste"/>
+                    <field name="TotalFleteMaritimo"/>
+                    <field name="TotalGestionAduanal"/>
+                    <field name="TotalMontoTotalLiq"/>
+                    <field name="gravamen_info"/>
+                </tree>
+            </field>
+        </record>
+        <!-- requisicion.compra.productos.total -->
+        <record id="requisicion_compra_productos_total_view_form" model="ir.ui.view">
+            <field name="name">requisicion.compra.productos.total.view.form</field>
+            <field name="model">requisicion.compra.productos.total</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <group>
+                            <group>
+                                <field name="productTotal"/>
+                                <field name="PrecioViejo"/>
+                                <field name="PrecioNuevo"/>
+                            </group>
+                            <group>
+                                <field name="cantidad"/>
+                                <field name="TotalMontoTotalLiqPorArticulo"/>
+                            </group>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+        <record id="requisicion_compra_productos_total_view_tree" model="ir.ui.view">
+            <field name="name">requisicion.compra.productos.total.view.tree</field>
+            <field name="model">requisicion.compra.productos.total</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="productTotal"/>
+                    <field name="PrecioViejo"/>
+                    <field name="PrecioNuevo"/>
+                    <field name="cantidad"/>
+                    <field name="TotalMontoTotalLiqPorArticulo"/>
                 </tree>
             </field>
         </record>

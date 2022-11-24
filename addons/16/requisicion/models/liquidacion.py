@@ -1,7 +1,5 @@
 # -*- coding: utf-8 -*-
-
-from xml.dom.expatbuilder import parseString
-from odoo import api, fields, models, tools, _
+from odoo import api, fields, models, _
 from datetime import datetime
 
 class Liquidacion(models.Model):
@@ -14,10 +12,11 @@ class Liquidacion(models.Model):
     Proveedor = fields.Char(string='Proveedor')
     FleteTerreste = fields.Float(string='Flete Terrestre')
     FleteMaritimo = fields.Float(string='Flete Maritimo')
-    CosteEnDestino = fields.Float(string='Coste en destino', readonly=True, tracking=True)
+    CosteEnDestino = fields.Float(string='Coste en destino', tracking=True)
+    TipoDivision = fields.Selection([('cost','Costo'),('weight','Peso'),('volume','Volumen'),('amount','Cantidad')], string='Tipo de Costeo', required=True)
     Gravamen = fields.Float(string='Gravamen')
-    GestionAduanal = fields.Integer(string='Gestion Aduanal')
-    MontoTotalLiq = fields.Float(string='Total de Gastos', related='product_info.TotalMontoTotalLiq')
+    GestionAduanal = fields.Float(string='Gestion Aduanal')
+    MontoTotalLiq = fields.Float(string='Total de Gastos', readonly=True)
     product_purchase = fields.One2many('requisicion.compra.productos', 'id_purchase', string='Productos')
     product_info = fields.One2many('requisicion.compra.productos.info', 'product_id_info', string="Información de Productos")
     product_total = fields.One2many('requisicion.compra.productos.total', 'product_id_total', string="Liquidación Total")
@@ -28,16 +27,27 @@ class Liquidacion(models.Model):
             vals['name'] = self.env['ir.sequence'].next_by_code('stock.landed.cost')
         return super().create(vals)
     
-    
     def compute_total(self):
-        AdjustementLines = self.env['requisicion.compra.productos.info']
-        AdjustementLines.search([('product_id_info', 'in', self.ids)]).unlink()
         
         TotalAdjustementLines = self.env['requisicion.compra.productos.total']
         TotalAdjustementLines.search([('product_id_total', 'in', self.ids)]).unlink()
         
-        data={}
         dataTotal={}
+        for rec in self:
+            for inf in rec.product_info:
+                dataTotal = {
+                    "product_id_total": rec.id,
+                    "productTotal": inf.product,
+                    "montoTotal": inf.TotalMontoTotalLiq,
+                    "cantidad": inf.TotalProductCantidad,
+                    "PrecioViejo": inf.unit,
+                }
+                TotalAdjustementLines.create(dataTotal)
+        
+        AdjustementLines = self.env['requisicion.compra.productos.info']
+        AdjustementLines.search([('product_id_info', 'in', self.ids)]).unlink()
+        
+        data={}
         for rec in self:
             for p in rec.product_purchase:
                 data = {
@@ -46,61 +56,160 @@ class Liquidacion(models.Model):
                     "TotalProductVolumen": p.ProductVolumen,
                     "TotalProductWeight": p.ProductWeight,
                     "TotalProductCantidad": p.ProductCantidad,
-                    "division_cost": p.TipoDivision,
+                    "TotalFleteMaritimo": rec.FleteMaritimo,
+                    "TotalFleteTerreste": rec.FleteTerreste,
+                    "TotalGestionAduanal": rec.GestionAduanal,
+                    "gravamen_info": p.ProductGravamen,
+                    "TotalProductGravamen": rec.Gravamen,
+                    "unit": p.precio_unidad,
                 }
                 AdjustementLines.create(data)
                 
-            for inf in rec.product_info:
+            for val in rec.product_info:
+                for line in rec.product_total:
+                    # for pur in rec.product_purchase:
                 
-                dataTotal = {
-                    "product_id_total": rec.id,
-                    "productTotal": inf.product,
-                    "montoTotal": inf.TotalMontoTotalLiq,
-                    "cantidad": inf.TotalProductCantidad,
-                }
-                TotalAdjustementLines.create(dataTotal)
+                    if rec.TipoDivision == 'amount':
+                        for value in self.browse(self.ids):
+                            suma_amount = 0.0
+                            total = 0.0
+                            liq_total = 0.0
+                            for i in value.product_info:
+                                total += i.TotalProductCantidad
+                                liq_total += (i.TotalMontoTotalLiq)
+                                rec.MontoTotalLiq = liq_total + rec.CosteEnDestino
+                                suma_amount = total
+                                
+                            liq = rec.FleteMaritimo + rec.FleteTerreste + rec.GestionAduanal
+                            # per_unit = (liq / suma_amount)
+                            val.TotalMontoTotalLiq = (liq / suma_amount) * val.TotalProductCantidad
+                            val.TotalFleteTerreste = (rec.FleteTerreste / suma_amount) * val.TotalProductCantidad
+                            val.TotalFleteMaritimo = (rec.FleteMaritimo / suma_amount) * val.TotalProductCantidad
+                            val.TotalGestionAduanal = (rec.GestionAduanal / suma_amount) * val.TotalProductCantidad
+                            
+                            amount_total = line.PrecioViejo + line.montoTotal
+                            line.PrecioNuevo = amount_total
+                            line.TotalMontoTotalLiqPorArticulo = amount_total
+                            
+                        for res in self.env['requisicion.compra.productos.info'].search([('gravamen_info', '=', 'True')]):
+                            
+                            registry = len(self.env['requisicion.compra.productos.info'].search([('gravamen_info', '=', 'True')]))
+                            var1 = rec.FleteMaritimo + rec.FleteTerreste + rec.GestionAduanal
+                            var2 = (var1 / suma_amount)
+                            res.TotalMontoTotalLiq = (var2 * res.TotalProductCantidad)
+                            
+                            # total_gravamen = (val.TotalProductGravamen/100) * liq
+                            var_gravamen = val.TotalProductGravamen / registry
+                            res.TotalMontoTotalLiq += var_gravamen
+                            
+                            line.PrecioNuevo = amount_total
+                            line.TotalMontoTotalLiqPorArticulo = amount_total
+                        
+                    elif rec.TipoDivision == 'weight':
+                        for value in self.browse(self.ids):
+                            suma_weight= 0.0
+                            total = 0.0
+                            liq_total = 0.0
+                            for i in value.product_info:
+                                total += i.TotalProductWeight
+                                liq_total += i.TotalMontoTotalLiq
+                                suma_weight = total
+                                rec.MontoTotalLiq = liq_total + rec.CosteEnDestino
+                        
+                            liq = rec.FleteMaritimo + rec.FleteTerreste + rec.GestionAduanal
+                            val.TotalMontoTotalLiq =  (liq / suma_weight) * val.TotalProductWeight
+                            val.TotalFleteTerreste = (rec.FleteTerreste / suma_weight) * val.TotalProductWeight
+                            val.TotalFleteMaritimo = (rec.FleteMaritimo / suma_weight) * val.TotalProductWeight
+                            val.TotalGestionAduanal = (rec.GestionAduanal / suma_weight) * val.TotalProductWeight
+                            
+                            weight_total = line.PrecioViejo + line.montoTotal
+                            line.PrecioNuevo = weight_total
+                            line.TotalMontoTotalLiqPorArticulo = weight_total
+                            
+                        for res in self.env['requisicion.compra.productos.info'].search([('gravamen_info', '=', 'True')]):
+                            
+                            registry = len(self.env['requisicion.compra.productos.info'].search([('gravamen_info', '=', 'True')]))
+                            var1 = rec.FleteMaritimo + rec.FleteTerreste + rec.GestionAduanal
+                            var2 = (var1 / suma_weight)
+                            res.TotalMontoTotalLiq = (var2 * res.TotalProductWeight)
+                            
+                            # total_gravamen = (val.TotalProductGravamen/100) * liq
+                            var_gravamen = val.TotalProductGravamen / registry
+                            res.TotalMontoTotalLiq += var_gravamen
+                            
+                            line.PrecioNuevo = weight_total
+                            line.TotalMontoTotalLiqPorArticulo = weight_total
+                        
+                    elif rec.TipoDivision == 'volume':
+                        for value in self.browse(self.ids):
+                            suma_volume= 0.0
+                            total = 0.0
+                            liq_total = 0.0
+                            for i in value.product_info:
+                                total += i.TotalProductVolumen
+                                liq_total += i.TotalMontoTotalLiq
+                                suma_volume = total
+                                rec.MontoTotalLiq = liq_total + rec.CosteEnDestino
+                        
+                            liq = rec.FleteMaritimo + rec.FleteTerreste + rec.GestionAduanal
+                            val.TotalMontoTotalLiq =  (liq / suma_volume) * val.TotalProductVolumen
+                            val.TotalFleteTerreste = (rec.FleteTerreste / suma_volume) * val.TotalProductVolumen
+                            val.TotalFleteMaritimo = (rec.FleteMaritimo / suma_volume) * val.TotalProductVolumen
+                            val.TotalGestionAduanal = (rec.GestionAduanal / suma_volume) * val.TotalProductVolumen
+                            
+                            volume_total = line.PrecioViejo + line.montoTotal
+                            line.PrecioNuevo = volume_total
+                            line.TotalMontoTotalLiqPorArticulo = volume_total
+                        
+                        for res in self.env['requisicion.compra.productos.info'].search([('gravamen_info', '=', 'True')]):
+                            
+                            registry = len(self.env['requisicion.compra.productos.info'].search([('gravamen_info', '=', 'True')]))
+                            var1 = rec.FleteMaritimo + rec.FleteTerreste + rec.GestionAduanal
+                            var2 = (var1 / suma_volume)
+                            res.TotalMontoTotalLiq = (var2 * res.TotalProductVolumen)
+                            
+                            # total_gravamen = (val.TotalProductGravamen/100) * liq
+                            var_gravamen = val.TotalProductGravamen / registry
+                            res.TotalMontoTotalLiq += var_gravamen
+                            
+                            line.PrecioNuevo = volume_total
+                            line.TotalMontoTotalLiqPorArticulo = volume_total
                     
-                    #volumen entre cantidad y se multiplica por ek coste total
-                    #costo total entre cantidad es igual a costo unitario
-                
-            for line in rec.product_purchase:
-                for val in rec.product_info:
-                
-                    if line.TipoDivision == 'amount':
-                        val.TotalMontoTotalLiq = val.TotalFleteMaritimo + val.TotalFleteTerreste + val.TotalGestionAduanal
-                        per_unit = (line.ProductCantidad / val.TotalMontoTotalLiq)
-                        val.TotalMontoTotalLiq += per_unit
+                    elif rec.TipoDivision == 'cost':
+                        for value in self.browse(self.ids):
+                            suma_cost= 0.0
+                            liq_total = 0.0
+                            for i in value.product_info:
+                                # for r in value.product_purchase:
+                                suma_cost += i.unit
+                                liq_total += i.TotalMontoTotalLiq
+                                rec.MontoTotalLiq = liq_total + rec.CosteEnDestino
+                                
+                            liq = rec.FleteMaritimo + rec.FleteTerreste + rec.GestionAduanal
+                            val.TotalMontoTotalLiq =  (liq / suma_cost) * val.unit
+                            val.TotalFleteTerreste = (rec.FleteTerreste / suma_cost) * val.unit
+                            val.TotalFleteMaritimo = (rec.FleteMaritimo / suma_cost) * val.unit
+                            val.TotalGestionAduanal = (rec.GestionAduanal / suma_cost) * val.unit
+
+                            cost_total = line.PrecioViejo + line.montoTotal
+                            line.PrecioNuevo = cost_total
+                            line.TotalMontoTotalLiqPorArticulo = cost_total
                         
-                        if line.ProductGravamen == True:
-                            total = (line.gravamen/100) * val.TotalMontoTotalLiq
-                            val.TotalMontoTotalLiq += total
-                        
-                    elif line.TipoDivision == 'weight':
-                        val.TotalMontoTotalLiq = val.TotalFleteMaritimo + val.TotalFleteTerreste + val.TotalGestionAduanal
-                        per_unit = (line.ProductWeight / line.ProductCantidad)
-                        value = per_unit * val.TotalMontoTotalLiq
-                        val.TotalMontoTotalLiq += value
-                        
-                        if line.ProductGravamen == True:
-                            total = (line.gravamen/100) * val.TotalMontoTotalLiq
-                            val.TotalMontoTotalLiq += total
-                        
-                    elif line.TipoDivision == 'volume':
-                        val.TotalMontoTotalLiq = val.TotalFleteMaritimo + val.TotalFleteTerreste + val.TotalGestionAduanal
-                        per_unit = (line.ProductVolumen / line.ProductCantidad)
-                        value = per_unit * val.TotalMontoTotalLiq
-                        val.TotalMontoTotalLiq += value
-                        
-                        if line.ProductGravamen == True:
-                            total = (line.gravamen/100) * val.TotalMontoTotalLiq
-                            val.TotalMontoTotalLiq += total
+                        for res in self.env['requisicion.compra.productos.info'].search([('gravamen_info', '=', 'True')]):
+                            
+                            registry = len(self.env['requisicion.compra.productos.info'].search([('gravamen_info', '=', 'True')]))
+                            suma_gravamen = rec.FleteMaritimo + rec.FleteTerreste + rec.GestionAduanal
+                            div_gravamen = (suma_gravamen / suma_cost)
+                            res.TotalMontoTotalLiq = (div_gravamen * res.unit)
+                            
+                            # total_gravamen = (val.TotalProductGravamen/100) * liq
+                            var_gravamen = val.TotalProductGravamen / registry
+                            res.TotalMontoTotalLiq += var_gravamen
+                            
+                            line.PrecioNuevo = cost_total
+                            line.TotalMontoTotalLiqPorArticulo = cost_total
                     
-                    elif line.TipoDivision == 'cost':
-                        val.TotalMontoTotalLiq = val.TotalFleteMaritimo + val.TotalFleteTerreste + val.TotalGestionAduanal
-                        per_unit = val.TotalMontoTotalLiq / 100
-                        val.method_cost = per_unit
-                        
-                        
+                    
                     
 class LiquidacionProducto(models.Model):
     _name = 'requisicion.compra.productos'
@@ -111,9 +220,9 @@ class LiquidacionProducto(models.Model):
     ProductWeight = fields.Float(string='Peso')
     ProductCantidad = fields.Integer(string='Cantidad')
     ProductGravamen = fields.Boolean(string='Tiene Gravamen')
-    TipoDivision = fields.Selection([('cost','Costo'),('weight','Peso'),('volume','Volumen'),('amount','Cantidad')], string='Tipo de Costeo')
     id_purchase = fields.Many2one('requisicion.compra', string="Product ID")
     gravamen = fields.Float(string='Gravamen', related='id_purchase.Gravamen')
+    precio_unidad = fields.Float(string='Precio Por Unidad')
     
 class LiquidacionProductoInfo(models.Model):
     _name = 'requisicion.compra.productos.info'
@@ -123,32 +232,15 @@ class LiquidacionProductoInfo(models.Model):
     TotalProductVolumen = fields.Float(string='Volumen', readonly=True)
     TotalProductWeight = fields.Float(string='Peso', readonly=True)
     TotalProductCantidad = fields.Integer(string='Cantidad', readonly=True)
-    TotalProductGravamen = fields.Float(string='Tiene Gravamen', related='product_id_info.Gravamen', readonly=True)
-    TotalFleteTerreste = fields.Float(string='Flete Terrestre', related='product_id_info.FleteTerreste', readonly=True)
-    TotalFleteMaritimo = fields.Float(string='Flete Maritimo', related='product_id_info.FleteMaritimo', readonly=True)
-    TotalGestionAduanal = fields.Integer(string='Gestion Aduanal', related='product_id_info.GestionAduanal', readonly=True)
+    TotalProductGravamen = fields.Float(string='Tiene Gravamen', readonly=True)
+    TotalFleteTerreste = fields.Float(string='Flete Terrestre', readonly=True)
+    TotalFleteMaritimo = fields.Float(string='Flete Maritimo', readonly=True)
+    TotalGestionAduanal = fields.Float(string='Gestion Aduanal', readonly=True)
     TotalMontoTotalLiq = fields.Float(string='Total de Gastos')
     product_id_info = fields.Many2one('requisicion.compra', string="Product ID")
-    product_id_purchase = fields.Many2one('requisicion.compra.productos', string="purchase")
-    division_cost = fields.Selection([('cost','Costo'),('weight','Peso'),('volume','Volumen'),('amount','Cantidad')], string="Metodo de COsteo", readonly=True)
-    method_cost = fields.Float(string="(%) del costo", readonly=True)
+    gravamen_info = fields.Boolean(string='Tiene Gravamen')
+    unit = fields.Float(string='Unit')
     
-    montoArticulo = fields.Float(string="Articulo")
-    # def calculate (self):
-    #     for rec in self:
-    #         rec.montoArticulo = (rec.TotalMontoTotalLiq / rec.TotalProductCantidad)
-    
-    totales = fields.Float(string='Total')
-    
-    # @api.onchange('TotalMontoTotalLiq')
-    def sum_tol(self):
-        for line in self:
-            
-        # self.totales = sum(self.env['requisicion.compra.productos.info'].search(['TotalMontoTotalLiq']).mapped('totales'))
-            line.totales = sum(line.TotalMontoTotalLiq.mapped('totales'))
-        # self.totales = 0.0
-        # for s in range(0,len(self.TotalMontoTotalLiq)):
-        #     self.totales = self.totales + self.TotalMontoTotalLiq[s]
 
 class LiquidacionProducto(models.Model):
     _name = 'requisicion.compra.productos.total'
@@ -156,19 +248,9 @@ class LiquidacionProducto(models.Model):
 
     productTotal = fields.Char(string='Producto')
     PrecioViejo = fields.Float(string='Precio(Viejo)')
-    PrecioNuevo = fields.Float(string='Precio(Nuevo)', compute="compute_monto_total")
+    PrecioNuevo = fields.Float(string='Precio(Nuevo)')
     TotalMontoTotalLiqPorArticulo = fields.Float(string='Total de Gastos por Articulo')
     product_id_total = fields.Many2one('requisicion.compra', string="Product ID")
     montoTotal = fields.Float(string="Monto total")
     cantidad = fields.Integer(string="cantidad")
-    product_purchase_id = fields.Many2one('requisicion.compra.productos')
     total_product = fields.Many2one('requisicion.compra.productos.info', string="total")
-    
-    def compute_monto_total(self):
-        for rec in self:
-            rec.PrecioNuevo = rec.PrecioViejo + rec.TotalMontoTotalLiqPorArticulo
-            
-    
-    
-    
-    
