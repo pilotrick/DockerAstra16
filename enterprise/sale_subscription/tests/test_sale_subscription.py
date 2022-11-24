@@ -1657,10 +1657,6 @@ class TestSubscription(TestSubscriptionCommon):
         subscription.action_confirm()
         subscription._create_recurring_invoice(automatic=True)
         self.assertEqual(subscription.order_line.qty_invoiced, 3, "The 3 products should be invoiced")
-        # _get_invoiced need info saved on the DB
-        invoice = subscription.order_line.invoice_lines.move_id
-        invoice.flush_recordset()
-        subscription.flush_recordset()
         subscription._get_invoiced()
         inv = subscription.invoice_ids
         inv.payment_state = 'paid'
@@ -1788,3 +1784,15 @@ class TestSubscription(TestSubscriptionCommon):
         self.assertEqual(self.subscription.amount_untaxed, 0, "The price shot be 0")
         self.assertEqual(self.subscription.order_line.price_subtotal, 0, "The price line should be 0")
         self.assertEqual(self.subscription.order_line.invoice_status, 'no', "Nothing to invoice here")
+
+    def test_invoice_done_order(self):
+        # Prevent to invoice order in done state
+        with freeze_time("2021-01-03"):
+            self.subscription.action_confirm()
+            self.env['sale.order']._cron_recurring_create_invoice()
+            self.assertEqual(self.subscription.invoice_count, 1)
+
+        with freeze_time("2021-02-03"):
+            self.subscription.action_done()
+            self.env['sale.order']._cron_recurring_create_invoice()
+            self.assertEqual(self.subscription.invoice_count, 1)

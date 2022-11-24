@@ -14,13 +14,16 @@ class MrpWorkorder(models.Model):
     allow_employee = fields.Boolean(related='workcenter_id.allow_employee')
 
     def _compute_duration(self):
+        wo_ids_with_employees = set()
         wo_ids_without_employees = set()
         for wo in self:
             if not wo.workcenter_id.allow_employee:
                 wo_ids_without_employees.add(wo.id)
                 continue
+            wo_ids_with_employees.add(wo.id)
             now = fields.Datetime.now()
             wo.duration = self._intervals_duration([(t.date_start, t.date_end or now, t) for t in wo.time_ids])
+        self.env['mrp.workorder'].browse(wo_ids_with_employees)._create_or_update_analytic_entry()
         return super(MrpWorkorder, self.env['mrp.workorder'].browse(wo_ids_without_employees))._compute_duration()
 
     @api.depends('employee_ids')
@@ -114,27 +117,9 @@ class MrpWorkorder(models.Model):
         for index, interval in enumerate(intervals):
             if interval[0] <= date_stop:
                 date_stop = max(date_stop, interval[1])
-                if index != len(intervals) - 1:
-                    continue
-            duration += timer.loss_id._convert_to_duration(date_start, date_stop, timer.workcenter_id)
-            date_start, date_stop, timer = interval
+            else:
+                duration += timer.loss_id._convert_to_duration(date_start, date_stop, timer.workcenter_id)
+                date_start, date_stop, timer = interval
+            if index == len(intervals) - 1:
+                duration += timer.loss_id._convert_to_duration(date_start, date_stop, timer.workcenter_id)
         return duration
-
-
-class MrpWorkcenterProductivity(models.Model):
-    _inherit = "mrp.workcenter.productivity"
-
-    employee_cost = fields.Monetary('employee_cost', default=0)
-    currency_id = fields.Many2one(related='company_id.currency_id')
-    total_cost = fields.Float('Cost', compute='_compute_total_cost')
-
-    @api.depends('employee_id', 'employee_cost')
-    def _compute_total_cost(self):
-        for time in self:
-            time.total_cost = time.employee_cost * time.duration
-
-    def _close(self):
-        for timer in self:
-            if timer.employee_id:
-                timer.employee_cost = timer.employee_id.hourly_cost
-        return super()._close()

@@ -88,7 +88,7 @@ class Tablet extends Component {
         this.viewsId = this.data['views'];
         this.steps = this.data['quality.check'];
         this.state.workingState = this.data.working_state;
-        if (this.steps.length && this.steps.every(step => step.quality_state !== 'none')) {
+        if (this.steps.length && this.steps.every(step => step.quality_state !== 'none') && !this.data['mrp.workorder'].current_quality_check_id) {
             this.createSummaryStep();
         } else {
             this.state.selectedStepId = this.data['mrp.workorder'].current_quality_check_id;
@@ -238,9 +238,9 @@ class Tablet extends Component {
         this.popup[popupId].isShown = false;
     }
 
-    async onCloseRerender(message) {
-        if (message) {
-            this.notification.add(this.env._t(message), {type: 'success'});
+    async onCloseRerender(params) {
+        if (params && params.message) {
+            this.notification.add(this.env._t(params.message), {type: 'success'});
         }
         await this.getState();
         this.render();

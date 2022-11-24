@@ -4,7 +4,6 @@
 import logging
 from dateutil.relativedelta import relativedelta
 from psycopg2.extensions import TransactionRollbackError
-from psycopg2 import sql
 from ast import literal_eval
 from collections import defaultdict
 
@@ -242,7 +241,9 @@ class SaleOrder(models.Model):
         if not so_by_origin:
             return res
 
-        sql = """
+        so_with_origin.flush_recordset(fnames=['origin_order_id'])
+
+        query = """
             SELECT so.origin_order_id, array_agg(DISTINCT am.id)
             
             FROM sale_order so
@@ -252,10 +253,11 @@ class SaleOrder(models.Model):
             JOIN account_move am ON am.id = aml.move_id
             
             WHERE so.origin_order_id IN %s
+            AND am.company_id IN %s
             AND am.move_type IN ('out_invoice', 'out_refund')
             GROUP BY so.origin_order_id
         """
-        self.env.cr.execute(sql, [tuple(origin for origin in so_by_origin)])
+        self.env.cr.execute(query, [tuple(origin for origin in so_by_origin), tuple(self.env.companies.ids)])
         for origin_id, invoices_ids in self.env.cr.fetchall():
             so_by_origin[origin_id].update({
                 'invoice_ids': invoices_ids,
@@ -1098,7 +1100,6 @@ class SaleOrder(models.Model):
         auto_commit = automatic and not bool(config['test_enable'] or config['test_file'])
         Mail = self.env['mail.mail']
         today = fields.Date.today()
-        stages_in_progress = self.env['sale.order.stage'].search([('category', '=', 'progress')])
         if len(self) > 0:
             all_subscriptions = self.filtered(lambda so: so.is_subscription and so.subscription_management != 'upsell' and not so.payment_exception)
             need_cron_trigger = False
@@ -1127,7 +1128,8 @@ class SaleOrder(models.Model):
         if auto_commit:
             self.env.cr.commit()
         for subscription in all_subscriptions:
-            if subscription.stage_id not in stages_in_progress:
+            # We only invoice contract in sale state. Locked contracts are invoiced in advance. They are frozen.
+            if not (subscription.state == 'sale' and subscription.stage_category == 'progress'):
                 continue
             try:
                 subscription = subscription[0] # Trick to not prefetch other subscriptions, as the cache is currently invalidated at each iteration
@@ -1208,10 +1210,13 @@ class SaleOrder(models.Model):
         """ Override to increment periods when needed """
         invoices = super()._create_invoices(grouped=grouped, final=final, date=date)
         # update next_invoice_date if token
-        # When a token is present the update is done in reconcile_pending_transaction
+        # When a token is present the update is done in reconcile_pending_transaction for automatic invoice
+        # we want to update the date if we are not automatic as there is no reconciliation callback
         order_to_update = self.env['sale.order']
+        manual = not self.env.context.get('recurring_automatic', False)
         for order in self:
-            if order.is_subscription and order.state == 'sale' and not order.payment_token_id:
+            if order.is_subscription and order.state == 'sale' and \
+                    (not order.payment_token_id or manual or self.env.context.get('subscription_force_next_invoice_date')):
                 order_to_update |= order
 
         order_to_update._update_next_invoice_date()
@@ -1294,7 +1299,7 @@ class SaleOrder(models.Model):
         today = fields.Date.today()
         next_month = today + relativedelta(months=1)
         # set to pending if date is in less than a month
-        domain_pending = [('is_subscription', '=', True), ('end_date', '<', next_month), ('stage_category', '=', 'progress')]
+        domain_pending = [('is_subscription', '=', True), ('end_date', '<', next_month), ('stage_category', '=', 'progress'), ('state', '=', 'sale')]
         subscriptions_pending = self.search(domain_pending)
         subscriptions_pending.set_to_renew()
         # set to close if date is passed or if locked sale order is passed
@@ -1488,7 +1493,6 @@ class SaleOrder(models.Model):
             for order in tx.invoice_ids.invoice_line_ids.sale_line_ids.mapped('order_id'):
                 if order.is_subscription and order.state == 'sale':
                     order_to_update |= order
-
             order_to_update._update_next_invoice_date()
             order_to_update.order_line._reset_subscription_qty_to_invoice()
 

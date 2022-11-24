@@ -3,8 +3,11 @@
 
 from odoo.addons.mrp.tests import common
 from odoo.tests import Form
+from odoo.tools import mute_logger
 from odoo.exceptions import UserError
+import logging
 
+_logger = logging.getLogger(__name__)
 
 class TestWorkOrder(common.TestMrpCommon):
     @classmethod
@@ -1122,7 +1125,8 @@ class TestWorkOrder(common.TestMrpCommon):
 
         production.workorder_ids[0].button_start()
         wo_form = Form(production.workorder_ids[0], view='mrp_workorder.mrp_workorder_view_form_tablet')
-        wo_form.finished_lot_id = sn1
+        with mute_logger('odoo.tests.common.onchange'):
+            wo_form.finished_lot_id = sn1
         wo = wo_form.save()
         qc_form = Form(wo.current_quality_check_id, view='mrp_workorder.quality_check_view_form_tablet')
         qc_form.lot_id = self.elon1
@@ -1534,3 +1538,113 @@ class TestWorkOrder(common.TestMrpCommon):
         self.assertEqual(len(wo.check_ids), 1, "their should be 1 quality check")
         qc_form = Form(wo.current_quality_check_id, view='mrp_workorder.quality_check_view_form_tablet')
         self.assertEqual(qc_form.component_id, self.product_3, 'operation must contain related consumption material')
+
+    def test_operations_with_test_type_register_consumed_materials02(self):
+        """
+        The reservation method of Manufacturing is manual. There is a bom with
+        one component and one operation. The operation is used to register the
+        consumed quantity of the component. The user processes a MO with that
+        BoM and skip the reservation step.
+        """
+        warehouse = self.env['stock.warehouse'].search([('company_id', '=', self.env.company.id)], limit=1)
+        finished = self.bom_4.product_id
+        compo = self.bom_4.bom_line_ids.product_id
+
+        compo.type = 'product'
+        self.env['stock.quant']._update_available_quantity(finished, warehouse.lot_stock_id, 1.0)
+        self.env['stock.quant']._update_available_quantity(compo, warehouse.lot_stock_id, 1.0)
+
+        warehouse.manu_type_id.reservation_method = 'manual'
+
+        # the component is consumed in the operation
+        with Form(self.bom_4) as bom_form:
+            with bom_form.bom_line_ids.edit(0) as bom_line:
+                bom_line.operation_id = self.bom_4.operation_ids
+
+        mo_form = Form(self.env['mrp.production'])
+        mo_form.bom_id = self.bom_4
+        mo = mo_form.save()
+        mo.action_confirm()
+
+        wo = mo.workorder_ids
+        wo.button_start()
+        with Form(wo, view='mrp_workorder.mrp_workorder_view_form_tablet') as wo_form:
+            wo_form.qty_producing = 1
+        wo.current_quality_check_id.qty_done = 0.8
+        wo.current_quality_check_id._next()
+        wo.do_finish()
+        mo.button_mark_done()
+
+        self.assertEqual(mo.state, 'done')
+        self.assertRecordValues((mo.move_raw_ids + mo.move_finished_ids).move_line_ids, [
+            {'product_id': compo.id, 'state': 'done', 'qty_done': 0.8},
+            {'product_id': finished.id, 'state': 'done', 'qty_done': 1.0},
+        ])
+
+    def test_unbuild_and_reuse_sn_with_wo(self):
+        """
+        Produce a SN product (the BoM has one WO), unbuild it and then produce
+        it again (with the same SN as the first time)
+        """
+        finished = self.bom_5.product_id
+        finished.tracking = 'serial'
+
+        lot01 = self.env['stock.lot'].create({
+            'product_id': finished.id,
+            'company_id': self.env.company.id,
+        })
+        lot02 = lot01.copy({'name': 'second lot'})
+
+        mo_form = Form(self.env['mrp.production'])
+        mo_form.bom_id = self.bom_5
+        mo01 = mo_form.save()
+        mo01.action_confirm()
+        with Form(mo01) as mo_form:
+            mo_form.lot_producing_id = lot01
+        mo01.button_mark_done()
+
+        mo_form = Form(self.env['mrp.production'])
+        mo_form.bom_id = self.bom_5
+        mo02 = mo_form.save()
+        mo02.action_confirm()
+        with Form(mo02) as mo_form:
+            mo_form.lot_producing_id = lot02
+        mo02.button_mark_done()
+
+        unbuild_form = Form(self.env['mrp.unbuild'])
+        unbuild_form.mo_id = mo01
+        unbuild_form.lot_id = lot01
+        unbuild_form.save().action_unbuild()
+
+        mo_form = Form(self.env['mrp.production'])
+        mo_form.bom_id = self.bom_5
+        mo03 = mo_form.save()
+        mo03.action_confirm()
+
+        wo = mo03.workorder_ids
+        wo.button_start()
+
+        # a warning should be raised (see explanations below)
+        with self.assertLogs(level="WARNING") as lot02_log_catcher:
+            with Form(wo, view='mrp_workorder.mrp_workorder_view_form_tablet') as wo_form:
+                wo_form.finished_lot_id = lot02
+
+        with self.assertLogs(level="WARNING") as lot01_log_catcher:
+            with Form(wo, view='mrp_workorder.mrp_workorder_view_form_tablet') as wo_form:
+                wo_form.finished_lot_id = lot01
+                _logger.warning('Dummy')
+
+        wo.do_finish()
+        mo03.button_mark_done()
+
+        self.assertEqual(len(lot02_log_catcher.output), 1, "There is already a product with `lot02` in the stock. "
+                                                           "Therefore, if the user tries to use that lot, a warning "
+                                                           "should be displayed.")
+        self.assertIn('Serial Number', lot02_log_catcher.output[0])
+        self.assertEqual(len(lot01_log_catcher.output), 1, "`lot01` has been unbuilt and can be used, so there should "
+                                                           "be no warning")
+
+        self.assertEqual(mo03.state, 'done')
+        self.assertEqual(mo03.move_finished_ids.lot_ids, lot01)
+        self.assertEqual(mo03.move_finished_ids.state, 'done')
+        self.assertEqual(mo03.move_finished_ids.quantity_done, 1)

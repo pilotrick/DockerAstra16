@@ -196,7 +196,7 @@ class TestPickingBarcodeClientAction(TestBarcodeClientAction):
         self.start_tour(url, 'test_receipt_from_scratch_with_lots_3', login='admin', timeout=180)
         move_lines = receipt_picking.move_line_ids
         self.assertEqual(move_lines[0].product_id.id, self.product1.id)
-        self.assertEqual(move_lines[0].qty_done, 1.0)
+        self.assertEqual(move_lines[0].qty_done, 2.0)
         self.assertEqual(move_lines[1].product_id.id, self.productlot1.id)
         self.assertEqual(move_lines[1].qty_done, 2.0)
         self.assertEqual(move_lines[1].lot_name, 'lot1')
@@ -1330,6 +1330,43 @@ class TestPickingBarcodeClientAction(TestBarcodeClientAction):
         self.assertEqual(len(delivery.move_line_ids), 3)
         for move_line in delivery.move_line_ids:
             self.assertEqual(move_line.result_package_id.name, 'PACK0000001')
+
+    def test_put_in_pack_new_lines(self):
+        """
+        Receive a product P, put it in a pack PK and validates the receipt.
+        Then, do the same a second time with the same package PK
+        """
+        self.clean_access_rights()
+        grp_pack = self.env.ref('stock.group_tracking_lot')
+        self.env.user.write({'groups_id': [(4, grp_pack.id, 0)]})
+
+        receipt01 = self.env['stock.picking'].create({
+            'location_id': self.supplier_location.id,
+            'location_dest_id': self.stock_location.id,
+            'picking_type_id': self.picking_type_in.id,
+            'immediate_transfer': True,
+        })
+        url = self._get_client_action_url(receipt01.id)
+        self.start_tour(url, 'test_put_in_pack_new_lines', login='admin', timeout=180)
+
+        self.assertRecordValues(receipt01.move_line_ids, [
+            {'product_id': self.product1.id, 'qty_done': 1, 'result_package_id': self.package.id},
+        ])
+        self.assertEqual(self.package.quant_ids.available_quantity, 1)
+
+        receipt02 = self.env['stock.picking'].create({
+            'location_id': self.supplier_location.id,
+            'location_dest_id': self.stock_location.id,
+            'picking_type_id': self.picking_type_in.id,
+            'immediate_transfer': True,
+        })
+        url = self._get_client_action_url(receipt02.id)
+        self.start_tour(url, 'test_put_in_pack_new_lines', login='admin', timeout=180)
+
+        self.assertRecordValues(receipt02.move_line_ids, [
+            {'product_id': self.product1.id, 'qty_done': 1, 'result_package_id': self.package.id},
+        ])
+        self.assertEqual(self.package.quant_ids.available_quantity, 2)
 
     def test_highlight_packs(self):
         self.clean_access_rights()
