@@ -1127,6 +1127,8 @@ class SaleOrder(models.Model):
         all_invoiceable_lines._reset_subscription_qty_to_invoice()
         if auto_commit:
             self.env.cr.commit()
+        if not automatic and 'draft' in set(all_subscriptions.order_line.invoice_lines.move_id.mapped('state')):
+            raise UserError('You cannot create another draft invoice. Please cancel it first and try again.')
         for subscription in all_subscriptions:
             # We only invoice contract in sale state. Locked contracts are invoiced in advance. They are frozen.
             if not (subscription.state == 'sale' and subscription.stage_category == 'progress'):
@@ -1244,6 +1246,7 @@ class SaleOrder(models.Model):
             if not order.payment_token_id:
                 invoice.action_post()
             else:
+                payment_callback_done = False
                 try:
                     payment_token = order.payment_token_id
                     transaction = None
@@ -1259,6 +1262,7 @@ class SaleOrder(models.Model):
                                 self.env.cr.commit()
                             continue
                         transaction = order._do_payment(payment_token, invoice)
+                        payment_callback_done = transaction and transaction.sudo().callback_is_done
                         # commit change as soon as we try the payment, so we have a trace in the payment_transaction table
                         if auto_commit:
                             self.env.cr.commit()
@@ -1280,7 +1284,10 @@ class SaleOrder(models.Model):
                         # prevent rollback during tests
                         self.env.cr.rollback()
                     # we suppose that the payment is run only once a day
-                    last_transaction = self.env['payment.transaction'].search([('reference', 'like', self.client_order_ref or self.name)], limit=1)
+                    last_transaction = self.env['payment.transaction'].search(['|',
+                        ('reference', 'like', order.client_order_ref),
+                        ('reference', 'like', order.name)
+                    ], limit=1)
                     error_message = "Error during renewal of contract [%s] %s (%s)" \
                                     % (order.id, order.client_order_ref or order.name, 'Payment recorded: %s' % last_transaction.reference
                                        if last_transaction and last_transaction.state == 'done' else 'Payment not recorded')
@@ -1290,7 +1297,8 @@ class SaleOrder(models.Model):
                     mail.send()
                     if invoice.state == 'draft':
                         existing_invoices -= invoice
-                        invoice.unlink()
+                        if not payment_callback_done:
+                            invoice.unlink()
 
 
         return existing_invoices

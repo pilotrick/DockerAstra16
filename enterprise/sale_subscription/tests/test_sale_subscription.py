@@ -122,6 +122,12 @@ class TestSubscription(TestSubscriptionCommon):
         temp._onchange_sale_order_template_id()
         self.assertEqual(temp.note, Markup('<p>This is the template description</p>'), 'Override the subscription note')
 
+    def test_template_without_selected_partner(self):
+        """ Create a subscription by choosing a template before the customer """
+        with Form(self.env['sale.order']) as subscription:
+            subscription.sale_order_template_id = self.subscription_tmpl
+            subscription.partner_id = self.partner # mandatory to have no error
+
     def test_invoincing_with_section(self):
         """ Test invoicing when order has section/note."""
         context_no_mail = {'no_reset_password': True, 'mail_create_nosubscribe': True, 'mail_create_nolog': True, }
@@ -227,6 +233,7 @@ class TestSubscription(TestSubscriptionCommon):
         ])
 
         with freeze_time("2021-02-03"):
+            invoice._post()
             sub._create_recurring_invoice()
 
         # second invoice, should NOT include one-time discount
@@ -923,6 +930,7 @@ class TestSubscription(TestSubscriptionCommon):
             invoice_end_periods = inv.invoice_line_ids.mapped('subscription_end_date')
             self.assertEqual(invoice_start_periods, [datetime.date(2021, 1, 1), datetime.date(2021, 1, 1)])
             self.assertEqual(invoice_end_periods, [datetime.date(2021, 1, 31), datetime.date(2021, 1, 31)])
+            inv._post()
         with freeze_time("2021-02-01"):
             sub._create_recurring_invoice(automatic=False)
             self.assertEqual("2021-03-01", sub.next_invoice_date.strftime("%Y-%m-%d"))
@@ -931,6 +939,11 @@ class TestSubscription(TestSubscriptionCommon):
             invoice_end_periods = inv.invoice_line_ids.mapped('subscription_end_date')
             self.assertEqual(invoice_start_periods, [datetime.date(2021, 2, 1), datetime.date(2021, 2, 1)], "monthly is updated everytime in manual action")
             self.assertEqual(invoice_end_periods, [datetime.date(2021, 2, 28), datetime.date(2021, 2, 28)], "both lines are invoiced")
+
+            with self.assertRaisesRegex(UserError, 'You cannot create another draft invoice. Please cancel it first and try again.'):
+                sub._create_recurring_invoice()
+
+            inv._post()
             sub._create_recurring_invoice(automatic=False)
             self.assertEqual("2021-04-01", sub.next_invoice_date.strftime("%Y-%m-%d"))
             inv = sub.invoice_ids.sorted('id')[-1]
@@ -938,6 +951,7 @@ class TestSubscription(TestSubscriptionCommon):
             invoice_end_periods = inv.invoice_line_ids.mapped('subscription_end_date')
             self.assertEqual(invoice_start_periods, [datetime.date(2021, 3, 1), datetime.date(2021, 3, 1)], "monthly is updated everytime in manual action")
             self.assertEqual(invoice_end_periods, [datetime.date(2021, 3, 31), datetime.date(2021, 3, 31)], "monthly is updated everytime in manual action")
+            inv._post()
 
         with freeze_time("2021-04-01"):
             # Automatic invoicing, only one line generated
@@ -1429,9 +1443,14 @@ class TestSubscription(TestSubscriptionCommon):
             self.assertEqual(subscription.order_line.invoice_status, 'no', "The line qty should be black.")
             self.assertEqual(subscription.start_date, datetime.date(2022, 6, 1), 'Start date should be in the future')
             self.assertEqual(subscription.next_invoice_date, datetime.date(2022, 6, 1), 'next_invoice_date should be in the future')
-            subscription._create_recurring_invoice()
+            move_ids = subscription._create_recurring_invoice()
             self.assertEqual(subscription.next_invoice_date, datetime.date(2022, 7, 1),
                              'next_invoice_date should updated')
+
+            with self.assertRaisesRegex(UserError, 'You cannot create another draft invoice. Please cancel it first and try again.'):
+                subscription._create_recurring_invoice()
+
+            move_ids._post()
             subscription._create_recurring_invoice()
             self.assertEqual(subscription.next_invoice_date, datetime.date(2022, 8, 1),
                              'next_invoice_date should updated')

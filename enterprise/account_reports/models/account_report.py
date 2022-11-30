@@ -494,7 +494,7 @@ class AccountReport(models.Model):
             else:
                 options_filter = default_filter
 
-        elif previous_mode == options_mode:
+        elif (previous_mode is None or previous_mode == options_mode) and previous_date:
             # Same date mode.
 
             if previous_filter == 'custom':
@@ -528,11 +528,6 @@ class AccountReport(models.Model):
                 company_fiscalyear_dates = self.env.company.compute_fiscalyear_dates(fields.Date.context_today(self))
                 date_from = company_fiscalyear_dates['date_from']
                 date_to = company_fiscalyear_dates['date_to']
-            elif options_filter == 'custom':
-                custom_date_from = self.filter_date.get('date_from')
-                custom_date_to = self.filter_date.get('date_to')
-                date_to = fields.Date.from_string(custom_date_to or custom_date_from)
-                date_from = fields.Date.from_string(custom_date_from) if custom_date_from else date_utils.get_month(date_to)[0]
 
         options['date'] = self._get_dates_period(
             date_from,
@@ -1978,7 +1973,7 @@ class AccountReport(models.Model):
                 'has_sublines': column_has_sublines,
                 'report_line_id': line.id,
                 'class': 'number' if isinstance(column_value, (int, float)) else '',
-                'is_zero': column_value is None or (figure_type in ('float', 'integer', 'monetary') and self.is_zero(column_value, **formatter_params)),
+                'is_zero': column_value is None or (figure_type in ('float', 'integer', 'monetary') and self.is_zero(column_value, figure_type=figure_type, **formatter_params)),
             }
 
             if info_popup_data:
@@ -3751,6 +3746,9 @@ class AccountReport(models.Model):
         if figure_type == 'monetary':
             currency = currency or self.env.company.currency_id
             digits = None
+        elif figure_type == 'integer':
+            currency = None
+            digits = 0
         elif figure_type in ('date', 'datetime'):
             return format_date(self.env, value)
         else:

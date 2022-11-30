@@ -66,14 +66,19 @@ export class FormEditorCompiler extends formView.Compiler {
         }
 
         let buttonBox = compiled.querySelector("ButtonBox");
-        const buttonHook = createElement("ButtonHook", { add_buttonbox: !buttonBox });
+
+        const buttonHook = createElement(
+            "t",
+            [createElement("ButtonHook", { add_buttonbox: !buttonBox })],
+            { "t-set-slot": `slot_button_hook` }
+        );
+
         if (!buttonBox) {
             buttonBox = createElement("ButtonBox");
-            buttonBox.prepend(createElement("t", { "t-set-slot": `slot` }));
             const el = compiled.querySelector(".o_form_sheet") || compiled;
             el.prepend(buttonBox);
         }
-        buttonBox.querySelector("t[t-set-slot]").prepend(buttonHook);
+        buttonBox.insertAdjacentElement("afterbegin", buttonHook);
 
         const fieldStatus = compiled.querySelector(`Field[type="'statusbar'"]`); // change selector at some point
         if (!fieldStatus) {
@@ -145,13 +150,14 @@ export class FormEditorCompiler extends formView.Compiler {
             if (parentElement && parentElement.tagName === "page") {
                 const xpath = computeXpath(node.parentElement);
                 currentSlot.setAttribute("studioXpath", `"${xpath}"`);
-                if (!node.parentElement.querySelector(":scope > group")) {
-                    const hookProps = {
+                // If the page has an OuterGroup as last child, don't add a page studioHook
+                if (!parentElement.querySelector(":scope > group:last-child > group")) {
+                    const pageHookProps = {
                         position: "'inside'",
                         type: "'page'",
                         xpath: `"${xpath}"`,
                     };
-                    currentSlot.setAttribute("studioHookProps", objectToString(hookProps));
+                    currentSlot.setAttribute("studioHookProps", objectToString(pageHookProps));
                 }
             } else {
                 const xpath = node.getAttribute("studioXpath");

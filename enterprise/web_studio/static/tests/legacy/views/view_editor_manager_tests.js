@@ -1686,7 +1686,7 @@ QUnit.module('ViewEditorManager', {
     });
 
     QUnit.test('correctly display hook in form sheet', async function (assert) {
-        assert.expect(4);
+        assert.expect(11);
 
         var vem = await studioTestUtils.createViewEditorManager({
             model: 'coucou',
@@ -1707,15 +1707,53 @@ QUnit.module('ViewEditorManager', {
                 "</form>",
         });
 
+        const sheetHooksValues = [{
+            xpath: "/form[1]/sheet[1]",
+            position: "inside",
+            type: "insideSheet",
+        }, {
+            xpath: "/form[1]/sheet[1]/group[1]",
+            position: "after",
+            type: "afterGroup",
+        }, {
+            xpath: "/form[1]/sheet[1]/group[2]",
+            position: "after",
+            type: "afterGroup",
+        }];
+
+        target.querySelectorAll(".o_form_sheet > div.o_web_studio_hook").forEach(hook => {
+            const control = sheetHooksValues.shift();
+            assert.deepEqual(control, { ...hook.dataset });
+        });
+
         assert.containsN(vem, '.o_web_studio_form_view_editor .o_form_sheet > div.o_web_studio_hook', 3,
             "there should be three hooks as children of the sheet");
+
+        const innerGroupsHooksValues = [{
+            xpath: "/form[1]/sheet[1]/group[1]/group[1]",
+            position: "inside",
+        }, {
+            xpath: "/form[1]/sheet[1]/group[1]/group[2]",
+            position: "inside",
+        }, {
+            xpath: "/form[1]/sheet[1]/group[2]/group[1]",
+            position: "inside",
+        }, {
+            xpath: "/form[1]/sheet[1]/group[2]/group[2]",
+            position: "inside",
+        }];
+
+        target.querySelectorAll(".o_form_sheet .o_inner_group > div.o_web_studio_hook").forEach(hook => {
+            const control = innerGroupsHooksValues.shift();
+            assert.deepEqual(control, { ...hook.dataset });
+        });
+
         assert.hasClass(vem.$('.o_web_studio_form_view_editor .o_form_sheet > div:eq(1)'),'o_web_studio_hook',
             "second div should be a hook");
         assert.hasClass(vem.$('.o_web_studio_form_view_editor .o_form_sheet > div:eq(3)'),'o_web_studio_hook',
             "fourth div should be a hook");
         assert.hasClass(vem.$('.o_web_studio_form_view_editor .o_form_sheet > div:eq(5)'),'o_web_studio_hook',
             "last div should be a hook");
-
     });
 
     QUnit.test('correctly display hook below group title', async function (assert) {
@@ -1830,6 +1868,60 @@ QUnit.module('ViewEditorManager', {
             'When the page contains multiple groups with content and an empty group, last child is still a studio hook.'
         );
 
+    });
+
+    QUnit.test("notebook page hooks", async (assert) => {
+        await studioTestUtils.createViewEditorManager({
+            model: 'coucou',
+            arch: `<form>
+                    <sheet>
+                        <notebook>
+                            <page string="field"><field name="display_name" /></page>
+                            <page string="outer">
+                                <group><group></group></group>
+                            </page>
+                            <page string='foo'>
+                                <group>
+                                    <field name='m2o'/>
+                                </group>
+                                <group>
+                                    <field name='id'/>
+                                </group>
+                                <group></group>
+                            </page>
+                        </notebook>
+                    </sheet>
+                </form>`,
+        });
+
+        assert.containsOnce(target, ".o_notebook .tab-pane.active > .o_web_studio_hook");
+        assert.deepEqual({
+            ...target.querySelector(".o_notebook .tab-pane.active > .o_web_studio_hook").dataset
+        }, {
+            "position": "inside",
+            "type": "page",
+            "xpath": "/form[1]/sheet[1]/notebook[1]/page[1]"
+        });
+
+        await click(target.querySelectorAll(".o_notebook .nav-item a")[1]);
+        assert.containsOnce(target, ".o_notebook .tab-pane.active > .o_web_studio_hook");
+        assert.deepEqual({
+            ...target.querySelector(".o_notebook .tab-pane.active > .o_web_studio_hook").dataset
+        }, {
+            "position": "after",
+            "type": "afterGroup",
+            "xpath": "/form[1]/sheet[1]/notebook[1]/page[2]/group[1]"
+        });
+
+        await click(target.querySelectorAll(".o_notebook .nav-item a")[2]);
+        assert.containsOnce(target, ".o_notebook .tab-pane.active > .o_web_studio_hook");
+        assert.deepEqual({
+            ...target.querySelector(".o_notebook .tab-pane.active > .o_web_studio_hook").dataset
+        }, {
+            "position": "inside",
+            "type": "page",
+            "xpath": "/form[1]/sheet[1]/notebook[1]/page[3]"
+        });
     });
 
     QUnit.test('notebook edition', async function (assert) {
@@ -5049,6 +5141,33 @@ QUnit.module('ViewEditorManager', {
 
     });
 
+    QUnit.test('new button in buttonbox with first element invisible', async function (assert) {
+        serverData.models["coucou"].records[0] = {
+            display_name: "someName",
+            id: 99,
+        };
+
+        const arch = `
+            <form>
+                <sheet>
+                    <div class="oe_button_box" name="button_box">
+                        <button name="someName" class="someClass" type="object"
+                            modifiers="{&quot;invisible&quot;: [[&quot;display_name&quot;, &quot;=&quot;, &quot;someName&quot;]]}" />
+                    </div>
+                    <field name='display_name'/>
+                </sheet>
+            </form>`;
+        await studioTestUtils.createViewEditorManager({
+            model: 'coucou',
+            arch: arch,
+            res_id: 99,
+            serverData,
+        });
+
+        assert.containsOnce(target, ".oe_button_box .o_web_studio_button_hook");
+        assert.containsNone(target, "button.someClass");
+    });
+
     QUnit.test('element removal', async function (assert) {
         assert.expect(10);
 
@@ -6044,6 +6163,79 @@ QUnit.module('ViewEditorManager', {
         assert.containsOnce(target, '.o_web_studio_sidebar .o_web_studio_parameters',
             "there should be button to edit the field properties");
         await testUtils.dom.click($(target).find('.o_web_studio_sidebar .o_web_studio_parameters'));
+    });
+
+    QUnit.test('edit one2many list view with widget fieldDependencies and some records', async function (assert) {
+        serverData.models.product.fields.is_dep = { type: "char", string: "Dependency from fields_get" };
+        serverData.models.coucou.records[0] = {
+            id: 1,
+            display_name: "coucou1",
+            product_ids: [1],
+        }
+        serverData.models.product.records[0] = {
+            id: 1,
+            is_dep: "the meters",
+            display_name: "people say",
+        };
+
+        const CharField = registry.category("fields").get("char");
+        class CharWithDependencies extends CharField {
+            setup() {
+                super.setup();
+                const record = this.props.record;
+                owl.onMounted(() => {
+                    assert.step(`widget Dependency: ${JSON.stringify(record.fields.is_dep)} : ${record.data.is_dep}`)
+                })
+            }
+        }
+        CharWithDependencies.fieldDependencies = {
+            is_dep: { type: "char"},
+        }
+        registry.category("fields").add("list.withDependencies", CharWithDependencies);
+
+        const LegacyFieldChar = fieldRegistry.get('char');
+        fieldRegistry.add('withDependencies', LegacyFieldChar.extend({
+            description: "Test Widget",
+        }));
+
+        const action = serverData.actions["studio.coucou_action"];
+        action.res_id = 1;
+        action.views = [[1, "form"]];
+        action.res_model = "coucou";
+        serverData.views["coucou,1,form"] = /*xml */`<form>
+            <sheet>
+                <field name='display_name'/>
+                <field name='product_ids'>
+                    <tree><field name='display_name' widget="withDependencies"/></tree>
+                </field>
+            </sheet>
+        </form>`;
+        const mockRPC = (route, args) => {
+            if (args.method === "fields_get") {
+                assert.step("fields_get");
+            }
+        }
+        const webClient = await createEnterpriseWebClient({ serverData, mockRPC, legacyParams: {withLegacyMockServer: true}});
+        await doAction(webClient, "studio.coucou_action");
+        assert.verifySteps([
+            `widget Dependency: {"type":"char"} : the meters`,
+        ])
+        await openStudio(target);
+        assert.verifySteps([
+            `widget Dependency: {"type":"char"} : the meters`,
+        ])
+
+        assert.containsOnce(target, ".o_web_studio_form_view_editor");
+        await click(target.querySelector(".o_field_one2many"));
+        await click(target.querySelector(".o_field_one2many .o_web_studio_editX2Many"));
+        await legacyExtraNextTick();
+        assert.verifySteps([
+            "fields_get",
+            `widget Dependency: {"type":"char","string":"Dependency from fields_get"} : the meters`,
+        ])
+        assert.containsOnce(target, ".o_web_studio_list_view_editor");
+
+        delete fieldRegistry.map.withDependencies;
     });
 
     QUnit.test('edit one2many list view with tree_view_ref context key', async function (assert) {
