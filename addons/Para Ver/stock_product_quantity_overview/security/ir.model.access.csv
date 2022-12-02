@@ -1,2 +1,0 @@
-id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
-access_stock_product_quantity_overview_user,stock.product.quantity.overview.user,model_stock_product_quantity_overview,stock.group_stock_user,1,1,1,1
