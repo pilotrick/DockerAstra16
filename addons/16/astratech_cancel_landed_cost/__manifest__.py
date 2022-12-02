@@ -9,7 +9,7 @@
 
         """,
     'website': 'https://astratech.com.do',
-    'author': 'Astra Tech SRL',
+    'author': 'Astratech',
     'depends': ['base','stock_landed_costs'],
     'data': [
              'views/astratech_inherit_landed_cost.xml',

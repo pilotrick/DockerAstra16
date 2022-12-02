@@ -12,7 +12,7 @@
 """,
     'price': 000,
     'currency': 'USD',
-    'author': 'Astra Tech SRL',
+    'author': 'Astratech',
     'website': 'https://astratech.com.do',
     'depends': ['stock_landed_costs', 'landed_cost_vo'],
     'data': [

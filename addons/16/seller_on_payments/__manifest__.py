@@ -20,7 +20,7 @@
     'summary': """Campo vendedor en form pagos de clientes""",
     'version': '15.0.1.0.',
     'description': """Campo vendedor en form pagos de clientes y vista de lista""",
-    'author': 'Soluciones Abacus',
+    'author': 'Astratech',
     'maintainer': '',
     'website': 'https://www.solucionesabacus.com',
     'category': 'account',

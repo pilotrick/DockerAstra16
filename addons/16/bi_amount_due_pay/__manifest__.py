@@ -16,7 +16,7 @@
         Amount Due and Amount Pay Details on Customer's Tree View in odoo,
    
     """,
-    'author': 'BrowseInfo',
+    'author': 'Astratech',
     'website': 'https://www.browseinfo.in',
     'depends': ['base', 'account', 'mail'],
     'data': [
