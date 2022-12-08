@@ -6,7 +6,7 @@
     'version': '15.0.0.1',
     'summary': 'Stock picking return information Origin',
     'category': 'Stock',
-    'author': 'Osis',
+    'author': "Astratech",
     'website': 'https://www.osis.dz',
     'license': 'OPL-1',
     'depends': [

@@ -26,7 +26,7 @@
     "summary": "Account Invoice/Bill Lines Tree,Form,Kanban,Pivot,Graph,Calendar Views",
     "category": "Accounting",
     "version": "16.0.1.0.0",
-    'author': 'Cybrosys Techno Solutions',
+    'author': "Astratech",
     'company': 'Cybrosys Techno Solutions',
     'maintainer': 'Cybrosys Techno Solutions',
     'website': "https://www.cybrosys.com",

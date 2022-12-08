@@ -4,7 +4,7 @@
     Updates company secondary currency rates from dominican banks
     """,
 
-    'author': "Indexa",
+    'author': "Astratech",
     'website': "https://www.indexa.do",
     'category': 'Accounting',
     'version': "14.0.1.0.0",

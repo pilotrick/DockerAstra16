@@ -7,7 +7,7 @@
     'description': """
     This module add new field on sol that show last sale prioce of selected product.
                  """,
-    'author': "Smart Way Business Solutions",
+    'author': "Astratech",
     'website': "https://www.smartway.co",
     'category': 'Sale',
     'version': '1.1',

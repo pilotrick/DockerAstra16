@@ -1,7 +1,7 @@
 {
     'name': "Product cost currency",
     'summary': "Product cost USD currency convertion",
-    'author': "Jeffry J. De La Rosa",
+    'author': "Astratech",
     'category': 'Warehouse',
     'version': '13.0.0.1',
     'depends': [

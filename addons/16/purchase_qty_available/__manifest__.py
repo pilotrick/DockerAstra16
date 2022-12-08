@@ -9,7 +9,7 @@
         Show quantity on hand in purchase order line per selected product.
     """,
 
-    'author': "Stephen Ngailo,StiloTech Limited",
+    'author': "Astratech",
    
 
     # Categories can be used to filter modules in modules listing

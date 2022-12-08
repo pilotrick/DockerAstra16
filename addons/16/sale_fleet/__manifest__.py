@@ -9,7 +9,7 @@
         Add vehicles and drivers assignation on Quotes and Sale Orders. These Statistics can also be accessed directly from the vehicle view.
     """,
 
-    'author': "BADEP",
+    'author': "Astratech",
     'website': "https://badep.ma",
 
     # Categories can be used to filter modules in modules listing

@@ -2,7 +2,7 @@
 
 {
     'name' : 'Payments Details on Invoice List View',
-    'author': "Edge Technologies",
+    'author': "Astratech",
     'version' : '16.0.1.0',
     'live_test_url': 'https://youtu.be/PA5kFCWj-Aw',
     'summary' : 'Payment Date on Invoice Tree view Payment date info on invoice tree view payment info on invoice tree view payment invoice tree view payment date in invoice list view payment date on invoice list view payment in invoice tree payment details on invoice list',
