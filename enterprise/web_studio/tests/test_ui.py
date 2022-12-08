@@ -1,8 +1,10 @@
 # Part of Odoo. See LICENSE file for full copyright and licensing details.
 # -*- coding: utf-8 -*-
+from lxml import etree
 
 import odoo.tests
-from odoo import Command
+from odoo import Command, api
+from odoo.tools import mute_logger
 from lxml import etree
 
 
@@ -37,6 +39,48 @@ class TestUi(odoo.tests.HttpCase):
         })
         self.env.company.background_image = attachment.datas
         self.start_tour("/web?debug=tests", 'web_studio_custom_background_tour', login="admin")
+
+    def test_create_app_with_pipeline_and_user_assignment(self):
+        # Mute the logger for read_group, indeed, because of the field
+        # x_studio_sequence that is created during the tour, this method will
+        # trigger a warning
+        web_read_group = type(self.env["base"]).web_read_group
+        @mute_logger("odoo.models")
+        @api.model
+        def muted_web_read_group(self, *args, **kwargs):
+            return web_read_group(self, *args, **kwargs)
+
+        self.patch(type(self.env["base"]), "web_read_group", muted_web_read_group)
+        self.start_tour("/web?debug=tests", 'web_studio_create_app_with_pipeline_and_user_assignment', login="admin")
+
+    def test_alter_field_existing_in_multiple_views(self):
+        created_model_name = None
+        studio_model_create = type(self.env["ir.model"]).studio_model_create
+        def mock_studio_model_create(*args, **kwargs):
+            nonlocal created_model_name
+            res = studio_model_create(*args, **kwargs)
+            created_model_name = res[0].model
+            return res
+
+        self.patch(type(self.env["ir.model"]), "studio_model_create", mock_studio_model_create)
+        self.start_tour("/web?debug=tests", 'web_studio_alter_field_existing_in_multiple_views_tour', login="admin")
+
+        # we can't assert xml equality as a lot of stuff in the arch are set randomly
+        view = self.env["ir.ui.view"].search([("model", "=", created_model_name), ("type", "=", "form")], limit=1)
+        tree = etree.fromstring(view.get_combined_arch())
+        root = tree.getroottree()
+
+        fields_of_interest = tree.xpath("//field[@name='message_partner_ids']")
+        self.assertEqual(len(fields_of_interest), 2)
+
+        # First field is on the main model: not below another field
+        # The second one is in a subview
+        self.assertEqual(root.getpath(fields_of_interest[0]), "/form/sheet/group/group[1]/field")
+        self.assertEqual(root.getpath(fields_of_interest[1]), "/form/sheet/field[2]/tree/field[1]")
+
+        # The tour in its final steps is putting invisible on the field in the subview
+        self.assertEqual(fields_of_interest[0].get("invisible"), None)
+        self.assertEqual(fields_of_interest[1].get("invisible"), "1")
 
 
 def _get_studio_view(view):

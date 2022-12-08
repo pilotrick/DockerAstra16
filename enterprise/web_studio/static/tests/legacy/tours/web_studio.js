@@ -1023,4 +1023,124 @@ tour.register('web_studio_custom_background_tour', {
     run: () => null,
 }]);
 
+tour.register("web_studio_create_app_with_pipeline_and_user_assignment", {
+    test: true,
+}, [{
+    // open studio
+    trigger: '.o_main_navbar .o_web_studio_navbar_item',
+}, {
+    trigger: '.o_web_studio_new_app',
+}, {
+    // the next steps are here to create a new app
+    trigger: '.o_web_studio_app_creator_next',
+}, {
+    trigger: '.o_web_studio_app_creator_name > input',
+    run: 'text ' + (createdAppString = randomString(6)),
+}, {
+    trigger: '.o_web_studio_app_creator_next.is_ready',
+}, {
+    trigger: '.o_web_studio_app_creator_menu > input',
+    run: 'text ' + (createdMenuString = randomString(6)),
+}, {
+    trigger: '.o_web_studio_app_creator_next.is_ready',
+}, {
+    trigger: "input#use_stages"
+}, {
+    trigger: "input#use_responsible"
+}, {
+    trigger: '.o_web_studio_model_configurator_next',
+}, {
+    trigger: ".o_web_studio_editor .o_menu_sections a:contains(Views)"
+}, {
+    trigger: ".o_web_studio_view_type[data-type='kanban'] .o_web_studio_thumbnail"
+}, {
+    extra_trigger: ".o_web_studio_kanban_view_editor",
+    trigger: "img.oe_kanban_avatar",
+    run() {
+        const avatarImg = document.querySelector("img.oe_kanban_avatar");
+        if (!avatarImg.getAttribute("title") === "Unassigned") {
+            throw new Error("The title of the new avatar should be set, even if there are no record");
+        }
+    }
+}]);
+
+tour.register('web_studio_alter_field_existing_in_multiple_views_tour', {
+    test: true,
+}, [{
+    // open studio
+    trigger: '.o_main_navbar .o_web_studio_navbar_item a',
+}, {
+    trigger: '.o_web_studio_new_app',
+}, {
+    // the next steps are here to create a new app
+    trigger: '.o_web_studio_app_creator_next',
+}, {
+    trigger: '.o_web_studio_app_creator_name > input',
+    run: 'text ' + (createdAppString = randomString(6)),
+}, {
+    trigger: '.o_web_studio_app_creator_next.is_ready',
+}, {
+    trigger: '.o_web_studio_app_creator_menu > input',
+    run: `text ${createdAppString}`,
+}, {
+    trigger: '.o_web_studio_app_creator_next.is_ready',
+}, {
+    trigger: '.o_web_studio_model_configurator_next',
+}, {
+    extra_trigger: '.o_web_studio_sidebar',
+    // unfold 'Existing Fieldqs' section
+    trigger: '.o_web_studio_existing_fields_header',
+    timeout: 60000,
+},{
+    // add an existing field (the one we created)
+    trigger: '.o_web_studio_sidebar .o_web_studio_field_type_container:eq(2) .o_web_studio_field_many2many[title="Followers (Partners)"]',
+    run: 'drag_and_drop .o_inner_group:first .o_web_studio_hook:first',
+}, {
+    trigger: '.o_web_studio_new ',
+}, {
+    trigger: '.o_web_studio_sidebar .o_web_studio_field_type_container:eq(1) .o_web_studio_field_many2many',
+    run: 'drag_and_drop div.o_web_studio_hook:last',
+}, {
+    extra_trigger: '.modal-body',
+    trigger: '.o_field_many2one[name="model"] input',
+    run: `text ${createdAppString}`,
+}, {
+    // select the first model
+    trigger: '.ui-autocomplete > .ui-menu-item:first > a',
+    in_modal: false,
+}, {
+    trigger: 'button:contains(Confirm)',
+}, {
+    // edit list view
+    trigger: '.o_web_studio_editX2Many',
+}, {
+    // wait for list view to be loaded
+    extra_trigger: '.o_web_studio_list_view_editor',
+    // go to view
+    trigger: '.o_web_studio_view ',
+}, {
+    // show invisible elements
+    trigger: 'label[for="show_invisible"]',
+}, {
+    trigger: '.o_web_studio_new ',
+}, {
+    // unfold 'Existing Fieldqs' section
+    trigger: '.o_web_studio_existing_fields_header',
+},{
+    // add an existing field (the one we created)
+    trigger: '.o_web_studio_sidebar .o_web_studio_field_type_container:eq(1) .o_web_studio_field_many2many[title="Followers (Partners)"]',
+    run: 'drag_and_drop .o_web_studio_list_view_editor th.o_web_studio_hook:first',
+}, {
+    // select field
+    trigger: "th[data-name='message_partner_ids']",
+    run: "click",
+}, {
+    // make it invisible
+    trigger: "#invisible",
+    run: "click",
+}, {
+    extra_trigger: ".o_web_studio_snackbar_icon.show.fa.fa-check",
+    // check if the invisible option is checked
+    trigger: "#invisible:checked",
+}]);
 });
