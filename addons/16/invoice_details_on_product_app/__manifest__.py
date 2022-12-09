@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 {
 	'name': "Invoice Details on Product",
-	"author": "Edge Technologies",
+	'author': "Astratech",
 	'version': "16.0.1.0",
     'live_test_url': "https://youtu.be/zKxHNKuaIUg",
     "images":['static/description/main_screenshot.png'],

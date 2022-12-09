@@ -87,7 +87,7 @@ Email notifications to Department Manager, Requisition Manager for approval.
 
 
     """,
-    'author': 'Probuse Consulting Service Pvt. Ltd.',
+    'author': "Astratech",
     'website': 'http://www.probuse.com',
     'support': 'contact@probuse.com',
     'images': ['static/description/img1.jpeg'],

@@ -6,7 +6,7 @@
     "version": "16.0.1.0.0",
     "category": "Warehouse Management",
     "website": "https://github.com/OCA/stock-logistics-workflow",
-    "author": "Agile Business Group, Odoo Community Association (OCA)",
+    'author': "Astratech",
     "license": "AGPL-3",
     "application": False,
     "installable": True,
