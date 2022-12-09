@@ -12,8 +12,8 @@
 				<field name="is_sale_approval" invisible="1" />
 				<field name="is_sale_confirm" invisible="1" />
 			</field>
-			<!-- <xpath expr="//header/button[@name='action_confirm'][last()]" position="replace"> 
-				</xpath> -->
+			<xpath expr="//header/button[@name='action_confirm'][last()]" position="replace"> 
+				</xpath>
 			<xpath expr="//button[@name='action_quotation_send']" position="after">
 				<button name="action_confirm" string="Confirm" class="btn-primary"
 					type="object"
@@ -34,12 +34,12 @@
 					type="object" groups="eqerp_ricardo_sale_approval.grp_sale_approval"
 					attrs="{'invisible': ['|',('state', 'not in', ['draft','sent','waiting_sale_approval']),('is_minimum_sale_margin','=',False)]}" />
 			</button>
-			<!-- <button name="action_quotation_send" position="attributes"> -->
-			<!-- <attribute name="invisible">1</attribute> -->
-			<!-- </button> -->
-			<button name="preview_sale_order" position="attributes">
-				<attribute name="invisible">1</attribute>
+			<button name="action_quotation_send" position="attributes">
+			<attribute name="invisible">1</attribute>
 			</button>
+			<!-- <button name="preview_sale_order" position="attributes">
+				<attribute name="invisible">1</attribute>
+			</button> -->
 			<xpath expr="//button[@name='action_quotation_send'][@states='draft']"
 				position="attributes">
 				<attribute name='states'>draft,sale_approval</attribute>
