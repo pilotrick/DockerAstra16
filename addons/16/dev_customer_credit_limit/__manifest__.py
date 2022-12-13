@@ -19,7 +19,7 @@ odoo Apps will check the Customer Credit Limit on Sale order and notify to the s
  
     """,
     'summary': 'odoo Apps will check the Customer Credit Limit on Sale order and notify to the sales manager',
-    'author': "Astratech",
+    'author': 'Devintelle Consulting Service Pvt.Ltd',
     'website': 'http://www.devintellecs.com',
     'images': ['images/main_screenshot.png'],
     'depends': ['sale_management', 'account'],
