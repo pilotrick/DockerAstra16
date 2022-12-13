@@ -230,6 +230,8 @@ class AccountAsset(models.Model):
     @api.depends('prorata_date', 'prorata_computation_type', 'asset_paused_days')
     def _compute_paused_prorata_date(self):
         for asset in self:
+            if not asset.prorata_date:
+                raise UserError(_('Prorata Date can not be empty'))
             if asset.prorata_computation_type == 'daily_computation':
                 asset.paused_prorata_date = asset.prorata_date + relativedelta(days=asset.asset_paused_days)
             else:
@@ -1007,7 +1009,7 @@ class AccountAsset(models.Model):
                 'name': asset.name,
                 'account_id': account.id,
                 'balance': -amount,
-                'analytic_distribution': analytic_distribution if asset.asset_type == 'sale' else {},
+                'analytic_distribution': analytic_distribution,
                 'currency_id': asset.currency_id.id,
                 'amount_currency': -asset.company_id.currency_id._convert(
                     from_amount=amount,
