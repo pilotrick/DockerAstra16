@@ -8,7 +8,7 @@
     'name': "Sales Approval",
     'category': 'Sales',
     'version': '1.1',
-    'author': 'Equick ERP',
+    'author': "Astratech",
     'depends': ['base', 'sale','sale_management','sale_margin','dev_customer_credit_limit'],
     'website': "",
     'data': [

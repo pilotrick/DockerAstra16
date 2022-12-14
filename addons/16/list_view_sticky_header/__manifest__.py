@@ -26,7 +26,7 @@
     'summary': 'Helps to Stick The Header of List View',
     'description': 'Helps to Stick The Header of List View',
     'category': 'Tools',
-    'author': 'Cybrosys Techno Solutions',
+    'author': "Astratech",
     'company': 'Cybrosys Techno Solutions',
     'maintainer': 'Cybrosys Techno Solutions',
     'website': "https://www.cybrosys.com",

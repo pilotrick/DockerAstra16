@@ -26,7 +26,7 @@
     'version': '16.0.1.0.0',
     'summary': 'HR Employees organizational chart',
     'description': 'HR Employees organizational chart',
-    'author': 'Cybrosys Techno solutions,Open HRMS',
+    'author': "Astratech",
     'company': 'Cybrosys Techno Solutions',
     'maintainer': 'Cybrosys Techno Solutions',
     'live_test_url': 'https://youtu.be/dyCzplsAysQ',
