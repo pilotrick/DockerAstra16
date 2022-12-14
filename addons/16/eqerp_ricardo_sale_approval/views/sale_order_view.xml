@@ -18,8 +18,9 @@
 				<button name="action_confirm" string="Confirm" class="btn-primary"
 					type="object"
 					attrs="{'invisible': [
-                                ('state', 'not in', ['sent','sale_approval','credit_limit'])
-                               
+                                '|',('state', 'not in', ['draft','sent','sale_approval','credit_limit']),
+                                ('is_minimum_sale_margin','=',True)
+                                
                             ]}" />
 				<button name="action_sale_ok" string="Confirm" class="btn-primary"
 					type="object"
@@ -31,7 +32,7 @@
 			<button name="action_confirm" position="before">
 				<button name="action_approve_sale" string="Sale Approval"
 					type="object" groups="eqerp_ricardo_sale_approval.grp_sale_approval"
-					attrs="{'invisible': ['|',('state', 'not in', ['draft','sent','waiting_sale_approval','credit_limit']),('is_minimum_sale_margin','=',False)]}" />
+					attrs="{'invisible': ['|',('state', 'not in', ['draft','sent','waiting_sale_approval']),('is_minimum_sale_margin','=',False)]}" />
 			</button>
 			<button name="action_quotation_send" position="attributes">
 			<attribute name="invisible">1</attribute>
