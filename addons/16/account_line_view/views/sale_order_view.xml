@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="sale_order_view_tree" model="ir.ui.view">
+        <field name="name">sale_order.view.tree</field>
+        <field name="model">sale.order</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name"/>
+                <field name="partner_id"/>
+                <field name="product"/>
+                <field name="state" optional="show"/>
+                <field name="price_unit" optional="show"/>
+                <field name="subtotal" optional="show"/>
+                <field name="amount_total"/>
+                <field name="date_order"/>
+                <field name="validity_date" optional='show'/>
+            </tree>
+        </field>
+    </record>
+    
+    <record id="sale_order_view_form" model="ir.ui.view">
+        <field name="name">sale.order.view.form</field>
+        <field name="model">sale.order</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="name" readonly="1"/>
+                            <field name="partner_id" readonly="1"/>
+                            <field name="company_id" invisible="1"/>
+                        </group>
+                        <group string="Producto">
+                            <field name="product"/>
+                            <field name="categ_product"/>
+                            <field name="user_id" readonly="1"/>
+                            <field name="origin" readonly="1"/>
+                        </group>
+                        <group string="Fechas">
+                            <field name="date_order" readonly="1"/>
+                            <field name="validity_date" readonly="1"/>
+                        </group>
+                        <group string="Moneda">
+                            <field name="price_unit"/>
+                            <field name="cost"/>
+                            <field name="subtotal"/>
+                            <field name="amount_total"/>
+                            <field name="margin"/>
+                            <field name="margin_percentage"/>
+                            <field name="qty_delivery"/>
+                            <field name="qty_invoiced"/>
+                        </group>
+                        <group string="Estados">
+                            <field name="state" widget="badge"/>
+                        </group>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_sale_order_view" model="ir.actions.act_window">
+        <field name="name">Reporte de venta</field>
+        <field name="res_model">sale.order</field>
+        <field name="view_mode">tree,form</field>
+        <field name="view_ids" eval="[(5, 0, 0),
+                (0, 0, {'view_mode': 'tree', 'view_id': ref('sale_order_view_tree')}),
+                (0, 0, {'view_mode': 'form', 'view_id': ref('sale_order_view_form')}),
+                ]"/>
+    </record>
+
+    <menuitem id="menu_sale_order_view" name="Reporte de venta" sequence="300"
+              parent="sale.report_sales_team"
+              action="action_sale_order_view">
+    </menuitem>
+
+</odoo>
