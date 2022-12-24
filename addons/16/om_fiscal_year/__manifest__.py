@@ -10,7 +10,7 @@
     'live_test_url': 'https://www.youtube.com/watch?v=Kj4hR7_uNs4',
     'sequence': '1',
     'website': 'https://www.odoomates.tech',
-    'author': 'Odoo Mates, Odoo SA',
+    "author": "Astratech",
     'maintainer': 'Odoo Mates',
     'license': 'LGPL-3',
     'support': 'odoomates@gmail.com',

@@ -25,7 +25,7 @@
     'name': "Purchase Order Line View",
     'version': '1.0.1',
     'summary': """Purchase View""",
-    'author': 'Laxicon Solution.',
+    "author": "Astratech",
     'website': 'http://laxicon.in/',
     "license":  "LGPL-3",
     'category': 'purchase',
