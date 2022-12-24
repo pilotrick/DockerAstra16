@@ -88,8 +88,8 @@ class SaleOrder(models.Model):
                                                string='Recurrence', ondelete='restrict', readonly=False, store=True)
     is_batch = fields.Boolean(string='Is a Batch', default=False, copy=False)
     is_invoice_cron = fields.Boolean(string='Is a Subscription invoiced in cron', default=False, copy=False)
-    subscription_id = fields.Many2one('sale.order', string='Parent Contract', ondelete='restrict', copy=True)
-    origin_order_id = fields.Many2one('sale.order', string='First contract', ondelete='restrict', store=True, copy=True, compute='_compute_origin_order_id')
+    subscription_id = fields.Many2one('sale.order', string='Parent Contract', ondelete='restrict', copy=False)
+    origin_order_id = fields.Many2one('sale.order', string='First contract', ondelete='restrict', store=True, copy=False, compute='_compute_origin_order_id')
     subscription_child_ids = fields.One2many('sale.order', 'subscription_id')
     history_count = fields.Integer(compute='_compute_history_count')
     payment_exception = fields.Boolean("Contract in exception",
@@ -518,6 +518,9 @@ class SaleOrder(models.Model):
         subscriptions_to_confirm = self.env['sale.order']
         subscriptions_to_cancel = self.env['sale.order']
         for subscription in subscriptions:
+            if not subscription.subscription_management:
+                # vals.get('subscription_management', 'create') of {'subscription_management': False} returns False
+                subscription.subscription_management = vals.get('subscription_management') or 'create'
             diff_partner = subscription.partner_id.id != old_partners[subscription.id]
             diff_in_progress = (subscription.stage_category == "progress") != old_in_progress[subscription.id]
             if diff_partner or diff_in_progress:
@@ -1072,6 +1075,30 @@ class SaleOrder(models.Model):
         subscription_values.update(self._update_subscription_payment_failure_values())
         self.write(subscription_values)
 
+    def _invoice_is_considered_free(self, invoiceable_lines):
+        """
+        In some case, we want to skip the invoice generation for subscription.
+        By default, we only consider it free if the amount is 0, but we could use other criterion
+        :return: bool: true if the contract is free
+        :return: bool: true if the contract should be in exception
+        """
+        self.ensure_one()
+        amount_total = sum(invoiceable_lines.mapped('price_total'))
+        non_recurring_line = invoiceable_lines.filtered(lambda l: l.temporal_type != 'subscription')
+        is_free, is_exception = False, False
+        if self.currency_id.compare_amounts(self.recurring_monthly, 0) < 0 and non_recurring_line:
+            # We have a mix of recurring lines whose sum is negative and non recurring lines to invoice
+            # We don't know what to do
+            is_free = True
+            is_exception = True
+        elif self.currency_id.compare_amounts(amount_total, 0) < 1:
+            # We can't create an invoice, it will be impossible to validate
+            is_free = True
+        elif self.currency_id.compare_amounts(self.recurring_monthly, 0) < 1 and not non_recurring_line:
+            # We have a recurring null/negative amount. It is not desired even if we have a non-recurring positive amount
+            is_free = True
+        return is_free, is_exception
+
     @api.model
     def _get_automatic_subscription_values(self):
         return {'to_renew': True}
@@ -1123,8 +1150,6 @@ class SaleOrder(models.Model):
         all_invoiceable_lines._reset_subscription_qty_to_invoice()
         if auto_commit:
             self.env.cr.commit()
-        if not automatic and 'draft' in set(all_subscriptions.order_line.invoice_lines.move_id.mapped('state')):
-            raise UserError('You cannot create another draft invoice. Please cancel it first and try again.')
         for subscription in all_subscriptions:
             # We only invoice contract in sale state. Locked contracts are invoiced in advance. They are frozen.
             if not (subscription.state == 'sale' and subscription.stage_category == 'progress'):
@@ -1139,13 +1164,32 @@ class SaleOrder(models.Model):
                     continue
                 if auto_commit:
                     self.env.cr.commit() # To avoid a rollback in case something is wrong, we create the invoices one by one
+                draft_invoices = subscription.invoice_ids.filtered(lambda am: am.state == 'draft')
+                if not subscription.payment_token_id and draft_invoices:
+                    if not automatic:
+                        raise UserError(_("There is already a draft invoice for subscription %s.", subscription.name))
+                    # Skip subscription if no payment_token, and it has a draft invoice
+                    continue
+                if subscription.payment_token_id:
+                    draft_invoices.button_cancel()
                 invoiceable_lines = all_invoiceable_lines.filtered(lambda l: l.order_id.id == subscription.id)
-                invoice_is_free = float_is_zero(sum(invoiceable_lines.mapped('price_subtotal')), precision_rounding=subscription.currency_id.rounding)
+                invoice_is_free, is_exception = subscription._invoice_is_considered_free(invoiceable_lines)
                 if not invoiceable_lines or invoice_is_free:
+                    if is_exception and automatic:
+                        # Mix between recurring and non-recurring lines. We let the contract in exception, it should be
+                        # handled manually
+                        msg_body = _(
+                            "Mix of negative recurring lines and non-recurring line. The contract should be fixed manually",
+                            inv=self.next_invoice_date
+                        )
+                        subscription.message_post(body=msg_body)
+                        subscription.payment_exception = True
                     # We still update the next_invoice_date if it is due
-                    if not automatic or subscription.next_invoice_date < today:
+                    elif not automatic or subscription.next_invoice_date <= today:
                         subscription._update_next_invoice_date()
                         if invoice_is_free:
+                            for line in invoiceable_lines:
+                                line.qty_invoiced = line.product_uom_qty
                             subscription._subscription_post_success_free_renewal()
                     if auto_commit:
                         self.env.cr.commit()
@@ -1156,7 +1200,7 @@ class SaleOrder(models.Model):
                 except Exception as e:
                     if auto_commit:
                         self.env.cr.rollback()
-                    elif isinstance(e, TransactionRollbackError):
+                    elif isinstance(e, TransactionRollbackError) or not automatic:
                         # the transaction is broken we should raise the exception
                         raise
                     # we suppose that the payment is run only once a day
@@ -1206,19 +1250,17 @@ class SaleOrder(models.Model):
 
     def _create_invoices(self, grouped=False, final=False, date=None):
         """ Override to increment periods when needed """
-        invoices = super()._create_invoices(grouped=grouped, final=final, date=date)
-        # update next_invoice_date if token
-        # When a token is present the update is done in reconcile_pending_transaction for automatic invoice
-        # we want to update the date if we are not automatic as there is no reconciliation callback
-        order_to_update = self.env['sale.order']
-        manual = not self.env.context.get('recurring_automatic', False)
+        order_already_invoiced = self.env['sale.order']
         for order in self:
-            if order.is_subscription and order.state == 'sale' and \
-                    (not order.payment_token_id or manual or self.env.context.get('subscription_force_next_invoice_date')):
-                order_to_update |= order
-
-        order_to_update._update_next_invoice_date()
-        order_to_update.order_line._reset_subscription_qty_to_invoice()
+            if not order.is_subscription:
+                continue
+            if order.order_line.invoice_lines.move_id.filtered(lambda r: r.move_type in ('out_invoice', 'out_refund') and r.state == 'draft'):
+                order_already_invoiced |= order
+        if order_already_invoiced:
+            order_error = ", ".join(order_already_invoiced.mapped('name'))
+            raise ValidationError(_("The following recurring orders have draft invoices. Please Confirm them or cancel them"
+                                    "before creating new invoices. %s.", order_error))
+        invoices = super()._create_invoices(grouped=grouped, final=final, date=date)
         return invoices
 
     def _subscription_auto_close_and_renew(self):
@@ -1337,7 +1379,7 @@ class SaleOrder(models.Model):
         if any(self.mapped('is_subscription')):
             error_message += _(
                 "\n- You should wait for the current subscription period to pass. New quantities to invoice will be ready "
-                "at the end of the current period."
+                "at the end of the current period. \n  Negative recurring lines are considered free."
             )
         return error_message
 
@@ -1427,15 +1469,15 @@ class SaleOrder(models.Model):
 
     def _reconcile_and_assign_token(self, tx):
         """ Callback method to make the reconciliation and assign the payment token.
+            This method is always used in non-automatic mode, all the recurring lines should be invoiced
         :param recordset tx: The transaction that created the token, and that must be reconciled,
                              as a `payment.transaction` record
         :return: Whether the conditions were met to execute the callback
         """
         self.ensure_one()
-
         if tx.renewal_allowed:
             self._assign_token(tx)
-            self._reconcile_and_send_mail(tx)
+            self.with_context(recurring_automatic=False)._reconcile_and_send_mail(tx)
             return True
         return False
 
@@ -1474,11 +1516,12 @@ class SaleOrder(models.Model):
         :return: Whether the transaction was successfully reconciled
         """
         self.ensure_one()
+        recurring_automatic = self.env.context.get('recurring_automatic') or True
         if tx.renewal_allowed:  # The payment is confirmed, it can be reconciled
             # avoid to create an invoice when one is already linked
             if not tx.invoice_ids:
                 # Create the invoice that was either deleted in a controller or failed to be created by the _create_recurring_invoice method
-                invoice = self.with_context(recurring_automatic=True)._create_invoices()
+                invoice = self.with_context(recurring_automatic=recurring_automatic)._create_invoices()
                 invoice.write({'ref': tx.reference, 'payment_reference': tx.reference})
                 # Only update the invoice date if there is already one invoice for the lines and when the so is not done
                 # locked contract are finished or renewed
@@ -1489,16 +1532,5 @@ class SaleOrder(models.Model):
                 )
                 tx.invoice_ids = invoice.id,
             self.set_open()
-            # Update the next_invoice_date of SOL when the contract was paid with a token
-            # We have to do it here because if the payment fails because of a missing/expired token
-            # The invoice must be created again (it was unlinked). If the next_invoice_date is updated in _create_invoice
-            # The second invoice won't be created because _get_invoiceable_lines will be empty.
-            order_to_update = self.env['sale.order']
-            for order in tx.invoice_ids.invoice_line_ids.sale_line_ids.mapped('order_id'):
-                if order.is_subscription and order.state == 'sale':
-                    order_to_update |= order
-            order_to_update._update_next_invoice_date()
-            order_to_update.order_line._reset_subscription_qty_to_invoice()
-
             return True
         return False
