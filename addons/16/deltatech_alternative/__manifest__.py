@@ -6,7 +6,7 @@
 {
     "name": "Products Alternative",
     "version": "16.0.1.0.1",
-    "author": "Terrabit, Dorin Hongu",
+    "author": "Astratech",
     "website": "https://www.terrabit.ro",
     "summary": "Alternative product codes",
     # Categories can be used to filter modules in modules listing

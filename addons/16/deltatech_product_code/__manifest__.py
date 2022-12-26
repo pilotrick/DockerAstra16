@@ -7,7 +7,7 @@
     "name": "Products Code",
     "summary": "Product codification internal",
     "version": "16.0.1.0.3",
-    "author": "Terrabit, Dorin Hongu",
+    "author": "Astratech",
     "license": "LGPL-3",
     "website": "https://www.terrabit.ro",
     "category": "Sales",

@@ -5,7 +5,7 @@
 {
     "name": "Fast Sale",
     "version": "16.0.1.0.0",
-    "author": "Terrabit, Dorin Hongu",
+    "author": "Astratech",
     "website": "https://www.terrabit.ro",
     "summary": "Vanzare rapida",
     "category": "Sales",
