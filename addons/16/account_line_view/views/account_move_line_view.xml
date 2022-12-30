@@ -13,10 +13,21 @@
                     <field name="account_id"/>
                     <field name="quantity"/>
                     <field name="product_uom_id" optional="hide"/>
-                    <field name="price_unit"/>
                     <field name="tax_ids" optional="hide"/>
-                    <field name="price_subtotal"/>
+                    <field name="warehouse"/>
+                    <field name="seller" optional="hide"/>
+                    <field name="origin_document" optional="hide"/>
+                    <field name="date"/>
+                    <field name="date_maturity"/>
+                    <field name="product_category" optional="hide"/>
+                    <field name="payment_status" optional="hide"/>
+                    <field name="price_unit"/>
+                    <field name="margin_amount" optional="hide"/>
+                    <field name="margin_percentage" optional="hide"/>
                     <field name="discount" optional="hide"/>
+                    <field name="cost" optional="hide"/>
+                    <field name="price_subtotal"/>
+                    <field name="amount_total_signed"/>
                 </tree>
             </field>
         </record>

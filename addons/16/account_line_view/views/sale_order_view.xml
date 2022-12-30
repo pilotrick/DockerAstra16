@@ -9,12 +9,20 @@
                 <field name="name"/>
                 <field name="partner_id"/>
                 <field name="product"/>
+                <field name="categ_product" optional="hide"/>
+                <field name="user_id" optional="hide"/>
                 <field name="state" optional="show"/>
-                <field name="price_unit" optional="show"/>
-                <field name="subtotal" optional="show"/>
-                <field name="amount_total"/>
+                <field name="origin"/>
                 <field name="date_order"/>
                 <field name="validity_date" optional='show'/>
+                <field name="price_unit" optional="show"/>
+                <field name="margin_percentage" optional="show"/>
+                <field name="margin"/>
+                <field name="qty_delivery" optional="show"/>
+                <field name="qty_invoiced" optional="show"/>
+                <field name="cost"/>
+                <field name="subtotal"/>
+                <field name="amount_total"/>
             </tree>
         </field>
     </record>
