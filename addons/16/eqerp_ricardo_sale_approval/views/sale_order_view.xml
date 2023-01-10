@@ -18,7 +18,7 @@
 				<button name="action_confirm" string="Confirm" class="btn-primary"
 					type="object"
 					attrs="{'invisible': [
-                                '|',('state', 'not in', ['draft','sent','sale_approval','credit_limit']),
+                                '|',('state', 'not in', ['sale_approval','credit_limit']),
                                 ('is_minimum_sale_margin','=',True)
                                 
                             ]}" />
