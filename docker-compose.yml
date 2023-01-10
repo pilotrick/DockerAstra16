@@ -44,7 +44,7 @@ services:
             - "db:db"
         depends_on:
             - db
-        command: --dev=all
+#        command: --dev=all
         #command: bash -c 'pip3 install -U debugpy'
         #command: /usr/bin/odoo --db_user=odoo --db_host=db --db_password=odoo -u all
 
