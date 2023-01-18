@@ -35,7 +35,7 @@
 					attrs="{'invisible': ['|',('state', 'not in', ['draft','sent','waiting_sale_approval']),('is_minimum_sale_margin','=',False)]}" />
 			</button>
 			<button name="action_quotation_send" position="attributes">
-			<attribute name="invisible">1</attribute>
+			<attribute name="invisible">{'invisible': [('state', 'in', ['credit_limit','sent','waiting_sale_approval', 'decline_approval'])]}</attribute>
 			</button>
 			<!-- <button name="preview_sale_order" position="attributes">
 				<attribute name="invisible">1</attribute>
