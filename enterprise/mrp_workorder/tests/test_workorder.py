@@ -561,8 +561,7 @@ class TestWorkOrder(common.TestMrpCommon):
 
         production.workorder_ids[0].button_start()
         wo_form = Form(production.workorder_ids[0], view='mrp_workorder.mrp_workorder_view_form_tablet')
-        self.assertEqual(wo_form.qty_producing, 0, "Wrong quantity to produce")
-        wo_form.qty_producing = 1
+        self.assertEqual(wo_form.qty_producing, 1, "Wrong quantity to produce")
         wo = wo_form.save()
         qc_form = Form(wo.current_quality_check_id, view='mrp_workorder.quality_check_view_form_tablet')
         self.assertEqual(qc_form.component_id, self.elon_musk, "The component should be changed")
@@ -786,7 +785,7 @@ class TestWorkOrder(common.TestMrpCommon):
 
         sorted_workorder_ids[0].button_start()
         wo_form = Form(sorted_workorder_ids[0], view='mrp_workorder.mrp_workorder_view_form_tablet')
-        self.assertEqual(wo_form.qty_producing, 0, "Wrong quantity to produce")
+        self.assertEqual(wo_form.qty_producing, 2, "Wrong quantity to produce")
         wo_form.qty_producing = 1
         wo = wo_form.save()
         qc_form = Form(wo.current_quality_check_id, view='mrp_workorder.quality_check_view_form_tablet')
@@ -1299,6 +1298,30 @@ class TestWorkOrder(common.TestMrpCommon):
         wo = wo_form.save()
         wo.current_quality_check_id._next()
         self.assertEqual(production.move_byproduct_ids[0].quantity_done, 3)
+
+    def test_workorder_tablet_view(self):
+        """ Test operations on the workorder from the frontend """
+        mrp_order_form = Form(self.env['mrp.production'])
+        mrp_order_form.product_id = self.submarine_pod
+        mrp_order_form.product_qty = 1
+        production = mrp_order_form.save()
+
+        production.action_confirm()
+        production.button_plan()
+        wo = production.workorder_ids.sorted()[0]
+
+        self.assertEqual(wo.product_id, self.submarine_pod, "wrong product")
+
+        wo.open_tablet_view()
+
+        self.assertEqual(wo.qty_done, 2)
+        # Simulate change in qty_done in the tablet view
+        wo.qty_done = 1
+
+        wo.button_pending()
+        wo.button_start()
+
+        self.assertEqual(wo.qty_done, 1, "Changing the qty_done in the frontend is not persisted")
 
     def test_produce_more_than_planned(self):
         self.env['quality.point'].create({

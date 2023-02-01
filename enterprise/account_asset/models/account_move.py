@@ -37,6 +37,9 @@ class AccountMove(models.Model):
     # -------------------------------------------------------------------------
     @api.depends('asset_id', 'depreciation_value', 'asset_id.total_depreciable_value', 'asset_id.already_depreciated_amount_import')
     def _compute_depreciation_cumulative_value(self):
+        self.asset_depreciated_value = 0
+        self.asset_remaining_value = 0
+
         for asset in self.asset_id:
             depreciated = 0
             remaining = asset.total_depreciable_value - asset.already_depreciated_amount_import
@@ -110,7 +113,7 @@ class AccountMove(models.Model):
 
         # look for any asset to create, in case we just posted a bill on an account
         # configured to automatically create assets
-        posted._auto_create_asset()
+        posted.sudo()._auto_create_asset()
         # check if we are reversing a move and delete assets of original move if it's the case
         posted._delete_reversed_entry_assets()
 

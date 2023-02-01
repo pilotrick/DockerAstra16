@@ -48,7 +48,7 @@ class SaleOrder(models.Model):
     next_invoice_date = fields.Date(
         string='Date of Next Invoice',
         compute='_compute_next_invoice_date',
-        store=True, copy=False,
+        store=True, copy=False, tracking=True,
         readonly=False,
         help="The next invoice will be created on this date then the period will be extended.")
     start_date = fields.Date(string='Start Date',
@@ -274,13 +274,14 @@ class SaleOrder(models.Model):
                 # It is increased manually by _update_next_invoice_date when necessary
                 so.next_invoice_date = so.start_date or fields.Date.today()
 
-    @api.depends('start_date', 'state', 'order_line.invoice_lines')
+    @api.depends('start_date', 'state', 'next_invoice_date')
     def _compute_last_invoice_date(self):
         for order in self:
-            if order.recurrence_id and order.state in ['sale', 'done'] and order.order_line.invoice_lines:
+            last_date = order.next_invoice_date and order.next_invoice_date - get_timedelta(order.recurrence_id.duration, order.recurrence_id.unit)
+            if order.recurrence_id and order.state in ['sale', 'done'] and last_date >= order.start_date:
                 # we use get_timedelta and not the effective invoice date because
                 # we don't want gaps. Invoicing date could be shifted because of technical issues.
-                order.last_invoice_date = order.next_invoice_date and order.next_invoice_date - get_timedelta(order.recurrence_id.duration, order.recurrence_id.unit)
+                order.last_invoice_date = last_date
             else:
                 order.last_invoice_date = False
 
@@ -319,7 +320,7 @@ class SaleOrder(models.Model):
     def _compute_show_rec_invoice_button(self):
         self.show_rec_invoice_button = False
         for order in self:
-            if not order.is_subscription or order.stage_category != 'progress':
+            if not order.is_subscription or order.stage_category != 'progress' or order.state not in ['sale', 'done']:
                 continue
             order.show_rec_invoice_button = True
 
@@ -538,6 +539,15 @@ class SaleOrder(models.Model):
             subscriptions_to_confirm.action_confirm()
         return res
 
+    @api.ondelete(at_uninstall=False)
+    def _unlink_except_draft_or_cancel(self):
+        for order in self:
+            # To have a subscription with the state 'cancel',
+            # it has to have a stage_category which is 'closed'.
+            if order.is_subscription and (order.state not in ['draft', 'sent'] and order.stage_category != 'closed'):
+                raise UserError(_('You can not delete a confirmed subscription. You must first close and cancel it before you can delete it.'))
+        return super(SaleOrder, self)._unlink_except_draft_or_cancel()
+
     def copy_data(self, default=None):
         if default is None:
             default = {}
@@ -755,6 +765,7 @@ class SaleOrder(models.Model):
         action['name'] = _('Upsell') if subscription_management == 'upsell' else _('Renew')
         action['views'] = [(self.env.ref('sale_subscription.sale_subscription_primary_form_view').id, 'form')]
         action['res_id'] = order.id
+        action['context']['create'] = True
         return action
 
     def _get_order_digest(self, origin='', template='sale_subscription.sale_order_digest', lang=None):
@@ -814,7 +825,7 @@ class SaleOrder(models.Model):
 
     def set_close(self):
         today = fields.Date.context_today(self)
-        renew_close_reason_id = self.env.ref('sale_subscription.close_reason_renew').id
+        renew_close_reason = self.env.ref('sale_subscription.close_reason_renew', raise_if_not_found=False)
         self._set_closed_state()
         for sub in self:
             values = {}
@@ -822,9 +833,9 @@ class SaleOrder(models.Model):
                 values['end_date'] = today
             renew = sub.subscription_child_ids.filtered(
                 lambda so: so.subscription_management == 'renew' and so.state in ['sale', 'done'] and so.date_order and so.date_order.date() >= sub.end_date)
-            if renew:
+            if renew and renew_close_reason:
                 # The subscription has been renewed. We set a close_reason to avoid consider it as a simple churn.
-                values['close_reason_id'] = renew_close_reason_id
+                values['close_reason_id'] = renew_close_reason.id
             sub.write(values)
         return True
 
@@ -857,7 +868,7 @@ class SaleOrder(models.Model):
         option_lines_data = [fields.Command.clear()]
         option_lines_data += [
             fields.Command.create(
-                self._compute_option_data_for_template_change(option)
+                option._prepare_option_line_values()
             )
             for option in self.sale_order_template_id.sale_order_template_option_ids
         ]
@@ -1258,7 +1269,7 @@ class SaleOrder(models.Model):
                 order_already_invoiced |= order
         if order_already_invoiced:
             order_error = ", ".join(order_already_invoiced.mapped('name'))
-            raise ValidationError(_("The following recurring orders have draft invoices. Please Confirm them or cancel them"
+            raise ValidationError(_("The following recurring orders have draft invoices. Please Confirm them or cancel them "
                                     "before creating new invoices. %s.", order_error))
         invoices = super()._create_invoices(grouped=grouped, final=final, date=date)
         return invoices
@@ -1311,7 +1322,7 @@ class SaleOrder(models.Model):
                         if auto_commit:
                             self.env.cr.commit()
                     # if no transaction or failure, log error, rollback and remove invoice
-                    if transaction and transaction.state != 'done':
+                    if transaction and not transaction.renewal_allowed:
                         if auto_commit:
                             # prevent rollback during tests
                             self.env.cr.rollback()
@@ -1406,7 +1417,7 @@ class SaleOrder(models.Model):
 
     def send_success_mail(self, tx, invoice):
         self.ensure_one()
-        if not invoice._is_ready_to_be_sent():
+        if invoice.is_move_sent or not invoice._is_ready_to_be_sent() or invoice.state != 'posted':
             return
         current_date = fields.Date.today()
         next_date = self.next_invoice_date or current_date
@@ -1438,7 +1449,7 @@ class SaleOrder(models.Model):
     @api.model
     def _process_invoices_to_send(self, account_moves, auto_commit):
         for invoice in account_moves:
-            if invoice._is_ready_to_be_sent():
+            if not invoice.is_move_sent and invoice._is_ready_to_be_sent() and invoice.state == 'posted':
                 subscription = invoice.line_ids.subscription_id
                 subscription.validate_and_send_invoice(auto_commit, invoice)
 

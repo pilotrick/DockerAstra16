@@ -70,7 +70,7 @@ class AccountAsset(models.Model):
         ],
         string="Computation",
         readonly=True, states={'draft': [('readonly', False)], 'model': [('readonly', False)]},
-        required=True, default='none',
+        required=True, default='constant_periods',
     )
     prorata_date = fields.Date(  # the starting date of the depreciations
         string='Prorata Date',
@@ -221,7 +221,7 @@ class AccountAsset(models.Model):
     @api.depends('acquisition_date', 'company_id', 'prorata_computation_type')
     def _compute_prorata_date(self):
         for asset in self:
-            if asset.prorata_computation_type == 'none':
+            if asset.prorata_computation_type == 'none' and asset.acquisition_date:
                 fiscalyear_date = asset.company_id.compute_fiscalyear_dates(asset.acquisition_date).get('date_from')
                 asset.prorata_date = fiscalyear_date
             else:
@@ -294,13 +294,12 @@ class AccountAsset(models.Model):
     def _compute_non_deductible_tax_value(self):
         for record in self:
             record.non_deductible_tax_value = 0.0
-            move_lines = record.original_move_line_ids
-            non_deductible_tax_value = sum(move_lines.mapped('non_deductible_tax_value'))
-            if non_deductible_tax_value:
-                account = move_lines.account_id
-                auto_create_multi = account.create_asset != 'no' and account.multiple_assets_per_line
-                quantity = move_lines.quantity if auto_create_multi else 1
-                record.non_deductible_tax_value = record.currency_id.round(non_deductible_tax_value / quantity)
+            for line in record.original_move_line_ids:
+                if line.non_deductible_tax_value:
+                    account = line.account_id
+                    auto_create_multi = account.create_asset != 'no' and account.multiple_assets_per_line
+                    quantity = line.quantity if auto_create_multi else 1
+                    record.non_deductible_tax_value += record.currency_id.round(line.non_deductible_tax_value / quantity)
 
     @api.depends('depreciation_move_ids.state', 'parent_id')
     def _compute_counts(self):
@@ -393,7 +392,6 @@ class AccountAsset(models.Model):
     def _onchange_type(self):
         if self.state != 'model':
             if self.asset_type == 'sale':
-                self.prorata_computation_type = 'daily_computation'
                 self.method_period = '1'
             else:
                 self.method_period = '12'

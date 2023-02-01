@@ -197,6 +197,7 @@ export class KnowledgeArticleFormRenderer extends FormRenderer {
      * Copy the current article in private section and open it.
      */
     async copyArticleAsPrivate() {
+        await this._saveIfDirty();
         const articleId = await this.orm.call(
             "knowledge.article",
             "action_make_private_copy",
@@ -262,8 +263,20 @@ export class KnowledgeArticleFormRenderer extends FormRenderer {
                 });
 
                 // Force save if changes have been made before loading the new record
-                if (this.props.record.isDirty) {
-                    await this.props.record.save();
+                await this._saveIfDirty();
+
+                const scrollView = document.querySelector('.o_scroll_view_lg');
+                if (scrollView) {
+                    // hide the flicker
+                    scrollView.style.visibility = 'hidden';
+                    // Scroll up if we have a desktop screen
+                    scrollView.scrollTop = 0;
+                }
+
+                const mobileScrollView = document.querySelector('.o_knowledge_main_view');
+                if (mobileScrollView) {
+                    // Scroll up if we have a mobile screen
+                    mobileScrollView.scrollTop = 0;
                 }
 
                 // load the new record
@@ -276,6 +289,11 @@ export class KnowledgeArticleFormRenderer extends FormRenderer {
                         await this.orm.call('knowledge.article', 'action_home_page', [false]),
                         {stackPosition: 'replaceCurrentAction'}
                     );
+                }
+
+                if (scrollView) {
+                    // Show loaded document
+                    scrollView.style.visibility = 'visible';
                 }
 
             }
@@ -392,9 +410,7 @@ export class KnowledgeArticleFormRenderer extends FormRenderer {
      */
     async _confirmMoveArticle(articleId, position, onSuccess, onReject) {
         // Force save if changes have been made before the move to.
-        if (this.props.record.isDirty) {
-            await this.props.record.save();
-        }
+        await this._saveIfDirty();
         try {
             const result = await this.orm.call(
                 'knowledge.article',
@@ -573,9 +589,7 @@ export class KnowledgeArticleFormRenderer extends FormRenderer {
         let unfoldedFavoriteArticlesIds = localStorage.getItem('knowledge.unfolded.favorite.ids');
         unfoldedFavoriteArticlesIds = unfoldedFavoriteArticlesIds ? unfoldedFavoriteArticlesIds.split(";").map(Number) : false;
         // Force save article if it's dirty to keep up to date the article data before rendering the tree
-        if (this.props.record.isDirty) {
-            await this.props.record.save();
-        }
+        await this._saveIfDirty();
         try {
             const htmlTree = await this.rpc(route,
                 {
@@ -613,6 +627,12 @@ export class KnowledgeArticleFormRenderer extends FormRenderer {
      */
     _resizeNameInput(name) {
         this.root.el.querySelector('.o_breadcrumb_article_name_container > span').innerText = name;
+    }
+
+    async _saveIfDirty() {
+        if (this.props.record.isDirty) {
+            await this.props.record.save();
+        }
     }
 
     /**

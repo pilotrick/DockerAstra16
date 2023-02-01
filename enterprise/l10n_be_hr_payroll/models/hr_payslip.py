@@ -751,7 +751,10 @@ def compute_withholding_taxes(payslip, categories, worked_days, inputs):
 
     taxable_amount = categories.GROSS  # Base imposable
 
-    lower_bound = taxable_amount - taxable_amount % 15
+    if payslip.date_from.year < 2023:
+        lower_bound = taxable_amount - taxable_amount % 15
+    else:
+        lower_bound = taxable_amount
 
     # yearly_gross_revenue = Revenu Annuel Brut
     yearly_gross_revenue = lower_bound * 12.0
@@ -1160,10 +1163,10 @@ def compute_representation_fees(payslip, categories, worked_days, inputs):
         else:
             work_time_rate = contract.resource_calendar_id.work_time_rate
 
-        threshold = 0 if (worked_days.OUT and worked_days.OUT.number_of_hours) else 279.31
+        threshold = 0 if (worked_days.OUT and worked_days.OUT.number_of_hours) else payslip.rule_parameter('cp200_representation_fees_threshold')
         if days_per_week and contract.representation_fees > threshold:
             # Only part of the representation costs are pro-rated because certain costs are fully
-            # covered for the company (teleworking costs, mobile phone, internet, etc., namely:
+            # covered for the company (teleworking costs, mobile phone, internet, etc., namely (for 2021):
             # - 144.31 € (Tax, since 2021 - coronavirus)
             # - 30 € (internet)
             # - 25 € (phone)
@@ -1194,10 +1197,10 @@ def compute_representation_fees(payslip, categories, worked_days, inputs):
     return result
 
 def compute_serious_representation_fees(payslip, categories, worked_days, inputs):
-    return min(compute_representation_fees(payslip, categories, worked_days, inputs), 279.31)
+    return min(compute_representation_fees(payslip, categories, worked_days, inputs), payslip.rule_parameter('cp200_representation_fees_threshold'))
 
 def compute_volatile_representation_fees(payslip, categories, worked_days, inputs):
-    return max(compute_representation_fees(payslip, categories, worked_days, inputs) - 279.31, 0)
+    return max(compute_representation_fees(payslip, categories, worked_days, inputs) - payslip.rule_parameter('cp200_representation_fees_threshold'), 0)
 
 def compute_holiday_pay_recovery_n(payslip, categories, worked_days, inputs):
     """

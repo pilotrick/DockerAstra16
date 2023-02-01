@@ -10,7 +10,7 @@
 # Loïc De Greef, 2022
 # Christophe Klopfert, 2022
 # Cécile Collart <cco@odoo.com>, 2022
-# Jolien De Paepe, 2022
+# Jolien De Paepe, 2023
 # 
 msgid ""
 msgstr ""
@@ -18,7 +18,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-11-25 09:15+0000\n"
 "PO-Revision-Date: 2022-09-22 05:44+0000\n"
-"Last-Translator: Jolien De Paepe, 2022\n"
+"Last-Translator: Jolien De Paepe, 2023\n"
 "Language-Team: French (https://www.transifex.com/odoo/teams/41243/fr/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -398,7 +398,7 @@ msgstr "Choisissez une ligne pour prévisualiser ses pièces jointes."
 #: code:addons/account_accountant/static/src/xml/account_reconciliation.xml:0
 #, python-format
 msgid "Choose counterpart or Create Write-off"
-msgstr "Choisissez la contrepartie ou créez un Write-off"
+msgstr "Choisissez la contrepartie ou créez une écriture d'annulation"
 
 #. module: account_accountant
 #: model_terms:ir.actions.act_window,help:account_accountant.actions_account_fiscal_year
@@ -582,7 +582,7 @@ msgstr "Récapitulatif"
 #. module: account_accountant
 #: model_terms:ir.ui.view,arch_db:account_accountant.view_bank_statement_form_bank_rec_widget
 msgid "Discard"
-msgstr "Annuler"
+msgstr "Ignorer"
 
 #. module: account_accountant
 #: model_terms:ir.ui.view,arch_db:account_accountant.view_bank_rec_widget_form
@@ -704,7 +704,7 @@ msgstr "Signaler"
 #. module: account_accountant
 #: model:ir.model.fields,field_description:account_accountant.field_bank_rec_widget_line__force_price_included_taxes
 msgid "Force Price Included Taxes"
-msgstr "Forcer le prix incluant les taxes"
+msgstr "Forcer le prix toutes taxes comprises"
 
 #. module: account_accountant
 #: model:ir.model.fields,field_description:account_accountant.field_bank_rec_widget__form_account_id
@@ -936,8 +936,8 @@ msgstr "Est lettré"
 msgid ""
 "It is mandatory to specify an account and a journal to create a write-off."
 msgstr ""
-"Il est obligatoire de spécifier un compte et un journal pour créer un Write-"
-"off."
+"Il est obligatoire de spécifier un compte et un journal pour créer une "
+"écriture d'annulation."
 
 #. module: account_accountant
 #: model_terms:ir.ui.view,arch_db:account_accountant.account_journal_dashboard_kanban_view
@@ -1873,7 +1873,7 @@ msgstr "Assistant de la devise de l'entreprise "
 #: code:addons/account_accountant/models/reconciliation_widget.py:0
 #, python-format
 msgid "Write-Off"
-msgstr "Write-off"
+msgstr "Écriture d'annulation"
 
 #. module: account_accountant
 #. openerp-web

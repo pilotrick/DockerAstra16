@@ -353,6 +353,10 @@ class AccountEdiFormat(models.Model):
 
         values['tax_details'] = invoice._prepare_edi_tax_details()
         values['tax_details_grouped'] = invoice._prepare_edi_tax_details(grouping_key_generator=grouping_key_generator)
+        values['isc_tax_amount'] = abs(sum([
+            line.amount_currency
+            for line in invoice.line_ids.filtered(lambda l: l.tax_line_id.tax_group_id.l10n_pe_edi_code == 'ISC')
+        ]))
 
         return values
 
@@ -647,7 +651,7 @@ class AccountEdiFormat(models.Model):
         else:
             res.update({
                 'wsdl': 'https://ose.pe/ol-ti-itcpe/billService',
-                'token': UsernameToken(company.l10n_pe_edi_provider_username, company.l10n_pe_edi_provider_password),
+                'token': UsernameToken(company.sudo().l10n_pe_edi_provider_username, company.sudo().l10n_pe_edi_provider_password),
             })
         return res
 
@@ -662,7 +666,7 @@ class AccountEdiFormat(models.Model):
         else:
             res.update({
                 'wsdl': self._get_sunat_wsdl(),
-                'token': UsernameToken(company.l10n_pe_edi_provider_username, company.l10n_pe_edi_provider_password),
+                'token': UsernameToken(company.sudo().l10n_pe_edi_provider_username, company.sudo().l10n_pe_edi_provider_password),
             })
         return res
 

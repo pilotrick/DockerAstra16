@@ -362,6 +362,12 @@ class TestSubscription(TestSubscriptionCommon):
     def test_upsell_via_so(self):
         # Test the upsell flow using an intermediary upsell quote.
         self.sub_product_tmpl.product_pricing_ids = [(5, 0, 0)]
+        self.subscription_tmpl.sale_order_template_option_ids = [Command.create({
+            'name': "Option 1",
+            'product_id': self.product5.id,
+            'quantity': 1,
+            'uom_id': self.product5.uom_id.id,
+        })]
         self.product_tmpl_2.product_pricing_ids = [(5, 0, 0)]
         self.env['product.pricing'].create({'recurrence_id': self.recurrence_month.id, 'product_template_id': self.sub_product_tmpl.id, 'price': 42})
         self.env['product.pricing'].create({'recurrence_id': self.recurrence_month.id, 'product_template_id': self.product_tmpl_2.id, 'price': 420})
@@ -2104,3 +2110,47 @@ class TestSubscription(TestSubscriptionCommon):
             self.assertEqual(sub_negative_recurring.order_line.mapped('invoice_status'), ['no', 'no'],
                              'No invoice needed')
             self.assertTrue(negative_nonrecurring_sub.payment_exception, "The contract should be in exception")
+
+    def test_subscription_unlink_flow(self):
+        """
+            Check that the user receives the correct messages when he deletes a subscription.
+            Check that the flow to delete a subscription is confirm => close => cancel
+        """
+        subscription_a = self.env['sale.order'].create({
+            'partner_id': self.user_portal.partner_id.id,
+            'sale_order_template_id': self.subscription_tmpl.id,
+        })
+        subscription_b = self.env['sale.order'].create({
+            'partner_id': self.user_portal.partner_id.id,
+            'sale_order_template_id': self.subscription_tmpl.id,
+        })
+        subscription_c = self.env['sale.order'].create({
+            'partner_id': self.user_portal.partner_id.id,
+            'sale_order_template_id': self.subscription_tmpl.id,
+        })
+        subscription_d = self.env['sale.order'].create({
+            'partner_id': self.user_portal.partner_id.id,
+            'sale_order_template_id': self.subscription_tmpl.id,
+        })
+        subscription_a._onchange_sale_order_template_id()
+        subscription_b._onchange_sale_order_template_id()
+        subscription_c._onchange_sale_order_template_id()
+        subscription_d._onchange_sale_order_template_id()
+        # Subscription can be deleted if it is in draft
+        subscription_a.unlink()
+        # Subscription cannot be deleted if it was confirmed once before and it is not closed
+        subscription_b.action_confirm()
+        with self.assertRaisesRegex(UserError,
+            r'You can not delete a confirmed subscription. You must first close and cancel it before you can delete it.'):
+            subscription_b.unlink()
+        # Subscription cannot be deleted if it is closed
+        subscription_c.action_confirm()
+        subscription_c.set_close()
+        with self.assertRaisesRegex(UserError,
+            r'You can not delete a sent quotation or a confirmed sales order. You must first cancel it.'):
+            subscription_c.unlink()
+        # Subscription can be deleted if it is cancel
+        subscription_d.action_confirm()
+        subscription_d.set_close()
+        subscription_d._action_cancel()
+        subscription_d.unlink()
