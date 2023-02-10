@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<odoo>
+    <data>
+        <template id="assets_backend" name="x_export_view assets" inherit_id="web.assets_backend">
+            <xpath expr="." position="inside">
+                <script type="text/javascript" src="/bi_dynamic_barcode_labels/static/src/js/BrowserPrint.min.js"></script>
+                <script type="text/javascript" src="/bi_dynamic_barcode_labels/static/src/js/BrowserPrintZebra.js"></script>
+                <script type="text/javascript" src="/bi_dynamic_barcode_labels/static/src/js/sweetalert2.all.min.js"></script>
+
+                 <script type="text/javascript" src="/bi_dynamic_barcode_labels/static/src/js/FileSaver.js"></script>
+                <script type="text/javascript" src="/bi_dynamic_barcode_labels/static/src/js/print_button.js"></script>
+
+            </xpath>
+        </template>
+    </data>
+
+</odoo>
