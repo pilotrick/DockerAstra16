@@ -10,7 +10,7 @@
     "website": "https://github.com/OCA/account-payment",
     "license": "AGPL-3",
     "depends": ["account"],
-    "data": ["iews/payment_view.xml"],
+    "data": ["views/payment_view.xml"],
     "pre_init_hook": "pre_init_hook",
     "installable": True,
     "auto_install": False,
