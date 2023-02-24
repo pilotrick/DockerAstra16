@@ -87,60 +87,62 @@ class InvoiceSaleCommissionDay(models.Model):
     _description = 'Invoice Sale Commission'
 
     name = fields.Char(string="Descripción", size=512)
-    commission = fields.Integer(string="comisión (%)")
-    day_from=fields.Integer(string="desde")
-    day_to=fields.Integer(string="hasta")
-    commission_id = fields.Many2one('sale.commission', string='Invoice Reference', #Por qué se llama invoice reference?
+    commission = fields.Integer(string="Comisión (%)")
+    day_from=fields.Integer(string="Desde")
+    day_to=fields.Integer(string="Hasta")
+    commission_id = fields.Many2one('sale.commission', string='Comisión de Referencia', #Por qué se llama invoice reference?
                                  help="Affected Invoice")
     
 
-class AccountInvoice(models.Model):
-    _inherit = 'account.invoice'
+class AccountMove(models.Model):
+    _inherit = 'account.move'
 
-    # @api.onchange('payment_state')
-    def calculate_day_to_pay(self):
+    def calculate_commission_due_date(self):
         source_orders = self.line_ids.sale_line_ids.order_id
         commission_configuration = self.env.user.company_id.commission_configuration
-        #print(commission_configuration)
+        print(commission_configuration)
         
         if self.state =='posted':
             if commission_configuration == 'invoice':
                 self.invoice_date_due
                 self.commission_ids.calculate_day()
                 
-            elif commission_configuration == 'sale_order': #[payment,invoice, sale_order]
-                invoic=self.env['invoice.sale.commission'].search([('id','=',source_orders.commission_ids.id)])
+            elif commission_configuration == 'payment': #[payment,invoice, sale_order]
+                order_id = self.line_ids[0].sale_line_ids[0].order_id.id
+                sale_order_obj = self.env['sale.order'].search([('id', '=', order_id)])
+                if sale_order_obj:
+                    sale_order_obj.get_sales_commission()
+                
+                invoice=self.env['invoice.sale.commission'].search([('id','in',source_orders.commission_ids.ids)])
                 tz_name = self.env.user.tz or 'UTC'
                 tz = pytz.timezone(tz_name)
-                date_toy_pay = datetime.now(tz) 
-                count_day=(date_toy_pay.date()-self.invoice_date_due)
-                partner = self.env['res.partner'].browse(invoic.user_id.id)
-                
-                invoic.write({
-                    'day_pay': (date_toy_pay.strftime('%Y-%m-%d %H:%M:%S')),
-                    'day_count': count_day.days,
-                    'invoice_id': self.id,
-                    'partner_id': partner.id or False,
-                    'partner_type': 'Affiliated Partner' if partner.is_affiliated else 'Non-Affiliated Partner',
-                    'categ_id': invoic.product_id.categ_id.id or False
-                })
+                payment_date = datetime.now(tz) 
+                count_day=(payment_date.date()-self.invoice_date_due)
+                partner = self.env['res.partner'].browse(invoice.user_id.id)
 
-                commission=self.env['sale.commission'].search([('user_ids','=',invoic.user_id.id)])
-                order_id = self.line_ids[0].sale_line_ids[0].order_id.id
-                sale_order = self.env['sale.order'].search([('id', '=', order_id)])
+                commission = self.env['sale.commission'].search([('user_ids','=',invoice.user_id.id)])
 
-                
-                for record in commission.commission_ids:
-                    commission_rate = (record.commission/100)
-                    date_from = record.day_from
-                    date_to = record.day_to
+                for index, invoice_commission_line in enumerate(invoice):
+                    amount = invoice_commission_line.order_id.order_line[index].price_subtotal
+                    
+                    for record in commission.commission_ids:
+                        commission_rate = (record.commission/100)
+                        date_from = record.day_from
+                        date_to = record.day_to
 
-                    if(count_day.days >= date_from and count_day.days <= date_to):
-                        new_commission_amount = (invoic.commission_amount + (sale_order.amount_untaxed * commission_rate ))
-                        invoic.write({ 'commission_amount': new_commission_amount })
-
-       
-            
+                        if(count_day.days >= date_from and count_day.days <= date_to):
+                            new_commission_amount = (invoice_commission_line.commission_amount + (amount * commission_rate ))
+                    
+                    invoice_commission_data = {
+                        'day_pay': (payment_date.strftime('%Y-%m-%d %H:%M:%S')),
+                        'day_count': count_day.days,
+                        'invoice_id': self.id,
+                        'partner_id': partner.id or False,
+                        'partner_type': 'Affiliated Partner' if partner.is_affiliated else 'Non-Affiliated Partner',
+                        'commission_amount': new_commission_amount
+                    }
+                    
+                    invoice_commission_line.write(invoice_commission_data)            
         
 
     commission_ids = fields.One2many('invoice.sale.commission', 'invoice_id', string='Sales Commissions',
@@ -715,8 +717,8 @@ class AccountInvoice(models.Model):
             move.payment_state = new_pmt_state
 
     def action_post(self):
-        res = super(AccountInvoice, self).action_post()
-        self.calculate_day_to_pay()
+        res = super(AccountMove, self).action_post()
+        self.calculate_commission_due_date()
         commission_configuration = self.env.user.company_id.commission_configuration
         
         if commission_configuration == 'invoice':
@@ -725,7 +727,7 @@ class AccountInvoice(models.Model):
         return 
 
     def button_draft(self):
-        res = super(AccountInvoice, self).button_draft()
+        res = super(AccountMove, self).button_draft()
         for mv in self:
             if mv.commission_ids:
                 
@@ -735,7 +737,7 @@ class AccountInvoice(models.Model):
         return res
 
 
-class AccountInvoiceLine(models.Model):
+class AccountMoveLine(models.Model):
     _inherit = 'account.move.line'
 
     sol_id = fields.Many2one('sale.order.line', string='Sales Order Line')

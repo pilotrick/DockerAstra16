@@ -8,11 +8,20 @@ import datetime
 
 
 class SaleOrder(models.Model):
-	_inherit = "sale.order"
+	_inherit = 'sale.order'
 
 	commission_ids = fields.One2many('invoice.sale.commission','order_id', string='Sales Commissions',
 									 help="Sale Commission related to this order(based on sales person)")
 
+	paid = fields.Boolean(string='Pagado', compute='_compute_paid', store=True)
+
+	@api.depends('invoice_ids.state', 'paid')
+	def _compute_paid(self):
+		for order in self:
+			if order.invoice_ids.filtered(lambda i: i.payment_state == 'paid'):
+				order.paid = True
+			else:
+				order.paid = False
 
 	def get_exceptions(self, line, commission_brw):
 		'''This method searches exception for any product line.
@@ -209,6 +218,7 @@ class SaleOrder(models.Model):
 							   'user_id' : order.user_id.id,
 							   'commission_id' : commission_brw.id,
 							   'product_id' : line.product_id.id,
+							   'categ_id': line.product_id.categ_id.id or False,
 							   'type_name' : commission_brw.name,
 							   'comm_type' : commission_brw.comm_type,
 							   'commission_amount' : standard_commission_amount,
@@ -224,7 +234,7 @@ class SaleOrder(models.Model):
 		   @return : List of ids for commission records created.'''
 		for order in self:
 			invoice_commission_ids = []
-			if order.user_id :
+			if order.user_id and order.paid:
 				commission_obj = self.env['sale.commission']
 				commission_id = commission_obj.search([('user_ids', 'in', order.user_id.id)])
 				if not commission_id:return False

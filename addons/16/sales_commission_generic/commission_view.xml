@@ -69,21 +69,21 @@
 			<field name="model">sale.commission.exception</field>
 			<field name="arch" type="xml">
 				<tree string="Sales Commission Exceptions">
-				   <field name="based_on"/>
-				   <field name="based_on_2"/>
-				   <field name="product_id" attrs="{'invisible': [('based_on','!=', 'Products')],
-													'required': [('based_on','==', 'Products')]}"/>
-					<field name="category_store" widget="many2many_tags" invisible="1"/>
-				   <field name="categ_id" attrs="{'invisible': [('based_on','!=', 'Product Categories')],
-												   'required': [('based_on','==', 'Product Categories')]}"/>
-				   <field name="sub_categ_id" attrs="{'invisible': [('based_on','!=', 'Product Sub-Categories')],
-													  'required': [('based_on','==', 'Product Sub-Categories')]}"/>
-				   <field name="commission_precentage" required='1'/>
-				   <field name="margin_percentage"/>
-				   <field name="above_margin_commission"/>
-				   <field name="below_margin_commission"/>
-				   <field name="price"/>
-				   <field name="price_percentage"/>
+					<field name="based_on"/>
+					<field name="based_on_2"/>
+					<field name="product_id" attrs="{'invisible': [('based_on','!=', 'Products')],
+														'required': [('based_on','==', 'Products')]}"/>
+						<field name="category_store" widget="many2many_tags" invisible="1"/>
+					<field name="categ_id" attrs="{'invisible': [('based_on','!=', 'Product Categories')],
+													'required': [('based_on','==', 'Product Categories')]}"/>
+					<field name="sub_categ_id" attrs="{'invisible': [('based_on','!=', 'Product Sub-Categories')],
+														'required': [('based_on','==', 'Product Sub-Categories')]}"/>
+					<field name="commission_precentage" required='1'/>
+					<field name="margin_percentage"/>
+					<field name="above_margin_commission"/>
+					<field name="below_margin_commission"/>
+					<field name="price"/>
+					<field name="price_percentage"/>
 				</tree>
 			</field>
 		</record>
