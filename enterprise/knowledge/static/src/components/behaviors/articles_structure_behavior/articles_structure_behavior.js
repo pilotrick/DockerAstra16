@@ -10,7 +10,9 @@ const {
     useState,
     onMounted,
     onPatched,
- } = owl;
+    onWillPatch } = owl;
+
+let observerId = 0;
 
 /**
  * It creates a listing of children of this article.
@@ -24,12 +26,14 @@ export class ArticlesStructureBehavior extends AbstractBehavior {
         super.setup();
         this.rpc = useService('rpc');
         this.actionService = useService('action');
+        this.observerId = observerId++;
 
         if (this.props.content) {
             this.state = useState({
                 loading: false,
                 refreshing: false,
             });
+            this.props.content = markup(this.props.content);
         } else {
             this.state = useState({
                 loading: true,
@@ -60,11 +64,23 @@ export class ArticlesStructureBehavior extends AbstractBehavior {
                 this.props.anchor.removeEventListener('drop', onDrop);
             };
         });
+
         if (!this.props.readonly) {
+            onWillPatch(() => {
+                this.editor.observerUnactive(`knowledge_article_structure_id_${this.observerId}`);
+            });
             onPatched(() => {
-                this.props.record.save();
+                this.editor.idSet(this.props.anchor);
+                this.editor.observerActive(`knowledge_article_structure_id_${this.observerId}`);
             });
         }
+    }
+
+    /**
+     * @returns {OdooEditor}
+     */
+    get editor () {
+        return this.props.wysiwyg.odooEditor;
     }
 
     /**
@@ -147,5 +163,5 @@ export class ArticlesStructureBehavior extends AbstractBehavior {
 ArticlesStructureBehavior.template = "knowledge.ArticlesStructureBehavior";
 ArticlesStructureBehavior.props = {
     ...AbstractBehavior.props,
-    content: { type: Object, optional: true },
+    content: { type: String, optional: true },
 };

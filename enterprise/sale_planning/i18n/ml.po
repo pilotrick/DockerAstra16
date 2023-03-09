@@ -221,7 +221,7 @@ msgstr ""
 #. module: sale_planning
 #: model:ir.model,name:sale_planning.model_product_template
 msgid "Product"
-msgstr "പ്രോഡക്റ്റ്"
+msgstr "ഉൽപ്പന്നം"
 
 #. module: sale_planning
 #: model:ir.model.fields,field_description:sale_planning.field_planning_analysis_report__role_product_ids

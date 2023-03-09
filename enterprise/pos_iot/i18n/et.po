@@ -10,9 +10,7 @@
 # Maidu Targama <m.targama@gmail.com>, 2022
 # Algo Kärp <algokarp@gmail.com>, 2022
 # Triine Aavik <triine@avalah.ee>, 2022
-# Anna, 2023
-# Jana Jaakson, 2023
-# Leaanika Randmets, 2023
+# Jana Jaakson, 2022
 # 
 msgid ""
 msgstr ""
@@ -20,7 +18,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-02-11 15:05+0000\n"
 "PO-Revision-Date: 2022-09-22 05:48+0000\n"
-"Last-Translator: Leaanika Randmets, 2023\n"
+"Last-Translator: Jana Jaakson, 2022\n"
 "Language-Team: Estonian (https://www.transifex.com/odoo/teams/41243/et/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -31,7 +29,7 @@ msgstr ""
 #. module: pos_iot
 #: model_terms:ir.ui.view,arch_db:pos_iot.res_config_view_form_inherit_pos_iot
 msgid "Accept payments with a Worldline payment terminal"
-msgstr "Võta makseid vastu Wordline makseterminaliga"
+msgstr ""
 
 #. module: pos_iot
 #: model_terms:ir.ui.view,arch_db:pos_iot.res_config_view_form_inherit_pos_iot
@@ -50,7 +48,7 @@ msgstr "Pääse ligi enda"
 #: code:addons/pos_iot/static/src/xml/LastTransactionStatus.xml:0
 #, python-format
 msgid "Action identifier:"
-msgstr "Tegevuse identifikaator:"
+msgstr ""
 
 #. module: pos_iot
 #. openerp-web
@@ -67,7 +65,7 @@ msgstr "Triipkoodilugejad/Kaardilugejad"
 #. module: pos_iot
 #: model:ir.model.fields,help:pos_iot.field_pos_config__iface_print_via_proxy
 msgid "Bypass browser printing and prints via the hardware proxy."
-msgstr "Bypass browser printing and prints via the hardware proxy."
+msgstr ""
 
 #. module: pos_iot
 #: model_terms:ir.ui.view,arch_db:pos_iot.pos_iot_config_view_form
@@ -79,7 +77,7 @@ msgstr "Sularahasahtel"
 #: code:addons/pos_iot/static/src/xml/IoTErrorPopup.xml:0
 #, python-format
 msgid "Click on Advanced/Show Details/Details/More information"
-msgstr "Klõpsake Täpsemalt/Näita detaile/Detailid/Rohkem infot"
+msgstr ""
 
 #. module: pos_iot
 #. openerp-web
@@ -88,7 +86,7 @@ msgstr "Klõpsake Täpsemalt/Näita detaile/Detailid/Rohkem infot"
 msgid ""
 "Click on Proceed to .../Add Exception/Visit this website/Go on to the "
 "webpage"
-msgstr "Klõpsake Jätka/Lisa erand/Külasta veebilehte/Mine veebilehele"
+msgstr ""
 
 #. module: pos_iot
 #. openerp-web
@@ -129,7 +127,7 @@ msgstr "Terminaliga ühendamine ebaõnnestus"
 #: code:addons/pos_iot/static/src/js/ScaleScreen.js:0
 #, python-format
 msgid "Could not connect to IoT scale"
-msgstr "Ei saanud IoT kaaluga ühendust"
+msgstr ""
 
 #. module: pos_iot
 #: model_terms:ir.ui.view,arch_db:pos_iot.pos_iot_config_view_form
@@ -157,7 +155,7 @@ msgstr "Elektrooniline skaala"
 #: code:addons/pos_iot/static/src/js/LastTransactionStatus.js:0
 #, python-format
 msgid "Electronic payment in progress"
-msgstr "Käimasolev elektrooniline makse"
+msgstr ""
 
 #. module: pos_iot
 #: model:ir.model.fields,help:pos_iot.field_pos_config__iface_scan_via_proxy
@@ -179,14 +177,14 @@ msgstr "Võimaldab elektroonilise skaala integreerimist."
 #: code:addons/pos_iot/static/src/xml/IoTErrorPopup.xml:0
 #, python-format
 msgid "Firefox only : Click on Confirm Security Exception"
-msgstr "Ainult Firefox'i puhul : Vajuta \"Kinnita turvaerand\""
+msgstr ""
 
 #. module: pos_iot
 #. openerp-web
 #: code:addons/pos_iot/static/src/xml/ScaleScreen.xml:0
 #, python-format
 msgid "Get Weight"
-msgstr "Kaalu"
+msgstr ""
 
 #. module: pos_iot
 #. openerp-web
@@ -195,38 +193,36 @@ msgstr "Kaalu"
 msgid ""
 "If you are on a secure server (HTTPS) check if you accepted the certificate:"
 msgstr ""
-"Kui kasutate turvalist serverit (HTTPS), siis palun kontrollige, kas "
-"sektifikaat on aksepteeritud:"
 
 #. module: pos_iot
 #: model:ir.model.fields,field_description:pos_iot.field_pos_config__iface_display_id
 msgid "Iface Display"
-msgstr "Iface ekraan"
+msgstr ""
 
 #. module: pos_iot
 #: model:ir.model.fields,field_description:pos_iot.field_pos_config__iface_printer_id
 msgid "Iface Printer"
-msgstr "Iface printer"
+msgstr ""
 
 #. module: pos_iot
 #: model:ir.model.fields,field_description:pos_iot.field_pos_config__iface_scale_id
 msgid "Iface Scale"
-msgstr "Iface kaal"
+msgstr ""
 
 #. module: pos_iot
 #: model:ir.model.fields,field_description:pos_iot.field_pos_config__iface_scanner_ids
 msgid "Iface Scanner"
-msgstr "Iface triipkoodilugeja"
+msgstr ""
 
 #. module: pos_iot
 #: model_terms:ir.ui.view,arch_db:pos_iot.res_config_view_form_inherit_pos_iot
 msgid "Ingenico (BENELUX)"
-msgstr "Ingenico (BENELUX)"
+msgstr ""
 
 #. module: pos_iot
 #: model:ir.model.fields,field_description:pos_iot.field_res_config_settings__ingenico_payment_terminal
 msgid "Ingenico Payment Terminal"
-msgstr "Ingenico makseterminal"
+msgstr ""
 
 #. module: pos_iot
 #. openerp-web
@@ -238,12 +234,12 @@ msgstr "IoT Boxi koduleht"
 #. module: pos_iot
 #: model_terms:ir.ui.view,arch_db:pos_iot.pos_iot_config_view_form
 msgid "IoT Devices"
-msgstr "IoT Seadmed"
+msgstr ""
 
 #. module: pos_iot
 #: model:ir.model.fields,field_description:pos_iot.field_pos_config__iot_device_ids
 msgid "Iot Device"
-msgstr "IoT Seade"
+msgstr ""
 
 #. module: pos_iot
 #. openerp-web
@@ -253,22 +249,20 @@ msgid ""
 "It seems that no scale was detected.\n"
 "Make sure that the scale is connected and visible in the IoT app."
 msgstr ""
-"Kaalu ei leitud.\n"
-"Veenduge, et kaal on ühendatud ning on nähtav IoT rakenduses."
 
 #. module: pos_iot
 #. openerp-web
 #: code:addons/pos_iot/static/src/xml/LastTransactionStatus.xml:0
 #, python-format
 msgid "Last Transaction Status"
-msgstr "Viimase tehingu olek"
+msgstr ""
 
 #. module: pos_iot
 #. openerp-web
 #: code:addons/pos_iot/static/src/js/ProductScreen.js:0
 #, python-format
 msgid "No Scale Detected"
-msgstr "Kaalu ei leitud"
+msgstr ""
 
 #. module: pos_iot
 #. openerp-web
@@ -318,15 +312,13 @@ msgid ""
 "Please check the network connection and then check the status of the last "
 "transaction manually."
 msgstr ""
-"Palun kontrollige võrguühendust ja seejärel kontrollige viimase tehingu "
-"staatust käsitsi."
 
 #. module: pos_iot
 #. openerp-web
 #: code:addons/pos_iot/static/src/js/Chrome.js:0
 #, python-format
 msgid "Please process or cancel the current transaction."
-msgstr "Palun töötle või tühista praegune tehing."
+msgstr ""
 
 #. module: pos_iot
 #: model:ir.model,name:pos_iot.model_pos_config
@@ -368,14 +360,14 @@ msgstr "Näidake klientidele kassat kaugühendusega ekraaniga."
 #: code:addons/pos_iot/static/src/js/payment.js:0
 #, python-format
 msgid "Terminal Disconnected"
-msgstr "Terminal lahti ühendatud"
+msgstr ""
 
 #. module: pos_iot
 #. openerp-web
 #: code:addons/pos_iot/static/src/js/ScaleScreen.js:0
 #, python-format
 msgid "The IoT scale is not responding. You should check your connection."
-msgstr "IoT kaal ei reageeri. Peaksite kontrollima oma ühendust."
+msgstr ""
 
 #. module: pos_iot
 #: model_terms:ir.ui.view,arch_db:pos_iot.res_config_view_form_inherit_pos_iot
@@ -383,8 +375,6 @@ msgid ""
 "The transactions are processed by Ingenico. Set your Ingenico device on the "
 "related payment method."
 msgstr ""
-"Tehinguid töötleb Ingenico. Seadistage oma Ingenico seade vastavale "
-"makseviisile."
 
 #. module: pos_iot
 #: model:ir.model.fields,help:pos_iot.field_res_config_settings__worldline_payment_terminal
@@ -393,46 +383,44 @@ msgid ""
 "The transactions are processed by Worldline. Set your Worldline device on "
 "the related payment method."
 msgstr ""
-"Tehinguid töötleb Worldline. Seadistage oma Worldline'i seade vastavale "
-"makseviisile."
 
 #. module: pos_iot
 #. openerp-web
 #: code:addons/pos_iot/static/src/xml/LastTransactionStatus.xml:0
 #, python-format
 msgid "Time:"
-msgstr "Aeg:"
+msgstr ""
 
 #. module: pos_iot
 #. openerp-web
 #: code:addons/pos_iot/static/src/js/payment.js:0
 #, python-format
 msgid "Transaction could not be cancelled"
-msgstr "Tehingut ei saanud tühistada"
+msgstr ""
 
 #. module: pos_iot
 #. openerp-web
 #: code:addons/pos_iot/static/src/js/Chrome.js:0
 #, python-format
 msgid "Transaction in progress"
-msgstr "Käimasoleva tehing"
+msgstr ""
 
 #. module: pos_iot
 #: model_terms:ir.ui.view,arch_db:pos_iot.res_config_view_form_inherit_pos_iot
 msgid "Worldline"
-msgstr "Worldline"
+msgstr ""
 
 #. module: pos_iot
 #. openerp-web
 #: code:addons/pos_iot/static/src/xml/LastTransactionStatus.xml:0
 #, python-format
 msgid "Worldline - Last Transaction Status"
-msgstr "Worldline - Viimase tehingu staatus"
+msgstr ""
 
 #. module: pos_iot
 #: model:ir.model.fields,field_description:pos_iot.field_res_config_settings__worldline_payment_terminal
 msgid "Worldline Payment Terminal"
-msgstr "Worldline makseterminal"
+msgstr ""
 
 #. module: pos_iot
 #. openerp-web
@@ -441,7 +429,7 @@ msgstr "Worldline makseterminal"
 msgid ""
 "You cannot check the status of the last transaction when a payment in in "
 "progress."
-msgstr "Viimase tehingu staatust ei saa kontrollida, kui makse on pooleli."
+msgstr ""
 
 #. module: pos_iot
 #. openerp-web

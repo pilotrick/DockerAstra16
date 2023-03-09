@@ -118,7 +118,9 @@ $o-social-font-family-reset: $o-font-family-sans-serif;
     display: block;
 
     &:hover, &:focus {
-        background: rgba($info, 0.4);
+        $bg-color: scale-color($info, $alert-border-scale);
+        background: $bg-color;
+        color: color-contrast($bg-color);
     }
 }
 

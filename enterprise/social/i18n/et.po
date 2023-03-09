@@ -14,9 +14,9 @@
 # Martin Aavastik <martin@avalah.ee>, 2022
 # Triine Aavik <triine@avalah.ee>, 2022
 # Patrick-Jordan Kiudorv, 2022
+# Leaanika Randmets, 2022
 # Jana Jaakson, 2022
 # Anna, 2023
-# Leaanika Randmets, 2023
 # 
 msgid ""
 msgstr ""
@@ -24,7 +24,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-12-15 13:27+0000\n"
 "PO-Revision-Date: 2022-09-22 05:49+0000\n"
-"Last-Translator: Leaanika Randmets, 2023\n"
+"Last-Translator: Anna, 2023\n"
 "Language-Team: Estonian (https://www.transifex.com/odoo/teams/41243/et/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -42,14 +42,14 @@ msgstr "# Kontod"
 #: code:addons/social/models/social_post.py:0
 #, python-format
 msgid "%s (max %s chars)"
-msgstr "%s (maksimaalselt %s tähemärki)"
+msgstr ""
 
 #. module: social
 #. odoo-javascript
 #: code:addons/social/static/src/xml/social_templates.xml:0
 #, python-format
 msgid ", you must first link a social media."
-msgstr ", peaksid esmalt linkima sotsiaalmeedia konto. "
+msgstr ""
 
 #. module: social
 #: model_terms:ir.ui.view,arch_db:social.social_http_error_view
@@ -59,12 +59,12 @@ msgstr ""
 #. module: social
 #: model_terms:ir.ui.view,arch_db:social.social_post_view_form
 msgid "<i class=\"fa fa-globe\" title=\"See the post\"/>"
-msgstr "<i class=\"fa fa-globe\" title=\"See the post\"/>"
+msgstr ""
 
 #. module: social
 #: model_terms:ir.ui.view,arch_db:social.social_post_view_kanban
 msgid "<small class=\"pe-1\">Clicks:</small>"
-msgstr "<small class=\"pe-1\">Klikid:</small>"
+msgstr ""
 
 #. module: social
 #. odoo-javascript
@@ -116,7 +116,7 @@ msgstr "Lisa"
 #. module: social
 #: model_terms:ir.ui.view,arch_db:social.utm_campaign_view_form
 msgid "Add Post"
-msgstr "Lisa postitus"
+msgstr ""
 
 #. module: social
 #. odoo-javascript
@@ -125,12 +125,12 @@ msgstr "Lisa postitus"
 #: code:addons/social/static/src/xml/social_templates.xml:0
 #, python-format
 msgid "Add a Stream"
-msgstr "Lisa voog"
+msgstr "Lisage voog"
 
 #. module: social
 #: model_terms:ir.actions.act_window,help:social.action_social_stream_post
 msgid "Add a stream"
-msgstr "Lisa voog"
+msgstr "Lisage voog"
 
 #. module: social
 #. odoo-javascript
@@ -144,7 +144,7 @@ msgstr "Lisa pilt"
 #: code:addons/social/static/src/xml/social_templates.xml:0
 #, python-format
 msgid "All Companies"
-msgstr "Kõik ettevõtted"
+msgstr ""
 
 #. module: social
 #: model:ir.model.fields,field_description:social.field_utm_campaign__social_post_ids
@@ -154,7 +154,7 @@ msgstr "Kõik seotud sotsiaalmeedia postitused"
 #. module: social
 #: model:ir.model.fields,field_description:social.field_social_post__account_allowed_ids
 msgid "Allowed Accounts"
-msgstr "Lubatud kontod"
+msgstr ""
 
 #. module: social
 #: model_terms:ir.ui.view,arch_db:social.social_account_view_search
@@ -165,13 +165,13 @@ msgstr "Arhiveeritud"
 #: model:ir.model.fields,field_description:social.field_social_post__has_active_accounts
 #: model:ir.model.fields,field_description:social.field_social_post_template__has_active_accounts
 msgid "Are Accounts Available?"
-msgstr "Kas kontod on saadaval?"
+msgstr ""
 
 #. module: social
 #: model:ir.model.fields,field_description:social.field_social_post__image_ids
 #: model:ir.model.fields,field_description:social.field_social_post_template__image_ids
 msgid "Attach Images"
-msgstr "Lisa pilte"
+msgstr ""
 
 #. module: social
 #: model:ir.model.fields,field_description:social.field_social_media__message_attachment_count
@@ -185,17 +185,17 @@ msgstr "Manuste arv"
 #: model:ir.model.fields,field_description:social.field_social_account__audience
 #, python-format
 msgid "Audience"
-msgstr "Audients"
+msgstr ""
 
 #. module: social
 #: model:ir.model.fields,field_description:social.field_social_account__audience_trend
 msgid "Audience Trend"
-msgstr "Audientsi trend"
+msgstr ""
 
 #. module: social
 #: model:ir.model.fields,field_description:social.field_social_stream_post__author_link
 msgid "Author Link"
-msgstr "Autori link"
+msgstr ""
 
 #. module: social
 #: model:ir.model.fields,field_description:social.field_social_stream_post__author_name
@@ -221,13 +221,13 @@ msgstr ""
 #. module: social
 #: model:ir.model.fields,field_description:social.field_social_media__csrf_token
 msgid "CSRF Token"
-msgstr "CSRF Token"
+msgstr ""
 
 #. module: social
 #: model:ir.model.fields,field_description:social.field_social_post__calendar_date
 #: model_terms:ir.ui.view,arch_db:social.social_post_view_search
 msgid "Calendar Date"
-msgstr "Kalendri kuupäev"
+msgstr ""
 
 #. module: social
 #: model_terms:ir.ui.view,arch_db:social.social_post_view_form
@@ -254,7 +254,7 @@ msgstr ""
 #. module: social
 #: model:ir.model.fields,field_description:social.field_social_media__can_link_accounts
 msgid "Can link accounts ?"
-msgstr "Kas saab kontosid linkida?"
+msgstr ""
 
 #. module: social
 #. odoo-javascript
@@ -269,14 +269,14 @@ msgstr "Tühista"
 #: code:addons/social/static/src/js/tours/social.js:0
 #, python-format
 msgid "Choose which <b>account</b> you would like to link first."
-msgstr "Vali millist <b>kontot</b> soovid kõigepealt lisada. "
+msgstr ""
 
 #. module: social
 #. odoo-javascript
 #: code:addons/social/static/src/xml/social_templates.xml:0
 #, python-format
 msgid "Click to refresh."
-msgstr "Kliki värskendamiseks"
+msgstr ""
 
 #. module: social
 #: model_terms:ir.ui.view,arch_db:social.social_post_view_form
@@ -288,7 +288,7 @@ msgstr "Klikke"
 #: code:addons/social/static/src/xml/social_templates.xml:0
 #, python-format
 msgid "Comment Image"
-msgstr "Kommenteeri pilti"
+msgstr ""
 
 #. module: social
 #: model:ir.model.fields,field_description:social.field_social_account__company_id
@@ -317,7 +317,7 @@ msgstr "Seadistus"
 #: code:addons/social/static/src/xml/social_templates.xml:0
 #, python-format
 msgid "Connecting Problem"
-msgstr "Ühenduse probleem"
+msgstr ""
 
 #. module: social
 #: model:ir.model.fields,help:social.field_social_account__social_account_handle
@@ -346,12 +346,12 @@ msgstr ""
 #. module: social
 #: model_terms:ir.actions.act_window,help:social.action_view_utm_campaigns
 msgid "Create a Campaign"
-msgstr "Loo kampaania"
+msgstr ""
 
 #. module: social
 #: model_terms:ir.actions.act_window,help:social.action_social_post
 msgid "Create a Post"
-msgstr "Loo postitus"
+msgstr ""
 
 #. module: social
 #. odoo-python
@@ -406,12 +406,12 @@ msgstr ""
 #: code:addons/social/static/src/xml/social_templates.xml:0
 #, python-format
 msgid "Delete Comment"
-msgstr "Kustuta kommentaar"
+msgstr ""
 
 #. module: social
 #: model_terms:ir.ui.view,arch_db:social.res_config_settings_view_form
 msgid "Demo Mode"
-msgstr "Demorežiim"
+msgstr ""
 
 #. module: social
 #: model:ir.model.fields,field_description:social.field_social_media__media_description
@@ -421,7 +421,7 @@ msgstr "Kirjeldus"
 #. module: social
 #: model_terms:ir.ui.view,arch_db:social.res_config_settings_view_form
 msgid "Developer Accounts"
-msgstr "Arendaja kontod"
+msgstr ""
 
 #. module: social
 #: model:ir.model.fields,field_description:social.field_social_account__display_name
@@ -462,12 +462,12 @@ msgstr ""
 #: code:addons/social/static/src/xml/social_templates.xml:0
 #, python-format
 msgid "Edit Comment"
-msgstr "Muuda kommentaari"
+msgstr ""
 
 #. module: social
 #: model:ir.model.fields,field_description:social.field_res_config_settings__module_social_demo
 msgid "Enable Demo Mode"
-msgstr "Luba demorežiim"
+msgstr ""
 
 #. module: social
 #: model_terms:ir.ui.view,arch_db:social.res_config_settings_view_form
@@ -603,7 +603,7 @@ msgstr "On sõnum"
 #. module: social
 #: model:ir.model.fields,field_description:social.field_social_account__has_trends
 msgid "Has Trends?"
-msgstr "Kas on trende?"
+msgstr ""
 
 #. module: social
 #: model:ir.model.fields,field_description:social.field_social_account__id
@@ -651,25 +651,25 @@ msgstr "Pilt"
 #. module: social
 #: model:ir.model.fields,field_description:social.field_social_stream_post_image__image_url
 msgid "Image URL"
-msgstr "Pildi URL"
+msgstr ""
 
 #. module: social
 #. odoo-javascript
 #: code:addons/social/static/src/xml/social_templates.xml:0
 #, python-format
 msgid "Image Url"
-msgstr "Pildi URL"
+msgstr ""
 
 #. module: social
 #: model:ir.model.fields,field_description:social.field_social_post__image_urls
 #: model:ir.model.fields,field_description:social.field_social_post_template__image_urls
 msgid "Images URLs"
-msgstr "Piltide URL'id"
+msgstr ""
 
 #. module: social
 #: model:ir.model.fields,help:social.field_social_stream_post__stream_post_image_ids
 msgid "Images that were shared with this post."
-msgstr "Antud postitusega jagatud pildid."
+msgstr ""
 
 #. module: social
 #. odoo-javascript
@@ -758,14 +758,14 @@ msgstr "Loome oma <b>sotsiaalmeedia</b> töölaua."
 #: code:addons/social/static/src/js/tours/social.js:0
 #, python-format
 msgid "Let's start posting."
-msgstr "Alusta postitamisega!"
+msgstr ""
 
 #. module: social
 #. odoo-javascript
 #: code:addons/social/static/src/xml/social_templates.xml:0
 #, python-format
 msgid "Like"
-msgstr "Meeldib"
+msgstr ""
 
 #. module: social
 #. odoo-javascript
@@ -883,7 +883,7 @@ msgstr "Peamised tegevused"
 #. module: social
 #: model:ir.model.fields,field_description:social.field_social_media__max_post_length
 msgid "Max Post Length"
-msgstr "Maksimaalne postituse pikkus"
+msgstr ""
 
 #. module: social
 #: model:ir.model.fields,field_description:social.field_social_post__media_ids
@@ -895,7 +895,7 @@ msgstr "Meedia"
 #: model:ir.model.fields,field_description:social.field_social_account__media_type
 #: model:ir.model.fields,field_description:social.field_social_media__media_type
 msgid "Media Type"
-msgstr "Meedia tüüp"
+msgstr ""
 
 #. module: social
 #: model:ir.model.fields,field_description:social.field_social_live_post__message
@@ -915,14 +915,14 @@ msgstr "Sõnumi edastamise veateade"
 #: model:ir.model.fields,field_description:social.field_social_post__message_length
 #: model:ir.model.fields,field_description:social.field_social_post_template__message_length
 msgid "Message Length"
-msgstr "Sõnumi pikkus"
+msgstr ""
 
 #. module: social
 #. odoo-python
 #: code:addons/social/models/social_post.py:0
 #, python-format
 msgid "Message posted"
-msgstr "Sõnum postitatud"
+msgstr ""
 
 #. module: social
 #. odoo-python
@@ -953,12 +953,12 @@ msgstr "Minu tegevuse tähtaeg"
 #. module: social
 #: model_terms:ir.ui.view,arch_db:social.social_post_view_search
 msgid "My Posts"
-msgstr "Minu postitused"
+msgstr ""
 
 #. module: social
 #: model_terms:ir.ui.view,arch_db:social.social_stream_post_view_search
 msgid "My Streams"
-msgstr "Minu vood"
+msgstr ""
 
 #. module: social
 #: model:ir.model.fields,field_description:social.field_social_account__name
@@ -976,7 +976,7 @@ msgstr "Nimi"
 #: code:addons/social/static/src/xml/social_templates.xml:0
 #, python-format
 msgid "New Post"
-msgstr "Uus postitus"
+msgstr ""
 
 #. module: social
 #. odoo-javascript
@@ -1015,24 +1015,24 @@ msgstr "Järgmise tegevuse tüüp"
 #. module: social
 #: model_terms:ir.actions.act_window,help:social.action_social_account
 msgid "No Social Account yet!"
-msgstr "Sotsiaalkontot veel ei ole!"
+msgstr ""
 
 #. module: social
 #: model_terms:ir.actions.act_window,help:social.action_social_stream
 msgid "No Social Streams yet!"
-msgstr "Sotsiaalmeedia vood puuduvad."
+msgstr ""
 
 #. module: social
 #: model_terms:ir.actions.act_window,help:social.action_social_stream_post
 msgid "No Stream added yet!"
-msgstr "Ühtegi voogu pole veel lisatud!"
+msgstr ""
 
 #. module: social
 #. odoo-javascript
 #: code:addons/social/static/src/xml/social_templates.xml:0
 #, python-format
 msgid "No comments yet."
-msgstr "Kommentaare ei ole."
+msgstr ""
 
 #. module: social
 #. odoo-javascript
@@ -1099,7 +1099,7 @@ msgstr ""
 #. module: social
 #: model:ir.model.fields,help:social.field_social_account__stories
 msgid "Number of stories created from your posts (Shares, Re-tweets, ...)."
-msgstr "Teie postitusest loodud story'ide arv (jagamised jne)"
+msgstr ""
 
 #. module: social
 #. odoo-javascript
@@ -1124,7 +1124,7 @@ msgstr ""
 #: code:addons/social/static/src/xml/social_templates.xml:0
 #, python-format
 msgid "Or add"
-msgstr "Või lisa"
+msgstr ""
 
 #. module: social
 #: model:ir.model.fields,help:social.field_social_account__audience_trend
@@ -1165,7 +1165,7 @@ msgstr "Postita"
 #: model_terms:ir.ui.view,arch_db:social.social_stream_post_view_kanban
 #, python-format
 msgid "Post Image"
-msgstr "Postita pilt"
+msgstr ""
 
 #. module: social
 #. odoo-javascript
@@ -1174,24 +1174,24 @@ msgstr "Postita pilt"
 #: code:addons/social/static/src/js/stream_post_kanban_record.js:0
 #, python-format
 msgid "Post Images"
-msgstr "Postita pilte"
+msgstr ""
 
 #. module: social
 #: model:ir.model.fields,field_description:social.field_social_live_post__live_post_link
 #: model:ir.model.fields,field_description:social.field_social_stream_post__post_link
 msgid "Post Link"
-msgstr "Postita link"
+msgstr ""
 
 #. module: social
 #: model_terms:ir.ui.view,arch_db:social.social_post_view_search
 #: model_terms:ir.ui.view,arch_db:social.social_stream_post_view_search
 msgid "Post Message"
-msgstr "Postita sõnum"
+msgstr ""
 
 #. module: social
 #: model_terms:ir.ui.view,arch_db:social.social_post_view_form
 msgid "Post Now"
-msgstr "Postita kohe"
+msgstr ""
 
 #. module: social
 #: model:ir.model.fields,help:social.field_social_stream_post__post_link
@@ -1203,7 +1203,7 @@ msgstr ""
 #. module: social
 #: model_terms:ir.ui.view,arch_db:social.social_post_template_view_form
 msgid "Post on"
-msgstr "Postitatud"
+msgstr ""
 
 #. module: social
 #: model:ir.model.fields.selection,name:social.selection__social_live_post__state__posted
@@ -1215,7 +1215,7 @@ msgstr "Postitatud"
 #: model:ir.model.fields.selection,name:social.selection__social_live_post__state__posting
 #: model:ir.model.fields.selection,name:social.selection__social_post__state__posting
 msgid "Posting"
-msgstr "Postitamine"
+msgstr ""
 
 #. module: social
 #: model:ir.model.fields,field_description:social.field_social_stream__stream_post_ids
@@ -1228,12 +1228,12 @@ msgstr "Postitused"
 #. module: social
 #: model:ir.model.fields,field_description:social.field_social_post__live_post_ids
 msgid "Posts By Account"
-msgstr "Postitused konto järgi"
+msgstr ""
 
 #. module: social
 #: model_terms:ir.ui.view,arch_db:social.social_post_view_form
 msgid "Posts By Accounts"
-msgstr "Postitused konto järgi"
+msgstr ""
 
 #. module: social
 #. odoo-javascript
@@ -1245,7 +1245,7 @@ msgstr ""
 #. module: social
 #: model_terms:ir.ui.view,arch_db:social.social_post_template_view_form
 msgid "Preview your post"
-msgstr "Postituse eelvaade"
+msgstr ""
 
 #. module: social
 #. odoo-javascript
@@ -1262,7 +1262,7 @@ msgstr ""
 #. module: social
 #: model_terms:ir.ui.view,arch_db:social.social_post_view_search
 msgid "Published By"
-msgstr "Avalikustatud"
+msgstr ""
 
 #. module: social
 #: model:ir.model.fields,field_description:social.field_social_post__published_date
@@ -1272,7 +1272,7 @@ msgstr "Avalikustamise kuupäev"
 #. module: social
 #: model:ir.model.fields,field_description:social.field_social_stream_post__published_date
 msgid "Published date"
-msgstr "Avaldamise kuupäev"
+msgstr ""
 
 #. module: social
 #: model:ir.model.fields.selection,name:social.selection__social_live_post__state__ready
@@ -1287,7 +1287,7 @@ msgstr "Seotud sotsiaalmeedia"
 #. module: social
 #: model:ir.model.fields,help:social.field_social_account__media_id
 msgid "Related Social Media (Facebook, Twitter, ...)."
-msgstr "Seotud sotsiaalmeedia (Facebook, Twitter, ...)."
+msgstr ""
 
 #. module: social
 #: model:ir.model.fields,field_description:social.field_social_stream_post__account_id
@@ -1326,7 +1326,7 @@ msgstr "Graafik"
 #. module: social
 #: model:ir.model.fields.selection,name:social.selection__social_post__post_method__scheduled
 msgid "Schedule later"
-msgstr "Planeeri hiljem"
+msgstr ""
 
 #. module: social
 #: model:ir.model.fields.selection,name:social.selection__social_post__state__scheduled
@@ -1348,7 +1348,7 @@ msgstr ""
 #. module: social
 #: model:ir.model.fields.selection,name:social.selection__social_post__post_method__now
 msgid "Send now"
-msgstr "Saada kohe"
+msgstr ""
 
 #. module: social
 #: model:ir.model.fields,field_description:social.field_social_stream__sequence
@@ -1437,12 +1437,12 @@ msgstr "Sotsiaalmeedia postitus"
 #: model:ir.model,name:social.model_social_post_template
 #: model_terms:ir.ui.view,arch_db:social.social_post_template_view_form
 msgid "Social Post Template"
-msgstr "Postituse mall"
+msgstr ""
 
 #. module: social
 #: model:ir.actions.act_window,name:social.social_post_template_action
 msgid "Social Post Templates"
-msgstr "Sotsiaalmeedia postituste mallid"
+msgstr ""
 
 #. module: social
 #: model:ir.actions.act_window,name:social.action_social_post
@@ -1478,13 +1478,13 @@ msgstr "Sotsiaalmeedia vood"
 #. module: social
 #: model:res.groups,name:social.group_social_user
 msgid "Social User"
-msgstr "Sotsiaalmeedia kasutaja"
+msgstr ""
 
 #. module: social
 #: model:ir.actions.server,name:social.ir_cron_post_scheduled_ir_actions_server
 #: model:ir.cron,cron_name:social.ir_cron_post_scheduled
 msgid "Social: Publish Scheduled Posts"
-msgstr "Sotsiaalmeedia: ajasta postituste avaldamine"
+msgstr ""
 
 #. module: social
 #. odoo-javascript
@@ -1549,12 +1549,12 @@ msgstr ""
 #: code:addons/social/static/src/js/stream_post_kanban_controller.js:0
 #, python-format
 msgid "Stream Added (%s)"
-msgstr "Voog on lisatud (%s)"
+msgstr ""
 
 #. module: social
 #: model:ir.model.fields,field_description:social.field_social_stream_post_image__stream_post_id
 msgid "Stream Post"
-msgstr "Voo postitus"
+msgstr ""
 
 #. module: social
 #: model:ir.model.fields,field_description:social.field_social_stream_post__stream_post_image_ids
@@ -1599,7 +1599,7 @@ msgstr "Sünkroniseeri"
 #: code:addons/social/models/social_post_template.py:0
 #, python-format
 msgid "The 'message' field is required for post ID %s"
-msgstr "Postituse ID jaoks on 'message' väli nõutud %s"
+msgstr ""
 
 #. module: social
 #: model:ir.model.fields,help:social.field_social_post__account_ids
@@ -1664,7 +1664,7 @@ msgstr "Tiitel"
 #: code:addons/social/static/src/xml/social_templates.xml:0
 #, python-format
 msgid "To add a stream"
-msgstr "Voo lisamiseks"
+msgstr ""
 
 #. module: social
 #: model:ir.model.fields,field_description:social.field_social_stream__stream_type_id
@@ -1722,8 +1722,6 @@ msgid ""
 "Used to make comparisons when we need to restrict some features to a "
 "specific media ('facebook', 'twitter', ...)."
 msgstr ""
-"Kasutatakse võrdluste tegemiseks, kui meil on vaja piirata mõningaid "
-"funktsioone konkreetsele meediale (\"facebook\", \"twitter\", ...)."
 
 #. module: social
 #. odoo-javascript
@@ -1837,7 +1835,7 @@ msgstr ""
 #: code:addons/social/static/src/js/stream_post_comment.js:0
 #, python-format
 msgid "comment/reply"
-msgstr "kommenteeri/vasta"
+msgstr ""
 
 #. module: social
 #: model_terms:ir.actions.act_window,help:social.action_social_stream

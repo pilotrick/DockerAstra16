@@ -221,9 +221,6 @@ class BankReconciliationReportCustomHandler(models.AbstractModel):
             ('date', '<=', options['date']['date_to']),
         ]
 
-        if journal.company_id.fiscalyear_lock_date:
-            domain.append(('date', '>', journal.company_id.fiscalyear_lock_date))
-
         if not options['all_entries']:
             domain.append(('move_id.state', '=', 'posted'))
 

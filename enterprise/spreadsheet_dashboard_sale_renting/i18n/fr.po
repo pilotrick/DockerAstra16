@@ -215,21 +215,21 @@ msgstr "Meilleurs produits"
 #: code:addons/spreadsheet_dashboard_sale_renting/data/files/rental_dashboard.json:0
 #, python-format
 msgid "Top Salespeople"
-msgstr "Meilleurs vendeurs"
+msgstr "Meilleur vendeur"
 
 #. module: spreadsheet_dashboard_sale_renting
 #. openerp-web
 #: code:addons/spreadsheet_dashboard_sale_renting/data/files/rental_dashboard.json:0
 #, python-format
 msgid "rental stats - current"
-msgstr "statistiques des locations - actuel"
+msgstr "statistiques des locations - actuelles"
 
 #. module: spreadsheet_dashboard_sale_renting
 #. openerp-web
 #: code:addons/spreadsheet_dashboard_sale_renting/data/files/rental_dashboard.json:0
 #, python-format
 msgid "rental stats - previous"
-msgstr "statistiques des locations - précédent"
+msgstr "statistiques des locations - précédentes"
 
 #. module: spreadsheet_dashboard_sale_renting
 #. openerp-web

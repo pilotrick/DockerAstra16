@@ -461,6 +461,10 @@ class BankRecWidget(models.Model):
             st_line = wizard.st_line_id
 
             context = {
+                # Number of amls to be displayed by default.
+                'limit': 10,
+
+                # Views.
                 'search_view_ref': 'account_accountant.view_account_move_line_search_bank_rec_widget',
                 'tree_view_ref': 'account_accountant.view_account_move_line_list_bank_rec_widget',
             }
@@ -501,10 +505,9 @@ class BankRecWidget(models.Model):
                     ('payment_id.partner_type', '=', 'customer'),
                 ],
                 'no_separator': True,
-                'is_default': st_line.amount >= 0.0,
             })
             dynamic_filters.append({
-                'name': 'payable_matching',
+                'name': 'receivable_matching',
                 'description': _("Payable"),
                 'domain': [
                     '|',
@@ -517,7 +520,6 @@ class BankRecWidget(models.Model):
                     ('account_id', 'in', tuple(account_ids)),
                     ('payment_id.partner_type', '=', 'supplier'),
                 ],
-                'is_default': st_line.amount < 0.0,
             })
 
             # Stringify the domain.
@@ -956,23 +958,29 @@ class BankRecWidget(models.Model):
         st_line = self.st_line_id
 
         # Compute the current open balance.
-        transaction_amount, transaction_currency, journal_amount, _journal_currency, company_amount, _company_currency \
-            = self.st_line_id._get_accounting_amounts_and_currencies()
-        open_amount_currency = -transaction_amount
-        open_balance = -company_amount
-        for line in self.line_ids:
-            if line.flag in ('liquidity', 'auto_balance'):
-                continue
+        lines = self.line_ids.filtered(lambda x: x.flag not in ('auto_balance', 'liquidity'))
+        open_balance = -sum(lines.mapped('balance'))
+        open_amount_currency = -sum(lines.mapped('amount_currency'))
+        currencies = set(lines.currency_id)
 
-            open_balance -= line.balance
-            if line.currency_id == self.transaction_currency_id:
-                open_amount_currency -= line.amount_currency
-            elif line.currency_id == self.journal_currency_id:
-                open_amount_currency -= transaction_currency\
-                    .round(line.amount_currency * abs(transaction_amount / journal_amount))
-            else:
-                open_amount_currency -= transaction_currency\
-                    .round(line.balance * abs(transaction_amount / company_amount))
+        # Special handle for the liquidity line to avoid rounding issues with conversion rates.
+        default_st_line_vals_list = st_line._prepare_move_line_default_vals()
+        open_balance -= default_st_line_vals_list[0]['debit'] - default_st_line_vals_list[0]['credit']
+        if currencies == {self.company_currency_id}:
+            open_amount_currency -= default_st_line_vals_list[0]['amount_currency']
+            currencies.add(self.company_currency_id)
+        elif currencies == {self.journal_currency_id}:
+            open_amount_currency -= default_st_line_vals_list[0]['amount_currency']
+            currencies.add(self.journal_currency_id)
+        else:
+            open_amount_currency += default_st_line_vals_list[1]['amount_currency']
+            currencies.add(self.transaction_currency_id)
+
+        same_currency = currencies == {self.transaction_currency_id}
+
+        if not same_currency:
+            open_amount_currency = self.st_line_id\
+                ._prepare_counterpart_amounts_using_st_line_rate(self.company_currency_id, open_balance, open_balance)['amount_currency']
 
         # Create a new auto-balance line.
         if self.partner_id:
@@ -1031,21 +1039,13 @@ class BankRecWidget(models.Model):
 
         auto_balance = auto_balance_line_vals['balance']
         current_balance = line.balance + exchange_diff_line.balance
-        has_enough_comp_debit = self.company_currency_id.compare_amounts(auto_balance, 0) < 0 \
-                                and self.company_currency_id.compare_amounts(current_balance, 0) > 0 \
-                                and self.company_currency_id.compare_amounts(current_balance, -auto_balance) > 0
-        has_enough_comp_credit = self.company_currency_id.compare_amounts(auto_balance, 0) > 0 \
-                                and self.company_currency_id.compare_amounts(current_balance, 0) < 0 \
-                                and self.company_currency_id.compare_amounts(-current_balance, auto_balance) > 0
+        has_enough_comp_debit = auto_balance < 0.0 and current_balance > 0.0 and current_balance > -auto_balance
+        has_enough_comp_credit = auto_balance > 0.0 and current_balance < 0.0 and -current_balance > auto_balance
 
         auto_amount_currency = auto_balance_line_vals['amount_currency']
         current_amount_currency = line.amount_currency
-        has_enough_curr_debit = line.currency_id.compare_amounts(auto_amount_currency, 0) < 0 \
-                                and line.currency_id.compare_amounts(current_amount_currency, 0) > 0 \
-                                and line.currency_id.compare_amounts(current_amount_currency, -auto_amount_currency) > 0
-        has_enough_curr_credit = line.currency_id.compare_amounts(auto_amount_currency, 0) > 0 \
-                                and line.currency_id.compare_amounts(current_amount_currency, 0) < 0 \
-                                and line.currency_id.compare_amounts(-current_amount_currency, auto_amount_currency) > 0
+        has_enough_curr_debit = auto_amount_currency < 0.0 and current_amount_currency > 0.0 and current_amount_currency > -auto_amount_currency
+        has_enough_curr_credit = auto_amount_currency > 0.0 and current_amount_currency < 0.0 and -current_amount_currency > auto_amount_currency
 
         if line.currency_id == self.transaction_currency_id:
             if has_enough_curr_debit or has_enough_curr_credit:
@@ -1175,22 +1175,8 @@ class BankRecWidget(models.Model):
 
         all_aml_lines = self.line_ids.filtered(lambda x: x.flag == 'new_aml')
         if all_aml_lines:
+            # == Check for a partial reconciliation ==
             last_line = all_aml_lines[-1]
-
-            # Cleanup the existing partials if not on the last line.
-            line_ids_commands = []
-            for aml_line in all_aml_lines:
-                is_partial = aml_line.display_stroked_amount_currency or aml_line.display_stroked_balance
-                if is_partial:
-                    line_ids_commands.append(Command.update(aml_line.id, {
-                        'amount_currency': aml_line.source_amount_currency,
-                        'balance': aml_line.source_balance,
-                    }))
-            if line_ids_commands:
-                self.line_ids = line_ids_commands
-                self._lines_widget_recompute_exchange_diff()
-
-            # Check for a partial reconciliation.
             partial_amounts = self._lines_widget_check_partial_amount(last_line)
 
             if partial_amounts:
@@ -1417,21 +1403,7 @@ class BankRecWidget(models.Model):
                 'balance': exchange_diff_balance,
             }))
 
-        if line_ids_commands:
-            self.line_ids = line_ids_commands
-
-            # Reorder to put each exchange line right after the corresponding new_aml.
-            new_lines = self.env['bank.rec.widget.line']
-            for line in self.line_ids:
-                if line.flag == 'exchange_diff':
-                    continue
-
-                new_lines |= line
-                if line.flag == 'new_aml':
-                    exchange_diff = self.line_ids\
-                        .filtered(lambda x: x.flag == 'exchange_diff' and x.source_aml_id == line.source_aml_id)
-                    new_lines |= exchange_diff
-            self.line_ids = new_lines
+        self.line_ids = line_ids_commands
 
     def _lines_widget_prepare_reco_model_write_off_vals(self, reco_model, write_off_vals):
         self.ensure_one()
@@ -1750,7 +1722,6 @@ class BankRecWidget(models.Model):
         # Update the move.
         move_ctx = move.with_context(
             skip_invoice_sync=True,
-            skip_invoice_line_sync=True,
             skip_account_move_synchronization=True,
             force_delete=True,
         )
@@ -1761,7 +1732,7 @@ class BankRecWidget(models.Model):
         # Perform the reconciliation.
         for index, counterpart_aml_id in params['to_reconcile']:
             counterpart_aml = self.env['account.move.line'].browse(counterpart_aml_id)
-            (move_ctx.line_ids.filtered(lambda x: x.sequence == index) + counterpart_aml).reconcile()
+            (move.line_ids.filtered(lambda x: x.sequence == index) + counterpart_aml).reconcile()
 
         # Fill missing partner.
         st_line.with_context(skip_account_move_synchronization=True).partner_id = params['partner_id']

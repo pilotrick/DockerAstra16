@@ -173,7 +173,7 @@ tour.register('account_accountant_bank_rec_widget_ui',
         },
         {
             content: "AML Search Filter has been reset",
-            trigger: ".o_list_view .o_facet_value:last-child:contains('Receivable')",
+            trigger: ".o_list_view .o_facet_value:last-child:contains('Payable')",
             run: () => {},
         },
         // Test statement line selection when using the pager
@@ -428,8 +428,8 @@ tour.register('account_accountant_bank_rec_widget_ui',
         },
         {
             content: "No Lines Displayed and right div is empty",
-            extra_trigger: ".o_bank_rec_right_div .bank_rec_tutorial",
-            trigger: ".o_view_nocontent_smiling_face",
+            extra_trigger: ".o_bank_rec_right_div:empty",
+            trigger: ".o_view_nocontent_empty_folder",
             run: () => {}
         },
         // Test the next st line is always selected when Not Matched Filter is active
@@ -555,20 +555,14 @@ tour.register('account_accountant_bank_rec_widget_ui',
             run: "text -333.33",
         },
         {
-            content: "balance displays $-333.33",
-            extra_trigger: ".btn-secondary:contains('$ -333.33')",
-            trigger: ".btn-secondary:contains('$ -333.33')",
-            run: () => {},
-        },
-        {
             content: "Modify the label",
             trigger: "div.tab-pane.active input[id='form_name']",
             run: "text Spontaneous Combustion",
         },
         {
-            content: "statement line displays combustion and $-333.33",
+            content: "balance and statement line display $-333.333 ",
             extra_trigger: ".o_bank_rec_selected_st_line:contains('Combustion'):contains('$ -333.33')",
-            trigger: ".o_bank_rec_selected_st_line:contains('Combustion'):contains('$ -333.33')",
+            trigger: ".btn-secondary:contains('$ -333.33')",
             run: () => {},
         },
         // End

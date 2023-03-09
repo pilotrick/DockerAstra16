@@ -4,7 +4,7 @@
 # 
 # Translators:
 # Martin Trigaux, 2022
-# Abe Manyo, 2023
+# Abe Manyo, 2022
 # 
 msgid ""
 msgstr ""
@@ -12,7 +12,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-09-23 08:22+0000\n"
 "PO-Revision-Date: 2022-09-22 05:50+0000\n"
-"Last-Translator: Abe Manyo, 2023\n"
+"Last-Translator: Abe Manyo, 2022\n"
 "Language-Team: Indonesian (https://www.transifex.com/odoo/teams/41243/id/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -23,32 +23,32 @@ msgstr ""
 #. module: website_sale_dashboard
 #: model_terms:ir.ui.view,arch_db:website_sale_dashboard.sale_dashboard_view
 msgid "# Customers"
-msgstr "# Pelanggan"
+msgstr ""
 
 #. module: website_sale_dashboard
 #: model_terms:ir.ui.view,arch_db:website_sale_dashboard.sale_dashboard_view
 msgid "# Lines"
-msgstr "# Baris"
+msgstr ""
 
 #. module: website_sale_dashboard
 #: model:ir.model.fields,field_description:website_sale_dashboard.field_sale_report__is_abandoned_cart
 msgid "Abandoned Cart"
-msgstr "Keranjang Belanja Ditinggal"
+msgstr ""
 
 #. module: website_sale_dashboard
 #: model_terms:ir.ui.view,arch_db:website_sale_dashboard.sale_report_view_search_website_inherit
 msgid "Abandoned Carts"
-msgstr "Keranjang-Keranjang Belanja Ditinggal"
+msgstr ""
 
 #. module: website_sale_dashboard
 #: model_terms:ir.ui.view,arch_db:website_sale_dashboard.website_sale_onboarding_payment_provider_step
 msgid "Activate Stripe"
-msgstr "Aktifkan Stripe"
+msgstr ""
 
 #. module: website_sale_dashboard
 #: model_terms:ir.ui.view,arch_db:website_sale_dashboard.sale_dashboard_view
 msgid "Average Order"
-msgstr "Rata-Rata Order"
+msgstr ""
 
 #. module: website_sale_dashboard
 #: model:ir.model.fields.selection,name:website_sale_dashboard.selection__res_company__website_sale_dashboard_onboarding_state__closed
@@ -63,12 +63,12 @@ msgstr "Perusahaan"
 #. module: website_sale_dashboard
 #: model_terms:ir.ui.view,arch_db:website_sale_dashboard.sale_dashboard_view
 msgid "Conversion Rate"
-msgstr "Tingkat Konversi"
+msgstr ""
 
 #. module: website_sale_dashboard
 #: model:ir.model,name:website_sale_dashboard.model_digest_digest
 msgid "Digest"
-msgstr "Digest"
+msgstr "Singkat"
 
 #. module: website_sale_dashboard
 #: model:ir.model.fields.selection,name:website_sale_dashboard.selection__res_company__website_sale_dashboard_onboarding_state__done
@@ -79,7 +79,6 @@ msgstr "Selesai"
 #: model_terms:ir.ui.view,arch_db:website_sale_dashboard.website_sale_onboarding_payment_provider_step
 msgid "Enable credit &amp; debit card payments supported by Stripe"
 msgstr ""
-"Aktifkan pembayaran kartu kredit &amp; debit yang didukung oleh Stripe"
 
 #. module: website_sale_dashboard
 #. openerp-web
@@ -92,7 +91,7 @@ msgstr "Pergi ke Website"
 #. module: website_sale_dashboard
 #: model:ir.model.fields.selection,name:website_sale_dashboard.selection__res_company__website_sale_dashboard_onboarding_state__just_done
 msgid "Just done"
-msgstr "Baru selesai"
+msgstr "Just done"
 
 #. module: website_sale_dashboard
 #: model_terms:ir.actions.act_window,help:website_sale_dashboard.sale_dashboard
@@ -102,17 +101,17 @@ msgstr "Belum ada data!"
 #. module: website_sale_dashboard
 #: model:ir.model.fields.selection,name:website_sale_dashboard.selection__res_company__website_sale_dashboard_onboarding_state__not_done
 msgid "Not done"
-msgstr "Belum selesai"
+msgstr "Not done"
 
 #. module: website_sale_dashboard
 #: model_terms:ir.ui.view,arch_db:website_sale_dashboard.website_sale_onboarding_payment_provider_step
 msgid "Online Payments"
-msgstr "Pembayaran Online"
+msgstr ""
 
 #. module: website_sale_dashboard
 #: model_terms:ir.ui.view,arch_db:website_sale_dashboard.website_sale_onboarding_payment_provider_step
 msgid "Online payments enabled"
-msgstr "Pembayaran online diaktifkan"
+msgstr ""
 
 #. module: website_sale_dashboard
 #: model_terms:ir.ui.view,arch_db:website_sale_dashboard.sale_dashboard_view
@@ -123,37 +122,37 @@ msgstr "Order"
 #: model_terms:ir.ui.view,arch_db:website_sale_dashboard.view_online_sales_graph
 #: model_terms:ir.ui.view,arch_db:website_sale_dashboard.view_online_sales_pivot
 msgid "Sales Analysis"
-msgstr "Analisis Penjualan"
+msgstr "Analisa Penjualan"
 
 #. module: website_sale_dashboard
 #: model:ir.model,name:website_sale_dashboard.model_sale_report
 msgid "Sales Analysis Report"
-msgstr "Analisis Laporan Sales"
+msgstr ""
 
 #. module: website_sale_dashboard
 #: model:ir.model.fields,field_description:website_sale_dashboard.field_res_company__website_sale_dashboard_onboarding_state
 msgid "State of the website sale onboarding panel"
-msgstr "Status panel onboarding website sale"
+msgstr ""
 
 #. module: website_sale_dashboard
 #: model_terms:ir.ui.view,arch_db:website_sale_dashboard.website_sale_dashboard_onboarding_panel
 msgid "The configuration is done. Happy selling!"
-msgstr "Konfigurasi selesai. Selamat berjualan!"
+msgstr ""
 
 #. module: website_sale_dashboard
 #: model_terms:ir.ui.view,arch_db:website_sale_dashboard.sale_dashboard_view
 msgid "Total Sales"
-msgstr "Total Sales"
+msgstr ""
 
 #. module: website_sale_dashboard
 #: model_terms:ir.ui.view,arch_db:website_sale_dashboard.sale_dashboard_view
 msgid "Total, Tax Included"
-msgstr "Total, Termasuk Pajak"
+msgstr ""
 
 #. module: website_sale_dashboard
 #: model_terms:ir.ui.view,arch_db:website_sale_dashboard.sale_report_view_search_website_inherit
 msgid "Unpaid Orders"
-msgstr "Order Belum Dibayar"
+msgstr ""
 
 #. module: website_sale_dashboard
 #: model_terms:ir.ui.view,arch_db:website_sale_dashboard.sale_dashboard_view
@@ -163,9 +162,9 @@ msgstr "Total Sebelum Pajak"
 #. module: website_sale_dashboard
 #: model:ir.model,name:website_sale_dashboard.model_website
 msgid "Website"
-msgstr "Website"
+msgstr "Situs web"
 
 #. module: website_sale_dashboard
 #: model:ir.actions.act_window,name:website_sale_dashboard.sale_dashboard
 msgid "eCommerce Dashboard"
-msgstr "Dashboard eCommerce"
+msgstr ""

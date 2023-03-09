@@ -108,7 +108,7 @@ msgstr ""
 #: code:addons/spreadsheet_dashboard_stock/data/files/inventory_flow_dashboard.json:0
 #, python-format
 msgid "Period"
-msgstr "പീരീഡ്"
+msgstr ""
 
 #. module: spreadsheet_dashboard_stock
 #. openerp-web
@@ -124,7 +124,7 @@ msgstr ""
 #: code:addons/spreadsheet_dashboard_stock/data/files/inventory_flow_dashboard.json:0
 #, python-format
 msgid "Product"
-msgstr "പ്രോഡക്റ്റ്"
+msgstr "ഉൽപ്പന്നം"
 
 #. module: spreadsheet_dashboard_stock
 #. openerp-web

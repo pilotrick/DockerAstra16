@@ -8,7 +8,6 @@
 # Martin Trigaux, 2022
 # Hongu Cosmin <cosmin513@gmail.com>, 2022
 # Foldi Robert <foldirobert@nexterp.ro>, 2022
-# Lyall Kindmurr, 2023
 # 
 msgid ""
 msgstr ""
@@ -16,7 +15,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-09-20 09:49+0000\n"
 "PO-Revision-Date: 2022-09-22 05:48+0000\n"
-"Last-Translator: Lyall Kindmurr, 2023\n"
+"Last-Translator: Foldi Robert <foldirobert@nexterp.ro>, 2022\n"
 "Language-Team: Romanian (https://www.transifex.com/odoo/teams/41243/ro/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -68,12 +67,12 @@ msgstr "acum 30 zile"
 #. module: sale_subscription_dashboard
 #: model_terms:ir.ui.view,arch_db:sale_subscription_dashboard.sales_men_pdf_template
 msgid "<i>There is no invoice during this period.</i>"
-msgstr "<i>Nu există facturi în acest interval.</i>"
+msgstr ""
 
 #. module: sale_subscription_dashboard
 #: model_terms:ir.ui.view,arch_db:sale_subscription_dashboard.sales_men_pdf_template
 msgid "<i>There is no subscription modification during this period.</i>"
-msgstr "<i>Nu există modificări de abonamente în acest interval.</i>"
+msgstr ""
 
 #. module: sale_subscription_dashboard
 #: model_terms:ir.ui.view,arch_db:sale_subscription_dashboard.move_line_entries_report_search
@@ -100,8 +99,8 @@ msgid ""
 "Average revenue of a subscription, obtained by dividing the MRR by the "
 "number of subscriptions"
 msgstr ""
-"Venitul mediu al unui abonament, obținut prin împărțirea venitului lunar "
-"recurent la numărul de abonamente"
+"Venitul mediu al unui abonament, obținut prin împărțirea MRR la numărul de "
+"abonamente"
 
 #. module: sale_subscription_dashboard
 #. openerp-web
@@ -116,7 +115,7 @@ msgstr "Categorii"
 #: code:addons/sale_subscription_dashboard/static/src/js/sale_subscription_dashboard.js:0
 #, python-format
 msgid "Churned MRR"
-msgstr "Venit lunar recurent pierdut"
+msgstr ""
 
 #. module: sale_subscription_dashboard
 #. openerp-web
@@ -146,12 +145,12 @@ msgstr "Curent(ă)"
 #: code:addons/sale_subscription_dashboard/static/src/xml/sale_subscription_dashboard.xml:0
 #, python-format
 msgid "Current MRR"
-msgstr "Venit lunar recurent curent"
+msgstr " MRR curent"
 
 #. module: sale_subscription_dashboard
 #: model_terms:ir.ui.view,arch_db:sale_subscription_dashboard.sales_men_pdf_template
 msgid "Current MRR ("
-msgstr "Venit lunar recurent curent ("
+msgstr ""
 
 #. module: sale_subscription_dashboard
 #. openerp-web
@@ -172,7 +171,7 @@ msgstr "Personalizat"
 #: code:addons/sale_subscription_dashboard/controllers/stat_types.py:0
 #, python-format
 msgid "Customer Churn"
-msgstr "Pierderi de clienți"
+msgstr ""
 
 #. module: sale_subscription_dashboard
 #. openerp-web
@@ -232,7 +231,7 @@ msgstr "Document"
 #: code:addons/sale_subscription_dashboard/static/src/js/sale_subscription_dashboard.js:0
 #, python-format
 msgid "Down MRR"
-msgstr "Venit lunar recurent scăzut"
+msgstr ""
 
 #. module: sale_subscription_dashboard
 #. openerp-web
@@ -247,7 +246,7 @@ msgstr "Dată sfârșit:"
 #: code:addons/sale_subscription_dashboard/static/src/js/sale_subscription_dashboard.js:0
 #, python-format
 msgid "Expansion MRR"
-msgstr "Venit lunar recurent extins"
+msgstr ""
 
 #. module: sale_subscription_dashboard
 #: code:addons/sale_subscription_dashboard/controllers/stat_types.py:0
@@ -257,11 +256,6 @@ msgid ""
 "the average MRR of a subscription by the churn rate (e.g. if your average "
 "MRR is $ 100 and your churn rate is 5%, the LTV will be $ 100/5% = $ 2,000)"
 msgstr ""
-"Venituri așteptate pe viață ale unei abonamente medii; obținute prin "
-"împărțirea venitului lunar recurent mediu al unui abonament la rata de "
-"pierdere a clienților (de exemplu, dacă venitul lunar recurent mediu este de"
-" 100 $ și rata de pierdere a clienților este de 5%, LTV va fi 100 $ / 5% = "
-"2.000 $)"
 
 #. module: sale_subscription_dashboard
 #. openerp-web
@@ -275,7 +269,7 @@ msgstr "Exponențial"
 #: code:addons/sale_subscription_dashboard/controllers/stat_types.py:0
 #, python-format
 msgid "Forecasted Annual MRR Growth"
-msgstr "Creștere anuala estimată a Venitului lunar recurent"
+msgstr "Creștere anuala estimată a MRR"
 
 #. module: sale_subscription_dashboard
 #: code:addons/sale_subscription_dashboard/controllers/stat_types.py:0
@@ -286,15 +280,15 @@ msgstr "Creștere anuală estimată a abonamentelor"
 #. module: sale_subscription_dashboard
 #: model:ir.actions.client,name:sale_subscription_dashboard.action_subscription_dashboard_report_forecast
 msgid "Forecasted KPIs"
-msgstr "KPI-uri prevăzute"
+msgstr ""
 
 #. module: sale_subscription_dashboard
 #: model_terms:ir.actions.act_window,help:sale_subscription_dashboard.action_move_line_entries_report
 msgid ""
 "From this view, have an analysis of your different invoice line entries."
 msgstr ""
-"Din acest mod de afișare, aveți o analiză a diferitelor intrări pe linii de "
-"factură."
+"Din această perspectivă, analizați diferitele înregistrări ale liniei dvs. "
+"de factură"
 
 #. module: sale_subscription_dashboard
 #. openerp-web
@@ -329,7 +323,7 @@ msgstr "În"
 #: model_terms:ir.ui.view,arch_db:sale_subscription_dashboard.move_line_entries_report_pivot
 #: model_terms:ir.ui.view,arch_db:sale_subscription_dashboard.move_line_entries_report_search
 msgid "Invoice Line Entries Analysis"
-msgstr "Analiza intrărilor pe linii de factură"
+msgstr ""
 
 #. module: sale_subscription_dashboard
 #: code:addons/sale_subscription_dashboard/controllers/revenue_kpis_dashboard.py:0
@@ -338,8 +332,8 @@ msgid ""
 "It makes no sense to sum MRR of different currencies. Please select "
 "companies with the same currency."
 msgstr ""
-"Nu are sens să cumulăm venitul lunar recurent in monede diferite. Vă rugăm "
-"să selectați companii cu aceeași monedă."
+"Nu are sens să sumăm MRR pentru diferite monede. Vă rugăm să selectați "
+"companii cu aceeași monedă."
 
 #. module: sale_subscription_dashboard
 #. openerp-web
@@ -385,8 +379,6 @@ msgid ""
 "List all invoices containing non-recurring sales and the amount of\n"
 "                        non-recurring revenues in these invoices for this particular salesperson."
 msgstr ""
-"Lista tuturor facturilor care conțin vânzări non-recurente și suma\n"
-"                        veniturilor non-recurente din aceste facturi pentru acest vânzător particular."
 
 #. module: sale_subscription_dashboard
 #. openerp-web
@@ -418,7 +410,7 @@ msgstr "Se încarcă..."
 #: code:addons/sale_subscription_dashboard/static/src/js/sale_subscription_dashboard.js:0
 #, python-format
 msgid "MRR Growth"
-msgstr "Creștere venit lunar recurent"
+msgstr "Creștere MRR"
 
 #. module: sale_subscription_dashboard
 #: code:addons/sale_subscription_dashboard/controllers/stat_types.py:0
@@ -427,8 +419,6 @@ msgid ""
 "MRR for short; total subscription revenue per month (e.g. for an annual "
 "subscription of $ 1,200, the MRR is $ 100)"
 msgstr ""
-"Venit lunar recurent; venitul total al abonamentului pe lună (de exemplu, "
-"pentru un abonament anual de $ 1,200, venitul lunar recurent este $ 100)"
 
 #. module: sale_subscription_dashboard
 #: code:addons/sale_subscription_dashboard/controllers/stat_types.py:0
@@ -470,7 +460,7 @@ msgstr "NRR"
 #. module: sale_subscription_dashboard
 #: model_terms:ir.ui.view,arch_db:sale_subscription_dashboard.sales_men_pdf_template
 msgid "NRR ("
-msgstr "NRR ("
+msgstr ""
 
 #. module: sale_subscription_dashboard
 #. openerp-web
@@ -478,7 +468,7 @@ msgstr "NRR ("
 #: code:addons/sale_subscription_dashboard/static/src/js/sale_subscription_dashboard.js:0
 #, python-format
 msgid "Net New MRR"
-msgstr "Venit lunar recurent nou net"
+msgstr ""
 
 #. module: sale_subscription_dashboard
 #: code:addons/sale_subscription_dashboard/controllers/stat_types.py:0
@@ -492,7 +482,7 @@ msgstr "Venituri nete"
 #: code:addons/sale_subscription_dashboard/static/src/js/sale_subscription_dashboard.js:0
 #, python-format
 msgid "New MRR"
-msgstr "Venit lunar recurent nou"
+msgstr "MRR nou"
 
 #. module: sale_subscription_dashboard
 #: code:addons/sale_subscription_dashboard/controllers/revenue_kpis_dashboard.py:0
@@ -587,12 +577,12 @@ msgstr "Plan"
 #: code:addons/sale_subscription_dashboard/static/src/xml/sale_subscription_dashboard.xml:0
 #, python-format
 msgid "Previous MRR"
-msgstr "Venit lunar recurent anterior"
+msgstr "MRR anterio"
 
 #. module: sale_subscription_dashboard
 #: model_terms:ir.ui.view,arch_db:sale_subscription_dashboard.sales_men_pdf_template
 msgid "Previous MRR ("
-msgstr "Venit lunar recurent anterior ("
+msgstr ""
 
 #. module: sale_subscription_dashboard
 #. openerp-web
@@ -613,20 +603,20 @@ msgstr "Recurență"
 #: code:addons/sale_subscription_dashboard/controllers/stat_types.py:0
 #, python-format
 msgid "Reduction in total MRR over the period"
-msgstr "Reducere în totalul venitului lunar recurent în perioada respectivă"
+msgstr "Reducerea MRR total pe parcursul perioadei"
 
 #. module: sale_subscription_dashboard
 #: code:addons/sale_subscription_dashboard/controllers/stat_types.py:0
 #, python-format
 msgid "Revenue Churn"
-msgstr "Pierderi venituri"
+msgstr ""
 
 #. module: sale_subscription_dashboard
 #. openerp-web
 #: code:addons/sale_subscription_dashboard/static/src/xml/sale_subscription_dashboard.xml:0
 #, python-format
 msgid "Revenue Churn:"
-msgstr "Pierderi venituri:"
+msgstr ""
 
 #. module: sale_subscription_dashboard
 #. openerp-web
@@ -698,14 +688,14 @@ msgstr "Dată start :"
 #: code:addons/sale_subscription_dashboard/static/src/xml/sale_subscription_dashboard.xml:0
 #, python-format
 msgid "Starting MRR:"
-msgstr "Venit lunar recurent initial:"
+msgstr ""
 
 #. module: sale_subscription_dashboard
 #. openerp-web
 #: code:addons/sale_subscription_dashboard/static/src/xml/sale_subscription_dashboard.xml:0
 #, python-format
 msgid "Starting Subscription:"
-msgstr "Începere abonament:"
+msgstr "Abonament de pornire:"
 
 #. module: sale_subscription_dashboard
 #. openerp-web
@@ -731,10 +721,6 @@ msgid ""
 "                        (e.g. two upsells occuring on the same day, or a subscription getting closed and re-opened\n"
 "                        on the same day)."
 msgstr ""
-"Modificările abonamentului agregă toate modificările care au avut loc în\n"
-"                        perioada selectată. Rețineți că modificările care au loc în același zi pot fi grupate împreună\n"
-"                        (de exemplu, două vanzari superioare care au loc în același zi, sau un abonament care se închide și se redeschide\n"
-"                        în același zi)."
 
 #. module: sale_subscription_dashboard
 #. openerp-web
@@ -764,7 +750,7 @@ msgstr "Abonamente"
 #: code:addons/sale_subscription_dashboard/static/src/xml/sale_subscription_dashboard.xml:0
 #, python-format
 msgid "Subscriptions Churn:"
-msgstr "Valoarea abonamentelor pierdute:"
+msgstr ""
 
 #. module: sale_subscription_dashboard
 #. openerp-web
@@ -778,7 +764,7 @@ msgstr "Creșterea Abonamentelor"
 #: code:addons/sale_subscription_dashboard/static/src/xml/sale_subscription_dashboard.xml:0
 #, python-format
 msgid "Subscriptions plans"
-msgstr "Planuri de abonament"
+msgstr ""
 
 #. module: sale_subscription_dashboard
 #. openerp-web
@@ -869,8 +855,6 @@ msgid ""
 "Total subscription revenue per month (e.g. for an annual subscription of $ "
 "1,200, the MRR is $ 100)"
 msgstr ""
-"Venitul total al abonamentului pe lună (de exemplu, pentru un abonament "
-"anual de $ 1,200, venitul lunar recurent este $ 100)"
 
 #. module: sale_subscription_dashboard
 #: code:addons/sale_subscription_dashboard/controllers/revenue_kpis_dashboard.py:0
@@ -899,27 +883,25 @@ msgstr "Atenție"
 #, python-format
 msgid "Yearly version of the MRR, obtained by multiplying the MRR by 12"
 msgstr ""
-"Versiunea anuală a valorii venitului lunar recurent, obținută prin "
-"înmulțirea venitului lunar recurent cu 12"
 
 #. module: sale_subscription_dashboard
 #. openerp-web
 #: code:addons/sale_subscription_dashboard/static/src/xml/sale_subscription_dashboard.xml:0
 #, python-format
 msgid "churn, your MRR will be"
-msgstr "pierdere, venitul lunar recurent va fi"
+msgstr ""
 
 #. module: sale_subscription_dashboard
 #. openerp-web
 #: code:addons/sale_subscription_dashboard/static/src/xml/sale_subscription_dashboard.xml:0
 #, python-format
 msgid "churn, your subscription base will be"
-msgstr "pierdere, baza dvs. de abonamente va fi"
+msgstr ""
 
 #. module: sale_subscription_dashboard
 #: model_terms:ir.ui.view,arch_db:sale_subscription_dashboard.sales_men_pdf_template
 msgid "graphic"
-msgstr "grafic"
+msgstr ""
 
 #. module: sale_subscription_dashboard
 #. openerp-web

@@ -26,7 +26,7 @@ patch(ViewButton.prototype, "web_studio.ViewButtonApproval", {
             const action = type === "action" && name;
             const method = type === "object" && name;
             this.approval = useApproval({
-                getRecord: (props) => props.record,
+                record: this.props.record,
                 action,
                 method,
             });

@@ -3,6 +3,7 @@
 # 	* website_knowledge
 # 
 # Translators:
+# Martin Trigaux, 2022
 # Abe Manyo, 2023
 # 
 msgid ""
@@ -22,17 +23,17 @@ msgstr ""
 #. module: website_knowledge
 #: model_terms:ir.ui.view,arch_db:website_knowledge.knowledge_article_view_form
 msgid "<i class=\"fa fa-globe fa-2x\" title=\"Share to web\"/>"
-msgstr "<i class=\"fa fa-globe fa-2x\" title=\"Share ke website\"/>"
+msgstr ""
 
 #. module: website_knowledge
 #: model_terms:ir.ui.view,arch_db:website_knowledge.knowledge_article_view_form
 msgid "Anyone can view"
-msgstr "SIapapun dapat melihat"
+msgstr ""
 
 #. module: website_knowledge
 #: model_terms:ir.ui.view,arch_db:website_knowledge.knowledge_article_view_form
 msgid "Article published"
-msgstr "Artikel dipublikasikan"
+msgstr ""
 
 #. module: website_knowledge
 #: model:ir.model.fields,field_description:website_knowledge.field_knowledge_article__can_publish
@@ -53,27 +54,27 @@ msgstr "Artikel Pengetahuan"
 #. module: website_knowledge
 #: model_terms:ir.ui.view,arch_db:website_knowledge.website_knowledge_article_tree_frontend
 msgid "Public articles"
-msgstr "Artikel publik"
+msgstr ""
 
 #. module: website_knowledge
 #: model_terms:ir.ui.view,arch_db:website_knowledge.knowledge_article_view_form
 msgid "Publish and share with anyone"
-msgstr "Publikasikan dan bagikan dengan siapapun"
+msgstr ""
 
 #. module: website_knowledge
 #: model_terms:ir.ui.view,arch_db:website_knowledge.knowledge_article_view_form
 msgid "Share to web"
-msgstr "Bagikan ke website"
+msgstr ""
 
 #. module: website_knowledge
 #: model_terms:ir.ui.view,arch_db:website_knowledge.website_knowledge_article_tree_frontend
 msgid "Shared with you"
-msgstr "Dibagikan ke Anda"
+msgstr ""
 
 #. module: website_knowledge
 #: model:ir.model.fields,help:website_knowledge.field_knowledge_article__website_url
 msgid "The full URL to access the document through the website."
-msgstr "URL lengkap untuk mengakses dokumen melalui website."
+msgstr "URL lengkap untuk mengakses dokumen melalui situs web."
 
 #. module: website_knowledge
 #: model:ir.model.fields,field_description:website_knowledge.field_knowledge_article__website_published
@@ -88,4 +89,4 @@ msgstr "Website"
 #. module: website_knowledge
 #: model:ir.model.fields,field_description:website_knowledge.field_knowledge_article__website_url
 msgid "Website URL"
-msgstr "URL Website"
+msgstr "URL Situs Web"

@@ -287,7 +287,7 @@ msgstr ""
 #. module: account_followup
 #: model_terms:ir.ui.view,arch_db:account_followup.manual_reminder_view_form
 msgid "Cancel"
-msgstr "റദ്ദാക്കുക"
+msgstr ""
 
 #. module: account_followup
 #. odoo-python
@@ -299,7 +299,7 @@ msgstr ""
 #. module: account_followup
 #: model:ir.model.fields,field_description:account_followup.field_account_followup_followup_line__company_id
 msgid "Company"
-msgstr "കമ്പനി"
+msgstr ""
 
 #. module: account_followup
 #: model:ir.model,name:account_followup.model_res_partner

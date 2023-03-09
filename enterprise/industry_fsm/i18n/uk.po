@@ -524,8 +524,6 @@ msgstr "Ефективні години"
 #: model:mail.template,description:industry_fsm.mail_template_data_task_report
 msgid "Email sent when clicking on \"send report\" in a task"
 msgstr ""
-"Електронна пошта надіслана під час натискання кнопки «Надіслати звіт» у "
-"завданні"
 
 #. module: industry_fsm
 #: model:ir.model.fields,field_description:industry_fsm.field_report_project_task_user_fsm__planned_date_end
@@ -563,12 +561,12 @@ msgstr "Виїзне обслуговування"
 #. module: industry_fsm
 #: model:mail.template,name:industry_fsm.mail_template_data_intervention_details
 msgid "Field Service: Intervention Scheduled"
-msgstr "Виїзне обслуговування: Втручання заплановане"
+msgstr ""
 
 #. module: industry_fsm
 #: model:mail.template,name:industry_fsm.mail_template_data_task_report
 msgid "Field Service: Task Report"
-msgstr "Виїзне обслугоування: Звіт завдань"
+msgstr ""
 
 #. module: industry_fsm
 #. openerp-web
@@ -1127,8 +1125,6 @@ msgid ""
 "Set this template on a project's stage to automate email when tasks reach "
 "stages"
 msgstr ""
-"Установіть цей шаблон на стадії проекту, щоб автоматизувати електронну "
-"пошту, коли завдання досягають етапів"
 
 #. module: industry_fsm
 #: model:ir.actions.act_window,name:industry_fsm.res_config_settings_action_fsm

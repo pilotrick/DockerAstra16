@@ -222,7 +222,7 @@ msgstr ""
 #. module: account_avatax
 #: model_terms:ir.ui.view,arch_db:account_avatax.avatax_validate_address_view_form
 msgid "Cancel"
-msgstr "റദ്ദാക്കുക"
+msgstr ""
 
 #. module: account_avatax
 #: model:ir.model.fields,field_description:account_avatax.field_avatax_validate_address__city
@@ -255,7 +255,7 @@ msgstr ""
 #. module: account_avatax
 #: model:ir.model.fields,field_description:account_avatax.field_avatax_exemption__company_id
 msgid "Company"
-msgstr "കമ്പനി"
+msgstr ""
 
 #. module: account_avatax
 #: model_terms:ir.ui.view,arch_db:account_avatax.res_config_settings_view_form
@@ -403,7 +403,7 @@ msgstr ""
 #. module: account_avatax
 #: model:ir.model.fields,field_description:account_avatax.field_avatax_exemption__name
 msgid "Name"
-msgstr "പേര്"
+msgstr ""
 
 #. module: account_avatax
 #: code:addons/account_avatax/models/account_avatax.py:0
@@ -460,7 +460,7 @@ msgstr ""
 #. module: account_avatax
 #: model:ir.model,name:account_avatax.model_product_template
 msgid "Product"
-msgstr "പ്രോഡക്റ്റ്"
+msgstr "ഉൽപ്പന്നം"
 
 #. module: account_avatax
 #: model:ir.model,name:account_avatax.model_product_category

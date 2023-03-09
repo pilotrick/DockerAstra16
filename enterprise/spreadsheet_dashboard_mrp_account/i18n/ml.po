@@ -127,7 +127,7 @@ msgstr ""
 #: code:addons/spreadsheet_dashboard_mrp_account/data/files/manufacturing_dashboard.json:0
 #, python-format
 msgid "Period"
-msgstr "പീരീഡ്"
+msgstr ""
 
 #. module: spreadsheet_dashboard_mrp_account
 #. openerp-web
@@ -143,7 +143,7 @@ msgstr ""
 #: code:addons/spreadsheet_dashboard_mrp_account/data/files/manufacturing_dashboard.json:0
 #, python-format
 msgid "Product"
-msgstr "പ്രോഡക്റ്റ്"
+msgstr "ഉൽപ്പന്നം"
 
 #. module: spreadsheet_dashboard_mrp_account
 #. openerp-web

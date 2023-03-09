@@ -196,7 +196,7 @@
                                 <group>
                                     <field name="engine"/>
                                     <field name="formula"/>
-                                    <field name="subformula" attrs="{'required': [('engine', '=', 'domain')]}"/>
+                                    <field name="subformula"/>
                                 </group>
                             </page>
                             <page string="Options">

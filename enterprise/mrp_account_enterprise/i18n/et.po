@@ -11,8 +11,6 @@
 # Triine Aavik <triine@avalah.ee>, 2022
 # Algo Kärp <algokarp@gmail.com>, 2022
 # Patrick-Jordan Kiudorv, 2022
-# Anna, 2023
-# Jana Jaakson, 2023
 # 
 msgid ""
 msgstr ""
@@ -20,7 +18,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-09-20 09:49+0000\n"
 "PO-Revision-Date: 2022-09-22 05:47+0000\n"
-"Last-Translator: Jana Jaakson, 2023\n"
+"Last-Translator: Patrick-Jordan Kiudorv, 2022\n"
 "Language-Team: Estonian (https://www.transifex.com/odoo/teams/41243/et/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -46,17 +44,17 @@ msgstr ", alates"
 #. module: mrp_account_enterprise
 #: model_terms:ir.ui.view,arch_db:mrp_account_enterprise.mrp_cost_structure
 msgid "<span>Avg Cost of Components Per Unit</span>"
-msgstr "<span>Avg Cost of Components Per Unit</span>"
+msgstr ""
 
 #. module: mrp_account_enterprise
 #: model_terms:ir.ui.view,arch_db:mrp_account_enterprise.mrp_cost_structure
 msgid "<span>Avg Cost of Operations Per Unit</span>"
-msgstr "<span>Keskmine operatsioonide maksumus ühiku kohta</span>"
+msgstr ""
 
 #. module: mrp_account_enterprise
 #: model_terms:ir.ui.view,arch_db:mrp_account_enterprise.mrp_cost_structure
 msgid "<span>Avg Total Cost Per Unit</span>"
-msgstr "<span>Keskmine ühiku kogukulu</span>"
+msgstr ""
 
 #. module: mrp_account_enterprise
 #: model_terms:ir.ui.view,arch_db:mrp_account_enterprise.mrp_cost_structure
@@ -86,7 +84,7 @@ msgstr "<span>Kogus</span>"
 #. module: mrp_account_enterprise
 #: model_terms:ir.ui.view,arch_db:mrp_account_enterprise.mrp_cost_structure
 msgid "<span>Resource</span>"
-msgstr "<span>Ressurss</span>"
+msgstr ""
 
 #. module: mrp_account_enterprise
 #: model_terms:ir.ui.view,arch_db:mrp_account_enterprise.mrp_cost_structure
@@ -106,7 +104,7 @@ msgstr "<span>Ühiku maksumus</span>"
 #. module: mrp_account_enterprise
 #: model_terms:ir.ui.view,arch_db:mrp_account_enterprise.mrp_cost_structure
 msgid "<span>Unit of Measure</span>"
-msgstr "<span>Mõõtühik</span>"
+msgstr ""
 
 #. module: mrp_account_enterprise
 #: model_terms:ir.ui.view,arch_db:mrp_account_enterprise.mrp_cost_structure
@@ -131,22 +129,22 @@ msgstr "<strong>Praagi kogukulu</strong>"
 #. module: mrp_account_enterprise
 #: model_terms:ir.ui.view,arch_db:mrp_account_enterprise.mrp_cost_structure
 msgid "<strong>Total Production Cost</strong>"
-msgstr "<strong>Tootmise kogumaksumus</strong>"
+msgstr ""
 
 #. module: mrp_account_enterprise
 #: model_terms:ir.ui.view,arch_db:mrp_account_enterprise.mrp_report_pivot_view
 msgid "Average Component Cost / Unit"
-msgstr "Komponendi keskmine maksumus ühiku kohta"
+msgstr ""
 
 #. module: mrp_account_enterprise
 #: model_terms:ir.ui.view,arch_db:mrp_account_enterprise.mrp_report_pivot_view
 msgid "Average Operation Cost / Unit"
-msgstr "Keskmine operatsioonikulu ühiku kohta"
+msgstr ""
 
 #. module: mrp_account_enterprise
 #: model_terms:ir.ui.view,arch_db:mrp_account_enterprise.mrp_report_pivot_view
 msgid "Average Total Cost / Unit"
-msgstr "Keskmine kogukulu ühiku kohta"
+msgstr ""
 
 #. module: mrp_account_enterprise
 #: model_terms:ir.ui.view,arch_db:mrp_account_enterprise.mrp_cost_structure
@@ -156,7 +154,7 @@ msgstr "Too(de)te järgi"
 #. module: mrp_account_enterprise
 #: model:ir.model.fields,field_description:mrp_account_enterprise.field_mrp_report__byproduct_cost
 msgid "By-Products Total Cost"
-msgstr "Kõrvaltoodete kogukulu"
+msgstr ""
 
 #. module: mrp_account_enterprise
 #: model:ir.model.fields,field_description:mrp_account_enterprise.field_mrp_report__company_id
@@ -166,19 +164,18 @@ msgstr "Ettevõte"
 #. module: mrp_account_enterprise
 #: model:ir.model.fields,field_description:mrp_account_enterprise.field_mrp_report__unit_component_cost
 msgid "Component Cost / Unit"
-msgstr "Komponendi maksumus ühiku kohta"
+msgstr ""
 
 #. module: mrp_account_enterprise
 #: model:ir.model.fields,help:mrp_account_enterprise.field_mrp_report__unit_component_cost
 msgid ""
 "Component cost per unit produced (in product UoM) of manufacturing order"
 msgstr ""
-"Komponendi maksumus tootmistellimusel toodetud ühiku kohta (toote ühikutes)."
 
 #. module: mrp_account_enterprise
 #: model:ir.model.fields,field_description:mrp_account_enterprise.field_mrp_report__unit_cost
 msgid "Cost / Unit"
-msgstr "Maksumus/ühik"
+msgstr ""
 
 #. module: mrp_account_enterprise
 #: model:ir.actions.report,name:mrp_account_enterprise.action_cost_struct_mrp_production
@@ -191,12 +188,12 @@ msgstr "Kuluanalüüs"
 #. module: mrp_account_enterprise
 #: model_terms:ir.ui.view,arch_db:mrp_account_enterprise.mrp_cost_structure
 msgid "Cost Analysis Report"
-msgstr "Kulude analüüsi aruanne"
+msgstr ""
 
 #. module: mrp_account_enterprise
 #: model_terms:ir.ui.view,arch_db:mrp_account_enterprise.mrp_cost_structure
 msgid "Cost Breakdown of Products"
-msgstr "Toodete kulude jaotus"
+msgstr ""
 
 #. module: mrp_account_enterprise
 #: model:ir.actions.report,name:mrp_account_enterprise.action_cost_struct_product_template
@@ -206,12 +203,12 @@ msgstr "Struktuurne kuluanalüüs"
 #. module: mrp_account_enterprise
 #: model_terms:ir.ui.view,arch_db:mrp_account_enterprise.mrp_cost_structure
 msgid "Cost of Components"
-msgstr "Komponentide maksumus"
+msgstr ""
 
 #. module: mrp_account_enterprise
 #: model_terms:ir.ui.view,arch_db:mrp_account_enterprise.mrp_cost_structure
 msgid "Cost of Components per unit (in"
-msgstr "Komponentide maksumus ühiku kohta (in"
+msgstr ""
 
 #. module: mrp_account_enterprise
 #: model_terms:ir.ui.view,arch_db:mrp_account_enterprise.mrp_cost_structure
@@ -221,7 +218,7 @@ msgstr "Operatsioonide kulu"
 #. module: mrp_account_enterprise
 #: model_terms:ir.ui.view,arch_db:mrp_account_enterprise.mrp_cost_structure
 msgid "Cost of Operations per unit (in"
-msgstr "Operatsioonide maksumus ühiku kohta (in"
+msgstr ""
 
 #. module: mrp_account_enterprise
 #: model_terms:ir.ui.view,arch_db:mrp_account_enterprise.mrp_cost_structure
@@ -231,7 +228,7 @@ msgstr "Praagi kulu"
 #. module: mrp_account_enterprise
 #: model:ir.model.fields,help:mrp_account_enterprise.field_mrp_report__unit_cost
 msgid "Cost per unit produced (in product UoM) of manufacturing order"
-msgstr "Tootmistellimusel toodetud ühiku maksumus (toote ühikus)."
+msgstr ""
 
 #. module: mrp_account_enterprise
 #: model:ir.model.fields,field_description:mrp_account_enterprise.field_mrp_report__currency_id
@@ -246,7 +243,7 @@ msgstr "Kuva nimi"
 #. module: mrp_account_enterprise
 #: model:ir.model.fields,field_description:mrp_account_enterprise.field_mrp_report__unit_duration
 msgid "Duration of Operations / Unit"
-msgstr "Operatsiooni kestus / üksus"
+msgstr ""
 
 #. module: mrp_account_enterprise
 #: model:ir.model.fields,field_description:mrp_account_enterprise.field_mrp_report__date_finished
@@ -283,7 +280,7 @@ msgstr "Tootmistellimus"
 #. module: mrp_account_enterprise
 #: model:ir.model,name:mrp_account_enterprise.model_mrp_report
 msgid "Manufacturing Report"
-msgstr "Tootmisaruanne"
+msgstr ""
 
 #. module: mrp_account_enterprise
 #: model_terms:ir.actions.act_window,help:mrp_account_enterprise.mrp_report_dashboard_action
@@ -294,17 +291,17 @@ msgstr "Andmed puuduvad!"
 #: model:ir.model.fields,help:mrp_account_enterprise.field_mrp_report__unit_operation_cost
 msgid ""
 "Operation cost per unit produced (in product UoM) of manufacturing order"
-msgstr "Tegevuskulu tootmistellimusel toodetud ühiku kohta (toote ühikutes)."
+msgstr ""
 
 #. module: mrp_account_enterprise
 #: model:ir.model.fields,help:mrp_account_enterprise.field_mrp_report__unit_duration
 msgid "Operation duration (minutes) per unit produced of manufacturing order"
-msgstr "Töö kestus (minutites) tootmistellimusel toodetud ühiku kohta"
+msgstr ""
 
 #. module: mrp_account_enterprise
 #: model_terms:ir.ui.view,arch_db:mrp_account_enterprise.mrp_report_pivot_view
 msgid "Order Overview"
-msgstr "Tellimuse ülevaade"
+msgstr ""
 
 #. module: mrp_account_enterprise
 #: model:ir.model,name:mrp_account_enterprise.model_product_template
@@ -327,7 +324,7 @@ msgstr "Toote variatsioon"
 #: model:ir.actions.act_window,name:mrp_account_enterprise.mrp_report_dashboard_action
 #: model:ir.ui.menu,name:mrp_account_enterprise.mrp_dashboard_menuitem
 msgid "Production Analysis"
-msgstr "Tootmise analüüs"
+msgstr ""
 
 #. module: mrp_account_enterprise
 #: model:ir.model.fields,field_description:mrp_account_enterprise.field_mrp_report__qty_produced
@@ -343,7 +340,7 @@ msgstr "Mõned valitud tootmistellimused ei ole veel valmis."
 #. module: mrp_account_enterprise
 #: model:ir.model.fields,field_description:mrp_account_enterprise.field_mrp_report__component_cost
 msgid "Total Component Cost"
-msgstr "Komponentide kulu kokku"
+msgstr ""
 
 #. module: mrp_account_enterprise
 #: model:ir.model.fields,field_description:mrp_account_enterprise.field_mrp_report__total_cost
@@ -353,27 +350,27 @@ msgstr "Üldmaksumus"
 #. module: mrp_account_enterprise
 #: model_terms:ir.ui.view,arch_db:mrp_account_enterprise.mrp_cost_structure
 msgid "Total Cost per unit (in"
-msgstr "Ühiku üldkulu kokku (iin"
+msgstr ""
 
 #. module: mrp_account_enterprise
 #: model:ir.model.fields,field_description:mrp_account_enterprise.field_mrp_report__duration
 msgid "Total Duration of Operations"
-msgstr "Operatsioonide üldkulu kokku"
+msgstr ""
 
 #. module: mrp_account_enterprise
 #: model:ir.model.fields,field_description:mrp_account_enterprise.field_mrp_report__operation_cost
 msgid "Total Operation Cost"
-msgstr "Operatsiooni üldkulu"
+msgstr ""
 
 #. module: mrp_account_enterprise
 #: model:ir.model.fields,field_description:mrp_account_enterprise.field_mrp_report__unit_operation_cost
 msgid "Total Operation Cost / Unit"
-msgstr "Operatsiooni üldkulu kokku /Ühik"
+msgstr ""
 
 #. module: mrp_account_enterprise
 #: model:ir.model.fields,help:mrp_account_enterprise.field_mrp_report__component_cost
 msgid "Total cost of components for manufacturing order"
-msgstr "Tootmistellimuse komponentide kogumaksumus"
+msgstr ""
 
 #. module: mrp_account_enterprise
 #: model:ir.model.fields,help:mrp_account_enterprise.field_mrp_report__total_cost
@@ -381,22 +378,21 @@ msgid ""
 "Total cost of manufacturing order (component + operation costs + "
 "subcontracting cost)"
 msgstr ""
-"Tootmistellimuse kogukulu (koostisosad + operatsioonikulu + allhanke kulu)"
 
 #. module: mrp_account_enterprise
 #: model:ir.model.fields,help:mrp_account_enterprise.field_mrp_report__operation_cost
 msgid "Total cost of operations for manufacturing order"
-msgstr "Tootmistellimuse operatsioonide kogumaksumus"
+msgstr ""
 
 #. module: mrp_account_enterprise
 #: model:ir.model.fields,help:mrp_account_enterprise.field_mrp_report__duration
 msgid "Total duration (minutes) of operations for manufacturing order"
-msgstr "Tootmistellimuse operatsioonide kogukestus (minutites)."
+msgstr ""
 
 #. module: mrp_account_enterprise
 #: model:ir.model.fields,help:mrp_account_enterprise.field_mrp_report__qty_produced
 msgid "Total quantity produced in product's UoM"
-msgstr "Kogu toodetud kogus tooteühikutes"
+msgstr ""
 
 #. module: mrp_account_enterprise
 #: model_terms:ir.ui.view,arch_db:mrp_account_enterprise.mrp_cost_structure

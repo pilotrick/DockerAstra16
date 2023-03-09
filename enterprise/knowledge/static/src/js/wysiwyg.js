@@ -6,10 +6,6 @@ import Wysiwyg from 'web_editor.wysiwyg';
 import { KnowledgeArticleLinkModal } from './wysiwyg/knowledge_article_link.js';
 import { PromptEmbeddedViewNameDialogWrapper } from '../components/prompt_embedded_view_name_dialog/prompt_embedded_view_name_dialog.js';
 import { preserveCursor } from '@web_editor/js/editor/odoo-editor/src/OdooEditor';
-import { Markup } from 'web.utils';
-import {
-    encodeDataBehaviorProps,
-} from "@knowledge/js/knowledge_utils";
 
 Wysiwyg.include({
     /**
@@ -158,7 +154,7 @@ Wysiwyg.include({
             }, {
                 category: _t('Knowledge'),
                 name: _t('Index'),
-                priority: 60,
+                priority: 40,
                 description: _t('Show the first level of nested articles.'),
                 fontawesome: 'fa-list',
                 callback: () => {
@@ -167,7 +163,7 @@ Wysiwyg.include({
             }, {
                 category: _t('Knowledge'),
                 name: _t('Outline'),
-                priority: 60,
+                priority: 40,
                 description: _t('Show all nested articles.'),
                 fontawesome: 'fa-list',
                 callback: () => {
@@ -182,8 +178,9 @@ Wysiwyg.include({
      * @see KnowledgeBehavior
      *
      * @param {Element} anchor
+     * @param {Object} props
      */
-    _notifyNewBehavior(anchor) {
+    _notifyNewBehavior(anchor, props=null) {
         const behaviorsData = [];
         const type = Array.from(anchor.classList).find(className => className.startsWith('o_knowledge_behavior_type_'));
         if (type) {
@@ -191,6 +188,7 @@ Wysiwyg.include({
                 anchor: anchor,
                 behaviorType: type,
                 setCursor: true,
+                props: props || {},
             });
         }
         this.$editable.trigger('refresh_behaviors', { behaviorsData: behaviorsData});
@@ -285,18 +283,15 @@ Wysiwyg.include({
             element.classList.remove('o_is_knowledge_file');
             element.classList.add('o_image');
             const extension = (element.title && element.title.split('.').pop()) || element.dataset.mimetype;
-            const fileBlock = $(QWeb.render('knowledge.WysiwygFileBehavior', {
+            const fileBlock = $(QWeb.render('knowledge.abstract_behavior', {
                 behaviorType: "o_knowledge_behavior_type_file",
-                fileName: element.title,
-                fileImage: Markup(element.outerHTML),
-                behaviorProps: encodeDataBehaviorProps({
-                    fileName: element.title,
-                    fileExtension: extension,
-                }),
-                fileExtension: extension,
             }))[0];
             const [container] = this.odooEditor.execCommand('insert', fileBlock);
-            this._notifyNewBehavior(container);
+            this._notifyNewBehavior(container, {
+                fileName: element.title,
+                fileImage: element.outerHTML,
+                fileExtension: extension,
+            });
             // need to set cursor (anchor.sibling)
         } else {
             return this._super(...arguments);

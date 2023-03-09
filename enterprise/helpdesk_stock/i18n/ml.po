@@ -59,7 +59,7 @@ msgstr ""
 #: model:ir.model.fields,field_description:helpdesk_stock.field_helpdesk_ticket__product_id
 #: model:ir.model.fields,field_description:helpdesk_stock.field_helpdesk_ticket_report_analysis__product_id
 msgid "Product"
-msgstr "പ്രോഡക്റ്റ്"
+msgstr "ഉൽപ്പന്നം"
 
 #. module: helpdesk_stock
 #: model:ir.model.fields,help:helpdesk_stock.field_helpdesk_ticket__product_id

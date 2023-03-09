@@ -4,7 +4,7 @@
 # 
 # Translators:
 # Martin Trigaux, 2022
-# Abe Manyo, 2023
+# Abe Manyo, 2022
 # 
 msgid ""
 msgstr ""
@@ -12,7 +12,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-12-15 13:30+0000\n"
 "PO-Revision-Date: 2022-09-22 05:50+0000\n"
-"Last-Translator: Abe Manyo, 2023\n"
+"Last-Translator: Abe Manyo, 2022\n"
 "Language-Team: Indonesian (https://www.transifex.com/odoo/teams/41243/id/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -30,10 +30,6 @@ msgid ""
 "                rentals that last less than %(duration)s %(unit)s.\n"
 "            "
 msgstr ""
-"\n"
-"                Durasi rental terlalu singkat. Sangat disayangkan, kami tidak memproses\n"
-"                rental yang lebih singkat dari %(duration)s %(unit)s.\n"
-"            "
 
 #. module: website_sale_renting
 #. odoo-python
@@ -45,10 +41,6 @@ msgid ""
 "                Unfortunately, we do not process pickups on that weekday.\n"
 "            "
 msgstr ""
-"\n"
-"                Produk rental Anda memiliki tanggal pickup yang tidak valid (%(start_date)s).\n"
-"                Sangat disayangkan, tapi kami tidak memproses pickup pada hari kerja tersebut.\n"
-"            "
 
 #. module: website_sale_renting
 #. odoo-python
@@ -60,10 +52,6 @@ msgid ""
 "                Unfortunately, we do not process returns on that weekday.\n"
 "            "
 msgstr ""
-"\n"
-"                Produk rental Anda memiliki tanggal pengembalian yang tidak valid (%(end_date)s).\n"
-"                Sayang disayangkan, tapi kami tidak dapat memproses pengembalian Anda pada hari kerja tersebut.\n"
-"            "
 
 #. module: website_sale_renting
 #. odoo-python
@@ -76,11 +64,6 @@ msgid ""
 "                returns on those weekdays.\n"
 "            "
 msgstr ""
-"\n"
-"                Produk rental Anda memiliki tanggal pickup (%(start_date)s)  dan pengembalian (%(end_date)s)\n"
-"                yang tidak valid. Sangat disayangkan, tapi kami tidak memproses pickup atau\n"
-"                pengembalian pada hari kerja tersebut.\n"
-"            "
 
 #. module: website_sale_renting
 #. odoo-python
@@ -93,92 +76,87 @@ msgid ""
 "            inconvenience.\n"
 "        "
 msgstr ""
-"\n"
-"            Beberapa produk rental Anda (%(product)s) tidak dapat direntalkan pada\n"
-"            periode yang dipilih dan keranjang belanja Anda harus diperbarui. Mohon maaf atas\n"
-"            ketidaknyamanan tersebut.\n"
-"        "
 
 #. module: website_sale_renting
 #. odoo-javascript
 #: code:addons/website_sale_renting/static/src/js/renting_mixin.js:0
 #, python-format
 msgid "(%s days)."
-msgstr "(%s hari)."
+msgstr ""
 
 #. module: website_sale_renting
 #. odoo-javascript
 #: code:addons/website_sale_renting/static/src/js/renting_mixin.js:0
 #, python-format
 msgid "(%s hours)."
-msgstr "(%s jam)."
+msgstr ""
 
 #. module: website_sale_renting
 #. odoo-javascript
 #: code:addons/website_sale_renting/static/src/js/renting_mixin.js:0
 #, python-format
 msgid "(%s months)."
-msgstr "(%s bulan)."
+msgstr ""
 
 #. module: website_sale_renting
 #. odoo-javascript
 #: code:addons/website_sale_renting/static/src/js/renting_mixin.js:0
 #, python-format
 msgid "(%s weeks)."
-msgstr "(%s minggu)."
+msgstr ""
 
 #. module: website_sale_renting
 #: model_terms:ir.ui.view,arch_db:website_sale_renting.s_rental_search_options
 msgid ", .s_rental_search"
-msgstr ", .s_rental_search"
+msgstr ""
 
 #. module: website_sale_renting
 #: model_terms:ir.ui.view,arch_db:website_sale_renting.o_wsale_offcanvas
 #: model_terms:ir.ui.view,arch_db:website_sale_renting.products
 msgid "<b>Rental Period</b>"
-msgstr "<b>Periode Rental</b>"
+msgstr ""
 
 #. module: website_sale_renting
 #: model_terms:ir.ui.view,arch_db:website_sale_renting.rental_search_result_price
 msgid "<small>from</small>"
-msgstr "<small>dari</small>"
+msgstr ""
 
 #. module: website_sale_renting
 #: model_terms:ir.ui.view,arch_db:website_sale_renting.rental_search_result_price
 msgid "<small>per</small>"
-msgstr "<small>per</small>"
+msgstr ""
 
 #. module: website_sale_renting
 #: model_terms:ir.ui.view,arch_db:website_sale_renting.res_config_settings_view_form
 msgid "<span class=\"o_form_label\">Minimal time of rental</span>"
-msgstr "<span class=\"o_form_label\">Waktu minimal untuk rental</span>"
+msgstr ""
 
 #. module: website_sale_renting
 #: model_terms:ir.ui.view,arch_db:website_sale_renting.res_config_settings_view_form
 msgid "<span class=\"o_form_label\">Unavailability days</span>"
-msgstr "<span class=\"o_form_label\">Hari-hari yang tidak tersedia</span>"
+msgstr ""
 
 #. module: website_sale_renting
 #: model_terms:ir.ui.view,arch_db:website_sale_renting.price_dynamic_filter_template_product_product
 msgid "<span>/</span>"
-msgstr "<span>/</span>"
+msgstr ""
 
 #. module: website_sale_renting
 #: model_terms:ir.ui.view,arch_db:website_sale_renting.products_item
 #: model_terms:ir.ui.view,arch_db:website_sale_renting.rental_products_price
 #: model_terms:ir.ui.view,arch_db:website_sale_renting.suggested_products_list
 msgid "<span>per</span>"
-msgstr "<span>per</span>"
+msgstr ""
 
 #. module: website_sale_renting
 #: model_terms:ir.ui.view,arch_db:website_sale_renting.rental_product
 msgid "<strong class=\"attribute_name\">Rental Period</strong>"
-msgstr "<strong class=\"attribute_name\">Periode Rental</strong>"
+msgstr ""
 
 #. module: website_sale_renting
 #: model_terms:ir.ui.view,arch_db:website_sale_renting.rental_product
 msgid "<u class=\"h5\">Pricing</u>"
-msgstr "<u class=\"h5\">Harga</u>"
+msgstr ""
 
 #. module: website_sale_renting
 #. odoo-javascript
@@ -190,7 +168,7 @@ msgstr "Semua"
 #. module: website_sale_renting
 #: model_terms:ir.ui.view,arch_db:website_sale_renting.s_rental_search_options
 msgid "Attribute Filter"
-msgstr "Filter Atribut"
+msgstr ""
 
 #. module: website_sale_renting
 #. odoo-javascript
@@ -214,12 +192,12 @@ msgstr "Pengaturan Konfigurasi"
 #: code:addons/website_sale_renting/static/src/js/website_sale_renting_daterangepicker.js:0
 #, python-format
 msgid "Custom Range"
-msgstr "Rentang Kustom"
+msgstr ""
 
 #. module: website_sale_renting
 #: model_terms:ir.ui.view,arch_db:website_sale_renting.snippet_options
 msgid "Datepicker"
-msgstr "Pemilih Tanggal"
+msgstr ""
 
 #. module: website_sale_renting
 #: model_terms:ir.ui.view,arch_db:website_sale_renting.s_rental_search_options
@@ -229,12 +207,12 @@ msgstr "Hari"
 #. module: website_sale_renting
 #: model:ir.model.fields.selection,name:website_sale_renting.selection__res_company__renting_minimal_time_unit__day
 msgid "Days"
-msgstr "Hari-Hari"
+msgstr "Hari"
 
 #. module: website_sale_renting
 #: model_terms:ir.ui.view,arch_db:website_sale_renting.res_config_settings_view_form
 msgid "Days during which pickup and return are not possible."
-msgstr "Hari-Hari dimana pickup dan pengembalian tidak dapat dilakukan."
+msgstr ""
 
 #. module: website_sale_renting
 #: model:ir.model.fields,field_description:website_sale_renting.field_res_company__renting_forbidden_fri
@@ -261,18 +239,18 @@ msgstr "Jam"
 #: model:ir.model.fields,field_description:website_sale_renting.field_res_company__renting_minimal_time_duration
 #: model:ir.model.fields,field_description:website_sale_renting.field_res_config_settings__renting_minimal_time_duration
 msgid "Minimal Rental Duration"
-msgstr "Durasi Rental Minimal"
+msgstr ""
 
 #. module: website_sale_renting
 #: model:ir.model.fields,field_description:website_sale_renting.field_res_company__renting_minimal_time_unit
 #: model:ir.model.fields,field_description:website_sale_renting.field_res_config_settings__renting_minimal_time_unit
 msgid "Minimal Rental Duration Unit"
-msgstr "Unit Durasi Rental Minimal"
+msgstr ""
 
 #. module: website_sale_renting
 #: model_terms:ir.ui.view,arch_db:website_sale_renting.res_config_settings_view_form
 msgid "Minimal duration between pickup and return."
-msgstr "Durasi minimal di antara pickup dan pengembalian."
+msgstr ""
 
 #. module: website_sale_renting
 #: model:ir.model.fields,field_description:website_sale_renting.field_res_company__renting_forbidden_mon
@@ -290,7 +268,7 @@ msgstr "Bulan"
 #: code:addons/website_sale_renting/static/src/js/renting_mixin.js:0
 #, python-format
 msgid "Please select a rental period."
-msgstr "Silakan memilih periode rental."
+msgstr ""
 
 #. module: website_sale_renting
 #: model:ir.model,name:website_sale_renting.model_product_pricelist
@@ -310,17 +288,17 @@ msgstr "Varian Produk"
 #. module: website_sale_renting
 #: model_terms:ir.ui.view,arch_db:website_sale_renting.res_config_settings_view_form
 msgid "Rent Online"
-msgstr "Sewa Online"
+msgstr ""
 
 #. module: website_sale_renting
 #: model:ir.model,name:website_sale_renting.model_sale_order
 msgid "Sales Order"
-msgstr "Pesanan Penjualan"
+msgstr "Order Penjualan"
 
 #. module: website_sale_renting
 #: model:ir.model,name:website_sale_renting.model_sale_order_line
 msgid "Sales Order Line"
-msgstr "Baris Pesanan Penjualan"
+msgstr "Detail Order Penjualan"
 
 #. module: website_sale_renting
 #: model:ir.model.fields,field_description:website_sale_renting.field_res_company__renting_forbidden_sat
@@ -346,21 +324,21 @@ msgstr "Minggu"
 #: code:addons/website_sale_renting/static/src/js/renting_mixin.js:0
 #, python-format
 msgid "The pickup date cannot be in the past."
-msgstr "Tanggal pickup tidak bisa di masa lalu."
+msgstr ""
 
 #. module: website_sale_renting
 #. odoo-javascript
 #: code:addons/website_sale_renting/static/src/js/renting_mixin.js:0
 #, python-format
 msgid "The rental lasts less than the minimal rental duration %s"
-msgstr "Rental akan berlangsung kurang dari durasi minimal rental %s"
+msgstr ""
 
 #. module: website_sale_renting
 #. odoo-javascript
 #: code:addons/website_sale_renting/static/src/js/renting_mixin.js:0
 #, python-format
 msgid "The return date should be after the pickup date."
-msgstr "Tanggal pengembalian harus setelah tanggal pickup."
+msgstr ""
 
 #. module: website_sale_renting
 #: model:ir.model.fields,field_description:website_sale_renting.field_res_company__renting_forbidden_thu
@@ -371,7 +349,7 @@ msgstr "Kamis"
 #. module: website_sale_renting
 #: model_terms:ir.ui.view,arch_db:website_sale_renting.s_rental_search_options
 msgid "Timing"
-msgstr "Timing"
+msgstr ""
 
 #. module: website_sale_renting
 #: model_terms:ir.ui.view,arch_db:website_sale_renting.rental_product
@@ -387,7 +365,7 @@ msgstr "Selasa"
 #. module: website_sale_renting
 #: model:ir.model,name:website_sale_renting.model_website
 msgid "Website"
-msgstr "Website"
+msgstr "Situs web"
 
 #. module: website_sale_renting
 #: model:ir.model.fields,field_description:website_sale_renting.field_res_company__renting_forbidden_wed
@@ -405,27 +383,27 @@ msgstr "Minggu"
 #: code:addons/website_sale_renting/static/src/js/renting_mixin.js:0
 #, python-format
 msgid "You cannot pick up your rental on that day of the week."
-msgstr "Anda tidak dapat pickup rental Anda pada hari tersebut."
+msgstr ""
 
 #. module: website_sale_renting
 #. odoo-javascript
 #: code:addons/website_sale_renting/static/src/js/renting_mixin.js:0
 #, python-format
 msgid "You cannot return your rental on that day of the week."
-msgstr "Anda tidak dapat mengembalikkan rental Anda pada hari tersebut."
+msgstr ""
 
 #. module: website_sale_renting
 #. odoo-python
 #: code:addons/website_sale_renting/models/sale_order.py:0
 #, python-format
 msgid "Your rental product cannot be pickedup in the past."
-msgstr "Produk rental Anda tidak dapat dipickup di masa lalu."
+msgstr ""
 
 #. module: website_sale_renting
 #: model_terms:ir.ui.view,arch_db:website_sale_renting.products_item
 #: model_terms:ir.ui.view,arch_db:website_sale_renting.suggested_products_list
 msgid "from"
-msgstr "dari"
+msgstr ""
 
 #. module: website_sale_renting
 #: model_terms:ir.ui.view,arch_db:website_sale_renting.products
@@ -433,5 +411,3 @@ msgid ""
 "hasLeftColumn or "
 "is_view_active('website_sale_renting.shop_rental_datepicker_opt')"
 msgstr ""
-"hasLeftColumn or "
-"is_view_active('website_sale_renting.shop_rental_datepicker_opt')"

@@ -107,11 +107,7 @@ export function useDocumentView(helpers) {
                     default_tag_ids: [x2ManyCommands.replaceWith(env.searchModel.getSelectedTagIds())],
                 },
                 fullscreen: env.isSmall,
-                onClose: async () => {
-                    await env.model.load();
-                    env.model.useSampleModel = env.model.root.records.length === 0;
-                    env.model.notify();
-                },
+                onClose: async () => env.model.load(),
             });
         },
         onClickDocumentsAddUrl: () => {
@@ -124,11 +120,7 @@ export function useDocumentView(helpers) {
                     default_res_model: props.context.default_res_model || false,
                 },
                 fullscreen: env.isSmall,
-                onClose: async () => {
-                    await env.model.load();
-                    env.model.useSampleModel = env.model.root.records.length === 0;
-                    env.model.notify();
-                },
+                onClose: async () => env.model.load(),
             });
         },
         onClickShareDomain: async () => {
@@ -269,7 +261,6 @@ function useDocumentsViewFilePreviewer({ getSelectedDocumentsElements }) {
                 if (component.root.el) {
                     component.root.el.querySelector(".o_documents_view").classList.remove("overflow-hidden");
                 }
-                component.render(true);
             },
             onSelectDocument: (record) => {
                 for (const rec of component.model.root.selection) {

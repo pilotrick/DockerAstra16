@@ -29,12 +29,12 @@ msgstr ", oleh"
 #. module: website_helpdesk_slides
 #: model_terms:ir.ui.view,arch_db:website_helpdesk_slides.channel_search_result
 msgid "<i class=\"fa fa-2x fa-mortar-board\" title=\"eLearning Course\"/>"
-msgstr "<i class=\"fa fa-2x fa-mortar-board\" title=\"Kursus eLearning\"/>"
+msgstr ""
 
 #. module: website_helpdesk_slides
 #: model_terms:ir.ui.view,arch_db:website_helpdesk_slides.search_result
 msgid "<i class=\"fa fa-2x fa-mortar-board\" title=\"eLearning\"/>"
-msgstr "<i class=\"fa fa-2x fa-mortar-board\" title=\"eLearning\"/>"
+msgstr ""
 
 #. module: website_helpdesk_slides
 #: model_terms:ir.ui.view,arch_db:website_helpdesk_slides.knowledge_base_slides_card
@@ -42,8 +42,6 @@ msgid ""
 "<i class=\"fa fa-3x rounded bg-o-color-5 m-3 fa-mortar-board fa-3x rounded "
 "bg-o-color-5 m-3\">​</i>"
 msgstr ""
-"<i class=\"fa fa-3x rounded bg-o-color-5 m-3 fa-mortar-board fa-3x rounded "
-"bg-o-color-5 m-3\">​</i>"
 
 #. module: website_helpdesk_slides
 #: model_terms:ir.ui.view,arch_db:website_helpdesk_slides.knowledge_base_slides_card
@@ -51,14 +49,11 @@ msgid ""
 "<span style=\"font-size: 18px;\">Level up your skills with training videos "
 "and tutorials</span>"
 msgstr ""
-"<span style=\"font-size: 18px;\">Level up keterampilan Anda dengan video "
-"training dan tutorial</span>"
 
 #. module: website_helpdesk_slides
 #: model_terms:ir.ui.view,arch_db:website_helpdesk_slides.knowledge_base_slides_card
 msgid "<span style=\"font-weight: bolder; font-size: 18px;\">Courses</span>"
 msgstr ""
-"<span style=\"font-weight: bolder; font-size: 18px;\">Kursus-kursus</span>"
 
 #. module: website_helpdesk_slides
 #: model_terms:ir.ui.view,arch_db:website_helpdesk_slides.search_result
@@ -66,8 +61,6 @@ msgid ""
 "Comments\n"
 "                    | <i class=\"fa fa-folder-open-o\"/>"
 msgstr ""
-"Komentar\n"
-"                    | <i class=\"fa fa-folder-open-o\"/>"
 
 #. module: website_helpdesk_slides
 #: model:ir.model,name:website_helpdesk_slides.model_slide_channel
@@ -79,7 +72,7 @@ msgstr "Kursus"
 #: model:ir.model.fields,field_description:website_helpdesk_slides.field_helpdesk_team__website_slide_channel_ids
 #, python-format
 msgid "Courses"
-msgstr "Kursus-kursus"
+msgstr ""
 
 #. module: website_helpdesk_slides
 #: model:ir.model,name:website_helpdesk_slides.model_helpdesk_team
@@ -91,8 +84,6 @@ msgstr "Tim Helpdesk"
 msgid ""
 "In the help center, customers will only be able to see the selected courses."
 msgstr ""
-"Di pusat bantuan, pelanggan hanya akan dapat melihat kursus-kursus yang "
-"dipilih."
 
 #. module: website_helpdesk_slides
 #: model_terms:ir.ui.view,arch_db:website_helpdesk_slides.search_result
@@ -100,8 +91,6 @@ msgid ""
 "Likes\n"
 "                    |"
 msgstr ""
-"Likes\n"
-"                    |"
 
 #. module: website_helpdesk_slides
 #: model_terms:ir.ui.view,arch_db:website_helpdesk_slides.channel_search_result
@@ -109,18 +98,16 @@ msgid ""
 "Members\n"
 "                    |"
 msgstr ""
-"Anggota\n"
-"                    |"
 
 #. module: website_helpdesk_slides
 #: model_terms:ir.ui.view,arch_db:website_helpdesk_slides.channel_search_result
 msgid "Reviews"
-msgstr "Review"
+msgstr ""
 
 #. module: website_helpdesk_slides
 #: model:ir.model.fields,field_description:website_helpdesk_slides.field_helpdesk_team__show_knowledge_base_slide_channel
 msgid "Show Knowledge Base Slide Channel"
-msgstr "Tunjukkan Slide Channel Pengetahuan"
+msgstr ""
 
 #. module: website_helpdesk_slides
 #: model:ir.model,name:website_helpdesk_slides.model_slide_slide
@@ -130,7 +117,7 @@ msgstr "Slide"
 #. module: website_helpdesk_slides
 #: model_terms:ir.ui.view,arch_db:website_helpdesk_slides.knowledge_base_slides_card
 msgid "Take Courses"
-msgstr "Ambil Kursus"
+msgstr ""
 
 #. module: website_helpdesk_slides
 #: model_terms:ir.ui.view,arch_db:website_helpdesk_slides.search_result
@@ -138,5 +125,3 @@ msgid ""
 "Views\n"
 "                    |"
 msgstr ""
-"Views\n"
-"                    |"

@@ -70,7 +70,7 @@ class AccountAsset(models.Model):
         ],
         string="Computation",
         readonly=True, states={'draft': [('readonly', False)], 'model': [('readonly', False)]},
-        required=True, default='constant_periods',
+        required=True, default='none',
     )
     prorata_date = fields.Date(  # the starting date of the depreciations
         string='Prorata Date',
@@ -221,7 +221,7 @@ class AccountAsset(models.Model):
     @api.depends('acquisition_date', 'company_id', 'prorata_computation_type')
     def _compute_prorata_date(self):
         for asset in self:
-            if asset.prorata_computation_type == 'none' and asset.acquisition_date:
+            if asset.prorata_computation_type == 'none':
                 fiscalyear_date = asset.company_id.compute_fiscalyear_dates(asset.acquisition_date).get('date_from')
                 asset.prorata_date = fiscalyear_date
             else:
@@ -392,6 +392,7 @@ class AccountAsset(models.Model):
     def _onchange_type(self):
         if self.state != 'model':
             if self.asset_type == 'sale':
+                self.prorata_computation_type = 'daily_computation'
                 self.method_period = '1'
             else:
                 self.method_period = '12'

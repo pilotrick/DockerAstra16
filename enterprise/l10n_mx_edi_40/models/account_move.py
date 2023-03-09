@@ -1,11 +1,9 @@
 # -*- coding: utf-8 -*-
 
-from odoo import api, models, fields
+from odoo import api, models
 
 class AccountMove(models.Model):
     _inherit = 'account.move'
-
-    l10n_mx_edi_usage = fields.Selection(selection_add=[('S01', "Without fiscal effects")], default='S01')
 
     def _l10n_mx_edi_get_tax_objected(self):
         """Used to determine the IEPS tax breakdown in CFDI

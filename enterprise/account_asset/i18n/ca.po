@@ -6,15 +6,15 @@
 # eriiikgt, 2022
 # Eugeni Chafer <eugeni@chafer.cat>, 2022
 # Susanna Pujol, 2022
-# jabelchi, 2022
+# Josep Anton Belchi, 2022
 # AncesLatino2004, 2022
 # RGB Consulting <odoo@rgbconsulting.com>, 2022
 # Manel Fernandez Ramirez <manelfera@outlook.com>, 2022
 # Martin Trigaux, 2022
+# Ivan Espinola, 2022
 # Harcogourmet, 2022
 # Quim - eccit <quim@eccit.com>, 2022
 # Farouk Jabiri, 2022
-# Ivan Espinola, 2023
 # Óscar Fonseca <tecnico@extreme-micro.com>, 2023
 # 
 msgid ""
@@ -919,7 +919,7 @@ msgstr "Nom de la despesa ajornada"
 #: model:ir.ui.menu,name:account_asset.menu_action_account_expense_recognition
 #: model_terms:ir.ui.view,arch_db:account_asset.view_account_asset_expense_tree
 msgid "Deferred Expenses"
-msgstr "Despeses diferides"
+msgstr "Despeses ajornades"
 
 #. module: account_asset
 #: model_terms:ir.ui.view,arch_db:account_asset.view_account_asset_model_expense_tree
@@ -1745,7 +1745,7 @@ msgstr "Data Prorata"
 #: code:addons/account_asset/models/account_asset.py:0
 #, python-format
 msgid "Prorata Date can not be empty"
-msgstr "La data del Prorata no pot estar buida"
+msgstr ""
 
 #. module: account_asset
 #: model:ir.model.fields.selection,name:account_asset.selection__account_asset__asset_type__purchase
@@ -2038,8 +2038,6 @@ msgid ""
 "There are unposted depreciations prior to the selected operation date, "
 "please deal with them first."
 msgstr ""
-"Hi ha depreciacions no publicades abans de la data de l'operació "
-"seleccionada. Si us plau, tracteu-les primer."
 
 #. module: account_asset
 #. odoo-javascript

@@ -5,7 +5,6 @@
 # Translators:
 # Martin Trigaux, 2022
 # Cécile Collart <cco@odoo.com>, 2022
-# Jolien De Paepe, 2023
 # 
 msgid ""
 msgstr ""
@@ -13,7 +12,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-10-04 09:43+0000\n"
 "PO-Revision-Date: 2022-09-29 09:37+0000\n"
-"Last-Translator: Jolien De Paepe, 2023\n"
+"Last-Translator: Cécile Collart <cco@odoo.com>, 2022\n"
 "Language-Team: French (https://www.transifex.com/odoo/teams/41243/fr/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -86,7 +85,7 @@ msgstr "Engagé"
 #: code:addons/spreadsheet_dashboard_hr_referral/data/files/recruitment_dashboard.json:0
 #, python-format
 msgid "Hired Ratio"
-msgstr "Taux de recrutement"
+msgstr "Ratio engagé"
 
 #. module: spreadsheet_dashboard_hr_referral
 #. openerp-web
@@ -100,7 +99,7 @@ msgstr "Engagé par recommandation"
 #: code:addons/spreadsheet_dashboard_hr_referral/data/files/recruitment_dashboard.json:0
 #, python-format
 msgid "Hired ratio"
-msgstr "Taux de recrutement"
+msgstr "Ratio engagé"
 
 #. module: spreadsheet_dashboard_hr_referral
 #. openerp-web
@@ -108,7 +107,7 @@ msgstr "Taux de recrutement"
 #: code:addons/spreadsheet_dashboard_hr_referral/data/files/recruitment_dashboard.json:0
 #, python-format
 msgid "Job Position"
-msgstr "Poste de travail"
+msgstr "Poste Occupé"
 
 #. module: spreadsheet_dashboard_hr_referral
 #. openerp-web
@@ -123,7 +122,7 @@ msgstr "Moyen"
 #: code:addons/spreadsheet_dashboard_hr_referral/data/files/recruitment_dashboard.json:0
 #, python-format
 msgid "Most Hired Job Positions"
-msgstr "Les emplois les plus recherchés"
+msgstr "Postes les plus engagés"
 
 #. module: spreadsheet_dashboard_hr_referral
 #. openerp-web
@@ -145,7 +144,7 @@ msgstr "Nouvelles candidatures"
 #: code:addons/spreadsheet_dashboard_hr_referral/data/files/recruitment_dashboard.json:0
 #, python-format
 msgid "New Hires"
-msgstr "Nouvelles recrues"
+msgstr "Nouveaux engagés"
 
 #. module: spreadsheet_dashboard_hr_referral
 #. openerp-web
@@ -236,7 +235,7 @@ msgstr "Analyse du recrutement par poste"
 #: code:addons/spreadsheet_dashboard_hr_referral/data/files/recruitment_dashboard.json:0
 #, python-format
 msgid "Recruitment Analysis by Medium"
-msgstr "Analyse du recrutement par medium"
+msgstr "Analyse du recrutement par Medium"
 
 #. module: spreadsheet_dashboard_hr_referral
 #. openerp-web
@@ -257,7 +256,7 @@ msgstr "Analyse du recrutement par source"
 #: code:addons/spreadsheet_dashboard_hr_referral/data/files/recruitment_dashboard.json:0
 #, python-format
 msgid "Referral Rate"
-msgstr "Taux de recommandation"
+msgstr "Taux de référencement"
 
 #. module: spreadsheet_dashboard_hr_referral
 #. openerp-web
@@ -300,7 +299,7 @@ msgstr "Meilleurs postes"
 #: code:addons/spreadsheet_dashboard_hr_referral/data/files/recruitment_dashboard.json:0
 #, python-format
 msgid "Top Mediums"
-msgstr "Meilleurs médiums"
+msgstr "Meilleurs media"
 
 #. module: spreadsheet_dashboard_hr_referral
 #. openerp-web

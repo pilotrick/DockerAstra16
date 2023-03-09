@@ -5,6 +5,7 @@
 # Translators:
 # Piotr Strębski <strebski@gmail.com>, 2022
 # Karol Rybak <karolrybak85@gmail.com>, 2022
+# Grzegorz Grzelak <grzegorz.grzelak@openglobe.pl>, 2022
 # Tomasz Leppich <t.leppich@gmail.com>, 2022
 # Piotr Szlązak <szlazakpiotr@gmail.com>, 2022
 # Martin Trigaux, 2022
@@ -36,7 +37,7 @@ msgstr ""
 #: code:addons/website_helpdesk_livechat/models/chatbot_script_step.py:0
 #, python-format
 msgid "%(name)s's Ticket"
-msgstr "Zgłoszenie %(name)s"
+msgstr ""
 
 #. module: website_helpdesk_livechat
 #: code:addons/website_helpdesk_livechat/models/helpdesk.py:0
@@ -47,31 +48,27 @@ msgid ""
 "                    You can search tickets by typing <b>/helpdesk_search <i>keyword</i></b> or <b><i>ticket number</i></b><br>\n"
 "                    "
 msgstr ""
-"<br><br>\n"
-"                    Możesz utworzyć nowe zgłoszenie wpisując <b>/helpdesk <i>tytuł zgłoszenia</i></b>.<br>\n"
-"                    Możesz wyszukać zgłoszenie wpisując <b>/helpdesk_search <i>słowo klucz</i></b> albo <b><i>numer zgłoszenia</i></b><br>\n"
-"                    "
 
 #. module: website_helpdesk_livechat
 #: model:chatbot.script.step,message:website_helpdesk_livechat.chatbot_script_helpdesk_step_done
 msgid "Alright, we should have everything we need"
-msgstr "W porządku, powinniśmy mieć wszystko, co potrzebne."
+msgstr ""
 
 #. module: website_helpdesk_livechat
 #: model:chatbot.script.step,message:website_helpdesk_livechat.chatbot_script_helpdesk_step_technical_serial_misc
 msgid "Anything else to add?"
-msgstr "Czy dodać coś jeszcze?"
+msgstr ""
 
 #. module: website_helpdesk_livechat
 #: model:ir.actions.act_window,name:website_helpdesk_livechat.helpdesk_im_livechat_canned_response_action
 #: model:ir.ui.menu,name:website_helpdesk_livechat.helpdesk_team_canned_response_menu
 msgid "Canned Responses"
-msgstr "Gotowe odpowiedzi"
+msgstr "Odpowiedzi szablonowe"
 
 #. module: website_helpdesk_livechat
 #: model_terms:ir.ui.view,arch_db:website_helpdesk_livechat.im_livechat_canned_response_view_search
 msgid "Canned Responses Search"
-msgstr "Wyszukiwanie gotowych odpowiedzi"
+msgstr ""
 
 #. module: website_helpdesk_livechat
 #: model:ir.model,name:website_helpdesk_livechat.model_chatbot_script
@@ -93,13 +90,13 @@ msgstr "Utwórz zgłoszenie"
 #: code:addons/website_helpdesk_livechat/static/src/models/messaging_initializer.js:0
 #, python-format
 msgid "Create a new helpdesk ticket"
-msgstr "Utwórz nowe zgłoszenie w punkcie pomocy"
+msgstr "Utwórz nowe zgłoszenie pomocy"
 
 #. module: website_helpdesk_livechat
 #: code:addons/website_helpdesk_livechat/models/helpdesk.py:0
 #, python-format
 msgid "Created a new ticket: %s"
-msgstr "Utworzył nowe zgłoszenie: %s"
+msgstr ""
 
 #. module: website_helpdesk_livechat
 #: model:ir.model,name:website_helpdesk_livechat.model_mail_channel
@@ -109,53 +106,53 @@ msgstr "Kanał dyskusyjny"
 #. module: website_helpdesk_livechat
 #: model:chatbot.script.step,message:website_helpdesk_livechat.chatbot_script_helpdesk_step_dispatch
 msgid "First, what is the nature of your issue?"
-msgstr "Po pierwsze, jaki jest charakter twojego problemu?"
+msgstr ""
 
 #. module: website_helpdesk_livechat
 #: model:ir.model.fields,field_description:website_helpdesk_livechat.field_chatbot_script__ticket_count
 msgid "Generated Ticket Count"
-msgstr "Ilość wygenerowanych zgłoszeń"
+msgstr ""
 
 #. module: website_helpdesk_livechat
 #: model:chatbot.script.step,message:website_helpdesk_livechat.chatbot_script_helpdesk_step_administrative_customer_ref_yes
 msgid "Great, that will make our lives easier."
-msgstr "Świetnie, to nam ułatwi życie."
+msgstr ""
 
 #. module: website_helpdesk_livechat
 #: model:chatbot.script,title:website_helpdesk_livechat.chatbot_script_helpdesk_bot
 msgid "Helpdesk Bot"
-msgstr "Bot punktu pomocy"
+msgstr ""
 
 #. module: website_helpdesk_livechat
 #: model:ir.model,name:website_helpdesk_livechat.model_helpdesk_team
 #: model:ir.model.fields,field_description:website_helpdesk_livechat.field_chatbot_script_step__helpdesk_team_id
 msgid "Helpdesk Team"
-msgstr "Zespół punktu pomocy"
+msgstr "Zespół pomocy"
 
 #. module: website_helpdesk_livechat
 #: model:chatbot.script.step,message:website_helpdesk_livechat.chatbot_script_helpdesk_step_welcome
 msgid "Here we go, help is on the way!"
-msgstr "Gotowe, pomoc jest w drodze!"
+msgstr ""
 
 #. module: website_helpdesk_livechat
 #: model:chatbot.script.answer,name:website_helpdesk_livechat.chatbot_script_helpdesk_step_dispatch_answer_technical
 msgid "I have a technical issue"
-msgstr "Mam problem natury technicznej"
+msgstr ""
 
 #. module: website_helpdesk_livechat
 #: model:chatbot.script.answer,name:website_helpdesk_livechat.chatbot_script_helpdesk_step_dispatch_answer_administrative
 msgid "I have an administrative question"
-msgstr "Mam pytanie odnośnie administracji"
+msgstr ""
 
 #. module: website_helpdesk_livechat
 #: model:chatbot.script.step,message:website_helpdesk_livechat.chatbot_script_helpdesk_step_administrative_customer_ref_no
 msgid "It's OK, we can also find your contract by other means."
-msgstr "Nic się nie stało, możemy znaleźć Twój kontrakt innymi sposobami."
+msgstr ""
 
 #. module: website_helpdesk_livechat
 #: model:chatbot.script.step,message:website_helpdesk_livechat.chatbot_script_helpdesk_step_email
 msgid "Just a last thing, can we please have your email address?"
-msgstr "Jeszcze jedno, możemy poprosić o Twój adres email?"
+msgstr ""
 
 #. module: website_helpdesk_livechat
 #: model:ir.model.fields,field_description:website_helpdesk_livechat.field_helpdesk_team__feature_livechat_channel_id
@@ -170,7 +167,7 @@ msgstr "Nie"
 #. module: website_helpdesk_livechat
 #: model_terms:ir.actions.act_window,help:website_helpdesk_livechat.helpdesk_im_livechat_canned_response_action
 msgid "No canned reponses found. Let's create one!"
-msgstr "Nie znaleziono gotowej odpowiedzi. Utwórzmy jakąś!"
+msgstr ""
 
 #. module: website_helpdesk_livechat
 #: code:addons/website_helpdesk_livechat/models/helpdesk.py:0
@@ -180,9 +177,6 @@ msgid ""
 "format:<br> <b>/helpdesk_search <i>keyword</i></b> or <b>/helpdesk_search "
 "<i>ticket number</i></b>"
 msgstr ""
-"Nie znaleziono zgłoszeń dla <b>%s</b>. <br> Upewnij się, że używasz "
-"odpowiedniego formatu:<br> <b>/helpdesk_search <i>słowo klucz</i></b> albo "
-"<b>/helpdesk_search <i>numer zgłoszenia</i></b>"
 
 #. module: website_helpdesk_livechat
 #: model:chatbot.script.step,message:website_helpdesk_livechat.chatbot_script_helpdesk_step_ticket
@@ -190,18 +184,16 @@ msgid ""
 "OK, I just created a ticket for you. You should receive an email "
 "confirmation very soon."
 msgstr ""
-"Ok, właśnie utworzyłem twoje zgłoszenie. Za chwilę powinieneś otrzymać "
-"potwierdzenie w wiadomości email."
 
 #. module: website_helpdesk_livechat
 #: model:chatbot.script.step,message:website_helpdesk_livechat.chatbot_script_helpdesk_step_technical_serial
 msgid "Please write below the serial number of your equipment."
-msgstr "Proszę wpisać poniżej numer seryjny sprzętu"
+msgstr ""
 
 #. module: website_helpdesk_livechat
 #: model:chatbot.script.step,message:website_helpdesk_livechat.chatbot_script_helpdesk_step_administrative_customer_ref_input
 msgid "Please write below your customer reference."
-msgstr "Proszę wpisać poniżej numeru referencyjny klienta."
+msgstr ""
 
 #. module: website_helpdesk_livechat
 #. openerp-web
@@ -225,7 +217,7 @@ msgstr "Typ kroku"
 #. module: website_helpdesk_livechat
 #: model:chatbot.script.step,message:website_helpdesk_livechat.chatbot_script_helpdesk_step_technical_serial_thanks
 msgid "Thank you, that will help our engineers see what went wrong."
-msgstr "Dziękujemy, to pomoże naszym inżynierom sprawdzić, co poszło nie tak."
+msgstr ""
 
 #. module: website_helpdesk_livechat
 #: model_terms:ir.ui.view,arch_db:website_helpdesk_livechat.chatbot_script_view_form
@@ -238,8 +230,6 @@ msgid ""
 "To start with, do you have a customer reference?\n"
 "They are written on each invoice you received, next to your name."
 msgstr ""
-"Na początek - czy masz numer referencyjny klienta?\n"
-"Znajduje się on na każdej fakturze, którą otrzymałeś, obok Twojego imienia."
 
 #. module: website_helpdesk_livechat
 #: model:ir.model,name:website_helpdesk_livechat.model_res_users
@@ -249,7 +239,7 @@ msgstr "Użytkownik"
 #. module: website_helpdesk_livechat
 #: model_terms:ir.ui.view,arch_db:website_helpdesk_livechat.helpdesk_team_view_form_inherit_website_helpdesk_livechat
 msgid "View Channels"
-msgstr "Zobacz kanały"
+msgstr ""
 
 #. module: website_helpdesk_livechat
 #: code:addons/website_helpdesk_livechat/models/helpdesk.py:0
@@ -260,7 +250,7 @@ msgstr "Znaleźliśmy kilka pasujących zgłoszeń powiązanych z zapytaniem: %s
 #. module: website_helpdesk_livechat
 #: model:chatbot.script.step,message:website_helpdesk_livechat.chatbot_script_helpdesk_step_administrative_issue
 msgid "We're all set. Now, what is your issue?"
-msgstr "Wszystko gotowe. A teraz, jaki jest Twój problem?"
+msgstr ""
 
 #. module: website_helpdesk_livechat
 #: model_terms:ir.actions.act_window,help:website_helpdesk_livechat.helpdesk_im_livechat_canned_response_action
@@ -269,10 +259,6 @@ msgid ""
 "responses into your messages. These shortcuts are replaced directly in your "
 "messages so that you can still make changes before sending them."
 msgstr ""
-"Dzięki gotowym odpowiedziom możesz wpisać <i>:skróty</i>, aby wstawić "
-"wcześniej przygotowane odpowiedzi do swoich wiadomości. Te skróty są "
-"wstawiane bezpośrednio do Twoich wiadomości, abyś mógł wprowadzić zmiany "
-"zanim je wyślesz."
 
 #. module: website_helpdesk_livechat
 #: model:chatbot.script.answer,name:website_helpdesk_livechat.chatbot_script_helpdesk_step_administrative_customer_ref_answer_yes
@@ -283,7 +269,7 @@ msgstr "Tak"
 #: code:addons/website_helpdesk_livechat/models/helpdesk.py:0
 #, python-format
 msgid "You are in a private conversation with <b>%(mentions)s</b>."
-msgstr "Jesteś w prywatnej konwersacji z <b>%(mentions)s</b>."
+msgstr ""
 
 #. module: website_helpdesk_livechat
 #: code:addons/website_helpdesk_livechat/models/helpdesk.py:0
@@ -298,5 +284,3 @@ msgid ""
 "You can search tickets by typing <b>/helpdesk_search <i>keyword</i></b> or "
 "<i><b>ticket number</b></i><br>"
 msgstr ""
-"Możesz wyszukać zgłoszenie wpisując <b>/helpdesk_search <i>słowo "
-"klucz</i></b> albo <i><b>numer zgłoszenia</b></i><br>"

@@ -127,7 +127,7 @@ class TestAgedReceivableReport(TestAccountReportsCommon):
     def test_aged_receivable_unfold_1_whole_report(self):
         """ Test unfolding a line when rendering the whole report. """
         options = self._generate_options(self.report, fields.Date.from_string('2017-02-01'), fields.Date.from_string('2017-02-01'))
-        partner_a_line_id = self.env['account.report']._get_generic_line_id('res.partner', self.partner_a.id, markup=f'{self.prefix_line_id}groupby:partner_id')
+        partner_a_line_id = f'{self.prefix_line_id}groupby:partner_id-res.partner-{self.partner_a.id}'
         options['unfolded_lines'] = [partner_a_line_id]
 
         report_lines = self.report._get_lines(options)
@@ -199,42 +199,6 @@ class TestAgedReceivableReport(TestAccountReportsCommon):
                 ('INV/2016/00001',      '11/03/2016',       '',         '',         '',       500.0,         '',         '',          ''),
                 ('Total partner_a',               '',    100.0,      100.0,      100.0,       600.0,      300.0,      100.0,      1300.0),
                 ('Total Aged Receivable',         '',    150.0,      150.0,      150.0,       900.0,      450.0,      150.0,      1950.0),
-            ],
-        )
-
-    def test_aged_receivable_unfold_all(self):
-        options = self._generate_options(self.report, '2017-02-01', '2017-02-01', default_options={'unfold_all': True})
-
-        report_lines = self.report._get_lines(options)
-        options['order_column'] = 1 # Sort by Due Date increasing
-        self.assertLinesValues(
-            # pylint: disable=C0326
-            self.report._sort_lines(report_lines, options),
-            #   Name                        Due Date   Not Due On   1 - 30     31 - 60     61 - 90    91 - 120       Older         Total
-            [   0,                                 1,       4,          5,          6,          7,          8,          9,          10],
-            [
-                ('Aged Receivable',               '',   150.0,      150.0,      150.0,       900.0,     450.0,      150.0,      1950.0),
-                ('partner_a',                     '',   100.0,      100.0,      100.0,       600.0,     300.0,      100.0,      1300.0),
-                ('INV/2016/00002',      '01/01/2016',      '',         '',         '',         '',         '',      100.0,          ''),
-                ('INV/2016/00002',      '10/04/2016',      '',         '',         '',         '',      100.0,         '',          ''),
-                ('INV/2016/00002',      '10/05/2016',      '',         '',         '',         '',      200.0,         '',          ''),
-                ('INV/2016/00001',      '11/03/2016',      '',         '',         '',      500.0,         '',         '',          ''),
-                ('INV/2016/00002',      '11/03/2016',      '',         '',         '',      100.0,         '',         '',          ''),
-                ('INV/2016/00002',      '12/03/2016',      '',         '',      100.0,         '',         '',         '',          ''),
-                ('INV/2016/00002',      '01/02/2017',      '',      100.0,         '',         '',         '',         '',          ''),
-                ('INV/2016/00002',      '02/01/2017',   100.0,         '',         '',         '',         '',         '',          ''),
-                ('Total partner_a',               '',   100.0,      100.0,      100.0,       600.0,     300.0,      100.0,      1300.0),
-                ('partner_b',                     '',    50.0,       50.0,       50.0,       300.0,     150.0,       50.0,       650.0),
-                ('INV/2016/00002',      '01/01/2016',      '',         '',         '',          '',        '',       50.0,          ''),
-                ('INV/2016/00002',      '10/04/2016',      '',         '',         '',          '',      50.0,         '',          ''),
-                ('INV/2016/00002',      '10/05/2016',      '',         '',         '',          '',     100.0,         '',          ''),
-                ('INV/2016/00001',      '11/03/2016',      '',         '',         '',       250.0,        '',         '',          ''),
-                ('INV/2016/00002',      '11/03/2016',      '',         '',         '',        50.0,        '',         '',          ''),
-                ('INV/2016/00002',      '12/03/2016',      '',         '',       50.0,          '',        '',         '',          ''),
-                ('INV/2016/00002',      '01/02/2017',      '',       50.0,         '',          '',        '',         '',          ''),
-                ('INV/2016/00002',      '02/01/2017',    50.0,         '',         '',          '',        '',         '',          ''),
-                ('Total partner_b',               '',    50.0,       50.0,       50.0,       300.0,     150.0,       50.0,       650.0),
-                ('Total Aged Receivable',         '',   150.0,      150.0,      150.0,      900.0,      450.0,      150.0,      1950.0),
             ],
         )
 
@@ -322,8 +286,8 @@ class TestAgedReceivableReport(TestAccountReportsCommon):
     def test_aged_receivable_sort_lines_by_date(self):
         """ Test the sort_lines function using date as sort key. """
         options = self._generate_options(self.report, fields.Date.from_string('2017-02-01'), fields.Date.from_string('2017-02-01'))
-        partner_a_line_id = self.env['account.report']._get_generic_line_id('res.partner', self.partner_a.id, markup=f'{self.prefix_line_id}groupby:partner_id')
-        partner_b_line_id = self.env['account.report']._get_generic_line_id('res.partner', self.partner_b.id, markup=f'{self.prefix_line_id}groupby:partner_id')
+        partner_a_line_id = f'{self.prefix_line_id}groupby:partner_id-res.partner-{self.partner_a.id}'
+        partner_b_line_id = f'{self.prefix_line_id}groupby:partner_id-res.partner-{self.partner_b.id}'
         options['unfolded_lines'] = [partner_a_line_id, partner_b_line_id]
 
         report_lines = self.report._get_lines(options)
@@ -394,8 +358,8 @@ class TestAgedReceivableReport(TestAccountReportsCommon):
     def test_aged_receivable_sort_lines_by_numeric_value(self):
         """ Test the sort_lines function using float as sort key. """
         options = self._generate_options(self.report, fields.Date.from_string('2017-02-01'), fields.Date.from_string('2017-02-01'))
-        partner_a_line_id = self.env['account.report']._get_generic_line_id('res.partner', self.partner_a.id, markup=f'{self.prefix_line_id}groupby:partner_id')
-        partner_b_line_id = self.env['account.report']._get_generic_line_id('res.partner', self.partner_b.id, markup=f'{self.prefix_line_id}groupby:partner_id')
+        partner_a_line_id = f'{self.prefix_line_id}groupby:partner_id-res.partner-{self.partner_a.id}'
+        partner_b_line_id = f'{self.prefix_line_id}groupby:partner_id-res.partner-{self.partner_b.id}'
         options['unfolded_lines'] = [partner_a_line_id, partner_b_line_id]
 
         report_lines = self.report._get_lines(options)

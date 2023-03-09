@@ -141,7 +141,7 @@ class Tablet extends Component {
                     value: this.selectedStep.worksheet_url,
                     page: 1,
                 };
-            } else if (this.selectedStep.source_document === "operation" && this.data.operation !== undefined && this.selectedStep.worksheet_page) {
+            } else if (this.data.operation !== undefined && this.selectedStep.worksheet_page) {
                 if (this.data.operation.worksheet) {
                     return {
                         resModel: "mrp.routing.workcenter",
@@ -192,31 +192,27 @@ class Tablet extends Component {
     }
 
     get views() {
-        const workorder = {
-            type: 'workorder_form',
-            mode: 'edit',
-            resModel: 'mrp.workorder',
-            viewId: this.viewsId.workorder,
-            resId: this.workorderId,
-            display: { controlPanel: false },
-            workorderBus: this.workorderBus,
+        const data = {
+            workorder: {
+                type: 'workorder_form',
+                mode: 'edit',
+                resModel: 'mrp.workorder',
+                viewId: this.viewsId.workorder,
+                resId: this.workorderId,
+                display: { controlPanel: false },
+                workorderBus: this.workorderBus,
+            },
+            check: {
+                type: 'workorder_form',
+                mode: 'edit',
+                resModel: 'quality.check',
+                viewId: this.viewsId.check,
+                resId: this.state.selectedStepId,
+                display: { controlPanel: false },
+                workorderBus: this.workorderBus,
+            },
         };
-        if (this.state.selectedStepId) {
-            workorder.onRecordChanged = async (rootRecord) => {
-                await rootRecord.save();
-                this.render(true);
-            }
-        }
-        const check = {
-            type: 'workorder_form',
-            mode: 'edit',
-            resModel: 'quality.check',
-            viewId: this.viewsId.check,
-            resId: this.state.selectedStepId,
-            display: { controlPanel: false },
-            workorderBus: this.workorderBus,
-        };
-        return { workorder, check };
+        return data;
     }
 
     get checkInstruction() {

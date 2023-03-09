@@ -10,8 +10,7 @@
 # Piia Paurson <piia@avalah.ee>, 2022
 # Eneli Õigus <enelioigus@gmail.com>, 2022
 # Martin Trigaux, 2022
-# Anna, 2023
-# Jana Jaakson, 2023
+# Jana Jaakson, 2022
 # 
 msgid ""
 msgstr ""
@@ -19,7 +18,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-12-15 13:29+0000\n"
 "PO-Revision-Date: 2022-09-22 05:47+0000\n"
-"Last-Translator: Jana Jaakson, 2023\n"
+"Last-Translator: Jana Jaakson, 2022\n"
 "Language-Team: Estonian (https://www.transifex.com/odoo/teams/41243/et/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -32,7 +31,7 @@ msgstr ""
 #: code:addons/mrp_workorder_hr/static/src/components/working_employee_popup.xml:0
 #, python-format
 msgid "+ New Operator"
-msgstr "+ Uus operaator"
+msgstr ""
 
 #. module: mrp_workorder_hr
 #: model_terms:ir.ui.view,arch_db:mrp_workorder_hr.mrp_workorder_view_tablet_form_inherit_workorder_hr
@@ -40,13 +39,11 @@ msgid ""
 "<span attrs=\"{'invisible': [('employee_name', '!=', False)]}\">Log In "
 "</span>"
 msgstr ""
-"<span attrs=\"{'invisible': [('employee_name', '!=', False)]}\">Logi sisse "
-"</span>"
 
 #. module: mrp_workorder_hr
 #: model_terms:ir.ui.view,arch_db:mrp_workorder_hr.mrp_workcenter_form_view_inherit
 msgid "Allowed Employees"
-msgstr "Lubatud töötajad"
+msgstr ""
 
 #. module: mrp_workorder_hr
 #: model:ir.model,name:mrp_workorder_hr.model_report_mrp_report_bom_structure
@@ -66,7 +63,7 @@ msgstr "Tühista"
 #: code:addons/mrp_workorder_hr/static/src/components/tablet.js:0
 #, python-format
 msgid "Change Worker"
-msgstr "Muuda töötaja"
+msgstr ""
 
 #. module: mrp_workorder_hr
 #. odoo-javascript
@@ -100,12 +97,12 @@ msgstr "Töötaja"
 #. module: mrp_workorder_hr
 #: model:ir.model.fields,field_description:mrp_workorder_hr.field_mrp_routing_workcenter__employee_ratio
 msgid "Employee Capacity"
-msgstr "Töötajate võimsus"
+msgstr ""
 
 #. module: mrp_workorder_hr
 #: model:ir.model.fields,field_description:mrp_workorder_hr.field_mrp_workcenter__employee_costs_hour
 msgid "Employee Hourly Cost"
-msgstr "Töötaja tunnitasu"
+msgstr ""
 
 #. module: mrp_workorder_hr
 #: model:ir.model.fields,field_description:mrp_workorder_hr.field_mrp_workorder__employee_name
@@ -125,12 +122,12 @@ msgstr "Logi sisse"
 #: code:addons/mrp_workorder_hr/static/src/views/list/mrp_workorder_list_controller.js:0
 #, python-format
 msgid "Logged in!"
-msgstr "Sisse logitud!"
+msgstr ""
 
 #. module: mrp_workorder_hr
 #: model:ir.model.fields,help:mrp_workorder_hr.field_mrp_routing_workcenter__employee_ratio
 msgid "Number of employees needed to complete operation."
-msgstr "Töö lõpetamiseks vajalike töötajate arv."
+msgstr ""
 
 #. module: mrp_workorder_hr
 #. odoo-javascript
@@ -154,7 +151,7 @@ msgstr "Parool?"
 #. module: mrp_workorder_hr
 #: model:ir.model,name:mrp_workorder_hr.model_propose_change
 msgid "Propose a change in the production"
-msgstr "Paku muudatusi tootmises"
+msgstr ""
 
 #. module: mrp_workorder_hr
 #: model:ir.model,name:mrp_workorder_hr.model_quality_check
@@ -165,7 +162,7 @@ msgstr "Kvaliteedikontroll"
 #: model:ir.model.fields,field_description:mrp_workorder_hr.field_mrp_workcenter__allow_employee
 #: model:ir.model.fields,field_description:mrp_workorder_hr.field_mrp_workorder__allow_employee
 msgid "Requires Log In"
-msgstr "Nõuab sisselogimist"
+msgstr ""
 
 #. module: mrp_workorder_hr
 #. odoo-javascript
@@ -173,7 +170,7 @@ msgstr "Nõuab sisselogimist"
 #: code:addons/mrp_workorder_hr/static/src/views/list/mrp_workorder_list_controller.js:0
 #, python-format
 msgid "Select Employee"
-msgstr "Valige Töötaja"
+msgstr ""
 
 #. module: mrp_workorder_hr
 #. odoo-javascript
@@ -188,7 +185,7 @@ msgstr "Peata"
 #: code:addons/mrp_workorder_hr/static/src/views/list/mrp_workorder_list_controller.js:0
 #, python-format
 msgid "This employee is not allowed on this workcenter"
-msgstr "See töötaja ei ole sellesse töökeskusesse lubatud"
+msgstr ""
 
 #. module: mrp_workorder_hr
 #: model:ir.model,name:mrp_workorder_hr.model_mrp_workcenter
@@ -213,7 +210,7 @@ msgstr "Töökoha tootlikkuse logi"
 #. module: mrp_workorder_hr
 #: model:ir.model.fields,field_description:mrp_workorder_hr.field_mrp_workorder__employee_ids
 msgid "Working Employees"
-msgstr "Töötavad töötajad"
+msgstr ""
 
 #. module: mrp_workorder_hr
 #. odoo-javascript
@@ -221,29 +218,29 @@ msgstr "Töötavad töötajad"
 #: code:addons/mrp_workorder_hr/static/src/views/list/mrp_workorder_list_controller.js:0
 #, python-format
 msgid "Wrong password !"
-msgstr "Vale salasõna!"
+msgstr ""
 
 #. module: mrp_workorder_hr
 #: model:ir.model.fields,help:mrp_workorder_hr.field_mrp_workcenter_productivity__employee_id
 msgid "employee that record this working time"
-msgstr "töötaja, kes selle tööaja registreerib"
+msgstr ""
 
 #. module: mrp_workorder_hr
 #: model:ir.model.fields,field_description:mrp_workorder_hr.field_mrp_workcenter_productivity__employee_cost
 msgid "employee_cost"
-msgstr "töötaja_kulu"
+msgstr ""
 
 #. module: mrp_workorder_hr
 #: model:ir.model.fields,field_description:mrp_workorder_hr.field_mrp_workcenter__employee_ids
 msgid "employees with access"
-msgstr "ligipääsuga töötajad"
+msgstr ""
 
 #. module: mrp_workorder_hr
 #: model:ir.model.fields,help:mrp_workorder_hr.field_mrp_workcenter__employee_ids
 msgid "if left empty, all employees can log in to the workcenter"
-msgstr "tühjaks jätmisel saavad kõik töötajad töökeskusesse sisse logida"
+msgstr ""
 
 #. module: mrp_workorder_hr
 #: model_terms:ir.ui.view,arch_db:mrp_workorder_hr.mrp_workcenter_form_view_inherit
 msgid "per employee"
-msgstr "töötaja kohta"
+msgstr ""

@@ -34,26 +34,11 @@ export function pasteElements(dataTransfer, target) {
     if (!lastChild) {
         range.setStart(target, 0);
         range.setEnd(target, 0);
-    } else {
-        const subLastChild = lastChild.lastChild;
-        if (subLastChild) {
-            if (subLastChild.nodeType === Node.ELEMENT_NODE && subLastChild.tagName === 'BR') {
-                range.setStartBefore(subLastChild);
-                range.setEndBefore(subLastChild);
-            } else {
-                range.setStartAfter(subLastChild);
-                range.setEndAfter(subLastChild);
-            }
-        } else {
-            range.setStartAfter(lastChild);
-            range.setEndAfter(lastChild);
-        }
-    }
-    const lastElementChild = target.lastElementChild;
-    if (lastElementChild) {
-        lastElementChild.scrollIntoView();
-    } else {
         target.scrollIntoView();
+    } else {
+        range.setStartAfter(lastChild);
+        range.setEndAfter(lastChild);
+        lastChild.scrollIntoView();
     }
     sel.addRange(range);
     target.dispatchEvent(fakePaste);

@@ -6,13 +6,7 @@ import core from 'web.core';
 registerPatch({
     name: 'Chatter',
     recordMethods: {
-        async onClickChatterSearchArticle(event) {
-            if (this.isTemporary) {
-                const saved = await this.doSaveRecord();
-                if (!saved) {
-                    return;
-                }
-            }
+        onClickChatterSearchArticle(event) {
             core.bus.trigger("openMainPalette", {
                 searchValue: "?",
             });

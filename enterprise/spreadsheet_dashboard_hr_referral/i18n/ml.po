@@ -44,7 +44,7 @@ msgstr ""
 #: code:addons/spreadsheet_dashboard_hr_referral/data/files/recruitment_dashboard.json:0
 #, python-format
 msgid "Company"
-msgstr "കമ്പനി"
+msgstr ""
 
 #. module: spreadsheet_dashboard_hr_referral
 #. openerp-web
@@ -128,7 +128,7 @@ msgstr ""
 #: code:addons/spreadsheet_dashboard_hr_referral/data/files/recruitment_dashboard.json:0
 #, python-format
 msgid "Name"
-msgstr "പേര്"
+msgstr ""
 
 #. module: spreadsheet_dashboard_hr_referral
 #. openerp-web
@@ -157,7 +157,7 @@ msgstr ""
 #: code:addons/spreadsheet_dashboard_hr_referral/data/files/recruitment_dashboard.json:0
 #, python-format
 msgid "Period"
-msgstr "പീരീഡ്"
+msgstr ""
 
 #. module: spreadsheet_dashboard_hr_referral
 #. openerp-web
@@ -196,7 +196,7 @@ msgstr ""
 #: code:addons/spreadsheet_dashboard_hr_referral/data/files/recruitment_dashboard.json:0
 #, python-format
 msgid "Rate"
-msgstr "റേറ്റ് "
+msgstr ""
 
 #. module: spreadsheet_dashboard_hr_referral
 #. openerp-web

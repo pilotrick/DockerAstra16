@@ -14,7 +14,6 @@
 # Arma Gedonsky <armagedonsky@hot.ee>, 2022
 # Triine Aavik <triine@avalah.ee>, 2022
 # Leaanika Randmets, 2023
-# Jana Jaakson, 2023
 # Anna, 2023
 # 
 msgid ""
@@ -41,14 +40,14 @@ msgstr "Tegev"
 #: code:addons/spreadsheet_edition/static/src/bundle/global_filters/global_filter_side_panel.xml:0
 #, python-format
 msgid "Add a new filter..."
-msgstr "Lisa uus filter..."
+msgstr ""
 
 #. module: spreadsheet_edition
 #. odoo-javascript
 #: code:addons/spreadsheet_edition/static/src/bundle/global_filters/components/filter_field_offset.js:0
 #, python-format
 msgid "After next"
-msgstr "peale järgmist"
+msgstr ""
 
 #. module: spreadsheet_edition
 #. odoo-javascript
@@ -69,7 +68,7 @@ msgstr ""
 #: code:addons/spreadsheet_edition/static/src/bundle/global_filters/global_filter_side_panel.xml:0
 #, python-format
 msgid "Automatically filter on the current period"
-msgstr "Praeguse perioodi automaatne filtreerimine"
+msgstr ""
 
 #. module: spreadsheet_edition
 #. odoo-javascript
@@ -84,7 +83,7 @@ msgstr "Tagasi"
 #: code:addons/spreadsheet_edition/static/src/bundle/global_filters/components/filter_field_offset.js:0
 #, python-format
 msgid "Before previous"
-msgstr "enne eelmist"
+msgstr ""
 
 #. module: spreadsheet_edition
 #. odoo-javascript
@@ -108,12 +107,12 @@ msgstr "Tühista"
 #: code:addons/spreadsheet_edition/static/src/bundle/o_spreadsheet/menu_item_registry.js:0
 #, python-format
 msgid "Clear history"
-msgstr "Tühjenda ajalugu"
+msgstr ""
 
 #. module: spreadsheet_edition
 #: model:ir.model,name:spreadsheet_edition.model_spreadsheet_collaborative_mixin
 msgid "Collaboration on spreadsheets"
-msgstr "Koostöö arvutustabelites"
+msgstr ""
 
 #. module: spreadsheet_edition
 #: model:ir.model,name:spreadsheet_edition.model_spreadsheet_revision
@@ -123,7 +122,7 @@ msgstr ""
 #. module: spreadsheet_edition
 #: model:ir.model.fields,field_description:spreadsheet_edition.field_spreadsheet_revision__commands
 msgid "Commands"
-msgstr "Käsud"
+msgstr ""
 
 #. module: spreadsheet_edition
 #. odoo-javascript
@@ -163,14 +162,14 @@ msgstr "Töölauad"
 #: code:addons/spreadsheet_edition/static/src/bundle/global_filters/global_filter_side_panel.xml:0
 #, python-format
 msgid "Date"
-msgstr "Kuupäev"
+msgstr "Date"
 
 #. module: spreadsheet_edition
 #. odoo-javascript
 #: code:addons/spreadsheet_edition/static/src/bundle/global_filters/global_filter_side_panel.xml:0
 #, python-format
 msgid "Date field"
-msgstr "Kuupäeva väli"
+msgstr ""
 
 #. module: spreadsheet_edition
 #. odoo-javascript
@@ -211,7 +210,7 @@ msgstr "Näidatav nimi"
 #: code:addons/spreadsheet_edition/static/src/bundle/pivot/pivot_dialog.xml:0
 #, python-format
 msgid "Display missing cells only"
-msgstr "Näita ainult puuduvaid lahtreid"
+msgstr ""
 
 #. module: spreadsheet_edition
 #. odoo-javascript
@@ -233,7 +232,7 @@ msgstr "Laadige alla"
 #: code:addons/spreadsheet_edition/static/src/bundle/global_filters/filter_editor_side_panel.js:0
 #, python-format
 msgid "Duplicated Label"
-msgstr "Dubleeritud silt"
+msgstr ""
 
 #. module: spreadsheet_edition
 #. odoo-javascript
@@ -248,14 +247,14 @@ msgstr "Muuda"
 #: code:addons/spreadsheet_edition/static/src/bundle/pivot/side_panels/pivot_details_side_panel.xml:0
 #, python-format
 msgid "Edit domain"
-msgstr "Muuda domeeni"
+msgstr ""
 
 #. module: spreadsheet_edition
 #. odoo-javascript
 #: code:addons/spreadsheet_edition/static/src/bundle/global_filters/global_filter_side_panel.xml:0
 #, python-format
 msgid "Field matching"
-msgstr "Välja sobitamine"
+msgstr ""
 
 #. module: spreadsheet_edition
 #. odoo-javascript
@@ -269,7 +268,7 @@ msgstr "Fail"
 #: code:addons/spreadsheet_edition/static/src/bundle/global_filters/index.js:0
 #, python-format
 msgid "Filter properties"
-msgstr "Filtri omadused"
+msgstr ""
 
 #. module: spreadsheet_edition
 #. odoo-javascript
@@ -301,7 +300,7 @@ msgstr "Sisesta arvutustabelisse"
 #: code:addons/spreadsheet_edition/static/src/assets/list_view/insert_list_spreadsheet_menu.xml:0
 #, python-format
 msgid "Insert list in spreadsheet"
-msgstr "Nimekirja sisestamine arvutustabelisse"
+msgstr ""
 
 #. module: spreadsheet_edition
 #. odoo-javascript
@@ -309,14 +308,14 @@ msgstr "Nimekirja sisestamine arvutustabelisse"
 #: code:addons/spreadsheet_edition/static/src/bundle/pivot/pivot_actions.js:0
 #, python-format
 msgid "Insert pivot cell"
-msgstr "Sisesta Pivot lahter"
+msgstr ""
 
 #. module: spreadsheet_edition
 #. odoo-javascript
 #: code:addons/spreadsheet_edition/static/src/assets/components/spreadsheet_selector_dialog/spreadsheet_selector_dialog.xml:0
 #, python-format
 msgid "Insert the first"
-msgstr "Sisesta esimene"
+msgstr ""
 
 #. module: spreadsheet_edition
 #. odoo-javascript
@@ -346,7 +345,7 @@ msgstr "Viimati uuendatud"
 #: code:addons/spreadsheet_edition/static/src/bundle/pivot/side_panels/pivot_details_side_panel.xml:0
 #, python-format
 msgid "Last updated at"
-msgstr "Viimati uuendatud"
+msgstr ""
 
 #. module: spreadsheet_edition
 #. odoo-javascript
@@ -374,14 +373,14 @@ msgstr ""
 #: code:addons/spreadsheet_edition/static/src/bundle/list/side_panels/listing_details_side_panel.xml:0
 #, python-format
 msgid "List Name"
-msgstr "Nimekirja nimi"
+msgstr ""
 
 #. module: spreadsheet_edition
 #. odoo-javascript
 #: code:addons/spreadsheet_edition/static/src/bundle/list/index.js:0
 #, python-format
 msgid "List properties"
-msgstr "Nimekirja omadused"
+msgstr ""
 
 #. module: spreadsheet_edition
 #. odoo-javascript
@@ -433,7 +432,7 @@ msgstr "Kuu"
 #: code:addons/spreadsheet_edition/static/src/assets/components/spreadsheet_selector_dialog/spreadsheet_selector_dialog.js:0
 #, python-format
 msgid "Name of the %s:"
-msgstr "%s nimi:"
+msgstr ""
 
 #. module: spreadsheet_edition
 #. odoo-javascript
@@ -447,14 +446,14 @@ msgstr "Uus"
 #: code:addons/spreadsheet_edition/static/src/bundle/global_filters/filter_editor_side_panel.js:0
 #, python-format
 msgid "New %s filter"
-msgstr "Uus %s filter"
+msgstr ""
 
 #. module: spreadsheet_edition
 #. odoo-javascript
 #: code:addons/spreadsheet_edition/static/src/assets/components/spreadsheet_selector_dialog/spreadsheet_selector_dialog.js:0
 #, python-format
 msgid "New sheet inserted in '%s'"
-msgstr "Uus leht on sisestatud '%s'"
+msgstr ""
 
 #. module: spreadsheet_edition
 #. odoo-javascript
@@ -468,7 +467,7 @@ msgstr "Järgmine"
 #: code:addons/spreadsheet_edition/static/src/assets/components/spreadsheet_selector_dialog/spreadsheet_selector_panel.xml:0
 #, python-format
 msgid "No preview"
-msgstr "Eelvaade puudub"
+msgstr ""
 
 #. module: spreadsheet_edition
 #. odoo-javascript
@@ -480,14 +479,14 @@ msgstr "Ok"
 #. module: spreadsheet_edition
 #: model:ir.model.fields,field_description:spreadsheet_edition.field_spreadsheet_revision__parent_revision_id
 msgid "Parent Revision"
-msgstr "Peamine kontroll"
+msgstr ""
 
 #. module: spreadsheet_edition
 #. odoo-javascript
 #: code:addons/spreadsheet_edition/static/src/bundle/global_filters/components/filter_field_offset.xml:0
 #, python-format
 msgid "Period offset"
-msgstr "Perioodi nihe"
+msgstr ""
 
 #. module: spreadsheet_edition
 #. odoo-javascript
@@ -501,14 +500,14 @@ msgstr ""
 #: code:addons/spreadsheet_edition/static/src/bundle/pivot/side_panels/pivot_details_side_panel.xml:0
 #, python-format
 msgid "Pivot name"
-msgstr "Pivot nimi"
+msgstr ""
 
 #. module: spreadsheet_edition
 #. odoo-javascript
 #: code:addons/spreadsheet_edition/static/src/bundle/pivot/index.js:0
 #, python-format
 msgid "Pivot properties"
-msgstr "Pivot omadused"
+msgstr ""
 
 #. module: spreadsheet_edition
 #. odoo-javascript
@@ -536,33 +535,33 @@ msgstr "Toores"
 #: code:addons/spreadsheet_edition/static/src/bundle/o_spreadsheet/menu_item_registry.js:0
 #, python-format
 msgid "Re-insert list"
-msgstr "Sisesta uuesti nimekiri"
+msgstr ""
 
 #. module: spreadsheet_edition
 #. odoo-javascript
 #: code:addons/spreadsheet_edition/static/src/bundle/o_spreadsheet/menu_item_registry.js:0
 #, python-format
 msgid "Re-insert pivot"
-msgstr "Sisesta uuesti pivoo"
+msgstr ""
 
 #. module: spreadsheet_edition
 #. odoo-javascript
 #: code:addons/spreadsheet_edition/static/src/bundle/list/plugins/list_autofill_plugin.js:0
 #, python-format
 msgid "Record #"
-msgstr "Kirje #"
+msgstr ""
 
 #. module: spreadsheet_edition
 #: model:ir.model.fields,field_description:spreadsheet_edition.field_spreadsheet_revision__res_id
 msgid "Record id"
-msgstr "Kirje ID"
+msgstr ""
 
 #. module: spreadsheet_edition
 #. odoo-javascript
 #: code:addons/spreadsheet_edition/static/src/bundle/o_spreadsheet/menu_item_registry.js:0
 #, python-format
 msgid "Refresh all data"
-msgstr "Värskenda kõiki andmeid"
+msgstr ""
 
 #. module: spreadsheet_edition
 #. odoo-javascript
@@ -570,21 +569,21 @@ msgstr "Värskenda kõiki andmeid"
 #: code:addons/spreadsheet_edition/static/src/bundle/pivot/side_panels/pivot_details_side_panel.xml:0
 #, python-format
 msgid "Refresh values"
-msgstr "Värskenda väärtusi"
+msgstr ""
 
 #. module: spreadsheet_edition
 #. odoo-javascript
 #: code:addons/spreadsheet_edition/static/src/bundle/global_filters/global_filter_side_panel.xml:0
 #, python-format
 msgid "Related model"
-msgstr "Seotud mudel"
+msgstr ""
 
 #. module: spreadsheet_edition
 #. odoo-javascript
 #: code:addons/spreadsheet_edition/static/src/bundle/global_filters/global_filter_side_panel.xml:0
 #, python-format
 msgid "Relation"
-msgstr "Seos"
+msgstr ""
 
 #. module: spreadsheet_edition
 #. odoo-javascript
@@ -647,7 +646,7 @@ msgstr "Salvestatud"
 #: code:addons/spreadsheet_edition/static/src/bundle/actions/control_panel/spreadsheet_control_panel.xml:0
 #, python-format
 msgid "Saving"
-msgstr "Salvestamine"
+msgstr ""
 
 #. module: spreadsheet_edition
 #. odoo-javascript
@@ -663,28 +662,28 @@ msgstr "Otsing..."
 #: code:addons/spreadsheet_edition/static/src/bundle/list/index.js:0
 #, python-format
 msgid "See list properties"
-msgstr "Vaata nimekirja omadusi"
+msgstr ""
 
 #. module: spreadsheet_edition
 #. odoo-javascript
 #: code:addons/spreadsheet_edition/static/src/bundle/pivot/index.js:0
 #, python-format
 msgid "See pivot properties"
-msgstr "Vaata Pivot omadusi"
+msgstr ""
 
 #. module: spreadsheet_edition
 #. odoo-javascript
 #: code:addons/spreadsheet_edition/static/src/assets/components/ir_menu_selector/ir_menu_selector.js:0
 #, python-format
 msgid "Select a menu..."
-msgstr "Vali menüü"
+msgstr ""
 
 #. module: spreadsheet_edition
 #. odoo-javascript
 #: code:addons/spreadsheet_edition/static/src/assets/components/spreadsheet_selector_dialog/spreadsheet_selector_dialog.js:0
 #, python-format
 msgid "Select a spreadsheet to insert your %s."
-msgstr "Vali arvutustabel, et sisestada %s."
+msgstr ""
 
 #. module: spreadsheet_edition
 #. odoo-javascript
@@ -705,7 +704,7 @@ msgstr ""
 #: code:addons/spreadsheet_edition/static/src/bundle/global_filters/index.js:0
 #, python-format
 msgid "Set as filter"
-msgstr "Määra filtriks"
+msgstr ""
 
 #. module: spreadsheet_edition
 #. odoo-javascript
@@ -737,21 +736,21 @@ msgstr "Arvutustabeli hetkepilt"
 #: code:addons/spreadsheet_edition/static/src/assets/components/spreadsheet_selector_dialog/spreadsheet_selector_dialog.js:0
 #, python-format
 msgid "Spreadsheets"
-msgstr "Arvutustabelid"
+msgstr ""
 
 #. module: spreadsheet_edition
 #. odoo-javascript
 #: code:addons/spreadsheet_edition/static/src/bundle/chart/side_panels/odoo_bar/odoo_bar_config_panel.xml:0
 #, python-format
 msgid "Stacked barchart"
-msgstr "Virnastatud tulpdiagramm"
+msgstr ""
 
 #. module: spreadsheet_edition
 #. odoo-javascript
 #: code:addons/spreadsheet_edition/static/src/bundle/chart/side_panels/odoo_line/odoo_line_config_panel.xml:0
 #, python-format
 msgid "Stacked linechart"
-msgstr "Virnastatud joondiagramm"
+msgstr ""
 
 #. module: spreadsheet_edition
 #. odoo-javascript
@@ -765,7 +764,7 @@ msgstr "Tekst"
 #: code:addons/spreadsheet_edition/static/src/bundle/global_filters/global_filter_side_panel.xml:0
 #, python-format
 msgid "Time range"
-msgstr "Ajavahemik"
+msgstr ""
 
 #. module: spreadsheet_edition
 #. odoo-javascript
@@ -796,21 +795,21 @@ msgstr "Aasta"
 #: code:addons/spreadsheet_edition/static/src/bundle/pivot/side_panels/pivot_details_side_panel.js:0
 #, python-format
 msgid "ascending"
-msgstr "kasvav"
+msgstr ""
 
 #. module: spreadsheet_edition
 #. odoo-javascript
 #: code:addons/spreadsheet_edition/static/src/bundle/pivot/side_panels/pivot_details_side_panel.js:0
 #, python-format
 msgid "descending"
-msgstr "kahanev"
+msgstr ""
 
 #. module: spreadsheet_edition
 #. odoo-javascript
 #: code:addons/spreadsheet_edition/static/src/assets/components/spreadsheet_selector_dialog/spreadsheet_selector_dialog.js:0
 #, python-format
 msgid "graph"
-msgstr "graafik"
+msgstr ""
 
 #. module: spreadsheet_edition
 #. odoo-javascript
@@ -839,7 +838,7 @@ msgstr ""
 #: code:addons/spreadsheet_edition/static/src/bundle/pivot/side_panels/pivot_details_side_panel.js:0
 #, python-format
 msgid "never"
-msgstr "mitte kunagi"
+msgstr ""
 
 #. module: spreadsheet_edition
 #: model:ir.model.constraint,message:spreadsheet_edition.constraint_spreadsheet_revision_parent_revision_unique
@@ -858,9 +857,9 @@ msgstr ""
 #: code:addons/spreadsheet_edition/static/src/assets/components/spreadsheet_selector_dialog/spreadsheet_selector_dialog.xml:0
 #, python-format
 msgid "records of the list."
-msgstr "nimekirja kirjed."
+msgstr ""
 
 #. module: spreadsheet_edition
 #: model:ir.model,name:spreadsheet_edition.model_ir_websocket
 msgid "websocket message handling"
-msgstr "websocket sõnumite käsitlus"
+msgstr ""

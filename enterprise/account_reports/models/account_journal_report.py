@@ -35,7 +35,7 @@ class JournalReportCustomHandler(models.AbstractModel):
             if column['expression_label'] in ['name', 'account', 'label']:
                 column['class'] = 'o_account_report_line_ellipsis'
             elif column['expression_label'] == 'additional_col_2':
-                column['class'] = 'text-end'
+                column['class'] = 'text-right'
         # Initialise the custom options for this report.
         custom_filters = {
             'sort_by_date': False,
@@ -157,7 +157,7 @@ class JournalReportCustomHandler(models.AbstractModel):
             # These can be fetched using any column groups or lines for this move.
             first_move_line = move_line_vals_list[0]
             general_line_vals = next(col_group_val for col_group_val in first_move_line.values())
-            if report.load_more_limit and len(move_line_vals_list) + len(lines) > report.load_more_limit and not self._context.get('print_mode'):
+            if report.load_more_limit and len(move_line_vals_list) + len(lines) > report.load_more_limit:
                 # This element won't generate a line now, but we use it to know that we'll need to add a load_more line.
                 has_more_lines = True
                 break
@@ -253,13 +253,13 @@ class JournalReportCustomHandler(models.AbstractModel):
             # The system needs to always have the same column amount. This is hacky, but it works.
             if journal_type in ['sale', 'purchase']:
                 columns.extend([
-                    {'name': _('Taxes'), 'class': 'text-start'},
+                    {'name': _('Taxes'), 'class': 'text-left'},
                     {'name': _('Tax Grids')},
                 ])
             elif journal_type == 'bank':
                 columns.extend([
                     {'name': _('Balance'), 'class': 'number'},
-                    {'name': ''} if not has_multicurrency else {'name': _('Amount In Currency'), 'class': 'text-end number'},
+                    {'name': ''} if not has_multicurrency else {'name': _('Amount In Currency'), 'class': 'text-right number'},
                 ])
             else:
                 columns.extend([
@@ -561,7 +561,7 @@ class JournalReportCustomHandler(models.AbstractModel):
                 tax_val = _('B: %s', report.format_value(values['tax_base_amount'], blank_if_zero=False, figure_type='monetary'))
             values['tax_grids'] = values['tax_grids']
             additional_col = [
-                {'name': tax_val, 'class': 'text-start'},
+                {'name': tax_val, 'class': 'text-left'},
                 {'name': ', '.join(values['tax_grids'])},
             ]
         elif values['journal_type'] == 'bank':
@@ -643,10 +643,7 @@ class JournalReportCustomHandler(models.AbstractModel):
             sort_by_date = options_group.get('sort_by_date')
             params.append(column_group_key)
             params += where_params
-
-            limit_to_load = report.load_more_limit + 1 if report.load_more_limit and not self._context.get('print_mode') else None
-
-            params += [limit_to_load, offset]
+            params += [report.load_more_limit + 1, offset]
             queries.append(f"""
                 SELECT
                     %s AS column_group_key,

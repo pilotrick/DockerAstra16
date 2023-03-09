@@ -13,12 +13,10 @@ class ResCompany(models.Model):
         compute="_compute_l10n_pe_edi_certificate")
     l10n_pe_edi_provider_username = fields.Char(
         string="SOL User",
-        help="The username used to login to SUNAT SOL",
-        groups='base.group_system')
+        help="The username used to login to SUNAT SOL")
     l10n_pe_edi_provider_password = fields.Char(
         string="SOL Password",
-        help="The password used to login to SUNAT SOL",
-        groups='base.group_system')
+        help="The password used to login to SUNAT SOL")
     l10n_pe_edi_provider = fields.Selection(
         selection=[('digiflow', 'Digiflow'), ('sunat', 'SUNAT'), ('iap', 'IAP')],
         string="Electronic Service Provider (ESP)", default="iap",

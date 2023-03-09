@@ -77,13 +77,13 @@ msgstr ""
 #. module: product_unspsc
 #: model:ir.model.fields,field_description:product_unspsc.field_product_unspsc_code__name
 msgid "Name"
-msgstr "പേര്"
+msgstr ""
 
 #. module: product_unspsc
 #: model:ir.model,name:product_unspsc.model_product_template
 #: model:ir.model.fields.selection,name:product_unspsc.selection__product_unspsc_code__applies_to__product
 msgid "Product"
-msgstr "പ്രോഡക്റ്റ്"
+msgstr "ഉൽപ്പന്നം"
 
 #. module: product_unspsc
 #: model:ir.model,name:product_unspsc.model_uom_uom

@@ -4,7 +4,6 @@
 # 
 # Translators:
 # Martin Trigaux, 2022
-# Patricia Gutiérrez Capetillo <pagc@odoo.com>, 2023
 # 
 msgid ""
 msgstr ""
@@ -12,7 +11,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-10-10 13:29+0000\n"
 "PO-Revision-Date: 2022-09-22 05:49+0000\n"
-"Last-Translator: Patricia Gutiérrez Capetillo <pagc@odoo.com>, 2023\n"
+"Last-Translator: Martin Trigaux, 2022\n"
 "Language-Team: Spanish (Mexico) (https://www.transifex.com/odoo/teams/41243/es_MX/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -28,14 +27,14 @@ msgstr "Grupos de acceso"
 #. module: spreadsheet_dashboard_documents
 #: model_terms:ir.ui.view,arch_db:spreadsheet_dashboard_documents.spreadsheet_dashboard_view_list
 msgid "Add a spreadsheet"
-msgstr "Agregar una hoja de cálculo"
+msgstr ""
 
 #. module: spreadsheet_dashboard_documents
 #. openerp-web
 #: code:addons/spreadsheet_dashboard_documents/static/src/bundle/documents_spreadsheet_action.js:0
 #, python-format
 msgid "Add to dashboard"
-msgstr "Agregar al tablero"
+msgstr ""
 
 #. module: spreadsheet_dashboard_documents
 #. openerp-web
@@ -60,7 +59,7 @@ msgstr "Crear"
 #. module: spreadsheet_dashboard_documents
 #: model:ir.model,name:spreadsheet_dashboard_documents.model_spreadsheet_document_to_dashboard
 msgid "Create a dashboard from a spreadsheet document"
-msgstr "Crear tablero desde un documento de hoja de cálculo"
+msgstr ""
 
 #. module: spreadsheet_dashboard_documents
 #: model:ir.model.fields,field_description:spreadsheet_dashboard_documents.field_spreadsheet_document_to_dashboard__create_uid
@@ -75,12 +74,12 @@ msgstr "Creado el"
 #. module: spreadsheet_dashboard_documents
 #: model:ir.model.fields,field_description:spreadsheet_dashboard_documents.field_spreadsheet_document_to_dashboard__name
 msgid "Dashboard Name"
-msgstr "Nombre del tablero"
+msgstr ""
 
 #. module: spreadsheet_dashboard_documents
 #: model:ir.model.fields,field_description:spreadsheet_dashboard_documents.field_spreadsheet_document_to_dashboard__dashboard_group_id
 msgid "Dashboard Section"
-msgstr "Sección del tablero"
+msgstr ""
 
 #. module: spreadsheet_dashboard_documents
 #: model:ir.model.fields,field_description:spreadsheet_dashboard_documents.field_spreadsheet_document_to_dashboard__display_name
@@ -117,9 +116,9 @@ msgstr "Última actualización el"
 #: code:addons/spreadsheet_dashboard_documents/static/src/bundle/documents_spreadsheet_action.js:0
 #, python-format
 msgid "Name your dashboard and select its section"
-msgstr "Nombre su tablero y seleccione la sección"
+msgstr ""
 
 #. module: spreadsheet_dashboard_documents
 #: model:ir.model,name:spreadsheet_dashboard_documents.model_spreadsheet_dashboard
 msgid "Spreadsheet Dashboard"
-msgstr "Tablero de Hojas de cálculo"
+msgstr ""

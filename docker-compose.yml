@@ -46,7 +46,7 @@ services:
             - db
 #        command: --dev=all
         #command: bash -c 'pip3 install -U debugpy'
-        #command: /usr/bin/odoo --db_user=odoo --db_host=db --db_password=odoo -u all
+#        command: /usr/bin/odoo --db_user=odoo --db_host=db --db_password=odoo -u all
 
     # api:
     #     image: api_dgii

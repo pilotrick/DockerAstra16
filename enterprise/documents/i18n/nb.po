@@ -12,7 +12,6 @@
 # Lars Aam <lars.aam@vikenfiber.no>, 2022
 # Marius Stedjan <marius@stedjan.com>, 2022
 # Martin Trigaux, 2022
-# Henning Fyllingsnes, 2023
 # 
 msgid ""
 msgstr ""
@@ -20,7 +19,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-12-15 13:27+0000\n"
 "PO-Revision-Date: 2022-09-22 05:46+0000\n"
-"Last-Translator: Henning Fyllingsnes, 2023\n"
+"Last-Translator: Martin Trigaux, 2022\n"
 "Language-Team: Norwegian Bokmål (https://www.transifex.com/odoo/teams/41243/nb/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -1069,7 +1068,7 @@ msgstr ""
 #. module: documents
 #: model:ir.model,name:documents.model_documents_folder
 msgid "Documents Workspace"
-msgstr "Dokumenter Arbeidsområde"
+msgstr ""
 
 #. module: documents
 #: model:ir.model,name:documents.model_documents_mixin
@@ -1647,12 +1646,12 @@ msgstr ""
 #. module: documents
 #: model:ir.model.fields,field_description:documents.field_documents_workflow_rule__folder_id
 msgid "Move to Workspace"
-msgstr "Flytt til Arbeidsområde"
+msgstr ""
 
 #. module: documents
 #: model_terms:ir.ui.view,arch_db:documents.documents_folder_deletion_wizard_view_form
 msgid "Move to parent workspace"
-msgstr "Flytt til overordnet arbeidsområde"
+msgstr ""
 
 #. module: documents
 #. odoo-javascript
@@ -1726,7 +1725,7 @@ msgstr ""
 #: code:addons/documents/static/src/views/search/documents_search_panel.js:0
 #, python-format
 msgid "New Workspace"
-msgstr "Nytt Arbeidsområde"
+msgstr ""
 
 #. module: documents
 #: model:ir.model.fields,field_description:documents.field_documents_document__activity_calendar_event_id
@@ -1913,7 +1912,7 @@ msgstr ""
 #: model:ir.model.fields,field_description:documents.field_documents_folder__parent_folder_id
 #: model_terms:ir.ui.view,arch_db:documents.folder_view_search
 msgid "Parent Workspace"
-msgstr "Overordnet Arbeidsområde"
+msgstr ""
 
 #. module: documents
 #: model:ir.model.fields,help:documents.field_documents_share__alias_parent_model_id
@@ -1977,7 +1976,7 @@ msgstr "Post-id på Tråd"
 #. module: documents
 #: model:ir.model.fields,field_description:documents.field_documents_workflow_rule__domain_folder_id
 msgid "Related Workspace"
-msgstr "Relatert Arbeidsområde"
+msgstr ""
 
 #. module: documents
 #. odoo-javascript
@@ -2212,7 +2211,7 @@ msgstr ""
 #: code:addons/documents/models/share.py:0
 #, python-format
 msgid "Share selected workspace"
-msgstr "Del valgt Arbeidsområde"
+msgstr ""
 
 #. module: documents
 #. odoo-javascript
@@ -2315,7 +2314,7 @@ msgstr ""
 #. module: documents
 #: model:ir.model.fields,field_description:documents.field_documents_folder__children_folder_ids
 msgid "Sub workspaces"
-msgstr "Underordnet Arbeidsområde"
+msgstr ""
 
 #. module: documents
 #: model:ir.model.fields,field_description:documents.field_documents_share__activity_summary
@@ -2451,7 +2450,7 @@ msgstr ""
 #: model:ir.model.fields,help:documents.field_documents_document__company_id
 #: model:ir.model.fields,help:documents.field_documents_folder__company_id
 msgid "This workspace will only be available to the selected company"
-msgstr "Dette Arbeidsområdet vil være tilgjengelig for valgt selskap"
+msgstr ""
 
 #. module: documents
 #: model:ir.model.fields,field_description:documents.field_documents_document__thumbnail
@@ -2645,7 +2644,7 @@ msgstr "Uker"
 #. module: documents
 #: model_terms:ir.ui.view,arch_db:documents.documents_folder_deletion_wizard_view_form
 msgid "What do you want to do with the files in the workspace?"
-msgstr "Hva vil du gjøre med filene i Arbeidsområdet?"
+msgstr ""
 
 #. module: documents
 #: model:ir.actions.act_window,name:documents.workflow_rule_action
@@ -2666,13 +2665,13 @@ msgstr ""
 #: model_terms:ir.ui.view,arch_db:documents.facet_view_search
 #: model_terms:ir.ui.view,arch_db:documents.folder_view_tree
 msgid "Workspace"
-msgstr "Arbeidsområde"
+msgstr ""
 
 #. module: documents
 #: model:ir.actions.act_window,name:documents.folder_action
 #: model:ir.ui.menu,name:documents.folder_menu
 msgid "Workspaces"
-msgstr "Arbeidsområde"
+msgstr ""
 
 #. module: documents
 #. odoo-javascript
@@ -2718,7 +2717,6 @@ msgstr ""
 #, python-format
 msgid "You don't have the right to move documents to that workspace."
 msgstr ""
-"Du har ikke rettigheter til å flytte dokumenter til dette Arbeidsområdet."
 
 #. module: documents
 #. odoo-javascript
@@ -2726,7 +2724,6 @@ msgstr ""
 #, python-format
 msgid "You don't have the rights to move documents to that workspace"
 msgstr ""
-"Du har ikke rettigheter til å flytte dokumenter til dette Arbeidsområdet."
 
 #. module: documents
 #. odoo-javascript

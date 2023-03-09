@@ -3,7 +3,8 @@
 # 	* hr_payroll_fleet
 # 
 # Translators:
-# Jolien De Paepe, 2023
+# Martin Trigaux, 2022
+# Jolien De Paepe, 2022
 # 
 msgid ""
 msgstr ""
@@ -11,7 +12,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-11-26 08:16+0000\n"
 "PO-Revision-Date: 2022-12-16 09:33+0000\n"
-"Last-Translator: Jolien De Paepe, 2023\n"
+"Last-Translator: Jolien De Paepe, 2022\n"
 "Language-Team: French (https://www.transifex.com/odoo/teams/41243/fr/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -29,7 +30,7 @@ msgstr "Employés avec plusieurs véhicules de société"
 #. module: hr_payroll_fleet
 #: model:ir.model,name:hr_payroll_fleet.model_hr_payslip
 msgid "Pay Slip"
-msgstr "Fiche de paie"
+msgstr "Feuille de paie"
 
 #. module: hr_payroll_fleet
 #. odoo-python

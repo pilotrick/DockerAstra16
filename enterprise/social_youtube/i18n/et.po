@@ -12,7 +12,6 @@
 # Eneli Õigus <enelioigus@gmail.com>, 2022
 # Triine Aavik <triine@avalah.ee>, 2022
 # Anna, 2023
-# Leaanika Randmets, 2023
 # 
 msgid ""
 msgstr ""
@@ -20,7 +19,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-10-10 13:29+0000\n"
 "PO-Revision-Date: 2022-09-22 05:49+0000\n"
-"Last-Translator: Leaanika Randmets, 2023\n"
+"Last-Translator: Anna, 2023\n"
 "Language-Team: Estonian (https://www.transifex.com/odoo/teams/41243/et/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -38,22 +37,22 @@ msgstr ""
 #. module: social_youtube
 #: model_terms:ir.ui.view,arch_db:social_youtube.youtube_preview
 msgid "123 Views •"
-msgstr "123 vaatamist •"
+msgstr ""
 
 #. module: social_youtube
 #: model_terms:ir.ui.view,arch_db:social_youtube.social_stream_post_view_kanban
 msgid "<i class=\"fa fa-comments me-1\" title=\"Comments\"/>"
-msgstr "<i class=\"fa fa-comments me-1\" title=\"Comments\"/>"
+msgstr ""
 
 #. module: social_youtube
 #: model_terms:ir.ui.view,arch_db:social_youtube.social_stream_post_view_kanban
 msgid "<i class=\"fa fa-thumbs-up me-1\" title=\"Likes\"/>"
-msgstr "<i class=\"fa fa-thumbs-up me-1\" title=\"Likes\"/>"
+msgstr ""
 
 #. module: social_youtube
 #: model_terms:ir.ui.view,arch_db:social_youtube.youtube_preview
 msgid "<span class=\"fw-bold\">Your YouTube Channel</span>"
-msgstr "<span class=\"fw-bold\">Teie YouTube kanal</span>"
+msgstr ""
 
 #. module: social_youtube
 #: model_terms:ir.ui.view,arch_db:social_youtube.social_account_view_form
@@ -72,8 +71,6 @@ msgstr ""
 msgid ""
 "Access token provided by the YouTube API, this should never be set manually."
 msgstr ""
-"Juurdepääsu võti, mida pakub YouTube API, seda ei tohiks kunagi käsitsi "
-"määrata."
 
 #. module: social_youtube
 #: model:ir.model.fields,field_description:social_youtube.field_social_account_revoke_youtube__account_id
@@ -85,7 +82,7 @@ msgstr "Konto"
 #: code:addons/social_youtube/models/social_stream_post.py:0
 #, python-format
 msgid "An error occurred."
-msgstr "Ilmnes viga"
+msgstr ""
 
 #. module: social_youtube
 #: code:addons/social_youtube/controllers/main.py:0
@@ -99,7 +96,7 @@ msgstr ""
 #: model_terms:ir.ui.view,arch_db:social_youtube.social_stream_post_view_kanban
 #, python-format
 msgid "Author Image"
-msgstr "Autori pilt"
+msgstr ""
 
 #. module: social_youtube
 #: model_terms:ir.ui.view,arch_db:social_youtube.social_account_view_form
@@ -162,8 +159,6 @@ msgid ""
 "Could not revoke your account.\n"
 "Error: %s"
 msgstr ""
-"Ei saanud teie kontot tühistada.\n"
-"Viga: %s"
 
 #. module: social_youtube
 #: model:ir.model.fields,field_description:social_youtube.field_social_account_revoke_youtube__create_uid
@@ -192,7 +187,7 @@ msgstr ""
 #: code:addons/social_youtube/static/src/js/social_youtube_upload_field.js:0
 #, python-format
 msgid "Draft Video"
-msgstr "Video mustand"
+msgstr ""
 
 #. module: social_youtube
 #: model:ir.model.fields,help:social_youtube.field_social_account__youtube_token_expiration_date
@@ -204,17 +199,17 @@ msgstr ""
 #. module: social_youtube
 #: model:ir.model.fields,field_description:social_youtube.field_social_account__youtube_access_token
 msgid "Google Access Token"
-msgstr "Google juurdepääsu võti"
+msgstr ""
 
 #. module: social_youtube
 #: model_terms:ir.ui.view,arch_db:social_youtube.social_account_view_form
 msgid "Google Privacy Policy"
-msgstr "Google Privaatsuspoliitika"
+msgstr ""
 
 #. module: social_youtube
 #: model:ir.model.fields,field_description:social_youtube.field_social_account__youtube_refresh_token
 msgid "Google Refresh Token"
-msgstr "Google Refresh Token"
+msgstr ""
 
 #. module: social_youtube
 #: model:ir.model.fields,field_description:social_youtube.field_social_account_revoke_youtube__id
@@ -246,7 +241,7 @@ msgstr "Meeldimised"
 #. module: social_youtube
 #: model:ir.model.fields,field_description:social_youtube.field_social_media__media_type
 msgid "Media Type"
-msgstr "Meedia tüüp"
+msgstr ""
 
 #. module: social_youtube
 #. openerp-web
@@ -258,12 +253,12 @@ msgstr "Ei"
 #. module: social_youtube
 #: model_terms:ir.ui.view,arch_db:social_youtube.res_config_settings_view_form
 msgid "OAuth Client ID"
-msgstr "OAuth kliendi ID"
+msgstr ""
 
 #. module: social_youtube
 #: model_terms:ir.ui.view,arch_db:social_youtube.res_config_settings_view_form
 msgid "OAuth Client Secret"
-msgstr "OAuth kliendi Secret"
+msgstr ""
 
 #. module: social_youtube
 #: model_terms:ir.ui.view,arch_db:social_youtube.social_account_revoke_youtube_view_form
@@ -271,15 +266,11 @@ msgid ""
 "Odoo will lose access to your YouTube account\n"
 "                        and delete all its related data from your database."
 msgstr ""
-"Odoo kaotab juurdepääsu teie YouTube'i kontole\n"
-"                       ja kustutab kõik sellega seotud andmed teie andmebaasist."
 
 #. module: social_youtube
 #: model:ir.model.fields,help:social_youtube.field_social_post__youtube_video_privacy
 msgid "Once posted, set the video as Public/Private/Unlisted"
 msgstr ""
-"Kui video on postitatud, määrake see avalikuks/privaatseks/loendamata "
-"videoks."
 
 #. module: social_youtube
 #: code:addons/social_youtube/models/social_post.py:0
@@ -298,7 +289,7 @@ msgstr "Privaatne"
 #: code:addons/social_youtube/static/src/js/social_youtube_upload_field.js:0
 #, python-format
 msgid "Processing..."
-msgstr "Töötlemises.."
+msgstr ""
 
 #. module: social_youtube
 #: model:ir.model.fields.selection,name:social_youtube.selection__social_post__youtube_video_privacy__public
@@ -309,7 +300,7 @@ msgstr "Avalik"
 #: code:addons/social_youtube/controllers/main.py:0
 #, python-format
 msgid "Reason:"
-msgstr "Põhjus:"
+msgstr ""
 
 #. module: social_youtube
 #: model:ir.model.fields,help:social_youtube.field_social_account__youtube_refresh_token
@@ -326,20 +317,20 @@ msgstr "Tühistada"
 #. module: social_youtube
 #: model_terms:ir.ui.view,arch_db:social_youtube.social_account_revoke_youtube_view_form
 msgid "Revoke & Delete"
-msgstr "Tühista & Kustuta"
+msgstr ""
 
 #. module: social_youtube
 #: code:addons/social_youtube/models/social_account.py:0
 #, python-format
 msgid "Revoke Account"
-msgstr "Tühista konto"
+msgstr ""
 
 #. module: social_youtube
 #: model:ir.actions.act_window,name:social_youtube.social_account_revoke_youtube_action
 #: model:ir.model,name:social_youtube.model_social_account_revoke_youtube
 #: model_terms:ir.ui.view,arch_db:social_youtube.social_account_revoke_youtube_view_form
 msgid "Revoke YouTube Account"
-msgstr "Tühista YouTube konto"
+msgstr ""
 
 #. module: social_youtube
 #: code:addons/social_youtube/models/social_account.py:0
@@ -357,12 +348,12 @@ msgstr "Vali"
 #. module: social_youtube
 #: model:ir.model.fields,field_description:social_youtube.field_social_post__youtube_accounts_other_count
 msgid "Selected Other Accounts"
-msgstr "Valitud muud kontod"
+msgstr ""
 
 #. module: social_youtube
 #: model:ir.model.fields,field_description:social_youtube.field_social_post__youtube_accounts_count
 msgid "Selected YouTube Accounts"
-msgstr "Valitud YouTube'i kontod"
+msgstr ""
 
 #. module: social_youtube
 #: model:ir.model.fields,help:social_youtube.field_social_post__youtube_video
@@ -394,7 +385,7 @@ msgstr "Sotsiaalmeedia postitus"
 #. module: social_youtube
 #: model:ir.model,name:social_youtube.model_social_post_template
 msgid "Social Post Template"
-msgstr "Postituse mall"
+msgstr ""
 
 #. module: social_youtube
 #: model:ir.model,name:social_youtube.model_social_stream
@@ -410,14 +401,14 @@ msgstr "Sotsiaalmeedia striiming postitus"
 #: code:addons/social_youtube/models/social_post.py:0
 #, python-format
 msgid "The 'message' field is required for post ID %s"
-msgstr "Postituse ID jaoks on 'message' väli nõutud %s"
+msgstr ""
 
 #. module: social_youtube
 #. openerp-web
 #: code:addons/social_youtube/static/src/js/social_youtube_upload_field.js:0
 #, python-format
 msgid "The selected video exceeds the maximum allowed size of %s."
-msgstr "Valitud video ületab maksimaalse faili suurust, mis on %s."
+msgstr ""
 
 #. module: social_youtube
 #: code:addons/social_youtube/models/social_media.py:0
@@ -426,20 +417,18 @@ msgid ""
 "The url that this service requested returned an error. Please contact the "
 "author of the app."
 msgstr ""
-"Selle teenuse taotletud url tagastas vea. Palun võtke ühendust rakenduse "
-"loojaga. "
 
 #. module: social_youtube
 #: code:addons/social_youtube/models/social_live_post.py:0
 #, python-format
 msgid "The video you are trying to publish has been deleted from YouTube."
-msgstr "Video, mida te üritate avaldada, on YouTube'ist kustutatud."
+msgstr ""
 
 #. module: social_youtube
 #: code:addons/social_youtube/controllers/main.py:0
 #, python-format
 msgid "There is no channel linked with this YouTube account."
-msgstr "Selle YouTube'i kontoga pole seotud ühtegi kanalit."
+msgstr ""
 
 #. module: social_youtube
 #: model_terms:ir.ui.view,arch_db:social_youtube.social_account_view_form
@@ -451,13 +440,13 @@ msgstr ""
 #. module: social_youtube
 #: model:ir.model.fields,field_description:social_youtube.field_social_account__youtube_token_expiration_date
 msgid "Token expiration date"
-msgstr "Token'i aegumiskuupäev"
+msgstr ""
 
 #. module: social_youtube
 #: code:addons/social_youtube/controllers/main.py:0
 #, python-format
 msgid "Unauthorized. Please contact your administrator."
-msgstr "Autoriseerimata. Palun võtke ühendust oma administraatoriga."
+msgstr ""
 
 #. module: social_youtube
 #: code:addons/social_youtube/wizard/social_account_revoke_youtube.py:0
@@ -468,40 +457,40 @@ msgstr "Tundmatu"
 #. module: social_youtube
 #: model:ir.model.fields.selection,name:social_youtube.selection__social_post__youtube_video_privacy__unlisted
 msgid "Unlisted"
-msgstr "Registreerimata"
+msgstr ""
 
 #. module: social_youtube
 #. openerp-web
 #: code:addons/social_youtube/static/src/xml/social_youtube_templates.xml:0
 #, python-format
 msgid "Upload Video"
-msgstr "Lae video üles"
+msgstr ""
 
 #. module: social_youtube
 #. openerp-web
 #: code:addons/social_youtube/static/src/js/social_youtube_upload_field.js:0
 #, python-format
 msgid "Upload failed. Please try again."
-msgstr "Üleslaadimine ebaõnnestus. Palun proovi uuesti."
+msgstr ""
 
 #. module: social_youtube
 #. openerp-web
 #: code:addons/social_youtube/static/src/js/social_youtube_upload_field.js:0
 #, python-format
 msgid "Uploading %s"
-msgstr "Üleslaadimine %s"
+msgstr ""
 
 #. module: social_youtube
 #. openerp-web
 #: code:addons/social_youtube/static/src/js/social_youtube_upload_field.js:0
 #, python-format
 msgid "Uploading... %s%%"
-msgstr "Üleslaadimine... %s%%"
+msgstr ""
 
 #. module: social_youtube
 #: model:ir.model.fields,field_description:social_youtube.field_res_config_settings__youtube_use_own_account
 msgid "Use your own YouTube Account"
-msgstr "Kasutage enda Youtube'i kontot"
+msgstr ""
 
 #. module: social_youtube
 #: model:ir.model.fields,help:social_youtube.field_social_media__media_type
@@ -509,8 +498,6 @@ msgid ""
 "Used to make comparisons when we need to restrict some features to a "
 "specific media ('facebook', 'twitter', ...)."
 msgstr ""
-"Kasutatakse võrdluste tegemiseks, kui meil on vaja piirata mõningaid "
-"funktsioone konkreetsele meediale (\"facebook\", \"twitter\", ...)."
 
 #. module: social_youtube
 #: code:addons/social_youtube/models/social_post.py:0
@@ -521,30 +508,30 @@ msgstr "Video"
 #. module: social_youtube
 #: model_terms:ir.ui.view,arch_db:social_youtube.social_post_view_form
 msgid "Video Description"
-msgstr "Video kirjeldus"
+msgstr ""
 
 #. module: social_youtube
 #: model:ir.model.fields,field_description:social_youtube.field_social_post__youtube_video_privacy
 msgid "Video Privacy"
-msgstr "Video privaatsus"
+msgstr ""
 
 #. module: social_youtube
 #: model_terms:ir.ui.view,arch_db:social_youtube.social_post_view_form
 msgid "Video Title"
-msgstr "Video pealkiri"
+msgstr ""
 
 #. module: social_youtube
 #. openerp-web
 #: code:addons/social_youtube/static/src/js/social_youtube_upload_field.js:0
 #, python-format
 msgid "Video Upload"
-msgstr "Video üleslaadimine"
+msgstr ""
 
 #. module: social_youtube
 #: code:addons/social_youtube/models/social_stream_post.py:0
 #, python-format
 msgid "Video not found. It could have been removed from Youtube."
-msgstr "Videot ei leitud. "
+msgstr ""
 
 #. module: social_youtube
 #. openerp-web
@@ -559,19 +546,19 @@ msgstr "Vaatajaid"
 #: code:addons/social_youtube/static/src/js/social_youtube_upload_field.js:0
 #, python-format
 msgid "Yes, delete it"
-msgstr "Jah, kustuta"
+msgstr ""
 
 #. module: social_youtube
 #: code:addons/social_youtube/models/social_media.py:0
 #, python-format
 msgid "You don't have an active subscription. Please buy one here: %s"
-msgstr "Teil pole aktiivset tellimust. Palun osta üks siit: %s"
+msgstr ""
 
 #. module: social_youtube
 #: code:addons/social_youtube/models/social_post.py:0
 #, python-format
 msgid "You have to upload a video when posting on YouTube."
-msgstr "YouTube'i postitamiseks, esmalt peate video üles laadima."
+msgstr ""
 
 #. module: social_youtube
 #: model:ir.model.fields.selection,name:social_youtube.selection__social_media__media_type__youtube
@@ -582,17 +569,17 @@ msgstr "YouTube"
 #. module: social_youtube
 #: model:ir.model.fields,field_description:social_youtube.field_social_post__youtube_access_token
 msgid "YouTube Access Token"
-msgstr "YouTube Access Token"
+msgstr ""
 
 #. module: social_youtube
 #: model:ir.model.fields,field_description:social_youtube.field_social_post__youtube_video_category_id
 msgid "YouTube Category Id"
-msgstr "YouTube kategooria Id"
+msgstr ""
 
 #. module: social_youtube
 #: model:ir.model.fields,field_description:social_youtube.field_social_account__youtube_channel_id
 msgid "YouTube Channel ID"
-msgstr "YouTube kanali ID"
+msgstr ""
 
 #. module: social_youtube
 #: model:ir.model.fields,help:social_youtube.field_social_account__youtube_channel_id
@@ -606,74 +593,74 @@ msgstr ""
 #: code:addons/social_youtube/static/src/js/stream_post_kanban_record.js:0
 #, python-format
 msgid "YouTube Comments"
-msgstr "YouTube'i kommentaarid"
+msgstr ""
 
 #. module: social_youtube
 #: model:ir.model.fields,field_description:social_youtube.field_social_stream_post__youtube_comments_count
 msgid "YouTube Comments Count"
-msgstr "YouTube'i kommentaaride arv"
+msgstr ""
 
 #. module: social_youtube
 #: model_terms:ir.ui.view,arch_db:social_youtube.res_config_settings_view_form
 msgid "YouTube Developer Account"
-msgstr "YouTube arendaja konto"
+msgstr ""
 
 #. module: social_youtube
 #: model:ir.model.fields,field_description:social_youtube.field_social_stream_post__youtube_dislikes_count
 msgid "YouTube Dislikes"
-msgstr "YouTube mittemeeldimised"
+msgstr ""
 
 #. module: social_youtube
 #: model:ir.model.fields,field_description:social_youtube.field_social_stream_post__youtube_likes_count
 msgid "YouTube Likes"
-msgstr "YouTube meeldimised"
+msgstr ""
 
 #. module: social_youtube
 #: model:ir.model.fields,field_description:social_youtube.field_social_stream_post__youtube_likes_ratio
 msgid "YouTube Likes Ratio"
-msgstr "YouTube'i meeldimiste protsent"
+msgstr ""
 
 #. module: social_youtube
 #: model:ir.model.fields,field_description:social_youtube.field_res_config_settings__youtube_oauth_client_id
 msgid "YouTube OAuth Client ID"
-msgstr "YouTube OAuth kliendi ID"
+msgstr ""
 
 #. module: social_youtube
 #: model:ir.model.fields,field_description:social_youtube.field_res_config_settings__youtube_oauth_client_secret
 msgid "YouTube OAuth Client Secret"
-msgstr "YouTube OAuth kliendi Secret"
+msgstr ""
 
 #. module: social_youtube
 #: model_terms:ir.ui.view,arch_db:social_youtube.social_post_view_form
 msgid "YouTube Options"
-msgstr "YouTube'i valikud"
+msgstr ""
 
 #. module: social_youtube
 #: model_terms:ir.ui.view,arch_db:social_youtube.youtube_preview
 msgid "YouTube Placehdoler"
-msgstr "YouTube Placehdoler"
+msgstr ""
 
 #. module: social_youtube
 #: model:ir.model.fields,field_description:social_youtube.field_social_post__youtube_preview
 msgid "YouTube Preview"
-msgstr "YouTube'i eelvaade"
+msgstr ""
 
 #. module: social_youtube
 #: model_terms:ir.ui.view,arch_db:social_youtube.social_account_view_form
 msgid "YouTube Terms of Service (ToS)"
-msgstr "YouTube'i teenusetingimused (ToS)"
+msgstr ""
 
 #. module: social_youtube
 #: model_terms:ir.ui.view,arch_db:social_youtube.social_post_view_kanban
 #: model_terms:ir.ui.view,arch_db:social_youtube.social_stream_post_view_kanban
 msgid "YouTube Thumbnail"
-msgstr "YouTube pisipilt"
+msgstr ""
 
 #. module: social_youtube
 #: model:ir.model.fields,field_description:social_youtube.field_social_post__youtube_thumbnail_url
 #: model:ir.model.fields,field_description:social_youtube.field_social_stream_post__youtube_thumbnail_url
 msgid "YouTube Thumbnail Url"
-msgstr "YouTube'i pisipildi URL"
+msgstr ""
 
 #. module: social_youtube
 #: model:ir.model.fields,field_description:social_youtube.field_social_account__youtube_upload_playlist_id
@@ -683,38 +670,38 @@ msgstr ""
 #. module: social_youtube
 #: model:ir.model.fields,field_description:social_youtube.field_social_post__youtube_video
 msgid "YouTube Video"
-msgstr "YouTube Video"
+msgstr ""
 
 #. module: social_youtube
 #: model:ir.model.fields,field_description:social_youtube.field_social_post__youtube_description
 msgid "YouTube Video Description"
-msgstr "YouTube'i video kirjeldus"
+msgstr ""
 
 #. module: social_youtube
 #: model:ir.model.fields,field_description:social_youtube.field_social_stream_post__youtube_video_id
 msgid "YouTube Video ID"
-msgstr "YouTube Video ID"
+msgstr ""
 
 #. module: social_youtube
 #: model:ir.model.fields,field_description:social_youtube.field_social_live_post__youtube_video_id
 #: model:ir.model.fields,field_description:social_youtube.field_social_post__youtube_video_id
 msgid "YouTube Video Id"
-msgstr "YouTube Video Id"
+msgstr ""
 
 #. module: social_youtube
 #: model:ir.model.fields,field_description:social_youtube.field_social_post__youtube_title
 msgid "YouTube Video Title"
-msgstr "YouTube'i video pealkiri"
+msgstr ""
 
 #. module: social_youtube
 #: model:ir.model.fields,field_description:social_youtube.field_social_post__youtube_video_url
 msgid "YouTube Video Url"
-msgstr "YouTube Video Url"
+msgstr ""
 
 #. module: social_youtube
 #: model:ir.model.fields,field_description:social_youtube.field_social_stream_post__youtube_views_count
 msgid "YouTube Views"
-msgstr "YouTube'i vaatamised"
+msgstr ""
 
 #. module: social_youtube
 #: code:addons/social_youtube/controllers/main.py:0
@@ -731,13 +718,13 @@ msgstr ""
 #. module: social_youtube
 #: model_terms:ir.ui.view,arch_db:social_youtube.social_account_view_form
 msgid "Your channel name and picture"
-msgstr "Teie kanali nimi ja pilt"
+msgstr ""
 
 #. module: social_youtube
 #: code:addons/social_youtube/models/social_live_post.py:0
 #, python-format
 msgid "Your video is missing a correct title or description."
-msgstr "Videol puudub korrektne pealkiri või kirjeldus."
+msgstr ""
 
 #. module: social_youtube
 #: model_terms:ir.ui.view,arch_db:social_youtube.social_account_view_form
@@ -756,7 +743,7 @@ msgstr ""
 #. module: social_youtube
 #: model_terms:ir.ui.view,arch_db:social_youtube.social_post_view_form
 msgid "e.g. Odoo Social Tutorial"
-msgstr "nt. Odoo õppematerjal"
+msgstr ""
 
 #. module: social_youtube
 #: model_terms:ir.ui.view,arch_db:social_youtube.social_account_view_form

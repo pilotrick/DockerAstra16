@@ -6,9 +6,8 @@ import { ConfirmationDialog } from "@web/core/confirmation_dialog/confirmation_d
 import { HtmlField } from "@web_editor/js/backend/html_field";
 import { useModel } from "@web/views/model";
 import { RelationalModel } from "@web/views/relational_model";
-import { useSetupAction } from "@web/webclient/actions/action_hook";
 
-const { Component, markup, onWillRender, useState, useEffect, useSubEnv } = owl;
+const { Component, markup, onWillRender, onWillUnmount, useState, useEffect, useExternalListener, useSubEnv } = owl;
 
 const NOTE_FIELDS = {
     id: {
@@ -103,12 +102,14 @@ export class PayrollDashboardTodo extends Component {
             isEditingNoteName: false,
         });
         this.autofocusInput = useAutofocus();
-        useSetupAction({
-            beforeLeave: () => this.saveNote(),
-            beforeUnload: () => {
-                if (this.record && this.record.isDirty) {
-                    return this.record.urgentSave();
-                }
+        onWillUnmount(() => {
+            if (this.state.mode === 'edit') {
+                this.saveNote()
+            }
+        });
+        useExternalListener(window, 'beforeunload', (e) => {
+            if (this.state.mode === 'edit') {
+                this.saveNote();
             }
         });
         onWillRender(() => {
@@ -292,8 +293,8 @@ export class PayrollDashboardTodo extends Component {
      * Save the current note, has to be trigger before switching note.
      */
     async saveNote() {
-        if (this.record && this.record.isDirty) {
-            return this.record.save();
+        if (this.record.isDirty) {
+            await this.record.save();
         }
     }
 
