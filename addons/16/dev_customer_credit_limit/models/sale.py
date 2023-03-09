@@ -8,8 +8,10 @@
 #
 ##############################################################################
 
-from odoo import api, models, fields
+from odoo import _, api, models, fields
 from datetime import datetime
+
+from odoo.exceptions import UserError
 
 class sale_order(models.Model):
     _inherit= 'sale.order'
@@ -40,6 +42,7 @@ class sale_order(models.Model):
                              }
                         }
     
+    #@api.model
     def action_sale_ok(self):
         partner_id = self.partner_id
         if self.partner_id.parent_id:
@@ -128,10 +131,17 @@ class sale_order(models.Model):
             draft_invoice_lines_amount = float(draft_invoice_lines_amount)
             to_invoice_amount = float(to_invoice_amount)
             #available_credit = partner_id.credit_limit - partner_id.credit - to_invoice_amount - draft_invoice_lines_amount
+            
             for record in self:
                 order_actual = record.amount_total
-
                 if total + order_actual > partner_id.credit_limit:  #available_credit:
+
+                    """ user = self.env.user
+                    is_admin = user.has_group('base.group_erp_manager')
+                    if not is_admin or not user.has_group('credit_limit_config'):
+                        msg = "La orden de venta excede el límite de crédito disponible para este cliente."
+                        raise UserError(_('Límite de Crédito Excedido: %s') % msg) """
+
                     imd = self.env['ir.model.data']
                     exceeded_amount = (to_invoice_amount + draft_invoice_lines_amount + partner_id.credit + self.amount_total) - partner_id.credit_limit
                     exceeded_amount = "{:.2f}".format(exceeded_amount)

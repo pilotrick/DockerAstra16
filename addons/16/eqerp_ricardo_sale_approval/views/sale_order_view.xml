@@ -11,29 +11,35 @@
 				<field name="sale_approverl_id" invisible="1" />
 				<field name="is_sale_approval" invisible="1" />
 				<field name="is_sale_confirm" invisible="1" />
+				<field name="can_confirm_sale" invisible="1"/>
 			</field>
 			<xpath expr="//header/button[@name='action_confirm'][last()]" position="replace"> 
 				</xpath>
 			<xpath expr="//button[@name='action_quotation_send']" position="after">
-				<button name="action_confirm" string="Confirm" class="btn-primary"
+				<!-- <button name="action_confirm" string="Confirm" class="btn-primary"
 					type="object"
 					attrs="{'invisible': [
                                 '|',('state', 'not in', ['draft','sent','sale_approval','credit_limit']),
-                                ('is_minimum_sale_margin','=',True)
-                                
-                            ]}" />
-				<button name="action_sale_ok" string="Confirm" class="btn-primary"
+                                ('is_minimum_sale_margin','=',True),('can_confirm_sale', '=', False)
+                            ]}"
+							/> -->
+
+				<button name="action_confirm" string="Confirm" class="btn-primary"
 					type="object"
 					attrs="{'invisible': [
                                 '|',('state', 'not in', ['sent','sale_approval']),
-                                ('is_sale_approval','=',False)
-                            ]}" />
+                                ('is_sale_approval','=',False),('can_confirm_sale', '=', False)
+                            ]}"
+							groups="eqerp_ricardo_sale_approval.grp_sale_approval, base.group_erp_manager" 
+							/>
+
 			</xpath>
 			<button name="action_confirm" position="before">
 				<button name="action_approve_sale" string="Sale Approval"
-					type="object" groups="eqerp_ricardo_sale_approval.grp_sale_approval"
-					attrs="{'invisible': ['|',('state', 'not in', ['draft','sent','waiting_sale_approval']),('is_minimum_sale_margin','=',False)]}" />
+					type="object" groups="eqerp_ricardo_sale_approval.grp_sale_approval, base.group_erp_manager"
+					attrs="{'invisible': ['|',('state', 'not in', ['draft','sent','waiting_sale_approval','credit_limit']), ('is_minimum_sale_margin','=',False)]}" />
 			</button>
+			
 			<button name="action_quotation_send" position="attributes">
 			<attribute name="invisible">{'invisible': [('state', 'in', ['credit_limit','sent','waiting_sale_approval', 'decline_approval'])]}</attribute>
 			</button>

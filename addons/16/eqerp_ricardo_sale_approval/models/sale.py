@@ -8,7 +8,7 @@
 from odoo import models, api, fields, _
 from odoo.tools.misc import format_date
 import time
-from odoo.exceptions import ValidationError,Warning
+from odoo.exceptions import ValidationError,Warning, UserError
 from odoo.tools import float_is_zero
 from datetime import datetime
 from dateutil.relativedelta import relativedelta
@@ -27,6 +27,19 @@ class sale_order(models.Model):
     is_sale_approval = fields.Boolean(string="Sale Approval",copy=False)
     is_sale_confirm = fields.Boolean(string="Sale Confirm",copy=False)
     need_sale_approval = fields.Boolean(string="Need Sale Approval",copy=False)
+
+    @api.depends('state')
+    def _compute_can_confirm_sale(self):
+        for record in self:
+            if self.env['ir.module.module'].sudo().search([('name', '=', 'dev_customer_credit_limit')]):
+                if self.is_minimum_sale_margin:
+                    record.can_confirm_sale = (record.state in ['sale_approval'])
+                else:
+                    record.can_confirm_sale = (record.state in ['credit_limit', 'sale_approval'])
+            else:
+                record.can_confirm_sale = (record.state == 'draft')
+
+    can_confirm_sale = fields.Boolean(string='Can Confirm Sale', compute='_compute_can_confirm_sale')
 
     @api.model
     def create(self,vals):
@@ -61,13 +74,27 @@ class sale_order(models.Model):
         return res
 
     def action_confirm(self):
+        """ for record in self:
+            if not record.can_confirm_sale and self.is_minimum_sale_margin:
+                raise UserError(_("No puede confirmar la orden en este estado.")) """
+            
+        user = self.env.user
+        is_admin = user.has_group('base.group_erp_manager')
+        if self.is_minimum_sale_margin and not is_admin:
+            if self.env['ir.module.module'].sudo().search([('name', '=', 'dev_customer_credit_limit')]):
+                return True
+            else:
+                msg = "No tiene permisos suficientes para confirmar ventas. Para confirmar una venta, debe ser miembro del grupo administrador."
+                raise UserError(_('Permiso denegado para confirmar ventas %s') % msg)
+        
         for order in self:
             if order.is_minimum_sale_margin and order.state in ['draft','sent','waiting_sale_approval']:
                 continue
             else:
                 order.is_sale_confirm = True
-                super(sale_order,self).action_confirm()
-        return True
+                return super(sale_order,self).action_confirm()
+            
+        return super(sale_order,self).action_confirm()
 
     def action_approve_sale(self):
         for order in self:
@@ -84,6 +111,7 @@ class sale_order(models.Model):
                 }
             else:
                 order.write({'state':'sale_approval','sale_approverl_id':user.id,'is_sale_approval':True,'is_sale_confirm':False})
+                return super(sale_order,self).action_confirm()
 
     @api.depends('order_line.margin', 'amount_untaxed')
     def cal_sales_order_margin(self):
@@ -93,7 +121,7 @@ class sale_order(models.Model):
             user_sales_margin = user.minimum_sales_margin
             if order.currency_id.id != order.company_id.currency_id.id:
                 user_sales_margin = order.currency_id._convert(user_sales_margin, order.company_id.currency_id, order.company_id, order.date_order or fields.Date.today())
-            if order.order_line and user.minimum_sales_margin and order.state in ['draft','sent','waiting_sale_approval']:
+            if order.order_line and user.minimum_sales_margin and order.state in ['draft','sent','waiting_sale_approval','credit_limit']:
                 if order.margin < user_sales_margin or order.margin < 0:
                     is_minimum_sale_margin = True
             order.is_minimum_sale_margin = is_minimum_sale_margin
@@ -153,6 +181,7 @@ class res_user(models.Model):
     minimum_sales_margin = fields.Float(string="Minimum Sales Margin",copy=False)
     next_date_so_permission = fields.Date(string="Till Date sales Approval",copy=False)
     sale_user_representative_id = fields.Many2one('res.users',string="Users")
+
 
 
 class wizard_sales_approval(models.TransientModel):
