@@ -12,7 +12,7 @@
     'website': "",
 
     'category': 'Warehouse',
-    'version': '15.0.1.0',
+    'version': '16.0.1.0',
 
     # any module necessary for this one to work correctly
     'depends': ['stock_landed_costs',],

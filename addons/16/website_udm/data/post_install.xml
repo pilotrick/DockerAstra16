@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <function model="ir.module.module" name="post_install_hook">
+            <arg eval="0"/>
+            <function name="post_install" model="website_sale_product_oum_displayed.post_install"/>
+        </function>
+    </data>
+</odoo>

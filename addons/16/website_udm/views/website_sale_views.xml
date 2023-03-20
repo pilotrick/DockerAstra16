@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <template
+        id="products_item"
+        name="Display product reference"
+        inherit_id="website_sale.products_item"
+        customize_show="True">
+
+        <!-- Product title in list -->
+        <xpath expr="//a[@t-field='product.name']" position="attributes">
+            <attribute name="class" add="d-none" separator=" " />
+        </xpath>
+         <xpath expr="//div[@class='product_price']" positions="after">
+              <t t-if="product.uom_id">
+                        <p>
+                            <t t-esc="product.uom_id.name" />
+                        </p>
+                </t>
+
+                <!-- <t t-if="'product_warehouse_quantity' in openerp.modules.module_registry.Registry().list_installed()"> -->
+                    <!-- <t t-if="product.warehouse_quantity">
+                        <span>
+                            <t t-esc="product.warehouse_quantity" />
+                        </span>
+                    </t> -->
+                <!-- </t> -->
+        </xpath>
+
+        <xpath expr="//a[@t-field='product.name']" position="after">
+            <a
+                itemprop="name"
+                t-att-href="product_href"
+                t-att-content="product.display_name"
+                t-field="product.display_name"
+            />
+        </xpath>
+    </template>
+    <template
+        id="product"
+        name="Display product reference"
+        inherit_id="website_sale.product"
+        customize_show="True">
+        <xpath expr="//t[@t-set='additional_title']" positions="after">
+            <t t-set="additional_title" t-value="product.display_name" />
+        </xpath>
+
+        <!-- Breadcrumb -->
+        <xpath expr="//span[@t-field='product.name']" position="attributes">
+            <attribute name="class" add="d-none" separator=" " />
+        </xpath>
+        <xpath expr="//span[@t-field='product.name']" position="after">
+            <span t-field="product.display_name" />
+        </xpath>
+
+        <!-- Product Title -->
+        <xpath expr="//h1[@t-field='product.name']" position="attributes">
+            <attribute name="class" add="d-none" separator=" " />
+        </xpath>
+        <xpath expr="//h1[@t-field='product.name']" position="after">
+        </xpath>
+
+        <xpath expr="//t[@t-call='website_sale.product_price']" position="after">
+            <!-- <p><strong>UOM: </strong><t t-esc="product.uom_id.name"/></p> -->
+            <t t-if="product.uom_id">
+                <p>
+                    <strong><t t-esc="product.uom_id.name" /></strong>
+                </p>
+            </t>
+        </xpath>
+    </template>
+</odoo>
