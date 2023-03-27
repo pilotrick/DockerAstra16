@@ -19,17 +19,16 @@
 			<field name="arch" type="xml">
 				<form string="Sales Commission">
 					<sheet>
-						<!-- <group> -->
+						<group>
 							<group>
 								<field name="name" />
 								<field name="user_ids" widget="many2many_tags"/>
 							</group>
 							<group>
 								<field name="comm_type" />
-								<field name="commission_ids" />
 								<field name="standard_commission" attrs="{'invisible': [('comm_type','!=', 'standard')],'required': [('comm_type','==', 'standard')]}"/>
 							</group>
-						<!-- </group> -->
+						</group>
 						<group attrs="{'invisible': [('comm_type','!=', 'partner')]}">
 							<group>
 								<field name="affiliated_partner_commission" attrs="{ 'required': [('comm_type','==', 'partner')]}"/>
@@ -47,18 +46,14 @@
 								<field name="gt_discount_commission_percentage" attrs="{ 'required': [('comm_type','==', 'discount')]}"/>
 							</group>
 						</group>
-						<group attrs="{'invisible': [('comm_type','!=', 'mix')]}">
-							<!-- <label for="exception_ids" colspan="4" />
-							<field name="exception_ids" nolabel="1" attrs="{ 'required': [('comm_type','==', 'mix')]}"/> -->
-							<label for="exception_ids"  />
-							<field name="exception_ids" attrs="{ 'required': [('comm_type','==', 'mix')]}"/>
-						</group>
-						<group attrs="{'invisible': [('comm_type','!=', 'discount')]}">
-							<!-- <label for="rule_ids" colspan="4" />
-							<field name="rule_ids" nolabel="1" attrs="{ 'required': [('comm_type','==', 'discount')]}"/> -->
-							<label for="rule_ids"  />
-							<field name="rule_ids"  attrs="{ 'required': [('comm_type','==', 'discount')]}"/>
-						</group>
+						<notebook>
+						<page string="Sales Commission Exceptions" attrs="{'invisible': [('comm_type','!=', 'mix')]}">
+							<field name="exception_ids" nolabel="1" attrs="{ 'required': [('comm_type','==', 'mix')]}"/>
+						</page>
+						<page string="Rules" attrs="{'invisible': [('comm_type','!=', 'discount')]}">
+							<field name="rule_ids" nolabel="1" attrs="{ 'required': [('comm_type','==', 'discount')]}"/>
+						</page>
+					</notebook>
 					</sheet>
 				</form>
 			</field>
@@ -69,21 +64,21 @@
 			<field name="model">sale.commission.exception</field>
 			<field name="arch" type="xml">
 				<tree string="Sales Commission Exceptions">
-					<field name="based_on"/>
-					<field name="based_on_2"/>
-					<field name="product_id" attrs="{'invisible': [('based_on','!=', 'Products')],
-														'required': [('based_on','==', 'Products')]}"/>
-						<field name="category_store" widget="many2many_tags" invisible="1"/>
-					<field name="categ_id" attrs="{'invisible': [('based_on','!=', 'Product Categories')],
-													'required': [('based_on','==', 'Product Categories')]}"/>
-					<field name="sub_categ_id" attrs="{'invisible': [('based_on','!=', 'Product Sub-Categories')],
-														'required': [('based_on','==', 'Product Sub-Categories')]}"/>
-					<field name="commission_precentage" required='1'/>
-					<field name="margin_percentage"/>
-					<field name="above_margin_commission"/>
-					<field name="below_margin_commission"/>
-					<field name="price"/>
-					<field name="price_percentage"/>
+				   <field name="based_on"/>
+				   <field name="based_on_2"/>
+				   <field name="product_id" attrs="{'invisible': [('based_on','!=', 'Products')],
+													'required': [('based_on','==', 'Products')]}"/>
+					<field name="category_store" widget="many2many_tags" invisible="1"/>
+				   <field name="categ_id" attrs="{'invisible': [('based_on','!=', 'Product Categories')],
+												   'required': [('based_on','==', 'Product Categories')]}"/>
+				   <field name="sub_categ_id" attrs="{'invisible': [('based_on','!=', 'Product Sub-Categories')],
+													  'required': [('based_on','==', 'Product Sub-Categories')]}"/>
+				   <field name="commission_precentage" required='1'/>
+				   <field name="margin_percentage"/>
+				   <field name="above_margin_commission"/>
+				   <field name="below_margin_commission"/>
+				   <field name="price"/>
+				   <field name="price_percentage"/>
 				</tree>
 			</field>
 		</record>
@@ -207,7 +202,6 @@
 			groups = 'sales_commission_generic.group_sales_commission_manager'
 			view_mode="form"
 			target="new"/>
-			
 
 	</data>
 </odoo>

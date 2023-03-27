@@ -29,9 +29,14 @@ class StockPicking(models.Model):
         return message
 
     def _action_done(self):
-        super()._action_done()
-        users= self.env['res.users'].search([])
-        partner_ids = [user.partner_id.id for user in users]
+        super()._action_done()        
+        users_without_filter= self.env['res.users'].search([])
+        internal_users = []
+        for user in users_without_filter:
+            if user.has_group('base.group_user'):
+                internal_users.append(user)
+
+        partner_ids = [user.partner_id.id for user in internal_users]
 
         for picking in self.filtered(lambda p: p.picking_type_id.code == "incoming"):
             purchase_dict = {}
@@ -55,12 +60,7 @@ class StockPicking(models.Model):
                     ).id,
                     author_id= self.env.user.partner_id.id,
                     partner_ids=  partner_ids
-                )
-
-
-         
-           
-       
+                )  
                 
                 
    

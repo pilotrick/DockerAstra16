@@ -7,14 +7,13 @@ odoo.define('bi_dynamic_barcode_labels.print_button', function (require)
     FormController.include({
         _onButtonClicked: function (event)
         {
-
+            console.log(event);
+            
             if (event.data.attrs.custom === "print_label")
             {
 
                 var products = event.data.record.data.product_barcode_ids.data
-                products.forEach(element => print_product_label(element.data.product_id.data.id, element.data.company_id, element.data.qty));
-
-                
+                // products.forEach(element => print_product_label(element.data.product_id.data.id, element.data.company_id, element.data.qty));
 
             }
 
@@ -23,7 +22,7 @@ odoo.define('bi_dynamic_barcode_labels.print_button', function (require)
 
                 var products = event.data.record.data.product_barcode_ids.data
 
-                products.forEach(element => print_product_label(element.data.product_id.data.id, element.data.company_id.data.id, element.data.qty));
+                // products.forEach(element => print_product_label(element.data.product_id.data.id, element.data.company_id.data.id, element.data.qty));
                 
 
             }

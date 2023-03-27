@@ -31,10 +31,7 @@
 			<field name="model">invoice.sale.commission</field>
 			<field name="arch" type="xml">
 				<tree string="Sales Commission" create="0" edit="0">
-					<field name="date"/>
 					<field name="name"/>
-					<field name="day_pay"/>
-					<field name="day_count"/>
 					<field name="user_id"/>
 					<field name="invoice_id"/>
 					<field name="order_id"/>
@@ -58,9 +55,8 @@
 			<field name="arch" type="xml">
 				<form string="Sales Commission" create="0" edit="0">
 					<sheet>
-						<!-- <group col="4"> -->
+						<group col="4">
 							<field name="name"/>
-							<field name="date"/>
 							<field name="user_id"/>
 							<field name="invoice_id"/>
 							<field name="order_id"/>
@@ -74,7 +70,7 @@
 							<field name="sub_categ_id"/>
 							<field name="invoiced" />
 							<field name="commission_amount" sum="Total"/>
-						<!-- </group> -->
+						</group>
 					</sheet>
 					
 				</form>
@@ -94,22 +90,6 @@
 					<field name="partner_type"/>
 					<field name="categ_id"/>
 					<field name="sub_categ_id"/>
-
-					<filter string="Paid" name="paid" domain="[('invoiced','=',True)]"/>
-
-					<group expand="0" string="Group By">
-					<filter string="Date" name="date" domain="[]"
-                            context="{'group_by':'date'}"/>
-                    <filter string="Vendor" name="user_id" domain="[]"
-                            context="{'group_by':'user_id'}"/>
-                    <filter string="Invoice" name="invoice_id" domain="[]"
-                            context="{'group_by':'invoice_id'}"/>
-                    <filter string="Category" name="categ_id" domain="[]"
-                            context="{'group_by':'categ_id'}"/>
-                    <filter string="Product" name="product_id" domain="[]"
-                            context="{'group_by':'product_id'}"/>
-
-                </group>
 				</search>
 			</field>
 		</record>
@@ -129,19 +109,19 @@
 			<field name="model">wizard.invoice.sale.commission</field>
 			<field name="arch" type="xml">
 			<form string="Sales Commission Report Wizard" >
-						<!-- <group>
-							<group> -->
+						<group>
+							<group>
 								<field name="start_date"/>
-							<!-- </group>
-							<group> -->
+							</group>
+							<group>
 								<field name="end_date"/>
-							<!-- </group>
+							</group>
 						</group>
-						<group> -->
-							<!-- <group> -->
+						<group>
+							<group>
 								<field name="salesperson"/>
-							<!-- </group>
-						</group> -->
+							</group>
+						</group>
 						<footer>
 							<button name="print_commission_report" string="Print Commission Report" type="object" class="oe_highlight"/>
 								Or
@@ -160,7 +140,7 @@
 			<field name="target">new</field>
 			<field name="context">{'search_default_group_by_ctype': 1,'search_default_group_by_user': 1}</field>
 		</record>
-        
+
 		<menuitem 
 			action="invoice_sale_commission_action" 
 			id="menu_invoice_sale_commission_action" 
@@ -170,9 +150,6 @@
 			action="action_commission_report_wizard" 
 			id="menu_action_commission_report_wizard" 
 			parent="sale.menu_sale_report"/>
-			
-	<!-- <record model="ir.ui.menu" id="hr_payroll.menu_hr_payroll_employee_payslips_to_pay">
-      <field name="name">cuentas por pagar</field>
-    </record> -->
+		
 	</data>
 </odoo>

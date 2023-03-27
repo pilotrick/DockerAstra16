@@ -3,7 +3,7 @@
 
 {
     "name" : "Sales Commission from Sales/Invoice/Payment in Odoo ",
-    "version" : "15.0.0.0",
+    "version" : "16.0.0.1",
     'category' : "Sales",
     "summary" : "Sale Commission for sales order invoice based commission payment based commission margin based commission for product margin commissions for sales person commission for partner Sales Agent commission Sales Commission for Users commission based on margin",
     "description": """
@@ -285,7 +285,7 @@ este módulo calcula comissão de vendas na fatura, Comissão de vendas baseada 
     """,
     "author" : "BrowseInfo",
     "website" : "https://www.browseinfo.in",
-    "price": 69,
+    "price": 60,
     "currency": 'EUR',
     "depends" : ['base' , 'sale', 'sale_management', 'sale_stock', 'sale_margin'],
     "data" :[
@@ -302,7 +302,7 @@ este módulo calcula comissão de vendas na fatura, Comissão de vendas baseada 
     "auto_install": False,
     "installable": True,
     "live_test_url":'https://youtu.be/4BlRGFqPiO8',
-    "images":['static/description/Banner.png'],
+    "images":['static/description/Banner.gif'],
     'license': 'OPL-1',
 }
 

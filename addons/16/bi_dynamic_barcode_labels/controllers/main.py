@@ -4,15 +4,6 @@ import json
 
 from odoo.http import Controller, route, request
 
-
-
-# -*- coding: utf-8 -*-
-
-import json
-
-from odoo.http import Controller, route, request
-
-
 class ProductDataController(Controller):
     @route([
         '/zebra_label/report'

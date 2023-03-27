@@ -11,7 +11,7 @@ class CreateCommisionInvoice(models.Model):
 
     group_by = fields.Boolean('Group By',readonly=False)
     date = fields.Date('Invoice Date',readonly=False)
-    
+
     def invoice_create(self):
         sale_invoice_ids = self.env['invoice.sale.commission'].browse(self._context.get('active_ids'))
         if any(line.invoiced == True for line in sale_invoice_ids):
@@ -25,7 +25,7 @@ class CreateCommisionInvoice(models.Model):
         if self.group_by:
             group_dict = {}
             for record in sale_invoice_ids:
-                group_dict.setdefault(record.user_id.name,[]).append(record)
+                group_dict.setdefault(record.user_id.partner_id.id,[]).append(record)
             for dict_record in group_dict:
                 inv_lines = []
                 for inv_record in group_dict.get(dict_record):
@@ -34,7 +34,7 @@ class CreateCommisionInvoice(models.Model):
                         'quantity':1,
                         'price_unit':inv_record.commission_amount,
                     })
-                partner = self.env['res.partner'].search([('name','=',dict_record)])
+                partner = self.env['res.partner'].search([('id','=',dict_record)])
                 inv_id = self.env['account.move'].create({
                         'move_type':'in_invoice',
                         'partner_id':partner.id,
@@ -85,9 +85,6 @@ class SaleCommission(models.Model):
     affiliated_partner_commission = fields.Float(string="Affiliated Partner Commission percentage")
     nonaffiliated_partner_commission = fields.Float(string="Non-Affiliated Partner Commission percentage")
     exception_ids = fields.One2many('sale.commission.exception', 'commission_id', string='Sales Commission Exceptions',
-                                 help="Sales commission exceptions",
-                                 )
-    commission_ids = fields.One2many('sale.commission.day', 'commission_id', string='Sales Commission for day',
                                  help="Sales commission exceptions",
                                  )
     rule_ids = fields.One2many('discount.commission.rules', 'commission_id', string='Commission Rules',

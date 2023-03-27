@@ -12,7 +12,7 @@ class sale_configuration_settings(models.TransientModel):
 										('payment', 'commission based on payment')
 									   ],string='Generate Commision Entry Based On ',related="company_id.commission_configuration",readonly=False)
 
-	commission_discount_account = fields.Many2one('account.account',domain=[('internal_group', '=', 'expense')],
+	commission_discount_account = fields.Many2one('account.account',domain=[('account_type', '=', 'expense')],
 												  string="Commission Account",related="company_id.commission_discount_account",readonly=False)
 
 class ResCompanyInherit(models.Model):
@@ -23,5 +23,5 @@ class ResCompanyInherit(models.Model):
 										('payment', 'commission based on payment')
 									   ],string='Generate Commision Entry Based On ',default='payment')
 
-	commission_discount_account = fields.Many2one('account.account',domain=[('internal_group', '=', 'expense')],
+	commission_discount_account = fields.Many2one('account.account',domain=[('account_type', '=', 'expense')],
 												  string="Commission Account")
