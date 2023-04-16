@@ -25,7 +25,7 @@
     'summary': """Google Meet Calendar Integration""",
     "category": 'Calendar',
     'description': """Google Meet Calendar Integration""",
-    'author': 'Cybrosys Techno Solutions',
+    'author': 'Astratech',
     'company': 'Cybrosys Techno Solutions',
     'maintainer': 'Cybrosys Techno Solutions',
     'website': 'https://www.cybrosys.com',

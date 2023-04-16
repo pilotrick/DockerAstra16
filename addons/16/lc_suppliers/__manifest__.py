@@ -13,7 +13,7 @@
         destino o liquidación
     """,
 
-    'author': "Techne Studio IT & Consulting",
+    'author': 'Astratech',
     'website': "https://technestudioit.com/",
 
     'license': "Other proprietary",

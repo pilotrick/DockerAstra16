@@ -25,7 +25,7 @@
     'version': '16.0.1.0.0',
     'summary': 'Edit Button Odoo16',
     'description': 'Edit Button in Odoo16',
-    'author': 'Cybrosys Techno Solutions',
+    'author': 'Astratech',
     'company': 'Cybrosys Techno Solutions',
     'maintainer': 'Cybrosys Techno Solutions',
     'images': ['static/description/banner.png'],

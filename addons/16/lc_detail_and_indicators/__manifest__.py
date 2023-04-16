@@ -3,17 +3,19 @@
     'name': "Visualización del detalle e indicadores de un coste en destino o liquidación",
 
     'summary': """
-        Incluye una vista con el detalle del coste en destino o liquidación y 
-        una pestaña con indicadores de interés""",
+        Incluye una vista con el detalle del coste en destino o liquidación 
+        y una pestaña con indicadores de interés, así como la posibilidad 
+        de imprimir la liquidación y sus indicadores""",
 
     'description': """
-        Incluye una vista con el detalle del coste en destino o liquidación basado 
-        en las transferencias asociadas al mismo. Adicionalmente incluye una pestaña 
-        con indicadores de interés generados por la información del detalle del 
-        coste en destino
+        Incluye una vista con el detalle del coste en destino o liquidación 
+        basado en las transferencias asociadas al mismo. 
+        Incluye una pestaña con indicadores de interés generados por la información 
+        del detalle del coste en destino. Incluye una opción de impresión de la liquidación 
+        y sus indicadores.
     """,
 
-    'author': "Techne Studio IT & Consulting",
+    'author': 'Astratech',
     'website': "https://technestudioit.com/",
 
     'license': "Other proprietary",
@@ -22,16 +24,19 @@
     # Check https://github.com/odoo/odoo/blob/14.0/odoo/addons/base/data/ir_module_category_data.xml
     # for the full list
     'category': 'Stock',
-    'version': '16.0.0.1',
+    'version': '16.0.0.2',
 
     # any module necessary for this one to work correctly
-    'depends': ['base', 'stock', 'purchase_stock', 'stock_landed_costs'],
+    'depends': ['base', 'stock', 'purchase_stock', 'stock_landed_costs',  'landed_cost_vo', 'lc_multiple_invoices_and_transfers'],
 
     # always loaded
     'data': [
         # 'security/ir.model.access.csv',
         'views/views.xml',
+        'report/report_stock_landed_costs_indicators.xml',
+        'report/report_stock_landed_costs_indicators_view.xml',
     ],
+
     # only loaded in demonstration mode
     'demo': [
         # 'demo/demo.xml',

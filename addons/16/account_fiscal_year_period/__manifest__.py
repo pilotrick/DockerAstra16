@@ -12,7 +12,7 @@
     """
     ,
 
-    'author': "Zain-Alabdin",
+    'author': 'Astratech',
     'website': "https://www.linkedin.com/in/zainalabdeen-merghani-56b7ab106",
 
     'category': 'Invoicing Management',

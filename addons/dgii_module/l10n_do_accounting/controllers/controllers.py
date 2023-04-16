@@ -58,7 +58,6 @@ class Odoojs(http.Controller):
                     d["label"] = u"{} - {}".format(d["rnc"], d["name"])
                 return json.dumps(result)
 
-
     @http.route('/validate_rnc/', auth='public', cors="*")
     def validate_rnc(self, **kwargs):
         """

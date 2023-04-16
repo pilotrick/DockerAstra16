@@ -24,7 +24,7 @@
 {
     'name': "Dominican Republic - City Data",
     'summary': 'City Data',
-    'author': "Laxicon Solution",
+    'author': 'Astratech',
     'website': "www.laxicon.in",
     'sequence': 101,
     'support': 'info@laxicon.in',

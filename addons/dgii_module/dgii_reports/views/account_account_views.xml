@@ -7,7 +7,10 @@
         <field name="inherit_id" ref="account.view_account_form"/>
         <field name="arch" type="xml">
             <xpath expr="//field[@name='group_id']" position="after">
+                <field name="is_dividend"/>
                 <field name="account_fiscal_type"/>
+                <field name="isr_retention_type"
+                       attrs="{'invisible': [('account_fiscal_type', '!=', 'ISR')]}"/>
             </xpath>
         </field>
     </record>

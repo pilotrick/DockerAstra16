@@ -10,7 +10,7 @@
          and grievances.
     """,
     "website": "https://sodexis.com/",
-    "author": "Sodexis, Odoo SA",
+    'author': 'Astratech',
     "license": "OPL-1",
     "depends": [
         "crm",

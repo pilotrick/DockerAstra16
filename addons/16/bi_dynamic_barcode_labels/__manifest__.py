@@ -51,7 +51,7 @@ Barcode Labels for Products,Templates,Sale,Purchase,Picking
 
 
                 """,
-    "author": "BrowseInfo",
+    'author': 'Astratech',,
     "website" : "https://www.browseinfo.in",
     'price': 25,
     "currency": 'EUR',

@@ -13,10 +13,20 @@ For Module Support : devintelle@gmail.com  or Skype : devintelle
             
                 <xpath expr="//field[@name='payment_term_id']" position="after">
                      <field name="exceeded_amount" readonly='True'  attrs="{'invisible': [('state', '!=','credit_limit')]}"/>
+                     <field name="show_confirm_button" invisible="1"/>
                 </xpath>
                 
                 <xpath expr="//button[@name='action_confirm']" position="replace">
-                     <button name="action_sale_ok" states="sent" string="Confirm Sale" class="btn-primary" type="object" context="{'show_sale': True}"/>
+                    <button
+                        name="action_sale_ok" 
+                        string="Confirm Sale" 
+                        class="btn-primary" 
+                        type="object"
+                        attrs="{'invisible': ['|',
+                            ('show_confirm_button', '=', False),
+                            ('state', 'not in', ['draft'])
+                        ]}"
+                    />
                 </xpath>
                 
                 <xpath expr="//button[@name='action_confirm']" position="attributes">
@@ -24,12 +34,10 @@ For Module Support : devintelle@gmail.com  or Skype : devintelle
                 </xpath>
                 
                 <xpath expr="//button[@name='action_sale_ok']" position="after">
-                     <!-- <button name="print_quotation" string="Print" type="object" states="credit_limit"/> -->
                      <button name="action_confirm" states="credit_limit" string="Confirm Sale" class="btn-primary" type="object" context="{'show_sale': True}" groups="dev_customer_credit_limit.credit_limit_config"/>
                      <button name="action_cancel" states="credit_limit" type="object" string="Cancel"/>
                 </xpath>
-                
-                
+                                
             </field>
         </record>
         
@@ -91,6 +99,5 @@ For Module Support : devintelle@gmail.com  or Skype : devintelle
         <menuitem id="menu_credit_limit_sale_order"
                 action="action_credit_limit" parent="sale.sale_order_menu"
                 sequence="12"/>
-        
         
 </odoo>

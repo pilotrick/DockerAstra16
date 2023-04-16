@@ -22,7 +22,7 @@
     'category': 'Discuss',
     'summary': 'Record voice Chat in odoo.',
     'description': 'Record voice note in odoo',
-    'author': 'Cybrosys Techno Solutions',
+    'author': 'Astratech',
     'company': 'Cybrosys Techno Solutions',
     'maintainer': 'Cybrosys Techno Solutions',
     'images': ['static/description/banner.gif'],

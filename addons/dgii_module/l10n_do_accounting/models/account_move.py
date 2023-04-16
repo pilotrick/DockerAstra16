@@ -1,4 +1,5 @@
 from collections import defaultdict
+from werkzeug import urls
 from odoo import models, fields, api, _
 from odoo.exceptions import ValidationError, UserError, AccessError
 from odoo.http import request
@@ -25,17 +26,18 @@ ncf_dict = {
     "B13": "minor",
     "B11": "informal",
     "B17": "exterior",
-    "E31" : "e-fiscal",
-    "E32" : "e-consumer",
-    "E33" : "e-debit_note",
-    "E34" : "e-credit_note",
-    "E41" : "e-informal",
-    "E43" : "e-minor",
-    "E44" : "e-special",
-    "E45" : "e-governmental",
-    "E46" : "e-export",
-    "E47" : "e-exterior",
+    "E31": "e-fiscal",
+    "E32": "e-consumer",
+    "E33": "e-debit_note",
+    "E34": "e-credit_note",
+    "E41": "e-informal",
+    "E43": "e-minor",
+    "E44": "e-special",
+    "E45": "e-governmental",
+    "E46": "e-export",
+    "E47": "e-exterior",
 }
+
 
 class AccountMove(models.Model):
     _inherit = "account.move"
@@ -46,9 +48,8 @@ class AccountMove(models.Model):
             return r'^(?P<prefix1>.*?)(?P<seq>\d{0,9})(?P<suffix>\D*?)$'
         return super(AccountMove, self)._sequence_fixed_regex
 
-        
     def _get_l10n_do_cancellation_type(self):
-        """ Return the list of cancellation types required by DGII. """
+        """Return the list of cancellation types required by DGII."""
         return [
             ("01", _("01 - Pre-printed Invoice Impairment")),
             ("02", _("02 - Printing Errors (Pre-printed Invoice)")),
@@ -63,7 +64,7 @@ class AccountMove(models.Model):
         ]
 
     def _get_l10n_do_ecf_modification_code(self):
-        """ Return the list of e-CF modification codes required by DGII. """
+        """Return the list of e-CF modification codes required by DGII."""
         return [
             ("1", _("01 - Total Cancellation")),
             ("2", _("02 - Text Correction")),
@@ -73,7 +74,7 @@ class AccountMove(models.Model):
         ]
 
     def _get_l10n_do_income_type(self):
-        """ Return the list of income types required by DGII. """
+        """Return the list of income types required by DGII."""
         return [
             ("01", _("01 - Operational Incomes")),
             ("02", _("02 - Financial Incomes")),
@@ -82,7 +83,7 @@ class AccountMove(models.Model):
             ("05", _("05 - Income for Selling Depreciable Assets")),
             ("06", _("06 - Other Incomes")),
         ]
-        
+
     l10n_do_expense_type = fields.Selection(
         selection=lambda self: self.env["res.partner"]._get_l10n_do_expense_type(),
         string="Cost & Expense Type",
@@ -135,8 +136,11 @@ class AccountMove(models.Model):
     )
 
     l10n_do_fiscal_sequence_id = fields.Many2one(
-        "account.fiscal.sequence", string="Fiscal Sequence",
-        copy=False, compute="_compute_l10n_do_fiscal_sequence", store=True,
+        "account.fiscal.sequence",
+        string="Fiscal Sequence",
+        copy=False,
+        compute="_compute_l10n_do_fiscal_sequence",
+        store=True,
     )
 
     l10n_do_ncf_expiration_date = fields.Date(
@@ -152,29 +156,41 @@ class AccountMove(models.Model):
         ],
         compute="_compute_l10n_do_fiscal_sequence_status",
     )
-    
 
-    
-    
-    def _is_manual_document_number(self, journal):
-    
-        if (
-            self.company_id.country_id == self.env.ref("base.do")
-            and self.l10n_latam_document_type_id
-        ):
-            return self.move_type in (
-                "in_invoice",
-                "in_refund",
-            ) and self.l10n_latam_document_type_id.l10n_do_ncf_type not in (
-                "minor",
-                "e-minor",
-                "informal",
-                "e-informal",
+    @api.depends("l10n_latam_document_type_id", "journal_id")
+    def _compute_l10n_latam_manual_document_number(self):
+        l10n_do_recs_with_journal_id = self.filtered(
+            lambda x: x.journal_id
+            and x.journal_id.l10n_latam_use_documents
+            and x.l10n_latam_document_type_id
+            and x.country_code == "DO"
+        )
+        for move in l10n_do_recs_with_journal_id:
+            move.l10n_latam_manual_document_number = (
+                move._is_l10n_do_manual_document_number()
             )
-    
-    
-        
-        
+
+        super(
+            AccountMove, self - l10n_do_recs_with_journal_id
+        )._compute_l10n_latam_manual_document_number()
+
+    def _is_l10n_do_manual_document_number(self):
+        self.ensure_one()
+
+        if self.reversed_entry_id:
+            return self.reversed_entry_id.l10n_latam_manual_document_number
+
+        return self.move_type in (
+            "in_invoice",
+            "in_refund",
+        ) and self.l10n_latam_document_type_id.l10n_do_ncf_type not in (
+            "minor",
+            "e-minor",
+            "informal",
+            "e-informal",
+            "exterior",
+            "e-exterior",
+        )
 
     @api.depends(
         "company_id",
@@ -198,11 +214,9 @@ class AccountMove(models.Model):
                 ecf_invoices and not invoice.company_id.l10n_do_ecf_issuer
             )
 
-
     @api.depends("l10n_do_ecf_security_code", "l10n_do_ecf_sign_date", "invoice_date")
     @api.depends_context("l10n_do_ecf_service_env")
     def _compute_l10n_do_electronic_stamp(self):
-
         l10n_do_ecf_invoice = self.filtered(
             lambda i: i.is_ecf_invoice
             and not i.l10n_latam_manual_document_number
@@ -210,7 +224,6 @@ class AccountMove(models.Model):
         )
 
         for invoice in l10n_do_ecf_invoice:
-
             ecf_service_env = self.env.context.get("l10n_do_ecf_service_env", "CerteCF")
             doc_code_prefix = invoice.l10n_latam_document_type_id.doc_code_prefix
             is_rfc = (  # Es un Resumen Factura Consumo
@@ -247,9 +260,8 @@ class AccountMove(models.Model):
             invoice.l10n_do_electronic_stamp = urls.url_quote_plus(qr_string)
 
         (self - l10n_do_ecf_invoice).l10n_do_electronic_stamp = False
-    
-    def button_cancel(self):
 
+    def button_cancel(self):
         fiscal_invoice = self.filtered(
             lambda inv: inv.l10n_latam_country_code == "DO"
             and self.move_type[-6:] in ("nvoice", "refund")
@@ -266,7 +278,6 @@ class AccountMove(models.Model):
         ):
             raise AccessError(_("You are not allowed to cancel Fiscal Invoices"))
 
-
         if fiscal_invoice:
             action = self.env.ref(
                 "l10n_do_accounting.action_account_move_cancel"
@@ -276,15 +287,10 @@ class AccountMove(models.Model):
 
         return super(AccountMove, self).button_cancel()
 
-
-    
-    
     def _get_tax_line_ids(self):
         return self.line_ids.tax_ids
 
-
     def action_reverse(self):
-
         fiscal_invoice = self.filtered(
             lambda inv: inv.l10n_latam_country_code == "DO"
             and self.move_type[-6:] in ("nvoice", "refund")
@@ -295,7 +301,6 @@ class AccountMove(models.Model):
             raise AccessError(_("You are not allowed to issue Fiscal Credit Notes"))
 
         return super(AccountMove, self).action_reverse()
-
 
     def _get_l10n_latam_documents_domain(self):
         for p in self:
@@ -325,8 +330,6 @@ class AccountMove(models.Model):
             if codes:
                 domain.append(("code", "in", codes))
         return domain
-
-
 
     @api.constrains("move_type", "l10n_latam_document_type_id")
     def _check_invoice_type_document_type(self):
@@ -358,40 +361,15 @@ class AccountMove(models.Model):
                             "the customer should have a VAT to validate the invoice"
                         )
                     )
-        super(AccountMove, self - l10n_do_invoices)._check_invoice_type_document_type()        
-            # DGII SERVER DOWN
-            # elif (
-            #         l10n_latam_document_type.l10n_do_ncf_type[-7:] == "nformal"
-            # ):
-            #     result = rnc.check_dgii(partner_vat)
-            #     if result is not None:
-            #         raise UserError(
-            #             _(
-            #                 "This Contact is registred on *DGII* Plataform\n"
-            #                 "Ensure to ask for a Fiscal Invoice Number"
-            #             )
-            #         )
-
-
-#     @api.constrains("l10n_latam_document_type_id")
-#     def _onchange_l10n_latam_document_type(self):
-#         for rec in self.filtered(
-#             lambda r:  r.company_id.country_id == self.env.ref("base.do")
-#             and r.move_type == "in_invoice"
-#             and r.l10n_latam_document_type_id.l10n_do_ncf_type in (
-#                  "minor",
-#                 "e-minor"
-#             )
-#         ):
-#             rec.partner_id = rec.company_id.partner_id
-
-
-
+        super(AccountMove, self - l10n_do_invoices)._check_invoice_type_document_type()
 
     @api.onchange("l10n_latam_document_number", "l10n_do_origin_ncf")
     def _onchange_l10n_latam_document_number(self):
-        dgii_autocomplete = request.env['ir.config_parameter'].sudo(
-        ).get_param('l10n_do_accounting.dgii_autocomplete')
+        dgii_autocomplete = (
+            request.env['ir.config_parameter']
+            .sudo()
+            .get_param('l10n_do_accounting.dgii_autocomplete')
+        )
 
         for rec in self.filtered(
             lambda r: r.company_id.country_id == self.env.ref("base.do")
@@ -400,42 +378,48 @@ class AccountMove(models.Model):
             and r.l10n_latam_document_number
             and r.move_type == "in_invoice"
         ):
-
-            NCF = rec.l10n_latam_document_number if rec.l10n_latam_document_number else None
+            NCF = (
+                rec.l10n_latam_document_number
+                if rec.l10n_latam_document_number
+                else None
+            )
             if not ncf_validation.is_valid(NCF):
-                raise UserError(_(
-                    "NCF mal digitado\n\n"
-                    "El comprobante *{}* no tiene la estructura correcta "
-                    "valide si lo ha digitado correctamente")
-                    .format(NCF))
+                raise UserError(
+                    _(
+                        "NCF mal digitado\n\n"
+                        "El comprobante *{}* no tiene la estructura correcta "
+                        "valide si lo ha digitado correctamente"
+                    ).format(NCF)
+                )
 
             if NCF[-10:-8] == '02' or NCF[1:3] == '32':
-                raise ValidationError(_(
-                    "NCF *{}* NO corresponde con el tipo de documento\n\n"
-                    "No puede registrar Comprobantes Consumidor Final (02)")
-                    .format(NCF))
+                raise ValidationError(
+                    _(
+                        "NCF *{}* NO corresponde con el tipo de documento\n\n"
+                        "No puede registrar Comprobantes Consumidor Final (02)"
+                    ).format(NCF)
+                )
 
             if dgii_autocomplete == 'True':
                 if (
                     not ncf_validation.check_dgii(self.partner_id.vat, NCF)
                     and ncf_validation.is_valid(NCF)
                     and len(NCF) == 11
-
                 ):
-                    raise ValidationError(_(
-                        u"NCF NO pasó validación en DGII\n\n"
-                        u"¡El número de comprobante *{}* del proveedor "
-                        u"*{}* no pasó la validación en "
-                        "DGII! Verifique que el NCF y el RNC del "
-                        u"proveedor estén correctamente "
-                        u"digitados, o si los números de ese NCF se "
-                        "le agotaron al proveedor")
-                        .format(NCF, self.partner_id.name))
-
+                    raise ValidationError(
+                        _(
+                            u"NCF NO pasó validación en DGII\n\n"
+                            u"¡El número de comprobante *{}* del proveedor "
+                            u"*{}* no pasó la validación en "
+                            "DGII! Verifique que el NCF y el RNC del "
+                            u"proveedor estén correctamente "
+                            u"digitados, o si los números de ese NCF se "
+                            "le agotaron al proveedor"
+                        ).format(NCF, self.partner_id.name)
+                    )
 
     @api.onchange("partner_id")
     def _onchange_partner_id(self):
-
         if (
             self.company_id.country_id == self.env.ref("base.do")
             and self.l10n_latam_document_type_id
@@ -450,38 +434,41 @@ class AccountMove(models.Model):
 
         return super(AccountMove, self)._onchange_partner_id()
 
-    def _reverse_move_vals(self, default_values, cancel=True):
-
+    def _reverse_moves(self, default_values_list=None, cancel=False):
         ctx = self.env.context
         amount = ctx.get("amount")
         percentage = ctx.get("percentage")
         refund_type = ctx.get("refund_type")
         reason = ctx.get("reason")
-        l10n_do_ecf_modification_code = ctx.get("l10n_do_ecf_modification_code")
-
-        res = super(AccountMove, self)._reverse_move_vals(
-            default_values=default_values, cancel=cancel
+        reverse_moves = super(AccountMove, self)._reverse_moves(
+            default_values_list, cancel
         )
 
-        if self.l10n_latam_country_code == "DO":
-            res["l10n_do_origin_ncf"] = self.l10n_latam_document_number
-            res["l10n_do_ecf_modification_code"] = l10n_do_ecf_modification_code
-
-        if refund_type in ("percentage", "fixed_amount"):
-            price_unit = (
-                amount
-                if refund_type == "fixed_amount"
-                else self.amount_untaxed * (percentage / 100)
-            )
-            res["line_ids"] = False
-            res["invoice_line_ids"] = [
-                (0, 0, {"name": reason or _("Refund"), "price_unit": price_unit})
+        for move in reverse_moves:
+            if refund_type in ("percentage", "fixed_amount"):
+                price_unit = (
+                    amount
+                    if refund_type == "fixed_amount"
+                    else move.amount_untaxed * (percentage / 100)
+                )
+            move.invoice_line_ids = False
+            move.invoice_line_ids = [
+                [5, 0],
+                [
+                    0,
+                    0,
+                    {
+                        "name": reason or _("Refund"),
+                        'account_id': move.journal_id.default_account_id.id,
+                        'quantity': 1,
+                        'price_unit': price_unit,
+                    },
+                ],
             ]
-        return res
+        return reverse_moves
 
     @api.constrains("name", "partner_id", "company_id")
     def _check_unique_vendor_number(self):
-
         l10n_do_invoice = self.filtered(
             lambda inv: inv.l10n_latam_country_code == "DO"
             and inv.l10n_latam_use_documents
@@ -502,51 +489,49 @@ class AccountMove(models.Model):
                     _("Vendor bill NCF must be unique per vendor and company.")
                 )
 
-
     def _get_name_invoice_report(self):
         self.ensure_one()
         if self.l10n_latam_use_documents and self.l10n_latam_country_code == "DO":
             return "l10n_do_accounting.report_invoice_document_inherited"
         return super()._get_name_invoice_report()
 
-
     @api.depends(
         "journal_id",
         "l10n_latam_use_documents",
         "state",
         "l10n_latam_document_type_id",
-        "invoice_date", "move_type",
+        "invoice_date",
+        "move_type",
     )
     def _compute_l10n_do_fiscal_sequence(self):
-        """ Compute the sequence and fiscal position to be used depending on
-            the fiscal type that has been set on the invoice (or partner).
+        """Compute the sequence and fiscal position to be used depending on
+        the fiscal type that has been set on the invoice (or partner).
         """
 
         for inv in self:
             assing_document_number = False
+            if inv.move_type in ("out_invoice", "out_refund"):
+                assing_document_number = True
+
             if (
-                inv.move_type in ("out_invoice", "out_refund")
+                inv.move_type == "in_invoice"
+                and inv.l10n_latam_document_type_id.l10n_do_ncf_type
+                in ("minor", "e-minor")
             ):
                 assing_document_number = True
 
             if (
                 inv.move_type == "in_invoice"
-                and inv.l10n_latam_document_type_id.l10n_do_ncf_type in ("minor", "e-minor")
-            ):
-                assing_document_number = True
-
-            if (
-                inv.move_type == "in_invoice"
-                and inv.l10n_latam_document_type_id.l10n_do_ncf_type in (
-                "informal",
-                "e-informal",
+                and inv.l10n_latam_document_type_id.l10n_do_ncf_type
+                in (
+                    "informal",
+                    "e-informal",
                 )
                 and len(inv.partner_id.vat) == 11
             ):
                 assing_document_number = True
 
             if inv.l10n_latam_use_documents and assing_document_number:
-
                 domain = [
                     ("company_id", "=", inv.company_id.id),
                     ("fiscal_type_id", "=", inv.l10n_latam_document_type_id.id),
@@ -561,12 +546,7 @@ class AccountMove(models.Model):
                 l10n_do_fiscal_sequence_id = inv.env["account.fiscal.sequence"].search(
                     domain, order="expiration_date, id desc"
                 )
-
-                if not l10n_do_fiscal_sequence_id:
-                    pass
-                elif l10n_do_fiscal_sequence_id.state == "active":
-
-
+                if l10n_do_fiscal_sequence_id.state == "active":
                     inv.l10n_do_fiscal_sequence_id = l10n_do_fiscal_sequence_id
                 else:
                     l10n_do_fiscal_sequence_id = False
@@ -581,12 +561,11 @@ class AccountMove(models.Model):
         "journal_id",
     )
     def _compute_l10n_do_fiscal_sequence_status(self):
-        """ Identify the percentage fiscal sequences that has been used so far.
-            With this result the user can be warned if it's above the threshold
-            or if there's no more sequences available.
+        """Identify the percentage fiscal sequences that has been used so far.
+        With this result the user can be warned if it's above the threshold
+        or if there's no more sequences available.
         """
         for inv in self:
-
             if not inv.l10n_latam_use_documents or not inv.l10n_do_fiscal_sequence_id:
                 inv.l10n_do_fiscal_sequence_status = "no_fiscal"
             else:
@@ -603,7 +582,6 @@ class AccountMove(models.Model):
                     inv.l10n_do_fiscal_sequence_status = "almost_no_sequence"
                 else:
                     inv.l10n_do_fiscal_sequence_status = "no_sequence"
-
 
     def _get_l10n_do_amounts(self, company_currency=False):
         """
@@ -645,11 +623,12 @@ class AccountMove(models.Model):
                 if any(True for tax in line.tax_ids if tax.amount == 0)
             ),
         }
+
     @api.constrains("state", "invoice_line_ids", "partner_id")
     def validate_products_export_ncf(self):
-        """ Validates that an invoices with a partner from country != DO
-            and products type != service must have Exportaciones NCF.
-            See DGII Norma 05-19, Art 10 for further information.
+        """Validates that an invoices with a partner from country != DO
+        and products type != service must have Exportaciones NCF.
+        See DGII Norma 05-19, Art 10 for further information.
         """
         for inv in self:
             if (
@@ -659,94 +638,86 @@ class AccountMove(models.Model):
                 and inv.partner_id.country_id.code != "DO"
                 and inv.l10n_latam_use_documents
             ):
-                if any([p for p in inv.invoice_line_ids.mapped("product_id") if p.type != "service"]):
-                    if (
-                        ncf_dict.get(inv.l10n_latam_document_type_id.doc_code_prefix) in (
-                            "exterior", "e-exterior")
-                    ):
-                        raise UserError(_("Goods sales to overseas customers must have " "Exportaciones Fiscal Type"))
-                elif (
-                    ncf_dict.get(inv.l10n_latam_document_type_id.doc_code_prefix) in ("consumo", "e-consumer")
+                if any(
+                    [
+                        p
+                        for p in inv.invoice_line_ids.mapped("product_id")
+                        if p.type != "service"
+                    ]
                 ):
-                    raise UserError(_("Service sales to oversas customer must have " "Consumo Fiscal Type"))
-
-    # @api.constrains("state", "line_ids.tax_ids")
-    # def validate_informal_withholding(self):
-    #     """ Validates an invoice with Comprobante de Compras has 100% ITBIS
-    #         withholding.
-    #         See DGII Norma 05-19, Art 7 for further information.
-    #     """
-    #     for inv in self.filtered(lambda i: i.move_type == "in_invoice" and i.state == "posted"):
-
-    #         if (
-    #             (
-    #                 ncf_dict.get(inv.l10n_latam_document_type_id.doc_code_prefix) in ("informal","e-informal")
-    #             )
-    #             and inv.l10n_latam_use_documents
-    #         ):
-
-    #             # If the sum of all taxes of category ITBIS is not 0
-    #             if sum(
-    #                 [
-    #                     tax.amount
-    #                     for tax in inv.line_ids.tax_ids.filtered(lambda t: t.tax_group_id.name == "ITBIS")
-    #                 ]
-    #             ):
-    #                 raise UserError(_("You must withhold 100% of ITBIS"))
-
-    # @api.onchange('line_ids')
-    # def _text(self):
-    #     raise Warning('Site Afecta')
+                    if ncf_dict.get(
+                        inv.l10n_latam_document_type_id.doc_code_prefix
+                    ) in ("exterior", "e-exterior"):
+                        raise UserError(
+                            _(
+                                "Goods sales to overseas customers must have "
+                                "Exportaciones Fiscal Type"
+                            )
+                        )
+                elif ncf_dict.get(inv.l10n_latam_document_type_id.doc_code_prefix) in (
+                    "consumo",
+                    "e-consumer",
+                ):
+                    raise UserError(
+                        _(
+                            "Service sales to oversas customer must have "
+                            "Consumo Fiscal Type"
+                        )
+                    )
 
     @api.constrains('state')
     def validate_special_exempt(self):
-        """ Validates an invoice with Regímenes Especiales sale_fiscal_type
-            does not contain nor ITBIS or ISC.
-            See DGII Norma 05-19, Art 3 for further information.
+        """Validates an invoice with Regímenes Especiales sale_fiscal_type
+        does not contain nor ITBIS or ISC.
+        See DGII Norma 05-19, Art 3 for further information.
         """
         for inv in self:
             if inv.l10n_latam_use_documents:
                 if (
                     inv.move_type == 'out_invoice'
-                    and inv.state in ('posted', 'cancel')   
-                    and inv.l10n_latam_document_type_id.l10n_do_ncf_type[-7:] == 'special'
+                    and inv.state in ('posted', 'cancel')
+                    and inv.l10n_latam_document_type_id.l10n_do_ncf_type[-7:]
+                    == 'special'
                 ):
-
                     # If any invoice tax in ITBIS or ISC
-                    if any([
-
-                            tax for tax in inv._get_tax_line_ids()
-                            .filtered(lambda tax: tax.tax_group_id.name in (
-                                'ITBIS', 'ISC') and tax.amount != 0)
-                    ]):
-                        raise UserError(_(
-                            "No puede validar una factura para Regímen Especial "
-                            " con ITBIS/ISC.\n\n"
-                            "Consulte Norma General 05-19, Art. 3 de la DGII")
+                    if any(
+                        [
+                            tax
+                            for tax in inv._get_tax_line_ids().filtered(
+                                lambda tax: tax.tax_group_id.name in ('ITBIS', 'ISC')
+                                and tax.amount != 0
+                            )
+                        ]
+                    ):
+                        raise UserError(
+                            _(
+                                "No puede validar una factura para Regímen Especial "
+                                " con ITBIS/ISC.\n\n"
+                                "Consulte Norma General 05-19, Art. 3 de la DGII"
+                            )
                         )
 
-
     def _get_debit_line_tax(self, debit_date):
-
         if self.move_type == "out_invoice":
             domain = [
                 ('company_id', '=', self.company_id.id),
                 ('amount', '=', 0),
-                ('type_tax_use', '=', 'sale')
+                ('type_tax_use', '=', 'sale'),
             ]
             return (
                 self.company_id.account_sale_tax_id
                 # or self.env.ref("l10n_do.tax_18_sale")
                 if (debit_date - self.invoice_date).days <= 30
                 and self.partner_id.l10n_do_dgii_tax_payer_type != "special"
-                else self.env["account.tax"].search(
-                    domain, order="id", limit=1
-                ).filtered(lambda t: t.tax_group_id.name == "ITBIS") or False
+                else self.env["account.tax"]
+                .search(domain, order="id", limit=1)
+                .filtered(lambda t: t.tax_group_id.name == "ITBIS")
+                or False
             )
         else:
             return self.company_id.account_purchase_tax_id or False
-    def _move_autocomplete_invoice_lines_create(self, vals_list):
 
+    def _move_autocomplete_invoice_lines_create(self, vals_list):
         ctx = self.env.context
         refund_type = ctx.get("refund_type")
         refund_debit_type = ctx.get("l10n_do_debit_type", refund_type)
@@ -776,7 +747,6 @@ class AccountMove(models.Model):
                     * (ctx.get("percentage") / 100)
                 )
 
-
                 vals["invoice_line_ids"] = [
                     (
                         0,
@@ -793,38 +763,34 @@ class AccountMove(models.Model):
         return super(AccountMove, self)._move_autocomplete_invoice_lines_create(
             vals_list
         )
-        
-        
-        
+
     def _assign_ncf(self):
-        
         for inv in self:
-                
             self._compute_l10n_do_fiscal_sequence()
-            
+
             non_payer_type_invoices = self.filtered(
                 lambda i: i.company_id.country_id == self.env.ref("base.do")
                 and i.l10n_latam_use_documents
                 and not i.partner_id.l10n_do_dgii_tax_payer_type
-             )
+            )
 
             if non_payer_type_invoices:
                 raise ValidationError(_("Fiscal invoices require partner fiscal type"))
 
             if inv.l10n_latam_use_documents:
-
                 # Because a Fiscal Sequence can be depleted while an invoice
                 # is waiting to be validated, compute fiscal_sequence_id again
                 # on invoice validate.
-                
 
-                if not inv.l10n_latam_document_number and not inv.l10n_do_fiscal_sequence_id:
-                    raise ValidationError(_(
-                                            "There is not active Sequence for "
-                                            "{}"
-                                            ).format(self.l10n_latam_document_type_id.name))
-
-
+                if (
+                    not inv.l10n_latam_document_number
+                    and not inv.l10n_do_fiscal_sequence_id
+                ):
+                    raise ValidationError(
+                        _("There is not active Sequence for " "{}").format(
+                            self.l10n_latam_document_type_id.name
+                        )
+                    )
 
         for inv in self:
             if inv.l10n_latam_use_documents and not inv.l10n_latam_document_number:
@@ -835,20 +801,18 @@ class AccountMove(models.Model):
                         "state": "posted",
                         "l10n_latam_document_number": document_number,
                         "l10n_do_ncf_expiration_date": inv.l10n_do_fiscal_sequence_id.expiration_date,
-                        "payment_reference" : '%s - %s' % (inv.name, document_number)
+                        "payment_reference": '%s - %s' % (inv.name, document_number),
                     }
                 )
                 self._get_invoice_computed_reference()
 
     def _post(self, soft=True):
-        """ After all invoice validation routine, consume a NCF sequence and
-            write it into ref field.
+        """After all invoice validation routine, consume a NCF sequence and
+        write it into ref field.
         """
         res = super()._post(soft)
 
-
         for inv in self:
-            
             inv._assign_ncf()
 
         return res

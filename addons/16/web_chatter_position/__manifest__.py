@@ -5,7 +5,7 @@
     "name": "Chatter Position",
     "summary": "Add an option to change the chatter position",
     "version": "16.0.1.0.0",
-    "author": "Hynsys Technologies, Camptocamp, Odoo Community Association (OCA)",
+    'author': 'Astratech',
     "website": "https://github.com/OCA/web",
     "license": "LGPL-3",
     "category": "Extra Tools",

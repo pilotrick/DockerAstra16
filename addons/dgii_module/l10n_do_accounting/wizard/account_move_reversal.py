@@ -1,5 +1,8 @@
 from odoo import models, api, fields, _
 from odoo.exceptions import UserError, ValidationError
+import logging
+
+_logger = logging.getLogger(__name__)
 
 try:
     from stdnum.do import ncf as ncf_validation
@@ -26,7 +29,6 @@ class AccountMoveReversal(models.TransientModel):
 
     @api.model
     def _get_refund_action_selection(self):
-
         return [
             ("draft_refund", _("Partial Refund")),
             ("apply_refund", _("Full Refund")),
@@ -46,8 +48,10 @@ class AccountMoveReversal(models.TransientModel):
             return journal.default_credit_account_id.id
         return journal.default_debit_account_id.id
 
-    l10n_latam_manual_document_number = fields.Boolean(compute='_compute_l10n_latam_manual_document_number', string='Manual Number')
-    
+    l10n_latam_manual_document_number = fields.Boolean(
+        compute='_compute_l10n_latam_manual_document_number', string='Manual Number'
+    )
+
     l10n_latam_country_code = fields.Char(
         related="company_id.l10n_do_country_code",
         help="Technical field used to hide/show fields regarding the localization",
@@ -73,17 +77,17 @@ class AccountMoveReversal(models.TransientModel):
     is_ecf_invoice = fields.Boolean(
         string="Is Electronic Invoice",
     )
-    
-    
+
     @api.depends('l10n_latam_document_type_id')
     def _compute_l10n_latam_manual_document_number(self):
         self.l10n_latam_manual_document_number = False
         for rec in self.filtered('move_ids'):
             move = rec.move_ids[0]
             if move.journal_id and move.journal_id.l10n_latam_use_documents:
-                rec.l10n_latam_manual_document_number = self.env['account.move']._is_manual_document_number(move.journal_id)
+                rec.l10n_latam_manual_document_number = self.env[
+                    'account.move'
+                ]._is_manual_document_number(move.journal_id)
 
-  
     @api.model
     def default_get(self, fields):
         res = super(AccountMoveReversal, self).default_get(fields)
@@ -109,9 +113,6 @@ class AccountMoveReversal(models.TransientModel):
 
         return res
 
-
-
-
     @api.onchange("refund_type")
     def onchange_refund_type(self):
         if self.refund_type != "full_refund":
@@ -124,56 +125,54 @@ class AccountMoveReversal(models.TransientModel):
         else:
             self.refund_method = "refund"
 
+    def _prepare_default_reversal(self, move):
+        """Set Data"""
+        res = super()._prepare_default_reversal(move)
+        res.update(
+            {
+                'l10n_do_origin_ncf': move.l10n_latam_document_number,
+                'l10n_do_ecf_modification_code': self.l10n_do_ecf_modification_code,
+            }
+        )
+
+        return res
+
     def reverse_moves(self):
         active_id = self._context.get("active_id", False)
         if active_id:
-            invoice = self.env["account.move"].browse(active_id)
             if self.move_type == "in_invoice":
                 ncf = self.l10n_latam_document_number[0:3]
                 ncf_digits = len(self.l10n_latam_document_number)
-                if (
-                    self._context.get("debit_note")
-                    and ncf not in ("B03", "E33")
-                ):
+                if self._context.get("debit_note") and ncf not in ("B03", "E33"):
                     raise UserError(
                         _(
                             "Debit Notes must be type B03 or E33, this NCF "
                             "structure does not comply."
                         )
                     )
-                
+
                 elif ncf not in ("B04", "E34"):
                     raise UserError(
                         _(
-                            ("Credit Notes must be type B04 or E34, this NCF (Type %s)"
-                            " structure does not comply.") % ncf
+                            (
+                                "Credit Notes must be type B04 or E34, this NCF (Type %s)"
+                                " structure does not comply."
+                            )
+                            % ncf
                         )
                     )
 
-                elif (ncf_digits != 11 and ncf == 'B04') \
-                        or (ncf_digits != 13 and ncf == 'E34'):
+                elif (ncf_digits != 11 and ncf == 'B04') or (
+                    ncf_digits != 13 and ncf == 'E34'
+                ):
                     raise UserError(
                         _(
-                            ("The number of fiscal sequence in this invoice is "
-                            "incorrect, please double check the fiscal sequence")
+                            (
+                                "The number of fiscal sequence in this invoice is "
+                                "incorrect, please double check the fiscal sequence"
                             )
+                        )
                     )
-
-                    # elif (
-                    #     invoice.journal_id.l10n_latam_use_documents
-                    #     and not ncf_validation.check_dgii(
-                    #         invoice.partner_id.vat, self.l10n_latam_document_number)
-                    # ):
-                    #     raise ValidationError(
-                    #         _(
-                    #             "NCF rejected by DGII\n\n"
-                    #             "NCF *{}* of supplier *{}* was rejected by DGII's "
-                    #             "validation service. Please validate if the NCF and "
-                    #             "the supplier RNC are type correctly. Otherwhise "
-                    #             "your supplier might not have this sequence approved "
-                    #             "yet."
-                    #         ).format(self.l10n_latam_document_number, invoice.partner_id.name)
-                    #     )
 
         return super(
             AccountMoveReversal,

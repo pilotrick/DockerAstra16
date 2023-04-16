@@ -2,7 +2,7 @@
 {
     "name": "LATAM Document",
     "version": "1.0",
-    "author": "Astratech",
+    "author": "ADHOC SA",
     'category': 'Accounting/Localizations',
     "summary": "LATAM Document Types",
     'description': """

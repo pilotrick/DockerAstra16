@@ -64,7 +64,7 @@
                 <field name="l10n_do_origin_ncf" attrs="{
                     'invisible':['|', '&amp;', ('move_type', 'not in', ('in_refund', 'out_refund')), ('debit_origin_id', '=', False), '&amp;', ('move_type', 'in', ('in_refund', 'out_refund')), '|', ('l10n_latam_use_documents', '=', False), ('country_code', '!=', 'DO')],
                     'required': ['|', '&amp;', ('move_type', 'in', ('in_refund', 'out_refund')), ('l10n_latam_use_documents', '=', True), ('debit_origin_id', '!=', False)],
-                    'readonly': [('state','!=','draft')]
+                    'readonly': ['|', ('state','!=','draft'), ('move_type', '=', 'out_refund')]
                 }"/>
                 <field name="l10n_do_ecf_modification_code" attrs="{
                     'invisible': ['|', '|', '|', '&amp;', ('move_type', 'not in', ('in_refund', 'out_refund')), ('debit_origin_id', '=', False), '&amp;', ('move_type', 'in', ('in_refund', 'out_refund')), ('is_ecf_invoice', '=', False), '&amp;', ('debit_origin_id', '!=', False), ('is_ecf_invoice', '=', False), ('country_code', '!=', 'DO')],
@@ -214,6 +214,24 @@
                 <field name="l10n_latam_document_number" readonly="1"/>
             
             </xpath>
+        </field>
+    </record>
+
+
+    <record id="view_account_move_filter" model="ir.ui.view">
+        <field name="name">view.account.move.filter</field>
+        <field name="model">account.move</field>
+        <field name="inherit_id" ref="account.view_account_move_filter"/>
+        <field name="arch" type="xml">
+            <field name="name" position="attributes">
+                <attribute name="filter_domain">[
+                    '|', '|', '|',
+                    ('name', 'ilike', self),
+                    ('ref', 'ilike', self),
+                    ('partner_id', 'ilike', self),
+                    ('l10n_latam_document_number', 'ilike', self)
+                ]</attribute>
+            </field>
         </field>
     </record>
 

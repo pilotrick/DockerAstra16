@@ -7,7 +7,7 @@
         Compute volume information on stock moves and pickings""",
     "version": "16.0.1.0.0",
     "license": "AGPL-3",
-    "author": "ACSONE SA/NV,Odoo Community Association (OCA)",
+    'author': 'Astratech',
     "website": "https://github.com/OCA/stock-logistics-warehouse",
     "maintainers": ["lmignon"],
     "depends": [

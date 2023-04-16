@@ -1,11 +1,12 @@
 # -*- coding: utf-8 -*-
 
 import json
+from collections import OrderedDict
 from functools import reduce
 from statistics import mean, median
-from collections import OrderedDict
 
 from odoo import api, fields, models
+
 
 class IrActionsActWindowView(models.Model):
     _inherit = 'ir.actions.act_window.view'
@@ -27,7 +28,7 @@ class StockMove(models.Model):
     purchase_order_id = fields.Many2one(
         'purchase.order',
         string='Orden de compra',
-        compute="_compute_info_purchase",
+        related='purchase_line_id.order_id',
         store=True,
         readonly=True,
         help='Orden de compra asociada a la transferencia incluida en la liquidación',
@@ -35,7 +36,7 @@ class StockMove(models.Model):
     supplier_id = fields.Many2one(
         'res.partner',
         string='Proveedor',
-        compute="_compute_info_purchase",
+        related='picking_id.partner_id',
         store=True,
         readonly=True,
         help='Suplidor de la orden de compra',
@@ -63,7 +64,7 @@ class StockMove(models.Model):
     )
     price_unit_usd = fields.Float(
         string="C/U US$",
-        compute="_compute_totals",
+        related='purchase_line_id.price_unit',
         readonly=True,
         help='Costo unitario del producto según la orden de compra. Para la conversión de monedas emplea la Tasa USD (OC)',
     )
@@ -118,7 +119,8 @@ class StockMove(models.Model):
     )
     pvp_usd = fields.Float(
         string="PVP US$",
-        default=lambda self: self.product_id.list_price * self.env.ref('base.USD').rate,
+        default=lambda self: self.product_id.list_price *
+        self.env.ref('base.USD').rate,
         help='Precio de venta del producto según su registro. Para la conversión de monedas emplea la Tasa USD (OC). Este valor puede modificarse.',
     )
     pvp_rd = fields.Float(
@@ -161,27 +163,20 @@ class StockMove(models.Model):
             'date': self.get_date_from_landed_cost(),
         }).search([("name", "=", "USD")]).inverse_rate
 
-    @api.depends('picking_id', 'picking_id.purchase_id', 'picking_id.purchase_id.invoice_ids', 'purchase_line_id.order_id')
+    @api.depends('picking_id.purchase_id.invoice_ids')
     def _compute_info_purchase(self):
         for record in self:
-            if record.picking_id.purchase_id:
-                record.purchase_order_id = record.picking_id.purchase_id
-            else:
-                record.purchase_order_id = record.purchase_line_id.order_id
-
             record.invoice_ids = record.picking_id.purchase_id.invoice_ids
-            record.supplier_id = record.picking_id.partner_id
 
-    @api.depends('currency_rate_usd', 'price_unit', 'product_uom_qty', 'purchase_order_id')
+    @api.depends('currency_rate_usd', 'price_unit_usd', 'product_uom_qty', 'purchase_order_id')
     def _compute_totals(self):
         for item, record in enumerate(self, start=1):
             record.item = item
-            record.price_unit_rd = record.price_unit
 
             if record.purchase_order_id and record.purchase_order_id.currency_rate:
-                record.price_unit_usd = record.price_unit_rd * record.purchase_order_id.currency_rate
+                record.price_unit_rd = record.price_unit_usd / record.purchase_order_id.currency_rate
             else:
-                record.price_unit_usd = record.price_unit_rd / record.currency_rate_usd
+                record.price_unit_rd = record.price_unit_usd * record.currency_rate_usd
 
             record.amount_total_usd = record.price_unit_usd * record.product_uom_qty
             record.amount_total_rd = record.price_unit_rd * record.product_uom_qty
@@ -194,9 +189,7 @@ class StockMove(models.Model):
         )
 
         if landed_cost:
-            stock_move_ids = self.browse(
-                landed_cost._get_move_ids_without_package().ids
-            )
+            stock_move_ids = landed_cost._get_move_ids_without_package()
             total_usd = sum(stock_move_ids.mapped('amount_total_usd'))
             total_rd = sum(stock_move_ids.mapped('amount_total_rd'))
             if total_usd:
@@ -273,6 +266,7 @@ class StockPicking(models.Model):
         copy=False
     )
 
+
 class PurchaseOrder(models.Model):
     _inherit = 'purchase.order'
 
@@ -348,11 +342,13 @@ class StockLandedCost(models.Model):
         string="Métricas",
         compute="_compute_detail_metrics",
         readonly=True,
-        help='Total FOB: Total del costo de acuerdo a los precios unitarios en la orden de compra. Para conversión entre monedas emplea la Tasa USD (OC) \n'
+        help=(
+            'Total FOB: Total del costo de acuerdo a los precios unitarios en la orden de compra. Para conversión entre monedas emplea la Tasa USD (OC) \n'
             'Costo total actual: Costo total de los productos luego de aplicar el factor de costos en destino. Para la conversión entre monedas emplea la Tasa USD (LC) \n'
             'PVP Promedio: Precio unitario de venta promedio de los productos. Para la conversión entre monedas emplea la Tasa USD (OC) \n'
             'PVP Media: Calculo de mediana de precios unitarios de venta de los productos. Para la conversión entre monedas emplea la Tasa USD (OC) \n'
             'Total ganancia: Suma de las ganancias. Para la conversión entre monedas emplea la Tasa USD (LC)'
+        )
     )
 
     @api.depends('picking_ids')
@@ -473,3 +469,8 @@ class StockLandedCost(models.Model):
                 landed_cost_date=self.date
             )
         )
+
+    @property
+    def dict_metrics(self):
+        self.ensure_one()
+        return json.loads(self.metrics)

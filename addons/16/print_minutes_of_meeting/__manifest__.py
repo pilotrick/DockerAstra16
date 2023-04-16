@@ -24,7 +24,7 @@
     'summary': 'Module for Minutes of Meetings and Print PDF Report. ',
     'description': 'Module for Minutes of Meetings and Print PDF Report',
     'category': 'Astratech',
-    'author': 'Cybrosys Techno Solutions',
+    'author': 'Astratech',
     'company': 'Cybrosys Techno Solutions',
     'maintainer': 'Cybrosys Techno Solutions',
     'website': 'https://www.cybrosys.com',

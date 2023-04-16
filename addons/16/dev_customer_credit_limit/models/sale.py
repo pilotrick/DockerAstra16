@@ -12,11 +12,18 @@ from odoo import _, api, models, fields
 from datetime import datetime
 
 from odoo.exceptions import UserError
+#from odoo.addons.base.models.ir_module import Module
 
 class sale_order(models.Model):
     _inherit= 'sale.order'
     
     exceeded_amount = fields.Float('Exceeded Amount')
+
+    show_confirm_button = fields.Boolean(
+        compue='_compute_show_confirm_button',
+        string='Has Credit To Confirm?',
+        default=True
+    )
     
     state = fields.Selection([
         ('draft', 'Quotation'),
@@ -42,7 +49,23 @@ class sale_order(models.Model):
                              }
                         }
     
-    #@api.model
+    @api.depends('order_line.price_unit','partner_id')
+    def _compute_show_confirm_button(self):
+        partner_id = self.partner_id
+        if self.partner_id.parent_id:
+            partner_id = self.partner_id.parent_id
+            
+        if partner_id:
+            module_name = 'sale_advance_payment'
+            Module = self.env['ir.module.module']
+            module_installed = Module.search([('name', '=', module_name)])
+            is_advance_payment_installed = bool(module_installed)
+            for order in self:
+                order.show_confirm_button = True
+                if partner_id.credit_limit_on_hold and is_advance_payment_installed:
+                        if not order.can_confirm_with_amount_residual:
+                            order.show_confirm_button = False
+
     def action_sale_ok(self):
         partner_id = self.partner_id
         if self.partner_id.parent_id:
@@ -130,17 +153,10 @@ class sale_order(models.Model):
             to_invoice_amount = "{:.2f}".format(to_invoice_amount)
             draft_invoice_lines_amount = float(draft_invoice_lines_amount)
             to_invoice_amount = float(to_invoice_amount)
-            #available_credit = partner_id.credit_limit - partner_id.credit - to_invoice_amount - draft_invoice_lines_amount
             
             for record in self:
                 order_actual = record.amount_total
                 if total + order_actual > partner_id.credit_limit:  #available_credit:
-
-                    """ user = self.env.user
-                    is_admin = user.has_group('base.group_erp_manager')
-                    if not is_admin or not user.has_group('credit_limit_config'):
-                        msg = "La orden de venta excede el límite de crédito disponible para este cliente."
-                        raise UserError(_('Límite de Crédito Excedido: %s') % msg) """
 
                     imd = self.env['ir.model.data']
                     exceeded_amount = (to_invoice_amount + draft_invoice_lines_amount + partner_id.credit + self.amount_total) - partner_id.credit_limit
@@ -172,8 +188,8 @@ class sale_order(models.Model):
                     self.action_confirm()
         else:
             self.action_confirm()
+
         return True
-        
         
     """def _make_url(self,model='sale.order'):
         base_url = self.env['ir.config_parameter'].get_param('web.base.url', default='http://localhost:8069')

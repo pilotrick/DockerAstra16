@@ -1,30 +1,29 @@
-from odoo import models, fields
+from odoo import models, fields, api
 
 
 class AccountTax(models.Model):
     _inherit = "account.tax"
 
+    @api.model
+    def _get_isr_retention_type(self):
+        return [('01', 'Alquileres'),
+                ('02', 'Honorarios por Servicios'),
+                ('03', 'Otras Rentas'),
+                ('04', 'Rentas Presuntas'),
+                ('05', u'Intereses Pagados a Personas Jurídicas'),
+                ('06', u'Intereses Pagados a Personas Físicas'),
+                ('07', u'Retención por Proveedores del Estado'),
+                ('08', u'Juegos Telefónicos')]
+
     purchase_tax_type = fields.Selection(
-        [
-            ("itbis", "Paid ITBIS"),
-            ("ritbis", "Withheld ITBIS"),
-            ("isr", "Withheld ISR"),
-            ("rext", "Overseas payments (law 253-12)"),
-            ("none", "Non deductible"),
-        ],
+        [('itbis', 'ITBIS Pagado'),
+         ('ritbis', 'ITBIS Retenido'),
+         ('isr', 'ISR Retenido'),
+         ('rext', 'Pagos al Exterior (Ley 253-12)'),
+         ('none', 'No Deducible')],
         default="none",
-        string="Purchase Tax Type",
-    )
+        string="Tipo de Impuesto en Compra")
+
     isr_retention_type = fields.Selection(
-        [
-            ("01", "Rentals"),
-            ("02", "Fees for Services"),
-            ("03", "Other Incomes"),
-            ("04", "Presumed Income"),
-            ("05", "Interest Paid to Legal Entities"),
-            ("06", "Interests Paid to Individuals"),
-            ("07", "Withholding by State Providers"),
-            ("08", "Mobile Games"),
-        ],
-        string="ISR Withholding Type",
-    )
+        selection=_get_isr_retention_type,
+        string="Tipo de Retención en ISR")
