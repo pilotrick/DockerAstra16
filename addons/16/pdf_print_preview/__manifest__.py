@@ -4,7 +4,7 @@
     "name": "Pdf Print Preview",
     "version": "1.0",
     "depends": ["web"],
-    'author': 'Astratech',,
+    'author': 'Astratech',
     "category": "web",
     "website": "",
     "summary": """Preview and print PDF report in your browser | Pdf direct preview | Print without Download

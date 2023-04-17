@@ -11,7 +11,7 @@
     "website": "https://github.com/OCA/account-financial-tools"
     "14.0/account_fiscal_year",
     'author': 'Astratech',
-    "Odoo Community Association (OCA)",
+    'author': 'Astratech',
     "maintainers": ["eLBati"],
     "license": "AGPL-3",
     "depends": [

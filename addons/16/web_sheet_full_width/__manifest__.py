@@ -2,8 +2,7 @@
 {
     "name": "Web Sheet Full Width",
     "version": "16.0.1.0.0",
-    "author": "Therp BV, Sudokeys, GRAP, Métal Sartigan, "
-    "Odoo Community Association (OCA)",
+    "author": "Therp BV, Sudokeys, GRAP, Métal Sartigan",
     "website": "https://github.com/OCA/web",
     "license": "AGPL-3",
     "summary": "Use the whole available screen width when displaying sheets",

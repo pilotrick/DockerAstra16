@@ -25,7 +25,7 @@
     'version': '16.0.1.0.0',
     'summary': """Product image in List view""",
     'description': """Users can view the image in product's list view""",
-    'author': "Cybrosys Techno Solutions",
+    'author': "Astratech",
     'company': "Cybrosys Techno Solutions",
     'maintainer': 'Cybrosys Techno Solutions',
     'website': "https://www.cybrosys.com",
