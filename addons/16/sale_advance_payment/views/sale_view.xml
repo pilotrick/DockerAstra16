@@ -9,6 +9,7 @@
                 <field name="can_confirm_with_amount_residual" invisible="1"/>
                 <field name="has_amount_residual" invisible="1"/>
                 <field name="is_credit_limit_installed" invisible="1" />
+                <field name="show_confirm_button" invisible="1" />
             </field>
             <button name="action_draft" position="after">
                 
@@ -23,9 +24,28 @@
                             ]}"
                 />
             </button>
-            <xpath expr="//header/button[@name='action_confirm'][last()]" position="replace">
+            <xpath expr="//button[@name='action_sale_ok']" position="attributes">
+                <attribute name="invisible">1</attribute>
             </xpath>
-            <xpath expr="//button[@name='action_quotation_send']" position="after">
+            <xpath expr="//button[@name='action_sale_ok']" position="replace">
+            </xpath>
+            <xpath expr="//button[@name='action_sale_ok']" position="replace">
+                <button
+                    name="action_sale_ok" 
+                    string="Confirm Sale" 
+                    class="btn-primary" 
+                    type="object"
+                    attrs="{'invisible': ['|',
+                            ('show_confirm_button', '=', False),
+                            ('state', 'not in', ['draft'])
+                    ]}"
+                />
+            </xpath>
+                     
+            <!-- <xpath expr="//header/button[@name='action_confirm'][last()]" position="replace">
+            </xpath> -->
+            
+            <!-- <xpath expr="//button[@name='action_quotation_send']" position="after">
 
                 <button name="action_confirm" string="Confirm" class="btn-primary"
                 type="object"
@@ -36,7 +56,7 @@
                         ]}"
             />
 
-			</xpath>
+			</xpath> -->
             <notebook position="inside">
                 <page string="Payment advances" groups="account.group_account_invoice">
                     <field

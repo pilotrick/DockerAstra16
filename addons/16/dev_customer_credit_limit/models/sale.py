@@ -18,12 +18,6 @@ class sale_order(models.Model):
     _inherit= 'sale.order'
     
     exceeded_amount = fields.Float('Exceeded Amount')
-
-    show_confirm_button = fields.Boolean(
-        compue='_compute_show_confirm_button',
-        string='Has Credit To Confirm?',
-        default=True
-    )
     
     state = fields.Selection([
         ('draft', 'Quotation'),
@@ -48,23 +42,6 @@ class sale_order(models.Model):
                             {'title': 'Credit Limit On Hold', 'message': msg
                              }
                         }
-    
-    @api.depends('order_line.price_unit','partner_id')
-    def _compute_show_confirm_button(self):
-        partner_id = self.partner_id
-        if self.partner_id.parent_id:
-            partner_id = self.partner_id.parent_id
-            
-        if partner_id:
-            module_name = 'sale_advance_payment'
-            Module = self.env['ir.module.module']
-            module_installed = Module.search([('name', '=', module_name)])
-            is_advance_payment_installed = bool(module_installed)
-            for order in self:
-                order.show_confirm_button = True
-                if partner_id.credit_limit_on_hold and is_advance_payment_installed:
-                        if not order.can_confirm_with_amount_residual:
-                            order.show_confirm_button = False
 
     def action_sale_ok(self):
         partner_id = self.partner_id

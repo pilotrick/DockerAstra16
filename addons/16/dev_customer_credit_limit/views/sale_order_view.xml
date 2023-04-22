@@ -13,7 +13,6 @@ For Module Support : devintelle@gmail.com  or Skype : devintelle
             
                 <xpath expr="//field[@name='payment_term_id']" position="after">
                      <field name="exceeded_amount" readonly='True'  attrs="{'invisible': [('state', '!=','credit_limit')]}"/>
-                     <field name="show_confirm_button" invisible="1"/>
                 </xpath>
                 
                 <xpath expr="//button[@name='action_confirm']" position="replace">
@@ -22,8 +21,7 @@ For Module Support : devintelle@gmail.com  or Skype : devintelle
                         string="Confirm Sale" 
                         class="btn-primary" 
                         type="object"
-                        attrs="{'invisible': ['|',
-                            ('show_confirm_button', '=', False),
+                        attrs="{'invisible': [
                             ('state', 'not in', ['draft'])
                         ]}"
                     />
