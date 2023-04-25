@@ -125,7 +125,7 @@ class SaleOrder(models.Model):
             order.amount_residual = amount_residual
             order.advance_payment_status = payment_state
 
-    @api.depends('order_line.price_unit', 'amount_residual')
+    @api.depends('order_line.price_unit', 'amount_residual', 'payment_term_id')
     def _compute_can_confirm_with_amount_residual(self):
         module_name = 'dev_customer_credit_limit'
         Module = self.env['ir.module.module']
@@ -134,12 +134,20 @@ class SaleOrder(models.Model):
         is_admin_or_has_access = user.has_group('sale_advance_payment.group_advance_payment_access') or user.has_group('base.group_erp_manager')
         can_confirm_order = True
         has_amount_residual = False
+        IMMEDIATE_PAYMENT_ID = 1
         for order in self:
-            can_confirm_order = order.amount_residual == 0 or is_admin_or_has_access
-            order.can_confirm_with_amount_residual = can_confirm_order
-            has_amount_residual = order.amount_residual != 0
-            order.has_amount_residual = has_amount_residual
-            order.is_credit_limit_installed = bool(is_credit_limit_installed)
+            # If the payment term is immediate payment needs do advance payment
+            if order.payment_term_id.id == IMMEDIATE_PAYMENT_ID or order.payment_term_id.id == False:
+                can_confirm_order = order.amount_residual == 0 or is_admin_or_has_access
+                order.can_confirm_with_amount_residual = can_confirm_order
+                has_amount_residual = order.amount_residual != 0
+                order.has_amount_residual = has_amount_residual
+                order.is_credit_limit_installed = bool(is_credit_limit_installed)
+            else:
+                order.can_confirm_with_amount_residual = can_confirm_order
+                order.has_amount_residual = has_amount_residual
+                order.show_confirm_button = True
+                
 
         if has_amount_residual:
             self._compute_show_confirm_button()

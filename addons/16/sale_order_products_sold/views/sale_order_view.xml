@@ -1,0 +1,30 @@
+<odoo>
+    <data>
+        <record id="view_sale_order_form_inherit_products_sold" model="ir.ui.view">
+            <field name="name">sale.order.form.inherit.products.sold</field>
+            <field name="model">sale.order</field>
+            <field name="inherit_id" ref="sale.view_order_form"/>
+            <field name="arch" type="xml">
+                <notebook position="inside">
+                    <page name="products_sold" string="Productos Vendidos">
+                      <div class="o_group">
+                          <div class="o_group_col">
+                              <strong><label for="start_date" string="Fecha de Inicio:"/></strong>
+                              <field name="start_date" widget="date" string="Fecha Inicio" default="datetime.today().date() - datetime.timedelta(days=30)"/>
+                          </div>
+                      </div>
+                      <div class="oe_structure clearfix mt-3 mb-3"/>
+                      <field name="products_sold">
+                          <tree>
+                              <field name="product_name"/>
+                              <field name="quantity"/>
+                              <field name="date"/>
+                              <field name="price"/>
+                          </tree>
+                      </field>
+                    </page>
+                </notebook>
+            </field>
+        </record>
+    </data>
+</odoo>
