@@ -125,7 +125,7 @@ class SaleOrder(models.Model):
             order.amount_residual = amount_residual
             order.advance_payment_status = payment_state
 
-    @api.depends('order_line.price_unit', 'amount_residual', 'payment_term_id')
+    @api.depends('order_line.price_unit', 'amount_residual', 'payment_term_id', 'partner_id')
     def _compute_can_confirm_with_amount_residual(self):
         module_name = 'dev_customer_credit_limit'
         Module = self.env['ir.module.module']
@@ -140,6 +140,7 @@ class SaleOrder(models.Model):
             if order.payment_term_id.id == IMMEDIATE_PAYMENT_ID or order.payment_term_id.id == False:
                 can_confirm_order = order.amount_residual == 0 or is_admin_or_has_access
                 order.can_confirm_with_amount_residual = can_confirm_order
+                order.show_confirm_button = can_confirm_order
                 has_amount_residual = order.amount_residual != 0
                 order.has_amount_residual = has_amount_residual
                 order.is_credit_limit_installed = bool(is_credit_limit_installed)
@@ -147,29 +148,6 @@ class SaleOrder(models.Model):
                 order.can_confirm_with_amount_residual = can_confirm_order
                 order.has_amount_residual = has_amount_residual
                 order.show_confirm_button = True
-                
-
-        if has_amount_residual:
-            self._compute_show_confirm_button()
-
-    @api.depends('partner_id')
-    def _compute_show_confirm_button(self):
-        module_name = 'dev_customer_credit_limit'
-        Module = self.env['ir.module.module']
-        module_installed = Module.search([('name', '=', module_name)])
-        is_credit_limit_installed = bool(module_installed)
-        if is_credit_limit_installed:
-            partner_id = self.partner_id
-            if self.partner_id.parent_id:
-                partner_id = self.partner_id.parent_id
-                
-            if partner_id:
-                for order in self:
-                    order.show_confirm_button = True
-                    for partner in partner_id:
-                        if not order.can_confirm_with_amount_residual or partner.credit_limit < order.amount_total:
-                            order.show_confirm_button = False
-                            break
 
 
             

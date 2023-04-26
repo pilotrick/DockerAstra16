@@ -1,23 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
-    <report
-        id="action_report_account"
-        model="receipt.pack.paper.invoice"
-        string="Receipt"
-        report_type="qweb-pdf"
-        name="template_id_inherit"
-        file="receipt_pack_paper.tax_credit_invoice_view"
-        paperformat="receipt_pack_paper.pack_paper_paperformat"
-    /> 
     <template id="template_id_inherit" inherit_id="account.report_invoice_with_payments">
         <xpath expr='//t[@t-call="web.html_container"]' position="replace">
             <t t-call="web.html_container">
                 <t t-foreach="docs" t-as="o">
                 <t t-call="web.basic_layout">
 
-                    <div class="header" style="position: relative; top: 20px; margin: 0px; right: 0px;">
+                    <div class="header" style="position: relative; top: 25px; margin: 0px; right: 0px;">
                         <!-- Logo -->
-                        <svg viewBox="0 0 792 612" style="position: absolute; width: 550px; height: 270px; left: -120px; top: -60px;">
+                        <svg viewBox="0 0 792 612" style="position: absolute; width: 550px; height: 270px; left: -120px; top: -40px;">
                             <style type="text/css">
                                 .st0{fill:#165C7D;}
                                 .st1{fill:#92C83E;}
@@ -197,16 +188,16 @@
                                 left: -8px;
                                 top: 230px;
                                 width: 12px;
-                                height: 700px;
+                                height: 650px;
                                 background: #165D7D;
                                 border-radius: 20px;
                             }
                             .linea_2 {
                                 position: absolute;
                                 left: -8px;
-                                top: 945px;
+                                top: 895px;
                                 width: 12px;
-                                height: 120.5px;
+                                height: 170px;
                                 background: #68D2DF;
                                 border-radius: 20px;
                             }
@@ -214,40 +205,6 @@
                         <div class="linea_1"></div>
                         <div class="linea_2"></div>
 
-                        <style>
-                            .linea_3 {
-                                position: absolute;
-                                left: -8px;
-                                width: 12px;
-                                height: 35px;
-                                background: #92C83E;
-                                margin-top: 0px;
-                                border-radius: 50px;
-                                top: 1080px;
-                            }
-                            .linea_4 {
-                                position: absolute;
-                                left: -8px;
-                                width: 12px;
-                                height: 25px;
-                                background: #92C83E;
-                                border-radius: 50px;
-                                top: 1125px;
-                            }
-                            .linea_5 {
-                                position: absolute;
-                                left: -8px;
-                                width: 12px;
-                                height: 18px;
-                                background: #92C83E;
-                                border-radius: 50px;
-                                top: 1160px;
-
-                            }
-                        </style>
-                        <div class="linea_3"></div>
-                        <div class="linea_4"></div>
-                        <div class="linea_5"></div>
 
                     </div>
                     <div class="page" style="position: absolute; margin-right: 5px; margin-left: 15px; top: 100px;">
@@ -292,6 +249,8 @@
                             </div>
                             <div style="position: relative; left: 0px; margin-bottom: 50px;">
                                 <br />
+                                <strong>Cliente:</strong>
+                                <span t-field="o.partner_id"/><br/>
                                 <strong>RNC: </strong>
                                 <span t-if="o.partner_id.vat" t-field="o.partner_id.vat"/><br />
                                 <t t-if="o.partner_id.phone">
@@ -378,7 +337,7 @@
                                         <span t-field="line.quantity"/>
                                     </td>
                                     <td class="td_1">
-                                        <span t-field="r.default_code"/>
+                                        <span t-if="r.uom_id" t-field="r.uom_id"/>
                                     </td>
                                     <td class="td_1">
                                         <span t-field="line.price_unit"/>
@@ -407,25 +366,27 @@
                                             margin: 0px;
                                             padding: auto;
                                             border-collapse: collapse;
-                                            right: 20px;
+                                            right: 0px;
                                             justify-content: right;
-                                            text-align: right;
+                                            text-align: center;
                                             margin-top: 20px;
-                                            width: 38%;
+                                            width: 40%;
                                         }
                                         .tax_th{
                                             padding: 9px;
-                                            background-image: url("data:image/svg+xml,%3Csvg version='1.1' id='Capa_1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' x='0px' y='0px' viewBox='0 0 417 83.5' style='enable-background:new 0 0 417 83.5%3B' xml:space='preserve'%3E%3Cstyle type='text/css'%3E.st0%7Bfill:%2368D2DF%3B%7D.st1%7Bfill:%23175C7D%3B%7D.st2%7Bfill:%23FFFFFF%3B%7D%3C/style%3E%3Cg%3E%3Cg%3E%3Cpolygon class='st0' points='329.9 82.7 0 82.7 0 0 408.1 0 '/%3E%3Cpolygon class='st1' points='417 82.7 338.8 82.7 417 0 417 0 '/%3E%3C/g%3E%3Cpolygon class='st2' points='408.1 0 417 0 338 83.5 329.3 83.5 '/%3E%3C/g%3E%3C/svg%3E");
+                                            background-image: url("data:image/svg+xml,%3Csvg version='1.1' id='Capa_1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' x='0px' y='0px' viewBox='0 0 441.1 84.7' style='enable-background:new 0 0 441.1 84.7%3B' xml:space='preserve'%3E%3Cstyle type='text/css'%3E.st0%7Bfill:%2368D2DF%3B%7D.st1%7Bfill:%23175C7D%3B%7D.st2%7Bfill:%23FFFFFF%3B%7D%3C/style%3E%3Cg%3E%3Cg%3E%3Cpolygon class='st0' points='349 83.9 0 83.9 0 0 431.7 0 '/%3E%3Cpolygon class='st1' points='441.1 83.9 358.3 83.9 441.1 0 441.1 0 '/%3E%3C/g%3E%3Cpolygon class='st2' points='431.7 0 441.1 0 357.5 84.7 348.3 84.7 '/%3E%3C/g%3E%3C/svg%3E");
+                                            <!-- background-image: url("data:image/svg+xml,%3Csvg version='1.1' id='Capa_1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' x='0px' y='0px' viewBox='0 0 417 83.5' style='enable-background:new 0 0 417 83.5%3B' xml:space='preserve'%3E%3Cstyle type='text/css'%3E.st0%7Bfill:%2368D2DF%3B%7D.st1%7Bfill:%23175C7D%3B%7D.st2%7Bfill:%23FFFFFF%3B%7D%3C/style%3E%3Cg%3E%3Cg%3E%3Cpolygon class='st0' points='329.9 82.7 0 82.7 0 0 408.1 0 '/%3E%3Cpolygon class='st1' points='417 82.7 338.8 82.7 417 0 417 0 '/%3E%3C/g%3E%3Cpolygon class='st2' points='408.1 0 417 0 338 83.5 329.3 83.5 '/%3E%3C/g%3E%3C/svg%3E"); -->
                                             color: white;
                                             text-align: center;
                                         }
                                         .td_total{
+                                            right: 5px;
                                             color: white;
                                             background-color: #175C7D;
                                         }
                                     </style>
                                     <div>
-                                        <svg viewBox="0 0 151.1 78.9" style="position: absolute; bottom: -134.8px; right: 100px; width: 96px; height: 35px;" xml:space="preserve">
+                                        <svg viewBox="0 0 151.1 78.9" style="position: absolute; bottom: -135px; right: 100px; width: 96px; height: 35px;" xml:space="preserve">
 
                                             <style type="text/css">
                                                 .st0{fill:#175C7D;}
@@ -463,17 +424,59 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="total" style="position: absolute; bottom: -100px; left: 10px; margin-top: 50px;">
+                        <div class="total" style="position: absolute; bottom: -150px; left: 10px; margin-top: 50px;">
                             <span>Por favor utilice la siguiente referencia al realizar su pago:  </span>
                             <strong t-field="o.name"/>
                         </div>
-                        <div style="position: absolute; bottom: -240px; left: 20px;">
-                            <div style="margin-bottom: 5px;">
-                                <span t-if="o.narration">
-                                    <strong>Términos y condiciones:</strong>
-                                    <span t-field="o.narration" />
-                                </span>
+                        <div style="position: absolute; font-size: 25px; bottom: -250px; left: 250px;">
+                            <span>GRACIAS POR PREFERIRNOS</span>
+                        </div>
+                        
+                    </div>
+                    <div class="footer">
+                        <style>
+                            .linea_3 {
+                                position: absolute;
+                                left: 0px;
+                                width: 12px;
+                                height: 35px;
+                                background: #92C83E;
+                                margin-top: 0px;
+                                border-radius: 50px;
+                                margin-top: 0px;
+                            }
+                            .linea_4 {
+                                position: absolute;
+                                left: 0px;
+                                width: 12px;
+                                height: 25px;
+                                background: #92C83E;
+                                border-radius: 50px;
+                                bottom: -65px;
+                            }
+                            .linea_5 {
+                                position: absolute;
+                                left: 0px;
+                                width: 12px;
+                                height: 18px;
+                                background: #92C83E;
+                                border-radius: 50px;
+                                bottom: -95px;
+
+                            }
+                        </style>
+                        <div class="linea_3"></div>
+                        <div class="linea_4"></div>
+                        <div class="linea_5"></div>
+                        <div style="bottom: 5px;">
+                            <div>
+                                <strong style="position: absolute; bottom: -35px; left: 30px;">Términos y condiciones:</strong>
+                                
+                                <span t-if="o.narration" t-field="o.narration" style="position: absolute; bottom: -80px; left: 30px;" />
                             </div>
+                            <!-- <div>
+                            <span t-if="o.narration" t-field="o.narration" style="position: absolute; bottom: -70px; left: 30px;" />
+                            </div> -->
                         </div>
                     </div>
                 </t>

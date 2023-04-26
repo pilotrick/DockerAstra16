@@ -1,0 +1,18 @@
+<odoo>
+    
+     <!-- main menu -->
+     <menuitem id='real_estate_bs.root_menu' name='Real Estate' />
+
+     <!-- sub menu -->
+     <menuitem id='real_estate_bs.menu_1' parent='real_estate_bs.root_menu' name='Estate' action="action_estate_profile" sequence='1'/>
+     <menuitem id='real_estate_bs.menu_2' parent='real_estate_bs.root_menu' name='Property' sequence='2' />
+ 
+     <!-- sub sub menu -->
+     <menuitem id='real_estate_bs.menu_2_tags' action="action_property_tags" parent='real_estate_bs.menu_2'
+         name='Property Tags' sequence='10' />
+     <menuitem id='real_estate_bs.menu_2_types' action="action_property_types" parent='real_estate_bs.menu_2'
+         name='Property Types' sequence='20' />
+     <menuitem id='real_estate_bs.menu_2_offers' action="action_property_offer" parent='real_estate_bs.menu_2'
+         name='Property Offers' sequence='30' />
+
+</odoo>

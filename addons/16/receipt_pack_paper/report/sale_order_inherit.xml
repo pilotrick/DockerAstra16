@@ -9,7 +9,7 @@
 
                     <div class="header" style="position: relative; top: 20px; margin: 0px; right: 0px;">
                         <!-- Logo -->
-                        <svg viewBox="0 0 792 612" style="position: absolute; width: 550px; height: 270px; left: -120px; top: -60px;">
+                        <svg viewBox="0 0 792 612" style="position: absolute; width: 550px; height: 270px; left: -120px; top: -40px;">
                             <style type="text/css">
                                 .st0{fill:#165C7D;}
                                 .st1{fill:#92C83E;}
@@ -119,7 +119,7 @@
                         </svg>
                         <table>
                             <!-- Iconos -->
-                            <svg viewBox="0 0 792 612" style="position: absolute; top: -75PX; right: -80PX; width: 250px; height: 320px;">
+                            <svg viewBox="0 0 792 612" style="position: absolute; top: -70PX; right: -90PX; width: 250px; height: 320px;">
                                 <style type="text/css">
                                     .st5{fill-rule:evenodd;clip-rule:evenodd;fill:#165C7D;}
                                     .st6{fill-rule:evenodd;clip-rule:evenodd;fill:#68D2DF;}
@@ -433,17 +433,23 @@
                                             margin: 0px;
                                             padding: auto;
                                             border-collapse: collapse;
-                                            right: 20px;
+                                            right: 0px;
                                             justify-content: right;
-                                            text-align: right;
+                                            text-align: center;
                                             margin-top: 20px;
-                                            width: 38%;
+                                            width: 40%;
                                         }
                                         .tax_th{
                                             padding: 9px;
                                             text-align: center;
                                             color: white;
-                                            background-image: url("data:image/svg+xml,%3Csvg version='1.1' id='Capa_1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' x='0px' y='0px' viewBox='0 0 423.8 83.5' style='enable-background:new 0 0 423.8 83.5%3B' xml:space='preserve'%3E%3Cstyle type='text/css'%3E.st0%7Bfill:%2368D2DF%3B%7D.st1%7Bfill:%23175C7D%3B%7D.st2%7Bfill:%23FFFFFF%3B%7D%3C/style%3E%3Cg%3E%3Cg%3E%3Cpolygon class='st0' points='335.4 82.7 0 82.7 0 0 414.8 0 '/%3E%3Cpolygon class='st1' points='423.8 82.7 344.4 82.7 423.8 0 423.8 0 '/%3E%3C/g%3E%3Cpolygon class='st2' points='414.8 0 423.8 0 343.5 83.5 334.7 83.5 '/%3E%3C/g%3E%3C/svg%3E");                                            <!-- background-image: url("data:image/svg+xml,%3Csvg version='1.1' id='Capa_1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' x='0px' y='0px' viewBox='0 0 407 78.9' style='enable-background:new 0 0 407 78.9%3B' xml:space='preserve'%3E%3Cstyle type='text/css'%3E.st0%7Bfill:%2368D2DF%3B%7D.st1%7Bfill:%23175C7D%3B%7D%3C/style%3E%3Cg%3E%3Cpolygon class='st0' points='322.1 78.9 0 78.9 0 0 398.4 0 '/%3E%3Cpolygon class='st1' points='407 78.9 330.7 78.9 407 0 407 0 '/%3E%3C/g%3E%3C/svg%3E"); -->
+                                            background-image: url("data:image/svg+xml,%3Csvg version='1.1' id='Capa_1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' x='0px' y='0px' viewBox='0 0 476.1 84.7' style='enable-background:new 0 0 476.1 84.7%3B' xml:space='preserve'%3E%3Cstyle type='text/css'%3E.st0%7Bfill:%2368D2DF%3B%7D.st1%7Bfill:%23175C7D%3B%7D.st2%7Bfill:%23FFFFFF%3B%7D%3C/style%3E%3Cg%3E%3Cg%3E%3Cpolygon class='st0' points='376.7 83.9 0 83.9 0 0 466 0 '/%3E%3Cpolygon class='st1' points='476.1 83.9 386.7 83.9 476.1 0 476.1 0 '/%3E%3C/g%3E%3Cpolygon class='st2' points='466 0 476.1 0 385.9 84.7 375.9 84.7 '/%3E%3C/g%3E%3C/svg%3E");
+                                            <!-- background-image: url("data:image/svg+xml,%3Csvg version='1.1' id='Capa_1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' x='0px' y='0px' viewBox='0 0 423.8 83.5' style='enable-background:new 0 0 423.8 83.5%3B' xml:space='preserve'%3E%3Cstyle type='text/css'%3E.st0%7Bfill:%2368D2DF%3B%7D.st1%7Bfill:%23175C7D%3B%7D.st2%7Bfill:%23FFFFFF%3B%7D%3C/style%3E%3Cg%3E%3Cg%3E%3Cpolygon class='st0' points='335.4 82.7 0 82.7 0 0 414.8 0 '/%3E%3Cpolygon class='st1' points='423.8 82.7 344.4 82.7 423.8 0 423.8 0 '/%3E%3C/g%3E%3Cpolygon class='st2' points='414.8 0 423.8 0 343.5 83.5 334.7 83.5 '/%3E%3C/g%3E%3C/svg%3E");                                            background-image: url("data:image/svg+xml,%3Csvg version='1.1' id='Capa_1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' x='0px' y='0px' viewBox='0 0 407 78.9' style='enable-background:new 0 0 407 78.9%3B' xml:space='preserve'%3E%3Cstyle type='text/css'%3E.st0%7Bfill:%2368D2DF%3B%7D.st1%7Bfill:%23175C7D%3B%7D%3C/style%3E%3Cg%3E%3Cpolygon class='st0' points='322.1 78.9 0 78.9 0 0 398.4 0 '/%3E%3Cpolygon class='st1' points='407 78.9 330.7 78.9 407 0 407 0 '/%3E%3C/g%3E%3C/svg%3E"); -->
+                                        }
+                                        .td_total{
+                                            right: 5px;
+                                            color: white;
+                                            background-color: #175C7D;
                                         }
                                     </style>
                                     <div>
@@ -477,7 +483,7 @@
                                             <th class="tax_th">
                                                 <span>Total</span>
                                             </th>
-                                            <td style="background-color: #165D7D; color: white;">
+                                            <td class="td_total">
                                                 <span t-field="o.amount_total"/>
                                             </td>
                                         </tr>
@@ -532,9 +538,9 @@
                                 
                             <div style="position: absolute; margin-bottom: 0px; bottom: -65px; left: 25px;">
 
-                                <span t-if="o.note">
+                                <span>
                                     <strong>Términos y condiciones:</strong>
-                                    <span t-field="o.note" />
+                                    <span t-if="o.note" t-field="o.note" />
                                 </span>
                                 <span t-if="o.payment_term_id">
                                     <strong>Plazo de Pago:</strong>
