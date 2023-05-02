@@ -25,7 +25,7 @@
     'description': """
         This module is used to Send Low Stock Alert To Inventory Manager.
     """,
-    'author': "iWesabe",
+    'author': 'Astratech',
     'website': "https://www.iwesabe.com/",
     'license': 'AGPL-3',
     'category': 'Inventory/',

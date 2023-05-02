@@ -4,7 +4,7 @@
     'version': '16.0.1.0.0',
     'summary': 'Top Selling and Least Selling Product Reports',
     'description': 'Top Selling Products,Fast Moving Products,Most Selling Products,Top Growing Products,Least Selling Products,',
-     'author': 'Banibro IT Solutions Pvt Ltd.',
+     'author': 'Astratech',
     'company': 'Banibro IT Solutions Pvt Ltd.',
     'website': 'https://banibro.com',
     'depends': ['base', 'sale_management', 'stock', 'sale'],

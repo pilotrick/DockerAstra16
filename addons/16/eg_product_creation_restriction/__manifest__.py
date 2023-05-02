@@ -3,7 +3,7 @@
     'version': '16.0.1.0.0',
     'category': 'Sales',
     'summery': '',
-    'author': 'INKERP',
+    'author': 'Astratech',
     'website': "http://www.INKERP.com",
     'depends': ['product'],
     'data': [

@@ -22,7 +22,7 @@
 {
     'name': 'Account Sale Link',
     'version': '16.0.0.0',
-    'author': 'iWesabe',
+    'author': 'Astratech',
     'summary': 'Sale Order Account Link',
     'description': """This module helps to link Sale order to Invoice.""",
     'category': 'account',
