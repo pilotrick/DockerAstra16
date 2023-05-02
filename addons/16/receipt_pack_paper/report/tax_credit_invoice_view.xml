@@ -1,14 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
+
     <template id="template_id_inherit" inherit_id="account.report_invoice_with_payments">
         <xpath expr='//t[@t-call="web.html_container"]' position="replace">
+        <!-- <attribute name="paperformat">pack_paper_format_receipt</attribute> -->
             <t t-call="web.html_container">
                 <t t-foreach="docs" t-as="o">
                 <t t-call="web.basic_layout">
 
                     <div class="header" style="position: relative; top: 25px; margin: 0px; right: 0px;">
                         <!-- Logo -->
-                        <svg viewBox="0 0 792 612" style="position: absolute; width: 550px; height: 270px; left: -120px; top: -40px;">
+                        <svg viewBox="0 0 792 612" style="position: absolute; width: 550px; height: 270px; left: -98px; top: -40px;">
                             <style type="text/css">
                                 .st0{fill:#165C7D;}
                                 .st1{fill:#92C83E;}
@@ -118,7 +120,7 @@
                         </svg>
                         <table>
                             <!-- Iconos -->
-                            <svg viewBox="0 0 152 308" style="position: absolute; top: 30PX; right: 0PX; width: 60px; height: 130px;">
+                            <svg viewBox="0 0 152 308" style="position: absolute; top: 30PX; right: 22PX; width: 60px; height: 130px;">
                                 <style type="text/css">
                                     .st70{fill-rule:evenodd;clip-rule:evenodd;fill:#68D2DF;}
                                     .st71{fill-rule:evenodd;clip-rule:evenodd;fill:#168DB2;}
@@ -166,7 +168,7 @@
                             
                             <tr>
                                 <!-- telefono -->
-                                <td style="position: absolute; top: 48px; right: 75px; font-size: 14px;">
+                                <td style="position: absolute; top: 48px; right: 95px; font-size: 14px;">
                                     <span>+1 809 748 2200</span>
                                     <br/>
                                     <span>+1 809 390 3133</span>
@@ -175,198 +177,206 @@
                             <br/>
                             <tr>
                                 <!-- Website, email -->
-                                <td style="position: absolute; top: 108px; right: 75px; font-size: 14px;">
+                                <td style="position: absolute; top: 108px; right: 95px; font-size: 14px;">
                                     <span>info@ippdr.com</span>
                                     <br/>
                                     <span>https://ippdr.com</span>
                                 </td>
                             </tr>
                         </table>
-                        <style>
-                            .linea_1 {
-                                position: absolute;
-                                left: -8px;
-                                top: 230px;
-                                width: 12px;
-                                height: 650px;
-                                background: #165D7D;
-                                border-radius: 20px;
-                            }
-                            .linea_2 {
-                                position: absolute;
-                                left: -8px;
-                                top: 895px;
-                                width: 12px;
-                                height: 170px;
-                                background: #68D2DF;
-                                border-radius: 20px;
-                            }
-                        </style>
-                        <div class="linea_1"></div>
-                        <div class="linea_2"></div>
 
 
                     </div>
                     <div class="page" style="position: absolute; margin-right: 5px; margin-left: 15px; top: 100px;">
-                        
-                        <div style="font-size: 35px; position: absolute; right: 5px; top: -40px; justify-content: right;">
-                            <strong>Factura de Crédito Fiscal</strong>
-                        </div>
-                        <div style=" position: absolute; right: 265px; top: 10px; text-align: left;">
-                            <strong>NCF:</strong>
-                            <br/>
-                            <strong>Válida hasta:</strong>
-                            <span t-if="o.invoice_payment_term_id" t-field="o.invoice_payment_term_id"/>
-                        </div>
-                        <div id="text-center custom_css" class="text-center custom_css">
-                            <div class="txt_name" t-if="o.name and o.invoice_date" name="Invoice no" style="position:absolute; text-align: left; right: 235px; top: 100px;">
-                                <strong>Origen:</strong><br/>
-                                <strong>Pedido -</strong>
-                                <strong t-field="o.name"/>
-                                <br/>
-                            </div>
-                        </div>
-
-                        <div class="col-auto mw-100 mb-2" style="position: relative; left: 0px; top: -10px; margin-bottom: -20px;">
-                            <t t-set="vat_len" t-value="len(o.partner_id.vat) if o.partner_id.vat else 0"/>
-                            <div>
-                                <span>Profesora Elisa Bodden #2,</span>
-                                <br/>
-                                <span>Urbanización Fernández Oriental</span>
-                                <br/>
-                                <span>Santo Domingo, 11114, RD</span>
-                                <br/>
-                                <span>Avenida Barcelo</span>
-                                <br/>
-                                <span>Plaza Cana Town, Nave #6</span>
-                                <br/>
-                                <span>Punta Cana, RD</span>
-                                <br/>
-                                <strong>RNC: 101881941</strong>
-                                <br />
-                                <strong>Fecha Emisión</strong>
-                                <strong t-field="o.invoice_date"/>
-                            </div>
-                            <div style="position: relative; left: 0px; margin-bottom: 50px;">
-                                <br />
-                                <strong>Cliente:</strong>
-                                <span t-field="o.partner_id"/><br/>
-                                <strong>RNC: </strong>
-                                <span t-if="o.partner_id.vat" t-field="o.partner_id.vat"/><br />
-                                <t t-if="o.partner_id.phone">
-                                    <strong>Tel:</strong>
-                                    <strong t-field="o.partner_id.phone"/>
-                                </t>
-                                <br/>
-                                <span t-field="o.partner_id.street"/><br />
-                                <span t-field="o.partner_id.country_id"/>
-                            </div>
-                            
-                        </div>
-                        <t t-set="display_discount" t-value="any(l.discount for l in o.invoice_line_ids)"/>
-
                         <style>
-                            .table_custom{
-                                position: relative;
-                                text-align: right;
-                                justify-content: center;
-                                margin: auto;
-                                padding: auto;
-                                border-collapse: collapse;
+                            .container {
+                                display: flex; 
+                                flex-direction: row; 
+                                <!-- position: relative; -->
                             }
-                            
-                            .td_1 {
-                                border-bottom: solid 1px black;
-                                padding: 10px;
-                                width: 150px;
-                                text-align: center;
-                            }
-                            .h_1 {
-                                height: 45px;
-                                text-align: center;
-                                background-color: #68D2DF;
-                            }
-                            .h_2 {
-                                height: 45px;
-                                text-align: center;
+                            .line {
+                                position: absolute;
+                                top: 10px;
+                                left: 0;
+                                width: 12px;
                                 background-color: #165D7D;
+                                height: 100%;
+                                border-radius: 20px;
+                                flex-grow: 1; 
                             }
-                            .h_3 {
-                                position: static;
-                                width: 113px;
-                                text-align: center;
-                                background-image: url("data:image/svg+xml,%3Csvg version='1.1' id='Capa_1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' x='0px' y='0px' viewBox='0 0 403.1 139.5' style='enable-background:new 0 0 403.1 139.5%3B' xml:space='preserve'%3E%3Cstyle type='text/css'%3E.st0%7Bfill:#68D2DF%3B%7D.st1%7Bfill:%23175C7D%3B%7D%3C/style%3E%3Cg%3E%3Crect class='st0' width='42.7' height='139.5'/%3E%3Cpolygon class='st1' points='0 139.5 41.5 0 403.1 0 403.1 139.5 '/%3E%3C/g%3E%3C/svg%3E");
-                                <!-- background-image: url("data:image/svg+xml,%3Csvg version='1.1' id='Capa_1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' x='0px' y='0px' viewBox='0 0 395.1 139.5' style='enable-background:new 0 0 395.1 139.5%3B' xml:space='preserve'%3E%3Cstyle type='text/css'%3E.st0%7Bfill:#68D2DF%3B%7D.st1%7Bfill:%23175C7D%3B%7D%3C/style%3E%3Cg%3E%3Crect class='st0' width='41.9' height='139.5'/%3E%3Cpolygon class='st1' points='0 139.5 40.7 0 395.1 0 395.1 139.5 '/%3E%3C/g%3E%3C/svg%3E"); -->
-                                
+                            .table_custom {
+                                margin-left: 10px;
+                                width: 92.5%;
                             }
-                            .head {
-                                color: white;
+                            .line_1 {
+                                position: absolute;
+                                left: 0px;
+                                top: -40px;
+                                width: 12px;
+                                height: 200px;
+                                background: #165D7D;
+                                border-radius: 20px;
                             }
                         </style>
-                        <table class="table_custom">
-                            <thead class="head_custom">
-                                <tr class="head">
-                                    <th class="h_1">
-                                        <span>Producto</span>
-                                    </th>
-                                    <th class="h_3">
-                                        <span>Cantidad</span>
-                                    </th>
-                                    <th class="h_2">
-                                        <span>UDM</span>
-                                    </th>
-                                    <th class="h_2">
-                                        <span>Precio</span>
-                                    </th>
-                                    <th class="h_2">
-                                        <span>Impuesto</span>
-                                    </th> 
-                                    <th class="h_2">
-                                        <span>Importe</span>
-                                    </th>
-                                </tr>
-                            </thead>
-                            <tbody class="invoice_tbody">
-                                <tr t-foreach="o.invoice_line_ids.sorted(key='sequence')" t-as="line" class="tr_2">
-                                    <t t-foreach="line.product_id" t-as="r"/>
-                                    <t t-set="counter" t-value="1"/>
-                                    <td class="td_1">
-                                        <span t-field="line.product_id"/>
-                                    </td>
-                                    <td class="td_1">
-                                        <span t-field="line.quantity"/>
-                                    </td>
-                                    <td class="td_1">
-                                        <span t-if="r.uom_id" t-field="r.uom_id"/>
-                                    </td>
-                                    <td class="td_1">
-                                        <span t-field="line.price_unit"/>
-                                    </td>
-                                    <td class="td_1">
-                                        <span t-field="line.tax_ids"/>
-                                    </td>
-                                    <td class="td_1">
-                                        <span t-field="line.price_subtotal"/>
-                                    </td>
-                                </tr>
-                            </tbody>
-                        </table>
+                        <div class="container">
+                            <div class="line_1"></div>
+                            <div class="line"></div>
+                            <!-- <div class="linea_2"></div> -->
+
+                            <!-- <div class="line"></div> -->
+                            <div style="font-size: 35px; position: absolute; right: 34px; top: -40px; justify-content: right;">
+                                <strong>Factura de Crédito Fiscal</strong>
+                            </div>
+                            <div style=" position: absolute; right: 240px; top: 20px; text-align: left;">
+                                <strong>NCF:</strong>
+                                <br/>
+                                <strong>Válida hasta:</strong>
+                                <span t-if="o.invoice_payment_term_id" t-field="o.invoice_payment_term_id"/>
+                            </div>
+                            <div id="text-center custom_css" class="text-center custom_css">
+                                <div class="txt_name" t-if="o.name and o.invoice_date" name="Invoice no" style="position: absolute; text-align: left; right: 265px; top: 110px;">
+                                    <strong>Origen:</strong><br/>
+                                    <strong>Pedido -</strong>
+                                    <strong t-field="o.name"/>
+                                    <br/>
+                                </div>
+                            </div>
+
+                            <div class="col-auto mw-100 mb-2" style="position: relative; left: 10px; top: -10px; margin-bottom: -20px;">
+                                <t t-set="vat_len" t-value="len(o.partner_id.vat) if o.partner_id.vat else 0"/>
+                                <div style="position: relative; left: 20px;">
+                                    <span>Profesora Elisa Bodden #2,</span>
+                                    <br/>
+                                    <span>Urbanización Fernández Oriental</span>
+                                    <br/>
+                                    <span>Santo Domingo, 11114, RD</span>
+                                    <br/>
+                                    <span>Avenida Barcelo</span>
+                                    <br/>
+                                    <span>Plaza Cana Town, Nave #6</span>
+                                    <br/>
+                                    <span>Punta Cana, RD</span>
+                                    <br/>
+                                    <strong>RNC: 101881941</strong>
+                                    <br />
+                                    <strong>Fecha Emisión</strong>
+                                    <strong t-field="o.invoice_date"/>
+                                </div>
+                                <div style="position: relative; left: 20px; margin-bottom: 50px;">
+                                    <br />
+                                    <strong>Cliente:</strong>
+                                    <span t-field="o.partner_id"/><br/>
+                                    <strong>RNC: </strong>
+                                    <span t-if="o.partner_id.vat" t-field="o.partner_id.vat"/><br />
+                                    <t t-if="o.partner_id.phone">
+                                        <strong>Tel:</strong>
+                                        <strong t-field="o.partner_id.phone"/>
+                                    </t>
+                                    <br/>
+                                    <span t-field="o.partner_id.street"/><br />
+                                    <span t-field="o.partner_id.country_id"/>
+                                </div>
+                                
+                            </div>
+                            <t t-set="display_discount" t-value="any(l.discount for l in o.invoice_line_ids)"/>
+
+                            <style>
+                                .table_custom{
+                                    position: relative;
+                                    text-align: right;
+                                    justify-content: center;
+                                    margin: auto;
+                                    padding: auto;
+                                    border-collapse: collapse;
+                                }
+                                
+                                .td_1 {
+                                    border-bottom: solid 1px black;
+                                    padding: 10px;
+                                    width: 150px;
+                                    text-align: center;
+                                }
+                                .h_1 {
+                                    height: 45px;
+                                    text-align: center;
+                                    background-color: #68D2DF;
+                                }
+                                .h_2 {
+                                    height: 45px;
+                                    text-align: center;
+                                    background-color: #165D7D;
+                                }
+                                .h_3 {
+                                    position: static;
+                                    width: 113px;
+                                    text-align: center;
+                                    background-image: url("data:image/svg+xml,%3Csvg version='1.1' id='Capa_1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' x='0px' y='0px' viewBox='0 0 517.7 196.1' style='enable-background:new 0 0 517.7 196.1%3B' xml:space='preserve'%3E%3Cstyle type='text/css'%3E.st0%7Bfill:#68D2DF%3B%7D.st1%7Bfill:%23175C7D%3B%7D%3C/style%3E%3Cg%3E%3Crect class='st0' width='54.9' height='196.1'/%3E%3Cpolygon class='st1' points='0 196.1 53.3 0 517.7 0 517.7 196.1 '/%3E%3C/g%3E%3C/svg%3E");
+                                    
+                                }
+                                .head {
+                                    color: white;
+                                }
+                            </style>
+                            
+                            <table class="table_custom">
+                                <thead class="head_custom">
+                                    <tr class="head">
+                                        <th class="h_1">
+                                            <span>Producto</span>
+                                        </th>
+                                        <th class="h_3">
+                                            <span>Cantidad</span>
+                                        </th>
+                                        <th class="h_2">
+                                            <span>UDM</span>
+                                        </th>
+                                        <th class="h_2">
+                                            <span>Precio</span>
+                                        </th>
+                                        <th class="h_2">
+                                            <span>Impuesto</span>
+                                        </th> 
+                                        <th class="h_2">
+                                            <span>Importe</span>
+                                        </th>
+                                    </tr>
+                                </thead>
+                                <tbody class="invoice_tbody">
+                                    <tr t-foreach="o.invoice_line_ids.sorted(key='sequence')" t-as="line" class="tr_2">
+                                        <t t-foreach="line.product_id" t-as="r"/>
+                                        <t t-set="counter" t-value="1"/>
+                                        <td class="td_1">
+                                            <span t-field="line.product_id"/>
+                                        </td>
+                                        <td class="td_1">
+                                            <span t-field="line.quantity"/>
+                                        </td>
+                                        <td class="td_1">
+                                            <span t-if="r.uom_id" t-field="r.uom_id"/>
+                                        </td>
+                                        <td class="td_1">
+                                            <span t-field="line.price_unit"/>
+                                        </td>
+                                        <td class="td_1">
+                                            <span t-field="line.tax_ids"/>
+                                        </td>
+                                        <td class="td_1">
+                                            <span t-field="line.price_subtotal"/>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
                         <div class="clearfix" style="margin-top: 20px;">
                             <div id="total" class="row">
                                 <div t-attf-class="#{'col-6' if report_type != 'html' else 'col-sm-7 col-md-6'} ml-auto">
-                                    <!-- <svg viewBox="0 0 386.8 132.9" style="position: absolute; width:130px; height: 80px; right: 120px; bottom: -126.5px;">
-                                        <g>
-                                            <polygon fill="#68D2DF" points="306.2,132.9 0,132.9 0,0 378.7,0  "/>
-                                            <polygon fill="#175C7D" points="386.8,132.9 314.4,132.9 386.8,0  "/>
-                                        </g>
-                                    </svg> -->
                                     <style>
                                         .table_tax{
                                             position: absolute;
                                             margin: 0px;
                                             padding: auto;
                                             border-collapse: collapse;
-                                            right: 0px;
+                                            right: 32px;
                                             justify-content: right;
                                             text-align: center;
                                             margin-top: 20px;
@@ -424,7 +434,20 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="total" style="position: absolute; bottom: -150px; left: 10px; margin-top: 50px;">
+                        <style>
+                        .linea_2 {
+                                position: absolute;
+                                left: -30px;
+                                top: -55px;
+                                width: 12px;
+                                height: 150px;
+                                background: #68D2DF;
+                                border-radius: 20px;
+                                
+                            }
+                        </style>
+                        <div class="total" style="position: absolute; bottom: -125px; left: 30px; margin-top: 50px;">
+                            <div class="linea_2"></div>
                             <span>Por favor utilice la siguiente referencia al realizar su pago:  </span>
                             <strong t-field="o.name"/>
                         </div>
@@ -437,7 +460,7 @@
                         <style>
                             .linea_3 {
                                 position: absolute;
-                                left: 0px;
+                                left: 25px;
                                 width: 12px;
                                 height: 35px;
                                 background: #92C83E;
@@ -447,7 +470,7 @@
                             }
                             .linea_4 {
                                 position: absolute;
-                                left: 0px;
+                                left: 25px;
                                 width: 12px;
                                 height: 25px;
                                 background: #92C83E;
@@ -456,7 +479,7 @@
                             }
                             .linea_5 {
                                 position: absolute;
-                                left: 0px;
+                                left: 25px;
                                 width: 12px;
                                 height: 18px;
                                 background: #92C83E;
@@ -470,13 +493,10 @@
                         <div class="linea_5"></div>
                         <div style="bottom: 5px;">
                             <div>
-                                <strong style="position: absolute; bottom: -35px; left: 30px;">Términos y condiciones:</strong>
+                                <strong style="position: absolute; bottom: -35px; left: 50px;">Términos y condiciones:</strong>
                                 
-                                <span t-if="o.narration" t-field="o.narration" style="position: absolute; bottom: -80px; left: 30px;" />
+                                <span t-if="o.narration" t-field="o.narration" style="position: absolute; bottom: -80px; left: 50px;" />
                             </div>
-                            <!-- <div>
-                            <span t-if="o.narration" t-field="o.narration" style="position: absolute; bottom: -70px; left: 30px;" />
-                            </div> -->
                         </div>
                     </div>
                 </t>

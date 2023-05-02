@@ -8,7 +8,7 @@ class SaleOrder(models.Model):
     start_date = fields.Date(string='Fecha de inicio', default=lambda self: datetime.now() - timedelta(days=30))
 
     @api.onchange('partner_id', 'start_date')
-    def _onchange_partner_id(self):
+    def _onchange_partner_id_show_products_sold(self):
       if self.partner_id and self.start_date:
         partner_id = self.partner_id
         domain = [
@@ -17,6 +17,7 @@ class SaleOrder(models.Model):
           ('invoice_date', '<=', fields.Date.today())
         ]
         invoices = self.env['account.move'].search(domain)
+        self.products_sold = False
         invoice_order_lines = []
         for invoice in invoices:
           order_line = self.env['sale.order.line'].search([('order_id', '=', invoice.invoice_origin)])

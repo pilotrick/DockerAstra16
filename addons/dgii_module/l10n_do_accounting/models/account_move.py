@@ -436,6 +436,7 @@ class AccountMove(models.Model):
 
     def _reverse_moves(self, default_values_list=None, cancel=False):
         ctx = self.env.context
+        price_unit = 0
         amount = ctx.get("amount")
         percentage = ctx.get("percentage")
         refund_type = ctx.get("refund_type")
