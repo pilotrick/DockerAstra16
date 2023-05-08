@@ -16,9 +16,11 @@ class SaleOrder(models.Model):
           ('invoice_date', '>=', self.start_date),
           ('invoice_date', '<=', fields.Date.today())
         ]
+
         invoices = self.env['account.move'].search(domain)
         self.products_sold = False
         invoice_order_lines = []
+        
         for invoice in invoices:
           order_line = self.env['sale.order.line'].search([('order_id', '=', invoice.invoice_origin)])
           invoice_order_lines.append(order_line)
@@ -34,6 +36,13 @@ class SaleOrder(models.Model):
           products.append((0, 0, product))
 
         self.products_sold = products
+        module_name = 'sale_order_customer_invoice'
+        Module = self.env['ir.module.module']
+        is_customer_invoice_installed = Module.search([('name', '=', module_name)])
+        if is_customer_invoice_installed:
+           self._onchange_partner_id_show_customer_invoice()
+           
+
 
 class SaleOrderProductsSold(models.Model):
     _name = 'sale.order.products.sold'

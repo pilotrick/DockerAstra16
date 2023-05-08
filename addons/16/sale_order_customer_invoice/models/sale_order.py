@@ -12,7 +12,7 @@ class SaleOrder(models.Model):
         partner_id = self.partner_id
         domain = [
           ('partner_id', '=', partner_id.id),
-          ('payment_state', 'not in', ['paid']),
+          ('payment_state', 'not in', ['paid', 'in_payment']),
           ('state', 'in', ['posted']),
           ('move_type', 'in', ['out_invoice', 'out_refund'])
         ]
