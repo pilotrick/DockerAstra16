@@ -13,6 +13,7 @@ class SaleOrder(models.Model):
         domain = [
           ('partner_id', '=', partner_id.id),
           ('payment_state', 'not in', ['paid', 'in_payment']),
+          ('balance_due_amount', '!=', 0),
           ('state', 'in', ['posted']),
           ('move_type', 'in', ['out_invoice', 'out_refund'])
         ]
