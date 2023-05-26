@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
 
-    <template id="template_id_without_payment_inherit" inherit_id="account.report_invoice">
+    <template id="template_id_inherit" inherit_id="account.report_invoice_with_payments">
         <xpath expr='//t[@t-call="web.html_container"]' position="replace">
         <!-- <attribute name="paperformat">pack_paper_format_receipt</attribute> -->
             <t t-call="web.html_container">

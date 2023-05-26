@@ -1,7 +1,7 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version='1.0' encoding='utf-8'?>
 <odoo>
-    <template id="report_purchase_quotation_inherit" inherit_id="purchase.report_purchasequotation">
-        <xpath expr='//t[@t-call="web.html_container"]' position="replace">
+    <template id="template_id_inherit_stock_picking_invoice" inherit_id="stock.report_deliveryslip">
+        <xpath expr='//t[@t-name="stock.report_deliveryslip"]' position="replace">
             <t t-call="web.html_container">
                 <t t-foreach="docs" t-as="o">
                     <t t-call="web.basic_layout">
@@ -22,9 +22,9 @@
                             }
                         </style>
                         <t t-set="page_count" t-value="1" />
-                        <div class="header">
+                        <div class="header" style="position: relative; top: 20px; margin: 0px; right: 20px;">
                             <!-- Logo -->
-                            <svg viewBox="0 0 792 612" style="position: absolute; width: 550px; height: 270px; left: -70px; top: -40px;">
+                            <svg viewBox="0 0 792 612" style="position: absolute; width: 550px; height: 270px; left: -85px; top: -40px;">
                                 <style type="text/css">
                                     .st0{fill:#165C7D;}
                                     .st1{fill:#92C83E;}
@@ -134,7 +134,7 @@
                             </svg>
                             <table>
                                 <!-- Iconos -->
-                                <svg viewBox="0 0 792 612" style="position: absolute; top: -70PX; right: -90PX; width: 250px; height: 320px;">
+                                <svg viewBox="0 0 792 612" style="position: absolute; top: -70PX; right: -109PX; width: 250px; height: 320px;">
                                     <style type="text/css">
                                         .st5{fill-rule:evenodd;clip-rule:evenodd;fill:#165C7D;}
                                         .st6{fill-rule:evenodd;clip-rule:evenodd;fill:#68D2DF;}
@@ -204,7 +204,7 @@
                                 
                                 <tr>
                                     <!-- telefono -->
-                                    <td style="position: absolute; top: 22px; right: 65px; font-size: 14px;">
+                                    <td style="position: absolute; top: 22px; right: 60px; font-size: 14px;">
                                         <span>+1 809 748 2200</span>
                                         <br/>
                                         <span>+1 809 390 3133</span>
@@ -213,7 +213,7 @@
                                 <br/>
                                 <tr>
                                     <!-- Website, email -->
-                                    <td style="position: absolute; top: 72px; right: 65px; font-size: 14px;">
+                                    <td style="position: absolute; top: 72px; right: 60px; font-size: 14px;">
                                         <span>info@ippdr.com</span>
                                         <br/>
                                         <span>https://ippdr.com</span>
@@ -221,7 +221,7 @@
                                 </tr>
                                 <tr>
                                     <!-- Ubicacion -->
-                                    <td style="position: absolute; top: 122px; right: 65px; text-align: right; font-size: 12px;">
+                                    <td style="position: absolute; top: 122px; right: 60px; text-align: right; font-size: 12px;">
                                         <span>Profesora Elisa Bodden #2,</span>
                                         <br/>
                                         <span>Urbanización Fernández Oriental</span>
@@ -230,18 +230,17 @@
                                     </td>
                                 </tr>
                             </table>
-
                         </div>
-                        <div class="page" style="position: absolute; margin-right: 5px; margin-left: 15px; top: 0px;">
+                        <div class="page">
                             <style>
-                                .container {
+                                #container {
                                     display: flex; 
                                     flex-direction: row; 
-                                    <!-- position: relative; -->
+                                    position: relative;
                                 }
-                                .line {
+                                #line {
                                     position: absolute;
-                                    top: 25px;
+                                    top: 50px;
                                     left: 0;
                                     width: 12px;
                                     background-color: #165D7D;
@@ -249,83 +248,56 @@
                                     border-radius: 20px;
                                     flex-grow: 1; 
                                 }
-                                <!-- .line_1 {
-                                    position: absolute;
-                                    left: 0px;
-                                    top: -50px;
-                                    width: 12px;
-                                    height: 200px;
-                                    background: #165D7D;
-                                    border-radius: 20px;
-                                } -->
                             </style>
-                            <div class="container">
-                                <!-- <div class="line_1"></div> -->
-                                <div class="line"></div>
-
-                                <div style="font-size: 35px; position: relative; top: 30px; justify-content: left; text-align: left; left: 20px;">
+                            <div id="container">
+                                <!-- <div id="line_1"></div> -->
+                                <div id="line"></div>
+                                <div style="font-size: 35px; position: absolute; right: 7px; top: 70px; justify-content: right;">
                                     <strong t-field="o.name"/>
                                 </div>
-                                <div class="custom_css" style="position: relative; text-align: right; right: -8px; top: 30px;">
-                                    <div class="txt_name float-end" t-if="o.name" name="Invoice no">
-                                        <span>Pedido no:</span>
-                                        <br/>
-                                        <strong t-field="o.name"/>
-                                        <br/>
-                                        <span>Vendedor/a:</span>
-                                        <br/>
-                                        <strong t-field="o.user_id"/>
-                                        <br/>
-                                        <span>Fecha Limite de la orden:</span><br/>
-                                        <span t-field="o.date_planned"/>
-                                    </div>
-                                </div>
 
-                                <div class="col-auto mw-100 mb-2" style="position: relative; margin: 30px; margin-left: 20px;">
+                                <style>
+                                    #info {
+                                        position: relative; 
+                                        left: 32px;
+                                        top: 10px;
+                                    }
+                                </style>
+
+                                <div id="info">
                                     <t t-set="vat_len" t-value="len(o.partner_id.vat) if o.partner_id.vat else 0"/>
                                     
-                                    <span>Para:</span>
-                                    <t t-if="o.partner_id">
-                                        <strong class="m-0" t-field="o.partner_id.name" style="font-size: 20px;"/>
+                                    <div style="position: relative; left: 0px; margin-bottom: 50px; top: 50px;">
                                         <br />
+                                        <strong>Cliente:</strong>
+                                        <span t-field="o.partner_id"/><br/>
                                         <strong>RNC: </strong>
                                         <span t-if="o.partner_id.vat" t-field="o.partner_id.vat"/><br />
+                                        <t t-if="o.partner_id.phone">
+                                            <strong>Tel:</strong>
+                                            <strong t-field="o.partner_id.phone"/>
+                                        </t>
+                                        <br/>
                                         <span t-field="o.partner_id.street"/><br />
                                         <span t-field="o.partner_id.country_id"/>
-                                        <br />
-                                        <span t-field="o.partner_id.email"/>
-                                        <strong>|</strong>
-                                        <span t-field="o.partner_id.website" />
-                                        <br />
-                                        <t t-if="o.partner_id.phone">
-                                            <strong>Tel.:</strong>
-                                            <span t-field="o.partner_id.phone"/>
-                                            <t t-if="o.partner_id.phone">
-                                                <span>/</span>
-                                            </t>
-                                        </t>
-                                        <t t-if="o.partner_id.mobile">
-                                            <strong>Cel.:</strong>
-                                            <span t-field="o.partner_id.mobile" widget="phone"/>
-                                        </t>
-                                    </t>
+                                    </div>
+                                    
                                 </div>
-                                <!-- <t t-set="display_discount" t-value="any(l.discount for l in o.invoice_line_ids)"/> -->
-
                                 <style>
                                     #table_custom{
                                         position: relative;
                                         left: 15px;
-                                        width: 100%;
+                                        width: 96%;
                                         text-align: right;
                                         justify-content: center;
-                                        <!-- margin-top: 30px; -->
+                                        margin: auto;
                                         padding: auto;
                                         border-collapse: collapse;
                                         border-color: transparent;
+                                        top: 15px;
                                         font-size: 12px;
                                     }
-                                    
+
                                     .td_1 {
                                         border-bottom: solid 4px black;
                                         padding: 10px;
@@ -333,6 +305,7 @@
                                         text-align: center;
                                         line-height: 0.8;
                                     }
+
                                     .h_1 {
                                         height: 20px;
                                         text-align: center;
@@ -356,216 +329,85 @@
                                     <thead class="head_custom">
                                         <tr class="head">
                                             <th class="h_1">
-                                                <span>Imagen</span>
-                                            </th>
-                                            <th class="h_1">
                                                 <span>Producto</span>
                                             </th>
-                                            <th class="h_1">
-                                                <span>Impuesto</span>
+                                            <th class="h_2">
+                                                <span>Ordenado</span>
                                             </th>
                                             <th class="h_2">
-                                                <span>Cantidad</span>
-                                            </th>
-                                            <th class="h_2">
-                                                <span>Unidad de Medida</span>
-                                            </th> 
-                                            <th class="h_2">
-                                                <span>Precio Unitario</span>
-                                            </th>
-                                            <th class="h_2">
-                                                <span>Importe</span>
+                                                <span>Entregado</span>
                                             </th>
                                         </tr>
                                     </thead>
                                     <tbody class="invoice_tbody">
-                                        <tr t-foreach="docs.order_line" t-as="line" class="tr_2">
-                                            <t t-foreach="line.product_id" t-as="r"/>
-                                            <t t-set="counter" t-value="1"/>
-                                            <td class="td_1">
-                                                <img t-if="r.image_1920" t-att-src="'data:image/png;base64,' + r.image_1920.decode('utf-8')" style="max-height: 60px; max-width: 60px;" />
-                                            </td>
+                                        <tr t-foreach="docs.move_ids_without_package" t-as="line" class="tr_2">
+                                            
                                             <td class="td_1">
                                                 <span t-field="line.product_id"/>
                                             </td>
                                             <td class="td_1">
-                                                <span t-field="line.taxes_id"/>                                   
+                                                <span t-field="line.product_uom_qty"/>                                  
+                                                <span t-field="line.product_uom"/>                                  
                                             </td>
                                             <td class="td_1">
-                                                <span t-field="line.product_qty"/>
-                                            </td>
-                                            <td class="td_1">
-                                                <span t-field="r.uom_id"/>
-                                            </td>
-                                            <td class="td_1">
-                                                <span t-field="line.price_unit"/>
-                                            </td>
-                                            <td class="td_1">
-                                                <span t-field="line.price_subtotal"/>
+                                                <span t-field="line.product_uom"/>
                                             </td>
                                         </tr>
                                     </tbody>
                                 </table>
                             </div>
-                            
-                            <div class="clearfix" style="margin-top: 20px;">
-                                <div id="total" class="row">
-                                    <div t-attf-class="#{'col-6' if report_type != 'html' else 'col-sm-7 col-md-6'} ml-auto">
-                                        <style>
-                                            .table_tax{
-                                                position: absolute;
-                                                margin: 0px;
-                                                padding: auto;
-                                                right: 0px;
-                                                justify-content: right;
-                                                text-align: center;
-                                                margin-top: 40px;
-                                                width: 40%;
-                                                border-color: transparent;
-                                                border-collapse: collapse;
-                                            }
-                                            .total-text-container{
-                                                padding: 9px;
-                                                text-align: center;
-                                                color: white;
-                                                background-color: #68D2DF;
-                                                font-size: 18px;
-                                            }
-                                            .amount-total-container{
-                                                padding: 6px;
-                                                text-align: center;
-                                                right: 5px;
-                                                color: white;
-                                                background-color: #175C7D;
-                                                font-size: 18px;
-                                            }
-                                            .border {
-                                                border: hidden;
-                                                border-bottom: 2px solid black;
-                                            }
-                                        </style>
-                                        <div class="total" style="position: absolute; bottom: -185px; left: 30px;">
-                                            <span style="font-size: 20px;">Total Adeudado:</span><br/>
-                                            <span t-field="o.amount_total" style="font-size: 50px;"/>
-                                        </div>
-                                        <div class="linea_2"></div>
-                                        <table class="table_tax" style="page-break-inside: avoid;">
-                                            <tr style="border-bottom: solid 1px black;">
-                                                <th style="padding: 10px;">
-                                                    <span>Base imponible</span>
-                                                </th>
-                                                <td>
-                                                    <span t-field="o.amount_untaxed"/>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <th style="padding: 10px;">
-                                                    <span>ITBIS</span>
-                                                </th>
-                                                <td>
-                                                    <span t-field="o.amount_tax"/>
-                                                </td>
-                                            </tr>
-                                            <tr class="tr_total">
-                                                <th class="total-text-container">
-                                                    <span>Total</span>
-                                                </th>
-                                                <td class="amount-total-container">
-                                                    <span t-field="o.amount_total"/>
-                                                </td>
-                                            </tr>
-                                        </table>
+                            <style>
+                                #footer {
+                                    position: absolute;
+                                    left: 15px;
+                                    margin-top: 20px;
+                                    <!-- bottom: -450px; -->
+                                    width: 100%;
+                                    font-size: 18px;
+                                }
+                                .linea_3 {
+                                    position: absolute;
+                                    left: 0px;
+                                    width: 12px;
+                                    height: 35px;
+                                    background: #92C83E;
+                                    margin-top: 10px;
+                                    border-radius: 50px;
+                                }
+                                .linea_4 {
+                                    position: absolute;
+                                    left:0px;
+                                    width: 12px;
+                                    height: 25px;
+                                    background: #92C83E;
+                                    border-radius: 50px;
+                                    margin-top: 50px;
+                                }
+                                .linea_5 {
+                                    position: absolute;
+                                    left: 0px;
+                                    width: 12px;
+                                    height: 18px;
+                                    background: #92C83E;
+                                    border-radius: 50px;
+                                    margin-top: 80px;
+
+                                }
+                            </style>
+                            <div id="footer">
+                                <div class="foat-xxl-start">
+                                    <div style="text-align: center; font-size: 25px; margin-top: 0px;">
+                                        <span>GRACIAS POR PREFERIRNOS</span>
+                                    </div>
+                                    
+                                    <div class="linea_3"></div>
+                                    <div class="linea_4"></div>
+                                    <div class="linea_5"></div>
+                                    <div style="margin-left: 30px; margin-top: 9px;">
+                                        <strong style="display: block;">Términos y condiciones:</strong>
+                                        <a style="display: block; margin-top: 9px;" href="https://ippdr.com/terms">https://ippdr.com/terms</a>
                                     </div>
                                 </div>
-                            
-                                <style>
-                                    .linea_2 {
-                                        position: absolute;
-                                        left: 0px;
-                                        top: 110%;
-                                        width: 12px;
-                                        height: 150px;
-                                        background: #68D2DF;
-                                        border-radius: 20px;
-                                        
-                                    }
-                                </style>
-                                <style>
-                                    #footer {
-                                        position: absolute;
-                                        left: 0;
-                                        bottom: -300px;
-                                        width: 100%;
-                                        font-size: 18px;
-                                    }
-                                    .linea_3 {
-                                        position: absolute;
-                                        left: 0px;
-                                        width: 12px;
-                                        height: 35px;
-                                        background: #92C83E;
-                                        top: 10px;
-                                        border-radius: 50px;
-                                    }
-                                    .linea_4 {
-                                        position: absolute;
-                                        left:0px;
-                                        width: 12px;
-                                        height: 25px;
-                                        background: #92C83E;
-                                        border-radius: 50px;
-                                        top: 50px;
-                                    }
-                                    .linea_5 {
-                                        position: absolute;
-                                        left: 0px;
-                                        width: 12px;
-                                        height: 18px;
-                                        background: #92C83E;
-                                        border-radius: 50px;
-                                        top: 80px;
-
-                                    }
-                                </style>
-                                <div id="footer">
-                                    <div class="foat-xxl-start">
-                                        <div style="text-align: center; font-size: 25px; margin-top: -20px;">
-                                            <span>GRACIAS POR PREFERIRNOS</span>
-                                        </div>
-                                        
-                                        <div class="linea_3"></div>
-                                        <div class="linea_4"></div>
-                                        <div class="linea_5"></div>
-                                        <div style="margin-left: 30px; margin-top: 9px;">
-                                            <strong style="display: block;">Términos y condiciones:</strong>
-                                            <a style="display: block; margin-top: 9px;" href="https://ippdr.com/terms">https://ippdr.com/terms</a>
-                                        </div>
-                                    </div>
-                                    <style>
-                                        .linea{
-                                            position: absolute;
-                                            display: block;
-                                            border-top: 2px solid black;
-                                            margin: 5px 0;
-                                            width: 280px;
-                                            right: 1px;
-                                            bottom: -20px;
-                                        }
-                                        .firma {
-                                            position: absolute;
-                                            display: block;
-                                            text-align: right;
-                                            font-weight: bold;
-                                            right: 106px;
-                                            bottom: -40px;
-                                        }
-                                        
-                                    </style>
-                                    <div clas="asignature">
-                                        <span class="linea"/>
-                                        <span class="firma">Firma</span>
-                                    </div>
-                                    </div>
                             </div>
                         </div>
                     </t>

@@ -6,10 +6,26 @@
             <t t-call="web.html_container">
                 <t t-foreach="docs" t-as="o">
                 <t t-call="web.basic_layout">
+                    <style>
+                        .header {
+                            position: absolute;
+                            top: 0px;
+                            margin: 0px;
+                            right: 0px;
+                            page-break-before: unset !important;
+                            page-break-after: avoid !important;
+                        }
 
+                        @media print {
+                            .header:first-child {
+                                page-break-after: always !important;
+                            }
+                        }
+                    </style>
+                    <t t-set="page_count" t-value="1" />
                     <div class="header" style="position: relative; top: 20px; margin: 0px; right: 0px;">
                         <!-- Logo -->
-                        <svg viewBox="0 0 792 612" style="position: absolute; width: 550px; height: 270px; left: -96px; top: -40px;">
+                        <svg viewBox="0 0 792 612" style="position: absolute; width: 550px; height: 270px; left: -85px; top: -40px;">
                             <style type="text/css">
                                 .st0{fill:#165C7D;}
                                 .st1{fill:#92C83E;}
@@ -119,7 +135,7 @@
                         </svg>
                         <table>
                             <!-- Iconos -->
-                            <svg viewBox="0 0 792 612" style="position: absolute; top: -70PX; right: -60PX; width: 250px; height: 320px;">
+                            <svg viewBox="0 0 792 612" style="position: absolute; top: -70PX; right: -102PX; width: 250px; height: 320px;">
                                 <style type="text/css">
                                     .st5{fill-rule:evenodd;clip-rule:evenodd;fill:#165C7D;}
                                     .st6{fill-rule:evenodd;clip-rule:evenodd;fill:#68D2DF;}
@@ -189,7 +205,7 @@
                             
                             <tr>
                                 <!-- telefono -->
-                                <td style="position: absolute; top: 22px; right: 95px; font-size: 14px;">
+                                <td style="position: absolute; top: 22px; right: 65px; font-size: 14px;">
                                     <span>+1 809 748 2200</span>
                                     <br/>
                                     <span>+1 809 390 3133</span>
@@ -198,7 +214,7 @@
                             <br/>
                             <tr>
                                 <!-- Website, email -->
-                                <td style="position: absolute; top: 72px; right: 95px; font-size: 14px;">
+                                <td style="position: absolute; top: 72px; right: 65px; font-size: 14px;">
                                     <span>info@ippdr.com</span>
                                     <br/>
                                     <span>https://ippdr.com</span>
@@ -206,7 +222,7 @@
                             </tr>
                             <tr>
                                 <!-- Ubicacion -->
-                                <td style="position: absolute; top: 122px; right: 95px; text-align: right; font-size: 12px;">
+                                <td style="position: absolute; top: 122px; right: 65px; text-align: right; font-size: 12px;">
                                     <span>Profesora Elisa Bodden #2,</span>
                                     <br/>
                                     <span>Urbanización Fernández Oriental</span>
@@ -230,13 +246,9 @@
                                 left: 0;
                                 width: 12px;
                                 background-color: #165D7D;
-                                height: 82%;
+                                height: 100%;
                                 border-radius: 20px;
                                 flex-grow: 1; 
-                            }
-                            .table_custom {
-                                margin-left: 10px;
-                                width: 92.5%;
                             }
                             <!-- .line_1 {
                                 position: absolute;
@@ -252,11 +264,10 @@
                             <!-- <div class="line_1"></div> -->
                             <div class="line"></div>
 
-                            <div style="font-size: 35px; position: absolute; top: 30px; justify-content: left; text-align: left; left: 36px;">
-                                <strong>Orden de Compra - </strong>
-                                <span t-field="o.name"/>
+                            <div style="font-size: 35px; position: relative; top: 30px; justify-content: left; text-align: left; left: 16px;">
+                                <strong><span t-field="o.name"/></strong>
                             </div>
-                            <div id="text-center custom_css" class="text-center custom_css" style="position: relative; text-align: right; right: 38px; top: 30px;">
+                            <div id="custom_css" class=" custom_css" style="position: relative; text-align: right; right: -14px; top: 30px;">
                                 <div class="txt_name" t-if="o.name" name="Invoice no">
                                     <span>Pedido no:</span>
                                     <br/>
@@ -268,13 +279,10 @@
                                     <br/>
                                     <span>Fecha Limite de la orden:</span><br/>
                                     <span t-field="o.date_planned"/>
-                                    <br/>
-                                    <span>Cliente:</span>
-                                    <span t-field="o.partner_id"/>
                                 </div>
                             </div>
 
-                            <div class="col-auto mw-100 mb-2" style="position: relative; top: -60px; margin-bottom: -40px; left: 38px;">
+                            <div class="col-auto mw-100 mb-2" style="position: relative; top: -90px; margin-left: 20px;">
                                 <t t-set="vat_len" t-value="len(o.partner_id.vat) if o.partner_id.vat else 0"/>
                                 
                                 <span>Para:</span>
@@ -306,42 +314,48 @@
                             <!-- <t t-set="display_discount" t-value="any(l.discount for l in o.invoice_line_ids)"/> -->
 
                             <style>
-                                .table_custom{
+                                #table_custom{
                                     position: relative;
+                                    margin-left: 15px;
+                                    width: 100%;
                                     text-align: right;
                                     justify-content: center;
-                                    margin: auto;
+                                    margin-top: -70px;
                                     padding: auto;
                                     border-collapse: collapse;
+                                    border-color: transparent;
+                                    font-size: 12px;
+                                    
                                 }
                                 
                                 .td_1 {
-                                    border-bottom: solid 1px black;
+                                    border-bottom: solid 4px black;
                                     padding: 10px;
                                     width: 150px;
                                     text-align: center;
+                                    line-height: 0.8;
                                 }
                                 .h_1 {
-                                    height: 47px;
+                                    height: 20px;
                                     text-align: center;
                                     background-color: #68D2DF;
+                                    vertical-align: middle;
+                                    border: hidden;
                                 }
                                 .h_2 {
-                                    height: 47px;
+                                    height: 20px;
                                     text-align: center;
                                     background-color: #165D7D;
+                                    vertical-align: middle;
+                                    border: hidden;
                                 }
-                                .h_3 {
-                                    width: 110px;
-                                    text-align: center;
-                                    background-image: url("data:image/svg+xml,%3Csvg version='1.1' id='Capa_1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' x='0px' y='0px' viewBox='0 0 517.7 250.1' style='enable-background:new 0 0 517.7 250.1%3B' xml:space='preserve'%3E%3Cstyle type='text/css'%3E.st0%7Bfill:#68D2DF%3B%7D.st1%7Bfill:%23175C7D%3B%7D%3C/style%3E%3Cg%3E%3Crect class='st0' width='54.9' height='250.1'/%3E%3Cpolygon class='st1' points='0 250.1 53.3 0 517.7 0 517.7 250.1 '/%3E%3C/g%3E%3C/svg%3E");
-                                    <!-- background-image: url("data:image/svg+xml,%3Csvg version='1.1' id='Capa_1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' x='0px' y='0px' viewBox='0 0 395.1 178.1' style='enable-background:new 0 0 395.1 178.1%3B' xml:space='preserve'%3E%3Cstyle type='text/css'%3E.st0%7Bfill:%2372C7D7%3B%7D.st1%7Bfill:%23175C7D%3B%7D%3C/style%3E%3Cg%3E%3Crect class='st0' width='41.9' height='178.1'/%3E%3Cpolygon class='st1' points='0 178.1 40.7 0 395.1 0 395.1 178.1 '/%3E%3C/g%3E%3C/svg%3E"); -->
-                                }
+                                
                                 .head {
                                     color: white;
+                                    border: hidden;
                                 }
                             </style>
-                            <table class="table_custom">
+                            <table id="table_custom" class="table">
                                 <thead class="head_custom">
                                     <tr class="head">
                                         <th class="h_1">
@@ -353,7 +367,7 @@
                                         <th class="h_1">
                                             <span>Impuesto</span>
                                         </th>
-                                        <th class="h_3">
+                                        <th class="h_2">
                                             <span>Cantidad</span>
                                         </th>
                                         <th class="h_2">
@@ -404,36 +418,40 @@
                                             position: absolute;
                                             margin: 0px;
                                             padding: auto;
-                                            border-collapse: collapse;
-                                            right:32px;
+                                            border: hidden;
+                                            right: 0px;
                                             justify-content: right;
                                             text-align: center;
-                                            margin-top: 20px;
+                                            margin-top: 40px;
                                             width: 40%;
+                                            border-color: transparent;
+                                            border-collapse: collapse;
                                         }
-                                        .tax_th{
+                                        .total-text-container{
                                             padding: 9px;
                                             text-align: center;
                                             color: white;
-                                            background-image: url("data:image/svg+xml,%3Csvg version='1.1' id='Capa_1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' x='0px' y='0px' viewBox='0 0 486.9 93' style='enable-background:new 0 0 486.9 93%3B' xml:space='preserve'%3E%3Cstyle type='text/css'%3E.st0%7Bfill:%2368D2DF%3B%7D.st1%7Bfill:%23175C7D%3B%7D.st2%7Bfill:%23FFFFFF%3B%7D%3C/style%3E%3Cg%3E%3Cg%3E%3Cpolygon class='st0' points='385.2 92.1 0 92.1 0 0 476.5 0 '/%3E%3Cpolygon class='st1' points='486.9 92.1 395.5 92.1 486.9 0 486.9 0 '/%3E%3C/g%3E%3Cpolygon class='st2' points='476.5 0 486.9 0 394.6 93 384.4 93 '/%3E%3C/g%3E%3C/svg%3E");
-                                            <!-- background-image: url("data:image/svg+xml,%3Csvg version='1.1' id='Capa_1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' x='0px' y='0px' viewBox='0 0 476.1 93' style='enable-background:new 0 0 476.1 93%3B' xml:space='preserve'%3E%3Cstyle type='text/css'%3E.st0%7Bfill:%2368D2DF%3B%7D.st1%7Bfill:%23175C7D%3B%7D.st2%7Bfill:%23FFFFFF%3B%7D%3C/style%3E%3Cg%3E%3Cg%3E%3Cpolygon class='st0' points='376.7 92.1 0 92.1 0 0 466 0 '/%3E%3Cpolygon class='st1' points='476.1 92.1 386.7 92.1 476.1 0 476.1 0 '/%3E%3C/g%3E%3Cpolygon class='st2' points='466 0 476.1 0 385.9 93 375.9 93 '/%3E%3C/g%3E%3C/svg%3E"); -->
+                                            background-color: #68D2DF;
+                                            font-size: 18px;
                                         }
-                                        .td_total{
+                                        .amount-total-container{
+                                            padding: 6px;
+                                            text-align: center;
                                             right: 5px;
                                             color: white;
                                             background-color: #175C7D;
+                                            font-size: 18px;
+                                        }
+                                        .border {
+                                            border: hidden;
+                                            border-bottom: 2px solid black;
                                         }
                                     </style>
-                                    <div>
-                                        <svg viewBox="0 0 151.1 78.9" style="position: absolute; bottom: -21px; right: 100px; width: 96px; height: 35px;" xml:space="preserve">
-
-                                            <style type="text/css">
-                                                .st0{fill:#175C7D;}
-                                            </style>
-                                            <polygon class="st0" points="499.6,253.5 521.9,174.6 715.3,174.6 715.3,253.5 "/>
-                                            <rect y="0" class="st0" width="151.1" height="78.9"/>
-                                        </svg>
+                                    <div class="total" style="position: absolute; bottom: -185px; left: 30px;">
+                                        <span style="font-size: 20px;">Total Adeudado:</span><br/>
+                                        <span t-field="o.amount_total" style="font-size: 50px;"/>
                                     </div>
+                                    <div class="linea_2"></div>
                                     <table class="table_tax" style="page-break-inside: avoid;">
                                         <tr style="border-bottom: solid 1px black;">
                                             <th style="padding: 10px;">
@@ -452,10 +470,10 @@
                                             </td>
                                         </tr>
                                         <tr class="tr_total">
-                                            <th class="tax_th">
+                                            <th class="total-text-container">
                                                 <span>Total</span>
                                             </th>
-                                            <td class="td_total">
+                                            <td class="amount-total-container">
                                                 <span t-field="o.amount_total"/>
                                             </td>
                                         </tr>
@@ -466,8 +484,8 @@
                         <style>
                             .linea_2 {
                                 position: absolute;
-                                left: -32px;
-                                top: -45px;
+                                left: 0px;
+                                top: 110%;
                                 width: 12px;
                                 height: 150px;
                                 background: #68D2DF;
@@ -475,54 +493,56 @@
                                 
                             }
                         </style>
-                        <div class="total" style="position: relative; bottom: -60px; left: 32px;">
-                            <div class="linea_2"></div>
-                            <span style="font-size: 20px;">Total Adeudado:</span><br/>
-                            <span t-field="o.amount_total" style="font-size: 50px;"/>
-                            <div style="position: relative; text-align: center; font-size: 25px; bottom: -130px;">
-                                <span>GRACIAS POR PREFERIRNOS</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="footer">
                         <style>
+                            #footer {
+                                position: absolute;
+                                left: 0;
+                                bottom: -300px;
+                                width: 100%;
+                                font-size: 18px;
+                            }
                             .linea_3 {
                                 position: absolute;
-                                left: 23px;
+                                left: 0px;
                                 width: 12px;
                                 height: 35px;
                                 background: #92C83E;
-                                margin-top: 0px;
+                                top: 10px;
                                 border-radius: 50px;
                             }
                             .linea_4 {
                                 position: absolute;
-                                left: 23px;
+                                left:0px;
                                 width: 12px;
                                 height: 25px;
                                 background: #92C83E;
                                 border-radius: 50px;
-                                bottom: -65px;
+                                top: 50px;
                             }
                             .linea_5 {
                                 position: absolute;
-                                left: 23px;
+                                left: 0px;
                                 width: 12px;
                                 height: 18px;
                                 background: #92C83E;
                                 border-radius: 50px;
-                                bottom: -95px;
+                                top: 80px;
 
                             }
                         </style>
-                        <div class="linea_3"></div>
-                        <div class="linea_4"></div>
-                        <div class="linea_5"></div>
-                        <div>
+                        <div id="footer">
+                            <div class="foat-xxl-start">
+                                <div style="text-align: center; font-size: 25px; margin-top: -20px;">
+                                    <span>GRACIAS POR PREFERIRNOS</span>
+                                </div>
                                 
-                            <div>
-                                <strong style="position: absolute; bottom: -35px; left: 52px;">Términos y condiciones:</strong>
-                                <span t-if="o.notes" t-field="o.notes" style="position: absolute; bottom: -80px; left: 50px;" />
+                                <div class="linea_3"></div>
+                                <div class="linea_4"></div>
+                                <div class="linea_5"></div>
+                                <div style="margin-left: 30px; margin-top: 9px;">
+                                    <strong style="display: block;">Términos y condiciones:</strong>
+                                    <a style="display: block; margin-top: 9px;" href="https://ippdr.com/terms">https://ippdr.com/terms</a>
+                                </div>
                             </div>
                             <style>
                                 .linea{
@@ -531,16 +551,16 @@
                                     border-top: 2px solid black;
                                     margin: 5px 0;
                                     width: 280px;
-                                    right: 45px;
-                                    bottom: -70px;
+                                    right: 1px;
+                                    bottom: -20px;
                                 }
                                 .firma {
                                     position: absolute;
                                     display: block;
                                     text-align: right;
                                     font-weight: bold;
-                                    right: 150px;
-                                    bottom: -90px;
+                                    right: 106px;
+                                    bottom: -40px;
                                 }
                                 
                             </style>
@@ -549,7 +569,6 @@
                                 <span class="firma">Firma</span>
                             </div>
                         </div>
-                        
                     </div>
                 </t>
             </t>
