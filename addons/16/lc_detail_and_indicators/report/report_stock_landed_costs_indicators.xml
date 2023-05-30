@@ -1,18 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
 	<data>
-		<!-- <report id="stock_landed_costs_indicators_report_id" string="Imprimir Costes -  con indicadores" model="stock.landed.cost" report_type="qweb-pdf" print_report_name="('Landed Cost con indicadores - %s' % (object.name))" file="lc_detail_and_indicators.stock_landed_costs_indicators_report_template_id" name="lc_detail_and_indicators.stock_landed_costs_indicators_report_template_id" /> -->
-
-		<record id="stock_landed_costs_indicators_report_id" model="ir.actions.report">
-			<field name="name">Imprimir Costes - con indicadores</field>
-			<field name="model">stock.landed.cost</field>
-			<field name="report_type">qweb-pdf</field>
-			<field name="report_name">lc_detail_and_indicators.stock_landed_costs_indicators_report_template_id</field>
-			<field name="report_file">lc_detail_and_indicators.stock_landed_costs_indicators_report_template_id</field>
-			<field name="print_report_name">'Landed Cost con indicadores - %s' % (object.name)</field>
-			<field name="binding_model_id" ref="model_stock_landed_cost"/>
-			<field name="binding_type">report</field>
-		</record>
-
+		<report id="stock_landed_costs_indicators_report_id"
+			string="Imprimir Costes -  con indicadores"
+			model="stock.landed.cost"
+			report_type="qweb-pdf"
+			print_report_name="('Landed Cost con indicadores - %s' % (object.name))"
+			file="lc_detail_and_indicators.stock_landed_costs_indicators_report_template_id"
+			name="lc_detail_and_indicators.stock_landed_costs_indicators_report_template_id" />
 	</data>
 </odoo>

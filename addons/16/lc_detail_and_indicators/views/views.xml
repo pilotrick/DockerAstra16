@@ -88,6 +88,7 @@
       </field>
     </record>
 
+
     <record id="view_move_form_closeouts_detail" model="ir.ui.view">
       <field name="name">stock.move.closeouts.detail.form</field>
       <field name="model">stock.move</field>

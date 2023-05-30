@@ -15,7 +15,7 @@
         y sus indicadores.
     """,
 
-    'author': 'Astratech',
+    'author': "Techne Studio IT & Consulting",
     'website': "https://technestudioit.com/",
 
     'license': "Other proprietary",
@@ -27,7 +27,7 @@
     'version': '16.0.0.2',
 
     # any module necessary for this one to work correctly
-    'depends': ['base', 'stock', 'purchase_stock', 'stock_landed_costs',  'landed_cost_vo', 'lc_multiple_invoices_and_transfers'],
+    'depends': ['base', 'stock', 'purchase_stock', 'stock_landed_costs',  'landed_cost_vo'],
 
     # always loaded
     'data': [
