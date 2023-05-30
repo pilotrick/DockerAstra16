@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates id="template" xml:space="preserve">
+
+    <t t-name="OrderSyncScreenButton" owl="1">
+        <div t-attf-class="oe_status {{blockButton}}" t-on-click="onClick">
+            <span class="with-badge" t-att-badge="count">
+                <i class="fa fa-ticket" aria-hidden="true"/>
+            </span>
+        </div>
+    </t>
+
+</templates>

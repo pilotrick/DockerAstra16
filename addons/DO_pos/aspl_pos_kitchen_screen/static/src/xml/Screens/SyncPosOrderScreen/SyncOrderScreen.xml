@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates id="template" xml:space="preserve">
+
+    <t t-name="SyncOrderScreen" owl="1">
+        <div class="ticket-screen screen" t-att-class="{ oe_hidden: !props.isShown }">
+            <div class="screen-full-width">
+                <div class="rightpane pane-border">
+                    <div class="controls">
+                        <t t-if="!env.isMobile || !state.showSearchBar">
+                            <div class="buttons">
+                                <button class="discard" t-on-click="() => this.trigger('close-screen')">
+                                    <span class="search-icon">
+                                        <i class="fa fa-angle-double-left"/>
+                                    </span>
+                                    <t t-if="!env.isMobile">
+                                        Back
+                                    </t>
+                                </button>
+                            </div>
+                        </t>
+                        <SearchBar config="getSearchOrderSyncConfig()" placeholder="'Search Orders...'"/>
+                    </div>
+                    <div class="orders">
+                        <t t-set="_filteredOrderList" t-value="getFilteredOrderList()"/>
+
+                            <div class="header-row" t-att-class="{ oe_hidden: env.isMobile }">
+                                <div class="col">Date</div>
+                                <div class="col">Receipt Number</div>
+                                <div class="col">Floor</div>
+                                <div class="col">Table</div>
+                                <div class="col">Type</div>
+                                <div class="col">Customer</div>
+                                <div class="col">Order Taken By</div>
+                                <div class="col">Total</div>
+                                <div class="col very-narrow">pay</div>
+                                <div class="col very-narrow"></div>
+                            </div>
+                        <t t-if="_filteredOrderList.length !== 0">
+                            <t t-foreach="_filteredOrderList" t-as="order" t-key="order.order_id">
+                                <div class="order-row">
+                                    <div class="col">
+                                        <div><t t-esc="getDate(order)"/></div>
+                                    </div>
+                                    <div class="col">
+                                        <div><t t-esc="order.order_reference"/></div>
+                                    </div>
+                                    <div class="col">
+                                        <div><t t-esc="order.floor || 'N/A'"/></div>
+                                    </div>
+                                    <div class="col">
+                                        <div><t t-esc="order.table || 'N/A'"/></div>
+                                    </div>
+                                    <div class="col">
+                                        <div><t t-esc="getOrderType(order.order_type)"/></div>
+                                    </div>
+                                    <div class="col">
+                                        <div t-if="env.isMobile">Customer</div>
+                                        <div><t t-esc="order.customer ||  'N/A'"/></div>
+                                    </div>
+                                    <div class="col">
+                                        <div t-if="env.isMobile">Order Taken By</div>
+                                        <div><t t-esc="order.user_name"/></div>
+                                    </div>
+                                    <div class="col">
+                                        <div t-if="env.isMobile">Total</div>
+                                        <div><t t-esc="getTotal(order)"/></div>
+                                    </div>
+                                    <div class="col very-narrow"
+                                         t-on-click.stop=" () => this.trigger('pay-order', order)">
+                                        <div t-if="env.isMobile">Pay</div>
+                                        <i class="fa fa-money" aria-hidden="true"/>
+                                    </div>
+                                    <div class="col very-narrow" name="delete"
+                                         t-on-click.stop="() => this.trigger('cancel-order', order)">
+                                        <i class="fa fa-trash" aria-hidden="true"/>
+                                        <t t-if="env.isMobile"> Delete</t>
+                                    </div>
+                                </div>
+                            </t>
+                        </t>
+                        <t t-else="">
+                            <div class="empty-order-list">
+                                <i role="img" aria-label="Shopping cart" title="Shopping cart"
+                                   class="fa fa-shopping-cart"/>
+                                <h1>No orders found</h1>
+                            </div>
+                        </t>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </t>
+
+</templates>

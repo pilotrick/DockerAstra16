@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates id="template" xml:space="preserve">
+    <t t-name="OrderWidget" t-inherit="point_of_sale.OrderWidget" t-inherit-mode="extension" owl="1">
+        <xpath expr="//div[hasclass('order')]" position="before">
+            <div class="container">
+                <section>
+                    <div class="tabs tabs-style-bar">
+                        <nav>
+                            <ul>
+                                <li  t-on-click="() => this.trigger('take-away-OrderMode')" t-att-class="{'tab-current': state.orderType == 'take_away'}">
+                                    <a class="icon icon-home">
+                                        <div class="flex-order-type">
+                                            <span><img src="/aspl_pos_kitchen_screen/static/src/img/takeaway.png" width="20" height="16"/></span>
+                                            <span>Take Away</span>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li t-on-click="() => this.trigger('dine-in-OrderMode')" t-att-class="{'tab-current': state.orderType == 'dine_in'}">
+                                    <a class="icon icon-home">
+                                        <div class="flex-order-type">
+                                            <span><img src="/aspl_pos_kitchen_screen/static/src/img/dine_in.png" width="20" height="16"/></span>
+                                            <span>Dine In</span>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li t-on-click="() => this.trigger('delivery-OrderMode')" t-att-class="{'tab-current': state.orderType == 'delivery'}">
+                                    <a class="icon icon-home">
+                                        <div class="flex-order-type">
+                                            <span>
+                                                <img src="/aspl_pos_kitchen_screen/static/src/img/dine_in.png" width="20" height="16"/>
+                                            </span>
+                                            <span>Delivery</span>
+                                        </div>
+                                    </a>
+                                </li>
+                            </ul>
+                        </nav>
+                    </div>
+                </section>
+            </div>
+        </xpath>
+    </t>
+</templates>

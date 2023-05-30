@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="res_users_form_view_inherited" model="ir.ui.view">
+        <field name="name">res.users.form.view</field>
+        <field name="model">res.users</field>
+        <field name="inherit_id" ref="base.view_users_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//page[2]" position='after'>
+                <page string='Point of Sale'>
+                    <group colspan="2">
+                        <group>
+                            <field name="kitchen_screen_user"/>
+                            <field name="pos_category_ids" widget="many2many_tags"
+                                   attrs="{'invisible' : ['|',('kitchen_screen_user', '=', False),
+                                   ('kitchen_screen_user', '!=', 'cook')],
+                                   'required' : [('kitchen_screen_user', '!=', False),('kitchen_screen_user','==','cook')]}"/>
+                            <field name="default_pos" attrs="{'invisible' : [('kitchen_screen_user', '!=', 'waiter')],
+                                                             'required' : [('kitchen_screen_user', '=', 'waiter')]}"/>
+                            <field name="is_delete_order_line" attrs="{'invisible' : ['|',('kitchen_screen_user', '=', False),
+                                   ('kitchen_screen_user', '!=', 'manager')],
+                                   'required' : [('kitchen_screen_user', '!=', False),('kitchen_screen_user','==','manager')]}"/>
+                            <field name="delete_order_line_reason"
+                                   attrs="{'invisible' : [('is_delete_order_line', '=', False)]}"/>
+                            <field name="selection_printer"
+                                   attrs="{'invisible' : [('kitchen_screen_user', '!=', 'cook')]}"/>
+                            <field name="iotbox_ip_address" placeholder="Ex: http://192.168.2.129:8069"
+                                   attrs="{'invisible' : ['|',('selection_printer', '!=', 'iot_box'), '&amp;', ('kitchen_screen_user', '!=', 'cook'), ('selection_printer', '!=', False)],
+                                    'required' : [('selection_printer', '=', 'iot_box')]}"/>
+                            <field name="network_ip_address" placeholder="Ex: 192.168.2.129"
+                                   attrs="{'invisible' : ['|',('selection_printer', '!=', 'network'), '&amp;', ('kitchen_screen_user', '!=', 'cook'), ('selection_printer', '!=', False)],
+                                    'required' : [('selection_printer', '=', 'network')]}"/>
+                        </group>
+                    </group>
+                </page>
+            </xpath>
+        </field>
+    </record>
+</odoo>

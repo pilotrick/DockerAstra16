@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo noupdate="1">
+    <record id="delivery_charge" model="product.product">
+        <field name="name">Delivery Charge</field>
+        <field name="sale_ok" eval="True"/>
+        <field name="available_in_pos" eval="True"/>
+        <field name="list_price">0</field>
+        <field name="description">Delivery Charge By Customer</field>
+        <field name="taxes_id" eval="False"/>
+    </record>
+</odoo>

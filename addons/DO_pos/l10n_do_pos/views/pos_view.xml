@@ -1,0 +1,25 @@
+<odoo>
+    <!-- Inherit Form View to Modify it -->
+    <record id="view_pos_pos_form_inherit" model="ir.ui.view">
+        <field name="name">view.pos.pos.form.inherit</field>
+        <field name="model">pos.order</field>
+        <field name="inherit_id" ref="point_of_sale.view_pos_pos_form"/>
+        <field name="arch" type="xml">
+            <field name="name" position="before">
+                <field name="ncf_invoice_related"/>
+                <field name="ncf" invisible="1"/>
+                <field name="sale_fiscal_type"/>
+            </field>
+        </field>
+    </record>
+    <record id="view_pos_order_tree_inherit" model="ir.ui.view">
+        <field name="name">pos.order.tree.inherit</field>
+        <field name="model">pos.order</field>
+        <field name="inherit_id" ref="point_of_sale.view_pos_order_tree"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='name']" position="after">
+                <field name="ncf_invoice_related"/>
+            </xpath>
+        </field>
+    </record>
+</odoo>

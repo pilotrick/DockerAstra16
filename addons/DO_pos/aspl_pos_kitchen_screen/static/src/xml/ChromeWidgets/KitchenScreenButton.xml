@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates id="template" xml:space="preserve">
+
+    <t t-name="KitchenScreenButton" owl="1">
+        <div t-attf-class="oe_status {{blockButton}}" t-on-click="onClick">
+            <t t-if="props.isKitchenScreen">
+                <img class="kitchen-button" src="/aspl_pos_kitchen_screen/static/src/img/back.png" alt="screen"/>
+            </t>
+            <t t-else="">
+                <span class="with-badge" t-att-badge="count">
+                    <img class="kitchen-button" src="/aspl_pos_kitchen_screen/static/src/img/chef.png" alt="screen"/>
+                </span>
+            </t>
+        </div>
+    </t>
+
+</templates>
