@@ -235,10 +235,21 @@
                             <!-- <div class="linea_2"></div> -->
 
                             <!-- <div class="line"></div> -->
-                            <div style="font-size: 35px; position: absolute; right: 36px; top: -40px; justify-content: right;">
-                                <strong>Factura de Crédito Fiscal</strong>
+                             <div style="font-size: 35px; position: absolute; right: 36px; top: -40px; align-content: right;">
+                                 <t t-if="o.move_type == 'out_invoice'">
+                                    <strong>Factura de Crédito Fiscal</strong>
+                                </t>
                             </div>
                             <div style=" position: absolute; right: 190px; top: 20px; text-align: left;">
+                                <t t-if="o.move_type == 'in_invoice'">
+                                    <strong style="font-size: 35px;">Factura de Compra</strong><br /><br />
+                                </t>
+                                <t t-elif="o.move_type == 'out_refund'">
+                                    <strong style="font-size: 35px;">Nota de Crédito</strong><br /><br />
+                                </t>
+                                <t t-elif="o.move_type == 'in_refund'">
+                                    <strong style="font-size: 35px;">Nota de Crédito</strong><br /><br />
+                                </t>
                                 <strong>NCF:</strong>
                                 <span t-if="o.l10n_latam_document_number" t-field="o.l10n_latam_document_number"/>
                                 <br/>
