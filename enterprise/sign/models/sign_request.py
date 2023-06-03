@@ -5,6 +5,7 @@ import base64
 import io
 import os
 import time
+import unicodedata
 import uuid
 
 from PyPDF2 import PdfFileReader, PdfFileWriter
@@ -93,7 +94,7 @@ class SignRequest(models.Model):
     request_item_infos = fields.Binary(compute="_compute_request_item_infos")
     last_action_date = fields.Datetime(related="message_ids.create_date", readonly=True, string="Last Action Date")
     completion_date = fields.Date(string="Completion Date", compute="_compute_progress", compute_sudo=True)
-    communication_company_id = fields.Many2one('res.company', string="Company used for communication")
+    communication_company_id = fields.Many2one('res.company', string="Company used for communication", default=lambda self: self.env.company)
 
     sign_log_ids = fields.One2many('sign.log', 'sign_request_id', string="Logs", help="Activity logs linked to this request")
     template_tags = fields.Many2many('sign.template.tag', string='Template Tags', related='template_id.tag_ids')
@@ -452,6 +453,36 @@ class SignRequest(models.Model):
     def _get_normal_font_size(self):
         return 0.015
 
+    def _get_displayed_text(self, text):
+        """
+        Display the text based on his first character unicode name to choose Right-to-left or Left-to-right
+        This is just a hotfix to make things work
+        In the future the clean way be to use arabic-reshaper and python3-bidi libraries
+
+
+        Here we want to check the text is in a right-to-left language and if then, flip before returning it.
+        Depending on the language, the type should be Left-to-Right, Right-to-Left, or Right-to-Left Arabic
+        (Refer to this https://www.unicode.org/reports/tr9/#Bidirectional_Character_Types)
+        The base module ```unicodedata``` with his function ```bidirectional(str)``` helps us by taking a character in
+        argument and returns his type:
+        - 'L' for Left-to-Right character
+        - 'R' or 'AL' for Right-to-Left character
+
+        So we have to check if the first character of the text is of type 'R' or 'AL', and check that there is no
+        character in the rest of the text that is of type 'L'. Based on that we can confirm we have a fully Right-to-Left language,
+        then we can flip the text before returning it.
+        """
+        if not text:
+            return ''
+        maybe_rtl_letter = text.lstrip()[:1] or ' '
+        maybe_ltr_text = text[1:]
+        first_letter_is_rtl = unicodedata.bidirectional(maybe_rtl_letter) in ('AL', 'R')
+        no_letter_is_ltr = not any(unicodedata.bidirectional(letter) == 'L' for letter in maybe_ltr_text)
+        if first_letter_is_rtl and no_letter_is_ltr:
+            text = text[::-1]
+
+        return text
+
     def _generate_completed_document(self, password=""):
         self.ensure_one()
         if self.state != 'signed':
@@ -534,6 +565,7 @@ class SignRequest(models.Model):
                         )
 
                     if item.type_id.item_type == "text":
+                        value = self._get_displayed_text(value)
                         can.setFont(font, height*item.height*0.8)
                         if item.alignment == "left":
                             can.drawString(width*item.posX, height*(1-item.posY-item.height*0.9), value)
@@ -617,7 +649,7 @@ class SignRequest(models.Model):
         pdf_content, __ = self.env["ir.actions.report"].with_user(public_user).sudo()._render_qweb_pdf(
             'sign.action_sign_request_print_logs',
             self.ids,
-            data={'format_date': format_date}
+            data={'format_date': format_date, 'company_id': self.communication_company_id}
         )
         attachment_log = self.env['ir.attachment'].create({
             'name': "Certificate of completion - %s.pdf" % time.strftime('%Y-%m-%d - %H:%M:%S'),
@@ -806,6 +838,7 @@ class SignRequestItem(models.Model):
     def _send_signature_access_mail(self):
         for signer in self:
             signer_lang = get_lang(self.env, lang_code=signer.partner_id.lang).code
+            context = {'lang': signer_lang}
             body = self.env['ir.qweb']._render('sign.sign_template_mail_request', {
                 'record': signer,
                 'link': url_join(signer.get_base_url(), "sign/document/mail/%(request_id)s/%(access_token)s" % {'request_id': signer.sign_request_id.id, 'access_token': signer.sudo().access_token}),
@@ -813,13 +846,13 @@ class SignRequestItem(models.Model):
                 'body': signer.sign_request_id.message if not is_html_empty(signer.sign_request_id.message) else False,
                 'use_sign_terms': self.env['ir.config_parameter'].sudo().get_param('sign.use_sign_terms'),
                 'user_signature': signer.create_uid.signature,
-            }, minimal_qcontext=True)
+            }, lang=signer_lang, minimal_qcontext=True)
 
             attachment_ids = signer.sign_request_id.attachment_ids.ids
             self.env['sign.request']._message_send_mail(
                 body, 'mail.mail_notification_light',
                 {'record_name': signer.sign_request_id.reference},
-                {'model_description': 'signature', 'company': signer.communication_company_id or signer.sign_request_id.create_uid.company_id},
+                {'model_description': _('Signature'), 'company': signer.communication_company_id or signer.sign_request_id.create_uid.company_id},
                 {'email_from': signer.create_uid.email_formatted,
                  'author_id': signer.create_uid.partner_id.id,
                  'email_to': formataddr((signer.partner_id.name, signer.signer_email)),
@@ -829,6 +862,7 @@ class SignRequestItem(models.Model):
                 lang=signer_lang,
             )
             signer.is_mail_sent = True
+            del context
 
     def _edit_and_sign(self, signature, **kwargs):
         """ Sign sign request items at once.
@@ -1052,7 +1086,7 @@ class SignRequestItem(models.Model):
 
     @api.depends('partner_id.email')
     def _compute_email(self):
-        for sign_request_item in self.filtered(lambda sri: sri.state == "sent"):
+        for sign_request_item in self.filtered(lambda sri: sri.state == "sent" or not sri.signer_email):
             sign_request_item.signer_email = sign_request_item.partner_id.email_normalized
 
 

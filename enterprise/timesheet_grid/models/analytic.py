@@ -144,7 +144,7 @@ class AnalyticLine(models.Model):
 
         grid_anchor, last_week = self._get_last_week()
         domain_search = [
-            ('project_id', '!=', False),
+            ('project_id.allow_timesheets', '=', True),
             '|',
                 ('task_id.active', '=', True),
                 ('task_id', '=', False),
@@ -234,7 +234,7 @@ class AnalyticLine(models.Model):
                 return False
 
         if 'project_id' in domain_project_task:
-            project_ids = self.env['project.project'].search(domain_project_task['project_id'])
+            project_ids = self.env['project.project'].search(expression.AND([domain_project_task['project_id'], [('allow_timesheets', '=', True)]]))
             for project_id in project_ids:
                 record = {
                     row_field: read_row_fake_value(row_field, project_id, False)
@@ -252,7 +252,7 @@ class AnalyticLine(models.Model):
                         add_record(False, key, {'values': record, 'domain': domain})
 
         if 'task_id' in domain_project_task:
-            task_ids = self.env['project.task'].search(domain_project_task['task_id'] + [('project_id', '!=', False)])
+            task_ids = self.env['project.task'].search(domain_project_task['task_id'] + [('allow_timesheets', '=', True)])
             for task_id in task_ids:
                 record = {
                     row_field: read_row_fake_value(row_field, False, task_id)
@@ -452,6 +452,18 @@ class AnalyticLine(models.Model):
         analytic_lines.sudo().write({'validated': True})
         analytic_lines.filtered(lambda t: t.employee_id.sudo().company_id.prevent_old_timesheets_encoding) \
                       ._update_last_validated_timesheet_date()
+
+        if any(analytic_lines.employee_id.sudo().company_id.mapped('prevent_old_timesheets_encoding')):
+            # Interrupt the timesheet with a timer running that is before the last validated date for each employee
+            running_analytic_lines = self.env['account.analytic.line'].search([
+                ('company_id', 'in',
+                 analytic_lines.employee_id.sudo().company_id.filtered('prevent_old_timesheets_encoding').ids),
+                ('employee_id', 'in', analytic_lines.employee_id.ids),
+                ('date', '<', max(analytic_lines.employee_id.sudo().mapped('last_validated_timesheet_date'))),
+                ('is_timer_running', '=', True),
+            ])
+            running_analytic_lines.filtered(lambda aal: aal.date < aal.employee_id.last_validated_timesheet_date)._stop_all_users_timer()
+
         if self.env.context.get('use_notification', True):
             notification['params'].update({
                 'title': _("The timesheets have successfully been validated."),
@@ -609,6 +621,9 @@ class AnalyticLine(models.Model):
         domain = expression.AND([new_row_domain, additionnal_domain])
         line = self.search(domain)
 
+        if line.project_id and not line.project_id.allow_timesheets:
+            raise UserError(_("You cannot adjust the time of the timesheet for a project with timesheets disabled."))
+
         day = column_value.split('/')[0]
         if len(line) > 1 or len(line) == 1 and line.validated:  # copy the last line as adjustment
             line[0].copy(self._prepare_duplicate_timesheet_line_values(
@@ -707,7 +722,10 @@ class AnalyticLine(models.Model):
         domain_search = expression.AND([
             [('project_id', '!=', False),
              ('date', '>=', last_week),
-             ('date', '<=', grid_anchor)
+             ('date', '<=', grid_anchor),
+             '|',
+                ('task_id.active', '=', True),
+                ('task_id', '=', False),
             ], domain_search])
 
         group_order = self.env['hr.employee']._order
@@ -736,7 +754,9 @@ class AnalyticLine(models.Model):
         """
         if self.validated:
             raise UserError(_('You cannot use the timer on validated timesheets.'))
-        if not self.user_timer_id.timer_start and self.display_timer:
+        if self.employee_id.company_id.prevent_old_timesheets_encoding and self.employee_id.sudo().last_validated_timesheet_date and self.date < self.employee_id.sudo().last_validated_timesheet_date:
+            self.create([{'project_id': self.project_id.id, 'task_id': self.task_id.id}]).action_timer_start()
+        elif not self.user_timer_id.timer_start and self.display_timer:
             super(AnalyticLine, self).action_timer_start()
 
     def _get_last_timesheet_domain(self):
@@ -956,6 +976,11 @@ class AnalyticLine(models.Model):
             2. Manager (Administrator): with this access right, the user can validate all timesheets.
         """
         domain = [('is_timesheet', '=', True), ('validated', '=', validated)]
+        if not validated:
+            domain = expression.AND([
+                domain,
+                [("date", "<", fields.Date.today())],
+            ])
 
         if not self.user_has_groups('hr_timesheet.group_timesheet_manager'):
             return expression.AND([domain, ['|', ('employee_id.timesheet_manager_id', '=', self.env.user.id),

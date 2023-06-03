@@ -265,20 +265,26 @@
                             <div class="line"></div>
 
                             <div style="font-size: 35px; position: relative; top: 30px; justify-content: left; text-align: left; left: 16px;">
-                                <strong><span t-field="o.name"/></strong>
+                                <t t-if="o.state in ('draft', 'sent')">
+                                    <strong>Solicitud de Cotización -<span t-field="o.order_number"/></strong>
+                                </t>
+                                <t t-else="">
+                                    <strong>Orden de Compra -<span t-field="o.order_number"/></strong>
+                                </t>
                             </div>
                             <div id="custom_css" class=" custom_css" style="position: relative; text-align: right; right: -14px; top: 30px;">
                                 <div class="txt_name" t-if="o.name" name="Invoice no">
                                     <span>Pedido no:</span>
                                     <br/>
-                                    <strong t-field="o.name"/>
+                                    <strong t-field="o.order_number"/>
                                     <br/>
                                     <span>Vendedor/a:</span>
                                     <br/>
                                     <strong t-field="o.user_id"/>
                                     <br/>
-                                    <span>Fecha Limite de la orden:</span><br/>
-                                    <span t-field="o.date_planned"/>
+                                    <span t-if="o.date_planned">Fecha Limite de la orden:</span><br/>
+                                    <span t-if="o.date_planned" t-field="o.date_planned"/>
+                                    <br/>
                                 </div>
                             </div>
 

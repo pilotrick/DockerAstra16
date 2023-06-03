@@ -7,12 +7,12 @@
 # 
 msgid ""
 msgstr ""
-"Project-Id-Version: Odoo Server 16.0beta+e\n"
+"Project-Id-Version: Odoo Server 16.0+e\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-09-23 08:24+0000\n"
+"POT-Creation-Date: 2023-04-14 06:18+0000\n"
 "PO-Revision-Date: 2022-09-22 05:48+0000\n"
 "Last-Translator: Niyas Raphy, 2023\n"
-"Language-Team: Malayalam (https://www.transifex.com/odoo/teams/41243/ml/)\n"
+"Language-Team: Malayalam (https://app.transifex.com/odoo/teams/41243/ml/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
@@ -20,6 +20,7 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #. module: project_enterprise
+#. odoo-python
 #: code:addons/project_enterprise/models/project_task.py:0
 #, python-format
 msgid "%s other task(s) for the same employee at the same time."
@@ -53,6 +54,8 @@ msgid ""
 "<i class=\"fa fa-long-arrow-right mx-2\" aria-label=\"Arrow icon\" "
 "title=\"Arrow\"/>"
 msgstr ""
+"<i class=\"fa fa-long-arrow-right mx-2\" aria-label=\"Arrow icon\" "
+"title=\"Arrow\"/>"
 
 #. module: project_enterprise
 #: model_terms:ir.ui.view,arch_db:project_enterprise.project_project_view_gantt
@@ -79,7 +82,7 @@ msgstr ""
 #. module: project_enterprise
 #: model_terms:ir.ui.view,arch_db:project_enterprise.project_task_view_gantt
 msgid "<strong>Milestone — </strong>"
-msgstr ""
+msgstr "<strong>മൈൽസ്റ്റോൺ — </strong>"
 
 #. module: project_enterprise
 #: model_terms:ir.ui.view,arch_db:project_enterprise.project_project_view_gantt
@@ -110,9 +113,10 @@ msgstr ""
 #. module: project_enterprise
 #: model_terms:ir.ui.view,arch_db:project_enterprise.view_task_confirm_schedule_wizard_form
 msgid "Cancel"
-msgstr ""
+msgstr "റദ്ദാക്കുക"
 
 #. module: project_enterprise
+#. odoo-python
 #: code:addons/project_enterprise/models/project_task.py:0
 #, python-format
 msgid "Caution: some tasks have not been scheduled"
@@ -122,24 +126,24 @@ msgstr ""
 #: model:ir.model.fields,field_description:project_enterprise.field_project_task_confirm_schedule_line_wizard__create_uid
 #: model:ir.model.fields,field_description:project_enterprise.field_project_task_confirm_schedule_wizard__create_uid
 msgid "Created by"
-msgstr ""
+msgstr "ഉണ്ടാക്കിയത്"
 
 #. module: project_enterprise
 #: model:ir.model.fields,field_description:project_enterprise.field_project_task_confirm_schedule_line_wizard__create_date
 #: model:ir.model.fields,field_description:project_enterprise.field_project_task_confirm_schedule_wizard__create_date
 msgid "Created on"
-msgstr ""
+msgstr "സൃഷ്ടിച്ചത്"
 
 #. module: project_enterprise
 #: model_terms:ir.ui.view,arch_db:project_enterprise.project_task_map_view
 #: model_terms:ir.ui.view,arch_db:project_enterprise.project_task_map_view_no_title
 msgid "Customer"
-msgstr ""
+msgstr "കസ്റ്റമർ"
 
 #. module: project_enterprise
 #: model_terms:ir.ui.view,arch_db:project_enterprise.project_task_map_view
 msgid "Date"
-msgstr ""
+msgstr "തീയതി"
 
 #. module: project_enterprise
 #: model_terms:ir.ui.view,arch_db:project_enterprise.project_task_view_form_in_gantt
@@ -150,7 +154,7 @@ msgstr "നിരസിക്കുക"
 #: model:ir.model.fields,field_description:project_enterprise.field_project_task_confirm_schedule_line_wizard__display_name
 #: model:ir.model.fields,field_description:project_enterprise.field_project_task_confirm_schedule_wizard__display_name
 msgid "Display Name"
-msgstr ""
+msgstr "ഡിസ്പ്ലേ നെയിം"
 
 #. module: project_enterprise
 #: model:ir.model.fields,field_description:project_enterprise.field_project_task__display_warning_dependency_in_gantt
@@ -166,7 +170,7 @@ msgstr "ദൈർഘ്യം"
 #. module: project_enterprise
 #: model:ir.model.fields,field_description:project_enterprise.field_project_task_confirm_schedule_line_wizard__date_end
 msgid "End Date"
-msgstr ""
+msgstr "അവസാന തീയതി"
 
 #. module: project_enterprise
 #: model:ir.model.fields,field_description:project_enterprise.field_project_task__planned_date_end
@@ -178,10 +182,10 @@ msgstr ""
 #: model:ir.model.fields,field_description:project_enterprise.field_project_task_confirm_schedule_line_wizard__id
 #: model:ir.model.fields,field_description:project_enterprise.field_project_task_confirm_schedule_wizard__id
 msgid "ID"
-msgstr ""
+msgstr "ഐഡി"
 
 #. module: project_enterprise
-#. openerp-web
+#. odoo-javascript
 #: code:addons/project_enterprise/static/src/js/task_gantt_utils.js:0
 #, python-format
 msgid "Invalid scale interval"
@@ -191,19 +195,19 @@ msgstr ""
 #: model:ir.model.fields,field_description:project_enterprise.field_project_task_confirm_schedule_line_wizard____last_update
 #: model:ir.model.fields,field_description:project_enterprise.field_project_task_confirm_schedule_wizard____last_update
 msgid "Last Modified on"
-msgstr ""
+msgstr "അവസാനം അപ്ഡേറ്റ് ചെയ്തത്"
 
 #. module: project_enterprise
 #: model:ir.model.fields,field_description:project_enterprise.field_project_task_confirm_schedule_line_wizard__write_uid
 #: model:ir.model.fields,field_description:project_enterprise.field_project_task_confirm_schedule_wizard__write_uid
 msgid "Last Updated by"
-msgstr ""
+msgstr "അവസാനം അപ്ഡേറ്റ് ചെയ്തത്"
 
 #. module: project_enterprise
 #: model:ir.model.fields,field_description:project_enterprise.field_project_task_confirm_schedule_line_wizard__write_date
 #: model:ir.model.fields,field_description:project_enterprise.field_project_task_confirm_schedule_wizard__write_date
 msgid "Last Updated on"
-msgstr ""
+msgstr "അവസാനം അപ്ഡേറ്റ് ചെയ്തത്"
 
 #. module: project_enterprise
 #: model:ir.model.fields,field_description:project_enterprise.field_project_task_confirm_schedule_wizard__line_ids
@@ -214,20 +218,22 @@ msgstr ""
 #: model_terms:ir.ui.view,arch_db:project_enterprise.project_task_map_view
 #: model_terms:ir.ui.view,arch_db:project_enterprise.project_task_map_view_no_title
 msgid "Milestone"
-msgstr ""
+msgstr "മൈൽസ്റ്റോൺ"
 
 #. module: project_enterprise
 #: model:ir.model.fields,field_description:project_enterprise.field_project_task__partner_mobile
 msgid "Mobile"
-msgstr ""
+msgstr "മൊബൈൽ"
 
 #. module: project_enterprise
+#. odoo-python
 #: code:addons/project_enterprise/wizard/task_confirm_schedule_wizard.py:0
 #, python-format
 msgid "No task has been scheduled in the future."
 msgstr ""
 
 #. module: project_enterprise
+#. odoo-python
 #: code:addons/project_enterprise/models/project_task.py:0
 #, python-format
 msgid ""
@@ -236,6 +242,7 @@ msgid ""
 msgstr ""
 
 #. module: project_enterprise
+#. odoo-python
 #: code:addons/project_enterprise/models/project_task.py:0
 #, python-format
 msgid ""
@@ -249,6 +256,7 @@ msgid "Overlap Warning"
 msgstr ""
 
 #. module: project_enterprise
+#. odoo-python
 #: code:addons/project_enterprise/models/project_task.py:0
 #, python-format
 msgid "Overlapping Tasks"
@@ -258,9 +266,10 @@ msgstr ""
 #: model_terms:ir.ui.view,arch_db:project_enterprise.project_task_map_view
 #: model_terms:ir.ui.view,arch_db:project_enterprise.project_task_map_view_no_title
 msgid "Phone"
-msgstr ""
+msgstr "ഫോൺ"
 
 #. module: project_enterprise
+#. odoo-python
 #: code:addons/project_enterprise/controllers/portal.py:0
 #: model_terms:ir.ui.view,arch_db:project_enterprise.project_sharing_project_task_view_form_inherited
 #: model_terms:ir.ui.view,arch_db:project_enterprise.project_task_view_form
@@ -272,7 +281,7 @@ msgstr ""
 #: model_terms:ir.ui.view,arch_db:project_enterprise.project_project_view_gantt
 #: model_terms:ir.ui.view,arch_db:project_enterprise.project_task_view_gantt
 msgid "Planning"
-msgstr ""
+msgstr "ആസൂത്രണം"
 
 #. module: project_enterprise
 #: model:ir.model.fields,field_description:project_enterprise.field_project_task__planning_overlap
@@ -283,7 +292,7 @@ msgstr ""
 #. module: project_enterprise
 #: model_terms:ir.ui.view,arch_db:project_enterprise.project_task_map_view
 msgid "Project"
-msgstr ""
+msgstr "പ്രൊജക്റ്റ് "
 
 #. module: project_enterprise
 #: model:ir.model,name:project_enterprise.model_project_milestone
@@ -298,7 +307,7 @@ msgstr ""
 #. module: project_enterprise
 #: model_terms:ir.ui.view,arch_db:project_enterprise.project_task_view_form_in_gantt
 msgid "Save"
-msgstr ""
+msgstr "സേവ്"
 
 #. module: project_enterprise
 #: model:ir.model.fields,field_description:project_enterprise.field_project_task_confirm_schedule_line_wizard__schedule_task
@@ -321,6 +330,7 @@ msgid "Show Warnings"
 msgstr ""
 
 #. module: project_enterprise
+#. odoo-python
 #: code:addons/project_enterprise/models/project_task.py:0
 #, python-format
 msgid ""
@@ -331,7 +341,7 @@ msgstr ""
 #. module: project_enterprise
 #: model:ir.model.fields,field_description:project_enterprise.field_project_task_confirm_schedule_line_wizard__date_begin
 msgid "Start Date"
-msgstr ""
+msgstr "ആരംഭിക്കുന്ന തീയതി"
 
 #. module: project_enterprise
 #: model:ir.model.fields,field_description:project_enterprise.field_project_task__planned_date_begin
@@ -342,13 +352,13 @@ msgstr ""
 #. module: project_enterprise
 #: model:ir.model.fields,field_description:project_enterprise.field_project_task__partner_street
 msgid "Street"
-msgstr ""
+msgstr "സ്ട്രീറ്റ്"
 
 #. module: project_enterprise
 #: model:ir.model,name:project_enterprise.model_project_task
 #: model:ir.model.fields,field_description:project_enterprise.field_project_task_confirm_schedule_line_wizard__task_id
 msgid "Task"
-msgstr ""
+msgstr "ടാസ്‌ക്"
 
 #. module: project_enterprise
 #: model:ir.model,name:project_enterprise.model_project_task_confirm_schedule_line_wizard
@@ -363,7 +373,7 @@ msgstr ""
 #. module: project_enterprise
 #: model:ir.model,name:project_enterprise.model_report_project_task_user
 msgid "Tasks Analysis"
-msgstr ""
+msgstr "ടാസ്ക് വിശകലനം"
 
 #. module: project_enterprise
 #: model_terms:ir.ui.view,arch_db:project_enterprise.report_project_task_user_view_search_inherited
@@ -384,24 +394,28 @@ msgid "The planned start date must be before the planned end date."
 msgstr ""
 
 #. module: project_enterprise
+#. odoo-python
 #: code:addons/project_enterprise/wizard/task_confirm_schedule_wizard.py:0
 #, python-format
 msgid "The task has been successfully scheduled."
 msgstr ""
 
 #. module: project_enterprise
+#. odoo-python
 #: code:addons/project_enterprise/wizard/task_confirm_schedule_wizard.py:0
 #, python-format
 msgid "The tasks have been successfully scheduled."
 msgstr ""
 
 #. module: project_enterprise
+#. odoo-python
 #: code:addons/project_enterprise/models/project_task.py:0
 #, python-format
 msgid "This Progress Bar is not implemented."
 msgstr ""
 
 #. module: project_enterprise
+#. odoo-python
 #: code:addons/project_enterprise/models/project_task.py:0
 #, python-format
 msgid ""
@@ -410,6 +424,7 @@ msgid ""
 msgstr ""
 
 #. module: project_enterprise
+#. odoo-python
 #: code:addons/project_enterprise/models/project_task.py:0
 #, python-format
 msgid ""
@@ -419,10 +434,10 @@ msgstr ""
 #. module: project_enterprise
 #: model_terms:ir.ui.view,arch_db:project_enterprise.res_config_settings_view_form
 msgid "Timesheets"
-msgstr ""
+msgstr "ടൈംഷീറ്"
 
 #. module: project_enterprise
-#. openerp-web
+#. odoo-javascript
 #: code:addons/project_enterprise/static/src/js/task_gantt_model.js:0
 #, python-format
 msgid "Unassigned Tasks"
@@ -437,7 +452,7 @@ msgstr ""
 #: model:ir.model,name:project_enterprise.model_res_users
 #: model:ir.model.fields,field_description:project_enterprise.field_project_task_confirm_schedule_wizard__user_id
 msgid "User"
-msgstr "ഉപയോക്താവ്"
+msgstr "യൂസർ"
 
 #. module: project_enterprise
 #: model:ir.model.fields,field_description:project_enterprise.field_project_task__user_names
@@ -445,17 +460,17 @@ msgid "User Names"
 msgstr ""
 
 #. module: project_enterprise
-#. openerp-web
+#. odoo-javascript
 #: code:addons/project_enterprise/static/src/js/task_gantt_controller.js:0
 #: model:ir.model.fields,field_description:project_enterprise.field_project_task_confirm_schedule_line_wizard__warning
 #, python-format
 msgid "Warning"
-msgstr ""
+msgstr "താക്കീത്"
 
 #. module: project_enterprise
 #: model:ir.model.fields,field_description:project_enterprise.field_project_task_confirm_schedule_line_wizard__parent_id
 msgid "Wizard"
-msgstr ""
+msgstr "വിസാർഡ്"
 
 #. module: project_enterprise
 #: model:ir.model.fields.selection,name:project_enterprise.selection__project_task__allocation_type__working_hours
@@ -465,4 +480,4 @@ msgstr ""
 #. module: project_enterprise
 #: model:ir.model.fields,field_description:project_enterprise.field_project_task__partner_zip
 msgid "Zip"
-msgstr ""
+msgstr "പിൻകോഡ്"

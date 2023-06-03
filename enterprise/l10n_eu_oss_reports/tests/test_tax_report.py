@@ -60,14 +60,14 @@ class OSSTaxReportTest(TestAccountReportsCommon):
             #   Name                        Net               Tax
             [   0,                            1,                2],
             [
-                ("Sales",                    '',              370),
+                ("Sales",                    '',              360),
                 ("France",                   '',              200),
                 ("20.0% FR VAT (20.0%)",   1000,              200),
                 ("Total France",             '',              200),
-                ("Luxembourg",               '',              170),
-                ("17.0% LU VAT (17.0%)",   1000,              170),
-                ("Total Luxembourg",         '',              170),
-                ("Total Sales",              '',              370),
+                ("Luxembourg",               '',              160),
+                ("16.0% LU VAT (16.0%)",   1000,              160),
+                ("Total Luxembourg",         '',              160),
+                ("Total Sales",              '',              360),
             ],
         )
 
@@ -96,12 +96,10 @@ class OSSTaxReportTest(TestAccountReportsCommon):
                     <ns2:FixedEstablishment>
                         <ns2:VATIdentificationNumber issuedBy="BE">0477472701</ns2:VATIdentificationNumber>
                     </ns2:FixedEstablishment>
-                    <ns2:VatRateType>20.0</ns2:VatRateType>
+                    <ns2:VatRateType type="STANDARD">20.00</ns2:VatRateType>
                     <ns2:VatAmount currency="USD">200.0</ns2:VatAmount>
                     <ns2:TaxableAmount currency="USD">1000.0</ns2:TaxableAmount>
                   </ns2:OSSDeclarationRows>
-                  <ns2:CorrectionsInfo>
-                  </ns2:CorrectionsInfo>
                 </ns0:OSSDeclarationInfo>
                 <ns0:OSSDeclarationInfo SequenceNumber="2">
                   <ns2:MemberStateOfConsumption>LU</ns2:MemberStateOfConsumption>
@@ -110,12 +108,10 @@ class OSSTaxReportTest(TestAccountReportsCommon):
                     <ns2:FixedEstablishment>
                         <ns2:VATIdentificationNumber issuedBy="BE">0477472701</ns2:VATIdentificationNumber>
                     </ns2:FixedEstablishment>
-                    <ns2:VatRateType>17.0</ns2:VatRateType>
-                    <ns2:VatAmount currency="USD">170.0</ns2:VatAmount>
+                    <ns2:VatRateType type="REDUCED">16.00</ns2:VatRateType>
+                    <ns2:VatAmount currency="USD">160.0</ns2:VatAmount>
                     <ns2:TaxableAmount currency="USD">1000.0</ns2:TaxableAmount>
                   </ns2:OSSDeclarationRows>
-                  <ns2:CorrectionsInfo>
-                  </ns2:CorrectionsInfo>
                 </ns0:OSSDeclarationInfo>
               </ns0:OSSDeclaration>
             </ns0:OSSConsignment>
@@ -153,7 +149,7 @@ class TestTaxReportOSSNoMapping(TestAccountReportsCommon):
             'invoice_repartition_line_ids': [
                 Command.create({
                     'repartition_type': 'base',
-                    'tag_ids': [Command.set(report_line_invoice_base_line.expression_ids._get_matching_tags().filtered(lambda x: not x.tax_negate).ids + oss_tag.ids)],
+                    'tag_ids': [Command.set(report_line_invoice_base_line.expression_ids._get_matching_tags("+").ids + oss_tag.ids)],
                 }),
                 Command.create({
                     'repartition_type': 'tax',
@@ -163,7 +159,7 @@ class TestTaxReportOSSNoMapping(TestAccountReportsCommon):
             'refund_repartition_line_ids': [
                 Command.create({
                     'repartition_type': 'base',
-                    'tag_ids': [Command.set(report_line_refund_base_line.expression_ids._get_matching_tags().filtered(lambda x: not x.tax_negate).ids + oss_tag.ids)],
+                    'tag_ids': [Command.set(report_line_refund_base_line.expression_ids._get_matching_tags("+").ids + oss_tag.ids)],
                 }),
                 Command.create({
                     'repartition_type': 'tax',

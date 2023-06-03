@@ -16,6 +16,7 @@ from odoo.tools.misc import get_lang
 
 _logger = logging.getLogger(__name__)
 pattern = re.compile("^[a-z0-9-_]+$")
+runbot_pattern = re.compile(r"^https:\/\/[a-z0-9-_]+\.[a-z0-9-_]+\.odoo\.com$")
 
 class AccountOnlineAccount(models.Model):
     _name = 'account.online.account'
@@ -126,7 +127,7 @@ class AccountOnlineLink(models.Model):
             rec.next_refresh = self.env['ir.cron'].sudo().search([('id', '=', self.env.ref('account_online_synchronization.online_sync_cron').id)], limit=1).nextcall
 
     account_online_account_ids = fields.One2many('account.online.account', 'account_online_link_id')
-    last_refresh = fields.Datetime(readonly=True, default=fields.Datetime.now())
+    last_refresh = fields.Datetime(readonly=True, default=fields.Datetime.now)
     next_refresh = fields.Datetime("Next synchronization", compute='_compute_next_synchronization')
     state = fields.Selection([('connected', 'Connected'), ('error', 'Error'), ('disconnected', 'Not Connected')],
                              default='disconnected', tracking=True, required=True, readonly=True)
@@ -215,9 +216,11 @@ class AccountOnlineLink(models.Model):
 
         timeout = int(self.env['ir.config_parameter'].sudo().get_param('account_online_synchronization.request_timeout')) or 60
         proxy_mode = self.env['ir.config_parameter'].sudo().get_param('account_online_synchronization.proxy_mode') or 'production'
-        if not pattern.match(proxy_mode):
+        if not pattern.match(proxy_mode) and not runbot_pattern.match(proxy_mode):
             raise UserError(_('Invalid value for proxy_mode config parameter.'))
         endpoint_url = 'https://%s.odoofin.com%s' % (proxy_mode, url)
+        if runbot_pattern.match(proxy_mode):
+            endpoint_url = '%s%s' % (proxy_mode, url)
         data['utils'] = {
             'request_timeout': timeout,
             'lang': get_lang(self.env).code,

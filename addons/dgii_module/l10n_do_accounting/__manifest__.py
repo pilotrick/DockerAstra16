@@ -35,7 +35,9 @@
 
     'assets': {
         'web.assets_backend': [
-            'l10n_do_accounting/static/src/js/l10n_do_accounting.js',
+            'l10n_do_accounting/static/src/scss/*',
+            'l10n_do_accounting/static/src/js/*',
+            'l10n_do_accounting/static/src/xml/partner_autocomplete.xml',
         ]
 
     },

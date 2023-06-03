@@ -438,34 +438,35 @@ class AccountMove(models.Model):
         ctx = self.env.context
         price_unit = 0
         amount = ctx.get("amount")
+        reverse = ctx.get("reverse")
         percentage = ctx.get("percentage")
         refund_type = ctx.get("refund_type")
         reason = ctx.get("reason")
         reverse_moves = super(AccountMove, self)._reverse_moves(
             default_values_list, cancel
         )
-
-        for move in reverse_moves:
-            if refund_type in ("percentage", "fixed_amount"):
-                price_unit = (
-                    amount
-                    if refund_type == "fixed_amount"
-                    else move.amount_untaxed * (percentage / 100)
-                )
-            move.invoice_line_ids = False
-            move.invoice_line_ids = [
-                [5, 0],
-                [
-                    0,
-                    0,
-                    {
-                        "name": reason or _("Refund"),
-                        'account_id': move.journal_id.default_account_id.id,
-                        'quantity': 1,
-                        'price_unit': price_unit,
-                    },
-                ],
-            ]
+        if reverse == "reverse" and refund_type in ("percentage", "fixed_amount"):
+            for move in reverse_moves:
+                if refund_type in ("percentage", "fixed_amount"):
+                    price_unit = (
+                        amount
+                        if refund_type == "fixed_amount"
+                        else move.amount_untaxed * (percentage / 100)
+                    )
+                move.invoice_line_ids = False
+                move.invoice_line_ids = [
+                    [5, 0],
+                    [
+                        0,
+                        0,
+                        {
+                            "name": reason or _("Refund"),
+                            'account_id': move.journal_id.default_account_id.id,
+                            'quantity': 1,
+                            'price_unit': price_unit,
+                        },
+                    ],
+                ]
         return reverse_moves
 
     @api.constrains("name", "partner_id", "company_id")

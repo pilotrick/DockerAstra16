@@ -407,8 +407,8 @@ class HelpdeskTicket(models.Model):
     def _search_sla_success(self, operator, value):
         datetime_now = fields.Datetime.now()
         if (value and operator in expression.NEGATIVE_TERM_OPERATORS) or (not value and operator not in expression.NEGATIVE_TERM_OPERATORS):  # is failed
-            return [('sla_status_ids.reached_datetime', '>', datetime_now), ('sla_reached_late', '!=', False)]
-        return [('sla_status_ids.reached_datetime', '<', datetime_now), ('sla_reached', '=', True)]  # is success
+            return [('sla_status_ids.reached_datetime', '>', datetime_now), ('sla_reached_late', '!=', False), '|', ('sla_deadline', '!=', False), ('sla_deadline', '<', datetime_now)]
+        return [('sla_status_ids.reached_datetime', '<', datetime_now), ('sla_reached', '=', True), ('sla_reached_late', '=', False), '|', ('sla_deadline', '=', False), ('sla_deadline', '>=', datetime_now)]  # is success
 
     @api.depends('team_id')
     def _compute_user_and_stage_ids(self):
@@ -468,7 +468,7 @@ class HelpdeskTicket(models.Model):
             ticket.partner_ticket_ids = partner_ticket
             partner_ticket = partner_ticket - ticket._origin
             ticket.partner_ticket_count = len(partner_ticket) if partner_ticket else 0
-            open_ticket = partner_ticket.filtered(lambda ticket: not ticket.stage_id.fold)
+            open_ticket = partner_ticket.with_context(prefetch_fields=False).filtered(lambda ticket: not ticket.stage_id.fold)
             ticket.partner_open_ticket_count = len(open_ticket)
 
     @api.depends('assign_date')
@@ -518,6 +518,14 @@ class HelpdeskTicket(models.Model):
             d1 = expression.AND([[('close_date', '=', False)], subdomain])
             d2 = ['&', ('close_date', '!=', False), ('close_hours', operator, value)]
         return expression.OR([d1, d2])
+
+    @api.model
+    def _get_view(self, view_id=None, view_type='form', **options):
+        arch, view = super()._get_view(view_id, view_type, **options)
+        if view_type == 'search' and  self.env.user.notification_type == 'email':
+            for node in arch.xpath("//filter[@name='message_needaction']"):
+                node.set('invisible', '1')
+        return arch, view
 
     def _get_partner_email_update(self):
         self.ensure_one()
@@ -588,17 +596,15 @@ class HelpdeskTicket(models.Model):
                 parsed_name, parsed_email = self.env['res.partner']._parse_partner_name(partner_email)
                 if not parsed_name:
                     parsed_name = partner_name
-                try:
-                    vals['partner_id'] = self.env['res.partner'].with_context(default_team_id=False).find_or_create(
-                        tools.formataddr((partner_name, parsed_email))
-                    ).id
-                except UnicodeEncodeError:
-                    # 'formataddr' doesn't support non-ascii characters in email. Therefore, we fall
-                    # back on a simple partner creation.
-                    vals['partner_id'] = self.env['res.partner'].create({
-                        'name': partner_name,
-                        'email': partner_email,
-                    }).id
+                if vals.get('team_id'):
+                    team = self.env['helpdesk.team'].browse(vals.get('team_id'))
+                    company = team.company_id.id
+                else:
+                    company = False
+
+                vals['partner_id'] = self.env['res.partner'].with_context(default_company_id=company).find_or_create(
+                    tools.formataddr((parsed_name, parsed_email))
+                ).id
 
         # determine partner email for ticket with partner but no email given
         partners = self.env['res.partner'].browse([vals['partner_id'] for vals in list_value if 'partner_id' in vals and vals.get('partner_id') and 'partner_email' not in vals])
@@ -869,7 +875,7 @@ class HelpdeskTicket(models.Model):
 
     @api.model
     def message_new(self, msg, custom_values=None):
-        values = dict(custom_values or {}, partner_email=msg.get('from'), partner_id=msg.get('author_id'))
+        values = dict(custom_values or {}, partner_email=msg.get('from'), partner_name=msg.get('from'), partner_id=msg.get('author_id'))
         ticket = super(HelpdeskTicket, self.with_context(mail_notify_author=True)).message_new(msg, custom_values=values)
         partner_ids = [x.id for x in self.env['mail.thread']._mail_find_partner_from_emails(self._ticket_email_split(msg), records=ticket) if x]
         customer_ids = [p.id for p in self.env['mail.thread']._mail_find_partner_from_emails(tools.email_split(values['partner_email']), records=ticket) if p]
@@ -937,19 +943,7 @@ class HelpdeskTicket(models.Model):
 
         self.ensure_one()
 
-        if self.user_id:
-            return groups
-
-        local_msg_vals = dict(msg_vals or {})
-        take_action = self._notify_get_action_link('assign', **local_msg_vals)
-        helpdesk_actions = [{'url': take_action, 'title': _('Assign to me')}]
-        helpdesk_user_group_id = self.env.ref('helpdesk.group_helpdesk_user').id
-        new_groups = [(
-            'group_helpdesk_user',
-            lambda pdata: pdata['type'] == 'user' and helpdesk_user_group_id in pdata['groups'],
-            {'actions': helpdesk_actions}
-        )]
-        return new_groups + groups
+        return groups
 
     def _notify_get_reply_to(self, default=None):
         """ Override to set alias of tickets to their team if any. """

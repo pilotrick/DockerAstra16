@@ -110,7 +110,10 @@ class TrialBalanceCustomHandler(models.AbstractModel):
 
         # Initial balance
         initial_balance_options = self.env['account.general.ledger.report.handler']._get_options_initial_balance(options)
-        initial_forced_options = {'date': initial_balance_options['date'], 'include_current_year_in_unaff_earnings': True}
+        initial_forced_options = {
+            'date': initial_balance_options['date'],
+            'include_current_year_in_unaff_earnings': initial_balance_options['include_current_year_in_unaff_earnings']
+        }
         initial_header_element = [{'name': _("Initial Balance"), 'forced_options': initial_forced_options}]
         col_headers_initial = [
             initial_header_element,
@@ -144,6 +147,8 @@ class TrialBalanceCustomHandler(models.AbstractModel):
         options['columns'] = initial_columns + options['columns'] + end_columns
         options['ignore_totals_below_sections'] = True # So that GL does not compute them
 
+        report._init_options_order_column(options, previous_options)
+
     def _custom_line_postprocessor(self, report, options, lines):
         # If the hierarchy is enabled, ensure to add the o_account_coa_column_contrast class to the hierarchy lines
         if options.get('hierarchy'):
@@ -151,6 +156,6 @@ class TrialBalanceCustomHandler(models.AbstractModel):
                 model, dummy = report._get_model_info_from_id(line['id'])
                 if model == 'account.group':
                     line_classes = line.get('class', '')
-                    line['class'] = line_classes + ' o_account_coa_column_contrast'
+                    line['class'] = line_classes + ' o_account_coa_column_contrast_hierarchy'
 
         return lines

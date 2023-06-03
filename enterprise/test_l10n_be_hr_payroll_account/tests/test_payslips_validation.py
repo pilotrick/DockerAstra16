@@ -2589,22 +2589,22 @@ class TestPayslipValidation(AccountTestInvoicingCommon):
         self.assertEqual(len(payslip.input_line_ids), 0)
         self.assertEqual(len(payslip.line_ids), 28)
 
-        self.assertAlmostEqual(payslip._get_worked_days_line_amount('WORK100'), 3707.37, places=2)
+        self.assertAlmostEqual(payslip._get_worked_days_line_amount('WORK100'), 3707.12, places=2)
 
         self.assertAlmostEqual(payslip._get_worked_days_line_number_of_days('WORK100'), 22.0, places=2)
 
         self.assertAlmostEqual(payslip._get_worked_days_line_number_of_hours('WORK100'), 167.2, places=2)
 
         payslip_results = {
-            'BASIC': 3707.37,
+            'BASIC': 3707.12,
             'ATN.INT': 5.0,
             'ATN.MOB': 4.0,
-            'SALARY': 3716.37,
-            'ONSS': -485.73,
-            'ONSSTOTAL': 485.73,
-            'GROSSIP': 3230.64,
-            'IP.PART': -741.47,
-            'GROSS': 2489.17,
+            'SALARY': 3716.12,
+            'ONSS': -485.7,
+            'ONSSTOTAL': 485.7,
+            'GROSSIP': 3230.42,
+            'IP.PART': -741.42,
+            'GROSS': 2489.0,
             'P.P': -557.38,
             'PPTOTAL': 557.38,
             'ATN.INT.2': -5.0,
@@ -2613,17 +2613,17 @@ class TestPayslipValidation(AccountTestInvoicingCommon):
             'MEAL_V_EMP': -23.98,
             'CAR.PRIV': 69.5,
             'REP.FEES': 150.0,
-            'IP': 741.47,
+            'IP': 741.42,
             'IP.DED': -55.61,
-            'NET': 2768.88,
-            'REMUNERATION': 2965.9,
-            'ONSSEMPLOYERBASIC': 929.84,
+            'NET': 2768.67,
+            'REMUNERATION': 2965.7,
+            'ONSSEMPLOYERBASIC': 929.77,
             'ONSSEMPLOYERFFE': 4.83,
             'ONSSEMPLOYERMFFE': 3.72,
             'ONSSEMPLOYERCPAE': 8.55,
-            'ONSSEMPLOYERRESTREINT': 62.81,
+            'ONSSEMPLOYERRESTREINT': 62.8,
             'ONSSEMPLOYERUNEMP': 3.72,
-            'ONSSEMPLOYER': 1013.45,
+            'ONSSEMPLOYER': 1013.39,
         }
         self._validate_payslip(payslip, payslip_results)
 
@@ -2847,8 +2847,8 @@ class TestPayslipValidation(AccountTestInvoicingCommon):
         self.assertEqual(len(september_payslip.input_line_ids), 0)
         self.assertEqual(len(september_payslip.line_ids), 30)
 
-        self.assertAlmostEqual(september_payslip._get_worked_days_line_amount('WORK100'), 570.77, places=2)
-        self.assertAlmostEqual(september_payslip._get_worked_days_line_amount('LEAVE110'), 2079.23, places=2)
+        self.assertAlmostEqual(september_payslip._get_worked_days_line_amount('WORK100'), 611.54, places=2)
+        self.assertAlmostEqual(september_payslip._get_worked_days_line_amount('LEAVE110'), 2038.46, places=2)
 
         self.assertAlmostEqual(september_payslip._get_worked_days_line_number_of_days('WORK100'), 5.0, places=2)
         self.assertAlmostEqual(september_payslip._get_worked_days_line_number_of_days('LEAVE110'), 17.0, places=2)
@@ -3416,8 +3416,8 @@ class TestPayslipValidation(AccountTestInvoicingCommon):
         self.assertEqual(len(september_payslip.input_line_ids), 0)
         self.assertEqual(len(september_payslip.line_ids), 32)
 
-        self.assertAlmostEqual(september_payslip._get_worked_days_line_amount('WORK100'), 530.0, places=2)
-        self.assertAlmostEqual(september_payslip._get_worked_days_line_amount('LEAVE110'), 1590.0, places=2)
+        self.assertAlmostEqual(september_payslip._get_worked_days_line_amount('WORK100'), 489.23, places=2)
+        self.assertAlmostEqual(september_payslip._get_worked_days_line_amount('LEAVE110'), 1630.77, places=2)
         self.assertAlmostEqual(september_payslip._get_worked_days_line_amount('LEAVE300'), 0.0, places=2)
 
         self.assertAlmostEqual(september_payslip._get_worked_days_line_number_of_days('WORK100'), 4.0, places=2)
@@ -5343,13 +5343,13 @@ class TestPayslipValidation(AccountTestInvoicingCommon):
             'DEDUCTION': -20.0,
             'REIMBURSEMENT': 50.0,
             'NET': 1270.18,
-            'ONSSEMPLOYERBASIC': 284.82,
+            'ONSSEMPLOYERBASIC': 284.71,
             'ONSSEMPLOYERCPAE': 2.62,
-            'ONSSEMPLOYERFFE': 0.8,
+            'ONSSEMPLOYERFFE': 1.48,
             'ONSSEMPLOYERMFFE': 1.14,
             'ONSSEMPLOYERRESTREINT': 19.23,
             'ONSSEMPLOYERUNEMP': 1.14,
-            'ONSSEMPLOYER': 309.74,
+            'ONSSEMPLOYER': 310.31,
         }
         self._validate_payslip(self.holiday_pay_2020, payslip_results)
 
@@ -5379,16 +5379,16 @@ class TestPayslipValidation(AccountTestInvoicingCommon):
         self.assertEqual(len(self.holiday_pay_2019.line_ids), 32)
         payslip_results = {
             'BASIC_PAY_SIMPLE': 2508.58,
-            'SIMPLE_PAY_DECEMBER': 0.0,
+            'SIMPLE_PAY_DECEMBER': 0,
             'PAY_SIMPLE': 2508.58,
             'DOUBLE_BASIC': 2965.37,
-            'EUROPEAN': 0.0,
-            'DHALREADYPAID': 0.0,
-            'DOUBLE_PAY_DECEMBER': 0.0,
+            'EUROPEAN': 0,
+            'DHALREADYPAID': 0,
+            'DOUBLE_PAY_DECEMBER': 0,
             'PAY DOUBLE': 2965.37,
             'CDHBASIC': 379.39,
-            'CDHALREADYPAID': 0.0,
-            'COMP_DOUBLE_PAY_DECEMBER': 0.0,
+            'CDHALREADYPAID': 0,
+            'COMP_DOUBLE_PAY_DECEMBER': 0,
             'PAY DOUBLE COMPLEMENTARY': 379.39,
             'BASIC': 5853.34,
             'ONSS1': -327.87,
@@ -5403,13 +5403,13 @@ class TestPayslipValidation(AccountTestInvoicingCommon):
             'DEDUCTION': -20.0,
             'REIMBURSEMENT': 50.0,
             'NET': 3270.79,
-            'ONSSEMPLOYERBASIC': 627.9,
+            'ONSSEMPLOYERBASIC': 627.65,
             'ONSSEMPLOYERCPAE': 5.77,
-            'ONSSEMPLOYERFFE': 1.76,
+            'ONSSEMPLOYERFFE': 3.26,
             'ONSSEMPLOYERMFFE': 2.51,
             'ONSSEMPLOYERRESTREINT': 42.4,
             'ONSSEMPLOYERUNEMP': 2.51,
-            'ONSSEMPLOYER': 682.83,
+            'ONSSEMPLOYER': 684.09,
         }
         self._validate_payslip(self.holiday_pay_2019, payslip_results)
 
@@ -5500,13 +5500,13 @@ class TestPayslipValidation(AccountTestInvoicingCommon):
             'PROF_TAX': -725.08,
             'PPTOTAL': 725.08,
             'NET': 1270.18,
-            'ONSSEMPLOYERBASIC': 284.82,
+            'ONSSEMPLOYERBASIC': 284.71,
             'ONSSEMPLOYERCPAE': 2.62,
-            'ONSSEMPLOYERFFE': 0.8,
+            'ONSSEMPLOYERFFE': 1.48,
             'ONSSEMPLOYERMFFE': 1.14,
             'ONSSEMPLOYERRESTREINT': 19.23,
             'ONSSEMPLOYERUNEMP': 1.14,
-            'ONSSEMPLOYER': 309.74,
+            'ONSSEMPLOYER': 310.31,
         }
         self._validate_payslip(self.holiday_pay_2020, payslip_results)
 
@@ -5515,16 +5515,16 @@ class TestPayslipValidation(AccountTestInvoicingCommon):
         self.assertEqual(len(self.holiday_pay_2019.line_ids), 27)
         payslip_results = {
             'BASIC_PAY_SIMPLE': 2508.58,
-            'SIMPLE_PAY_DECEMBER': 0.0,
+            'SIMPLE_PAY_DECEMBER': 0,
             'PAY_SIMPLE': 2508.58,
             'DOUBLE_BASIC': 2965.37,
             'EUROPEAN': -1384.62,
-            'DHALREADYPAID': 0.0,
-            'DOUBLE_PAY_DECEMBER': 0.0,
+            'DHALREADYPAID': 0,
+            'DOUBLE_PAY_DECEMBER': 0,
             'PAY DOUBLE': 1580.75,
             'CDHBASIC': 202.24,
-            'CDHALREADYPAID': 0.0,
-            'COMP_DOUBLE_PAY_DECEMBER': 0.0,
+            'CDHALREADYPAID': 0,
+            'COMP_DOUBLE_PAY_DECEMBER': 0,
             'PAY DOUBLE COMPLEMENTARY': 202.24,
             'BASIC': 4291.57,
             'ONSS1': -327.87,
@@ -5534,13 +5534,13 @@ class TestPayslipValidation(AccountTestInvoicingCommon):
             'PROF_TAX': -1365.33,
             'PPTOTAL': 1365.33,
             'NET': 2391.77,
-            'ONSSEMPLOYERBASIC': 627.9,
-            'ONSSEMPLOYERFFE': 1.76,
+            'ONSSEMPLOYERBASIC': 627.65,
+            'ONSSEMPLOYERFFE': 3.26,
             'ONSSEMPLOYERMFFE': 2.51,
             'ONSSEMPLOYERCPAE': 5.77,
             'ONSSEMPLOYERRESTREINT': 42.4,
             'ONSSEMPLOYERUNEMP': 2.51,
-            'ONSSEMPLOYER': 682.83,
+            'ONSSEMPLOYER': 684.09,
         }
         self._validate_payslip(self.holiday_pay_2019, payslip_results)
 
@@ -8041,7 +8041,7 @@ class TestPayslipValidation(AccountTestInvoicingCommon):
         }
         self._validate_payslip(payslip, payslip_results)
 
-    def test_aa_relapse_without_guaranteed_salary_split_time_off(self):
+    def test_relapse_without_guaranteed_salary_split_time_off(self):
         # Check when the employee is always sick, but with split time off
         # Sick 3 days (27 - 29 April 2022)
         # Sick 1 week (2 - 6 May)
@@ -9606,5 +9606,128 @@ class TestPayslipValidation(AccountTestInvoicingCommon):
             'ATN.MOB.2': -4,
             'ATN.CAR.2': -149.29,
             'NET': 1206.58,
+        }
+        self._validate_payslip(payslip, payslip_results)
+
+    def test_repartition_few_half_days(self):
+        calendar = self.env['resource.calendar'].create([{
+            'name': "Test Calendar : 26 Hours/Week",
+            'company_id': self.env.company.id,
+            'hours_per_day': 6.67,
+            'tz': "Europe/Brussels",
+            'two_weeks_calendar': False,
+            'hours_per_week': 26.67,
+            'full_time_required_hours': 38.0,
+            'attendance_ids': [(5, 0, 0)] + [(0, 0, {
+                'name': "Attendance",
+                'dayofweek': dayofweek,
+                'hour_from': hour_from,
+                'hour_to': hour_to,
+                'day_period': day_period,
+                'work_entry_type_id': self.env.ref('hr_work_entry.work_entry_type_attendance').id
+
+            }) for dayofweek, hour_from, hour_to, day_period in [
+                ("0", 9.0, 12.0, "morning"),
+                ("0", 12.75, 17, "afternoon"),
+                ("1", 9.0, 12.0, "morning"),
+                ("1", 12.75, 17.0, "afternoon"),
+                ("2", 9.0, 14.75, "morning"),
+                ("3", 9.0, 12.0, "morning"),
+                ("3", 12.75, 17, "afternoon"),
+            ]],
+        }])
+        self.employee.resource_calendar_id = calendar
+        self.contract.write({
+            'wage_on_signature': 908.33,
+            'wage': 908.33,
+            'resource_calendar_id': calendar.id,
+            'date_start': datetime.date(2023, 3, 27),
+            'internet': 0,
+            'mobile': 0,
+            'ip': False,
+        })
+
+        sick_leave = self.env['hr.leave'].new({
+            'name': 'Sick Time Off 3 Days',
+            'employee_id': self.employee.id,
+            'holiday_status_id': self.sick_time_off_type.id,
+            'request_date_from': datetime.date(2023, 3, 27),
+            'request_date_to': datetime.date(2023, 3, 29),
+            'request_hour_from': '7',
+            'request_hour_to': '18',
+            'number_of_days': 3,
+        })
+        sick_leave._compute_date_from_to()
+        sick_leave = self.env['hr.leave'].create(sick_leave._convert_to_write(sick_leave._cache))
+        sick_leave.action_validate()
+        self.contract._generate_work_entries(datetime.date(2023, 3, 1), datetime.date(2023, 3, 31))
+        payslip = self._generate_payslip(datetime.date(2023, 3, 1), datetime.date(2023, 3, 31))
+
+        wds = payslip.worked_days_line_ids.sorted("number_of_hours")
+        self.assertAlmostEqual(wds[0].number_of_days, 1, places=2)
+        self.assertAlmostEqual(wds[0].number_of_hours, 5.75, places=2)
+        self.assertAlmostEqual(wds[0].amount, 43.83, places=2)
+        self.assertEqual(wds[0].work_entry_type_id.code, "LEAVE110")
+
+        self.assertAlmostEqual(wds[1].number_of_days, 1, places=2)
+        self.assertAlmostEqual(wds[1].number_of_hours, 7.25, places=2)
+        self.assertAlmostEqual(wds[1].amount, 55.26, places=2)
+        self.assertEqual(wds[1].work_entry_type_id.code, "WORK100")
+
+        self.assertAlmostEqual(wds[2].number_of_days, 2, places=2)
+        self.assertAlmostEqual(wds[2].number_of_hours, 14.5, places=2)
+        self.assertAlmostEqual(wds[2].amount, 81.31, places=2)
+        self.assertEqual(wds[2].work_entry_type_id.code, "LEAVE110")
+
+        self.assertAlmostEqual(wds[3].number_of_days, 14, places=2)
+        self.assertAlmostEqual(wds[3].number_of_hours, 95.5, places=2)
+        self.assertAlmostEqual(wds[3].amount, 0, places=2)
+        self.assertEqual(wds[3].work_entry_type_id.code, "OUT")
+
+        payslip_results = {
+            'BASIC': 180.4,
+            'SALARY': 180.4,
+            'ONSS': -23.58,
+            'EmpBonus.1': 23.58,
+            'ONSSTOTAL': 0,
+            'ATN.CAR': 169.15,
+            'GROSS': 349.55,
+            'P.P': 0,
+            'P.P.DED': 0,
+            'PPTOTAL': 0,
+            'ATN.CAR.2': -169.15,
+            'M.ONSS': 0,
+            'MEAL_V_EMP': -1.09,
+            'REP.FEES': 20.88,
+            'NET': 200.19,
+            'REMUNERATION': 180.4,
+            'ONSSEMPLOYERBASIC': 45.15,
+            'ONSSEMPLOYERFFE': 0.13,
+            'ONSSEMPLOYERMFFE': 0.18,
+            'ONSSEMPLOYERCPAE': 0.41,
+            'ONSSEMPLOYERRESTREINT': 3.05,
+            'ONSSEMPLOYERUNEMP': 0.18,
+            'ONSSEMPLOYER': 49.1,
+            'CO2FEE': 31.34,
+        }
+        self._validate_payslip(payslip, payslip_results)
+
+    def test_aa_thirteen_month(self):
+        payslip = self._generate_payslip(datetime.date(2023, 6, 1), datetime.date(2023, 6, 30), struct_id=self.env.ref('l10n_be_hr_payroll.hr_payroll_structure_cp200_thirteen_month').id)
+        payslip_results = {
+            'BASIC': 1325.0,
+            'SALARY': 1325.0,
+            'ONSS': -173.18,
+            'GROSS': 1151.82,
+            'P.P': -534.91,
+            'PPTOTAL': 534.91,
+            'NET': 616.92,
+            'ONSSEMPLOYERBASIC': 331.65,
+            'ONSSEMPLOYERFFE': 0.93,
+            'ONSSEMPLOYERMFFE': 1.33,
+            'ONSSEMPLOYERCPAE': 3.05,
+            'ONSSEMPLOYERRESTREINT': 22.39,
+            'ONSSEMPLOYERUNEMP': 1.33,
+            'ONSSEMPLOYER': 360.67,
         }
         self._validate_payslip(payslip, payslip_results)

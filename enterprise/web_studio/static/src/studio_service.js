@@ -229,7 +229,20 @@ export const studioService = {
         async function reload(params = {}) {
             resetViewCompilerCache();
             env.bus.trigger("CLEAR-CACHES");
-            const action = await env.services.action.loadAction(state.editedAction.id);
+            const actionContext = state.editedAction.context;
+            let additionalContext;
+            if (actionContext.active_id) {
+                additionalContext = { active_id: actionContext.active_id };
+            }
+            if (actionContext.active_ids) {
+                additionalContext = Object.assign(additionalContext || {}, {
+                    active_ids: actionContext.active_ids,
+                });
+            }
+            const action = await env.services.action.loadAction(
+                state.editedAction.id,
+                additionalContext
+            );
             setParams({ action, ...params });
         }
 
@@ -281,6 +294,9 @@ export const studioService = {
                 state.x2mEditorPath = [];
             }
             if ("action" in params) {
+                if ((state.editedAction && state.editedAction.id) !== params.action.id) {
+                    state.editedControllerState = null;
+                }
                 state.editedAction = params.action || null;
             }
             if ("editorTab" in params) {

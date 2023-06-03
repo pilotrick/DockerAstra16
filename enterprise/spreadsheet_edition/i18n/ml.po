@@ -9,10 +9,10 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 16.0+e\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-12-15 13:30+0000\n"
+"POT-Creation-Date: 2023-04-14 06:19+0000\n"
 "PO-Revision-Date: 2022-09-22 05:49+0000\n"
 "Last-Translator: Niyas Raphy, 2023\n"
-"Language-Team: Malayalam (https://www.transifex.com/odoo/teams/41243/ml/)\n"
+"Language-Team: Malayalam (https://app.transifex.com/odoo/teams/41243/ml/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
@@ -22,7 +22,7 @@ msgstr ""
 #. module: spreadsheet_edition
 #: model:ir.model.fields,field_description:spreadsheet_edition.field_spreadsheet_revision__active
 msgid "Active"
-msgstr ""
+msgstr "ആക്റ്റീവ്"
 
 #. module: spreadsheet_edition
 #. odoo-javascript
@@ -65,7 +65,7 @@ msgstr ""
 #: code:addons/spreadsheet_edition/static/src/bundle/pivot/side_panels/pivot_list_side_panel.xml:0
 #, python-format
 msgid "Back"
-msgstr ""
+msgstr "തിരികെ"
 
 #. module: spreadsheet_edition
 #. odoo-javascript
@@ -89,7 +89,7 @@ msgstr ""
 #: code:addons/spreadsheet_edition/static/src/bundle/global_filters/global_filter_side_panel.xml:0
 #, python-format
 msgid "Cancel"
-msgstr ""
+msgstr "റദ്ദാക്കുക"
 
 #. module: spreadsheet_edition
 #. odoo-javascript
@@ -120,38 +120,38 @@ msgstr ""
 #: code:addons/spreadsheet_edition/static/src/bundle/actions/spreadsheet.xml:0
 #, python-format
 msgid "Confirm"
-msgstr ""
+msgstr "സ്ഥിരീകരിക്കുക"
 
 #. module: spreadsheet_edition
 #: model:ir.model.fields,field_description:spreadsheet_edition.field_spreadsheet_revision__create_uid
 msgid "Created by"
-msgstr ""
+msgstr "ഉണ്ടാക്കിയത്"
 
 #. module: spreadsheet_edition
 #: model:ir.model.fields,field_description:spreadsheet_edition.field_spreadsheet_revision__create_date
 msgid "Created on"
-msgstr ""
+msgstr "സൃഷ്ടിച്ചത്"
 
 #. module: spreadsheet_edition
 #. odoo-javascript
 #: code:addons/spreadsheet_edition/static/src/bundle/actions/spreadsheet_component.js:0
 #, python-format
 msgid "Currency"
-msgstr ""
+msgstr "കറൻസി"
 
 #. module: spreadsheet_edition
 #. odoo-javascript
 #: code:addons/spreadsheet_edition/static/src/assets/components/spreadsheet_selector_dialog/spreadsheet_selector_dialog.js:0
 #, python-format
 msgid "Dashboards"
-msgstr ""
+msgstr "ഡാഷ്ബോർഡ്"
 
 #. module: spreadsheet_edition
 #. odoo-javascript
 #: code:addons/spreadsheet_edition/static/src/bundle/global_filters/global_filter_side_panel.xml:0
 #, python-format
 msgid "Date"
-msgstr ""
+msgstr "തീയതി"
 
 #. module: spreadsheet_edition
 #. odoo-javascript
@@ -165,14 +165,14 @@ msgstr ""
 #: code:addons/spreadsheet_edition/static/src/assets/helpers.js:0
 #, python-format
 msgid "Day"
-msgstr ""
+msgstr "ദിവസം"
 
 #. module: spreadsheet_edition
 #. odoo-javascript
 #: code:addons/spreadsheet_edition/static/src/bundle/global_filters/global_filter_side_panel.xml:0
 #, python-format
 msgid "Default value"
-msgstr ""
+msgstr "ഡീഫോൾട് വാല്യൂ "
 
 #. module: spreadsheet_edition
 #. odoo-javascript
@@ -180,19 +180,19 @@ msgstr ""
 #: code:addons/spreadsheet_edition/static/src/bundle/pivot/side_panels/pivot_list_side_panel.xml:0
 #, python-format
 msgid "Delete"
-msgstr "ഇല്ലാതാക്കുക"
+msgstr "ഡിലീറ്റ്"
 
 #. module: spreadsheet_edition
 #. odoo-javascript
 #: code:addons/spreadsheet_edition/static/src/bundle/pivot/side_panels/pivot_details_side_panel.xml:0
 #, python-format
 msgid "Dimensions"
-msgstr ""
+msgstr "അളവുകൾ"
 
 #. module: spreadsheet_edition
 #: model:ir.model.fields,field_description:spreadsheet_edition.field_spreadsheet_revision__display_name
 msgid "Display Name"
-msgstr ""
+msgstr "ഡിസ്പ്ലേ നെയിം"
 
 #. module: spreadsheet_edition
 #. odoo-javascript
@@ -207,14 +207,21 @@ msgstr ""
 #: code:addons/spreadsheet_edition/static/src/bundle/pivot/side_panels/pivot_details_side_panel.xml:0
 #, python-format
 msgid "Domain"
-msgstr ""
+msgstr "ഡൊമെയ്ൻ"
 
 #. module: spreadsheet_edition
 #. odoo-javascript
 #: code:addons/spreadsheet_edition/static/src/bundle/o_spreadsheet/menu_item_registry.js:0
 #, python-format
 msgid "Download"
-msgstr ""
+msgstr "ഡൌൺലോഡ് "
+
+#. module: spreadsheet_edition
+#. odoo-javascript
+#: code:addons/spreadsheet_edition/static/src/bundle/o_spreadsheet/menu_item_registry.js:0
+#, python-format
+msgid "Download as JSON"
+msgstr "JSON ആയി ഡൗൺലോഡ് ചെയ്യുക"
 
 #. module: spreadsheet_edition
 #. odoo-javascript
@@ -228,7 +235,7 @@ msgstr ""
 #: code:addons/spreadsheet_edition/static/src/bundle/global_filters/global_filter_side_panel.xml:0
 #, python-format
 msgid "Edit"
-msgstr ""
+msgstr "എഡിറ്റ്"
 
 #. module: spreadsheet_edition
 #. odoo-javascript
@@ -250,7 +257,7 @@ msgstr ""
 #: code:addons/spreadsheet_edition/static/src/bundle/o_spreadsheet/menu_item_registry.js:0
 #, python-format
 msgid "File"
-msgstr ""
+msgstr "ഫയൽ"
 
 #. module: spreadsheet_edition
 #. odoo-javascript
@@ -265,12 +272,12 @@ msgstr ""
 #: code:addons/spreadsheet_edition/static/src/bundle/global_filters/index.js:0
 #, python-format
 msgid "Filters"
-msgstr ""
+msgstr "ഫിൽറ്റർ"
 
 #. module: spreadsheet_edition
 #: model:ir.model.fields,field_description:spreadsheet_edition.field_spreadsheet_revision__id
 msgid "ID"
-msgstr ""
+msgstr "ഐഡി"
 
 #. module: spreadsheet_edition
 #. odoo-javascript
@@ -311,22 +318,22 @@ msgstr ""
 #: code:addons/spreadsheet_edition/static/src/bundle/global_filters/global_filter_side_panel.xml:0
 #, python-format
 msgid "Label"
-msgstr ""
+msgstr "ലേബൽ"
 
 #. module: spreadsheet_edition
 #: model:ir.model.fields,field_description:spreadsheet_edition.field_spreadsheet_revision____last_update
 msgid "Last Modified on"
-msgstr ""
+msgstr "അവസാനം അപ്ഡേറ്റ് ചെയ്തത്"
 
 #. module: spreadsheet_edition
 #: model:ir.model.fields,field_description:spreadsheet_edition.field_spreadsheet_revision__write_uid
 msgid "Last Updated by"
-msgstr ""
+msgstr "അവസാനം അപ്ഡേറ്റ് ചെയ്തത്"
 
 #. module: spreadsheet_edition
 #: model:ir.model.fields,field_description:spreadsheet_edition.field_spreadsheet_revision__write_date
 msgid "Last Updated on"
-msgstr ""
+msgstr "അവസാനം അപ്ഡേറ്റ് ചെയ്തത്"
 
 #. module: spreadsheet_edition
 #. odoo-javascript
@@ -406,7 +413,7 @@ msgstr ""
 #: model:ir.model.fields,field_description:spreadsheet_edition.field_spreadsheet_revision__res_model
 #, python-format
 msgid "Model"
-msgstr ""
+msgstr "മോഡൽ"
 
 #. module: spreadsheet_edition
 #. odoo-javascript
@@ -414,7 +421,7 @@ msgstr ""
 #: code:addons/spreadsheet_edition/static/src/bundle/global_filters/filter_editor_side_panel.js:0
 #, python-format
 msgid "Month"
-msgstr ""
+msgstr "മാസം"
 
 #. module: spreadsheet_edition
 #. odoo-javascript
@@ -428,7 +435,7 @@ msgstr ""
 #: code:addons/spreadsheet_edition/static/src/bundle/o_spreadsheet/menu_item_registry.js:0
 #, python-format
 msgid "New"
-msgstr ""
+msgstr "പുതിയ"
 
 #. module: spreadsheet_edition
 #. odoo-javascript
@@ -449,7 +456,7 @@ msgstr ""
 #: code:addons/spreadsheet_edition/static/src/bundle/global_filters/components/filter_field_offset.js:0
 #, python-format
 msgid "Next"
-msgstr ""
+msgstr "അടുത്തത്"
 
 #. module: spreadsheet_edition
 #. odoo-javascript
@@ -463,7 +470,7 @@ msgstr ""
 #: code:addons/spreadsheet_edition/static/src/bundle/actions/spreadsheet.xml:0
 #, python-format
 msgid "Ok"
-msgstr ""
+msgstr "ശരി"
 
 #. module: spreadsheet_edition
 #: model:ir.model.fields,field_description:spreadsheet_edition.field_spreadsheet_revision__parent_revision_id
@@ -482,6 +489,13 @@ msgstr ""
 #: code:addons/spreadsheet_edition/static/src/bundle/global_filters/components/filter_field_offset.js:0
 #, python-format
 msgid "Period offset applied to this source"
+msgstr ""
+
+#. module: spreadsheet_edition
+#. odoo-javascript
+#: code:addons/spreadsheet_edition/static/src/assets/pivot_view/pivot_view.js:0
+#, python-format
+msgid "Pivot contains duplicate groupbys"
 msgstr ""
 
 #. module: spreadsheet_edition
@@ -511,7 +525,7 @@ msgstr ""
 #: code:addons/spreadsheet_edition/static/src/bundle/global_filters/filter_editor_side_panel.js:0
 #, python-format
 msgid "Quarter"
-msgstr ""
+msgstr "ക്വാർട്ടർ"
 
 #. module: spreadsheet_edition
 #: model:ir.model.fields,field_description:spreadsheet_edition.field_spreadsheet_collaborative_mixin__raw
@@ -586,7 +600,7 @@ msgstr ""
 #: code:addons/spreadsheet_edition/static/src/bundle/global_filters/global_filter_side_panel.xml:0
 #, python-format
 msgid "Remove"
-msgstr ""
+msgstr "റിമൂവ്"
 
 #. module: spreadsheet_edition
 #. odoo-javascript
@@ -614,7 +628,7 @@ msgstr ""
 #: code:addons/spreadsheet_edition/static/src/bundle/o_spreadsheet/editable_name/editable_name.xml:0
 #, python-format
 msgid "Save"
-msgstr ""
+msgstr "സേവ്"
 
 #. module: spreadsheet_edition
 #. odoo-javascript
@@ -644,7 +658,7 @@ msgstr ""
 #: code:addons/spreadsheet_edition/static/src/assets/components/spreadsheet_selector_dialog/spreadsheet_selector_panel.xml:0
 #, python-format
 msgid "Search..."
-msgstr ""
+msgstr "തിരയുക..."
 
 #. module: spreadsheet_edition
 #. odoo-javascript
@@ -708,24 +722,24 @@ msgstr ""
 #: code:addons/spreadsheet_edition/static/src/bundle/pivot/side_panels/pivot_details_side_panel.xml:0
 #, python-format
 msgid "Sorting"
-msgstr ""
+msgstr "സോർട്ടിങ് "
 
 #. module: spreadsheet_edition
 #: model:ir.model.fields,field_description:spreadsheet_edition.field_spreadsheet_collaborative_mixin__spreadsheet_revision_ids
 msgid "Spreadsheet Revision"
-msgstr ""
+msgstr "സ്പ്രെഡ്ഷീറ്റ് റിവിഷൻ"
 
 #. module: spreadsheet_edition
 #: model:ir.model.fields,field_description:spreadsheet_edition.field_spreadsheet_collaborative_mixin__spreadsheet_snapshot
 msgid "Spreadsheet Snapshot"
-msgstr ""
+msgstr "സ്പ്രെഡ്ഷീറ്റ് സ്നാപ്പ്ഷോട്ട്"
 
 #. module: spreadsheet_edition
 #. odoo-javascript
 #: code:addons/spreadsheet_edition/static/src/assets/components/spreadsheet_selector_dialog/spreadsheet_selector_dialog.js:0
 #, python-format
 msgid "Spreadsheets"
-msgstr ""
+msgstr "സ്പ്രെഡ്ഷീറ്റുകൾ"
 
 #. module: spreadsheet_edition
 #. odoo-javascript
@@ -746,7 +760,7 @@ msgstr ""
 #: code:addons/spreadsheet_edition/static/src/bundle/global_filters/global_filter_side_panel.xml:0
 #, python-format
 msgid "Text"
-msgstr ""
+msgstr "ടെക്സ്റ്റ്"
 
 #. module: spreadsheet_edition
 #. odoo-javascript
@@ -762,14 +776,14 @@ msgstr ""
 #: code:addons/spreadsheet_edition/static/src/bundle/pivot/spreadsheet_pivot_dialog.js:0
 #, python-format
 msgid "Total"
-msgstr ""
+msgstr "ആകെ"
 
 #. module: spreadsheet_edition
 #. odoo-javascript
 #: code:addons/spreadsheet_edition/static/src/assets/helpers.js:0
 #, python-format
 msgid "Week"
-msgstr ""
+msgstr "ആഴ്ച"
 
 #. module: spreadsheet_edition
 #. odoo-javascript
@@ -777,28 +791,28 @@ msgstr ""
 #: code:addons/spreadsheet_edition/static/src/bundle/global_filters/filter_editor_side_panel.js:0
 #, python-format
 msgid "Year"
-msgstr ""
+msgstr "വർഷം"
 
 #. module: spreadsheet_edition
 #. odoo-javascript
 #: code:addons/spreadsheet_edition/static/src/bundle/pivot/side_panels/pivot_details_side_panel.js:0
 #, python-format
 msgid "ascending"
-msgstr ""
+msgstr "ആരോഹണം"
 
 #. module: spreadsheet_edition
 #. odoo-javascript
 #: code:addons/spreadsheet_edition/static/src/bundle/pivot/side_panels/pivot_details_side_panel.js:0
 #, python-format
 msgid "descending"
-msgstr ""
+msgstr "അവരോഹണം"
 
 #. module: spreadsheet_edition
 #. odoo-javascript
 #: code:addons/spreadsheet_edition/static/src/assets/components/spreadsheet_selector_dialog/spreadsheet_selector_dialog.js:0
 #, python-format
 msgid "graph"
-msgstr ""
+msgstr "ഗ്രാഫ്"
 
 #. module: spreadsheet_edition
 #. odoo-javascript

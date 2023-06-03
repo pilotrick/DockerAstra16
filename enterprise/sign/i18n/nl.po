@@ -4,18 +4,18 @@
 # 
 # Translators:
 # Martin Trigaux, 2022
-# Erwin van der Ploeg <erwin@odooexperts.nl>, 2022
 # Camille Dantinne <cmd@odoo.com>, 2022
 # Jolien De Paepe, 2023
+# Erwin van der Ploeg <erwin@odooexperts.nl>, 2023
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 16.0+e\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-12-15 13:27+0000\n"
+"POT-Creation-Date: 2023-04-14 06:16+0000\n"
 "PO-Revision-Date: 2022-09-22 05:49+0000\n"
-"Last-Translator: Jolien De Paepe, 2023\n"
-"Language-Team: Dutch (https://www.transifex.com/odoo/teams/41243/nl/)\n"
+"Last-Translator: Erwin van der Ploeg <erwin@odooexperts.nl>, 2023\n"
+"Language-Team: Dutch (https://app.transifex.com/odoo/teams/41243/nl/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
@@ -62,7 +62,7 @@ msgstr "%s de handtekening is bevestigd per sms met het telefoonnummer %s."
 #: code:addons/sign/models/sign_request.py:0
 #, python-format
 msgid "%s: missing credits for extra-authentication"
-msgstr "%s: ontbrekende kredieten voor extra authenticatie"
+msgstr "%s: ontbrekende credits voor extra authenticatie"
 
 #. module: sign
 #: model_terms:ir.ui.view,arch_db:sign.sign_request_logs_user
@@ -187,7 +187,7 @@ msgstr ""
 #. module: sign
 #: model_terms:ir.ui.view,arch_db:sign.sign_iap_credits_banner
 msgid "<i class=\"fa fa-arrow-right\"/> Buy credits"
-msgstr "<i class=\"fa fa-arrow-right\"/> Kredieten aanschaffen"
+msgstr "<i class=\"fa fa-arrow-right\"/> Credits aanschaffen"
 
 #. module: sign
 #: model_terms:ir.ui.view,arch_db:sign.sign_request_logs_user
@@ -221,7 +221,7 @@ msgstr "<small><i> Ondertekent </i></small>"
 #. module: sign
 #: model_terms:ir.ui.view,arch_db:sign.signer_status_wrapper
 msgid "<small><i> Waiting Signature </i></small>"
-msgstr "<small><i> Wachten op handtekening </i></small>"
+msgstr "<small><i> Wachtend op handtekening </i></small>"
 
 #. module: sign
 #: model_terms:ir.ui.view,arch_db:sign.sign_request_logs_user
@@ -355,7 +355,7 @@ msgid ""
 "A non-shared sign request's should not have any signer with an empty partner"
 msgstr ""
 "Een niet-gedeeld ibdertekenverzoek mag geen ondertekenaar hebben met een "
-"lege partner"
+"lege relatie"
 
 #. module: sign
 #. odoo-python
@@ -365,7 +365,7 @@ msgid ""
 "A shared sign request should only have one signer with an empty partner"
 msgstr ""
 "Een gedeeld ondertekenverzoek mag slechts één ondertekenaar hebben met een "
-"lege partner"
+"lege relatie"
 
 #. module: sign
 #: model_terms:ir.ui.view,arch_db:sign.green_savings_report
@@ -635,12 +635,12 @@ msgstr "Bevoegde gebruikers"
 #: code:addons/sign/static/src/xml/sign_backend.xml:0
 #, python-format
 msgid "Authorized Users:"
-msgstr "Geautoriseerde gebruikers:"
+msgstr "Bevoegde gebruikers:"
 
 #. module: sign
 #: model:ir.model.fields,field_description:sign.field_sign_item_type__auto_field
 msgid "Auto-fill Partner Field"
-msgstr "Partnerveld automatisch invullen"
+msgstr "Relatieveld automatisch invullen"
 
 #. module: sign
 #: model_terms:ir.ui.view,arch_db:sign.green_savings_report
@@ -1389,7 +1389,7 @@ msgstr "Volgers"
 #. module: sign
 #: model:ir.model.fields,field_description:sign.field_sign_request__message_partner_ids
 msgid "Followers (Partners)"
-msgstr "Volgers (Partners)"
+msgstr "Volgers (Relaties)"
 
 #. module: sign
 #: model:ir.model.fields,help:sign.field_sign_request__activity_type_icon
@@ -1637,8 +1637,8 @@ msgid ""
 "If you wish, you can request the document again after buying more credits "
 "for the operation."
 msgstr ""
-"Als je wilt, kun je het document opnieuw opvragen nadat je meer kredieten "
-"hebt gekocht voor de operatie."
+"Als je wilt, kun je het document opnieuw opvragen nadat je meer credits hebt"
+" gekocht voor de operatie."
 
 #. module: sign
 #: model:ir.model.fields,field_description:sign.field_sign_template__in_progress_count
@@ -2249,7 +2249,7 @@ msgstr "Deelnemers"
 #. module: sign
 #: model:ir.model.fields,field_description:sign.field_sign_log__partner_id
 msgid "Partner"
-msgstr "Partner"
+msgstr "Relatie"
 
 #. module: sign
 #. odoo-javascript
@@ -2843,6 +2843,8 @@ msgstr "Hash van de ondertekenaar:"
 
 #. module: sign
 #. odoo-javascript
+#. odoo-python
+#: code:addons/sign/models/sign_request.py:0
 #: code:addons/sign/static/src/js/tours/sign.js:0
 #: code:addons/sign/static/src/xml/sign_backend.xml:0
 #: code:addons/sign/static/src/xml/sign_common.xml:0
@@ -3063,7 +3065,7 @@ msgstr "Datum ondertekening"
 #. module: sign
 #: model_terms:ir.ui.view,arch_db:sign.sign_request_logs_user
 msgid "Signing Events"
-msgstr "Evenementen tekenen"
+msgstr "Onderteken log"
 
 #. module: sign
 #. odoo-javascript
@@ -3400,7 +3402,7 @@ msgid ""
 "on&amp;nbsp;"
 msgstr ""
 "Het einddocument en de voltooiingsgeschiedenis zijn per e-mail verzonden "
-"on&amp;nbsp;"
+"op&amp;nbsp;"
 
 #. module: sign
 #. odoo-python
@@ -3431,7 +3433,7 @@ msgid ""
 "The mail address of %(partner)s has been updated. The request will be "
 "automatically resent."
 msgstr ""
-"Het e-mailadres van %(partner)s is bijgewerkt. Het verzoek wordt automatisch"
+"Het e-mailadres van %(relatie)s is bijgewerkt. Het verzoek wordt automatisch"
 " opnieuw verzonden."
 
 #. module: sign
@@ -3829,12 +3831,12 @@ msgstr "Bekeken/gedownload door"
 #: model:ir.ui.menu,name:sign.sign_request_waiting_for_me
 #: model_terms:ir.ui.view,arch_db:sign.sign_request_view_search
 msgid "Waiting for me"
-msgstr "Wachten op mij"
+msgstr "Wachtend op mijn handtekening"
 
 #. module: sign
 #: model_terms:ir.ui.view,arch_db:sign.sign_request_view_search
 msgid "Waiting for others"
-msgstr "Wachten op anderen"
+msgstr "Wachtend op anderen"
 
 #. module: sign
 #. odoo-javascript
@@ -3885,7 +3887,7 @@ msgstr "Websiteberichten"
 #. module: sign
 #: model:ir.model.fields,help:sign.field_sign_request__website_message_ids
 msgid "Website communication history"
-msgstr "Website communicatie geschiedenis"
+msgstr "Website communicatiegeschiedenis"
 
 #. module: sign
 #. odoo-javascript
@@ -3967,9 +3969,21 @@ msgid "You cannot reassign this signatory"
 msgstr "Je kunt deze ondertekenaar niet opnieuw toewijzen"
 
 #. module: sign
+#. odoo-python
+#: code:addons/sign/models/sign_template.py:0
+#, python-format
+msgid ""
+"You cannot share this document by link, because it has fields to be filled "
+"by different roles. Use Send button instead."
+msgstr ""
+"Je kan dit document niet delen via een link, omdat het velden bevat die door"
+" verschillende rollen moeten worden ingevuld. Gebruik liever de knop "
+"Verzenden."
+
+#. module: sign
 #: model_terms:ir.ui.view,arch_db:sign.sign_iap_credits_banner
 msgid "You have less than 20 credits remaining for"
-msgstr "Je hebt minder dan 20 kredieten over voor"
+msgstr "Je hebt minder dan 20 credits over voor"
 
 #. module: sign
 #: model_terms:ir.ui.view,arch_db:sign.sign_template_mail_refused
@@ -3982,8 +3996,8 @@ msgid ""
 "You have templates or requests using a role with an extra-authentication step with few credits remaining.<br/>\n"
 "                To remove this warning, disable the extra-authentication step in the <code>Configuration &gt; Roles</code> menu, or buy credits."
 msgstr ""
-"Je hebt sjablonen of verzoeken die een rol met een extra authenticatiestap gebruiken met weinig kredieten over.<br/>\n"
-"                Om deze waarschuwing te verwijderen kan je de extra authenticatiestap desactiveren in het <code>Configuratie &gt; Rollen</code> menu, of meer kredieten aanschaffen."
+"Je hebt sjablonen of verzoeken die een rol met een extra authenticatiestap gebruiken met weinig credits over.<br/>\n"
+"                Om deze waarschuwing te verwijderen kan je de extra authenticatiestap desactiveren in het <code>Configuratie &gt; Rollen</code> menu, of meer credits aanschaffen."
 
 #. module: sign
 #. odoo-python
@@ -4103,8 +4117,7 @@ msgstr "en:"
 #: model_terms:ir.ui.view,arch_db:sign.sign_iap_credits_banner
 msgid "authentication step will be skipped if you are out of credits."
 msgstr ""
-"authenticatiestap zal worden overgeslagen indien je geen kredieten meer "
-"hebt."
+"authenticatiestap zal worden overgeslagen indien je geen credits meer hebt."
 
 #. module: sign
 #: model_terms:ir.ui.view,arch_db:sign.sign_iap_credits_banner
@@ -4117,7 +4130,7 @@ msgid ""
 "because you don't have enough credits for this operation. \n"
 "                    The signatory was able to finish signing, but was not asked to authenticate fully."
 msgstr ""
-"want je hebt niet genoeg kredieten voor deze operatie. \n"
+"want je hebt niet genoeg credits voor deze operatie. \n"
 "                    De ondertekenaar kon het document ondertekenen, maar werd niet gevraagd om volledig te authenticeren."
 
 #. module: sign
@@ -4236,7 +4249,7 @@ msgstr "dit sjabloon om het te wijzigen."
 #. module: sign
 #: model_terms:ir.ui.view,arch_db:sign.sign_request_logs_user
 msgid "to:"
-msgstr "t/m:"
+msgstr "naar:"
 
 #. module: sign
 #: model_terms:ir.ui.view,arch_db:sign.green_savings_report

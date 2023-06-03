@@ -253,11 +253,14 @@
                                 </t><br /><br />
                                 <strong>NCF:</strong>
                                 <span t-if="o.l10n_latam_document_number" t-field="o.l10n_latam_document_number"/>
-                                <br/>
+                                <br t-if="o.l10n_latam_document_number"/>
+                                <strong t-if="o.l10n_do_origin_ncf">NCF modificado:</strong>
+                                <span t-if="o.l10n_do_origin_ncf" t-field="o.l10n_do_origin_ncf"/>
+                                <br t-if="o.l10n_do_origin_ncf"/>
                                 <p><strong>Válida hasta:</strong>
-                                <span t-if="o.invoice_payment_term_id" t-field="o.invoice_payment_term_id"/></p>
-                                <br />
-                                <strong t-if="o.ref">Origen:</strong>  <span t-if="o.ref" t-field="o.ref"/><br />
+                                <span t-if="o.l10n_do_ncf_expiration_date" t-field="o.l10n_do_ncf_expiration_date"/></p>
+                                <br t-if="o.l10n_do_ncf_expiration_date"/>
+                                <strong t-if="o.ref">Origen:</strong>  <span t-if="o.ref" t-field="o.ref"/><br t-if="o.ref"/>
                                 <strong>Pedido -</strong>
                                 <strong t-if="o.name" t-field="o.name"/>
                             </div>

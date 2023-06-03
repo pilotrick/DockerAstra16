@@ -116,7 +116,7 @@ class Document(models.Model):
                 # Avoid inconsistency in the data, write both at the same time.
                 # In case a check_access is done between res_id and res_model modification,
                 # an access error can be received. (Mail causes this check_access)
-                attachment.write({'res_model': record.res_model, 'res_id': record.res_id})
+                attachment.sudo().write({'res_model': record.res_model, 'res_id': record.res_id})
 
     @api.onchange('url')
     def _onchange_url(self):
@@ -481,6 +481,9 @@ class Document(models.Model):
         if attachment_dict:
             self.mapped('attachment_id').write(attachment_dict)
 
+        if 'attachment_id' in vals:
+            self.attachment_id.check('read')
+
         return write_result
 
     def _process_activities(self, attachment_id):
@@ -597,3 +600,10 @@ class Document(models.Model):
             return int(self.env['ir.config_parameter'].sudo().get_param('document.max_fileupload_size', default=0))
         except Exception:
             return False
+
+    def unlink(self):
+        removable_attachments = self.filtered(lambda self: self.res_model != self._name).attachment_id
+        res = super().unlink()
+        if removable_attachments:
+            removable_attachments.unlink()
+        return res

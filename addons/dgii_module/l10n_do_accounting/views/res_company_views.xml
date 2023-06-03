@@ -16,6 +16,13 @@
                 <field name="l10n_do_dgii_start_date" attrs="{'invisible': [('l10n_do_country_code', '!=', 'DO')]}"/>
                 <field name="l10n_do_ncf_exp_date" attrs="{'invisible': [('l10n_do_country_code', '!=', 'DO')]}"/>
             </field>
+
+            <xpath expr="//div[hasclass('oe_title')]/h1/field[@name='name']" position="attributes">
+                <attribute name="widget">field_dgii_autocomplete</attribute>
+            </xpath>
+            <xpath expr="//field[@name='vat']" position="attributes">
+                <attribute name="widget">field_dgii_autocomplete</attribute>
+            </xpath>
         </field>
     </record>
 </odoo>

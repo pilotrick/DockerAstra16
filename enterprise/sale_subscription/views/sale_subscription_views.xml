@@ -104,6 +104,8 @@
                 <separator/>
                 <filter name="pending" string="To Renew" domain="[('to_renew','=',True)]" help="Pending subscriptions"/>
                 <separator/>
+                <filter name="to_invoice" string="To Invoice" domain="[('next_invoice_date', '&lt;=', context_today().strftime('%Y-%m-%d')), ('stage_category', 'in', ('progress', 'paused'))]"/>
+                <separator/>
                 <filter name="payment_exception" string="Failed Payments" domain="[('payment_exception','=', True)]" help="Contracts whose payment has failed"/>
                 <separator/>
                 <filter name="closed" string="Closed" domain="[('stage_category','=','closed')]" help="Closed subscriptions"/>
@@ -450,7 +452,7 @@
                     <!-- company_id invisible to be available in domains -->
                     <field name="company_id" invisible="1"/>
                        <button name="run_cron_manually" string="Trigger Now" type="object" class="btn-primary"
-                       confirm="This will trigger the action on all linked subsccriptions, regardless of possible timed conditions. Are you sure you want to proceed?"/>
+                       confirm="This will trigger the action on all linked subscriptions, regardless of possible timed conditions. Are you sure you want to proceed?"/>
                 </header>
                 <sheet>
                     <div class="oe_button_box" name="button_box">

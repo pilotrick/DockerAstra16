@@ -173,7 +173,7 @@ tour.register('account_accountant_bank_rec_widget_ui',
         },
         {
             content: "AML Search Filter has been reset",
-            trigger: ".o_list_view .o_facet_value:last-child:contains('Payable')",
+            trigger: ".o_list_view .o_facet_value:last-child:contains('Customer/Vendor')",
             run: () => {},
         },
         // Test statement line selection when using the pager
@@ -258,6 +258,30 @@ tour.register('account_accountant_bank_rec_widget_ui',
         },
         {
             content: "amls_tab is activated",
+            trigger: "a.active[name='amls_tab']",
+            run: () => {},
+        },
+        {
+            content: "Activate Manual Operations to add manual entries",
+            trigger: "a[name='manual_operations_tab']",
+        },
+        {
+            content: "add manual entry 1",
+            trigger: "input#form_balance",
+            run: "text -600.0"
+        },
+        {
+            content: "mount the remaining opening balance line",
+            trigger: ".o_field_bank_rec_widget_form_lines_widget tr.o_data_row:last() td[field='credit']:contains('$ 400.00')",
+        },
+        {
+            content: "Remove the manual entry",
+            extra_trigger: "input#form_balance:text('-400.00'):focus",
+            trigger: ".o_list_record_remove .fa-trash-o",
+        },
+        {
+            content: "amls_tab is activated and auto balancing line is 1000",
+            extra_trigger: ".o_field_bank_rec_widget_form_lines_widget tr.o_data_row:last() td[field='credit']:contains('$ 1,000.00')",
             trigger: "a.active[name='amls_tab']",
             run: () => {},
         },
@@ -427,9 +451,9 @@ tour.register('account_accountant_bank_rec_widget_ui',
             run: "dblclick",
         },
         {
-            content: "No Lines Displayed and right div is empty",
-            extra_trigger: ".o_bank_rec_right_div:empty",
-            trigger: ".o_view_nocontent_empty_folder",
+            content: "Rainbow man",
+            extra_trigger: ".o_view_nocontent",
+            trigger: ".o_reward_rainbow_man",
             run: () => {}
         },
         // Test the next st line is always selected when Not Matched Filter is active
@@ -438,9 +462,9 @@ tour.register('account_accountant_bank_rec_widget_ui',
             trigger: ".o_kanban_view .o_searchview_facet:nth-child(2) .o_facet_remove",
         },
         {
-            content: "Remove the kanbans 'not matched' filter to reset all lines",
+            content: "Remove the kanbans 'not matched' filter to reset all lines - use the rainbow man button",
             extra_trigger: ".o_kanban_view .o_searchview:first() .o_searchview_facet:nth-child(2):contains('Not Matched')",
-            trigger: ".o_kanban_view .o_searchview:first() .o_searchview_facet:nth-child(2) .o_facet_remove",
+            trigger: "p.btn-primary:contains('All Transactions')",
         },
         {
             content: "Wait for search model change and line3 to appear",
@@ -555,14 +579,20 @@ tour.register('account_accountant_bank_rec_widget_ui',
             run: "text -333.33",
         },
         {
+            content: "balance displays $-333.33",
+            extra_trigger: ".btn-secondary:contains('$ -333.33')",
+            trigger: ".btn-secondary:contains('$ -333.33')",
+            run: () => {},
+        },
+        {
             content: "Modify the label",
             trigger: "div.tab-pane.active input[id='form_name']",
             run: "text Spontaneous Combustion",
         },
         {
-            content: "balance and statement line display $-333.333 ",
+            content: "statement line displays combustion and $-333.33",
             extra_trigger: ".o_bank_rec_selected_st_line:contains('Combustion'):contains('$ -333.33')",
-            trigger: ".btn-secondary:contains('$ -333.33')",
+            trigger: ".o_bank_rec_selected_st_line:contains('Combustion'):contains('$ -333.33')",
             run: () => {},
         },
         // End

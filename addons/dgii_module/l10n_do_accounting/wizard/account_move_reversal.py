@@ -177,6 +177,7 @@ class AccountMoveReversal(models.TransientModel):
         return super(
             AccountMoveReversal,
             self.with_context(
+                reverse="reverse",
                 refund_type=self.refund_type,
                 percentage=self.percentage,
                 amount=self.amount,

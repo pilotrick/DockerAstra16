@@ -26,8 +26,9 @@ class MulticurrencyRevaluationReportCustomHandler(models.AbstractModel):
         super()._custom_options_initializer(report, options, previous_options=previous_options)
         rates = self.env['res.currency'].search([('active', '=', True)])._get_rates(self.env.company, options.get('date').get('date_to'))
         # Normalize the rates to the company's currency
+        company_rate = rates[self.env.company.currency_id.id]
         for key in rates.keys():
-            rates[key] /= rates[self.env.company.currency_id.id]
+            rates[key] /= company_rate
 
         options['currency_rates'] = {
             str(currency_id.id): {
@@ -99,7 +100,7 @@ class MulticurrencyRevaluationReportCustomHandler(models.AbstractModel):
 
     # ACTIONS
     def action_multi_currency_revaluation_open_general_ledger(self, options, params):
-        account_line_id = self._get_generic_line_id('account.account', params.get('id'))
+        account_line_id = self.env['account.report']._get_generic_line_id('account.account', params.get('id'))
         general_ledger_options = self.env.ref('account_reports.general_ledger_report')._get_options(options)
         general_ledger_options['unfolded_lines'] = [account_line_id]
 
@@ -236,6 +237,7 @@ class MulticurrencyRevaluationReportCustomHandler(models.AbstractModel):
                 JOIN custom_currency_table ON custom_currency_table.currency_id = currency.id
                 WHERE {where_clause}
                     AND (account.currency_id = account_move_line.company_currency_id AND (account.account_type IN ('asset_receivable', 'liability_payable') AND account_move_line.currency_id = account_move_line.company_currency_id))
+                    AND (account_move_line.amount_residual != 0 OR account_move_line.amount_residual_currency != 0)
                     AND {'NOT EXISTS' if line_code == 'to_adjust' else 'EXISTS'} (
                         SELECT * FROM account_account_exclude_res_currency_provision WHERE account_account_id = account_id AND res_currency_id = account_move_line.currency_id
                     )

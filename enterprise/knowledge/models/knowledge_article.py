@@ -3,10 +3,12 @@
 
 import ast
 import json
+import re
 
 from collections import defaultdict
 from datetime import datetime, timedelta
 from markupsafe import Markup
+from urllib import parse
 from werkzeug.urls import url_join
 
 from odoo import api, Command, fields, models, _
@@ -29,7 +31,8 @@ class Article(models.Model):
     DEFAULT_ARTICLE_TRASH_LIMIT_DAYS = 30
 
     active = fields.Boolean(default=True)
-    name = fields.Char(string="Title", default=lambda self: _('Untitled'), required=True, tracking=20)
+    name = fields.Char(string="Title", default=lambda self: _('Untitled'), required=True, tracking=20,
+                       default_export_compatible=True)
     body = fields.Html(string="Body")
     icon = fields.Char(string='Emoji')
     cover_image_id = fields.Many2one("knowledge.cover", string='Article cover')
@@ -418,8 +421,9 @@ class Article(models.Model):
         if self.env.is_system():
             self.user_can_read = True
         else:
-            for article in self:
-                article.user_can_read = article.user_has_access
+            readable = self.filtered_domain(self._get_read_domain())
+            readable.user_can_read = True
+            (self - readable).user_can_read = False
 
     @api.depends_context('uid')
     @api.depends('user_has_write_access')
@@ -486,9 +490,15 @@ class Article(models.Model):
             article.user_favorite_sequence = favorite.sequence if favorite else -1
 
     def _inverse_is_user_favorite(self):
-        """ Read access is sufficient for toggling its own favorite status. """
-        to_fav = self.filtered(lambda article: self.env.user not in article.favorite_ids.user_id)
-        to_unfav = self - to_fav
+        """ Read access is sufficient for toggling its own favorite status.
+        Articles 'to favorite' are based on the flag set to True and the related favorite record not
+        existing yet.
+        Articles 'to unfavorite' are based on the flag set to False and the related favorite record
+        existing. """
+        to_fav = self.filtered(lambda article:
+                               article.is_user_favorite and self.env.user not in article.favorite_ids.user_id)
+        to_unfav = self.filtered(lambda article:
+                                 not article.is_user_favorite and self.env.user in article.favorite_ids.user_id)
 
         if to_fav:
             to_fav.favorite_ids = [(0, 0, {'user_id': self.env.uid})]
@@ -772,8 +782,13 @@ class Article(models.Model):
 
         return duplicates
 
+    def _get_read_domain(self):
+        """ Independently from admin bypass, give the domain allowing to read
+        articles. """
+        return [('user_has_access', '=', True)]
+
     # ------------------------------------------------------------
-    # LOW-LEVEL MODELS
+    # BASE MODEL METHODS
     # ------------------------------------------------------------
 
     @api.autovacuum
@@ -792,8 +807,31 @@ class Article(models.Model):
     def action_archive(self):
         return self._action_archive_articles()
 
+    @api.model
+    def name_create(self, name):
+        """" This override is meant to make the 'name_create' symmetrical to the name_get.
+        When creating an article, we attempt to extract a potential icon from the beginning of the
+        name to correctly split the 'name' and 'icon' fields.
+
+        This is especially important since some flows, such as importing records, are based on
+        name_create to create missing records.
+        It also allows pasting an article display_name into a m2o field and using the quick creation
+        if it does not exist.
+
+        Without this override, you would get '📄🚀 Article With Icon' (placeholder added as icon is
+        not detected) instead of '🚀 Article With Icon' as result. """
+
+        article_name, icon = self._extract_icon_from_name(name)
+        if not icon:
+            return super().name_create(name)
+
+        return self.create({
+            'name': article_name,
+            'icon': icon,
+        }).name_get()[0]
+
     def name_get(self):
-        return [(rec.id, "%s %s" % (rec.icon or "📄", rec.name)) for rec in self]
+        return [(rec.id, "%s %s" % (rec.icon or self._get_no_icon_placeholder(), rec.name)) for rec in self]
 
     def _get_no_icon_placeholder(self):
         """ Emoji used in templates as a placeholder when icon is False. It's
@@ -804,6 +842,39 @@ class Article(models.Model):
         emojis to be parsed directly from a template on those devices.
         """
         return "📄"
+
+    def _name_search(self, name='', args=None, operator='ilike', limit=100, name_get_uid=None):
+        """ This override is meant to make the 'name_search' symmetrical to the name_get.
+        As we append the icon (emoji) before the article name, when searching based on that same
+        syntax '[emoji] name' we need to return the appropriate results.
+
+        This is especially important since some flows, such as exporting and re-importing records,
+        are based on name_get / name_search to match records (for example when importing the article
+        parent record, without this override it will never match). """
+
+        if operator not in ('=', 'ilike'):
+            return super()._name_search(name, args, operator, limit, name_get_uid)
+
+        article_name, icon = self._extract_icon_from_name(name)
+        if not icon:
+            return super()._name_search(name, args, operator, limit, name_get_uid)
+
+        domain = args or []
+        if icon == self._get_no_icon_placeholder():
+            # special case using the icon placeholder (no icon stored but the name_get returns one)
+            domain = expression.AND([domain, [
+                ('name', operator, article_name),
+                '|',
+                ('icon', '=', icon),
+                ('icon', '=', False),
+            ]])
+        else:
+            domain = expression.AND([domain, [
+                ('name', operator, article_name),
+                ('icon', '=', icon),
+            ]])
+
+        return self._search(domain, limit=limit, access_rights_uid=name_get_uid)
 
     # ------------------------------------------------------------
     # ACTIONS
@@ -823,7 +894,7 @@ class Article(models.Model):
             })],
             "body": self.body,
             "cover_image_id": self.cover_image_id.id,
-            "full_width": False,
+            "full_width": self.full_width,
             "name": _("%s (copy)", self.name),
             "icon": self.icon,
             "internal_permission": "none",
@@ -850,13 +921,8 @@ class Article(models.Model):
         if not article:
             article = self._get_first_accessible_article()
 
-        mode = 'edit' if article.user_has_write_access else 'readonly'
         action = self.env['ir.actions.act_window']._for_xml_id('knowledge.knowledge_article_action_form')
         action['res_id'] = article.id
-        action['context'] = dict(
-            ast.literal_eval(action.get('context')),
-            form_view_initial_mode=mode,
-        )
         return action
 
     def action_set_lock(self):
@@ -874,7 +940,13 @@ class Article(models.Model):
             # Return a meaningful error message as this may be called through UI
             raise AccessError(_("You cannot add or remove this article to your favorites"))
 
-        self.sudo()._inverse_is_user_favorite()
+        # need to sudo to be able to write on the article model even with read access
+        to_favorite_sudo = self.sudo().filtered(lambda article: not article.is_user_favorite)
+        to_unfavorite_sudo = self.sudo() - to_favorite_sudo
+        to_favorite_sudo.is_user_favorite = True
+        to_unfavorite_sudo.is_user_favorite = False
+        # manually invalidate cache as inverse writes on a separate model
+        self.invalidate_recordset(fnames=["is_user_favorite", "favorite_ids"])
         return self[0].is_user_favorite if self else False
 
     def action_article_archive(self):
@@ -1997,14 +2069,15 @@ class Article(models.Model):
         """
         self.ensure_one()
         action_data = self._extract_act_window_data(act_window_id_or_xml_id, name)
+        action_data.pop('help', None)
         link = self.env['ir.qweb']._render(
             'knowledge.knowledge_view_link', {
-                'behavior_props': json.dumps({
+                'behavior_props': parse.quote(json.dumps({
                     'act_window': action_data,
                     'context': context or {},
                     'name': name,
                     'view_type': view_type,
-                })
+                }), safe='()*!\'')
             },
             minimal_qcontext=True,
             raise_if_not_found=False
@@ -2025,13 +2098,15 @@ class Article(models.Model):
         """
         self.ensure_one()
         action_data = self._extract_act_window_data(act_window_id_or_xml_id, name)
+        action_help = action_data.pop('help', None)
         return self.env['ir.qweb']._render(
             'knowledge.knowledge_embedded_view', {
-                'behavior_props': json.dumps({
+                'behavior_props': parse.quote(json.dumps({
                     'act_window': action_data,
                     'context': context or {},
                     'view_type': view_type,
-                }),
+                }), safe='()*!\''),
+                'action_help': Markup(action_help) if action_help else False,
             },
             minimal_qcontext=True,
             raise_if_not_found=False
@@ -2063,6 +2138,21 @@ class Article(models.Model):
         action_data['display_name'] = name or action_data['display_name']
         action_data['name'] = name or action_data['name']
         return action_data
+
+    @api.model
+    def _extract_icon_from_name(self, name):
+        """ See name_create / _name_search overrides for details. """
+        if not isinstance(name, str) or len(name) < 3:
+            return name, None
+
+        # we consider that a non-alphabetical and non-special character is an emoji
+        emoji_match = re.match(r'([^\w.,;:_%+!\\/@$€#&()*=~-]) (.*)', name)
+        if not emoji_match or len(emoji_match.groups()) != 2:
+            return name, None
+
+        emoji = emoji_match.groups(1)[0]
+        article_name = emoji_match.groups(1)[1]
+        return article_name, emoji
 
     def _get_ancestor_ids(self):
         """ Return the union of sets including the ids for the ancestors of
@@ -2099,9 +2189,14 @@ class Article(models.Model):
             ], limit=1).article_id
         if not article:
             # retrieve workspace articles first, then private/shared ones.
-            article = self.search([
-                ('parent_id', '=', False, ), ('user_has_access', '=', True)
-            ], limit=1, order='sequence, internal_permission desc')
+            article = self.search(
+                expression.AND([
+                    [('parent_id', '=', False, )],
+                    self._get_read_domain(),
+                ]),
+                limit=1,
+                order='sequence, internal_permission desc'
+            )
         return article
 
     def get_valid_parent_options(self, search_term=""):

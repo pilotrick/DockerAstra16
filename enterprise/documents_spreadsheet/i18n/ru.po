@@ -3,7 +3,6 @@
 # 	* documents_spreadsheet
 # 
 # Translators:
-# Сергей Шебанин <sergey@shebanin.ru>, 2022
 # Irina Fedulova <istartlin@gmail.com>, 2022
 # ILMIR <karamov@it-projects.info>, 2022
 # Иван Дроздов <hiraetari@gmail.com>, 2022
@@ -11,6 +10,8 @@
 # Martin Trigaux, 2022
 # valmasone, 2022
 # Alena Vlasova, 2022
+# Сергей Шебанин <sergey@shebanin.ru>, 2023
+# alenafairy, 2023
 # 
 msgid ""
 msgstr ""
@@ -18,8 +19,8 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-12-15 13:29+0000\n"
 "PO-Revision-Date: 2022-09-22 05:46+0000\n"
-"Last-Translator: Alena Vlasova, 2022\n"
-"Language-Team: Russian (https://www.transifex.com/odoo/teams/41243/ru/)\n"
+"Last-Translator: alenafairy, 2023\n"
+"Language-Team: Russian (https://app.transifex.com/odoo/teams/41243/ru/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
@@ -309,7 +310,7 @@ msgstr ""
 #. module: documents_spreadsheet
 #: model:ir.actions.act_window,name:documents_spreadsheet.save_spreadsheet_template_action
 msgid "Save as template"
-msgstr ""
+msgstr "Сохранить как шаблон"
 
 #. module: documents_spreadsheet
 #: model:ir.model.fields,field_description:documents_spreadsheet.field_spreadsheet_template__sequence
@@ -338,12 +339,12 @@ msgstr "Предварительный просмотр"
 #. module: documents_spreadsheet
 #: model:ir.model.fields,field_description:documents_spreadsheet.field_documents_document__spreadsheet_revision_ids
 msgid "Spreadsheet Revision"
-msgstr ""
+msgstr "Проверка таблицы"
 
 #. module: documents_spreadsheet
 #: model:ir.model.fields,field_description:documents_spreadsheet.field_documents_document__spreadsheet_snapshot
 msgid "Spreadsheet Snapshot"
-msgstr ""
+msgstr "Снэпшот электронной таблицы"
 
 #. module: documents_spreadsheet
 #: model:ir.model,name:documents_spreadsheet.model_spreadsheet_template

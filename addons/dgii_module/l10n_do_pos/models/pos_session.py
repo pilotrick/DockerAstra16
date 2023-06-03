@@ -1,28 +1,20 @@
-# © 2015-2018 Eneldo Serrata <eneldo@marcos.do>
-# © 2017-2018 Gustavo Valverde <gustavo@iterativo.do>
-# © 2018 Jorge Hernández <jhernandez@gruponeotec.com>
-
-# This file is part of NCF Manager.
-
-# NCF Manager is free software: you can redistribute it and/or modify
-# it under the terms of the GNU General Public License as published by
-# the Free Software Foundation, either version 3 of the License, or
-# (at your option) any later version.
-
-# NCF Manager is distributed in the hope that it will be useful,
-# but WITHOUT ANY WARRANTY; without even the implied warranty of
-# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-# GNU General Public License for more details.
-
-# You should have received a copy of the GNU General Public License
-# along with NCF Manager.  If not, see <https://www.gnu.org/licenses/>.
-
+# -*- coding: utf-8 -*-
 from odoo import models, _
 from odoo.exceptions import UserError
 
 
 class PosSession(models.Model):
     _inherit = 'pos.session'
+
+    def _loader_params_res_company(self):
+        result = super()._loader_params_res_company()
+        result['search_params']['fields'].extend(['company_address', 'l10n_do_ncf_exp_date'])
+        return result
+
+    def _loader_params_res_partner(self):
+        result = super()._loader_params_res_partner()
+        result['search_params']['fields'].extend(['l10n_do_dgii_tax_payer_type'])
+        return result
 
     def _confirm_orders(self):
         for session in self:

@@ -5,6 +5,7 @@
 # Translators:
 # Friederike Fasterling-Nesselbosch, 2022
 # Martin Trigaux, 2022
+# Larissa Manderfeld, 2023
 # 
 msgid ""
 msgstr ""
@@ -12,8 +13,8 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-12-15 13:27+0000\n"
 "PO-Revision-Date: 2022-09-22 05:49+0000\n"
-"Last-Translator: Martin Trigaux, 2022\n"
-"Language-Team: German (https://www.transifex.com/odoo/teams/41243/de/)\n"
+"Last-Translator: Larissa Manderfeld, 2023\n"
+"Language-Team: German (https://app.transifex.com/odoo/teams/41243/de/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
@@ -30,7 +31,7 @@ msgstr "# Accounts"
 #: code:addons/social/models/social_post.py:0
 #, python-format
 msgid "%s (max %s chars)"
-msgstr ""
+msgstr "%s (max. %s Zeichen)"
 
 #. module: social
 #. odoo-javascript
@@ -48,12 +49,12 @@ msgstr ""
 #. module: social
 #: model_terms:ir.ui.view,arch_db:social.social_post_view_form
 msgid "<i class=\"fa fa-globe\" title=\"See the post\"/>"
-msgstr ""
+msgstr "<i class=\"fa fa-globe\" title=\"See the post\"/>"
 
 #. module: social
 #: model_terms:ir.ui.view,arch_db:social.social_post_view_kanban
 msgid "<small class=\"pe-1\">Clicks:</small>"
-msgstr ""
+msgstr "<small class=\"pe-1\">KLlicks:</small>"
 
 #. module: social
 #. odoo-javascript
@@ -107,7 +108,7 @@ msgstr "Hinzufügen"
 #. module: social
 #: model_terms:ir.ui.view,arch_db:social.utm_campaign_view_form
 msgid "Add Post"
-msgstr ""
+msgstr "Beitrag hinzufügen"
 
 #. module: social
 #. odoo-javascript
@@ -204,6 +205,8 @@ msgstr ""
 #: model_terms:ir.ui.view,arch_db:social.social_post_template_view_form
 msgid "Before posting, links will be converted to be trackable."
 msgstr ""
+"Links werden vor der Veröffentlichung so umgewandelt, dass sie verfolgbar "
+"sind."
 
 #. module: social
 #: model_terms:ir.ui.view,arch_db:social.social_stream_post_view_search
@@ -317,6 +320,8 @@ msgid ""
 "Contains the social media handle of the person that created this account. "
 "E.g: '@odoo.official' for the 'Odoo' Twitter account"
 msgstr ""
+"Beinhaltet den Social-Media-Namen der Person, die dieses Konto erstellt hat."
+" Z. B.: „@odoo.official“ für das „Odoo“-Twitter-Konto."
 
 #. module: social
 #: model:ir.model.fields,help:social.field_social_live_post__message
@@ -421,7 +426,7 @@ msgstr "Beschreibung"
 #. module: social
 #: model_terms:ir.ui.view,arch_db:social.res_config_settings_view_form
 msgid "Developer Accounts"
-msgstr ""
+msgstr "Entwicklerkonten"
 
 #. module: social
 #: model:ir.model.fields,field_description:social.field_social_account__display_name
@@ -441,7 +446,7 @@ msgstr "Anzeigename"
 #: code:addons/social/static/src/js/stream_post_comment.js:0
 #, python-format
 msgid "Do you really want to delete %s"
-msgstr ""
+msgstr "Möchten Sie %s wirklich löschen?"
 
 #. module: social
 #: model:ir.model.fields.selection,name:social.selection__social_post__state__draft
@@ -456,6 +461,8 @@ msgid ""
 "Due to length restrictions, the following posts cannot be posted:\n"
 " %s"
 msgstr ""
+"Wegen Längenbeschrenkungen können folgende Beiträge nicht gepostet werden: "
+"%s"
 
 #. module: social
 #. odoo-javascript
@@ -584,7 +591,7 @@ msgstr "Gruppieren nach"
 #. module: social
 #: model:ir.model.fields,field_description:social.field_social_account__social_account_handle
 msgid "Handle / Short Name"
-msgstr ""
+msgstr "Name/Kurzname"
 
 #. module: social
 #. odoo-javascript
@@ -816,7 +823,7 @@ msgstr "Link URL"
 #: code:addons/social/static/src/xml/social_templates.xml:0
 #, python-format
 msgid "Link a new account"
-msgstr ""
+msgstr "Ein neues Konto verknüpfen"
 
 #. module: social
 #: model_terms:ir.ui.view,arch_db:social.social_media_view_kanban
@@ -844,7 +851,7 @@ msgstr ""
 #. module: social
 #: model:ir.model.fields,help:social.field_social_live_post__live_post_link
 msgid "Link of the live post on the target media."
-msgstr ""
+msgstr "Link des Live-Beitrags auf dem Zielmedium."
 
 #. module: social
 #: model_terms:ir.ui.view,arch_db:social.social_post_template_view_form
@@ -894,7 +901,7 @@ msgstr "Hauptaktionen"
 #. module: social
 #: model:ir.model.fields,field_description:social.field_social_media__max_post_length
 msgid "Max Post Length"
-msgstr ""
+msgstr "Max. Beitragslänge"
 
 #. module: social
 #: model:ir.model.fields,field_description:social.field_social_post__media_ids
@@ -926,7 +933,7 @@ msgstr "Error beim senden der Nachricht"
 #: model:ir.model.fields,field_description:social.field_social_post__message_length
 #: model:ir.model.fields,field_description:social.field_social_post_template__message_length
 msgid "Message Length"
-msgstr ""
+msgstr "Nachrichtenlänge"
 
 #. module: social
 #. odoo-python
@@ -998,7 +1005,7 @@ msgstr "Neuer Post"
 #: code:addons/social/static/src/xml/social_templates.xml:0
 #, python-format
 msgid "New content available"
-msgstr ""
+msgstr "Neuer Inhalt verfügbar"
 
 #. module: social
 #. odoo-javascript
@@ -1151,7 +1158,7 @@ msgstr ""
 #: code:addons/social/static/src/xml/social_templates.xml:0
 #, python-format
 msgid "Or add"
-msgstr ""
+msgstr "Oder fügen Sie"
 
 #. module: social
 #: model:ir.model.fields,help:social.field_social_account__audience_trend
@@ -1406,6 +1413,8 @@ msgstr ""
 msgid ""
 "Set a maximum number of characters can be posted in post. 0 for no limit."
 msgstr ""
+"Legen Sie eine maximale Anzahl von Zeichen fest, die in einem Beitrag "
+"gepostet werden können. 0 für keine Begrenzung."
 
 #. module: social
 #: model:ir.actions.act_window,name:social.action_social_global_settings
@@ -1519,7 +1528,7 @@ msgstr "Social Streams"
 #. module: social
 #: model:res.groups,name:social.group_social_user
 msgid "Social User"
-msgstr ""
+msgstr "Social-Benutzer"
 
 #. module: social
 #: model:ir.actions.server,name:social.ir_cron_post_scheduled_ir_actions_server
@@ -1868,6 +1877,8 @@ msgid ""
 "You cannot delete these UTM Mediums as they are linked to the following social accounts in Social:\n"
 "%(social_accounts)s"
 msgstr ""
+"Sie können diese UTM-Medien nicht löschen, da sie mit den folgenden sozialen Konten in Social verknüpft sind:\n"
+"%(social_accounts)s"
 
 #. module: social
 #. odoo-python
@@ -1877,6 +1888,8 @@ msgid ""
 "You cannot delete these UTM Sources as they are linked to social posts in Social:\n"
 "%(utm_sources)s"
 msgstr ""
+"Sie können diese UTM-Quellen nicht löschen, da sie mit den folgenden Beiträgen in Social verknüpft sind:\n"
+"%(utm_sources)s"
 
 #. module: social
 #: model_terms:ir.ui.view,arch_db:social.social_post_template_view_form
@@ -1888,7 +1901,7 @@ msgstr "Ihr Post"
 #: code:addons/social/static/src/xml/social_templates.xml:0
 #, python-format
 msgid "a Stream from an existing account"
-msgstr ""
+msgstr "einen Stream von einem existierenden Konto hinzufügen"
 
 #. module: social
 #: model_terms:ir.ui.view,arch_db:social.social_post_template_view_form

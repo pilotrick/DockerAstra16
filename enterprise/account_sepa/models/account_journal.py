@@ -269,7 +269,7 @@ class AccountJournal(models.Model):
     def _get_PmtTpInf(self, sct_generic=False, local_instrument=None):
         PmtTpInf = etree.Element("PmtTpInf")
 
-        if not sct_generic:
+        if not sct_generic and self.sepa_pain_version != 'pain.001.001.03.ch.02':
             SvcLvl = etree.SubElement(PmtTpInf, "SvcLvl")
             Cd = etree.SubElement(SvcLvl, "Cd")
             Cd.text = 'SEPA'
@@ -339,7 +339,7 @@ class AccountJournal(models.Model):
             raise ValidationError(_(
                 "The amount of the payment '%(payment)s' is too high. The maximum permitted is %(limit)s.",
                 payment=payment['name'],
-                limit=str(9) * (max_digits - 3) + ".99",
+                limit=str(9) * (max_digits - 2) + ".99",
             ))
         InstdAmt = etree.SubElement(Amt, "InstdAmt", Ccy=val_Ccy)
         InstdAmt.text = val_InstdAmt

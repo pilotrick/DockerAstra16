@@ -3,16 +3,18 @@
 # 	* web_studio
 # 
 # Translators:
+# Hasna, 2023
+# Nikhil Krishnan, 2023
 # Niyas Raphy, 2023
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 16.0+e\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-12-15 13:27+0000\n"
+"POT-Creation-Date: 2023-04-14 06:16+0000\n"
 "PO-Revision-Date: 2022-09-22 05:49+0000\n"
 "Last-Translator: Niyas Raphy, 2023\n"
-"Language-Team: Malayalam (https://www.transifex.com/odoo/teams/41243/ml/)\n"
+"Language-Team: Malayalam (https://app.transifex.com/odoo/teams/41243/ml/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
@@ -163,7 +165,7 @@ msgstr ""
 #. module: web_studio
 #: model:ir.model,name:web_studio.model_res_groups
 msgid "Access Groups"
-msgstr ""
+msgstr "അക്സസ്സ് ഗ്രൂപ്സ് "
 
 #. module: web_studio
 #. odoo-javascript
@@ -186,7 +188,7 @@ msgstr ""
 #: model_terms:ir.ui.view,arch_db:web_studio.studio_approval_entry_search_view
 #: model_terms:ir.ui.view,arch_db:web_studio.studio_approval_rule_search_view
 msgid "Action"
-msgstr ""
+msgstr "ആക്ഷൻ"
 
 #. module: web_studio
 #: model:ir.model,name:web_studio.model_ir_actions_act_window
@@ -236,7 +238,7 @@ msgstr ""
 #: model_terms:ir.ui.view,arch_db:web_studio.studio_approval_rule_search_view
 #, python-format
 msgid "Active"
-msgstr ""
+msgstr "ആക്റ്റീവ്"
 
 #. module: web_studio
 #. odoo-javascript
@@ -244,12 +246,12 @@ msgstr ""
 #: model:ir.model,name:web_studio.model_mail_activity
 #, python-format
 msgid "Activity"
-msgstr ""
+msgstr "ആക്റ്റിവിറ്റി"
 
 #. module: web_studio
 #: model:ir.model,name:web_studio.model_mail_activity_type
 msgid "Activity Type"
-msgstr ""
+msgstr "ആക്ടിവിറ്റി ടൈപ്പ് "
 
 #. module: web_studio
 #. odoo-javascript
@@ -264,7 +266,7 @@ msgstr ""
 #: code:addons/web_studio/static/src/legacy/xml/view_editor_sidebar.xml:0
 #, python-format
 msgid "Add"
-msgstr ""
+msgstr "ചേർക്കുക"
 
 #. module: web_studio
 #. odoo-javascript
@@ -450,7 +452,7 @@ msgstr ""
 #: code:addons/web_studio/static/src/legacy/xml/view_editor_sidebar.xml:0
 #, python-format
 msgid "Approvals"
-msgstr ""
+msgstr "അപ്പ്രൂവൽ"
 
 #. module: web_studio
 #. odoo-python
@@ -466,7 +468,7 @@ msgstr ""
 #: code:addons/web_studio/static/src/legacy/xml/approval_component.xml:0
 #, python-format
 msgid "Approve"
-msgstr ""
+msgstr "അപ്പ്രൂവ്"
 
 #. module: web_studio
 #: model:ir.model.fields,field_description:web_studio.field_studio_approval_entry__approved
@@ -507,7 +509,7 @@ msgstr ""
 #: model_terms:ir.ui.view,arch_db:web_studio.studio_approval_rule_search_view
 #, python-format
 msgid "Archived"
-msgstr ""
+msgstr "ആർക്കൈവ് ചെയ്തു"
 
 #. module: web_studio
 #. odoo-javascript
@@ -630,7 +632,7 @@ msgstr ""
 #: code:addons/web_studio/static/src/legacy/xml/view_editor_sidebar.xml:0
 #, python-format
 msgid "Average"
-msgstr ""
+msgstr "ആവറേജ്"
 
 #. module: web_studio
 #. odoo-javascript
@@ -678,7 +680,7 @@ msgstr ""
 #: code:addons/web_studio/models/ir_model.py:0
 #, python-format
 msgid "Blocked"
-msgstr ""
+msgstr "തടഞ്ഞു"
 
 #. module: web_studio
 #. odoo-javascript
@@ -721,7 +723,7 @@ msgstr ""
 #: code:addons/web_studio/static/src/client_action/editor/editor_menu/editor_menu.js:0
 #, python-format
 msgid "Calendar"
-msgstr ""
+msgstr "കലണ്ടർ"
 
 #. module: web_studio
 #. odoo-javascript
@@ -765,7 +767,7 @@ msgstr ""
 #: model_terms:ir.ui.view,arch_db:web_studio.simplified_form_view_import_module
 #, python-format
 msgid "Cancel"
-msgstr ""
+msgstr "റദ്ദാക്കുക"
 
 #. module: web_studio
 #. odoo-javascript
@@ -881,7 +883,7 @@ msgstr ""
 #: model_terms:ir.ui.view,arch_db:web_studio.simplified_form_view_import_module
 #, python-format
 msgid "Close"
-msgstr ""
+msgstr "അടയ്ക്കുക"
 
 #. module: web_studio
 #. odoo-javascript
@@ -906,14 +908,14 @@ msgstr ""
 #: code:addons/web_studio/static/src/legacy/xml/view_editor_sidebar.xml:0
 #, python-format
 msgid "Color"
-msgstr ""
+msgstr "കളർ"
 
 #. module: web_studio
 #. odoo-javascript
 #: code:addons/web_studio/static/src/legacy/xml/report_editor_sidebar.xml:0
 #, python-format
 msgid "Colors"
-msgstr ""
+msgstr "നിറങ്ങൾ"
 
 #. module: web_studio
 #. odoo-javascript
@@ -941,7 +943,7 @@ msgstr ""
 #: code:addons/web_studio/static/src/legacy/js/views/view_components.js:0
 #, python-format
 msgid "Columns"
-msgstr ""
+msgstr "കോളംസ്"
 
 #. module: web_studio
 #. odoo-javascript
@@ -953,7 +955,7 @@ msgstr ""
 #. module: web_studio
 #: model:ir.model,name:web_studio.model_res_company
 msgid "Companies"
-msgstr ""
+msgstr "കമ്പനികൾ"
 
 #. module: web_studio
 #. odoo-javascript
@@ -962,7 +964,7 @@ msgstr ""
 #: code:addons/web_studio/static/src/client_action/model_configurator/model_configurator.js:0
 #, python-format
 msgid "Company"
-msgstr ""
+msgstr "കമ്പനി"
 
 #. module: web_studio
 #. odoo-javascript
@@ -998,7 +1000,7 @@ msgstr ""
 #: code:addons/web_studio/models/ir_ui_menu.py:0
 #, python-format
 msgid "Configuration"
-msgstr ""
+msgstr "കോൺഫിഗറേഷൻ"
 
 #. module: web_studio
 #. odoo-javascript
@@ -1021,21 +1023,21 @@ msgstr ""
 #: code:addons/web_studio/static/src/legacy/js/views/view_editors/new_buttonbox_dialog.js:0
 #, python-format
 msgid "Confirm"
-msgstr ""
+msgstr "സ്ഥിരീകരിക്കുക"
 
 #. module: web_studio
 #. odoo-javascript
 #: code:addons/web_studio/static/src/client_action/navbar/home_menu_customizer/home_menu_customizer.js:0
 #, python-format
 msgid "Confirmation"
-msgstr ""
+msgstr "സ്ഥിരീകരണം"
 
 #. module: web_studio
 #. odoo-python
 #: code:addons/web_studio/models/ir_model.py:0
 #, python-format
 msgid "Contact"
-msgstr ""
+msgstr "കോൺടാക്ട് "
 
 #. module: web_studio
 #. odoo-javascript
@@ -1143,14 +1145,14 @@ msgstr ""
 #: model:ir.model.fields,field_description:web_studio.field_studio_approval_request__create_uid
 #: model:ir.model.fields,field_description:web_studio.field_studio_approval_rule__create_uid
 msgid "Created by"
-msgstr ""
+msgstr "ഉണ്ടാക്കിയത്"
 
 #. module: web_studio
 #: model:ir.model.fields,field_description:web_studio.field_studio_approval_entry__create_date
 #: model:ir.model.fields,field_description:web_studio.field_studio_approval_request__create_date
 #: model:ir.model.fields,field_description:web_studio.field_studio_approval_rule__create_date
 msgid "Created on"
-msgstr ""
+msgstr "സൃഷ്ടിച്ചത്"
 
 #. module: web_studio
 #. odoo-javascript
@@ -1166,7 +1168,7 @@ msgstr ""
 #: code:addons/web_studio/static/src/legacy/xml/report_editor_sidebar.xml:0
 #, python-format
 msgid "Currency"
-msgstr ""
+msgstr "കറൻസി"
 
 #. module: web_studio
 #. odoo-python
@@ -1264,7 +1266,7 @@ msgstr ""
 #: code:addons/web_studio/static/src/legacy/js/views/view_components.js:0
 #, python-format
 msgid "Date"
-msgstr ""
+msgstr "തീയതി"
 
 #. module: web_studio
 #. odoo-javascript
@@ -1294,7 +1296,7 @@ msgstr ""
 #: code:addons/web_studio/static/src/legacy/xml/view_editor_sidebar.xml:0
 #, python-format
 msgid "Day"
-msgstr ""
+msgstr "ദിവസം"
 
 #. module: web_studio
 #. odoo-javascript
@@ -1308,14 +1310,14 @@ msgstr ""
 #: code:addons/web_studio/static/src/legacy/js/views/view_components.js:0
 #, python-format
 msgid "Decimal"
-msgstr ""
+msgstr "ദശാംശം"
 
 #. module: web_studio
 #. odoo-javascript
 #: code:addons/web_studio/static/src/legacy/xml/view_editor_sidebar.xml:0
 #, python-format
 msgid "Default"
-msgstr ""
+msgstr "ഡീഫോൾട്"
 
 #. module: web_studio
 #. odoo-javascript
@@ -1346,14 +1348,14 @@ msgstr ""
 #: model:ir.model,name:web_studio.model_ir_default
 #, python-format
 msgid "Default Values"
-msgstr ""
+msgstr "ഡീഫോൾട് വാല്യൂ "
 
 #. module: web_studio
 #. odoo-javascript
 #: code:addons/web_studio/static/src/legacy/xml/view_editor_sidebar.xml:0
 #, python-format
 msgid "Default value"
-msgstr ""
+msgstr "ഡീഫോൾട് വാല്യൂ "
 
 #. module: web_studio
 #. odoo-javascript
@@ -1383,7 +1385,7 @@ msgstr ""
 #: model_terms:ir.ui.view,arch_db:web_studio.act_report_xml_view_kanban
 #, python-format
 msgid "Delete"
-msgstr "ഇല്ലാതാക്കുക"
+msgstr "ഡിലീറ്റ്"
 
 #. module: web_studio
 #. odoo-javascript
@@ -1391,7 +1393,7 @@ msgstr "ഇല്ലാതാക്കുക"
 #: code:addons/web_studio/static/src/legacy/xml/edit_menu.xml:0
 #, python-format
 msgid "Delete Menu Item"
-msgstr ""
+msgstr "മെനു ഇനം ഇല്ലാതാക്കുക"
 
 #. module: web_studio
 #. odoo-javascript
@@ -1441,7 +1443,6 @@ msgstr ""
 #. module: web_studio
 #. odoo-javascript
 #: code:addons/web_studio/static/src/legacy/js/views/view_editor_sidebar.js:0
-#: code:addons/web_studio/static/src/legacy/js/views/view_editor_sidebar.js:0
 #, python-format
 msgid "Disable opening"
 msgstr ""
@@ -1458,7 +1459,7 @@ msgstr ""
 #: model:ir.model.fields,field_description:web_studio.field_studio_approval_request__display_name
 #: model:ir.model.fields,field_description:web_studio.field_studio_approval_rule__display_name
 msgid "Display Name"
-msgstr ""
+msgstr "ഡിസ്പ്ലേ നെയിം"
 
 #. module: web_studio
 #. odoo-javascript
@@ -1502,7 +1503,7 @@ msgstr ""
 #: model:ir.model.fields,field_description:web_studio.field_studio_approval_rule__domain
 #, python-format
 msgid "Domain"
-msgstr ""
+msgstr "ഡൊമെയ്ൻ"
 
 #. module: web_studio
 #. odoo-python
@@ -1553,14 +1554,14 @@ msgstr ""
 #. module: web_studio
 #: model_terms:ir.ui.view,arch_db:web_studio.act_report_xml_view_kanban
 msgid "Duplicate"
-msgstr ""
+msgstr "ഡ്യൂപ്ലിക്കേറ്റ്"
 
 #. module: web_studio
 #. odoo-python
 #: code:addons/web_studio/models/ir_ui_view.py:0
 #, python-format
 msgid "Edit"
-msgstr ""
+msgstr "എഡിറ്റ്"
 
 #. module: web_studio
 #. odoo-javascript
@@ -1640,7 +1641,7 @@ msgstr ""
 #: code:addons/web_studio/models/ir_model.py:0
 #, python-format
 msgid "Email"
-msgstr ""
+msgstr "ഇമെയിൽ"
 
 #. module: web_studio
 #. odoo-javascript
@@ -1652,7 +1653,7 @@ msgstr ""
 #. module: web_studio
 #: model:ir.model,name:web_studio.model_mail_template
 msgid "Email Templates"
-msgstr ""
+msgstr "ഇമെയിൽ ടെംപ്ലേറ്റുകൾ"
 
 #. module: web_studio
 #: model:ir.model,name:web_studio.model_mail_thread
@@ -1693,7 +1694,7 @@ msgstr ""
 #: code:addons/web_studio/models/ir_ui_view.py:0
 #, python-format
 msgid "End Date"
-msgstr ""
+msgstr "അവസാന തീയതി"
 
 #. module: web_studio
 #: model:ir.model.fields,field_description:web_studio.field_studio_approval_rule__entry_ids
@@ -1706,7 +1707,7 @@ msgstr ""
 #: code:addons/web_studio/static/src/legacy/js/common/abstract_editor_manager.js:0
 #, python-format
 msgid "Error"
-msgstr ""
+msgstr "പിശക്"
 
 #. module: web_studio
 #. odoo-javascript
@@ -1763,7 +1764,7 @@ msgstr ""
 #: code:addons/web_studio/static/src/legacy/xml/search_renderer.xml:0
 #, python-format
 msgid "Favourites"
-msgstr ""
+msgstr "പ്രിയപ്പെട്ടവ"
 
 #. module: web_studio
 #. odoo-javascript
@@ -1821,7 +1822,7 @@ msgstr ""
 #: model_terms:ir.ui.view,arch_db:web_studio.act_report_xml_view_kanban
 #, python-format
 msgid "File"
-msgstr ""
+msgstr "ഫയൽ"
 
 #. module: web_studio
 #. odoo-python
@@ -1835,7 +1836,7 @@ msgstr ""
 #: code:addons/web_studio/static/src/legacy/js/views/view_components.js:0
 #, python-format
 msgid "Filter"
-msgstr ""
+msgstr "ഫിൽട്ടർ"
 
 #. module: web_studio
 #. odoo-javascript
@@ -1852,7 +1853,7 @@ msgstr ""
 #: model:ir.model,name:web_studio.model_ir_filters
 #, python-format
 msgid "Filters"
-msgstr ""
+msgstr "ഫിൽറ്റർ"
 
 #. module: web_studio
 #. odoo-javascript
@@ -1953,7 +1954,7 @@ msgstr ""
 #: code:addons/web_studio/static/src/client_action/editor/editor_menu/editor_menu.js:0
 #, python-format
 msgid "Graph"
-msgstr ""
+msgstr "ഗ്രാഫ്"
 
 #. module: web_studio
 #. odoo-javascript
@@ -1992,7 +1993,7 @@ msgstr ""
 #: model_terms:ir.ui.view,arch_db:web_studio.studio_approval_rule_search_view
 #, python-format
 msgid "Group By"
-msgstr ""
+msgstr "ഗ്രൂപ്പ് ബൈ"
 
 #. module: web_studio
 #. odoo-javascript
@@ -2120,7 +2121,7 @@ msgstr ""
 #: code:addons/web_studio/static/src/legacy/xml/edit_menu.xml:0
 #, python-format
 msgid "Home"
-msgstr ""
+msgstr "ഹോം"
 
 #. module: web_studio
 #: model:ir.model.fields,field_description:web_studio.field_res_company__background_image
@@ -2171,7 +2172,7 @@ msgstr ""
 #: model:ir.model.fields,field_description:web_studio.field_studio_approval_rule__id
 #, python-format
 msgid "ID"
-msgstr ""
+msgstr "ഐഡി"
 
 #. module: web_studio
 #. odoo-javascript
@@ -2179,7 +2180,7 @@ msgstr ""
 #: code:addons/web_studio/static/src/legacy/xml/view_editor_sidebar.xml:0
 #, python-format
 msgid "Icon"
-msgstr ""
+msgstr "ഐക്കൺ"
 
 #. module: web_studio
 #: model:ir.model.fields,help:web_studio.field_studio_approval_rule__domain
@@ -2211,7 +2212,7 @@ msgstr ""
 #: code:addons/web_studio/static/src/legacy/js/views/view_components.js:0
 #, python-format
 msgid "Image"
-msgstr ""
+msgstr "ചിത്രം"
 
 #. module: web_studio
 #. odoo-javascript
@@ -2219,7 +2220,7 @@ msgstr ""
 #: model_terms:ir.ui.view,arch_db:web_studio.simplified_form_view_import_module
 #, python-format
 msgid "Import"
-msgstr ""
+msgstr "ഇമ്പോർട്ട് "
 
 #. module: web_studio
 #. odoo-python
@@ -2266,14 +2267,14 @@ msgstr ""
 #: code:addons/web_studio/static/src/legacy/js/reports/report_kanban_view.js:0
 #, python-format
 msgid "Internal"
-msgstr ""
+msgstr "ഇന്റെര്ണല്"
 
 #. module: web_studio
 #. odoo-javascript
 #: code:addons/web_studio/static/src/legacy/xml/view_editor_sidebar.xml:0
 #, python-format
 msgid "Interval"
-msgstr ""
+msgstr "ഇടവേള"
 
 #. module: web_studio
 #. odoo-python
@@ -2314,7 +2315,7 @@ msgstr ""
 #: code:addons/web_studio/static/src/client_action/editor/editor_menu/editor_menu.js:0
 #, python-format
 msgid "Kanban"
-msgstr ""
+msgstr "കമ്പൻ"
 
 #. module: web_studio
 #. odoo-python
@@ -2336,7 +2337,7 @@ msgstr ""
 #: code:addons/web_studio/static/src/legacy/xml/view_editor_sidebar.xml:0
 #, python-format
 msgid "Label"
-msgstr ""
+msgstr "ലേബൽ"
 
 #. module: web_studio
 #. odoo-javascript
@@ -2350,21 +2351,21 @@ msgstr ""
 #: model:ir.model.fields,field_description:web_studio.field_studio_approval_request____last_update
 #: model:ir.model.fields,field_description:web_studio.field_studio_approval_rule____last_update
 msgid "Last Modified on"
-msgstr ""
+msgstr "അവസാനം അപ്ഡേറ്റ് ചെയ്തത്"
 
 #. module: web_studio
 #: model:ir.model.fields,field_description:web_studio.field_studio_approval_entry__write_uid
 #: model:ir.model.fields,field_description:web_studio.field_studio_approval_request__write_uid
 #: model:ir.model.fields,field_description:web_studio.field_studio_approval_rule__write_uid
 msgid "Last Updated by"
-msgstr ""
+msgstr "അവസാനം അപ്ഡേറ്റ് ചെയ്തത്"
 
 #. module: web_studio
 #: model:ir.model.fields,field_description:web_studio.field_studio_approval_entry__write_date
 #: model:ir.model.fields,field_description:web_studio.field_studio_approval_request__write_date
 #: model:ir.model.fields,field_description:web_studio.field_studio_approval_rule__write_date
 msgid "Last Updated on"
-msgstr ""
+msgstr "അവസാനം അപ്ഡേറ്റ് ചെയ്തത്"
 
 #. module: web_studio
 #. odoo-javascript
@@ -2416,7 +2417,7 @@ msgstr ""
 #: code:addons/web_studio/static/src/client_action/view_editors/components/field_content_overlay.js:0
 #, python-format
 msgid "List"
-msgstr ""
+msgstr "ലിസ്റ്"
 
 #. module: web_studio
 #. odoo-javascript
@@ -2446,14 +2447,14 @@ msgstr ""
 #: code:addons/web_studio/static/src/legacy/js/views/view_components.js:0
 #, python-format
 msgid "Many2many"
-msgstr ""
+msgstr "മെനി2മെനി "
 
 #. module: web_studio
 #. odoo-javascript
 #: code:addons/web_studio/static/src/legacy/js/views/view_components.js:0
 #, python-format
 msgid "Many2one"
-msgstr ""
+msgstr "മെനി2വൺ"
 
 #. module: web_studio
 #. odoo-javascript
@@ -2467,7 +2468,7 @@ msgstr ""
 #: code:addons/web_studio/static/src/legacy/xml/report_editor_sidebar.xml:0
 #, python-format
 msgid "Margins"
-msgstr ""
+msgstr "മാർജിൻ"
 
 #. module: web_studio
 #. odoo-javascript
@@ -2496,12 +2497,12 @@ msgstr ""
 #: code:addons/web_studio/static/src/legacy/xml/view_editor_sidebar.xml:0
 #, python-format
 msgid "Medium"
-msgstr ""
+msgstr "മീഡിയം"
 
 #. module: web_studio
 #: model:ir.model,name:web_studio.model_ir_ui_menu
 msgid "Menu"
-msgstr ""
+msgstr "മെനു"
 
 #. module: web_studio
 #. odoo-javascript
@@ -2509,7 +2510,7 @@ msgstr ""
 #: model:ir.model.fields,field_description:web_studio.field_studio_approval_rule__message
 #, python-format
 msgid "Message"
-msgstr ""
+msgstr "സന്ദേശം"
 
 #. module: web_studio
 #: model:ir.model.fields,field_description:web_studio.field_studio_approval_entry__method
@@ -2542,7 +2543,7 @@ msgstr ""
 #: model_terms:ir.ui.view,arch_db:web_studio.studio_approval_rule_search_view
 #, python-format
 msgid "Model"
-msgstr ""
+msgstr "മോഡൽ"
 
 #. module: web_studio
 #: model:ir.model,name:web_studio.model_ir_model_access
@@ -2563,12 +2564,12 @@ msgstr ""
 #. module: web_studio
 #: model:ir.model,name:web_studio.model_ir_model
 msgid "Models"
-msgstr ""
+msgstr "മോഡൽസ്"
 
 #. module: web_studio
 #: model:ir.model,name:web_studio.model_ir_module_module
 msgid "Module"
-msgstr ""
+msgstr "മൊഡ്യൂൾ"
 
 #. module: web_studio
 #: model:ir.model,name:web_studio.model_base_module_uninstall
@@ -2585,7 +2586,7 @@ msgstr ""
 #: code:addons/web_studio/static/src/legacy/js/views/view_components.js:0
 #, python-format
 msgid "Monetary"
-msgstr ""
+msgstr "മോനിറ്ററി"
 
 #. module: web_studio
 #. odoo-javascript
@@ -2599,7 +2600,7 @@ msgstr ""
 #: code:addons/web_studio/static/src/legacy/xml/view_editor_sidebar.xml:0
 #, python-format
 msgid "Month"
-msgstr ""
+msgstr "മാസം"
 
 #. module: web_studio
 #. odoo-javascript
@@ -2674,14 +2675,14 @@ msgstr ""
 #: model:ir.model.fields,field_description:web_studio.field_studio_approval_rule__name
 #, python-format
 msgid "Name"
-msgstr ""
+msgstr "പേര്"
 
 #. module: web_studio
 #. odoo-python
 #: code:addons/web_studio/models/ir_model.py:0
 #, python-format
 msgid "New"
-msgstr ""
+msgstr "പുതിയ"
 
 #. module: web_studio
 #. odoo-python
@@ -2758,7 +2759,7 @@ msgstr ""
 #: code:addons/web_studio/static/src/client_action/model_configurator/model_configurator.xml:0
 #, python-format
 msgid "Next"
-msgstr ""
+msgstr "അടുത്തത്"
 
 #. module: web_studio
 #. odoo-javascript
@@ -2774,7 +2775,7 @@ msgstr ""
 #: code:addons/web_studio/static/src/legacy/xml/view_editor_sidebar.xml:0
 #, python-format
 msgid "No"
-msgstr ""
+msgstr "ഇല്ല"
 
 #. module: web_studio
 #. odoo-python
@@ -2809,7 +2810,7 @@ msgstr ""
 #: code:addons/web_studio/static/src/legacy/xml/report_editor_sidebar.xml:0
 #, python-format
 msgid "Normal"
-msgstr ""
+msgstr "നോർമൽ"
 
 #. module: web_studio
 #. odoo-javascript
@@ -2819,7 +2820,7 @@ msgstr ""
 #: code:addons/web_studio/static/src/client_action/navbar/navbar.xml:0
 #, python-format
 msgid "Notes"
-msgstr ""
+msgstr "നോട്ട്സ്"
 
 #. module: web_studio
 #. odoo-javascript
@@ -2896,21 +2897,21 @@ msgstr ""
 #: code:addons/web_studio/static/src/legacy/xml/view_editor_sidebar.xml:0
 #, python-format
 msgid "Optional"
-msgstr ""
+msgstr "ഓപ്ഷണൽ"
 
 #. module: web_studio
 #. odoo-javascript
 #: code:addons/web_studio/static/src/legacy/xml/report_editor_sidebar.xml:0
 #, python-format
 msgid "Options"
-msgstr ""
+msgstr "ഓപ്ഷൻസ്"
 
 #. module: web_studio
 #. odoo-javascript
 #: code:addons/web_studio/static/src/legacy/xml/view_editor_sidebar.xml:0
 #, python-format
 msgid "Order"
-msgstr ""
+msgstr "ഓർഡർ"
 
 #. module: web_studio
 #. odoo-javascript
@@ -2934,7 +2935,7 @@ msgstr ""
 #: code:addons/web_studio/static/src/legacy/xml/report_editor_sidebar.xml:0
 #, python-format
 msgid "Paper format"
-msgstr ""
+msgstr "പേപ്പർ ഫോർമാറ്റ്"
 
 #. module: web_studio
 #. odoo-javascript
@@ -2949,14 +2950,14 @@ msgstr ""
 #: code:addons/web_studio/models/ir_ui_view.py:0
 #, python-format
 msgid "Partner"
-msgstr ""
+msgstr "പാർട്ണർ"
 
 #. module: web_studio
 #. odoo-python
 #: code:addons/web_studio/models/ir_model.py:0
 #, python-format
 msgid "Phone"
-msgstr ""
+msgstr "ഫോൺ"
 
 #. module: web_studio
 #. odoo-javascript
@@ -2984,14 +2985,14 @@ msgstr ""
 #: code:addons/web_studio/static/src/client_action/editor/editor_menu/editor_menu.js:0
 #, python-format
 msgid "Pivot"
-msgstr ""
+msgstr "പിവറ്റ്"
 
 #. module: web_studio
 #. odoo-javascript
 #: code:addons/web_studio/static/src/legacy/xml/view_editor_sidebar.xml:0
 #, python-format
 msgid "Placeholder"
-msgstr ""
+msgstr "പ്ലെയ്‌സ്‌ഹോൾഡർ"
 
 #. module: web_studio
 #. odoo-javascript
@@ -3019,7 +3020,7 @@ msgstr ""
 #: code:addons/web_studio/static/src/client_action/view_editors/kanban/kanban_editor_record.xml:0
 #, python-format
 msgid "Preview is not available"
-msgstr ""
+msgstr "പ്രിവ്യൂ ലഭ്യമല്ല"
 
 #. module: web_studio
 #. odoo-javascript
@@ -3036,7 +3037,7 @@ msgstr ""
 #: code:addons/web_studio/static/src/legacy/xml/report_editor_manager.xml:0
 #, python-format
 msgid "Print"
-msgstr ""
+msgstr "പ്രിന്റ് "
 
 #. module: web_studio
 #. odoo-javascript
@@ -3050,7 +3051,7 @@ msgstr ""
 #: code:addons/web_studio/static/src/legacy/js/views/view_components.js:0
 #, python-format
 msgid "Priority"
-msgstr ""
+msgstr "മുൻഗണന"
 
 #. module: web_studio
 #. odoo-python
@@ -3066,7 +3067,7 @@ msgstr ""
 #: code:addons/web_studio/static/src/legacy/xml/view_editor_sidebar.xml:0
 #, python-format
 msgid "Properties"
-msgstr ""
+msgstr "പ്രോപ്പർട്ടികൾ"
 
 #. module: web_studio
 #. odoo-javascript
@@ -3128,12 +3129,12 @@ msgstr ""
 #: code:addons/web_studio/models/ir_model.py:0
 #, python-format
 msgid "Ready"
-msgstr ""
+msgstr "റെഡി"
 
 #. module: web_studio
 #: model_terms:ir.ui.view,arch_db:web_studio.studio_approval_entry_form_view
 msgid "Record"
-msgstr ""
+msgstr "റെക്കോർഡ്"
 
 #. module: web_studio
 #: model:ir.model.fields,field_description:web_studio.field_studio_approval_entry__res_id
@@ -3151,7 +3152,7 @@ msgstr ""
 #. module: web_studio
 #: model:ir.model.fields,field_description:web_studio.field_studio_approval_entry__reference
 msgid "Reference"
-msgstr ""
+msgstr "റഫറൻസ്"
 
 #. module: web_studio
 #. odoo-javascript
@@ -3159,12 +3160,12 @@ msgstr ""
 #: code:addons/web_studio/static/src/legacy/xml/approval_component.xml:0
 #, python-format
 msgid "Reject"
-msgstr ""
+msgstr "നിരസിക്കുക"
 
 #. module: web_studio
 #: model_terms:ir.ui.view,arch_db:web_studio.studio_approval_entry_search_view
 msgid "Rejected"
-msgstr ""
+msgstr "നിരസിച്ചു"
 
 #. module: web_studio
 #: model_terms:ir.ui.view,arch_db:web_studio.notify_approval
@@ -3249,7 +3250,7 @@ msgstr ""
 #: code:addons/web_studio/static/src/legacy/xml/report_editor_sidebar.xml:0
 #, python-format
 msgid "Report"
-msgstr ""
+msgstr "റിപ്പോർട്ട്"
 
 #. module: web_studio
 #: model:ir.model,name:web_studio.model_ir_actions_report
@@ -3270,7 +3271,7 @@ msgstr ""
 #: code:addons/web_studio/static/src/client_action/editor/editor_menu/editor_menu.js:0
 #, python-format
 msgid "Reports"
-msgstr ""
+msgstr "റിപോർട്സ് "
 
 #. module: web_studio
 #. odoo-javascript
@@ -3302,7 +3303,7 @@ msgstr ""
 #: model:ir.model.fields,field_description:web_studio.field_studio_approval_rule__responsible_id
 #, python-format
 msgid "Responsible"
-msgstr ""
+msgstr "ഉത്തരവാദിയായ"
 
 #. module: web_studio
 #. odoo-javascript
@@ -3383,14 +3384,14 @@ msgstr ""
 #: code:addons/web_studio/static/src/client_action/editor/editor_menu/editor_menu.js:0
 #, python-format
 msgid "Search"
-msgstr ""
+msgstr "സെർച്ച് "
 
 #. module: web_studio
 #. odoo-javascript
 #: code:addons/web_studio/static/src/legacy/xml/view_editor_sidebar.xml:0
 #, python-format
 msgid "Search..."
-msgstr ""
+msgstr "തിരയുക..."
 
 #. module: web_studio
 #. odoo-javascript
@@ -3476,12 +3477,12 @@ msgstr ""
 #: code:addons/web_studio/models/ir_model.py:0
 #, python-format
 msgid "Sequence"
-msgstr ""
+msgstr "സീക്വൻസ് "
 
 #. module: web_studio
 #: model:ir.model,name:web_studio.model_ir_actions_server
 msgid "Server Action"
-msgstr ""
+msgstr "സെർവർ ആക്ഷൻ"
 
 #. module: web_studio
 #. odoo-javascript
@@ -3546,7 +3547,7 @@ msgstr ""
 #: code:addons/web_studio/static/src/legacy/js/views/view_components.js:0
 #, python-format
 msgid "Signature"
-msgstr ""
+msgstr "കയ്യൊപ്പ്"
 
 #. module: web_studio
 #. odoo-javascript
@@ -3554,7 +3555,7 @@ msgstr ""
 #: code:addons/web_studio/static/src/legacy/xml/report_editor_sidebar.xml:0
 #, python-format
 msgid "Size"
-msgstr ""
+msgstr "വലിപ്പം"
 
 #. module: web_studio
 #. odoo-javascript
@@ -3576,28 +3577,28 @@ msgstr ""
 #: code:addons/web_studio/static/src/legacy/xml/view_editor_sidebar.xml:0
 #, python-format
 msgid "Sort By"
-msgstr ""
+msgstr "സോർട്ട് ബൈ"
 
 #. module: web_studio
 #. odoo-javascript
 #: code:addons/web_studio/static/src/legacy/xml/view_editor_sidebar.xml:0
 #, python-format
 msgid "Sort by"
-msgstr ""
+msgstr "സോർട് ബൈ"
 
 #. module: web_studio
 #. odoo-javascript
 #: code:addons/web_studio/static/src/legacy/xml/view_editor_sidebar.xml:0
 #, python-format
 msgid "Sorting"
-msgstr ""
+msgstr "സോർട്ടിങ് "
 
 #. module: web_studio
 #. odoo-javascript
 #: code:addons/web_studio/static/src/legacy/xml/report_editor_sidebar.xml:0
 #, python-format
 msgid "Source"
-msgstr ""
+msgstr "ഉറവിടം"
 
 #. module: web_studio
 #. odoo-javascript
@@ -3619,7 +3620,7 @@ msgstr ""
 #: code:addons/web_studio/models/ir_ui_view.py:0
 #, python-format
 msgid "Stage"
-msgstr ""
+msgstr "സ്റ്റേജ്"
 
 #. module: web_studio
 #. odoo-python
@@ -3641,7 +3642,7 @@ msgstr ""
 #: code:addons/web_studio/models/ir_ui_view.py:0
 #, python-format
 msgid "Start Date"
-msgstr ""
+msgstr "ആരംഭിക്കുന്ന തീയതി"
 
 #. module: web_studio
 #. odoo-javascript
@@ -3676,40 +3677,40 @@ msgstr ""
 #: model:ir.model.fields,field_description:web_studio.field_ir_model_data__studio
 #, python-format
 msgid "Studio"
-msgstr ""
+msgstr "സ്റ്റുഡിയോ"
 
 #. module: web_studio
 #: model:ir.actions.client,name:web_studio.action_web_studio_app_creator
 msgid "Studio App Creator"
-msgstr ""
+msgstr "സ്റ്റുഡിയോ ആപ്പ് ക്രീയേറ്റർ"
 
 #. module: web_studio
 #: model:ir.actions.act_window,name:web_studio.studio_approval_entry_action
 #: model:ir.ui.menu,name:web_studio.menu_studio_approval_entry
 msgid "Studio Approval Entries"
-msgstr ""
+msgstr "സ്റ്റുഡിയോ അപ്പ്രൂവൽ എൻട്രി"
 
 #. module: web_studio
 #: model:ir.model,name:web_studio.model_studio_approval_entry
 #: model_terms:ir.ui.view,arch_db:web_studio.studio_approval_entry_form_view
 msgid "Studio Approval Entry"
-msgstr ""
+msgstr "സ്റ്റുഡിയോ അപ്പ്രൂവൽ എൻട്രി"
 
 #. module: web_studio
 #: model:ir.model,name:web_studio.model_studio_approval_request
 msgid "Studio Approval Request"
-msgstr ""
+msgstr "സ്റ്റുഡിയോ അപ്പ്രൂവൽ റിക്വസ്റ്റ് "
 
 #. module: web_studio
 #: model:ir.model,name:web_studio.model_studio_approval_rule
 #: model_terms:ir.ui.view,arch_db:web_studio.studio_approval_rule_form_view
 msgid "Studio Approval Rule"
-msgstr ""
+msgstr "സ്റ്റുഡിയോ അപ്പ്രൂവൽ റൂൾ"
 
 #. module: web_studio
 #: model:ir.actions.act_window,name:web_studio.studio_approval_rule_action
 msgid "Studio Approvals"
-msgstr ""
+msgstr "സ്റ്റുഡിയോ അപ്പ്രൂവൽ"
 
 #. module: web_studio
 #: model:ir.ui.menu,name:web_studio.menu_studio_approval_rule
@@ -3804,21 +3805,21 @@ msgstr ""
 #: code:addons/web_studio/static/src/legacy/js/views/view_components.js:0
 #, python-format
 msgid "Tags"
-msgstr ""
+msgstr "ടാഗുകൾ"
 
 #. module: web_studio
 #. odoo-javascript
 #: code:addons/web_studio/static/src/legacy/xml/report_editor_sidebar.xml:0
 #, python-format
 msgid "Taxes amount by groups"
-msgstr ""
+msgstr "ഗ്രൂപ്പുകൾ പ്രകാരം നികുതി തുക"
 
 #. module: web_studio
 #. odoo-javascript
 #: code:addons/web_studio/static/src/legacy/xml/view_editor_sidebar.xml:0
 #, python-format
 msgid "Technical Name"
-msgstr ""
+msgstr "ടെക്നിക്കൽ പേര്"
 
 #. module: web_studio
 #. odoo-python
@@ -3834,7 +3835,7 @@ msgstr ""
 #: code:addons/web_studio/static/src/legacy/js/views/view_components.js:0
 #, python-format
 msgid "Text"
-msgstr ""
+msgstr "ടെക്സ്റ്റ്"
 
 #. module: web_studio
 #. odoo-javascript
@@ -3873,7 +3874,7 @@ msgstr ""
 #: code:addons/web_studio/static/src/client_action/app_creator/app_creator.xml:0
 #, python-format
 msgid "The fastest way to create a web application."
-msgstr ""
+msgstr "ഒരു വെബ് ആപ്ലിക്കേഷൻ സൃഷ്ടിക്കുന്നതിനുള്ള ഏറ്റവും വേഗതയേറിയ മാർഗം."
 
 #. module: web_studio
 #. odoo-python
@@ -3891,28 +3892,28 @@ msgstr ""
 #: code:addons/web_studio/static/src/legacy/js/views/controllers/form_controller.js:0
 #, python-format
 msgid "The following approvals are missing:"
-msgstr ""
+msgstr "ഇനിപ്പറയുന്ന അപ്പ്രൂവൽ നഷ്‌ടമായി:"
 
 #. module: web_studio
 #. odoo-javascript
 #: code:addons/web_studio/static/src/legacy/js/views/view_editor_sidebar.js:0
 #, python-format
 msgid "The following fields are currently not in the view."
-msgstr ""
+msgstr "ഇനിപ്പറയുന്ന ഫീൽഡുകൾ നിലവിൽ വ്യൂവിൽ ഇല്ല."
 
 #. module: web_studio
 #. odoo-python
 #: code:addons/web_studio/controllers/main.py:0
 #, python-format
 msgid "The icon has not a correct format"
-msgstr ""
+msgstr "ഐക്കണിന് ശരിയായ ഫോർമാറ്റില്ല"
 
 #. module: web_studio
 #. odoo-python
 #: code:addons/web_studio/controllers/main.py:0
 #, python-format
 msgid "The icon is not linked to an attachment"
-msgstr ""
+msgstr "ഐക്കൺ ഒരു അറ്റാച്ച്മെന്റുമായി ലിങ്ക് ചെയ്തിട്ടില്ല"
 
 #. module: web_studio
 #. odoo-python
@@ -3952,7 +3953,7 @@ msgstr ""
 #: code:addons/web_studio/static/src/legacy/js/reports/sidebar_components/report_building_blocks.js:0
 #, python-format
 msgid "The record field name is missing"
-msgstr ""
+msgstr "റെക്കോർഡ് ഫീൽഡ് പേര് കാണുന്നില്ല"
 
 #. module: web_studio
 #. odoo-python
@@ -4015,7 +4016,7 @@ msgstr ""
 #: code:addons/web_studio/static/src/client_action/studio_home_menu/studio_home_menu.js:0
 #, python-format
 msgid "This action is not editable by Studio"
-msgstr ""
+msgstr "ഈ ആക്ഷൻ സ്റ്റുഡിയോയ്ക്ക് എഡിറ്റ് ചെയ്യാനാകില്ല"
 
 #. module: web_studio
 #. odoo-python
@@ -4089,21 +4090,21 @@ msgstr ""
 #: code:addons/web_studio/static/src/legacy/js/reports/sidebar_components/report_building_blocks.js:0
 #, python-format
 msgid "Three Columns"
-msgstr ""
+msgstr "മൂന്ന് നിരകൾ"
 
 #. module: web_studio
 #. odoo-javascript
 #: code:addons/web_studio/static/src/legacy/xml/view_editor_sidebar.xml:0
 #, python-format
 msgid "Timeline"
-msgstr ""
+msgstr "ടൈംലൈൻ"
 
 #. module: web_studio
 #. odoo-javascript
 #: code:addons/web_studio/static/src/legacy/xml/action_editor.xml:0
 #, python-format
 msgid "Timeline Views"
-msgstr ""
+msgstr "ടൈംലൈൻ വ്യൂസ്"
 
 #. module: web_studio
 #. odoo-javascript
@@ -4148,7 +4149,7 @@ msgstr ""
 #: code:addons/web_studio/models/ir_ui_view.py:0
 #, python-format
 msgid "Total"
-msgstr ""
+msgstr "ആകെ"
 
 #. module: web_studio
 #. odoo-javascript
@@ -4162,7 +4163,7 @@ msgstr ""
 #: code:addons/web_studio/static/src/legacy/xml/view_editor_sidebar.xml:0
 #, python-format
 msgid "Type"
-msgstr ""
+msgstr "ടൈപ്പ്"
 
 #. module: web_studio
 #. odoo-python
@@ -4195,7 +4196,7 @@ msgstr ""
 #. module: web_studio
 #: model_terms:ir.ui.view,arch_db:web_studio.studio_approval_entry_search_view
 msgid "User"
-msgstr "ഉപയോക്താവ്"
+msgstr "യൂസർ"
 
 #. module: web_studio
 #. odoo-javascript
@@ -4210,6 +4211,13 @@ msgstr ""
 #: code:addons/web_studio/static/src/legacy/xml/approval_component.xml:0
 #, python-format
 msgid "User avatar placeholder"
+msgstr ""
+
+#. module: web_studio
+#. odoo-python
+#: code:addons/web_studio/models/studio_approval.py:0
+#, python-format
+msgid "User is not a member of the selected group."
 msgstr ""
 
 #. module: web_studio
@@ -4237,7 +4245,7 @@ msgstr ""
 #: model:ir.model,name:web_studio.model_ir_ui_view
 #, python-format
 msgid "View"
-msgstr ""
+msgstr "വ്യൂ"
 
 #. module: web_studio
 #. odoo-javascript
@@ -4287,7 +4295,7 @@ msgstr ""
 #: code:addons/web_studio/static/src/legacy/xml/view_editor_sidebar.xml:0
 #, python-format
 msgid "Week"
-msgstr ""
+msgstr "ആഴ്ച"
 
 #. module: web_studio
 #. odoo-javascript
@@ -4333,14 +4341,14 @@ msgstr ""
 #: code:addons/web_studio/static/src/legacy/xml/view_editor_sidebar.xml:0
 #, python-format
 msgid "Widget"
-msgstr ""
+msgstr "വിജറ്റ്"
 
 #. module: web_studio
 #. odoo-javascript
 #: code:addons/web_studio/static/src/legacy/xml/report_editor_sidebar.xml:0
 #, python-format
 msgid "Width"
-msgstr ""
+msgstr "വീതി"
 
 #. module: web_studio
 #. odoo-javascript
@@ -4370,7 +4378,7 @@ msgstr ""
 #: code:addons/web_studio/static/src/legacy/xml/view_editor_sidebar.xml:0
 #, python-format
 msgid "Year"
-msgstr ""
+msgstr "വർഷം"
 
 #. module: web_studio
 #. odoo-javascript
@@ -4510,7 +4518,7 @@ msgstr ""
 #: code:addons/web_studio/static/src/client_action/icon_creator/icon_creator.xml:0
 #, python-format
 msgid "or"
-msgstr ""
+msgstr "അഥവാ"
 
 #. module: web_studio
 #. odoo-javascript

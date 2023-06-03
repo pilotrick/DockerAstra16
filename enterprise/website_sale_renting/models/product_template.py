@@ -4,7 +4,8 @@ from dateutil.relativedelta import relativedelta
 from math import ceil
 from pytz import timezone, utc, UTC
 
-from odoo import fields, models
+from odoo import fields, models, _
+from odoo.exceptions import UserError
 from odoo.http import request
 from odoo.addons.sale_temporal.models.product_pricing import PERIOD_RATIO
 from odoo.tools import format_amount
@@ -95,7 +96,7 @@ class ProductTemplate(models.Model):
             start_date, end_date, only_template, website, current_duration, current_unit
         )
 
-        ratio = ceil(current_duration) / pricing.recurrence_id.duration
+        ratio = ceil(current_duration) / pricing.recurrence_id.duration if pricing.recurrence_id.duration else 1
         if current_unit != pricing.recurrence_id.unit:
             ratio *= PERIOD_RATIO[current_unit] / PERIOD_RATIO[pricing.recurrence_id.unit]
 
@@ -123,16 +124,16 @@ class ProductTemplate(models.Model):
                 best_pricings[p.recurrence_id] = p
         suitable_pricings = best_pricings.values()
         currency = pricelist and pricelist.currency_id or self.env.company.currency_id
-        def _pricing_price(pricing, pricelist):
+        def _pricing_price(pricing):
             if pricing.currency_id == currency:
                 return pricing.price
             return pricing.currency_id._convert(
                 pricing.price,
-                pricelist.currency_id,
+                currency,
                 company_id or self.env.company,
                 fields.Date.context_today(self),
             )
-        pricing_table = [(p.name, format_amount(self.env, _pricing_price(p, pricelist), currency))
+        pricing_table = [(p.name, format_amount(self.env, _pricing_price(p), currency))
                             for p in suitable_pricings]
 
         return {
@@ -146,7 +147,7 @@ class ProductTemplate(models.Model):
             'current_rental_duration': ceil(current_duration),
             'current_rental_unit': current_pricing._get_unit_label(current_duration),
             'current_rental_price': current_price,
-            'current_rental_price_per_unit': current_price / (ratio or 1),
+            'current_rental_price_per_unit': current_price / ratio,
             'base_unit_price': 0,
             'base_unit_name': False,
             'pricing_table': pricing_table,
@@ -165,6 +166,9 @@ class ProductTemplate(models.Model):
         :param int duration: the duration expressed in int, in the unit given
         :param string unit: The duration unit, which can be 'hour', 'day', 'week' or 'month'
         """
+        if start_date and end_date and start_date >= end_date:
+            raise UserError(_("Please choose a return date that is after the pickup date."))
+
         if start_date or end_date or only_template:
             return start_date, end_date
 

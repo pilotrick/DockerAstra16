@@ -175,17 +175,17 @@ class AccountMoveL10NDe(models.Model):
                     aml_debit += aml
                 if aml.credit > 0:
                     aml_credit += aml
-            if len(aml_debit) == 1:
-                value = aml_debit[0].account_id
-            elif len(aml_credit) == 1:
-                value = aml_credit[0].account_id
+            if len(aml_debit.account_id) == 1:
+                value = aml_debit.account_id
+            elif len(aml_credit.account_id) == 1:
+                value = aml_credit.account_id
             else:
-                aml_debit_wo_tax = [a for a in aml_debit if not a.tax_line_id]
-                aml_credit_wo_tax = [a for a in aml_credit if not a.tax_line_id]
-                if len(aml_debit_wo_tax) == 1:
-                    value = aml_debit_wo_tax[0].account_id
-                elif len(aml_credit_wo_tax) == 1:
-                    value = aml_credit_wo_tax[0].account_id
+                aml_debit_wo_tax_accounts = [a.account_id for a in aml_debit if not a.tax_line_id]
+                aml_credit_wo_tax_accounts = [a.account_id for a in aml_credit if not a.tax_line_id]
+                if len(aml_debit_wo_tax_accounts) == 1:
+                    value = aml_debit_wo_tax_accounts[0]
+                elif len(aml_credit_wo_tax_accounts) == 1:
+                    value = aml_credit_wo_tax_accounts[0]
             move.l10n_de_datev_main_account_id = value
 
 
@@ -199,7 +199,7 @@ class GeneralLedgerCustomHandler(models.AbstractModel):
         :param dict previous_options: Previous report options
         """
         super()._custom_options_initializer(report, options, previous_options)
-        if self.env.company.country_code == 'DE':
+        if self.env.company.country_code in ('DE', 'CH', 'AT'):
             options.setdefault('buttons', []).extend((
                 {
                     'name': _('Datev (zip)'),
@@ -366,7 +366,8 @@ class GeneralLedgerCustomHandler(models.AbstractModel):
             account = partner.property_account_receivable_id if account.account_type == 'asset_receivable' else partner.property_account_payable_id
             fname = "property_account_receivable_id"         if account.account_type == 'asset_receivable' else "property_account_payable_id"
             prop = self.env['ir.property']._get(fname, "res.partner", partner.id)
-            if prop == account:
+            force_datev_id = self.env['ir.config_parameter'].sudo().get_param('l10n_de.force_datev_id', False)
+            if not force_datev_id and prop == account:
                 return str(account.code).ljust(len_param - 1, '0') if account else ''
             return self._l10n_de_datev_get_account_identifier(account, partner)
         return str(account.code).ljust(len_param - 1, '0') if account else ''

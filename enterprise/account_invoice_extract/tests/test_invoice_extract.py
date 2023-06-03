@@ -88,9 +88,21 @@ class TestInvoiceExtract(AccountTestInvoicingCommon, account_invoice_extract_com
 
     def test_no_merge_check_status(self):
         # test check_status without lines merging
+        self.env.company.extract_single_line_per_tax = False
+        self.env.company.quick_edit_mode = "out_and_in_invoices"  # Fiduciary mode is necessary for out_invoice
+
         for move_type in ('in_invoice', 'out_invoice'):
             invoice = self.env['account.move'].create({'move_type': move_type, 'extract_state': 'waiting_extraction'})
-            self.env.company.extract_single_line_per_tax = False
+
+            # This is necessary to avoid nondeterminism in this test.
+            # The value of the due date and the creation date are checked to know whether
+            # we should fill the due date or not.
+            # When the test runs at around midnight, it can happen that the creation date and the default due date don't
+            # match, e.g. when one is set at 23:59:59 and the other one at 00:00:00.
+            # This issue can of course also occur under normal utilization, but it should be very rare and with a very
+            # low impact.
+            invoice.invoice_date_due = invoice.create_date.date()
+
             extract_response = self.get_default_extract_response()
 
             with self.mock_iap_extract(extract_response, {}):
@@ -271,7 +283,7 @@ class TestInvoiceExtract(AccountTestInvoicingCommon, account_invoice_extract_com
 
     def test_multi_currency(self):
         # test that if the multi currency is disabled, the currency isn't changed
-        self.env['res.currency'].search([('name', '!=', 'USD')]).active = False
+        self.env['res.currency'].search([('name', '!=', 'USD')]).with_context(force_deactivate=True).active = False
         invoice = self.env['account.move'].create({'move_type': 'in_invoice', 'extract_state': 'waiting_extraction'})
         test_user = self.env.ref('base.user_root')
         test_user.groups_id = [(3, self.env.ref('base.group_multi_currency').id)]
@@ -347,7 +359,7 @@ class TestInvoiceExtract(AccountTestInvoicingCommon, account_invoice_extract_com
     def test_tax_adjustments(self):
         # test that if the total computed by Odoo doesn't exactly match the total found by the OCR, the tax are adjusted accordingly
         for move_type in ('in_invoice', 'out_invoice'):
-            self.env['res.currency'].search([('name', '!=', 'USD')]).active = False
+            self.env['res.currency'].search([('name', '!=', 'USD')]).with_context(force_deactivate=True).active = False
             invoice = self.env['account.move'].create({'move_type': move_type, 'extract_state': 'waiting_extraction'})
             extract_response = self.get_default_extract_response()
             extract_response['results'][0]['total']['selected_value']['content'] += 0.01

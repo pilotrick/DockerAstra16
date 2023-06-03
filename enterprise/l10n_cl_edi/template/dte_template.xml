@@ -49,9 +49,11 @@
                 </Receptor>
             <t t-if="move.l10n_latam_document_type_id._is_doc_type_export()">
                 <Transporte>
-                    <DirDest/>
-                    <CmnaDest/>
-                    <CiudadDest t-esc="format_length(move.partner_id.city or move.commercial_partner_id.city or '', 20)"/>
+                <t t-if="move.partner_shipping_id not in (move.partner_id | move.commercial_partner_id)">
+                    <DirDest t-esc="format_length(move.partner_shipping_id.street or '' + ' ' + move.partner_shipping_id.street2 or '', 70)"/>
+                    <CmnaDest t-esc="move._l10n_cl_get_comuna_recep(recep=False)"/>
+                    <CiudadDest t-esc="format_length(move.partner_shipping_id.city or '', 20)"/>
+                </t>
                     <Aduana>
                         <CodModVenta>01</CodModVenta>
                         <TotClauVenta t-esc="float_repr(amounts['total_amount'], 0) if not move.l10n_latam_document_type_id._is_doc_type_export() else float_repr(amounts['total_amount'], 2)"/>
@@ -99,7 +101,10 @@
                     <VlrCodigo t-esc="line.product_id.default_code"/>
                 </CdgItem>
                 <IndExe t-if="not line.tax_ids and not move.l10n_latam_document_type_id._is_doc_type_voucher() and line.price_total != 0 and line.price_subtotal != 0" t-esc="'1'"/>
-                <IndExe t-if="line.price_total == 0 or line.price_subtotal == 0" t-esc="'4'"/>
+                <t t-if="line.price_total == 0 or line.price_subtotal == 0">
+                    <IndExe t-if="not move.l10n_latam_document_type_id._is_doc_type_voucher()" t-esc="'4'"/>
+                    <IndExe t-if="move.l10n_latam_document_type_id._is_doc_type_ticket()" t-esc="'2'"/>
+                </t>
                 <NmbItem t-esc="format_length(line.product_id.name, 80) or format_length(line.name, 80)"/>
                 <DscItem t-esc="format_length(line.name, 1000)"/>
             <t t-if="line.price_unit > 0.0 or line.price_total > 0.0">
@@ -108,7 +113,7 @@
                 <PrcItem t-esc="float_repr(line_amounts['price_item'], 6)"/>
             </t>
             <t t-if="line.discount > 0">
-                <DescuentoPct t-esc="line.discount"/>
+                <DescuentoPct t-esc="float_repr(line.discount, 2)"/>
                 <DescuentoMonto t-esc="line_amounts['total_discount']"/>
             </t>
                 <OtrMnda t-if="line_amounts.get('second_currency', False)">

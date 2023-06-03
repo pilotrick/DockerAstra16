@@ -12,13 +12,11 @@ from odoo.addons.iap import jsonrpc
 from odoo.exceptions import UserError, AccessError, ValidationError, RedirectWarning
 from odoo.tools import date_utils, get_lang, html_escape
 from odoo.tools.misc import format_date
+from odoo.addons.l10n_in_edi.models.account_edi_format import DEFAULT_IAP_ENDPOINT, DEFAULT_IAP_TEST_ENDPOINT
 
 import logging
 
 _logger = logging.getLogger(__name__)
-
-DEFAULT_IAP_ENDPOINT = "https://l10n-in-edi.api.odoo.com"
-DEFAULT_IAP_TEST_ENDPOINT = "https://in-report-sanbox.odoo.com"
 
 
 class L10nInGSTReturnPeriod(models.Model):
@@ -47,7 +45,7 @@ class L10nInGSTReturnPeriod(models.Model):
     def _default_quarterly(self):
         today_date = fields.Date.context_today(self)
         this_quarter = date_utils.get_quarter(today_date)
-        default_date = this_quarter
+        default_date = this_quarter[0]
         if this_quarter and this_quarter[0].month == today_date.month and today_date.day <= 10:
             default_date = fields.Date.context_today(self) - relativedelta.relativedelta(months=3)
         return default_date.strftime('%m')
@@ -288,7 +286,7 @@ class L10nInGSTReturnPeriod(models.Model):
         msg = ""
         if not company.vat:
             raise UserError(_("Please set company GSTIN"))
-        if not company.l10n_in_gstr_gst_username:
+        if not company.sudo().l10n_in_gstr_gst_username:
             msg = _("First setup GST user name and validate using OTP from configuration")
         if not company._is_l10n_in_gstr_token_valid():
             msg = _("The NIC portal connection has expired. To re-initiate the connection, you can send an OTP request From configuration.")
@@ -602,9 +600,10 @@ class L10nInGSTReturnPeriod(models.Model):
                         if line_tax_details['l10n_in_reverse_charge']:
                             is_reverse_charge = True
                         lines_json.setdefault(tax_rate, {
-                            "rt": tax_rate, "txval": line_tax_details['base_amount_currency'] * -1, "iamt": 0.00, "samt": 0.00, "camt": 0.00, "csamt": 0.00})
+                            "rt": tax_rate, "txval": 0.00, "iamt": 0.00, "samt": 0.00, "camt": 0.00, "csamt": 0.00})
                         if line_tax_details['igst']:
                             is_igst_amount = True
+                        lines_json[tax_rate]['txval'] += line_tax_details['base_amount_currency'] * -1
                         lines_json[tax_rate]['iamt'] += line_tax_details['igst'] * -1
                         lines_json[tax_rate]['camt'] += line_tax_details['cgst'] * -1
                         lines_json[tax_rate]['samt'] += line_tax_details['sgst'] * -1
@@ -1191,7 +1190,8 @@ class L10nInGSTReturnPeriod(models.Model):
             ("date", ">=", self.start_date),
             ("date", "<=", self.end_date),
             ("move_id.state", "=", "posted"),
-            ("company_id", "in", self.company_ids.ids or self.company_id.ids)
+            ("company_id", "in", self.company_ids.ids or self.company_id.ids),
+            ("display_type", "not in", ('rounding', 'line_note', 'line_section'))
         ]
         if section_code == "b2b":
             return (
@@ -1359,7 +1359,7 @@ class L10nInGSTReturnPeriod(models.Model):
                     sub_response = self._get_gstr2b_data(company=self.company_id, month_year=self.return_period_month_year, file_number=file_num)
                     if not sub_response.get('error'):
                         attachment_ids += self.env['ir.attachment'].create({
-                            'name': 'gstr2b_%s.json',
+                            'name': 'gstr2b_%s.json' % (file_num),
                             'mimetype': 'application/json',
                             'raw': json.dumps(sub_response),
                         })
@@ -1477,8 +1477,8 @@ class L10nInGSTReturnPeriod(models.Model):
                         })
                         checked_bills += matched_bills
                 else:
-                    partner = 'vat' in gstr2b_bill and self.env['res.partner'].search([('vat', '=', gstr2b_bill['vat'])], limit=1)
-                    journal = self.env['account.journal'].search([('type', '=', 'purchase'), ('company_id', '=', self.company_id.id)])
+                    partner = 'vat' in gstr2b_bill and self.env['res.partner'].search([('vat', '=', gstr2b_bill['vat']), ('company_id', 'in', (False, self.company_id.id))], limit=1)
+                    journal = self.env['account.journal'].search([('type', '=', 'purchase'), ('company_id', '=', self.company_id.id)], limit=1)
                     create_vals.append({
                         "move_type": gstr2b_bill.get('bill_type') == 'credit_note' and "in_refund" or "in_invoice",
                         "ref": gstr2b_bill.get('bill_number'),
@@ -1541,7 +1541,8 @@ class L10nInGSTReturnPeriod(models.Model):
                 '&', ("invoice_date", ">=", self.start_date),
                 '&', ("invoice_date", "<=", self.end_date),
                 '&', ("company_id", "in", self.company_ids.ids or self.company_id.ids),
-                    ("state", "=", "posted"),
+                '&', ("state", "=", "posted"),
+                     ("l10n_in_gst_treatment", "not in", ('composition', 'unregistered', 'consumer'))
             ]
             to_match_bills = AccountMove.search(domain)
             for late_bill in gstr2b_late_streamline_bills:
@@ -1552,6 +1553,7 @@ class L10nInGSTReturnPeriod(models.Model):
                     ("move_type", "in", AccountMove.get_purchase_types()),
                     ('ref', '=', late_bill.get('bill_number')),
                     ("state", "=", "posted"),
+                    ("l10n_in_gst_treatment", "not in", ('composition', 'unregistered', 'consumer'))
                 ])
             for bill in to_match_bills:
                 bill_type = 'bill'
@@ -1670,12 +1672,12 @@ class L10nInGSTReturnPeriod(models.Model):
     # ========================================
 
     def _request(self, url, company, params=None):
-        iap_service = self.env["iap.account"].get("gstr_india")
+        iap_service = self.env["iap.account"].get("l10n_in_edi")
         if not params:
             params = {}
         params.update(
             {
-                "username": company.l10n_in_gstr_gst_username,
+                "username": company.sudo().l10n_in_gstr_gst_username,
                 "gstin": company.vat,
                 "account_token": iap_service.account_token,
                 'dbuuid': self.env["ir.config_parameter"].sudo().get_param("database.uuid"),
@@ -1704,14 +1706,14 @@ class L10nInGSTReturnPeriod(models.Model):
         return self._request(url="/iap/l10n_in_reports/1/authentication/authtoken", params=params, company=company)
 
     def _refresh_token_request(self, company):
-        params = {"auth_token": company.l10n_in_gstr_gst_token}
+        params = {"auth_token": company.sudo().l10n_in_gstr_gst_token}
         return self._request(
             url="/iap/l10n_in_reports/1/authentication/refreshtoken", params=params, company=company)
 
     def _send_gstr1(self, company, month_year, json_payload):
         params = {
             "ret_period": month_year,
-            "auth_token": company.l10n_in_gstr_gst_token,
+            "auth_token": company.sudo().l10n_in_gstr_gst_token,
             "json_payload": json_payload,
         }
         return self._request(url="/iap/l10n_in_reports/1/gstr1/retsave", params=params, company=company)
@@ -1719,7 +1721,7 @@ class L10nInGSTReturnPeriod(models.Model):
     def _get_gstr_status(self, company, month_year, reference_id):
         params = {
             "ret_period": month_year,
-            "auth_token": company.l10n_in_gstr_gst_token,
+            "auth_token": company.sudo().l10n_in_gstr_gst_token,
             "reference_id": reference_id,
         }
         return self._request(url="/iap/l10n_in_reports/1/retstatus", params=params, company=company)
@@ -1727,7 +1729,7 @@ class L10nInGSTReturnPeriod(models.Model):
     def _get_gstr2b_data(self, company, month_year, file_number=None):
         params = {
             "ret_period": month_year,
-            "auth_token": company.l10n_in_gstr_gst_token,
+            "auth_token": company.sudo().l10n_in_gstr_gst_token,
             "file_number": file_number,
         }
         return self._request(url="/iap/l10n_in_reports/1/gstr2b/all", params=params, company=company)

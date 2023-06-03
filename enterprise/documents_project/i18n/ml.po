@@ -2,13 +2,17 @@
 # This file contains the translation of the following modules:
 # 	* documents_project
 # 
+# Translators:
+# Niyas Raphy, 2023
+# 
 msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 16.0beta+e\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-09-27 15:41+0000\n"
 "PO-Revision-Date: 2022-09-22 05:46+0000\n"
-"Language-Team: Malayalam (https://www.transifex.com/odoo/teams/41243/ml/)\n"
+"Last-Translator: Niyas Raphy, 2023\n"
+"Language-Team: Malayalam (https://app.transifex.com/odoo/teams/41243/ml/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
@@ -36,7 +40,7 @@ msgstr ""
 #. module: documents_project
 #: model:ir.model,name:documents_project.model_ir_attachment
 msgid "Attachment"
-msgstr ""
+msgstr "അറ്റാച്ച്മെന്റ്"
 
 #. module: documents_project
 #: model_terms:ir.ui.view,arch_db:documents_project.edit_project_document_form_inherit
@@ -46,12 +50,12 @@ msgstr ""
 #. module: documents_project
 #: model:ir.model,name:documents_project.model_documents_facet
 msgid "Category"
-msgstr ""
+msgstr "കാറ്റഗറി"
 
 #. module: documents_project
 #: model:ir.model.fields,field_description:documents_project.field_documents_workflow_rule__create_model
 msgid "Create"
-msgstr ""
+msgstr "ക്രീയേറ്റ്‌"
 
 #. module: documents_project
 #: model:documents.workflow.rule,name:documents_project.documents_project_rule
@@ -66,18 +70,18 @@ msgstr ""
 #. module: documents_project
 #: model:documents.workflow.rule,name:documents_project.documents_project_rule_deprecate
 msgid "Deprecate"
-msgstr ""
+msgstr "ഒഴിവാക്കുക"
 
 #. module: documents_project
 #: model:documents.tag,name:documents_project.documents_project_status_deprecated
-msgid "Deprectated"
-msgstr ""
+msgid "Deprecated"
+msgstr "ഒഴിവാക്കി"
 
 #. module: documents_project
 #: model:ir.model,name:documents_project.model_documents_document
 #: model:ir.model.fields,field_description:documents_project.field_ir_attachment__document_ids
 msgid "Document"
-msgstr ""
+msgstr "ഡോക്യുമെന്റ്"
 
 #. module: documents_project
 #: code:addons/documents_project/models/project_project.py:0
@@ -90,7 +94,7 @@ msgstr ""
 #: model_terms:ir.ui.view,arch_db:documents_project.view_task_form2_document_inherit
 #, python-format
 msgid "Documents"
-msgstr ""
+msgstr "ഡോക്യുമെന്റ്"
 
 #. module: documents_project
 #: model_terms:ir.ui.view,arch_db:documents_project.edit_project_document_form_inherit
@@ -105,7 +109,7 @@ msgstr ""
 #. module: documents_project
 #: model:documents.tag,name:documents_project.documents_project_status_draft
 msgid "Draft"
-msgstr ""
+msgstr "ഡ്രാഫ്റ്റ്"
 
 #. module: documents_project
 #: model:ir.model.fields,field_description:documents_project.field_documents_document__is_shared
@@ -143,12 +147,12 @@ msgstr ""
 #: model:ir.model,name:documents_project.model_project_project
 #: model:ir.model.fields,field_description:documents_project.field_documents_folder__project_ids
 msgid "Project"
-msgstr ""
+msgstr "പ്രൊജക്റ്റ് "
 
 #. module: documents_project
 #: model:documents.folder,name:documents_project.documents_project_folder
 msgid "Projects"
-msgstr ""
+msgstr "പ്രോജെക്ടസ് "
 
 #. module: documents_project
 #: model:ir.model.fields,field_description:documents_project.field_project_project__shared_document_ids
@@ -164,13 +168,13 @@ msgstr ""
 #. module: documents_project
 #: model:documents.facet,name:documents_project.documents_project_status
 msgid "Status"
-msgstr ""
+msgstr "സ്റ്റാറ്റസ്"
 
 #. module: documents_project
 #: model:ir.model,name:documents_project.model_project_task
 #: model:ir.model.fields.selection,name:documents_project.selection__documents_workflow_rule__create_model__project_task
 msgid "Task"
-msgstr ""
+msgstr "ടാസ്‌ക്"
 
 #. module: documents_project
 #: code:addons/documents_project/models/workflow.py:0
@@ -233,7 +237,7 @@ msgstr ""
 #. module: documents_project
 #: model:documents.workflow.rule,name:documents_project.documents_project_rule_validate
 msgid "Validate"
-msgstr ""
+msgstr "വാലിഡേറ്റ്"
 
 #. module: documents_project
 #: model:documents.tag,name:documents_project.documents_project_status_validated
@@ -244,7 +248,7 @@ msgstr ""
 #: model:ir.model.fields,field_description:documents_project.field_project_project__documents_folder_id
 #: model:ir.model.fields,field_description:documents_project.field_project_task__documents_folder_id
 msgid "Workspace"
-msgstr ""
+msgstr "വർക്സ്പേസ്"
 
 #. module: documents_project
 #: model:ir.model.fields,help:documents_project.field_project_project__documents_folder_id

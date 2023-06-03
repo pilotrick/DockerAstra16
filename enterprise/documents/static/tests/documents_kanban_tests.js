@@ -2102,6 +2102,7 @@ QUnit.module('documents_kanban_tests.js', {
             "should display the activity Edit button");
         assert.containsOnce(target, '.o_Activity_cancelButton',
             "should display the activity Cancel button");
+        await click(find(target, '.o_Activity_cancelButton'));
         
         await click(find(target, '.o_kanban_record', 'blip'));
 
@@ -3579,5 +3580,86 @@ QUnit.module('documents_kanban_tests.js', {
 
         assert.verifySteps(["storage get 343"]);
     });
+
+    QUnit.test('documents Kanban: workspace user will be able to share document', async function (assert) {
+        assert.expect(2);
+        pyEnv['documents.folder'].create({
+            name: 'Workspace5', description: '_F1-test-description_', has_write_access: false
+        });
+
+        await createDocumentsView({
+            type: "kanban",
+            resModel: 'documents.document',
+            arch: `
+                <kanban js_class="documents_kanban"><templates><t t-name="kanban-box">
+                    <div>
+                        <i class="fa fa-circle-thin o_record_selector"/>
+                        <field name="name"/>
+                    </div>
+                </t></templates></kanban>`,
+        });
+
+        await click(target, ".o_search_panel_category_value:nth-of-type(4) header");
+        await nextTick();
+        assert.strictEqual(target.querySelector('.o_search_panel_category_value > header.active').textContent.trim(), 'Workspace5',
+            'should have a "Workspace5" selected')
+        assert.notOk(target.querySelector('.o_documents_kanban_share_domain').disabled,
+            "the share button should be enabled when a folder is selected");
+    });
+
+    QUnit.test(
+        "documents previewer : download button on documents without attachment",
+        async function (assert) {
+            assert.expect(4);
+            pyEnv["documents.document"].create({
+                folder_id: pyEnv["documents.folder"].search([])[0],
+                name: "newYoutubeVideo",
+                type: "url",
+                url: "https://youtu.be/Ayab6wZ_U1A",
+            });
+            const views = {
+                "documents.document,false,kanban": `<kanban js_class="documents_kanban"><templates><t t-name="kanban-box">
+                    <div class="o_kanban_image">
+                        <div name="document_preview" class="o_kanban_image_wrapper" t-if="record.type.raw_value == 'url'">
+                            <img width="100" height="100" class="o_attachment_image"/>
+                        </div>
+                    </div>
+                    <div>
+                        <field name="name"/>
+                    </div>
+                </t></templates></kanban>`,
+            };
+            const { openView } = await createDocumentsViewWithMessaging({
+                serverData: { views },
+            });
+            await openView({
+                res_model: "documents.document",
+                views: [[false, "kanban"]],
+            });
+
+            [...target.querySelectorAll(".oe_kanban_previewer")].pop().click();
+            await nextTick();
+
+            assert.containsOnce(target, ".o_AttachmentViewer", "should have a document preview");
+            assert.containsOnce(
+                target,
+                ".o_AttachmentViewer_headerItemButtonClose",
+                "should have a close button"
+            );
+            assert.containsNone(
+                target,
+                ".o_AttachmentViewer_buttonDownload",
+                "should not have a download button"
+            );
+            target.querySelector(".o_AttachmentViewer_headerItemButtonClose").click();
+            await nextTick();
+            assert.containsNone(
+                target,
+                ".o_AttachmentViewer",
+                "should not have a document preview"
+            );
+        }
+    );
+
 });
 });

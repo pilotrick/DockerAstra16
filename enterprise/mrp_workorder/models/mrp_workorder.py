@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 # Part of Odoo. See LICENSE file for full copyright and licensing details.
 
+from ast import literal_eval
 from bisect import bisect_left
 from collections import defaultdict
 from datetime import datetime
@@ -85,7 +86,7 @@ class MrpProductionWorkcenterLine(models.Model):
         for wo in self:
             wo.is_first_started_wo = all(wo.state != 'done' for wo in (wo.production_id.workorder_ids - wo))
             other_wos = wo.production_id.workorder_ids - wo
-            other_states = other_wos.mapped(lambda w: w.state == 'done')
+            other_states = other_wos.mapped(lambda w: w.state in ['done', 'cancel'])
             wo.is_last_unfinished_wo = all(other_states)
 
     @api.depends('check_ids')
@@ -97,8 +98,9 @@ class MrpProductionWorkcenterLine(models.Model):
         res = super().write(values)
         if 'qty_producing' in values:
             for wo in self:
-                if wo.current_quality_check_id.component_id:
-                    wo.current_quality_check_id._update_component_quantity()
+                for check in wo.check_ids:
+                    if check.component_id:
+                        check._update_component_quantity()
         return res
 
     def action_back(self):
@@ -106,27 +108,30 @@ class MrpProductionWorkcenterLine(models.Model):
         if self.is_user_working and self.working_state != 'blocked':
             self.button_pending()
         domain = [('state', 'not in', ['done', 'cancel', 'pending'])]
-        if self.env.context.get('from_production_order'):
-            action = self.env["ir.actions.actions"]._for_xml_id("mrp.action_mrp_workorder_production_specific")
-            action['domain'] = domain
-            action['target'] = 'main'
-            action['view_id'] = 'mrp.mrp_production_workorder_tree_editable_view'
-            action['context'] = {
-                'no_breadcrumbs': True,
-            }
-            if self.env.context.get('from_manufacturing_order'):
-                action['context'].update({
-                    'search_default_production_id': self.production_id.id
-                })
-        else:
-            # workorder tablet view action should redirect to the same tablet view with same workcenter when WO mark as done.
+        if self.env.context.get('from_manufacturing_order'):
+            # from workorder on MO
             action = self.env["ir.actions.actions"]._for_xml_id("mrp_workorder.mrp_workorder_action_tablet")
             action['domain'] = domain
             action['context'] = {
                 'no_breadcrumbs': True,
-                'search_default_workcenter_id': self.workcenter_id.id
+                'search_default_production_id': self.production_id.id,
+                'from_manufacturing_order': True,
             }
-
+        elif self.env.context.get('from_production_order'):
+            # from workorder list view
+            action = self.env["ir.actions.actions"]._for_xml_id("mrp.mrp_workorder_todo")
+            action['target'] = 'main'
+            action['context'] = dict(literal_eval(action['context']), no_breadcrumbs=True)
+        else:
+            # from workcenter kanban view
+            action = self.env["ir.actions.actions"]._for_xml_id("mrp_workorder.mrp_workorder_action_tablet")
+            action['domain'] = domain
+            action['context'] = {
+                'no_breadcrumbs': True,
+                'search_default_workcenter_id': self.workcenter_id.id,
+                'search_default_ready': True,
+                'search_default_progress': True,
+            }
         return clean_action(action, self.env)
 
     def action_cancel(self):
@@ -256,7 +261,7 @@ class MrpProductionWorkcenterLine(models.Model):
     def button_start(self):
         res = super().button_start()
         for check in self.check_ids:
-            if check.component_tracking == 'serial' and check.component_id:
+            if check.component_id:
                 check._update_component_quantity()
         return res
 
@@ -446,7 +451,7 @@ class MrpProductionWorkcenterLine(models.Model):
                 else:
                     index = list(self.production_id.workorder_ids).index(self)
                     return backorder.workorder_ids[index].open_tablet_view()
-        return True
+        return self.action_back()
 
     def _defaults_from_move(self, move):
         self.ensure_one()
@@ -561,7 +566,7 @@ class MrpProductionWorkcenterLine(models.Model):
 
     def _action_confirm(self):
         res = super()._action_confirm()
-        self.filtered(lambda wo: not wo.check_ids)._create_checks()
+        self.filtered(lambda wo: wo.state != 'cancel' and not wo.check_ids)._create_checks()
         return res
 
     def _update_qty_producing(self, quantity):

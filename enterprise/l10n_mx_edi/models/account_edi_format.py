@@ -21,6 +21,7 @@ from zeep.transports import Transport
 from json.decoder import JSONDecodeError
 
 _logger = logging.getLogger(__name__)
+EQUIVALENCIADR_PRECISION_DIGITS = 10
 
 
 class AccountEdiFormat(models.Model):
@@ -82,7 +83,7 @@ class AccountEdiFormat(models.Model):
         # == Check the credentials to call the PAC web-service ==
         if pac_name:
             pac_test_env = company.l10n_mx_edi_pac_test_env
-            pac_password = company.l10n_mx_edi_pac_password
+            pac_password = company.sudo().l10n_mx_edi_pac_password
             if not pac_test_env and not pac_password:
                 errors.append(_('No PAC credentials specified.'))
         else:
@@ -118,6 +119,13 @@ class AccountEdiFormat(models.Model):
     def _l10n_mx_edi_format_error_message(self, error_title, errors):
         bullet_list_msg = ''.join('<li>%s</li>' % msg for msg in errors)
         return '%s<ul>%s</ul>' % (error_title, bullet_list_msg)
+
+    @api.model
+    def _l10n_mx_edi_get_invoice_attachment(self, res_model, res_id):
+        return self.env['ir.attachment'].search([
+            ('name', 'like', '%-MX-Invoice-3.3.xml'),
+            ('res_model', '=', res_model),
+            ('res_id', '=', res_id)], limit=1, order='create_date desc')
 
     # -------------------------------------------------------------------------
     # CFDI Generation: Generic
@@ -198,10 +206,14 @@ class AccountEdiFormat(models.Model):
         :param invoice:
         :return:
         '''
-        cfdi_date = datetime.combine(
-            fields.Datetime.from_string(invoice.invoice_date),
-            invoice.l10n_mx_edi_post_time.time(),
-        ).strftime('%Y-%m-%dT%H:%M:%S')
+        if invoice.invoice_date >= fields.Date.context_today(self) and invoice.invoice_date == invoice.l10n_mx_edi_post_time.date():
+            cfdi_date = invoice.l10n_mx_edi_post_time.strftime('%Y-%m-%dT%H:%M:%S')
+        else:
+            cfdi_time = datetime.strptime('23:59:00', '%H:%M:%S').time()
+            cfdi_date = datetime.combine(
+                fields.Datetime.from_string(invoice.invoice_date),
+                cfdi_time
+            ).strftime('%Y-%m-%dT%H:%M:%S')
 
         cfdi_values = {
             **invoice._prepare_edi_vals_to_export(),
@@ -383,7 +395,7 @@ class AccountEdiFormat(models.Model):
         return cfdi_values
 
     def _l10n_mx_edi_get_invoice_templates(self):
-        return 'l10n_mx_edi.cfdiv33', 'xsd_cached_cfdv33_xsd'
+        return 'l10n_mx_edi.cfdiv33', 'cfdv33.xsd'
 
     def _l10n_mx_edi_export_invoice_cfdi(self, invoice):
         ''' Create the CFDI attachment for the invoice passed as parameter.
@@ -408,11 +420,8 @@ class AccountEdiFormat(models.Model):
         res = {
             'cfdi_str': etree.tostring(decoded_cfdi_values['cfdi_node'], pretty_print=True, xml_declaration=True, encoding='UTF-8'),
         }
-
         try:
             self.env['ir.attachment'].l10n_mx_edi_validate_xml_from_attachment(decoded_cfdi_values['cfdi_node'], xsd_attachment_name)
-        except FileNotFoundError:
-            _logger.warning(_('The XSD file to validate the XML structure was not found.'))
         except UserError as error:
             res['errors'] = str(error).split('\\n')
 
@@ -493,6 +502,18 @@ class AccountEdiFormat(models.Model):
                     invoice_vals = reconciliation_vals[exchange_move_x_invoice[counterpart_move]]
                     invoice_vals['exchange_balance'] += partial.amount
 
+        # === Create remaining values to create the CFDI ===
+        if currency == move.company_currency_id:
+            # Same currency
+            payment_exchange_rate = None
+        else:
+            # Multi-currency
+            payment_exchange_rate = float_round(
+                total_amount / total_amount_currency,
+                precision_digits=6,
+                rounding_method='UP',
+            )
+
         # === Create the list of invoice data ===
         invoice_vals_list = []
         for invoice, invoice_vals in reconciliation_vals.items():
@@ -518,9 +539,12 @@ class AccountEdiFormat(models.Model):
                 # exchange difference line allowing to switch from the "invoice rate" to the "payment rate".
                 invoice_exchange_rate = float_round(
                     invoice_vals['amount_currency'] / (invoice_vals['balance'] + invoice_vals['exchange_balance']),
-                    precision_digits=6,
+                    precision_digits=EQUIVALENCIADR_PRECISION_DIGITS,
                     rounding_method='UP',
                 )
+            elif invoice.currency_id == move.company_currency_id:
+                # Invoice expressed in MXN but Payment expressed in other currency
+                invoice_exchange_rate = payment_exchange_rate
             else:
                 # Multi-currency
                 invoice_exchange_rate = float_round(
@@ -545,20 +569,9 @@ class AccountEdiFormat(models.Model):
                 'amount_before_paid': invoice.amount_residual + invoice_vals['amount_currency'],
                 'tax_details_transferred': tax_details_transferred,
                 'tax_details_withholding': tax_details_withholding,
+                'equivalenciadr_precision_digits': EQUIVALENCIADR_PRECISION_DIGITS,
                 **self._l10n_mx_edi_get_serie_and_folio(invoice),
             })
-
-        # === Create remaining values to create the CFDI ===
-        if currency == move.company_currency_id:
-            # Same currency
-            payment_exchange_rate = None
-        else:
-            # Multi-currency
-            payment_exchange_rate = float_round(
-                total_amount / total_amount_currency,
-                precision_digits=6,
-                rounding_method='UP',
-            )
 
         payment_method_code = move.l10n_mx_edi_payment_method_id.code
         is_payment_code_emitter_ok = payment_method_code in ('02', '03', '04', '05', '06', '28', '29', '99')
@@ -720,14 +733,14 @@ class AccountEdiFormat(models.Model):
                 'cancel_url': 'http://demo-facturacion.finkok.com/servicios/soap/cancel.wsdl',
             }
         else:
-            if not company.l10n_mx_edi_pac_username or not company.l10n_mx_edi_pac_password:
+            if not company.sudo().l10n_mx_edi_pac_username or not company.sudo().l10n_mx_edi_pac_password:
                 return {
                     'errors': [_("The username and/or password are missing.")]
                 }
 
             return {
-                'username': company.l10n_mx_edi_pac_username,
-                'password': company.l10n_mx_edi_pac_password,
+                'username': company.sudo().l10n_mx_edi_pac_username,
+                'password': company.sudo().l10n_mx_edi_pac_password,
                 'sign_url': 'http://facturacion.finkok.com/servicios/soap/stamp.wsdl',
                 'cancel_url': 'http://facturacion.finkok.com/servicios/soap/cancel.wsdl',
             }
@@ -823,14 +836,14 @@ class AccountEdiFormat(models.Model):
                 'url': 'https://testing.solucionfactible.com/ws/services/Timbrado?wsdl',
             }
         else:
-            if not company.l10n_mx_edi_pac_username or not company.l10n_mx_edi_pac_password:
+            if not company.sudo().l10n_mx_edi_pac_username or not company.sudo().l10n_mx_edi_pac_password:
                 return {
                     'errors': [_("The username and/or password are missing.")]
                 }
 
             return {
-                'username': company.l10n_mx_edi_pac_username,
-                'password': company.l10n_mx_edi_pac_password,
+                'username': company.sudo().l10n_mx_edi_pac_username,
+                'password': company.sudo().l10n_mx_edi_pac_password,
                 'url': 'https://solucionfactible.com/ws/services/Timbrado?wsdl',
             }
 
@@ -945,14 +958,14 @@ class AccountEdiFormat(models.Model):
     def _l10n_mx_edi_get_sw_credentials(self, company):
         '''Get the company credentials for PAC: SW. Does not depend on a recordset
         '''
-        if not company.l10n_mx_edi_pac_username or not company.l10n_mx_edi_pac_password:
+        if not company.sudo().l10n_mx_edi_pac_username or not company.sudo().l10n_mx_edi_pac_password:
             return {
                 'errors': [_("The username and/or password are missing.")]
             }
 
         credentials = {
-            'username': company.l10n_mx_edi_pac_username,
-            'password': company.l10n_mx_edi_pac_password,
+            'username': company.sudo().l10n_mx_edi_pac_username,
+            'password': company.sudo().l10n_mx_edi_pac_password,
         }
 
         if company.l10n_mx_edi_pac_test_env:

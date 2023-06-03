@@ -252,3 +252,26 @@ class Partner(models.Model):
     def _inverse_l10n_do_dgii_tax_payer_type(self):
         for partner in self:
             partner.l10n_do_dgii_tax_payer_type = partner.l10n_do_dgii_tax_payer_type
+            
+    @api.model
+    def dgii_autocomplete(self, query, timeout=15):
+        suggestions = False
+        # suggestions, _ = self.env['iap.autocomplete.api']._request_partner_autocomplete('search', {
+        #     'query': query,
+        # }, timeout=timeout)
+        if suggestions:
+            results = []
+            return results
+        else:
+            return []
+        
+    @api.model
+    def dgii_enrich_company(self, company_domain, partner_gid, vat, timeout=15):
+        response = False
+        if response and response.get('company_data'):
+            result = self._format_data_company(response.get('company_data'))
+        else:
+            result = {}
+
+
+        return result

@@ -1,49 +1,31 @@
-# © 2015-2018 Eneldo Serrata <eneldo@marcos.do>
-# © 2017-2018 Gustavo Valverde <gustavo@iterativo.do>
-# © 2017 Raúl Ovalle <rovalle@guavana.com>
-# © 2018 Francisco Peñaló <frankpenalo24@gmail.com>
-# © 2018 Kevin Jiménez <kevinjimenezlorenzo@gmail.com>
-# © 2018 Jorge Hernández <jhernandez@gruponeotec.com>
-# © 2018 Jefferson Benzan <jbenzan@gruponeotec.com>
-
-# This file is part of NCF Manager.
-
-# NCF Manager is free software: you can redistribute it and/or modify
-# it under the terms of the GNU General Public License as published by
-# the Free Software Foundation, either version 3 of the License, or
-# (at your option) any later version.
-
-# NCF Manager is distributed in the hope that it will be useful,
-# but WITHOUT ANY WARRANTY; without even the implied warranty of
-# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-# GNU General Public License for more details.
-
-# You should have received a copy of the GNU General Public License
-# along with NCF Manager.  If not, see <https://www.gnu.org/licenses/>.
+# Copyright Adel Networks
 
 {
-    'name': "NCF POS",
+    'name': "República Dominicana - POS",
     'summary': """
         Incorpora funcionalidades de facturación con NCF al POS
         """,
-    'author': "",
+    'author': "Adel Networks S.R.L",
     'license': 'LGPL-3',
     'category': 'Localization',
-    'version': '12.0.1.1.0',
-
-    # any module necessary for this one to work correctly
+    'version': '16.0.1.0.0',
     'depends': ['l10n_do_accounting', 'point_of_sale'],
-
-    # always loaded
     'data': [
+        'data/data.xml',
         'security/ir.model.access.csv',
-        'views/templates.xml',
         'views/pos_config.xml',
         'views/pos_view.xml',
-        'data/data.xml',
+        'views/pos_payment_method_view.xml',
     ],
-    'qweb': [
-        'static/src/xml/pos.xml',
-        'static/src/xml/ncf_ticket.xml',
-    ]
+    'assets': {
+        'point_of_sale.assets': [
+            'l10n_do_pos/static/src/css/l10n_do_pos.css',
+            'l10n_do_pos/static/src/js/models.js',
+            'l10n_do_pos/static/src/js/Screens/PartnerListScreen/PartnerDetailsEdit.js',
+            'l10n_do_pos/static/src/js/Screens/ReceiptScreen/OrderReceipt.js',
+            'l10n_do_pos/static/src/js/Screens/TicketScreen/TicketScreen.js',
+            'l10n_do_pos/static/src/js/Screens/PaymentScreen/PaymentScreen.js',
+            'l10n_do_pos/static/src/xml/**/*',
+        ],
+    },
 }

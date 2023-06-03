@@ -561,8 +561,7 @@ class TestWorkOrder(common.TestMrpCommon):
 
         production.workorder_ids[0].button_start()
         wo_form = Form(production.workorder_ids[0], view='mrp_workorder.mrp_workorder_view_form_tablet')
-        self.assertEqual(wo_form.qty_producing, 0, "Wrong quantity to produce")
-        wo_form.qty_producing = 1
+        self.assertEqual(wo_form.qty_producing, 1, "Wrong quantity to produce")
         wo = wo_form.save()
         qc_form = Form(wo.current_quality_check_id, view='mrp_workorder.quality_check_view_form_tablet')
         self.assertEqual(qc_form.component_id, self.elon_musk, "The component should be changed")
@@ -786,7 +785,7 @@ class TestWorkOrder(common.TestMrpCommon):
 
         sorted_workorder_ids[0].button_start()
         wo_form = Form(sorted_workorder_ids[0], view='mrp_workorder.mrp_workorder_view_form_tablet')
-        self.assertEqual(wo_form.qty_producing, 0, "Wrong quantity to produce")
+        self.assertEqual(wo_form.qty_producing, 2, "Wrong quantity to produce")
         wo_form.qty_producing = 1
         wo = wo_form.save()
         qc_form = Form(wo.current_quality_check_id, view='mrp_workorder.quality_check_view_form_tablet')
@@ -1554,6 +1553,8 @@ class TestWorkOrder(common.TestMrpCommon):
         compo = self.bom_4.bom_line_ids.product_id
 
         compo.type = 'product'
+        compo.uom_id = self.env.ref('uom.product_uom_kgm').id
+        self.bom_4.bom_line_ids.product_uom_id = compo.uom_id
         self.env['stock.quant']._update_available_quantity(finished, warehouse.lot_stock_id, 1.0)
         self.env['stock.quant']._update_available_quantity(compo, warehouse.lot_stock_id, 1.0)
 
@@ -1794,3 +1795,63 @@ class TestWorkOrder(common.TestMrpCommon):
         qc._next()
         wo.do_finish()
         mo01.button_mark_done()
+
+    def test_wo_another_lot_than_reserved_one_02(self):
+        """
+        Tracked-by-SN component C. MO that consumes 2 x C in one operation. SN01
+        and SN02 are reserved. For the first consumption, the user select SN02.
+        It should therefore updates the line that reserves SN02 instead of the
+        one for SN01
+        """
+        compo = self.bom_4.bom_line_ids.product_id
+        compo.write({
+            'type': 'product',
+            'tracking': 'serial',
+        })
+
+        self.bom_4.bom_line_ids.write({
+            'product_qty': 2,
+            'operation_id': self.bom_4.operation_ids,
+        })
+
+        sn01, sn02 = self.env['stock.lot'].create([{
+            'name': 'SN %s' % i,
+            'product_id': compo.id,
+            'company_id': self.env.company.id,
+        } for i in range(2)])
+        self.env['stock.quant']._update_available_quantity(compo, self.location_1, 1.0, lot_id=sn01)
+        self.env['stock.quant']._update_available_quantity(compo, self.location_1, 1.0, lot_id=sn02)
+
+        mo_form = Form(self.env['mrp.production'])
+        mo_form.bom_id = self.bom_4
+        mo_form.product_qty = 1
+        mo = mo_form.save()
+        mo.action_confirm()
+        mo.action_assign()
+
+        self.assertRecordValues(mo.move_raw_ids.move_line_ids, [
+            {'lot_id': sn01.id, 'reserved_uom_qty': 1.0, 'qty_done': 0.0, 'state': 'assigned'},
+            {'lot_id': sn02.id, 'reserved_uom_qty': 1.0, 'qty_done': 0.0, 'state': 'assigned'},
+        ])
+
+        wo = mo.workorder_ids
+        wo.button_start()
+        self.assertEqual(wo.lot_id, sn01, 'The first reserved SN should be the suggested one')
+
+        qc = wo.current_quality_check_id
+        qc.lot_id = sn02
+        qc.action_continue()
+        self.assertRecordValues(mo.move_raw_ids.move_line_ids, [
+            {'lot_id': sn01.id, 'reserved_uom_qty': 1.0, 'qty_done': 0.0, 'state': 'assigned'},
+            {'lot_id': sn02.id, 'reserved_uom_qty': 1.0, 'qty_done': 1.0, 'state': 'assigned'},
+        ])
+
+        qc = wo.current_quality_check_id
+        self.assertEqual(qc.lot_id, sn01, 'SN02 has been consumed with the first SML, so it should suggest SN01 again')
+        qc.action_next()
+        wo.do_finish()
+
+        self.assertRecordValues(mo.move_raw_ids.move_line_ids, [
+            {'lot_id': sn01.id, 'reserved_uom_qty': 1.0, 'qty_done': 1.0, 'state': 'assigned'},
+            {'lot_id': sn02.id, 'reserved_uom_qty': 1.0, 'qty_done': 1.0, 'state': 'assigned'},
+        ])

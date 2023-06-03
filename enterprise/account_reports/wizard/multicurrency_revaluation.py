@@ -69,8 +69,8 @@ class MulticurrencyRevaluationWizard(models.TransientModel):
         preview_columns = [
             {'field': 'account_id', 'label': _("Account")},
             {'field': 'name', 'label': _("Label")},
-            {'field': 'debit', 'label': _("Debit"), 'class': 'text-right text-nowrap'},
-            {'field': 'credit', 'label': _("Credit"), 'class': 'text-right text-nowrap'},
+            {'field': 'debit', 'label': _("Debit"), 'class': 'text-end text-nowrap'},
+            {'field': 'credit', 'label': _("Credit"), 'class': 'text-end text-nowrap'},
         ]
         for record in self:
             preview_vals = [self.env['account.move']._move_dict_to_preview_vals(
@@ -124,11 +124,14 @@ class MulticurrencyRevaluationWizard(models.TransientModel):
 
         for report_line in report._get_unfolded_lines(report_lines, generic_included_line_id):
             parsed_line_id = report._parse_line_id(report_line.get('id'))
+            balance = _get_adjustment_balance(report_line)
             # parsed_line_id[-1][-2] corresponds to res_model of the current line
-            if parsed_line_id[-1][-2] == 'account.move.line':
+            if (
+                parsed_line_id[-1][-2] == 'account.move.line'
+                and not self.env.company.currency_id.is_zero(balance)
+            ):
                 account_id = _get_model_id(parsed_line_id, 'account.account')
                 currency_id = _get_model_id(parsed_line_id, 'res.currency')
-                balance = _get_adjustment_balance(report_line)
                 move_lines.append(Command.create({
                     'name': _(
                         "Provision for %(for_cur)s (1 %(comp_cur)s = %(rate)s %(for_cur)s)",

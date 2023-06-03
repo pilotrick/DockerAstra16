@@ -13,7 +13,7 @@ Generic Payroll system Integrated with Accounting.
     """,
     'depends': ['hr_payroll', 'account_accountant'],
     'data': [
-#        'data/hr_payroll_account_data.xml',
+        'data/hr_payroll_account_data.xml',
         'views/hr_payroll_account_views.xml',
         'report/hr_contract_history_report_views.xml',
     ],

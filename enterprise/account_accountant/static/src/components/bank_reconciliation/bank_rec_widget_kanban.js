@@ -13,8 +13,9 @@ import { KanbanRenderer } from "@web/views/kanban/kanban_renderer";
 import { KanbanRecord } from "@web/views/kanban/kanban_record";
 
 import { BankRecWidgetGlobalInfo } from "./bank_rec_widget_global_info";
+import { BankRecActionHelper } from "./bank_rec_widget_action_helper";
 
-const { useState, useRef, useChildSubEnv } = owl;
+import { useState, useRef, useChildSubEnv } from "@odoo/owl";
 
 export class BankRecKanbanRecord extends KanbanRecord {
 
@@ -60,6 +61,7 @@ export class BankRecKanbanController extends KanbanController {
             currentJournalId: null,
         });
         this.bankRecService.kanbanState = this.state;
+        this.bankRecService.initReconCounter();
 
         // Move to the next available statement line after a click on a button form.
         this.bankRecService.useTodoCommand("kanban-move-to-next-line", () => {
@@ -76,6 +78,7 @@ export class BankRecKanbanController extends KanbanController {
             // find the next line "after".
             let records = this.records;
 
+            this.bankRecService.incrementReconCounter();
             await this.bankRecService.trigger("kanban-reload", true);
 
             const stLineId = this.state.selectedStLineId;
@@ -117,7 +120,7 @@ export class BankRecKanbanController extends KanbanController {
                 }
 
                 // Select a statement line.
-                if(stLineIdToRestore){
+                if (stLineIdToRestore && this.records.find((stLine) => stLine.data.id === stLineIdToRestore)) {
                     this.mountStLineInEdit(stLineIdToRestore);
                 } else {
                     this.mountStLineInEdit(this.getNextAvailableStLineId());
@@ -325,12 +328,12 @@ export class BankRecKanbanRenderer extends KanbanRenderer {
             this.render();
         });
     }
-
 }
 BankRecKanbanRenderer.template = "account.BankRecKanbanRenderer";
 BankRecKanbanRenderer.components = {
     ...KanbanRenderer.components,
     KanbanRecord: BankRecKanbanRecord,
+    BankRecActionHelper: BankRecActionHelper,
 }
 
 export const BankRecKanbanView = {

@@ -3,28 +3,23 @@
 # 	* helpdesk_fsm
 # 
 # Translators:
-# Friederike Fasterling-Nesselbosch, 2022
 # Martin Trigaux, 2022
+# Friederike Fasterling-Nesselbosch, 2022
+# Larissa Manderfeld, 2023
 # 
 msgid ""
 msgstr ""
-"Project-Id-Version: Odoo Server 16.0beta+e\n"
+"Project-Id-Version: Odoo Server 16.0+e\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-10-04 09:42+0000\n"
+"POT-Creation-Date: 2023-04-14 06:17+0000\n"
 "PO-Revision-Date: 2022-09-22 05:46+0000\n"
-"Last-Translator: Martin Trigaux, 2022\n"
-"Language-Team: German (https://www.transifex.com/odoo/teams/41243/de/)\n"
+"Last-Translator: Larissa Manderfeld, 2023\n"
+"Language-Team: German (https://app.transifex.com/odoo/teams/41243/de/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
 "Language: de\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-
-#. module: helpdesk_fsm
-#: model:project.task,legend_blocked:helpdesk_fsm.helpdesk_fsm_task_1
-#: model:project.task,legend_blocked:helpdesk_fsm.helpdesk_fsm_task_2
-msgid "Blocked"
-msgstr "Blockiert"
 
 #. module: helpdesk_fsm
 #: model:ir.model.fields,field_description:helpdesk_fsm.field_helpdesk_create_fsm_task__company_id
@@ -35,11 +30,6 @@ msgstr "Unternehmen"
 #: model:ir.model,name:helpdesk_fsm.model_helpdesk_ticket_convert_wizard
 msgid "Convert Helpdesk Tickets to Tasks"
 msgstr "Helpdesk-Tickets in Tasks umwandeln"
-
-#. module: helpdesk_fsm
-#: model:ir.model.fields,help:helpdesk_fsm.field_helpdesk_ticket__use_fsm
-msgid "Convert tickets into Field Service tasks"
-msgstr "Tickets in Außendienstaufgaben umwandeln"
 
 #. module: helpdesk_fsm
 #: model_terms:ir.ui.view,arch_db:helpdesk_fsm.create_fsm_task_view_form
@@ -53,6 +43,7 @@ msgid "Create Task"
 msgstr "Aufgabe erstellen"
 
 #. module: helpdesk_fsm
+#. odoo-python
 #: code:addons/helpdesk_fsm/models/helpdesk.py:0
 #: model:ir.model,name:helpdesk_fsm.model_helpdesk_create_fsm_task
 #, python-format
@@ -87,7 +78,7 @@ msgstr "Anzeigename"
 #. module: helpdesk_fsm
 #: model:ir.model.fields,field_description:helpdesk_fsm.field_project_task__display_helpdesk_ticket_button
 msgid "Display Ticket"
-msgstr ""
+msgstr "Ticket anzeigen"
 
 #. module: helpdesk_fsm
 #: model:ir.model.fields,field_description:helpdesk_fsm.field_helpdesk_team__fsm_project_id
@@ -120,12 +111,6 @@ msgid "ID"
 msgstr "ID"
 
 #. module: helpdesk_fsm
-#: model:project.task,legend_normal:helpdesk_fsm.helpdesk_fsm_task_1
-#: model:project.task,legend_normal:helpdesk_fsm.helpdesk_fsm_task_2
-msgid "In Progress"
-msgstr "Laufend"
-
-#. module: helpdesk_fsm
 #: model:ir.model.fields,field_description:helpdesk_fsm.field_helpdesk_create_fsm_task____last_update
 msgid "Last Modified on"
 msgstr "Zuletzt geändert am"
@@ -143,7 +128,7 @@ msgstr "Zuletzt aktualisiert am"
 #. module: helpdesk_fsm
 #: model:ir.model.fields,field_description:helpdesk_fsm.field_project_task__helpdesk_ticket_id
 msgid "Original Ticket"
-msgstr ""
+msgstr "Originalticket"
 
 #. module: helpdesk_fsm
 #: model:ir.model.fields,field_description:helpdesk_fsm.field_helpdesk_create_fsm_task__project_id
@@ -157,17 +142,12 @@ msgid "Project in which to create the task"
 msgstr "Projekt, in dem die Aufgabe erstellt werden soll"
 
 #. module: helpdesk_fsm
-#: model:project.task,legend_done:helpdesk_fsm.helpdesk_fsm_task_1
-#: model:project.task,legend_done:helpdesk_fsm.helpdesk_fsm_task_2
-msgid "Ready"
-msgstr "Bereit"
-
-#. module: helpdesk_fsm
 #: model:ir.model.fields,field_description:helpdesk_fsm.field_helpdesk_create_fsm_task__helpdesk_ticket_id
 msgid "Related ticket"
 msgstr "Zugehöriges Ticket"
 
 #. module: helpdesk_fsm
+#. odoo-python
 #: code:addons/helpdesk_fsm/controllers/portal.py:0
 #: model:ir.model,name:helpdesk_fsm.model_project_task
 #, python-format
@@ -183,12 +163,14 @@ msgid "Task Done"
 msgstr "Aufgabe erledigt"
 
 #. module: helpdesk_fsm
+#. odoo-python
 #: code:addons/helpdesk_fsm/wizard/create_task.py:0
 #, python-format
 msgid "Task created"
-msgstr ""
+msgstr "Aufgabe erstellt"
 
 #. module: helpdesk_fsm
+#. odoo-python
 #: code:addons/helpdesk_fsm/controllers/portal.py:0
 #: code:addons/helpdesk_fsm/models/helpdesk.py:0
 #: model:ir.model.fields,field_description:helpdesk_fsm.field_helpdesk_ticket__fsm_task_ids
@@ -198,6 +180,7 @@ msgid "Tasks"
 msgstr "Aufgaben"
 
 #. module: helpdesk_fsm
+#. odoo-python
 #: code:addons/helpdesk_fsm/wizard/create_task.py:0
 #, python-format
 msgid "Tasks from Tickets"
@@ -209,6 +192,7 @@ msgid "Tasks generated from this ticket"
 msgstr "Von diesem Ticket generierte Tasks"
 
 #. module: helpdesk_fsm
+#. odoo-python
 #: code:addons/helpdesk_fsm/controllers/portal.py:0
 #: model_terms:ir.ui.view,arch_db:helpdesk_fsm.project_sharing_inherit_project_task_view_form
 #, python-format
