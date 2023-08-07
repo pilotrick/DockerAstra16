@@ -34,13 +34,24 @@ class AccountBankStatementImport(models.TransientModel):
         bank_id = self.env['res.partner.bank'].search([
             ('acc_number', '=', account.lstrip('0'))])
 
-        return bank_id.partner_id.id if bank_id.partner_id else False
+        if len(bank_id) > 1:
+            account_name = []
+            for bank in bank_id:
+                partner_name = bank.partner_id.name
+                if partner_name not in account_name:
+            
+                    account_name.append(partner_name)
+                account_name_str = ", ".join(account_name)
+            raise ValidationError(_('Existen Varios Contactos con la misma cuenta, %s') % account_name_str)
+        else:
+            return bank_id.partner_id.id if bank_id.partner_id else False
 
     def _get_journal_id(self, account, statement_id):
         """Return journal if file bank account match journal bank account"""
         acc_number = statement_id.journal_id.bank_account_id.acc_number
         
-        if account == acc_number:
+        if str(account) == str(acc_number):
+            
             return True
         else:
             raise ValidationError(_('Error. Statement bank account doesn\'t '

@@ -1,0 +1,49 @@
+<?xml version='1.0' encoding='utf-8'?>
+<odoo>
+
+
+    <record id="view_sale_forcasting_report_graph" model="ir.ui.view">
+        <field name="name">sale.forcasting.report.report.graph</field>
+        <field name="model">sale.forcasting.report</field>
+        <field name="arch" type="xml">
+            <graph string="Sale Forcasting Report Analysis" type="line" sample="1"
+                disable_linking="1">
+                <field name="qty_ordered" type="measure" />
+                <field name="qty_received" type="measure" />
+                <field name="qty_billed" type="measure" />
+                <field name="forcasting_price" type="measure" />
+                <field name="forcasting_date" />
+            </graph>
+        </field>
+    </record>
+
+    <record id="view_sale_forcasting_report_search" model="ir.ui.view">
+        <field name="name">sale.forcasting.report.search</field>
+        <field name="model">sale.forcasting.report</field>
+        <field name="arch" type="xml">
+            <search string="Sale Forcasting Report">
+                <field name="forcasting_date" />
+                <field name="forcasting_price" />
+                <separator />
+                <group expand="1" string="Group By">
+                    <separator orientation="vertical" />
+                    <filter string="Forcasting Date" name="forcasting_date"
+                        context="{'group_by':'forcasting_date'}" />
+                </group>
+            </search>
+        </field>
+    </record>
+
+    <record id="action_sale_forcasting_report_details" model="ir.actions.act_window">
+        <field name="name">Sale Forcasting Report</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">sale.forcasting.report</field>
+        <field name="view_mode">graph</field>
+        <field name="domain">[]</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Create a Sale Forcasting Report in your address book
+            </p>
+        </field>
+    </record>
+</odoo>

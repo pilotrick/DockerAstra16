@@ -1,0 +1,1093 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* hr_hospital_odooschool
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 16.0+e\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-07-09 12:21+0000\n"
+"PO-Revision-Date: 2023-07-09 12:21+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: hr_hospital_odooschool
+#: model:ir.model.fields.selection,name:hr_hospital_odooschool.selection__hr_hospital_odooschool_doctor_schedule__shift_duration__3
+#: model:ir.model.fields.selection,name:hr_hospital_odooschool.selection__hr_hospital_odooschool_week_schedule_wizard__shift_duration__3
+msgid "3 hour"
+msgstr "3 години"
+
+#. module: hr_hospital_odooschool
+#: model:ir.model.fields.selection,name:hr_hospital_odooschool.selection__hr_hospital_odooschool_doctor_schedule__shift_duration__6
+#: model:ir.model.fields.selection,name:hr_hospital_odooschool.selection__hr_hospital_odooschool_week_schedule_wizard__shift_duration__6
+msgid "6 hours"
+msgstr "6 годин"
+
+#. module: hr_hospital_odooschool
+#: model:ir.model.fields.selection,name:hr_hospital_odooschool.selection__hr_hospital_odooschool_doctor_schedule__shift_duration__8
+#: model:ir.model.fields.selection,name:hr_hospital_odooschool.selection__hr_hospital_odooschool_week_schedule_wizard__shift_duration__8
+msgid "8 hours"
+msgstr "8 годин"
+
+#. module: hr_hospital_odooschool
+#: model_terms:ir.ui.view,arch_db:hr_hospital_odooschool.doctor_report
+msgid ""
+"<span>\n"
+"                                                <strong>Birthday</strong>\n"
+"                                            </span>"
+msgstr ""
+"<span>\n"
+"                                                <strong>День народження</strong>\n"
+"                                            </span>"
+
+#. module: hr_hospital_odooschool
+#: model_terms:ir.ui.view,arch_db:hr_hospital_odooschool.doctor_report
+msgid ""
+"<span>\n"
+"                                                <strong>Contact person</strong>\n"
+"                                            </span>"
+msgstr ""
+"<span>\n"
+"                                                <strong>Контактна особа</strong>\n"
+"                                            </span>"
+#. module: hr_hospital_odooschool
+#: model_terms:ir.ui.view,arch_db:hr_hospital_odooschool.doctor_report
+msgid ""
+"<span>\n"
+"                                                <strong>Name</strong>\n"
+"                                            </span>"
+msgstr ""
+"<span>\n"
+"                                                <strong>Імʼя</strong>\n"
+"                                            </span>"
+#. module: hr_hospital_odooschool
+#: model_terms:ir.ui.view,arch_db:hr_hospital_odooschool.doctor_report
+msgid ""
+"<span>\n"
+"                                                <strong>Phone</strong>\n"
+"                                            </span>"
+msgstr ""
+"<span>\n"
+"                                                <strong>Телефон</strong>\n"
+"                                            </span>"
+#. module: hr_hospital_odooschool
+#: model:ir.model.fields,field_description:hr_hospital_odooschool.field_hr_hospital_odooschool_analysis_card__active
+#: model:ir.model.fields,field_description:hr_hospital_odooschool.field_hr_hospital_odooschool_disease__active
+#: model:ir.model.fields,field_description:hr_hospital_odooschool.field_hr_hospital_odooschool_doctor__active
+#: model:ir.model.fields,field_description:hr_hospital_odooschool.field_hr_hospital_odooschool_med_analysis__active
+#: model:ir.model.fields,field_description:hr_hospital_odooschool.field_hr_hospital_odooschool_patient__active
+#: model:ir.model.fields,field_description:hr_hospital_odooschool.field_hr_hospital_odooschool_patient_visit__active
+#: model:ir.model.fields.selection,name:hr_hospital_odooschool.selection__hr_hospital_odooschool_doctor__state__active
+msgid "Active"
+msgstr "Активний"
+
+#. module: hr_hospital_odooschool
+#: model_terms:ir.ui.view,arch_db:hr_hospital_odooschool.hr_hospital_odooschool_add_diagnosis_view_form
+#: model_terms:ir.ui.view,arch_db:hr_hospital_odooschool.patient_visit_view_form
+msgid "Add"
+msgstr "Додати"
+
+#. module: hr_hospital_odooschool
+#. odoo-python
+#: code:addons/hr_hospital_odooschool/models/hr_patient_visit.py:0
+#: model:ir.model,name:hr_hospital_odooschool.model_hr_hospital_odooschool_add_diagnosis_wizard
+#, python-format
+msgid "Add Diagnosis"
+msgstr "Додати діагноз"
+
+#. module: hr_hospital_odooschool
+#: model_terms:ir.ui.view,arch_db:hr_hospital_odooschool.hr_hospital_odooschool_add_diagnosis_view_form
+msgid "Add diagnosis"
+msgstr "Додати діагноз"
+
+#. module: hr_hospital_odooschool
+#: model_terms:ir.ui.view,arch_db:hr_hospital_odooschool.hr_hospital_odooschool_week_schedule_view_form
+msgid "Add schedule"
+msgstr "Додати розклад"
+
+#. module: hr_hospital_odooschool
+#: model:ir.model.fields,field_description:hr_hospital_odooschool.field_hr_hospital_odooschool_patient__age
+msgid "Age"
+msgstr "Вік"
+
+#. module: hr_hospital_odooschool
+#: model:ir.actions.act_window,name:hr_hospital_odooschool.hr_hospital_odooschool_action_view_analysis
+#: model:ir.model.fields,field_description:hr_hospital_odooschool.field_hr_hospital_odooschool_add_diagnosis_wizard__analysis_id
+#: model:ir.model.fields,field_description:hr_hospital_odooschool.field_hr_hospital_odooschool_analysis_card__analysis_id
+#: model:ir.model.fields,field_description:hr_hospital_odooschool.field_hr_hospital_odooschool_diagnosis__analysis_id
+#: model:ir.ui.menu,name:hr_hospital_odooschool.hr_hospital_odooschool_analysis_main
+#: model_terms:ir.ui.view,arch_db:hr_hospital_odooschool.analysis_card_view_search
+#: model_terms:ir.ui.view,arch_db:hr_hospital_odooschool.patient_view_form
+msgid "Analysis"
+msgstr "Аналізи"
+
+#. module: hr_hospital_odooschool
+#: model:ir.model.fields,field_description:hr_hospital_odooschool.field_hr_hospital_odooschool_analysis_card__analysis_date
+msgid "Analysis Date"
+msgstr "Дата проведення аналізу"
+
+#. module: hr_hospital_odooschool
+#: model:ir.ui.menu,name:hr_hospital_odooschool.hr_hospital_odooschool_analysis_menu
+msgid "Analysis List"
+msgstr "Список аналізів"
+
+#. module: hr_hospital_odooschool
+#: model:ir.actions.act_window,name:hr_hospital_odooschool.hr_hospital_odooschool_action_view_analysis_card
+#: model:ir.ui.menu,name:hr_hospital_odooschool.hr_hospital_odooschool_analysis_card_menu
+msgid "Analysis card"
+msgstr "Картка аналізу"
+
+#. module: hr_hospital_odooschool
+#: model_terms:ir.ui.view,arch_db:hr_hospital_odooschool.analysis_card_view_form
+msgid "Analysis card form"
+msgstr "Форма картки аналізу"
+
+#. module: hr_hospital_odooschool
+#: model_terms:ir.ui.view,arch_db:hr_hospital_odooschool.analysis_view_form
+msgid "Analysis form"
+msgstr "Форма аналізу"
+
+#. module: hr_hospital_odooschool
+#: model:ir.model.fields,field_description:hr_hospital_odooschool.field_hr_hospital_odooschool_patient__analysis_history
+#: model_terms:ir.ui.view,arch_db:hr_hospital_odooschool.patient_view_form
+msgid "Analysis history"
+msgstr "Історія здачі аналізів"
+
+#. module: hr_hospital_odooschool
+#: model_terms:ir.ui.view,arch_db:hr_hospital_odooschool.doctor_view_kanban
+#: model_terms:ir.ui.view,arch_db:hr_hospital_odooschool.patient_view_form
+msgid "Appointment"
+msgstr "Запис"
+
+#. module: hr_hospital_odooschool
+#: model:ir.model.fields.selection,name:hr_hospital_odooschool.selection__hr_hospital_odooschool_doctor__state__arch
+msgid "Arch"
+msgstr "Архівовано"
+
+#. module: hr_hospital_odooschool
+#: model:ir.model.fields,field_description:hr_hospital_odooschool.field_hr_hospital_odooschool_create_appointment_wizard__doctor_id
+#: model:ir.model.fields,field_description:hr_hospital_odooschool.field_hr_hospital_odooschool_history_changing_doctor__doctor_id
+#: model:ir.model.fields,field_description:hr_hospital_odooschool.field_hr_hospital_odooschool_patient__doctor_id
+#: model:ir.model.fields,field_description:hr_hospital_odooschool.field_hr_hospital_odooschool_patient_visit__doctor_id
+msgid "Attending doctor"
+msgstr "Лікуючий лікар"
+
+#. module: hr_hospital_odooschool
+#: model:ir.model.fields,field_description:hr_hospital_odooschool.field_hr_hospital_odooschool_patient__birthday
+msgid "Birthday"
+msgstr "День народження"
+
+#. module: hr_hospital_odooschool
+#: model_terms:ir.ui.view,arch_db:hr_hospital_odooschool.hr_hospital_odooschool_add_diagnosis_view_form
+#: model_terms:ir.ui.view,arch_db:hr_hospital_odooschool.hr_hospital_odooschool_change_doctor_view_form
+#: model_terms:ir.ui.view,arch_db:hr_hospital_odooschool.hr_hospital_odooschool_change_visit_time_view_form
+#: model_terms:ir.ui.view,arch_db:hr_hospital_odooschool.hr_hospital_odooschool_create_appointment_view_form
+#: model_terms:ir.ui.view,arch_db:hr_hospital_odooschool.hr_hospital_odooschool_hospital_report_view_form
+#: model_terms:ir.ui.view,arch_db:hr_hospital_odooschool.hr_hospital_odooschool_week_schedule_view_form
+msgid "Cancel"
+msgstr "Скасувати"
+
+#. module: hr_hospital_odooschool
+#: model:ir.model.fields,field_description:hr_hospital_odooschool.field_hr_hospital_odooschool_disease_category__parent_id
+msgid "Category name"
+msgstr "Назва категорії"
+
+#. module: hr_hospital_odooschool
+#: model_terms:ir.ui.view,arch_db:hr_hospital_odooschool.hr_hospital_odooschool_change_visit_time_view_form
+msgid "Change"
+msgstr "Змінити"
+
+#. module: hr_hospital_odooschool
+#: model:ir.model.fields,field_description:hr_hospital_odooschool.field_hr_hospital_odooschool_history_changing_doctor__change_date
+msgid "Change Date"
+msgstr "Дата зміни"
+
+#. module: hr_hospital_odooschool
+#. odoo-python
+#: code:addons/hr_hospital_odooschool/models/hr_patient.py:0
+#: model:ir.actions.act_window,name:hr_hospital_odooschool.hr_hospital_odooschool_action_view_change_doctor
+#: model:ir.model,name:hr_hospital_odooschool.model_hr_hospital_odooschool_change_doctor_wizard
+#: model_terms:ir.ui.view,arch_db:hr_hospital_odooschool.hr_hospital_odooschool_change_doctor_view_form
+#, python-format
+msgid "Change Doctor"
+msgstr "Змінити Лікаря"
+
+#. module: hr_hospital_odooschool
+#. odoo-python
+#: code:addons/hr_hospital_odooschool/models/hr_patient_visit.py:0
+#: model:ir.model,name:hr_hospital_odooschool.model_hr_hospital_odooschool_change_visit_time_wizard
+#: model_terms:ir.ui.view,arch_db:hr_hospital_odooschool.hr_hospital_odooschool_change_visit_time_view_form
+#, python-format
+msgid "Change Visit Time"
+msgstr "Змінити дату візиту"
+
+#. module: hr_hospital_odooschool
+#: model_terms:ir.ui.view,arch_db:hr_hospital_odooschool.patient_view_tree
+msgid "Change doctor"
+msgstr "Змінити час візиту"
+
+#. module: hr_hospital_odooschool
+#: model:ir.model.fields,field_description:hr_hospital_odooschool.field_hr_hospital_odooschool_patient__doctor_channing_ids
+msgid "Changed doctors"
+msgstr "Змінені лікарі"
+
+#. module: hr_hospital_odooschool
+#: model:ir.model.fields,help:hr_hospital_odooschool.field_hr_hospital_odooschool_change_visit_time_wizard__visit_date
+msgid "Choose date and time"
+msgstr "Виберіть дату та час"
+
+#. module: hr_hospital_odooschool
+#: model_terms:ir.ui.view,arch_db:hr_hospital_odooschool.patient_visit_view_form
+msgid "Click to add diagnosis"
+msgstr "Натисніть, щоб додати діагноз"
+
+#. module: hr_hospital_odooschool
+#: model:ir.model.fields,field_description:hr_hospital_odooschool.field_hr_hospital_odooschool_disease_category__complete_name
+msgid "Complete Name"
+msgstr "Повне імʼя"
+
+#. module: hr_hospital_odooschool
+#: model:ir.model.fields,field_description:hr_hospital_odooschool.field_hr_hospital_odooschool_patient__contact_person
+msgid "Contact Person"
+msgstr "Контактна особа"
+
+#. module: hr_hospital_odooschool
+#: model:ir.actions.act_window,name:hr_hospital_odooschool.hr_hospital_odooschool_action_view_contact_person
+#: model:ir.ui.menu,name:hr_hospital_odooschool.hr_hospital_odooschool_contact_person_menu
+msgid "Contact person"
+msgstr "Контактна особа"
+
+#. module: hr_hospital_odooschool
+#: model_terms:ir.ui.view,arch_db:hr_hospital_odooschool.contact_person_view_form
+msgid "Contact person form"
+msgstr "Форма контактної особи"
+
+#. module: hr_hospital_odooschool
+#: model_terms:ir.ui.view,arch_db:hr_hospital_odooschool.hr_hospital_odooschool_change_doctor_view_form
+#: model_terms:ir.ui.view,arch_db:hr_hospital_odooschool.hr_hospital_odooschool_create_appointment_view_form
+#: model_terms:ir.ui.view,arch_db:hr_hospital_odooschool.hr_hospital_odooschool_hospital_report_view_form
+msgid "Create"
+msgstr "Створити"
+
+#. module: hr_hospital_odooschool
+#: model:ir.actions.act_window,name:hr_hospital_odooschool.hr_hospital_odooschool_action_view_create_appointment
+#: model:ir.ui.menu,name:hr_hospital_odooschool.hr_hospital_odooschool_create_appointment_menu
+#: model_terms:ir.ui.view,arch_db:hr_hospital_odooschool.hr_hospital_odooschool_create_appointment_view_form
+msgid "Create Appointment"
+msgstr "Запис на прийом"
+
+#. module: hr_hospital_odooschool
+#: model:ir.model,name:hr_hospital_odooschool.model_hr_hospital_odooschool_create_appointment_wizard
+msgid "Create New Appointment"
+msgstr "Запис на прийом"
+
+#. module: hr_hospital_odooschool
+#: model:ir.model,name:hr_hospital_odooschool.model_hr_hospital_odooschool_week_schedule_wizard
+msgid "Create Week Schedule"
+msgstr "Створити розклад на тиждень"
+
+#. module: hr_hospital_odooschool
+#: model:ir.model,name:hr_hospital_odooschool.model_hr_hospital_odooschool_disease_report_wizard
+#: model:ir.model,name:hr_hospital_odooschool.model_hr_hospital_odooschool_hospital_report_wizard
+#: model_terms:ir.ui.view,arch_db:hr_hospital_odooschool.hr_hospital_odooschool_hospital_report_view_form
+msgid "Create report"
+msgstr "Створити звіт"
+
+#. module: hr_hospital_odooschool
+#: model:ir.actions.act_window,name:hr_hospital_odooschool.hr_hospital_odooschool_action_view_week_schedule
+#: model:ir.ui.menu,name:hr_hospital_odooschool.hr_week_schedule_main_report
+#: model_terms:ir.ui.view,arch_db:hr_hospital_odooschool.hr_hospital_odooschool_week_schedule_view_form
+msgid "Create week schedule"
+msgstr "Створити розклад на тиждень"
+
+#. module: hr_hospital_odooschool
+#: model:ir.model.fields.selection,name:hr_hospital_odooschool.selection__hr_hospital_odooschool_patient_visit__state__created
+msgid "Created"
+msgstr "Створено"
+
+#. module: hr_hospital_odooschool
+#: model:ir.model.fields,field_description:hr_hospital_odooschool.field_hr_hospital_odooschool_add_diagnosis_wizard__create_uid
+#: model:ir.model.fields,field_description:hr_hospital_odooschool.field_hr_hospital_odooschool_analysis_card__create_uid
+#: model:ir.model.fields,field_description:hr_hospital_odooschool.field_hr_hospital_odooschool_change_doctor_wizard__create_uid
+#: model:ir.model.fields,field_description:hr_hospital_odooschool.field_hr_hospital_odooschool_change_visit_time_wizard__create_uid
+#: model:ir.model.fields,field_description:hr_hospital_odooschool.field_hr_hospital_odooschool_contact_person__create_uid
+#: model:ir.model.fields,field_description:hr_hospital_odooschool.field_hr_hospital_odooschool_create_appointment_wizard__create_uid
+#: model:ir.model.fields,field_description:hr_hospital_odooschool.field_hr_hospital_odooschool_diagnosis__create_uid
+#: model:ir.model.fields,field_description:hr_hospital_odooschool.field_hr_hospital_odooschool_disease__create_uid
+#: model:ir.model.fields,field_description:hr_hospital_odooschool.field_hr_hospital_odooschool_disease_category__create_uid
+#: model:ir.model.fields,field_description:hr_hospital_odooschool.field_hr_hospital_odooschool_disease_report_wizard__create_uid
+#: model:ir.model.fields,field_description:hr_hospital_odooschool.field_hr_hospital_odooschool_doctor__create_uid
+#: model:ir.model.fields,field_description:hr_hospital_odooschool.field_hr_hospital_odooschool_doctor_schedule__create_uid
+#: model:ir.model.fields,field_description:hr_hospital_odooschool.field_hr_hospital_odooschool_history_changing_doctor__create_uid
+#: model:ir.model.fields,field_description:hr_hospital_odooschool.field_hr_hospital_odooschool_hospital_report_wizard__create_uid
+#: model:ir.model.fields,field_description:hr_hospital_odooschool.field_hr_hospital_odooschool_med_analysis__create_uid
+#: model:ir.model.fields,field_description:hr_hospital_odooschool.field_hr_hospital_odooschool_patient__create_uid
+#: model:ir.model.fields,field_description:hr_hospital_odooschool.field_hr_hospital_odooschool_patient_visit__create_uid
+#: model:ir.model.fields,field_description:hr_hospital_odooschool.field_hr_hospital_odooschool_week_schedule_wizard__create_uid
+msgid "Created by"
+msgstr "Створено"
+
+#. module: hr_hospital_odooschool
+#: model:ir.model.fields,field_description:hr_hospital_odooschool.field_hr_hospital_odooschool_add_diagnosis_wizard__create_date
+#: model:ir.model.fields,field_description:hr_hospital_odooschool.field_hr_hospital_odooschool_analysis_card__create_date
+#: model:ir.model.fields,field_description:hr_hospital_odooschool.field_hr_hospital_odooschool_change_doctor_wizard__create_date
+#: model:ir.model.fields,field_description:hr_hospital_odooschool.field_hr_hospital_odooschool_change_visit_time_wizard__create_date
+#: model:ir.model.fields,field_description:hr_hospital_odooschool.field_hr_hospital_odooschool_contact_person__create_date
+#: model:ir.model.fields,field_description:hr_hospital_odooschool.field_hr_hospital_odooschool_create_appointment_wizard__create_date
+#: model:ir.model.fields,field_description:hr_hospital_odooschool.field_hr_hospital_odooschool_diagnosis__create_date
+#: model:ir.model.fields,field_description:hr_hospital_odooschool.field_hr_hospital_odooschool_disease__create_date
+#: model:ir.model.fields,field_description:hr_hospital_odooschool.field_hr_hospital_odooschool_disease_category__create_date
+#: model:ir.model.fields,field_description:hr_hospital_odooschool.field_hr_hospital_odooschool_disease_report_wizard__create_date
+#: model:ir.model.fields,field_description:hr_hospital_odooschool.field_hr_hospital_odooschool_doctor__create_date
+#: model:ir.model.fields,field_description:hr_hospital_odooschool.field_hr_hospital_odooschool_doctor_schedule__create_date
+#: model:ir.model.fields,field_description:hr_hospital_odooschool.field_hr_hospital_odooschool_history_changing_doctor__create_date
+#: model:ir.model.fields,field_description:hr_hospital_odooschool.field_hr_hospital_odooschool_hospital_report_wizard__create_date
+#: model:ir.model.fields,field_description:hr_hospital_odooschool.field_hr_hospital_odooschool_med_analysis__create_date
+#: model:ir.model.fields,field_description:hr_hospital_odooschool.field_hr_hospital_odooschool_patient__create_date
+#: model:ir.model.fields,field_description:hr_hospital_odooschool.field_hr_hospital_odooschool_patient_visit__create_date
+#: model:ir.model.fields,field_description:hr_hospital_odooschool.field_hr_hospital_odooschool_week_schedule_wizard__create_date
+msgid "Created on"
+msgstr "Створено"
+
+#. module: hr_hospital_odooschool
+#: model:ir.model.fields,field_description:hr_hospital_odooschool.field_hr_hospital_odooschool_doctor_schedule__day_week
+msgid "Day of the week"
+msgstr "День тижня"
+
+#. module: hr_hospital_odooschool
+#: model:ir.model.fields,field_description:hr_hospital_odooschool.field_hr_hospital_odooschool_disease_category__desc
+msgid "Description"
+msgstr "Опис"
+
+#. module: hr_hospital_odooschool
+#: model:ir.actions.act_window,name:hr_hospital_odooschool.hr_hospital_odooschool_action_view_diagnosis
+#: model:ir.model.fields,field_description:hr_hospital_odooschool.field_hr_hospital_odooschool_disease__diagnosis_ids
+#: model:ir.model.fields,field_description:hr_hospital_odooschool.field_hr_hospital_odooschool_patient__diagnosis_ids
+#: model:ir.model.fields,field_description:hr_hospital_odooschool.field_hr_hospital_odooschool_patient_visit__diagnosis_id
+#: model:ir.ui.menu,name:hr_hospital_odooschool.hr_hospital_odooschool_diagnosis_menu
+msgid "Diagnosis"
+msgstr "Діагнози"
+
+#. module: hr_hospital_odooschool
+#: model:ir.model.fields,field_description:hr_hospital_odooschool.field_hr_hospital_odooschool_add_diagnosis_wizard__diagnosis_date
+#: model:ir.model.fields,field_description:hr_hospital_odooschool.field_hr_hospital_odooschool_diagnosis__diagnosis_date
+msgid "Diagnosis Date"
+msgstr "Дата постановки діагнозу"
+
+#. module: hr_hospital_odooschool
+#: model_terms:ir.ui.view,arch_db:hr_hospital_odooschool.diagnosis_view_form
+msgid "Diagnosis form"
+msgstr "Діагноз"
+
+#. module: hr_hospital_odooschool
+#: model_terms:ir.ui.view,arch_db:hr_hospital_odooschool.patient_view_form
+msgid "Diagnosis history"
+msgstr "Історія діагнозів"
+
+#. module: hr_hospital_odooschool
+#: model:ir.model.fields,field_description:hr_hospital_odooschool.field_hr_hospital_odooschool_add_diagnosis_wizard__disease_id
+#: model:ir.model.fields,field_description:hr_hospital_odooschool.field_hr_hospital_odooschool_diagnosis__disease_id
+#: model:ir.model.fields,field_description:hr_hospital_odooschool.field_hr_hospital_odooschool_disease__disease_id
+#: model:ir.model.fields,field_description:hr_hospital_odooschool.field_hr_hospital_odooschool_disease_report_wizard__disease_id
+msgid "Disease"
+msgstr "Захворювання"
+
+#. module: hr_hospital_odooschool
+#: model:ir.actions.act_window,name:hr_hospital_odooschool.hr_hospital_odooschool_action_view_disease_category
+#: model:ir.model,name:hr_hospital_odooschool.model_hr_hospital_odooschool_disease_category
+#: model:ir.ui.menu,name:hr_hospital_odooschool.hr_hospital_odooschool_disease_category_menu
+msgid "Disease Category"
+msgstr "Категорії хвороб"
+
+#. module: hr_hospital_odooschool
+#: model_terms:ir.ui.view,arch_db:hr_hospital_odooschool.disease_category_view_form
+msgid "Disease Category form"
+msgstr "Категорія хвороби"
+
+#. module: hr_hospital_odooschool
+#: model:ir.model.fields,field_description:hr_hospital_odooschool.field_hr_hospital_odooschool_disease_report_wizard__disease_count
+msgid "Disease Count"
+msgstr "Кількість хвороб"
+
+#. module: hr_hospital_odooschool
+#: model_terms:ir.ui.view,arch_db:hr_hospital_odooschool.disease_view_form
+msgid "Disease form"
+msgstr "Захворювання"
+
+#. module: hr_hospital_odooschool
+#: model:ir.actions.act_window,name:hr_hospital_odooschool.hr_hospital_odooschool_action_view_hospital_report
+msgid "Disease report"
+msgstr "Створити звіт"
+
+#. module: hr_hospital_odooschool
+#. odoo-python
+#: code:addons/hr_hospital_odooschool/models/hr_disease.py:0
+#: model:ir.actions.act_window,name:hr_hospital_odooschool.hr_hospital_odooschool_action_view_disease
+#: model:ir.model,name:hr_hospital_odooschool.model_hr_hospital_odooschool_disease
+#: model:ir.ui.menu,name:hr_hospital_odooschool.hr_hospital_odooschool_disease_main_menu
+#: model:ir.ui.menu,name:hr_hospital_odooschool.hr_hospital_odooschool_disease_menu
+#, python-format
+msgid "Diseases"
+msgstr "Захворювання"
+
+#. module: hr_hospital_odooschool
+#: model:ir.model.fields,field_description:hr_hospital_odooschool.field_hr_hospital_odooschool_add_diagnosis_wizard__display_name
+#: model:ir.model.fields,field_description:hr_hospital_odooschool.field_hr_hospital_odooschool_analysis_card__display_name
+#: model:ir.model.fields,field_description:hr_hospital_odooschool.field_hr_hospital_odooschool_change_doctor_wizard__display_name
+#: model:ir.model.fields,field_description:hr_hospital_odooschool.field_hr_hospital_odooschool_change_visit_time_wizard__display_name
+#: model:ir.model.fields,field_description:hr_hospital_odooschool.field_hr_hospital_odooschool_contact_person__display_name
+#: model:ir.model.fields,field_description:hr_hospital_odooschool.field_hr_hospital_odooschool_create_appointment_wizard__display_name
+#: model:ir.model.fields,field_description:hr_hospital_odooschool.field_hr_hospital_odooschool_diagnosis__display_name
+#: model:ir.model.fields,field_description:hr_hospital_odooschool.field_hr_hospital_odooschool_disease__display_name
+#: model:ir.model.fields,field_description:hr_hospital_odooschool.field_hr_hospital_odooschool_disease_category__display_name
+#: model:ir.model.fields,field_description:hr_hospital_odooschool.field_hr_hospital_odooschool_disease_report_wizard__display_name
+#: model:ir.model.fields,field_description:hr_hospital_odooschool.field_hr_hospital_odooschool_doctor__display_name
+#: model:ir.model.fields,field_description:hr_hospital_odooschool.field_hr_hospital_odooschool_doctor_schedule__display_name
+#: model:ir.model.fields,field_description:hr_hospital_odooschool.field_hr_hospital_odooschool_history_changing_doctor__display_name
+#: model:ir.model.fields,field_description:hr_hospital_odooschool.field_hr_hospital_odooschool_hospital_report_wizard__display_name
+#: model:ir.model.fields,field_description:hr_hospital_odooschool.field_hr_hospital_odooschool_med_analysis__display_name
+#: model:ir.model.fields,field_description:hr_hospital_odooschool.field_hr_hospital_odooschool_patient__display_name
+#: model:ir.model.fields,field_description:hr_hospital_odooschool.field_hr_hospital_odooschool_patient_visit__display_name
+#: model:ir.model.fields,field_description:hr_hospital_odooschool.field_hr_hospital_odooschool_week_schedule_wizard__display_name
+msgid "Display Name"
+msgstr "Імʼя"
+
+#. module: hr_hospital_odooschool
+#: model:ir.model.fields,field_description:hr_hospital_odooschool.field_hr_hospital_odooschool_add_diagnosis_wizard__doctor_id
+#: model:ir.model.fields,field_description:hr_hospital_odooschool.field_hr_hospital_odooschool_analysis_card__doctor_id
+#: model:ir.model.fields,field_description:hr_hospital_odooschool.field_hr_hospital_odooschool_change_doctor_wizard__doctor_id
+#: model:ir.model.fields,field_description:hr_hospital_odooschool.field_hr_hospital_odooschool_diagnosis__doctor_id
+#: model:ir.model.fields,field_description:hr_hospital_odooschool.field_hr_hospital_odooschool_doctor_schedule__doctor_id
+#: model:ir.model.fields,field_description:hr_hospital_odooschool.field_hr_hospital_odooschool_week_schedule_wizard__doctor_id
+#: model_terms:ir.ui.view,arch_db:hr_hospital_odooschool.analysis_card_view_search
+#: model_terms:ir.ui.view,arch_db:hr_hospital_odooschool.doctor_view_form
+msgid "Doctor"
+msgstr "Лікар"
+
+#. module: hr_hospital_odooschool
+#: model:ir.model,name:hr_hospital_odooschool.model_hr_hospital_odooschool_doctor_schedule
+msgid "Doctor Schedule"
+msgstr "Розклад лікарів"
+
+#. module: hr_hospital_odooschool
+#: model:ir.actions.report,name:hr_hospital_odooschool.hr_hospital_odooschool_doctor_report
+#: model_terms:ir.ui.view,arch_db:hr_hospital_odooschool.doctor_report
+msgid "Doctor report"
+msgstr "Звіт лікаря"
+
+#. module: hr_hospital_odooschool
+#: model:ir.actions.act_window,name:hr_hospital_odooschool.hr_hospital_odooschool_action_view_doctor_schedule
+#: model:ir.ui.menu,name:hr_hospital_odooschool.hr_hospital_odooschool_doctor_schedule_menu
+msgid "Doctor schedule"
+msgstr "Розклад лікаря"
+
+#. module: hr_hospital_odooschool
+#: model_terms:ir.ui.view,arch_db:hr_hospital_odooschool.doctor_schedule_view_form
+msgid "Doctor schedule form"
+msgstr "Форма розкладу лікаря"
+
+#. module: hr_hospital_odooschool
+#: model_terms:ir.ui.view,arch_db:hr_hospital_odooschool.doctor_report
+msgid "Doctor:"
+msgstr "Лікар:"
+
+#. module: hr_hospital_odooschool
+#. odoo-python
+#: code:addons/hr_hospital_odooschool/models/hr_doctor.py:0
+#: model:ir.actions.act_window,name:hr_hospital_odooschool.hr_hospital_odooschool_action_view_doctor
+#: model:ir.model,name:hr_hospital_odooschool.model_hr_hospital_odooschool_doctor
+#: model:ir.ui.menu,name:hr_hospital_odooschool.hr_hospital_odooschool_doctor_menu
+#, python-format
+msgid "Doctors"
+msgstr "Лікарі"
+
+#. module: hr_hospital_odooschool
+#: model_terms:ir.ui.view,arch_db:hr_hospital_odooschool.patient_view_form
+msgid "Doctors history"
+msgstr "Історія лікарів"
+
+#. module: hr_hospital_odooschool
+#: model:ir.model.fields.selection,name:hr_hospital_odooschool.selection__hr_hospital_odooschool_patient_visit__state__done
+msgid "Done"
+msgstr "Готово"
+
+#. module: hr_hospital_odooschool
+#: model:ir.model.fields.selection,name:hr_hospital_odooschool.selection__hr_hospital_odooschool_doctor__state__draft
+#: model:ir.model.fields.selection,name:hr_hospital_odooschool.selection__hr_hospital_odooschool_patient_visit__state__draft
+msgid "Draft"
+msgstr "Чернетка"
+
+#. module: hr_hospital_odooschool
+#: model_terms:ir.ui.view,arch_db:hr_hospital_odooschool.patient_visit_view_tree
+msgid "Edit"
+msgstr "Редагувати"
+
+#. module: hr_hospital_odooschool
+#: model:ir.model.fields.selection,name:hr_hospital_odooschool.selection__hr_hospital_odooschool_contact_person__sex__else
+#: model:ir.model.fields.selection,name:hr_hospital_odooschool.selection__hr_hospital_odooschool_doctor__sex__else
+#: model:ir.model.fields.selection,name:hr_hospital_odooschool.selection__hr_hospital_odooschool_patient__sex__else
+#: model:ir.model.fields.selection,name:hr_hospital_odooschool.selection__hr_person_mixin__sex__else
+msgid "Else"
+msgstr "Інакше"
+
+#. module: hr_hospital_odooschool
+#: model:ir.model.fields,field_description:hr_hospital_odooschool.field_hr_hospital_odooschool_contact_person__email
+#: model:ir.model.fields,field_description:hr_hospital_odooschool.field_hr_hospital_odooschool_doctor__email
+#: model:ir.model.fields,field_description:hr_hospital_odooschool.field_hr_hospital_odooschool_patient__email
+#: model:ir.model.fields,field_description:hr_hospital_odooschool.field_hr_person_mixin__email
+msgid "Email"
+msgstr ""
+
+#. module: hr_hospital_odooschool
+#: model:ir.model.fields.selection,name:hr_hospital_odooschool.selection__hr_hospital_odooschool_week_schedule_wizard__is_even_or_odd__even
+msgid "Even"
+msgstr "Парні дні"
+
+#. module: hr_hospital_odooschool
+#: model:ir.model.fields,field_description:hr_hospital_odooschool.field_hr_hospital_odooschool_week_schedule_wizard__is_even_or_odd
+msgid "Even or Odd"
+msgstr "Парний чи непарний"
+
+#. module: hr_hospital_odooschool
+#: model:ir.model.fields,help:hr_hospital_odooschool.field_hr_hospital_odooschool_week_schedule_wizard__is_even_or_odd
+msgid "For even or odd days"
+msgstr "Для парних або непарних днів"
+
+#. module: hr_hospital_odooschool
+#: model_terms:ir.ui.view,arch_db:hr_hospital_odooschool.analysis_card_view_search
+msgid "Group by..."
+msgstr "Групувати за..."
+
+#. module: hr_hospital_odooschool
+#: model:ir.actions.act_window,name:hr_hospital_odooschool.hr_hospital_odooschool_action_view_history_changing_doctor
+#: model:ir.ui.menu,name:hr_hospital_odooschool.hr_hospital_odooschool_history_changing_doctor_menu
+msgid "History Changing Doctors"
+msgstr "Історія зміни лікарів"
+
+#. module: hr_hospital_odooschool
+#: model_terms:ir.ui.view,arch_db:hr_hospital_odooschool.history_changing_doctor_view_form
+msgid "History changing Doctor form"
+msgstr "Форма Історія Зміна лікаря"
+
+#. module: hr_hospital_odooschool
+#: model:ir.model,name:hr_hospital_odooschool.model_hr_hospital_odooschool_history_changing_doctor
+msgid "History of changing the doctor"
+msgstr "Історія зміни лікаря"
+
+#. module: hr_hospital_odooschool
+#: model:ir.ui.menu,name:hr_hospital_odooschool.hr_hospital_odooschool_menu_root
+msgid "Hospital"
+msgstr "Лікарня"
+
+#. module: hr_hospital_odooschool
+#: model:ir.module.category,name:hr_hospital_odooschool.hr_hospital_odooschool_category
+msgid "HrHospital"
+msgstr "Госпіталь"
+
+#. module: hr_hospital_odooschool
+#: model:ir.model,name:hr_hospital_odooschool.model_hr_hospital_odooschool_diagnosis
+msgid "HrHospitalDiagnosis"
+msgstr "Лікарняний діагноз"
+
+#. module: hr_hospital_odooschool
+#. odoo-python
+#: code:addons/hr_hospital_odooschool/models/hr_person.py:0
+#: model:ir.model,name:hr_hospital_odooschool.model_hr_person_mixin
+#, python-format
+msgid "HrPerson mixin"
+msgstr ""
+
+#. module: hr_hospital_odooschool
+#: model:ir.model.fields,field_description:hr_hospital_odooschool.field_hr_hospital_odooschool_add_diagnosis_wizard__id
+#: model:ir.model.fields,field_description:hr_hospital_odooschool.field_hr_hospital_odooschool_analysis_card__id
+#: model:ir.model.fields,field_description:hr_hospital_odooschool.field_hr_hospital_odooschool_change_doctor_wizard__id
+#: model:ir.model.fields,field_description:hr_hospital_odooschool.field_hr_hospital_odooschool_change_visit_time_wizard__id
+#: model:ir.model.fields,field_description:hr_hospital_odooschool.field_hr_hospital_odooschool_contact_person__id
+#: model:ir.model.fields,field_description:hr_hospital_odooschool.field_hr_hospital_odooschool_create_appointment_wizard__id
+#: model:ir.model.fields,field_description:hr_hospital_odooschool.field_hr_hospital_odooschool_diagnosis__id
+#: model:ir.model.fields,field_description:hr_hospital_odooschool.field_hr_hospital_odooschool_disease__id
+#: model:ir.model.fields,field_description:hr_hospital_odooschool.field_hr_hospital_odooschool_disease_category__id
+#: model:ir.model.fields,field_description:hr_hospital_odooschool.field_hr_hospital_odooschool_disease_report_wizard__id
+#: model:ir.model.fields,field_description:hr_hospital_odooschool.field_hr_hospital_odooschool_doctor__id
+#: model:ir.model.fields,field_description:hr_hospital_odooschool.field_hr_hospital_odooschool_doctor_schedule__id
+#: model:ir.model.fields,field_description:hr_hospital_odooschool.field_hr_hospital_odooschool_history_changing_doctor__id
+#: model:ir.model.fields,field_description:hr_hospital_odooschool.field_hr_hospital_odooschool_hospital_report_wizard__id
+#: model:ir.model.fields,field_description:hr_hospital_odooschool.field_hr_hospital_odooschool_med_analysis__id
+#: model:ir.model.fields,field_description:hr_hospital_odooschool.field_hr_hospital_odooschool_patient__id
+#: model:ir.model.fields,field_description:hr_hospital_odooschool.field_hr_hospital_odooschool_patient_visit__id
+#: model:ir.model.fields,field_description:hr_hospital_odooschool.field_hr_hospital_odooschool_week_schedule_wizard__id
+msgid "ID"
+msgstr "Ідентифікатор"
+
+#. module: hr_hospital_odooschool
+#: model:ir.model.fields,field_description:hr_hospital_odooschool.field_hr_hospital_odooschool_contact_person__img
+#: model:ir.model.fields,field_description:hr_hospital_odooschool.field_hr_hospital_odooschool_doctor__img
+#: model:ir.model.fields,field_description:hr_hospital_odooschool.field_hr_hospital_odooschool_patient__img
+#: model:ir.model.fields,field_description:hr_hospital_odooschool.field_hr_person_mixin__img
+msgid "Img"
+msgstr "Фото"
+
+#. module: hr_hospital_odooschool
+#: model:ir.model.fields,field_description:hr_hospital_odooschool.field_hr_hospital_odooschool_doctor__child_ids
+#: model_terms:ir.ui.view,arch_db:hr_hospital_odooschool.doctor_view_form
+#: model_terms:ir.ui.view,arch_db:hr_hospital_odooschool.doctor_view_search
+msgid "Interns"
+msgstr "Зроблено?"
+
+#. module: hr_hospital_odooschool
+#: model:ir.model.fields,field_description:hr_hospital_odooschool.field_hr_hospital_odooschool_patient_visit__is_done
+msgid "Is Done"
+msgstr "Готово"
+
+#. module: hr_hospital_odooschool
+#: model:ir.model.fields,field_description:hr_hospital_odooschool.field_hr_hospital_odooschool_add_diagnosis_wizard__is_intern
+#: model:ir.model.fields,field_description:hr_hospital_odooschool.field_hr_hospital_odooschool_diagnosis__is_intern
+#: model:ir.model.fields,field_description:hr_hospital_odooschool.field_hr_hospital_odooschool_doctor__is_intern
+#: model:ir.model.fields,field_description:hr_hospital_odooschool.field_hr_hospital_odooschool_patient_visit__is_intern
+msgid "Is Intern"
+msgstr "Інтерн?"
+
+#. module: hr_hospital_odooschool
+#: model:ir.model.fields,field_description:hr_hospital_odooschool.field_hr_hospital_odooschool_doctor__is_mentor
+msgid "Is Mentor"
+msgstr "Ментор?"
+
+#. module: hr_hospital_odooschool
+#: model:ir.model.fields,field_description:hr_hospital_odooschool.field_hr_hospital_odooschool_add_diagnosis_wizard____last_update
+#: model:ir.model.fields,field_description:hr_hospital_odooschool.field_hr_hospital_odooschool_analysis_card____last_update
+#: model:ir.model.fields,field_description:hr_hospital_odooschool.field_hr_hospital_odooschool_change_doctor_wizard____last_update
+#: model:ir.model.fields,field_description:hr_hospital_odooschool.field_hr_hospital_odooschool_change_visit_time_wizard____last_update
+#: model:ir.model.fields,field_description:hr_hospital_odooschool.field_hr_hospital_odooschool_contact_person____last_update
+#: model:ir.model.fields,field_description:hr_hospital_odooschool.field_hr_hospital_odooschool_create_appointment_wizard____last_update
+#: model:ir.model.fields,field_description:hr_hospital_odooschool.field_hr_hospital_odooschool_diagnosis____last_update
+#: model:ir.model.fields,field_description:hr_hospital_odooschool.field_hr_hospital_odooschool_disease____last_update
+#: model:ir.model.fields,field_description:hr_hospital_odooschool.field_hr_hospital_odooschool_disease_category____last_update
+#: model:ir.model.fields,field_description:hr_hospital_odooschool.field_hr_hospital_odooschool_disease_report_wizard____last_update
+#: model:ir.model.fields,field_description:hr_hospital_odooschool.field_hr_hospital_odooschool_doctor____last_update
+#: model:ir.model.fields,field_description:hr_hospital_odooschool.field_hr_hospital_odooschool_doctor_schedule____last_update
+#: model:ir.model.fields,field_description:hr_hospital_odooschool.field_hr_hospital_odooschool_history_changing_doctor____last_update
+#: model:ir.model.fields,field_description:hr_hospital_odooschool.field_hr_hospital_odooschool_hospital_report_wizard____last_update
+#: model:ir.model.fields,field_description:hr_hospital_odooschool.field_hr_hospital_odooschool_med_analysis____last_update
+#: model:ir.model.fields,field_description:hr_hospital_odooschool.field_hr_hospital_odooschool_patient____last_update
+#: model:ir.model.fields,field_description:hr_hospital_odooschool.field_hr_hospital_odooschool_patient_visit____last_update
+#: model:ir.model.fields,field_description:hr_hospital_odooschool.field_hr_hospital_odooschool_week_schedule_wizard____last_update
+msgid "Last Modified on"
+msgstr ""
+
+#. module: hr_hospital_odooschool
+#: model:ir.model.fields,field_description:hr_hospital_odooschool.field_hr_hospital_odooschool_add_diagnosis_wizard__write_uid
+#: model:ir.model.fields,field_description:hr_hospital_odooschool.field_hr_hospital_odooschool_analysis_card__write_uid
+#: model:ir.model.fields,field_description:hr_hospital_odooschool.field_hr_hospital_odooschool_change_doctor_wizard__write_uid
+#: model:ir.model.fields,field_description:hr_hospital_odooschool.field_hr_hospital_odooschool_change_visit_time_wizard__write_uid
+#: model:ir.model.fields,field_description:hr_hospital_odooschool.field_hr_hospital_odooschool_contact_person__write_uid
+#: model:ir.model.fields,field_description:hr_hospital_odooschool.field_hr_hospital_odooschool_create_appointment_wizard__write_uid
+#: model:ir.model.fields,field_description:hr_hospital_odooschool.field_hr_hospital_odooschool_diagnosis__write_uid
+#: model:ir.model.fields,field_description:hr_hospital_odooschool.field_hr_hospital_odooschool_disease__write_uid
+#: model:ir.model.fields,field_description:hr_hospital_odooschool.field_hr_hospital_odooschool_disease_category__write_uid
+#: model:ir.model.fields,field_description:hr_hospital_odooschool.field_hr_hospital_odooschool_disease_report_wizard__write_uid
+#: model:ir.model.fields,field_description:hr_hospital_odooschool.field_hr_hospital_odooschool_doctor__write_uid
+#: model:ir.model.fields,field_description:hr_hospital_odooschool.field_hr_hospital_odooschool_doctor_schedule__write_uid
+#: model:ir.model.fields,field_description:hr_hospital_odooschool.field_hr_hospital_odooschool_history_changing_doctor__write_uid
+#: model:ir.model.fields,field_description:hr_hospital_odooschool.field_hr_hospital_odooschool_hospital_report_wizard__write_uid
+#: model:ir.model.fields,field_description:hr_hospital_odooschool.field_hr_hospital_odooschool_med_analysis__write_uid
+#: model:ir.model.fields,field_description:hr_hospital_odooschool.field_hr_hospital_odooschool_patient__write_uid
+#: model:ir.model.fields,field_description:hr_hospital_odooschool.field_hr_hospital_odooschool_patient_visit__write_uid
+#: model:ir.model.fields,field_description:hr_hospital_odooschool.field_hr_hospital_odooschool_week_schedule_wizard__write_uid
+msgid "Last Updated by"
+msgstr ""
+
+#. module: hr_hospital_odooschool
+#: model:ir.model.fields,field_description:hr_hospital_odooschool.field_hr_hospital_odooschool_add_diagnosis_wizard__write_date
+#: model:ir.model.fields,field_description:hr_hospital_odooschool.field_hr_hospital_odooschool_analysis_card__write_date
+#: model:ir.model.fields,field_description:hr_hospital_odooschool.field_hr_hospital_odooschool_change_doctor_wizard__write_date
+#: model:ir.model.fields,field_description:hr_hospital_odooschool.field_hr_hospital_odooschool_change_visit_time_wizard__write_date
+#: model:ir.model.fields,field_description:hr_hospital_odooschool.field_hr_hospital_odooschool_contact_person__write_date
+#: model:ir.model.fields,field_description:hr_hospital_odooschool.field_hr_hospital_odooschool_create_appointment_wizard__write_date
+#: model:ir.model.fields,field_description:hr_hospital_odooschool.field_hr_hospital_odooschool_diagnosis__write_date
+#: model:ir.model.fields,field_description:hr_hospital_odooschool.field_hr_hospital_odooschool_disease__write_date
+#: model:ir.model.fields,field_description:hr_hospital_odooschool.field_hr_hospital_odooschool_disease_category__write_date
+#: model:ir.model.fields,field_description:hr_hospital_odooschool.field_hr_hospital_odooschool_disease_report_wizard__write_date
+#: model:ir.model.fields,field_description:hr_hospital_odooschool.field_hr_hospital_odooschool_doctor__write_date
+#: model:ir.model.fields,field_description:hr_hospital_odooschool.field_hr_hospital_odooschool_doctor_schedule__write_date
+#: model:ir.model.fields,field_description:hr_hospital_odooschool.field_hr_hospital_odooschool_history_changing_doctor__write_date
+#: model:ir.model.fields,field_description:hr_hospital_odooschool.field_hr_hospital_odooschool_hospital_report_wizard__write_date
+#: model:ir.model.fields,field_description:hr_hospital_odooschool.field_hr_hospital_odooschool_med_analysis__write_date
+#: model:ir.model.fields,field_description:hr_hospital_odooschool.field_hr_hospital_odooschool_patient__write_date
+#: model:ir.model.fields,field_description:hr_hospital_odooschool.field_hr_hospital_odooschool_patient_visit__write_date
+#: model:ir.model.fields,field_description:hr_hospital_odooschool.field_hr_hospital_odooschool_week_schedule_wizard__write_date
+msgid "Last Updated on"
+msgstr ""
+
+#. module: hr_hospital_odooschool
+#: model:ir.ui.menu,name:hr_hospital_odooschool.hr_hospital_odooschool_main_menu
+msgid "Main"
+msgstr "Головне меню"
+
+#. module: hr_hospital_odooschool
+#: model:ir.model.fields.selection,name:hr_hospital_odooschool.selection__hr_hospital_odooschool_contact_person__sex__man
+#: model:ir.model.fields.selection,name:hr_hospital_odooschool.selection__hr_hospital_odooschool_doctor__sex__man
+#: model:ir.model.fields.selection,name:hr_hospital_odooschool.selection__hr_hospital_odooschool_patient__sex__man
+#: model:ir.model.fields.selection,name:hr_hospital_odooschool.selection__hr_person_mixin__sex__man
+msgid "Man"
+msgstr "Чоловік"
+
+#. module: hr_hospital_odooschool
+#: model:ir.model,name:hr_hospital_odooschool.model_hr_hospital_odooschool_med_analysis
+msgid "Medical Analysis"
+msgstr "Медичні аналіз(и)"
+
+#. module: hr_hospital_odooschool
+#: model:ir.model,name:hr_hospital_odooschool.model_hr_hospital_odooschool_analysis_card
+msgid "Medical Analysis Card"
+msgstr "Картка медичного аналізу"
+
+#. module: hr_hospital_odooschool
+#: model:ir.model.fields,field_description:hr_hospital_odooschool.field_hr_hospital_odooschool_doctor__parent_id
+#: model_terms:ir.ui.view,arch_db:hr_hospital_odooschool.doctor_view_form
+msgid "Mentor"
+msgstr "Лікар"
+
+#. module: hr_hospital_odooschool
+#: model:ir.model.fields,field_description:hr_hospital_odooschool.field_hr_hospital_odooschool_add_diagnosis_wizard__mentor_comment
+#: model:ir.model.fields,field_description:hr_hospital_odooschool.field_hr_hospital_odooschool_diagnosis__mentor_comment
+msgid "Mentor Comment"
+msgstr "Коментар ментора"
+
+#. module: hr_hospital_odooschool
+#: model_terms:ir.ui.view,arch_db:hr_hospital_odooschool.doctor_report
+msgid "Mentor:"
+msgstr "Ментор:"
+
+#. module: hr_hospital_odooschool
+#: model_terms:ir.ui.view,arch_db:hr_hospital_odooschool.doctor_view_search
+msgid "Mentors"
+msgstr "Ментори"
+
+#. module: hr_hospital_odooschool
+#: model:ir.model.fields,field_description:hr_hospital_odooschool.field_hr_hospital_odooschool_contact_person__name
+#: model:ir.model.fields,field_description:hr_hospital_odooschool.field_hr_hospital_odooschool_disease_category__name
+#: model:ir.model.fields,field_description:hr_hospital_odooschool.field_hr_hospital_odooschool_doctor__name
+#: model:ir.model.fields,field_description:hr_hospital_odooschool.field_hr_hospital_odooschool_med_analysis__name
+#: model:ir.model.fields,field_description:hr_hospital_odooschool.field_hr_hospital_odooschool_patient__name
+#: model:ir.model.fields,field_description:hr_hospital_odooschool.field_hr_person_mixin__name
+#: model_terms:ir.ui.view,arch_db:hr_hospital_odooschool.analysis_card_view_search
+msgid "Name"
+msgstr "Імʼя"
+
+#. module: hr_hospital_odooschool
+#. odoo-python
+#: code:addons/hr_hospital_odooschool/models/hr_patient_visit.py:0
+#: code:addons/hr_hospital_odooschool/models/hr_patient_visit.py:0
+#, python-format
+msgid "No schedule found!"
+msgstr "Графік не знайдено"
+
+#. module: hr_hospital_odooschool
+#: model_terms:ir.ui.view,arch_db:hr_hospital_odooschool.doctor_view_search
+msgid "Nothing"
+msgstr "Нічого"
+
+#. module: hr_hospital_odooschool
+#: model:ir.model.fields.selection,name:hr_hospital_odooschool.selection__hr_hospital_odooschool_week_schedule_wizard__is_even_or_odd__odd
+msgid "Odd"
+msgstr "Непарні дні"
+
+#. module: hr_hospital_odooschool
+#: model:ir.model.fields,field_description:hr_hospital_odooschool.field_hr_hospital_odooschool_change_visit_time_wizard__old_time
+msgid "Old Time"
+msgstr "Старий час"
+
+#. module: hr_hospital_odooschool
+#: model:ir.model.fields,field_description:hr_hospital_odooschool.field_hr_hospital_odooschool_disease_category__parent_path
+msgid "Parent Path"
+msgstr ""
+
+#. module: hr_hospital_odooschool
+#: model:ir.model.fields,field_description:hr_hospital_odooschool.field_hr_hospital_odooschool_patient__passport
+msgid "Passport"
+msgstr "Паспорт"
+
+#. module: hr_hospital_odooschool
+#. odoo-python
+#: code:addons/hr_hospital_odooschool/models/hr_patient.py:0
+#: model:ir.model,name:hr_hospital_odooschool.model_hr_hospital_odooschool_patient
+#: model:ir.model.fields,field_description:hr_hospital_odooschool.field_hr_hospital_odooschool_add_diagnosis_wizard__patient_id
+#: model:ir.model.fields,field_description:hr_hospital_odooschool.field_hr_hospital_odooschool_analysis_card__patient_id
+#: model:ir.model.fields,field_description:hr_hospital_odooschool.field_hr_hospital_odooschool_change_doctor_wizard__patient_ids
+#: model:ir.model.fields,field_description:hr_hospital_odooschool.field_hr_hospital_odooschool_create_appointment_wizard__patient_id
+#: model:ir.model.fields,field_description:hr_hospital_odooschool.field_hr_hospital_odooschool_diagnosis__patient_id
+#: model:ir.model.fields,field_description:hr_hospital_odooschool.field_hr_hospital_odooschool_doctor__patient_ids
+#: model:ir.model.fields,field_description:hr_hospital_odooschool.field_hr_hospital_odooschool_history_changing_doctor__patient_id
+#: model:ir.model.fields,field_description:hr_hospital_odooschool.field_hr_hospital_odooschool_patient_visit__patient_id
+#: model:ir.ui.menu,name:hr_hospital_odooschool.hr_hospital_odooschool_patient_menu
+#: model_terms:ir.ui.view,arch_db:hr_hospital_odooschool.analysis_card_view_search
+#: model_terms:ir.ui.view,arch_db:hr_hospital_odooschool.patient_view_form
+#, python-format
+msgid "Patient"
+msgstr "Пацієнт"
+
+#. module: hr_hospital_odooschool
+#: model:ir.model,name:hr_hospital_odooschool.model_hr_hospital_odooschool_contact_person
+msgid "Patient contact person"
+msgstr "Контактна особа пацієнта"
+
+#. module: hr_hospital_odooschool
+#: model_terms:ir.ui.view,arch_db:hr_hospital_odooschool.doctor_schedule_view_calendar
+#: model_terms:ir.ui.view,arch_db:hr_hospital_odooschool.patient_visit_view_calendar
+msgid "Patient visit"
+msgstr "Візит пацієнта"
+
+#. module: hr_hospital_odooschool
+#: model_terms:ir.ui.view,arch_db:hr_hospital_odooschool.patient_visit_view_form
+msgid "Patient visit form"
+msgstr "Бланк візиту пацієнта"
+
+#. module: hr_hospital_odooschool
+#: model:ir.actions.act_window,name:hr_hospital_odooschool.hr_hospital_odooschool_action_view_patient
+#: model_terms:ir.ui.view,arch_db:hr_hospital_odooschool.doctor_report
+msgid "Patients"
+msgstr "Пацієнти"
+
+#. module: hr_hospital_odooschool
+#. odoo-python
+#: code:addons/hr_hospital_odooschool/models/hr_patient_visit.py:0
+#: model:ir.actions.act_window,name:hr_hospital_odooschool.hr_hospital_odooschool_action_view_patient_visit
+#: model:ir.model,name:hr_hospital_odooschool.model_hr_hospital_odooschool_patient_visit
+#, python-format
+msgid "Patients visits"
+msgstr "Візити пацієнтів"
+
+#. module: hr_hospital_odooschool
+#: model:ir.model.fields,field_description:hr_hospital_odooschool.field_hr_hospital_odooschool_contact_person__phone
+#: model:ir.model.fields,field_description:hr_hospital_odooschool.field_hr_hospital_odooschool_doctor__phone
+#: model:ir.model.fields,field_description:hr_hospital_odooschool.field_hr_hospital_odooschool_patient__phone
+#: model:ir.model.fields,field_description:hr_hospital_odooschool.field_hr_person_mixin__phone
+#: model_terms:ir.ui.view,arch_db:hr_hospital_odooschool.analysis_card_view_search
+msgid "Phone"
+msgstr "Телефон"
+
+#. module: hr_hospital_odooschool
+#: model_terms:ir.ui.view,arch_db:hr_hospital_odooschool.doctor_report
+msgid "Photo"
+msgstr "Фото"
+
+#. module: hr_hospital_odooschool
+#: model:ir.model.fields,field_description:hr_hospital_odooschool.field_hr_hospital_odooschool_analysis_card__analysis_price
+#: model:ir.model.fields,field_description:hr_hospital_odooschool.field_hr_hospital_odooschool_med_analysis__price
+msgid "Price"
+msgstr "Ціна"
+
+#. module: hr_hospital_odooschool
+#: model:ir.ui.menu,name:hr_hospital_odooschool.hr_hospital_odooschool_report_main_report
+msgid "Report"
+msgstr "Звіт"
+
+#. module: hr_hospital_odooschool
+#: model:ir.model.fields,field_description:hr_hospital_odooschool.field_hr_hospital_odooschool_hospital_report_wizard__report_date
+msgid "Report date"
+msgstr "Дата звіту"
+
+#. module: hr_hospital_odooschool
+#: model:ir.ui.menu,name:hr_hospital_odooschool.hr_hospital_odooschool_report_main
+msgid "Reports"
+msgstr "Звіти"
+
+#. module: hr_hospital_odooschool
+#: model:ir.model.fields,field_description:hr_hospital_odooschool.field_hr_hospital_odooschool_analysis_card__result
+msgid "Result"
+msgstr "Результат"
+
+#. module: hr_hospital_odooschool
+#: model:ir.model.fields,field_description:hr_hospital_odooschool.field_hr_hospital_odooschool_doctor__schedule
+#: model:ir.model.fields,field_description:hr_hospital_odooschool.field_hr_hospital_odooschool_patient_visit__schedule_id
+msgid "Schedule"
+msgstr "Розклад"
+
+#. module: hr_hospital_odooschool
+#: model:ir.ui.menu,name:hr_hospital_odooschool.hr_hospital_odooschool_schedules_visits_main_menu
+msgid "Schedules/Visits"
+msgstr "Розклади/Візити"
+
+#. module: hr_hospital_odooschool
+#: model:ir.model.fields,field_description:hr_hospital_odooschool.field_hr_hospital_odooschool_contact_person__sex
+#: model:ir.model.fields,field_description:hr_hospital_odooschool.field_hr_hospital_odooschool_doctor__sex
+#: model:ir.model.fields,field_description:hr_hospital_odooschool.field_hr_hospital_odooschool_patient__sex
+#: model:ir.model.fields,field_description:hr_hospital_odooschool.field_hr_person_mixin__sex
+msgid "Sex"
+msgstr "Стать"
+
+#. module: hr_hospital_odooschool
+#: model:ir.model.fields,field_description:hr_hospital_odooschool.field_hr_hospital_odooschool_doctor_schedule__shift_duration
+#: model:ir.model.fields,field_description:hr_hospital_odooschool.field_hr_hospital_odooschool_week_schedule_wizard__shift_duration
+msgid "Shift Duration"
+msgstr "Продовжуваність зміни"
+
+#. module: hr_hospital_odooschool
+#: model:ir.model.fields,field_description:hr_hospital_odooschool.field_hr_hospital_odooschool_doctor_schedule__shift_end_time
+msgid "Shift End Time"
+msgstr "Час закінчення зміни"
+
+#. module: hr_hospital_odooschool
+#: model:ir.model.fields,field_description:hr_hospital_odooschool.field_hr_hospital_odooschool_doctor__specialty
+msgid "Specialty"
+msgstr "Спеціальність"
+
+#. module: hr_hospital_odooschool
+#: model_terms:ir.ui.view,arch_db:hr_hospital_odooschool.doctor_report
+msgid "Specialty:"
+msgstr "Спеціальність:"
+
+#. module: hr_hospital_odooschool
+#. odoo-python
+#: code:addons/hr_hospital_odooschool/models/hr_patient_visit.py:0
+#, python-format
+msgid "Specified time is busy! Choose another time!"
+msgstr "Зазначений час зайнятий! Оберіть інший час!"
+
+#. module: hr_hospital_odooschool
+#. odoo-python
+#: code:addons/hr_hospital_odooschool/models/hr_patient_visit.py:0
+#: code:addons/hr_hospital_odooschool/models/hr_patient_visit.py:0
+#, python-format
+msgid "Specified time out of schedule"
+msgstr "Зазначений час поза розкладом!"
+
+#. module: hr_hospital_odooschool
+#. odoo-python
+#: code:addons/hr_hospital_odooschool/models/hr_patient_visit.py:0
+#, python-format
+msgid "Specified time out of schedule. Choose another time!"
+msgstr "Зазначений час по за графіком"
+
+#. module: hr_hospital_odooschool
+#: model:ir.model.fields,field_description:hr_hospital_odooschool.field_hr_hospital_odooschool_doctor_schedule__start_time
+msgid "Start Time"
+msgstr "Час початку"
+
+#. module: hr_hospital_odooschool
+#: model:ir.model.fields,field_description:hr_hospital_odooschool.field_hr_hospital_odooschool_doctor__state
+#: model:ir.model.fields,field_description:hr_hospital_odooschool.field_hr_hospital_odooschool_patient_visit__state
+msgid "Status"
+msgstr "Статус"
+
+#. module: hr_hospital_odooschool
+#: model:res.groups,name:hr_hospital_odooschool.group_hr_hospital_odooschool_trainee
+msgid "Trainee"
+msgstr "Студент"
+
+#. module: hr_hospital_odooschool
+#: model:ir.model.fields,field_description:hr_hospital_odooschool.field_hr_hospital_odooschool_add_diagnosis_wizard__treatment
+#: model:ir.model.fields,field_description:hr_hospital_odooschool.field_hr_hospital_odooschool_diagnosis__treatment
+msgid "Treatment"
+msgstr "Лікування"
+
+#. module: hr_hospital_odooschool
+#: model:ir.model.fields,field_description:hr_hospital_odooschool.field_hr_hospital_odooschool_add_diagnosis_wizard__visit_id
+#: model:ir.model.fields,field_description:hr_hospital_odooschool.field_hr_hospital_odooschool_doctor_schedule__visit_ids
+msgid "Visit"
+msgstr "Візит"
+
+#. module: hr_hospital_odooschool
+#: model:ir.model.fields,field_description:hr_hospital_odooschool.field_hr_hospital_odooschool_change_visit_time_wizard__visit_date
+msgid "Visit Date"
+msgstr "Дата відвідування"
+
+#. module: hr_hospital_odooschool
+#: model:ir.model.fields,field_description:hr_hospital_odooschool.field_hr_hospital_odooschool_patient_visit__visit_date_date
+msgid "Visit Date Date"
+msgstr ""
+
+#. module: hr_hospital_odooschool
+#. odoo-python
+#: code:addons/hr_hospital_odooschool/models/hr_patient_visit.py:0
+#: code:addons/hr_hospital_odooschool/models/hr_patient_visit.py:0
+#, python-format
+msgid "Visit cant be done with out diagnosis"
+msgstr "Візит не може бути здійснений без діагнозу!"
+
+#. module: hr_hospital_odooschool
+#: model:ir.model.fields,field_description:hr_hospital_odooschool.field_hr_hospital_odooschool_create_appointment_wizard__visit_date
+#: model:ir.model.fields,field_description:hr_hospital_odooschool.field_hr_hospital_odooschool_patient_visit__visit_date
+msgid "Visit date and time"
+msgstr "Дата візиту"
+
+#. module: hr_hospital_odooschool
+#: model:ir.model.fields,field_description:hr_hospital_odooschool.field_hr_hospital_odooschool_patient_visit__visit_end_time
+msgid "Visit end time"
+msgstr "Час закінчення візиту"
+
+#. module: hr_hospital_odooschool
+#: model:ir.ui.menu,name:hr_hospital_odooschool.hr_hospital_odooschool_patient_visit_menu
+#: model_terms:ir.ui.view,arch_db:hr_hospital_odooschool.patient_view_form
+msgid "Visits"
+msgstr "Візити"
+
+#. module: hr_hospital_odooschool
+#: model:ir.model.fields,field_description:hr_hospital_odooschool.field_hr_hospital_odooschool_week_schedule_wizard__week_start_date
+msgid "Week Start Date"
+msgstr "Дата робочого дня"
+
+#. module: hr_hospital_odooschool
+#: model:ir.model.fields.selection,name:hr_hospital_odooschool.selection__hr_hospital_odooschool_contact_person__sex__woman
+#: model:ir.model.fields.selection,name:hr_hospital_odooschool.selection__hr_hospital_odooschool_doctor__sex__woman
+#: model:ir.model.fields.selection,name:hr_hospital_odooschool.selection__hr_hospital_odooschool_patient__sex__woman
+#: model:ir.model.fields.selection,name:hr_hospital_odooschool.selection__hr_person_mixin__sex__woman
+msgid "Woman"
+msgstr "Жінка"
+
+#. module: hr_hospital_odooschool
+#: model:ir.model.fields,field_description:hr_hospital_odooschool.field_hr_hospital_odooschool_week_schedule_wizard__work_day_start
+msgid "Work Day Start"
+msgstr "Початок робочого дня"
+
+#. module: hr_hospital_odooschool
+#: model:ir.model.fields,field_description:hr_hospital_odooschool.field_hr_hospital_odooschool_doctor_schedule__visit_date
+msgid "Work day"
+msgstr "Робочий день"
+
+#. module: hr_hospital_odooschool
+#. odoo-python
+#: code:addons/hr_hospital_odooschool/models/hr_patient_visit.py:0
+#, python-format
+msgid "You can't arch visits that already done!"
+msgstr "Ви не можете заархівувати вже здійснені візити!"
+
+#. module: hr_hospital_odooschool
+#. odoo-python
+#: code:addons/hr_hospital_odooschool/models/hr_patient_visit.py:0
+#, python-format
+msgid "You can't delete visits that already done!"
+msgstr "Ви не можете видалити візити які вже відбулись!"
+
+#. module: hr_hospital_odooschool
+#. odoo-python
+#: code:addons/hr_hospital_odooschool/models/hr_doctor.py:0
+#, python-format
+msgid "You cannot create intern recursive."
+msgstr "Ви не можете додавати інтернів рекурсивно"
+
+#. module: hr_hospital_odooschool
+#. odoo-python
+#: code:addons/hr_hospital_odooschool/models/hr_disease.py:0
+#, python-format
+msgid "You cannot create recursive categories."
+msgstr "Ви не можете додавати категорії рекурсивно"
+
+#. module: hr_hospital_odooschool
+#: model_terms:ir.ui.view,arch_db:hr_hospital_odooschool.analysis_card_view_form
+msgid "e.g. Analysis"
+msgstr "Наприклад Аналіз"
+
+#. module: hr_hospital_odooschool
+#: model_terms:ir.ui.view,arch_db:hr_hospital_odooschool.doctor_view_form
+msgid "e.g. Doctor name"
+msgstr "Наприклад Імʼя лікаря"
+
+#. module: hr_hospital_odooschool
+#: model_terms:ir.ui.view,arch_db:hr_hospital_odooschool.patient_view_form
+msgid "e.g. Patient name"
+msgstr "Наприклад Імʼя пацієнта"

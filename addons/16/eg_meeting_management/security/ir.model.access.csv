@@ -1,0 +1,4 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_meeting_agenda,meeting.agenda,model_meeting_agenda,,1,1,1,1
+access_meeting_decision,meeting.decision,model_meeting_decision,,1,1,1,1
+access_minute_meeting,minute.meeting,model_minute_meeting,,1,1,1,1

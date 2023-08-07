@@ -1,0 +1,97 @@
+<?xm1 version="1.0" encoding "utf-8"?>
+<odoo>
+
+    <!--    Disease category    -->
+    <record id="disease_category_data_genetic" model="hr.hospital.disease.category" forcecreate="True">
+        <field name="name">Genetic disease</field>
+        <field name="desc">A genetic disorder or disease is caused by one or more genetic mutations.
+            It is often inherited, but some mutations are random and de novo.</field>
+    </record>
+
+    <record id="disease_category_data_chronic_disease" model="hr.hospital.disease.category" forcecreate="True">
+        <field name="name">Chronic disease</field>
+        <field name="desc">A chronic disease is one that persists over time,
+            often for at least six months, but may also include illnesses
+            that are expected to last for the entirety of one's natural life.</field>
+    </record>
+
+    <record id="disease_category_data_acquired" model="hr.hospital.disease.category" forcecreate="True">
+        <field name="name">Acquired disease</field>
+        <field name="desc">An acquired disease is one that began at some point during one's lifetime,
+            as opposed to disease that was already present at birth, which is congenital disease.
+            Acquired sounds like it could mean "caught via contagion",
+            but it simply means acquired sometime after birth.</field>
+    </record>
+
+    <record id="disease_data_genetic_disease" model="hr.hospital.disease.category" forcecreate="True">
+        <field name="name">disease_5</field>
+        <field name="parent_id" ref="hr_hospital_odooschool.disease_category_data_genetic"/>
+    </record>
+
+    <record id="disease_data_chronic_disease" model="hr.hospital.disease.category" forcecreate="True">
+        <field name="name">disease</field>
+        <field name="parent_id" ref="hr_hospital_odooschool.disease_category_data_chronic_disease"/>
+    </record>
+
+    <record id="disease_data_acquired_disease" model="hr.hospital.disease.category" forcecreate="True">
+        <field name="name">disease_1</field>
+        <field name="parent_id" ref="hr_hospital_odooschool.disease_category_data_acquired"/>
+    </record>
+
+    <record id="disease_data_acquired_disease_4" model="hr.hospital.disease.category" forcecreate="True">
+        <field name="name">disease_4</field>
+        <field name="parent_id" ref="hr_hospital_odooschool.disease_category_data_acquired"/>
+    </record>
+
+    <record id="disease_data_chronic_disease_2" model="hr.hospital.disease.category" forcecreate="True">
+        <field name="name">disease_2</field>
+        <field name="parent_id" ref="hr_hospital_odooschool.disease_category_data_chronic_disease"/>
+    </record>
+
+    <record id="disease_data_genetic_disease_3" model="hr.hospital.disease.category" forcecreate="True">
+        <field name="name">disease_3</field>
+        <field name="parent_id" ref="hr_hospital_odooschool.disease_category_data_genetic"/>
+    </record>
+
+
+        <!--    Disease tab    -->
+    <record id="disease_data_ref_chronic_disease_1" model="hr.hospital.disease" forcecreate="True">
+        <field name="disease_id" ref="hr_hospital_odooschool.disease_data_genetic_disease"/>
+    </record>
+
+    <record id="disease_data_ref_acquired" model="hr.hospital.disease" forcecreate="True">
+        <field name="disease_id" ref="hr_hospital_odooschool.disease_data_chronic_disease"/>
+    </record>
+
+    <record id="disease_data_ref_acquired_disease" model="hr.hospital.disease" forcecreate="True">
+        <field name="disease_id" ref="hr_hospital_odooschool.disease_data_acquired_disease_4"/>
+    </record>
+
+    <record id="disease_data_ref_chronic_disease_3" model="hr.hospital.disease" forcecreate="True">
+        <field name="disease_id" ref="hr_hospital_odooschool.disease_data_genetic_disease_3"/>
+    </record>
+
+
+    <!--    Analysis    -->
+    <record id="analysis_data_analysis_blood" model="hr.hospital.med.analysis" forcecreate="True">
+        <field name="name">Blood</field>
+        <field name="price">50</field>
+    </record>
+
+    <record id="analysis_data_soul" model="hr.hospital.med.analysis" forcecreate="True">
+        <field name="name">Soul</field>
+        <field name="price">500</field>
+    </record>
+
+    <record id="analysis_data_heart_check" model="hr.hospital.med.analysis" forcecreate="True">
+        <field name="name">Heart check</field>
+        <field name="price">150</field>
+    </record>
+
+    <record id="analysis_data_brain_state" model="hr.hospital.med.analysis" forcecreate="True">
+        <field name="name">Brain state</field>
+        <field name="price">100</field>
+    </record>
+
+
+</odoo>

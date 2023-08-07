@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="patient_visit_view_form" model="ir.ui.view">
+        <field name="name">hr_hospital_odooschool_patient_visit_view_form</field>
+        <field name="model">hr.hospital.patient.visit</field>
+        <field name="arch" type="xml">
+            <form string="Patient visit form">
+                <header>
+                    <field name="state" widget="statusbar" statusbar_visible="draft,created,done"/>
+                </header>
+                <sheet>
+                    <group>
+                        <field name="patient_id" attrs="{'readonly': [('state', '=', 'done')]}"/>
+                        <field name="doctor_id"/>
+                        <label for="diagnosis_id"/>
+                        <div class="o_row">
+                            <field name="diagnosis_id" readonly="1"/>
+                            <button type="object"
+                                    string="Add"
+                                    class="btn btn-primary"
+                                    name="add_diagnosis"
+                                    attrs="{'invisible': [('state', '=', 'done')]}"
+                                    title="Click to add diagnosis"
+                            />
+                        </div>
+                        <field name="is_done" attrs="{'readonly': [('state', '=', 'done')]}"/>
+                        <field name="visit_date" required="1" attrs="{'readonly': [('state', '=', 'done')]}"/>
+                        <field name="visit_date_date" required="1" invisible="1"
+                               attrs="{'readonly': [('state', '=', 'done')]}"/>
+                        <field name="visit_end_time" required="1" readonly="1"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="patient_visit_view_tree" model="ir.ui.view">
+        <field name="name">hr_hospital_odooschool_patient_visit_view_tree</field>
+        <field name="model">hr.hospital.patient.visit</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="state" invisible="1"/>
+                <field name="patient_id"/>
+                <field name="doctor_id"/>
+                <field name="diagnosis_id" readonly="1"/>
+                <field name="visit_date"/>
+                <field name="is_done"/>
+                <button name="change_visit_action"
+                        string="Edit"
+                        type="object"
+                        class="btn btn-primary"
+                        attrs="{'invisible': [('state', '!=', 'created')]}"
+                />
+            </tree>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="patient_visit_view_calendar">
+        <field name="name">hr_hospital_odooschool_patient_visit_view_calendar</field>
+        <field name="model">hr.hospital.patient.visit</field>
+        <field name="arch" type="xml">
+            <calendar string="Patient visit" date_start="visit_date" date_stop="visit_end_time" color="patient_id"
+                      quick_add="False" mode="month">
+                <field name="patient_id" avatar_field="img"/>
+                <field name="doctor_id" filters="1" avatar_field="img"/>
+            </calendar>
+        </field>
+    </record>
+
+    <record id="hr_hospital_odooschool_action_view_patient_visit" model="ir.actions.act_window">
+        <field name="name">Patients visits</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">hr.hospital.patient.visit</field>
+        <field name="view_mode">calendar,tree,form</field>
+        <field name="view_id" ref="patient_visit_view_calendar"/>
+    </record>
+
+    <menuitem id="hr_hospital_odooschool_patient_visit_menu"
+              name="Visits" parent="hr_hospital_odooschool_schedules_visits_main_menu"
+              action="hr_hospital_odooschool_action_view_patient_visit" sequence="400"/>
+
+</odoo>

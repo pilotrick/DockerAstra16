@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="doctor_schedule_view_form" model="ir.ui.view">
+        <field name="name">hr_hospital_odooschool_doctor_schedule_view_form</field>
+        <field name="model">hr.hospital.doctor.schedule</field>
+        <field name="arch" type="xml">
+            <form string="Doctor schedule form">
+                <sheet>
+                    <group>
+                        <field name="visit_date"/>
+                        <field name="start_time"/>
+                        <field name="shift_end_time" readonly="1"/>
+                        <field name="shift_duration"/>
+                        <field name="day_week" readonly="1"/>
+                        <field name="doctor_id"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="doctor_schedule_view_tree" model="ir.ui.view">
+        <field name="name">hr_hospital_odooschool_doctor_schedule_view_tree</field>
+        <field name="model">hr.hospital.doctor.schedule</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="visit_date"/>
+                <field name="start_time"/>
+                <field name="doctor_id"/>
+                <field name="shift_end_time" readonly="1" optional="hide"/>
+            </tree>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="doctor_schedule_view_calendar">
+        <field name="name">hr_hospital_odooschool_doctor_schedule_view_calendar</field>
+        <field name="model">hr.hospital.doctor.schedule</field>
+        <field name="arch" type="xml">
+            <calendar string="Patient visit" date_start="start_time" date_stop="shift_end_time"
+                      mode="month" color="doctor_id" quick_add="False">
+                <field name="doctor_id" avatar_field="img"/>
+                <field name="start_time"/>
+                <field name="shift_end_time"/>
+                <!--                    <field name="visit_ids" avatar_field="img"/>-->
+            </calendar>
+        </field>
+    </record>
+
+    <record id="hr_hospital_odooschool_action_view_doctor_schedule" model="ir.actions.act_window">
+        <field name="name">Doctor schedule</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">hr.hospital.doctor.schedule</field>
+        <field name="view_mode">calendar,tree,form</field>
+        <field name="view_id" ref="doctor_schedule_view_calendar"/>
+    </record>
+
+    <menuitem id="hr_hospital_odooschool_doctor_schedule_menu"
+              name="Doctor schedule" parent="hr_hospital_odooschool_schedules_visits_main_menu"
+              action="hr_hospital_odooschool_action_view_doctor_schedule" sequence="200"/>
+
+</odoo>

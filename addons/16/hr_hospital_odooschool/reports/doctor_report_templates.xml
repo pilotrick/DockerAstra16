@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+    <template id="doctor_report">
+        <t t-call="web.html_container">
+            <t t-foreach="docs" t-as="doc">
+                <t t-call="web.external_layout">
+                    <div class="page">
+                        <div class="oe_structure"/>
+                        <div class="text_center">
+                            <h2 style="text-align:center;">Doctor report</h2>
+                            <br/>
+                            <div>
+                                <t t-if="doc.img">
+                                    <p style="text-align: right;">
+                                        <img t-if="doc.img" t-att-src="image_data_uri(doc.img)"
+                                             style="max-height: 500px; border-radius: 50%" alt="Photo"/>
+                                    </p>
+                                </t>
+                            </div>
+                            <h4 style="text-align: right;">Doctor:
+                                <span t-field="doc.name"/>
+                            </h4>
+                            <h5 style="text-align: right;">Specialty:
+                                <span t-field="doc.specialty"/>
+                            </h5>
+                            <t t-if="doc.parent_id">
+                                <h5 style="text-align: right;">Mentor:
+                                    <span t-field="doc.parent_id.name"/>
+                                </h5>
+                            </t>
+                            <br/>
+                            <br/>
+                            <br/>
+                            <br/>
+                            <br/>
+                            <h4 style="text-align:center;">Patients</h4>
+                            <br/>
+
+
+                            <table class="table" style="margin-left:auto;margin-right:auto;width:788px">
+                                <thead>
+                                    <tr style="font-size:14px; text-align:center">
+                                        <th>
+                                            <span>
+                                                <strong>Name</strong>
+                                            </span>
+                                        </th>
+                                        <th>
+                                            <span>
+                                                <strong>Birthday</strong>
+                                            </span>
+                                        </th>
+                                        <th>
+                                            <span>
+                                                <strong>Phone</strong>
+                                            </span>
+                                        </th>
+                                        <th>
+                                            <span>
+                                                <strong>Contact person</strong>
+                                            </span>
+                                        </th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <t t-foreach="doc.patient_ids" t-as="patient">
+                                        <tr style="font-size:14px; text-align: centre">
+                                            <td style="width:252px">
+                                                <span t-field="patient.name"/>
+                                            </td>
+                                            <td style="width:134px">
+                                                <span t-field="patient.birthday"/>
+                                            </td>
+                                            <td style="width:150px">
+                                                <span t-field="patient.phone"/>
+                                            </td>
+                                            <td style="width:252px">
+                                                <span t-field="patient.contact_person"/>
+                                            </td>
+                                        </tr>
+                                    </t>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="footer">
+                        <div style="border-top: 1px solid #CCCCCC; color:#6D6D6D;">
+                            <div style="padding-top:10px;">
+                                <span t-esc="res_company.city"/>
+                            </div>
+                            <div>
+                                <span t-esc="context_timestamp(datetime.datetime.now()).strftime('%d-%m-%Y %H:%M')"/>
+                            </div>
+                        </div>
+                    </div>
+                </t>
+            </t>
+        </t>
+    </template>
+
+</odoo>
