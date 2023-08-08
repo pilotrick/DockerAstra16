@@ -25,7 +25,7 @@
     'category': 'Discuss',
     'summary': """Send Mail to all Child Contact in Sales and Invoice""",
     'description': """Send Mail to all Child Contact in Sales and Invoice""",
-    'author': 'Cybrosys Techno Solutions',
+    'author': 'Astratech',
     'company': 'Cybrosys Techno Solutions',
     'maintainer': 'Cybrosys Techno Solutions',
     'website': "https://www.cybrosys.com",

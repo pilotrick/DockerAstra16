@@ -4,7 +4,7 @@
     "name" : "Manual Currency Exchange Rate on Invoice/Payment/Sale/Purchase in Odoo",
     "version" : "16.0.0.2",
     "depends" : ['base','account','purchase','sale_management','stock'],
-    "author": "BrowseInfo",
+    "author": "Astratech",
     "summary": "Apps apply manual currency rate on invoice manual currency rate on payment manual currency rate on sales manual currency rate on purchase custom currency rate on invoice manual Currency Exchange Rate on Invoice custom Currency Exchange Rate on sales order",
     "description": """
     Odoo/OpenERP module for manul currency rate converter

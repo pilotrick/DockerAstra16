@@ -27,7 +27,7 @@
     'description': """In trio combination of red, green and yellow Educational ERP,
     opens the new gate way for management""",
     'category': 'Theme',
-    'author': 'Cybrosys Techno Solutions',
+    'author': 'Astratech',
     'company': 'Cybrosys Techno Solutions',
     'maintainer': 'Cybrosys Techno Solutions',
     'website': "https://www.educationalerp.com",

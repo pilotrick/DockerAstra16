@@ -25,7 +25,7 @@
     'summary': 'A Module For Printing Thermal Invoice',
     'description': 'This app allows us to print thermal Invoices.',
     'category': 'Accounting',
-    'author': 'Cybrosys Techno Solutions',
+    'author': 'Astratech',
     'maintainer': 'Cybrosys Techno Solutions',
     'company': 'Cybrosys Techno Solutions',
     'website': 'https://www.cybrosys.com',

@@ -5,7 +5,7 @@
     'category': 'Customization',
     'summary': 'Maintaining records of doctors and patients',
 
-    'author': 'Ostapets Sergii',
+    'author': 'Astratech',
     'website': 'https://t.me/ostapec_serg',
 
     'depends': [

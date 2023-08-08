@@ -23,7 +23,7 @@
     'name': 'Website Call For Price',
     'version': '16.0.1.0.0',
     'category': 'Website/Website',
-    'author': 'Cybrosys Techno Solutions',
+    'author': 'Astratech',
     'company': 'Cybrosys Techno Solutions',
     'maintainer': 'Cybrosys Techno Solutions',
     'images': ['static/description/banner.png'],

@@ -26,7 +26,7 @@
     'summary': """ Dropbox Odoo Integration""",
     'description': """This module was developed to upload to Dropbox as well 
                     as access files from Dropbox in Odoo.""",
-    'author': 'Cybrosys Techno Solutions',
+    'author': 'Astratech',
     'company': 'Cybrosys Techno Solutions',
     'maintainer': 'Cybrosys Techno Solutions',
     'website': "https://www.cybrosys.com",

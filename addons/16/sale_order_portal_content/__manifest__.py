@@ -5,7 +5,7 @@
     "version": "1.0.0",
     "category": "Sale",
     "website": "https://ippdr.com/",
-    "author": "International Pack & Paper",
+    "author": "Astratech",
     "summary": "Add image and description to the sale order portal content view",
     "license": "AGPL-3",
     "application": False,

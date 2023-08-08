@@ -29,7 +29,7 @@
                       an option to send reminder mail for all the partners 
                       with due on sale order and invoicing.By using scheduled 
                       action, it will send reminder mail in the exact time.""",
-    'author': 'Cybrosys Techno Solutions',
+    'author': 'Astratech',
     'company': 'Cybrosys Techno Solutions',
     'maintainer': 'Cybrosys Techno Solutions',
     'website': "https://www.cybrosys.com",

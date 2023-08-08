@@ -22,7 +22,7 @@
 {
     'name': 'Delayed Pickings Notification',
     'version': '15.0.0.0',
-    'author': 'iWesabe',
+    'author': 'Astratech',
     'summary': 'Email notification for delayed incoming pickings',
     'description': """This module helps to send the mail notification to 
                     purchase representative and picking responsible user for delayed incoming pickings.""",

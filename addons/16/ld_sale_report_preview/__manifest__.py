@@ -3,7 +3,7 @@
 {
     'name': 'Sale Report Preview',
     'version': '1.0',
-    'author': 'Livedigital Technologies Private Limited',
+    'author': 'Astratech',
     'company': 'Livedigital Technologies Private Limited',
     'maintainer': 'Livedigital Technologies Private Limited',
     'website': 'https://ldtech.in',

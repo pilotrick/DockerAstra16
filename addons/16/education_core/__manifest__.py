@@ -26,7 +26,7 @@
     'summary': """Core Module of Educational ERP""",
     'description': 'Core Module of Educational ERP',
     'category': 'Educational',
-    'author': 'Cybrosys Techno Solutions',
+    'author': 'Astratech',
     'company': 'Cybrosys Techno Solutions',
     'website': "http://www.educationalerp.com",
     'depends': ['base', 'mail', 'stock', 'education_theme', 'hr_recruitment'],

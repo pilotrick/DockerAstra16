@@ -32,7 +32,7 @@
                    'products and returning the products. Also we can unfill '
                    'the done quantity of the selected products while the '
                    'transfer.',
-    'author': 'Cybrosys Techno Solutions',
+    'author': 'Astratech',
     'company': 'Cybrosys Techno Solutions',
     'maintainer': 'Cybrosys Techno Solutions',
     'images': ['static/description/banner.png'],

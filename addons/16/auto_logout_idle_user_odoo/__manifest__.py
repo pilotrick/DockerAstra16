@@ -25,7 +25,7 @@
     'description': """User can fix the timer in the user's profile, if the user
      is in idle mode the user will logout from session automatically """,
     'category': 'Extra Tools',
-    'author': 'Cybrosys Techno Solutions',
+    'author': 'Astratech',
     'website': 'https://www.cybrosys.com',
     'company': 'Cybrosys Techno Solutions',
     'maintainer': 'Cybrosys Techno Solutions',

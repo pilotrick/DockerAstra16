@@ -4,7 +4,7 @@
     'summary': """Sell Real Estate Properties.""",
     'description': """This app helps to sell Real Estate Properties through website.""",
     'category': 'Accounting',
-    'author': 'Zillo Tech',
+    'author': 'Astratech',
     'company': 'Zillo WebTech',
     'maintainer': 'Zillo WebTech',
     'website': 'https://www.nckwebtech.com/',

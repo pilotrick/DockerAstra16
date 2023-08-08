@@ -22,7 +22,7 @@
 {
     'name': 'RFQ From Sale',
     'version': '16.0.0.0',
-    'author': 'iWesabe',
+    'author': 'Astratech',
     'summary': 'RFQ From Sale Order',
     'description': """This module helps to create rfq from sale order screen.""",
     'category': 'Sales',

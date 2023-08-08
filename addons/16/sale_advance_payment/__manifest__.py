@@ -4,7 +4,7 @@
 {
     "name": "Sale Advance Payment",
     "version": "15.0.1.0.1",
-    "author": "Comunitea, Odoo Community Association (OCA)",
+    "author": "Astratech",
     "website": "https://github.com/OCA/sale-workflow",
     "category": "Sales",
     "license": "AGPL-3",

@@ -28,7 +28,7 @@
     'description': """This app allows to set the pricelist automatically based 
                     on the respective customer in the sale order. The pricelist 
                     is selecting based on the customer gorup.""",
-    'author': 'Cybrosys Techno Solutions',
+    'author': 'Astratech',
     'company': 'Cybrosys Techno Solutions',
     'maintainer': 'Cybrosys Techno Solutions',
     'website': 'https://www.cybrosys.com',

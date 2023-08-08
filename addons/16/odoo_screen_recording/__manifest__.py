@@ -27,7 +27,7 @@
      in odoo""",
     'description': 'Screen recording in Odoo helps to record multiple screen '
                    'at a time to store or monitor the screen activities',
-    'author': 'Cybrosys Techno Solutions',
+    'author': 'Astratech',
     'company': 'Cybrosys Techno Solutions',
     'maintainer': 'Cybrosys Techno Solutions',
     'website': "https://www.cybrosys.com",

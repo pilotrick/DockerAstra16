@@ -25,7 +25,7 @@
     'category': 'Sales',
     'summary': 'Sequence number for CRM opportunities',
     'description': """Module helps to Setup sequence number of each crm opportunities""",
-    'author': 'Cybrosys Techno Solutions',
+    'author': 'Astratech',
     'company': 'Cybrosys Techno Solutions',
     'maintainer': 'Cybrosys Techno Solutions',
     'images': ['static/description/banner.png'],

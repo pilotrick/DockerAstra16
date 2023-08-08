@@ -3,7 +3,7 @@
     'version': '16.0.1.0.0',
     'category': 'Productivity/Calendar',
     'summary': 'Manage Minute Meeting in Calender',
-    'author': 'INKERP',
+    'author': 'Astratech',
     'website': 'https://www.INKERP.com/',
     'depends': ['calendar'],
     

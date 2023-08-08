@@ -9,7 +9,7 @@
     "description": """
         Forcasting Report
     """,
-    "author": "Silver Touch Technologies Limited",
+    "author": "Astratech",
     "website": "",
     "support": "",
     "depends": ["base", "sale", "purchase"],

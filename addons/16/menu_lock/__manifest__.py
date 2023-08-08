@@ -26,7 +26,7 @@
     'description': """User can choose the menus and set the password for lock 
                     them""",
     'category': 'Extra Tools',
-    'author': 'Cybrosys Techno Solutions',
+    'author': 'Astratech',
     'company': 'Cybrosys Techno Solutions',
     'maintainer': 'Cybrosys Techno Solutions',
     'images': ['static/description/banner.jpg'],

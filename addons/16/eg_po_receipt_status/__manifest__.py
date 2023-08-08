@@ -3,7 +3,7 @@
     'version': '16.0',
     'category': 'Sale',
     'summery': 'Receipt Status on Purchase order',
-    'author': 'INKERP',
+    'author': 'Astratech',
     'website': "https://www.INKERP.com",
     'depends': ['purchase', 'purchase_stock'],
 

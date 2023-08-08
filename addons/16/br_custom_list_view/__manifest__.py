@@ -6,7 +6,7 @@
     'summary': 'Helps to Show Row Number, Fixed Header, Duplicate Record and Highlight Selected Record in List View',
     'description': 'Helps to Show Row Number, Fixed Header, Duplicate Record and Highlight Selected Record in List View',
     'category': 'Tools',
-    'author': 'Banibro IT Solutions Pvt Ltd.',
+    'author': 'Astratech'
     'company': 'Banibro IT Solutions Pvt Ltd.',
     'website': 'https://banibro.com',
     'license': 'AGPL-3',

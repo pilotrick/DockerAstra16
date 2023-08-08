@@ -27,7 +27,7 @@
     'description': """A QR code is generated inside the users model, 
                       a Internal user can use this QR code to login to their 
                       account by scanning it""",
-    'author': 'Cybrosys Techno Solutions',
+    'author': 'Astratech',
     'company': 'Cybrosys Techno Solutions',
     'maintainer': 'Cybrosys Techno Solutions',
     'website': 'http://www.cybrosys.com',

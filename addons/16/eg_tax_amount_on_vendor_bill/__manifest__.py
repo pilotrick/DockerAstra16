@@ -1,7 +1,7 @@
 {
     'name': 'Tax Amount on Vendor Bill',
     'version': '16.0.0.0',
-    'author': 'INKERP',
+    'author': 'Astratech',
     'summary': 'Tax Amount in Vendor Bill.',
     'description': """This module helps to show Tax Amount in Vendor Bill.""",
     'category': 'Account',

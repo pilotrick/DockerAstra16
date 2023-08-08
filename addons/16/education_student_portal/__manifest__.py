@@ -25,7 +25,7 @@
     'summary': """Manage Students portal & online admission  in Educational ERP""",
     'description': 'Students can view their details from their portal, And take online admission.',
     'category': 'Industries/Website',
-    'author': 'Cybrosys Techno Solutions',
+    'author': 'Astratech',
     'company': 'Cybrosys Techno Solutions',
     'maintainer': 'Cybrosys Techno Solutions',
     'website': "https://www.educationalerp.com",

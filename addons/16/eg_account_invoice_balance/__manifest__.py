@@ -3,7 +3,7 @@
     'version': '16.0.1.0.0',
     'category': 'Account',
     'summery': 'Check for customer credit on Invoice View/Print',
-    'author': 'INKERP',
+    'author': 'Astratech',
     'website': "https://www.INKERP.com",
     'depends': ['account'],
     

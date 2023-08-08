@@ -7,7 +7,7 @@
     'summary': 'Adds a tab in the sale order view to see the invoices not paid of the selected customer.',
     'description': 'Adds a tab in the sale order view to see the invoices not paid of the selected customer.',
     'depends': ['sale'],
-    'author': 'International Pack & Paper',
+    'author': 'Astratech',
     'website': 'https://ippdr.com/',
     'license': 'AGPL-3',
     'data': [

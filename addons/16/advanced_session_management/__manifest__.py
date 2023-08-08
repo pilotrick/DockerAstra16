@@ -13,7 +13,7 @@
     'version': '16.0.0.0.0',
     'summary': 'User Activity Log, User Activity Audit,  Session Management, Record Log, Activity Traces, Login Notification, User Activity Record, Record History, Login History, Login location, Login IP',
     'sequence': 6,
-    'author': 'Astratecg',
+    'author': 'Astratech',
     'license': 'OPL-1',
     'website': 'https://ashish-hirpara.com/r/odoo',
     'description':"""

@@ -79,8 +79,6 @@ class ResCompany(models.Model):
             tz = pytz.timezone('America/Santo_Domingo')
             today = datetime.datetime.now(tz).date()
             date = self.l10n_do_currency_next_execution_date or today
-            if date > today:
-                raise UserError(_('Le Fecha de Ejecucion no puede ser mayor al dia de hoy'))
             
             if not company.l10n_do_currency_provider:
                 raise UserError(_('Seleccione su banco de preferencia, Dar click al Icono de Banco'))

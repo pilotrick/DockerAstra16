@@ -7,7 +7,7 @@
     'summary': 'Adds a tab in the sale order view to see the products sold to the selected customer.',
     'description': 'Adds a tab in the sale order view to see the products sold to the selected customer in the specified time period.',
     'depends': ['sale'],
-    'author': 'International Pack & Paper',
+    'author': 'Astratech',
     'website': 'https://ippdr.com/',
     'license': 'AGPL-3',
     'data': [

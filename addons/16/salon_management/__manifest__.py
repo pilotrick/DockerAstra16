@@ -22,7 +22,7 @@
     'name': 'Beauty Spa Management',
     'summary': 'Beauty Parlour Management with Online Booking System',
     'version': '16.0.2.0.1',
-    'author': 'Cybrosys Techno Solutions',
+    'author': 'Astratech',
     'website': "https://www.cybrosys.com",
     'company': 'Cybrosys Techno Solutions',
     'maintainer': 'Cybrosys Techno Solutions',

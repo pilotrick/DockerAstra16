@@ -10,7 +10,7 @@
     "version": "16.0.1.0.0",
     "category": "Accounting & Finance",
     "website": "https://github.com/OCA/account-invoice-reporting",
-    "author": "Tecnativa, " "Odoo Community Association (OCA)",
+    "author": "Astratech",
     "license": "AGPL-3",
     "depends": ["stock_picking_invoice_link"],
     "data": ["views/report_invoice.xml"],

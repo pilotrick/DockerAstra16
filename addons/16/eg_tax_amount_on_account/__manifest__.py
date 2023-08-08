@@ -1,7 +1,7 @@
 {
     'name': 'Tax Amount on Account',
     'version': '16.0.0.0',
-    'author': 'INKERP',
+    'author': 'Astratech',
     'summary': 'Tax amount in Account Invoice.',
     'description': """This module helps to show Tax Amount in Account Invoice.""",
     'category': 'Account',

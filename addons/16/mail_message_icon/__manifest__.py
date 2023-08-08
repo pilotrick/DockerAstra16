@@ -3,7 +3,7 @@
     "summary": "Additional mail icons, enabling faster identification of email statuses",
     "version": "16.0.1.0.0",
     "category": "Discuss",
-    "author": "Solvti Sp. z o.o.",
+    "author": "Astratech",
     "website": "https://www.solvti.pl",
     "company": "Solvti",
     "maintainer": "Solvti",

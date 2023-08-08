@@ -22,7 +22,7 @@ Report for Report Designer (XLSX, XLSM).
     Report Designer Reports Designer Report Builder Reports Builder Product Report Customer Report POS Reports POS Report Analysis Report \
     BI Report BI Reports BI Business Intelligence Report Business Intelligence Reports BI Analytics BI Analytic Data Analysis Reporting Tool
     """,
-    'author': 'GTECH',
+    'author': 'Astratech',
     'support': 'vk.3141592653@gmail.com',
     'depends': ['account'],
     'images': ['static/description/banner_rep.png'],

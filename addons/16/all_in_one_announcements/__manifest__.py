@@ -27,7 +27,7 @@
     'description': """The module gives a complete analysis of the work
                     progress and also helps to send the work progress through 
                     email to the manager.""",
-    'author': 'Cybrosys Techno Solutions',
+    'author': 'Astratech',
     'company': 'Cybrosys Techno Solutions',
     'maintainer': 'Cybrosys Techno Solutions',
     'website': 'https://www.cybrosys.com',

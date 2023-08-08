@@ -28,7 +28,7 @@
                    " scheduling a cron job involves automating the process of "
                    "sending reminder emails at specified intervals "
                    "using a cron job.",
-    'author': 'Cybrosys Techno Solutions',
+    'author': 'Astratech',
     'maintainer': 'Cybrosys Techno Solutions',
     'company': 'Cybrosys Techno Solutions',
     'website': 'https://www.cybrosys.com',

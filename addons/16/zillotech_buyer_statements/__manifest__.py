@@ -5,7 +5,7 @@
     'description': """This module helps to generate the Customer/Vendor
     statement reports and send via email.""",
     'category': 'Accounting',
-    'author': 'Zillo Tech',
+    'author': 'Astratech',
     'company': 'Zillo WebTech',
     'maintainer': 'Zillo WebTech',
     'website': 'https://www.nckwebtech.com/',

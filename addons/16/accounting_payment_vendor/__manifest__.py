@@ -8,7 +8,7 @@
     'description': 'This module adds a vendor column to the tree view of payments in accounting.',
     'depends': ['account'],
     "website": "https://ippdr.com/",
-    "author": "International Pack & Paper",
+    "author": "Astratech",
     "license": "AGPL-3",
     'data': [
         'views/account_payment_inherit.xml',

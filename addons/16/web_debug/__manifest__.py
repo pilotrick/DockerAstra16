@@ -18,7 +18,7 @@
   "summary"              :  """Web: Odoo Debug Mode allows you to enable debug mode with just a click.""",
   "category"             :  "Extra Tools",
   "version"              :  "1.0.0",
-  "author"               :  "Webkul Software Pvt. Ltd.",
+  "author"               :  "Astratech",
   "maintainer"           :  "Prakash Kumar",
   "license"              :  "Other proprietary",
   "website"              :  "https://store.webkul.com/",

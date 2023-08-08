@@ -283,7 +283,7 @@ este módulo calcula comissão de vendas na fatura, Comissão de vendas baseada 
     Pagamento por factura com base em comissões do agente
 
     """,
-    "author" : "BrowseInfo",
+    "author": "Astratech",
     "website" : "https://www.browseinfo.in",
     "price": 60,
     "currency": 'EUR',

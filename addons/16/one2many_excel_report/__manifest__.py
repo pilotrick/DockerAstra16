@@ -27,7 +27,7 @@
     'description': """One2many Excel Report is a module which uses a widget 
     called one2many_excel for printing reports for one2many fields.""",
     'category': 'Extra Tools',
-    'author': 'Cybrosys Techno Solutions',
+    'author': 'Astratech',
     'company': 'Cybrosys Techno Solutions',
     'maintainer': 'Cybrosys Techno Solutions',
     'website': "https://www.cybrosys.com",

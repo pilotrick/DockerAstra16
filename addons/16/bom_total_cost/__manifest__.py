@@ -26,7 +26,7 @@
     'sequence': -100,
     'description': "This Module Helps to Show the 'Total cost per Unit and 'Total Cost of a BOM' Based on the Components Cost price",
     'category': "Manufacturing/Manufacturing",
-    'author': 'Cybrosys Techno Solutions',
+    'author': 'Astratech',
     'company': 'Cybrosys Techno Solutions',
     'maintainer': 'Cybrosys Techno Solutions',
     'website': 'https://www.cybrosys.com',
