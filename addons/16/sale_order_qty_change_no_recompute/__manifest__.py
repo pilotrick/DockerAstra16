@@ -6,7 +6,7 @@
     "version": "16.0.1.0.0",
     "category": "Sale Workflow",
     "website": "https://github.com/OCA/sale-workflow",
-    "author": "Astratech"
+    "author": "Astratech",
     "license": "AGPL-3",
     "application": False,
     "installable": True,
