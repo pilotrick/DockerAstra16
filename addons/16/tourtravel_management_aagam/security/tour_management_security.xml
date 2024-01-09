@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+        <record model="ir.module.category" id="module_category_tour_management">
+            <field name="name">Tour Management</field>
+            <field name="sequence">100</field>
+        </record>
+        <record id="group_reservation_user" model="res.groups">
+            <field name="name">Reservation User</field>
+            <field name="category_id" ref="module_category_tour_management"/>
+        </record>
+        <record id="group_operation_user" model="res.groups">
+            <field name="name">Operation User</field>
+            <field name="category_id" ref="module_category_tour_management"/>
+        </record>
+        <record id="group_tour_account_user" model="res.groups">
+            <field name="name">Account User</field>
+            <field name="category_id" ref="module_category_tour_management"/>
+            <field name="implied_ids" eval="[(4, ref('account.group_account_manager'))]"/>
+        </record>
+        <record id="group_tour_management_user" model="res.groups">
+            <field name="name">Management</field>
+            <field name="category_id" ref="module_category_tour_management"/>
+            <field name="implied_ids" eval="[(6, 0, [ref('tourtravel_management_aagam.group_reservation_user'), ref('tourtravel_management_aagam.group_operation_user'), ref('tourtravel_management_aagam.group_tour_account_user')])]"/>
+        </record>
+    </data>
+</odoo>

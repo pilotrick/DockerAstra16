@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+<!--        <report-->
+<!--                string="Tour Creator"-->
+<!--                id="action_tour_creator_report"-->
+<!--                model="custom.tour"-->
+<!--                report_type="qweb-pdf"-->
+<!--                name="tourtravel_management_aagam.Tour_creator_view_template"-->
+<!--                file="tourtravel_management_aagam.Tour_creator_view_template"-->
+<!--                print_report_name="'Tour Creator'"-->
+<!--        />-->
+
+        <record id="action_tour_creator_report" model="ir.actions.report">
+            <field name="name">Tour Creator</field>
+            <field name="model">custom.tour</field>
+            <field name="report_type">qweb-pdf</field>
+            <field name="report_name">tourtravel_management_aagam.Tour_creator_view_template</field>
+            <field name="report_file">tourtravel_management_aagam.Tour_creator_view_template</field>
+            <field name="print_report_name">'Tour Creator'</field>
+            <field name="binding_model_id" ref="model_custom_tour"/>
+            <field name="binding_type">report</field>
+        </record>
+    </data>
+</odoo>

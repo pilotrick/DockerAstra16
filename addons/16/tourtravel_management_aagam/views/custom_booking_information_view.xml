@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+    	<record id="view_custom_booking_information_form" model="ir.ui.view">
+            <field name="name">custom.booking.information.form</field>
+            <field name="model">custom.booking.information</field>
+            <field name="arch" type="xml">
+                <form string="Custom Booking Information">
+                    <header>
+                        <button name="action_confirmed" type="object" string="Confirm" class="oe_highlight"
+                         attrs="{'invisible': [('state', '==', 'confirmed')]}"/>
+                         <field name="state" widget="statusbar" statusbar_visible="draft,confirmed"/>
+                    </header>
+                    <sheet>
+                        <group>
+                            <group>
+                            <field name="tour_reservation_id" required="1"/>
+                            <field name="total_no_of_pax" required="1"/>
+                                <field name="booking_date"/>
+                                </group>
+                            <group>
+                            <field name="total_adult"/>
+                            <field name="total_children"/>
+                            <field name="total_infant"/>
+                                </group>
+                            <group>
+                                <field name="customer_id"/>
+                                <field name="email_id"/>
+                                <field name="mobile_num"/>
+                            </group>
+                        </group>
+                        <group string="Tour Information">
+                                <group>
+                                    <field name="tour_id"/>
+                                    <field name="tour_type"/>
+                                </group>
+                                <group>
+                                    <field name="tour_start_date"/>
+                                    <field name="tour_season"/>
+                                    <field name="payment_policy"/>
+                                </group>
+                            <group>
+                            <field name="remarks"/>
+                                </group>
+                                </group>
+                        <notebook>
+                            <page string="Person Information">
+                                <field name="person_info_ids">
+                                    <tree>
+                                        <field name="name"/>
+                                        <field name="gender"/>
+                                        <field name="person_type"/>
+                                    </tree>
+                                </field>
+                            </page>
+                        </notebook>
+                    </sheet>
+                    <div class="oe_chatter">
+                        <field name="message_follower_ids" widget="mail_followers"/>
+                        <field name="message_ids" widget="mail_thread"/>
+                    </div>
+                </form>
+            </field>
+        </record>
+        
+        <record id="view_custom_booking_information_tree" model="ir.ui.view">
+            <field name="name">custom.booking.information.tree</field>
+            <field name="model">custom.booking.information</field>
+            <field name="arch" type="xml">
+                <tree string="Custom Booking Information">
+                    <field name="name"/>
+                    <field name="total_no_of_pax"/>
+                    <field name="total_adult"/>
+                    <field name="total_children"/>
+                    <field name="total_infant"/>
+                    <field name="tour_reservation_id"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="view_custom_booking_information_search" model="ir.ui.view">
+            <field name="name">custom.booking.information.search</field>
+            <field name="model">custom.booking.information</field>
+            <field name="arch" type="xml">
+                <search string="Custom Booking Information">
+                    <field name="total_no_of_pax"/>
+                    <field name="total_adult"/>
+                    <field name="total_children"/>
+                    <field name="total_infant"/>
+                    <field name="tour_reservation_id"/>
+                    <group expand="0" string="Group By">
+                        <filter name="group_tour_reservation" string="By tour reservation" domain="[]" context="{'group_by': 'tour_reservation_id'}"/>
+                    </group>
+                </search>
+            </field>
+        </record>
+
+        <record model="ir.actions.act_window" id="act_open_custom_booking_information_view">
+            <field name="name">Custom Booking Information</field>
+            <field name="res_model">custom.booking.information</field>
+            <field name="view_mode">tree,form</field>
+            <field name="search_view_id" ref="view_custom_booking_information_search"/>
+        </record>
+        
+        <menuitem id="menu_custom_booking_information" name="Custom Booking Information" 
+        	action="act_open_custom_booking_information_view" parent="menu_tour_reservation_menu"/>
+        
+    </data>
+</odoo>

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="tourtravel_management_aagam.tour_booking_info_view_template">
+<!--    <t t-call="web.external_layout">-->
+<!--        <div class="page">-->
+<!--            <div class="oe_structure"/>-->
+<!--            <div class="row">-->
+<!--                <div class="col-6">-->
+<!--                    <h3><b>Tour Booking Report</b></h3>-->
+<!--                    <div t-field="doc.company_id" t-options="{&quot;no_marker&quot;: True}"/>-->
+<!--                </div>-->
+<!--            <div class="oe_structure"/>-->
+<!--        </div>-->
+<!--        </div>-->
+<!--    </t>-->
+            <t t-call="web.external_layout">
+                <div class="text-center">
+                <h3><b>Tour Booking Report</b></h3>
+            </div>
+            </t>
+    </template>
+    <template id="tour_booking_info_view_template">
+    <t t-call="web.html_container">
+        <t t-foreach="docs" t-as="doc">
+            <t t-call="tourtravel_management_aagam.tour_booking_info_view_template"/>
+        </t>
+    </t>
+</template>
+</odoo>
+
+

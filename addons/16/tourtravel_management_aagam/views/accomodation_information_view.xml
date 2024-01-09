@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+<data>
+<record id="accomodation_information_form_view" model="ir.ui.view">
+	<field name="name">accomodation.information.form.view</field>
+	<field name="model">accomodation.information</field>
+	<field name="arch" type="xml">
+	<form>
+	 <sheet>
+		<group>
+			<group>
+				<field name="name" required="1"/>
+				<field name="partner_id" invisible="1"/>
+			</group>
+			<group>
+				<field name="room_type_id" required="1"/>
+			</group>
+			<group>
+				<field name="phone"/>
+			</group>
+			<group>
+				<field name="email"/>
+			</group>
+		</group>
+
+		<notebook>
+			<page string="Informations">
+			<field name="room_type_info_ids">
+				<tree editable="bottom">
+				<field name="room_type_id"/>
+				<field name="cost_price"/>
+				<field name="sale_price"/>
+				<field name="description"/>
+				</tree>
+			</field>
+			</page>
+			<page string="Hotel Images">
+			<group>
+				<group>
+				<field name="image_11" widget="image"/>
+				<field name="image_12" widget="image"/>
+				</group>
+				<group>
+				<field name="image_13" widget="image"/>
+				<field name="image_14" widget="image"/>
+				</group>
+			</group>
+			</page>
+		</notebook>
+
+		<!-- <group string='Informations'>
+			<field name="room_type_info_ids" nolabel="1">
+				<tree>
+					<field name="room_type_id"/>
+					<field name="cost_price"/>
+					<field name="sale_price"/>
+					<field name="description"/>
+				</tree>
+				<form>
+					<group>
+						<group>
+						<field name="room_type_id"/>
+							<field name="cost_price"/>
+						</group>
+						<group>
+							<field name="sale_price"/>
+							<field name="description"/>
+						</group>
+					</group>
+				</form>
+			</field>
+		</group> -->
+		<!-- 
+		 -->
+	</sheet>
+</form>
+</field>
+</record>
+
+<record id="accomodation_information_tree_view" model="ir.ui.view">
+	<field name="name">accomodation.information.tree.view</field>
+	<field name="model">accomodation.information</field>
+	<field name="arch" type="xml">
+		<tree>
+			<field name="name"/>
+			<field name="room_type_id"/>
+		</tree>
+	</field>
+</record>
+
+<record id="action_accomodation_info_view" model="ir.actions.act_window">
+	<field name="name">Hotel Information</field>
+	<field name="res_model">accomodation.information</field>
+	<field name="view_mode">tree,form</field>
+</record>
+
+<menuitem id="menu_accomodation_information" name="Hotel Information"
+	action="action_accomodation_info_view" parent="menu_tour_reservation_config"/>
+
+</data>
+</odoo>

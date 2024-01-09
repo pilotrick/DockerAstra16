@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+
+        <record id="paperformat_day_sheet" model="report.paperformat">
+            <field name="name">Day Sheet Paperformat</field>
+            <field name="default" eval="True"/>
+            <field name="format">custom</field>
+            <field name="page_height">280</field>
+            <field name="page_width">210</field>
+            <field name="orientation">Landscape</field>
+            <field name="margin_top">30</field>
+            <field name="margin_bottom">28</field>
+            <field name="margin_left">8</field>
+            <field name="margin_right">8</field>
+            <field name="header_line" eval="False"/>
+            <field name="header_spacing">20</field>
+            <field name="dpi">95</field>
+        </record>
+
+        <!--        <report id="action_report_today_day_sheet"-->
+        <!--            model="day.sheet"-->
+        <!--            string="Today Day Sheet Report"-->
+        <!--            report_type="qweb-pdf"-->
+        <!--            name="tourtravel_management_aagam.report_today_day_sheet"-->
+        <!--            file="tourtravel_management_aagam.report_today_day_sheet"-->
+        <!--            menu="True"/>-->
+
+        <record id="action_report_today_day_sheet" model="ir.actions.report">
+            <field name="name">Today Day Sheet Report</field>
+            <field name="model">day.sheet</field>
+            <field name="report_type">qweb-pdf</field>
+            <field name="report_name">tourtravel_management_aagam.report_today_day_sheet</field>
+            <field name="report_file">tourtravel_management_aagam.report_today_day_sheet</field>
+            <field name="paperformat_id" ref="tourtravel_management_aagam.paperformat_day_sheet"/>
+        </record>
+
+
+<!--        <record id="action_report_today_day_sheet" model="ir.actions.report">-->
+<!--            <field name="paperformat_id" ref="tourtravel_management_aagam.paperformat_day_sheet"/>-->
+<!--        </record>-->
+
+        <!--        <report id="action_report_day_sheet"-->
+        <!--            model="day.sheet"-->
+        <!--            string="Day Sheet Report"-->
+        <!--            report_type="qweb-pdf"-->
+        <!--            name="tourtravel_management_aagam.report_day_sheet"-->
+        <!--            file="tourtravel_management_aagam.report_day_sheet"-->
+        <!--            menu="True"/>-->
+
+        <record id="action_report_day_sheet" model="ir.actions.report">
+            <field name="name">Day Sheet Report</field>
+            <field name="model">day.sheet</field>
+            <field name="report_type">qweb-pdf</field>
+            <field name="report_name">tourtravel_management_aagam.report_day_sheet</field>
+            <field name="report_file">tourtravel_management_aagam.report_day_sheet</field>
+                <field name="paperformat_id" ref="tourtravel_management_aagam.paperformat_day_sheet"/>
+        </record>
+
+<!--        <record id="action_report_day_sheet" model="ir.actions.report">-->
+<!--                <field name="paperformat_id" ref="tourtravel_management_aagam.paperformat_day_sheet"/>-->
+<!--        </record>-->
+
+        <!--        <report id="action_report_tour_reservation"-->
+        <!--            model="tour.reservation"-->
+        <!--            string="Tour Reservation Report"-->
+        <!--            report_type="qweb-pdf"-->
+        <!--            name="tourtravel_management_aagam.report_tour_reservation"-->
+        <!--            file="tourtravel_management_aagam.report_tour_reservation"-->
+        <!--            menu="True"/>-->
+
+        <record id="action_report_tour_reservation" model="ir.actions.report">
+            <field name="name">Tour Reservation Report</field>
+            <field name="model">tour.reservation</field>
+            <field name="report_type">qweb-pdf</field>
+            <field name="report_name">tourtravel_management_aagam.report_tour_reservation</field>
+            <field name="report_file">tourtravel_management_aagam.report_tour_reservation</field>
+        </record>
+
+        <!--        <report id="action_report_tour_program"-->
+        <!--            model="tour.reservation"-->
+        <!--            string="Tour Program Report"-->
+        <!--            report_type="qweb-pdf"-->
+        <!--            name="tourtravel_management_aagam.report_tour_program"-->
+        <!--            file="tourtravel_management_aagam.report_tour_program"-->
+        <!--            menu="True"/>-->
+
+        <record id="action_report_tour_program" model="ir.actions.report">
+            <field name="name">Tour Program Report</field>
+            <field name="model">tour.reservation</field>
+            <field name="report_type">qweb-pdf</field>
+            <field name="report_name">tourtravel_management_aagam.report_tour_program</field>
+            <field name="report_file">tourtravel_management_aagam.report_tour_program</field>
+        </record>
+
+        <!--        <report id="action_report_extra_service"-->
+        <!--            model="tour.reservation"-->
+        <!--            string="Extra service Report"-->
+        <!--            report_type="qweb-pdf"-->
+        <!--            name="tourtravel_management_aagam.report_extra_services"-->
+        <!--            file="tourtravel_management_aagam.report_extra_services"-->
+        <!--            menu="True"/>-->
+        <!--        -->
+        <record id="action_report_extra_service" model="ir.actions.report">
+            <field name="name">Extra service Report</field>
+            <field name="model">tour.reservation</field>
+            <field name="report_type">qweb-pdf</field>
+            <field name="report_name">tourtravel_management_aagam.report_extra_services</field>
+            <field name="report_file">tourtravel_management_aagam.report_extra_services</field>
+        </record>
+    </data>
+</odoo>

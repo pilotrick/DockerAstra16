@@ -1,0 +1,1463 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>
+    Tour and travel management in odoo, Tour and travel booking in odoo
+    </title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" integrity="sha512-5A8nwdMOWrSz20fDsjczgUidUBR8liPYU+WymTZP1lmY9G6Oc7HlZv156XqnsgNUzTyMefFTcsFH/tnJE/+xBg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800&family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;0,800;1,300;1,400;1,600;1,700;1,800&display=swap" rel="stylesheet">    
+  </head>
+  <body>
+<div class="container">
+   <hr>
+      <div class="row">
+        <div class="col-lg-2" style="text-align: left;">
+          <img src="images/aagaminfotech-logo.png" alt="aagaminfotech all odoo apps" class="img-fluid" >
+        </div>
+        <div class="col-lg-3 justify-content-between align-self-center" style="border-left: 1px solid #e5e5e5;border-right: 1px solid #e5e5e5;align-self: center;justify-content: space-between;padding: 0px 12px !important;">
+          <div class="text-right">
+            <a href="https://apps.odoo.com/apps/modules/browse?search=aagam+infotech" target="_blank" class="btn btn-sm" style="font-size:14px;font-weight:500;background-color:#3e9de6;color:#fff;border-radius: 25px;padding: 5px 10px 5px 10px;"><i class="fa fa-list-alt mr-1"></i>aagaminfotech Odoo Apps</a>
+            </div>          
+          </div>
+          <div class="col-lg-7 justify-content-between align-self-center" style="align-self: center !important;text-align: right;">
+            
+            <div class="mt-md-0 mt-4 mb-3 mb-lg-0">
+                <span class="fa fa-support" style="margin-right: 2px;color:#6c55bd; font-size:18px; vertical-align:middle"></span>
+                <span style="color:#406d8d; font-size:14px;font-weight: 800;">Support :</span>
+                 <div style="display: inline-block;">
+                <a href="mailto:business@aagaminfotech.com?subject=Tour Travel management in odoo" target="_blank" style="color:#406d8d;display:inline-block;padding: 3px 7px;border: 1px solid #6c55bd;border-radius: 5px;margin: 0 0 3px 0;">
+                  <span class="fa fa-envelope-o" style="margin-right: 2px;color:#6c55bd; font-size:18px;"></span>
+                  <span style="color:#406d8d; font-size:14px;font-weight: 500;">Email</span>
+                </a>
+              </div>
+              <span class="btn btn-sm" style="padding: 4px 12px 4px 6px !important;font-size:14px; font-weight:500;margin-bottom: 2px !important; border-radius: 25px; background-color:#3e9de6; color:#fff"><span style="position: relative;background-color: white;border-radius: 33px;padding: 2px;display: inline-flex;"><i class="fa fa-check" style="color: #406d8d;"></i></span> Community</span>
+              <span class="btn btn-sm" style="padding: 4px 10px 4px 6px !important;font-size:14px; font-weight:500;margin-bottom: 2px !important; border-radius: 25px; background-color:#3e9de6; color:#fff"><span style="position: relative;background-color: white;border-radius: 33px;padding: 2px;display: inline-flex;"><i class="fa fa-check" style="color: #406d8d;"></i></span> Enterprise</span>
+              <span class="btn btn-sm" style="padding: 4px 10px 4px 6px !important;font-size:14px; font-weight:500;margin-bottom: 2px !important; border-radius: 25px; background-color:#3e9de6; color:#fff"><span style="position: relative;background-color: white;border-radius: 33px;padding: 2px;display: inline-flex;"><i class="fa fa-check" style="color: #406d8d;"></i></span> Odoo.sh</span>
+            </div>
+          </div>
+        </div>
+        <hr>
+    
+       <div class="" style="text-align: center;">            
+           <h1 style="color:#bd4398; font-size:28px;">Tour, Travel and Hotel booking management in odoo</h1><h1 style="color:#007bff; font-size:28px; padding-bottom:20px"> <a href="https://apps.odoo.com/apps/modules/14.0/tourtravel_management_aagam/" target="_blank">Tour Booking, Booking Service, Tour Agents, Hotel Booking in odoo</a></h1>
+            
+            <p style="color: #000000;font-size: 20px;padding-bottom: 5px;text-align: justify;">Tour and Travel management odoo module helps to manage contracts with all your suppliers with your accommodation, transportation, restaurants, guides and other logistical requirements.
+            </p>
+           <p style="color: #000000;font-size: 20px;padding-bottom: 5px;text-align: justify;">
+            You can configure accommodation prices based on date range pricing for the packages can be set according to the currency and can be calculated as per the exchange rate of the selected currency. With tour management odoo module, tour operators can also calculate cost per person for adult and child and Tour agent or user can define sales price and cost price to maintain a margin of travel packages in odoo.
+            </p>
+            <p style="color: #000000;font-size: 20px;padding-bottom: 5px;text-align: justify;"> Tour Reservation in odoo, Travel Booking in odoo, create invoice for booking, hotel booking in odoo. Also we have implemented functionality for Agent registration, commission, import data, We will provide complete configuration for roles & rights and other features added for agents, tour consultants, drivers.
+            </p>
+
+          <h2  style="color: #116d82;text-align: center;font-size: 22px;font-weight: 600;">Tour Travel Management module Supported in Odoo Community and Odoo Enterprise
+          </h2>
+          <h1 style="color:red; padding:2px 0; font-size:18px; text-align:justify; font-weight:bold">Tour and travel management in odoo module Supported Odoo V16, V15, V14, V13, V12 version with <b>Multiple languages supported (English, Arabic, Chinese Traditional, Chinese Simplified, Danish-dansk, Dutch-Nederlands, Spanish - Español, French-français) </b> in odoo backend. </h1>
+      </div>
+
+      <section class="oe_container oe_dark">
+          <div class="oe_row oe_spaced">
+              <div class="oe_demo border-0" style="text-align: center;">
+                  <img src="images/t-main.png" style="width:50%;">
+              </div>
+          </div>
+      </section>
+      <br>
+        <div style="background-color:#e1e3ea; border-radius:5px; padding:5px">
+            <h1 style="color:#091e42; font-size:24px"><b style="color:#59b724">Key Features</b> for <b style="color:#4e79bd">Tour and Travel Booking Management in odoo</b>
+            </h1>
+        </div>
+
+    <div style="padding-top:10px;">       
+      <div class="row">
+          <div class="col-lg-4 col-sm-6 col-12" style="margin-bottom: 30px;padding:0px 8px">
+                <div class="row" style="margin: 0 !important;border-radius: 10px;border: 0.5px solid #0c9ad1;">
+                  <div class="col-3">
+                    <img src="images/1-Tour-booking.png" alt="" style="max-width:100%;position: absolute;width: 55px;top: 50%;transform: translateY(-50%);text-align: center;margin: 0 auto;display: block;left: 0;right: 0;" alt="Booking hotel reservation, transport booking, room booking, Tour Accomodation from Tour Booking odoo erp module" />
+                  </div>
+                  <div class="col-9" style="padding-left: 0 !important">
+                    <h2 style="font-weight: 500;font-size: 18px;color:#f20c90;margin: 10px 0">Tour Booking</h2>
+                    <p style="color:#020202;">Booking hotel reservation, transport booking, room booking, Tour Accommodation from Tour Booking odoo module</p>
+                  </div>
+                </div>
+          </div>
+          <div class="col-lg-4 col-sm-6 col-12" style="margin-bottom: 30px;padding:0px 8px">
+                <div class="row" style="margin: 0 !important;border-radius: 10px;border: 0.5px solid #0c9ad1;">
+                  <div class="col-3">
+                    <img src="images/15-Reservation.png" alt="" style="max-width:100%;position: absolute;width: 55px;top: 50%;transform: translateY(-50%);text-align: center;margin: 0 auto;display: block;left: 0;right: 0;" alt="Booking hotel reservation, transport booking, room booking, Tour Accomodation from Tour Booking odoo erp module" />
+                  </div>
+                  <div class="col-9" style="padding-left: 0 !important">
+                    <h2 style="font-weight: 500;font-size: 18px;color:#f20c90;margin: 10px 0">Tour Itinerary</h2>
+                    <p style="color:#020202;">Manage Tour Itinerary with number of days, nights, lunch, dinner, breakfast, daily tour description, payment policy.</p>
+                  </div>
+                </div>
+          </div>
+          <div class="col-lg-4 col-sm-6 col-12" style="margin-bottom: 30px;padding:0px 8px">
+              <div class="row" style="margin: 0 !important;border-radius: 10px;border: 0.5px solid #0c9ad1;">
+                <div class="col-3">
+                  <img src="images/2-extra-service.png" alt="" style="max-width:100%;position: absolute;width: 55px;top: 50%;transform: translateY(-50%);text-align: center;margin: 0 auto;display: block;left: 0;right: 0;" alt="You can add Tour and Travel services &amp; Extra services such as Driver, Guide, Consultant in Tour and Travel module " />
+                </div>
+                <div class="col-9" style="padding-left: 0 !important">
+                  <h2 style="font-weight: 500;font-size: 18px;color:#f20c90;margin: 10px 0">Add services &amp; extra services</h2>
+                  <p style="color:#020202;">You can add Tour and Travel services &amp; Extra services such as Driver, Guide, Consultant in Tour and Travel module </p>
+                </div>
+              </div>            
+          </div>
+          <div class="col-lg-4 col-sm-6 col-12" style="margin-bottom: 30px;padding:0px 8px">
+              <div class="row" style="margin: 0 !important;border-radius: 10px;border: 0.5px solid #0c9ad1;">
+                <div class="col-3">
+                  <img src="images/3-Flight-Booking.png" alt="" style="max-width:100%;position: absolute;width: 55px;top: 50%;transform: translateY(-50%);text-align: center;margin: 0 auto;display: block;left: 0;right: 0;" alt="You can add Flight booking and add passengers Details such as date, time, Flight FROM, Flight TO, Cost" />
+                </div>
+                <div class="col-9" style="padding-left: 0 !important">
+                  <h2 style="font-weight: 500;font-size: 18px;color:#f20c90;margin: 10px 0">Flight Booking Information</h2>
+                  <p style="color:#020202;">You can add Flight booking and add passengers Details such as date, time, Flight FROM, Flight TO, Cost and so on.</p>
+                </div>
+              </div>          
+          </div>
+          <div class="col-lg-4 col-sm-6 col-12" style="margin-bottom: 30px;padding:0px 8px">
+              <div class="row" style="margin: 0 !important;border-radius: 10px;border: 0.5px solid #0c9ad1;">
+                <div class="col-3">
+                  <img src="images/4-Passport-documentation.png" alt="" style="max-width:100%;position: absolute;width: 55px;top: 50%;transform: translateY(-50%);text-align: center;margin: 0 auto;display: block;left: 0;right: 0;" alt="You can manage required Documents for Tour Reservation of customers (Eg. Photo-Copy, National Id card, Passport, etc.)" />
+                </div>
+                <div class="col-9" style="padding-left: 0 !important">
+                  <h2 style="font-weight: 500;font-size: 18px;color:#f20c90;margin: 10px 0">Passport Documentation</h2>
+                  <p style="color:#020202;">You can manage required Documents for Tour Reservation of customers (Eg. Photo-Copy, National Id card, Passport, etc.)</p>
+                </div>
+              </div>    
+      
+          </div>
+          <div class="col-lg-4 col-sm-6 col-12" style="margin-bottom: 30px;padding:0px 8px">
+              <div class="row" style="margin: 0 !important;border-radius: 10px;border: 0.5px solid #0c9ad1;">
+                <div class="col-3">
+                  <img src="images/5-Ferry.png" alt="" style="max-width:100%;position: absolute;width: 55px;top: 50%;transform: translateY(-50%);text-align: center;margin: 0 auto;display: block;left: 0;right: 0;" alt="You can also Manage Ferry, Boat, Passenger Ship Booking Facility in this tour and travel booking module in odoo" />
+                </div>
+                <div class="col-9" style="padding-left: 0 !important">
+                  <h2 style="font-weight: 500;font-size: 18px;color:#f20c90;margin: 10px 0">Ferry/Boat/Ship Booking</h2>
+                  <p style="color:#020202;">You can also Manage Ferry, Boat, Passenger Ship Booking Facility in this tour and travel booking module in odoo</p>
+                </div>
+              </div>              
+          </div>
+          <div class="col-lg-4 col-sm-6 col-12" style="margin-bottom: 30px;padding:0px 8px">
+              <div class="row" style="margin: 0 !important;border-radius: 10px;border: 0.5px solid #0c9ad1;">
+                <div class="col-3">
+                  <img src="images/6-booking-service.png" alt="" style="max-width:100%;position: absolute;width: 55px;top: 50%;transform: translateY(-50%);text-align: center;margin: 0 auto;display: block;left: 0;right: 0;" alt="You can add sub booking services for each destination (Photographer, CAB Driver, Guide, etc.) in our Tour booking odoo module" />
+                </div>
+                <div class="col-9" style="padding-left: 0 !important">
+                  <h2 style="font-weight: 500;font-size: 18px;color:#f20c90;margin: 10px 0">Booking Services</h2>
+                  <p style="color:#020202;">You can add sub booking services for each destination (Photographer, CAB Driver, Guide, etc.) in our Tour booking odoo module</p>
+                </div>
+              </div>              
+          </div>
+          <div class="col-lg-4 col-sm-6 col-12" style="margin-bottom: 30px;padding:0px 8px">
+              <div class="row" style="margin: 0 !important;border-radius: 10px;border: 0.5px solid #0c9ad1;">
+                <div class="col-3">
+                  <img src="images/11-room.png" alt="" style="max-width:100%;position: absolute;width: 55px;top: 50%;transform: translateY(-50%);text-align: center;margin: 0 auto;display: block;left: 0;right: 0;" alt="Add Hotel's room information, capacity and facility such as AC Room, TV available, Gardning, Number of bed, etc." />
+                </div>
+                <div class="col-9" style="padding-left: 0 !important">
+                  <h2 style="font-weight: 500;font-size: 18px;color:#f20c90;margin: 10px 0">Hotel Room Type</h2>
+                  <p style="color:#020202;">Add Hotel's room information, capacity and facility such as AC Room, TV available, Gardning, Number of bed, etc. </p>
+                </div>
+              </div>          
+          </div>
+          <div class="col-lg-4 col-sm-6 col-12" style="margin-bottom: 30px;padding:0px 8px">
+              <div class="row" style="margin: 0 !important;border-radius: 10px;border: 0.5px solid #0c9ad1;">
+                <div class="col-3">
+                  <img src="images/8-customers.png" alt="" style="max-width:100%;position: absolute;width: 55px;top: 50%;transform: translateY(-50%);text-align: center;margin: 0 auto;display: block;left: 0;right: 0;" alt="Customer's inquiries and reminders possible with odoo tour module for prompt responses to queries, filter option" />
+                </div>
+                <div class="col-9" style="padding-left: 0 !important">
+                  <h2 style="font-weight: 500;font-size: 18px;color:#f20c90;margin: 10px 0">Customer Inquiry</h2>
+                  <p style="color:#020202;">Customer's inquiries and reminders possible with odoo tour module for prompt responses to queries, filter option..</p>
+                </div>
+              </div>             
+          </div>
+          <div class="col-lg-4 col-sm-6 col-12" style="margin-bottom: 30px;padding:0px 8px">
+              <div class="row" style="margin: 0 !important;border-radius: 10px;border: 0.5px solid #0c9ad1;">
+                <div class="col-3">
+                  <img src="images/9-invoice.png" alt="" style="max-width:100%;position: absolute;width: 55px;top: 50%;transform: translateY(-50%);text-align: center;margin: 0 auto;display: block;left: 0;right: 0;" alt="Based on Tour Booking confirmation, you can generate customer's invoice/bill in pdf format and also you can send email" />
+                </div>
+                <div class="col-9" style="padding-left: 0 !important">
+                  <h2 style="font-weight: 500;font-size: 18px;color:#f20c90;margin: 10px 0">Accounting Invoice</h2>
+                  <p style="color:#020202;">Based on Tour Booking confirmation, you can generate customer's invoice/bill in pdf format and also you can send email</p>
+                </div>
+              </div>            
+          </div>
+          <div class="col-lg-4 col-sm-6 col-12" style="margin-bottom: 30px;padding:0px 8px">
+              <div class="row" style="margin: 0 !important;border-radius: 10px;border: 0.5px solid #0c9ad1;">
+                <div class="col-3">
+                  <img src="images/10-consultant.png" alt="" style="max-width:100%;position: absolute;width: 55px;top: 50%;transform: translateY(-50%);text-align: center;margin: 0 auto;display: block;left: 0;right: 0;" alt="You can add Multiple tour Consulting Agencies/Individuals for Providing Booking Consulting Services" />
+                </div>
+                <div class="col-9" style="padding-left: 0 !important">
+                  <h2 style="font-weight: 500;font-size: 18px;color:#f20c90;margin: 10px 0">Tour Consulting</h2>
+                  <p style="color:#020202;">You can add Multiple tour Consulting Agencies/Individuals for Providing Booking Consulting Services</p>
+                </div>
+              </div>              
+          </div>
+          
+
+          <div class="col-lg-4 col-sm-6 col-12" style="margin-bottom: 30px;padding:0px 8px">
+              <div class="row" style="margin: 0 !important;border-radius: 10px;border: 0.5px solid #0c9ad1;">
+                <div class="col-3">
+                  <img src="images/12-place.png" alt="" style="max-width:100%;position: absolute;width: 55px;top: 50%;transform: translateY(-50%);text-align: center;margin: 0 auto;display: block;left: 0;right: 0;" alt="You can add tour beautiful places, historical place and spiritual cities, heritage sites in Tour Place form for Tour booking." />
+                </div>
+                <div class="col-9" style="padding-left: 0 !important">
+                  <h2 style="font-weight: 500;font-size: 18px;color:#f20c90;margin: 10px 0">Tour Place</h2>
+                  <p style="color:#020202;">You can add tour beautiful places, historical place and spiritual cities, heritage sites in Tour Place form for Tour booking.</p>
+                </div>
+              </div>   
+          </div>
+          <div class="col-lg-4 col-sm-6 col-12" style="margin-bottom: 30px;padding:0px 8px">
+              <div class="row" style="margin: 0 !important;border-radius: 10px;border: 0.5px solid #0c9ad1;">
+                <div class="col-3">
+                  <img src="images/13-driver.png" alt="" style="max-width:100%;position: absolute;width: 55px;top: 50%;transform: translateY(-50%);text-align: center;margin: 0 auto;display: block;left: 0;right: 0;" alt="You can Manage Tour Driver Information(name,email Id,contact number), In this Tour and Travel Booking in odoo" />
+                </div>
+                <div class="col-9" style="padding-left: 0 !important">
+                  <h2 style="font-weight: 500;font-size: 18px;color:#f20c90;margin: 10px 0">Tour Driver</h2>
+                  <p style="color:#020202;">You can Manage Tour Driver Information(name,email Id,contact number), In this Tour and Travel Booking in odoo</p>
+                </div>
+              </div>            
+          </div>
+          <div class="col-lg-4 col-sm-6 col-12" style="margin-bottom: 30px;padding:0px 8px">
+              <div class="row" style="margin: 0 !important;border-radius: 10px;border: 0.5px solid #0c9ad1;">
+                <div class="col-3">
+                  <img src="images/14-guide.png" alt="" style="max-width:100%;position: absolute;width: 55px;top: 50%;transform: translateY(-50%);text-align: center;margin: 0 auto;display: block;left: 0;right: 0;" alt="Tour guide for present travelling places, detail for special food, Tour guide can give the information of history, art, culture" />
+                </div>
+                <div class="col-9" style="padding-left: 0 !important">
+                  <h2 style="font-weight: 500;font-size: 18px;color:#f20c90;margin: 10px 0">Tour Guide</h2>
+                  <p style="color:#020202;">Tour guide for present travelling places, detail for special food, Tour guide can give the information of history, art, culture</p>
+                </div>
+              </div>          
+          </div>
+          <div class="col-lg-4 col-sm-6 col-12" style="margin-bottom: 30px;padding:0px 8px">
+              <div class="row" style="margin: 0 !important;border-radius: 10px;border: 0.5px solid #0c9ad1;">
+                <div class="col-3">
+                  <img src="images/15-Reservation.png" alt="" style="max-width:100%;position: absolute;width: 55px;top: 50%;transform: translateY(-50%);text-align: center;margin: 0 auto;display: block;left: 0;right: 0;" alt="You can quickly add Tour Details along with Services, Flights detail, Accommodation, Visa, Documents, Extra Services, Tour Itinerary" />
+                </div>
+                <div class="col-9" style="padding-left: 0 !important">
+                  <h2 style="font-weight: 500;font-size: 18px;color:#f20c90;margin: 10px 0">Tour Reservation</h2>
+                  <p style="color:#020202;">You can quickly add Tour Details along with Services, Flights detail, Accommodation, Visa, Documents, Extra Services, Tour Itinerary etc.</p>
+                </div>
+              </div> 
+          </div>
+
+            <div class="col-lg-4 col-sm-6 col-12" style="margin-bottom: 30px;padding:0px 8px">
+                  <div class="row" style="margin: 0 !important;border-radius: 10px;border: 0.5px solid #0c9ad1;">
+                    <div class="col-3">
+                      <img src="images/16-meals.png" alt="" style="max-width:100%;position: absolute;width: 55px;top: 50%;transform: translateY(-50%);text-align: center;margin: 0 auto;display: block;left: 0;right: 0;" alt="Add Tour Destinations, Hotels, Tour Meals - Food Detail for Breakfast, Lunch, Dinner, etc. with Travel booking module" />
+                    </div>
+                    <div class="col-9" style="padding-left: 0 !important">
+                      <h2 style="font-weight: 500;font-size: 18px;color:#f20c90;margin: 10px 0">Tour Meals</h2>
+                      <p style="color:#020202;">Add Tour Destinations, Hotels, Tour Meals - Food Detail for Breakfast, Lunch, Dinner, etc. with Travel booking module</p>
+                    </div>
+                  </div>              
+              </div>
+              <div class="col-lg-4 col-sm-6 col-12" style="margin-bottom: 30px;padding:0px 8px">
+                  <div class="row" style="margin: 0 !important;border-radius: 10px;border: 0.5px solid #0c9ad1;">
+                    <div class="col-3">
+                      <img src="images/17-contacts.png" alt="" style="max-width:100%;position: absolute;width: 55px;top: 50%;transform: translateY(-50%);text-align: center;margin: 0 auto;display: block;left: 0;right: 0;" alt="Add tour and travel organizer contact Detail, add tour agent's detail, Sub Agent, Other contact for further contacts" />
+                    </div>
+                    <div class="col-9" style="padding-left: 0 !important">
+                      <h2 style="font-weight: 500;font-size: 18px;color:#f20c90;margin: 10px 0">Contacts Agent</h2>
+                      <p style="color:#020202;">Add tour and travel organizer contact Detail, add tour agent's detail, Sub Agent, Other contact for further contacts</p>
+                    </div>
+                  </div> 
+              </div>
+              <div class="col-lg-4 col-sm-6 col-12" style="margin-bottom: 30px;padding:0px 8px">
+                  <div class="row" style="margin: 0 !important;border-radius: 10px;border: 0.5px solid #0c9ad1;">
+                    <div class="col-3">
+                      <img src="images/19-job-card.png" alt="" style="max-width:100%;position: absolute;width: 55px;top: 50%;transform: translateY(-50%);text-align: center;margin: 0 auto;display: block;left: 0;right: 0;" alt="Create job card for hotel staff or driver for services management with Hotel booking management in Odoo" />
+                    </div>
+                    <div class="col-9" style="padding-left: 0 !important">
+                      <h2 style="font-weight: 500;font-size: 18px;color:#f20c90;margin: 10px 0">Job Card</h2>
+                      <p style="color:#020202;">Create job card for hotel staff or driver for services management with Hotel booking management in Odoo</p>
+                    </div>
+                  </div>
+              </div>
+              <div class="col-lg-4 col-sm-6 col-12" style="margin-bottom: 30px;padding:0px 8px">
+                  <div class="row" style="margin: 0 !important;border-radius: 10px;border: 0.5px solid #0c9ad1;">
+                    <div class="col-3">
+                      <img src="images/18-sheet.png" alt="" style="max-width:100%;position: absolute;width: 55px;top: 50%;transform: translateY(-50%);text-align: center;margin: 0 auto;display: block;left: 0;right: 0;" alt="Admin assign roles and rights to hotel staff, tour and travel management odoo module contain day sheet for add detail" />
+                    </div>
+                    <div class="col-9" style="padding-left: 0 !important">
+                      <h2 style="font-weight: 500;font-size: 18px;color:#f20c90;margin: 10px 0">Day Sheet</h2>
+                      <p style="color:#020202;">Admin assign roles and rights to hotel staff, tour and travel management odoo module contain day sheet for add detail</p>
+                    </div>
+                  </div>
+              </div>
+              <div class="col-lg-4 col-sm-6 col-12" style="margin-bottom: 30px;padding:0px 8px">
+                  <div class="row" style="margin: 0 !important;border-radius: 10px;border: 0.5px solid #0c9ad1;">
+                    <div class="col-3">
+                      <img src="images/20-Configure.png" alt="" style="max-width:100%;position: absolute;width: 55px;top: 50%;transform: translateY(-50%);text-align: center;margin: 0 auto;display: block;left: 0;right: 0;" alt="Configuration for roles & rights added for agents, tour consultants, drivers in tour booking module in odoo" />
+                    </div>
+                    <div class="col-9" style="padding-left: 0 !important">
+                      <h2 style="font-weight: 500;font-size: 18px;color:#f20c90;margin: 10px 0">User Configuration</h2>
+                      <p style="color:#020202;">Configuration for roles & rights added for agents, tour consultants, drivers in tour booking module in odoo</p>
+                    </div>
+                  </div>
+              </div>
+              <div class="col-lg-4 col-sm-6 col-12" style="margin-bottom: 30px;padding:0px 8px">
+                  <div class="row" style="margin: 0 !important;border-radius: 10px;border: 0.5px solid #0c9ad1;">
+                    <div class="col-3">
+                      <img src="images/20-Configure.png" alt="" style="max-width:100%;position: absolute;width: 55px;top: 50%;transform: translateY(-50%);text-align: center;margin: 0 auto;display: block;left: 0;right: 0;" alt="This module supported Enteprise, Community with version V12, V13, V14" />
+                    </div>
+                    <div class="col-9" style="padding-left: 0 !important">
+                      <h2 style="font-weight: 500;font-size: 18px;color:#f20c90;margin: 10px 0">Support</h2>
+                      <p style="color:#020202;">This module supported Enteprise, Community with version V12, V13, V14. We can help for Installtion of this module.</p>
+                    </div>
+                  </div>
+              </div>
+            </div>
+        </div>
+
+         <div style="text-align:left;">
+          <h2 style="color:#1d806d; font-size:26px; padding-top:10px;background-color: aliceblue;">Odoo Tour Travel Management Main Features</h2>
+          <i class="fa fa-share"></i> <h1 style="color:#125ce3; font-size:22px;background-color: aliceblue; display: inline;">Tour Management, Travel Agency Management</h1><br>
+          <i class="fa fa-share"></i> <h1 style="color:#125ce3; font-size:22px;background-color: aliceblue; display: inline;">Tour  Itinerary Details Management</h1><br>
+          <i class="fa fa-share"></i> <h1 style="color:#125ce3; font-size:22px;background-color: aliceblue; display: inline;">Tour Inquiry Management</h1><br>
+           <i class="fa fa-share"></i> <h1 style="color:#125ce3; font-size:22px;background-color: aliceblue; display: inline;">Tour Accommodation Management</h1><br>
+           <i class="fa fa-share"></i>  <h1 style="color:#125ce3; font-size:22px;background-color: aliceblue; display: inline;">Tour Flight Management</h1><br>
+           <i class="fa fa-share"></i>  <h1 style="color:#125ce3; font-size:22px;background-color: aliceblue; display: inline;">Tour Ferry/Boat/Ship Management</h1><br>
+           <i class="fa fa-share"></i> <h1 style="color:#125ce3; font-size:22px;background-color: aliceblue; display: inline;">Tour Visa/Passport Management</h1><br>
+           <i class="fa fa-share"></i>  <h1 style="color:#125ce3; font-size:22px;background-color: aliceblue; display: inline;">Custom Tour Custom Booking Management</h1><br>
+          <i class="fa fa-share"></i> <h1 style="color:#125ce3; font-size:22px;background-color: aliceblue; display: inline;">Tour Insurance Management</h1><br>
+        <i class="fa fa-share"></i>   <h1 style="color:#125ce3; font-size:22px;background-color: aliceblue; display: inline;">Tour Agent Commission Management</h1><br>
+        <i class="fa fa-share"></i>    <h1 style="color:#125ce3; font-size:22px;background-color: aliceblue; display: inline;">Tour Invoices Management</h1><br>
+        <i class="fa fa-share"></i>     <h1 style="color:#125ce3; font-size:22px;background-color: aliceblue; display: inline;">Tour Agents Management</h1><br>
+         <i class="fa fa-share"></i>   <h1 style="color:#125ce3; font-size:22px;background-color: aliceblue; display: inline;">Tour Guide, Driver, Consultant Management</h1><br>
+        <i class="fa fa-share"></i>   <h1 style="color:#125ce3; font-size:22px;background-color: aliceblue; display: inline;">Tour Reports</h1><br>
+          </div>
+
+        <div style="text-align:center;">
+            <h2 style="color:#1d806d; font-size:28px; padding-top:10px;background-color: aliceblue;">Odoo Tour Travel Management Screenshots and Flow</h2>
+
+            <div class="panel panel-primary" style="margin:15px 0; border:2px solid #e4e6e8; border-radius:5px">
+              <div class="panel-heading" style="padding:10px 20px; background-color:#e3e1cf">
+                <h2 class="panel-title" style="color:#0373ec; font-size:20px; font-weight:600">Odoo Tour Management Dashboard
+                </h2>
+              </div>
+              <div class="panel-body" style="padding:0 08px 10px 08px">
+                <hr>
+                <span>
+                  <img class="img-fluid thumbnail" style="border:1px solid #7c7bad" src="images/Tour_dashboard.jpg" alt="Odoo Tour Management Dashboard">
+                </span>
+              </div>
+            </div>
+
+            <div class="panel panel-primary" style="margin:15px 0; border:2px solid #e4e6e8; border-radius:5px">
+              <div class="panel-heading" style="padding:10px 20px; background-color:#e3e1cf">
+                <h2 class="panel-title" style="color:#0373ec; font-size:20px; font-weight:600">Odoo Tour Management Menu - Tour Management Support Tour Reservation and Package Process
+                </h2>
+              </div>
+              <div class="panel-body" style="padding:0 08px 10px 08px">
+                <hr>
+                <span>
+                  <img class="img-fluid thumbnail" style="border:1px solid #7c7bad" src="images/tour1.png" alt="odoo Tour Management Menu - Tour Management Support Tour Reservation and Package Process">
+                </span>
+              </div>
+            </div>
+
+            <div class="panel panel-primary" style="margin:15px 0; border:2px solid #e4e6e8; border-radius:5px">
+              <div class="panel-heading" style="padding:10px 20px; background-color:#e3e1cf">
+                <h2 class="panel-title" style="color:#0373ec; font-size:20px; font-weight:600">Tour Information Manage
+                </h2>
+                  <p style="color:#0046bf; font-size:20px; padding-top:5px; margin-bottom: 0;"><b>Click on Tour Reservation =&gt; Tour (For Creating New Tour) </b></p>
+              </div>
+              <div class="panel-body" style="padding:0 08px 10px 08px">
+                <hr>
+                <span>
+                  <img class="img-fluid thumbnail" style="border:1px solid #7c7bad" src="images/tour2.png" alt="Tour Information Manage with tour module v14">
+                </span>
+              </div>
+            </div>
+
+             <div class="panel panel-primary" style="margin:15px 0; border:2px solid #e4e6e8; border-radius:5px">
+              <div class="panel-heading" style="padding:10px 20px; background-color:#e3e1cf">
+                <h2 class="panel-title" style="color:#0373ec; font-size:20px; font-weight:600">Add Your Tour Details - Tour Introduction - Tour Details,Tour Services, <br>Tour Extra Services, Accommodation and Tour Flight Details
+                </h2>
+              
+              </div>
+              <div class="panel-body" style="padding:0 08px 10px 08px">
+                <hr>
+                <span>
+                  <img class="img-fluid thumbnail" style="border:1px solid #7c7bad" src="images/tour3.png" alt="Add Your Tour Details - Tour Introduction - Tour Details,Tour Services, Tour Extra Services, Accommodation and Tour Flight with tour module v13">
+                </span>
+              </div>
+            </div>
+           
+            <div class="panel panel-primary" style="margin:15px 0; border:2px solid #e4e6e8; border-radius:5px">
+              <div class="panel-heading" style="padding:10px 20px; background-color:#e3e1cf">
+                <h2 class="panel-title" style="color:#0373ec; font-size:20px; font-weight:600">Tour Travel Info
+                </h2>
+               <p style="color:#f20c90;font-size:20px;padding-top:0px; margin-bottom: 0;">Add Tour FROM to TO, Transport Type, Travel Class , Distance and Duration Time</p>
+              </div>
+              <div class="panel-body" style="padding:0 08px 10px 08px">
+                <hr>
+                <span>
+                  <img class="img-fluid thumbnail" style="border:1px solid #7c7bad" src="images/tour4.png" alt="Add Tour FROM to TO, Transport Type, Travel Class , Distance and Duration Time">
+                </span>
+              </div>
+            </div>
+
+            <div class="panel panel-primary" style="margin:15px 0; border:2px solid #e4e6e8; border-radius:5px">
+              <div class="panel-heading" style="padding:10px 20px; background-color:#e3e1cf">
+                <h2 class="panel-title" style="color:#0373ec; font-size:20px; font-weight:600">Tour Details
+                </h2>
+                <p style="color:#f20c90;font-size:20px;padding-top:0px; margin-bottom: 0;">Add Tour Season, Tour Date, Last date of Booking, Payment due date, Total and Available seats and Tour Status</p>
+              </div>
+              <div class="panel-body" style="padding:0 08px 10px 08px">
+                <hr>
+                <span>
+                  <img class="img-fluid thumbnail" style="border:1px solid #7c7bad" src="images/tour5.png" alt="Add Tour Season, Tour Date, Last date of Booking, Payment due date, Total and Available seats and Tour Status">
+                </span>
+              </div>
+            </div>
+                
+           <div class="panel panel-primary" style="margin:15px 0; border:2px solid #e4e6e8; border-radius:5px">
+              <div class="panel-heading" style="padding:10px 20px; background-color:#e3e1cf">
+                <h2 class="panel-title" style="color:#0373ec; font-size:20px; font-weight:600">Tour Itinerary
+                </h2>
+               <p style="color:#0046bf;font-size:20px; margin-bottom: 0;"><b>Click to Tour Reservation =&gt; Click Tour Itinerary</b></p>
+              </div>
+              <div class="panel-body" style="padding:0 08px 10px 08px">
+                <hr>
+                <span>
+                  <img class="img-fluid thumbnail" style="border:1px solid #7c7bad" src="images/tour6.png" alt="Click Tour Itinerary with tour module odoo">
+                </span>
+              </div>
+            </div>
+
+            <div class="panel panel-primary" style="margin:15px 0; border:2px solid #e4e6e8; border-radius:5px">
+              <div class="panel-heading" style="padding:10px 20px; background-color:#e3e1cf">
+                <h2 class="panel-title" style="color:#0373ec; font-size:20px; font-weight:600">Tour Itinerary Details
+                </h2>
+                <p style="color:#f20c90;font-size:20px;padding-top:0px; margin-bottom: 0;">Check Customer Booking Info, Customer Address, Tour Lead Detail, Booked Tour Information(Prefer Start and End date, Required Rooms, Payment Policy(CUR)), Tour Date Details</p>
+              </div>
+              <div class="panel-body" style="padding:0 08px 10px 08px">
+                <hr>
+                <span>
+                  <img class="img-fluid thumbnail" style="border:1px solid #7c7bad" src="images/tour7.png" alt="odoo tour travel module Tour Itinerary Details">
+                </span>
+              </div>
+            </div>
+   
+            <div class="panel panel-primary" style="margin:15px 0; border:2px solid #e4e6e8; border-radius:5px">
+              <div class="panel-heading" style="padding:10px 20px; background-color:#e3e1cf">
+                <h2 class="panel-title" style="color:#0373ec; font-size:20px; font-weight:600">Tour Program Itinerary for Customer
+                </h2>
+                <p style="color:#f20c90;font-size:20px;padding-top:0px; margin-bottom: 0;">Chek Tour Destination,Tour Code, Tour Days and Nights Detail, Tour Days description (Including Breakfast, Lunch and Dinner detail)</p>
+              </div>
+              <div class="panel-body" style="padding:0 08px 10px 08px">
+                <hr>
+                <span>
+                  <img class="img-fluid thumbnail" style="border:1px solid #7c7bad" src="images/tour8.png" alt="Itinerary Tour Program of Customer">
+                </span>
+              </div>
+            </div>
+                
+            <div class="panel panel-primary" style="margin:15px 0; border:2px solid #e4e6e8; border-radius:5px">
+              <div class="panel-heading" style="padding:10px 20px; background-color:#e3e1cf">
+                <h2 class="panel-title" style="color:#0373ec; font-size:20px; font-weight:600">Tour Inquiry
+                </h2>
+                <p style="color:#0046bf; font-size:20px; margin-bottom: 0;"><b>Customer Tour Inquiry Details (In List View)</b></p>
+              </div>
+              <div class="panel-body" style="padding:0 08px 10px 08px">
+                <hr>
+                <span>
+                  <img class="img-fluid thumbnail" style="border:1px solid #7c7bad" src="images/tour9.png" alt="Tour Inquiry odoo module">
+                </span>
+              </div>
+            </div>
+
+            <div class="panel panel-primary" style="margin:15px 0; border:2px solid #e4e6e8; border-radius:5px">
+              <div class="panel-heading" style="padding:10px 20px; background-color:#e3e1cf">
+                <h2 class="panel-title" style="color:#0373ec; font-size:20px; font-weight:600">Tour Inquiry Information in Form View
+                </h2>
+              <p style="color:#f20c90;font-size:20px;padding-top:0px; margin-bottom: 0;">Chek Tour Inquiry,Tour Lead By, Contact Name, EmailId, Phone and Inquiry Date, Customer Info, Number of Adult and Chid For tour Inquiry created, Also check Tour Information (Customer Prefer Date, Budget/Person), Confirm Budget </p>
+              </div>
+              <div class="panel-body" style="padding:0 08px 10px 08px">
+                <hr>
+                <span>
+                  <img class="img-fluid thumbnail" style="border:1px solid #7c7bad" src="images/tour10.png" alt="Tour Inquiry Information in Form View odoo module">
+                </span>
+              </div>
+            </div>
+
+             <div class="panel panel-primary" style="margin:15px 0; border:2px solid #e4e6e8; border-radius:5px">
+              <div class="panel-heading" style="padding:10px 20px; background-color:#e3e1cf">
+                <h2 class="panel-title" style="color:#0373ec; font-size:20px; font-weight:600">Customer Inquiry Destination
+                </h2>
+             <p style="color:#f20c90; font-size:20px; padding-top:0; margin-bottom: 0;">Customer Destination(City), Country, Location, No of Days and Nights</p>
+              </div>
+              <div class="panel-body" style="padding:0 08px 10px 08px">
+                <hr>
+                <span>
+                  <img class="img-fluid thumbnail" style="border:1px solid #7c7bad" src="images/tour11.png" alt="Tour Customer Inquiry Destination odoo module">
+                </span>
+              </div>
+            </div>
+              
+            <div class="panel panel-primary" style="margin:15px 0; border:2px solid #e4e6e8; border-radius:5px">
+              <div class="panel-heading" style="padding:10px 20px; background-color:#e3e1cf">
+                <h2 class="panel-title" style="color:#0373ec; font-size:20px; font-weight:600">Booking Information
+                </h2>
+             <p style="color:#f20c90; font-size:20px; margin-bottom: 0;"><b>Tour Booking Information Details</b></p>
+              </div>
+              <div class="panel-body" style="padding:0 08px 10px 08px">
+                <hr>
+                <span>
+                  <img class="img-fluid thumbnail" style="border:1px solid #7c7bad" src="images/tour12.png" alt="Tour Booking Information Details odoo module">
+                </span>
+              </div>
+            </div>
+
+            <div class="panel panel-primary" style="margin:15px 0; border:2px solid #e4e6e8; border-radius:5px">
+              <div class="panel-heading" style="padding:10px 20px; background-color:#e3e1cf">
+                <h2 class="panel-title" style="color:#0373ec; font-size:20px; font-weight:600">Tour Booking Information Details in Form view
+                </h2>
+             <p style="color:#f20c90;font-size:20px;padding-top:0px; margin-bottom: 0;">Tour Reservation Id , Number of passenger, Booking date, Customer detail, Number of Adult,Children, Tour Information(Tour Destination, Tour Type, Tour Payment Policy, Remarks)</p>
+              </div>
+              <div class="panel-body" style="padding:0 08px 10px 08px">
+                <hr>
+                <span>
+                  <img class="img-fluid thumbnail" style="border:1px solid #7c7bad" src="images/tour13.png" alt="Tour Booking Information Details in Form view odoo module">
+                </span>
+              </div>
+            </div>
+              
+            <div class="panel panel-primary" style="margin:15px 0; border:2px solid #e4e6e8; border-radius:5px">
+              <div class="panel-heading" style="padding:10px 20px; background-color:#e3e1cf">
+                <h2 class="panel-title" style="color:#0373ec; font-size:20px; font-weight:600">Person Information
+                </h2>
+               <p style="color:#f20c90; font-size:20px;"><b>In Booking Information Check customer Information (Customer name, Customer Gender, Person Type)</b></p>
+              </div>
+              <div class="panel-body" style="padding:0 08px 10px 08px">
+                <hr>
+                <span>
+                  <img class="img-fluid thumbnail" style="border:1px solid #7c7bad" src="images/tour14.png" alt="Tour Booking Information Details in Form view odoo module">
+                </span>
+              </div>
+            
+          </div>
+
+           <div class="panel panel-primary" style="margin:15px 0; border:2px solid #e4e6e8; border-radius:5px">
+              <div class="panel-heading" style="padding:10px 20px; background-color:#e3e1cf">
+                <h2 class="panel-title" style="color:#0373ec; font-size:20px; font-weight:600">Tour Services
+                </h2>
+               <p style="color:#f20c90; font-size:20px;margin-bottom:0px"><b>Check Tour Services</b></p>
+              </div>
+              <div class="panel-body" style="padding:0 08px 10px 08px">
+                <hr>
+                <span>
+                  <img class="img-fluid thumbnail" style="border:1px solid #7c7bad" src="images/tour15.png" alt="Tour Services odoo module">
+                </span>
+              </div>
+            </div>
+          
+           <div class="panel panel-primary" style="margin:15px 0; border:2px solid #e4e6e8; border-radius:5px">
+              <div class="panel-heading" style="padding:10px 20px; background-color:#e3e1cf">
+                <h2 class="panel-title" style="color:#0373ec; font-size:20px; font-weight:600">Tour Services Details
+                </h2>
+               <p style="color:#f20c90; font-size:20px; padding-top:0; margin-bottom: 0; padding-bottom: 15;">Service Detail in Service name, Date , Number of Passenger, Passenger Names, Service provide FROM to TO(Location), Driver name, Guide Name, Special Remarks and Cost Of Service, Service add by tour reservation ID</p>
+               </div>
+              <div class="panel-body" style="padding:0 08px 10px 08px">
+                <hr>
+                <span>
+                  <img class="img-fluid thumbnail" style="border:1px solid #7c7bad" src="images/tour16.png" alt="Tour Services Details">
+                </span>
+              </div>
+            </div>
+         
+
+          <div class="panel panel-primary" style="margin:15px 0; border:2px solid #e4e6e8; border-radius:5px">
+              <div class="panel-heading" style="padding:10px 20px; background-color:#e3e1cf">
+                <h2 class="panel-title" style="color:#0373ec; font-size:20px; font-weight:600">Tour Extra Services Information
+                </h2>
+              </div> 
+              <div class="panel-body" style="padding:0 08px 10px 08px">
+                <hr>
+                <span>
+                  <img class="img-fluid thumbnail" style="border:1px solid #7c7bad" src="images/tour17.png" alt="Tour Extra Services Information">
+                </span>
+              </div>
+            </div>
+          
+           
+          <div class="panel panel-primary" style="margin:15px 0; border:2px solid #e4e6e8; border-radius:5px">
+              <div class="panel-heading" style="padding:10px 20px; background-color:#e3e1cf">
+                <h2 class="panel-title" style="color:#0373ec; font-size:20px; font-weight:600">Tour Extra Services Details
+                </h2>
+              <p style="color:#f20c90;font-size:20px;margin-bottom:0px">Service Detail in Extra Service Date , Number of Passenger, Passenger Names,Agent, Sub Agent,Service Name, Service provide FROM to TO(Location), Driver name, Guide Name,Tour Consultant,  Special Remarks and Cost Of Service, Service Cost and Currency</p>
+            </div> 
+              <div class="panel-body" style="padding:0 08px 10px 08px">
+                <hr>
+                <span>
+                  <img class="img-fluid thumbnail" style="border:1px solid #7c7bad" src="images/tour18.png" alt="Tour Extra Services Information">
+                </span>
+              </div>
+            </div>
+          
+
+          <div class="panel panel-primary" style="margin:15px 0; border:2px solid #e4e6e8; border-radius:5px">
+              <div class="panel-heading" style="padding:10px 20px; background-color:#e3e1cf">
+                <h2 class="panel-title" style="color:#0373ec; font-size:20px; font-weight:600">Tour Accommodation Details
+                </h2>
+              <p style="color:#f20c90;font-size:20px;margin-bottom:0px">Check Tour Reservation , Hotel name, DATE IN and DATE OUT, Room type, Number of Passenger, Meal, Customer(Tour Booked by), Cost price , Sale price, Tour Information, Tour date, Person Detail</p>
+              </div>
+              <div class="panel-body" style="padding:0 08px 10px 08px">
+                <hr>
+                <span>
+                  <img class="img-fluid thumbnail" style="border:1px solid #7c7bad" src="images/tour19.png" alt="Tour Reservation , Hotel name booking odoo module">
+                </span>
+              </div>
+            </div>
+           
+               
+          <div class="panel panel-primary" style="margin:15px 0; border:2px solid #e4e6e8; border-radius:5px">
+              <div class="panel-heading" style="padding:10px 20px; background-color:#e3e1cf">
+                <h2 class="panel-title" style="color:#0373ec; font-size:20px; font-weight:600">Booking Information Accommodation
+                </h2>
+             <p style="color:#f20c90;font-size:20px;padding-top:0px;margin-bottom:0px">Check Tour Reservation , Hotel name, DATE IN and DATE OUT, Room type, Number of Passenger, Meal, Customer(Tour Booked by), Cost price , Sale price, Tour Information, Tour Destination, Person Details</p>
+             </div>
+              <div class="panel-body" style="padding:0 08px 10px 08px">
+                <hr>
+                <span>
+                  <img class="img-fluid thumbnail" style="border:1px solid #7c7bad" src="images/tour20.png" alt="Booking Information Accommodation booking odoo module">
+                </span>
+              </div>
+            </div>
+           
+
+          <div class="panel panel-primary" style="margin:15px 0; border:2px solid #e4e6e8; border-radius:5px">
+              <div class="panel-heading" style="padding:10px 20px; background-color:#e3e1cf">
+                <h2 class="panel-title" style="color:#0373ec; font-size:20px; font-weight:600">Flight
+                </h2>
+              <p style="color:#f20c90; font-size:20px;margin-bottom:0px"><b>Tour Flight Information</b></p>
+              </div> 
+              <div class="panel-body" style="padding:0 08px 10px 08px">
+                <hr>
+                <span>
+                  <img class="img-fluid thumbnail" style="border:1px solid #7c7bad" src="images/tour21.png" alt="Tour Flight Information booking odoo module">
+                </span>
+              </div>
+            </div>
+          
+
+          <div class="panel panel-primary" style="margin:15px 0; border:2px solid #e4e6e8; border-radius:5px">
+              <div class="panel-heading" style="padding:10px 20px; background-color:#e3e1cf">
+                <h2 class="panel-title" style="color:#0373ec; font-size:20px; font-weight:600">Tour Flight Details
+                </h2>
+            <p style="color:#f20c90;font-size:20px;padding-top:0px;margin-bottom:0px">Check Flight name, Flight IN and OUT time, Destination FROM to TO, Booked by Detail, Tour Reservation Id, Cost of Flight </p>
+            </div>   
+              <div class="panel-body" style="padding:0 08px 10px 08px">
+                <hr>
+                <span>
+                  <img class="img-fluid thumbnail" style="border:1px solid #7c7bad" src="images/tour22.png" alt="Tour Flight Details">
+                </span>
+              </div>
+            </div>
+          
+
+          <div class="panel panel-primary" style="margin:15px 0; border:2px solid #e4e6e8; border-radius:5px">
+              <div class="panel-heading" style="padding:10px 20px; background-color:#e3e1cf">
+                <h2 class="panel-title" style="color:#0373ec; font-size:20px; font-weight:600">Ferry/Boat/Ship
+                </h2>
+              <p style="color:#f20c90; font-size:20px; margin-bottom: 0;"><b>Tour Ferry Information</b></p>
+              </div>
+              <div class="panel-body" style="padding:0 08px 10px 08px">
+                <hr>
+                <span>
+                  <img class="img-fluid thumbnail" style="border:1px solid #7c7bad" src="images/tour23.png" alt="Ferry/Boat/Ship Details travel management">
+                </span>
+              </div>
+            </div>
+             
+
+          <div class="panel panel-primary" style="margin:15px 0; border:2px solid #e4e6e8; border-radius:5px">
+              <div class="panel-heading" style="padding:10px 20px; background-color:#e3e1cf">
+                <h2 class="panel-title" style="color:#0373ec; font-size:20px; font-weight:600">Tour Ferry Details
+                </h2>
+              <p style="color:#f20c90;font-size:20px;padding-top:0px;margin-bottom:0px">Check Ferry name, Flight IN and OUT time, Destination FROM to TO, Booked by Detail, Tour Reservation Id, Cost of Flight </p>
+              </div>
+              <div class="panel-body" style="padding:0 08px 10px 08px">
+                <hr>
+                <span>
+                  <img class="img-fluid thumbnail" style="border:1px solid #7c7bad" src="images/tour24.png" alt="Tour Ferry Details travel management">
+                </span>
+              </div>
+            </div>
+               
+           
+           <div class="panel panel-primary" style="margin:15px 0; border:2px solid #e4e6e8; border-radius:5px">
+              <div class="panel-heading" style="padding:10px 20px; background-color:#e3e1cf">
+                <h2 class="panel-title" style="color:#0373ec; font-size:20px; font-weight:600">Tour Visa Information
+                </h2>
+                </div>         
+              <div class="panel-body" style="padding:0 08px 10px 08px">
+                <hr>
+                <span>
+                  <img class="img-fluid thumbnail" style="border:1px solid #7c7bad" src="images/tour25.png" alt="Tour Visa Information management">
+                </span>
+              </div>
+            </div>
+               
+
+         <div class="panel panel-primary" style="margin:15px 0; border:2px solid #e4e6e8; border-radius:5px">
+              <div class="panel-heading" style="padding:10px 20px; background-color:#e3e1cf">
+                <h2 class="panel-title" style="color:#0373ec; font-size:20px; font-weight:600">Tour Visa Details
+                </h2>   
+                 <p style="color:#f20c90;font-size:20px;padding-top:0px;margin-bottom:0px">Check Customer name, Mobile , Email Id, Visa Detail, Service Cost, Tour Return Date, Tour Information(Tour Destination, Tour Booking ref., Tour date, tour Service), Visa Documentation </p>
+            </div>      
+              <div class="panel-body" style="padding:0 08px 10px 08px">
+                <hr>
+                <span>
+                  <img class="img-fluid thumbnail" style="border:1px solid #7c7bad" src="images/tour26.png" alt="Tour Visa Details management">
+                </span>
+              </div>
+            </div>
+                   
+
+          <div class="panel panel-primary" style="margin:15px 0; border:2px solid #e4e6e8; border-radius:5px">
+              <div class="panel-heading" style="padding:10px 20px; background-color:#e3e1cf">
+                <h2 class="panel-title" style="color:#0373ec; font-size:20px; font-weight:600">Tour Passport Information
+                </h2>   
+                <p style="color:#f20c90; font-size:20px;margin-bottom:0px"><b>Tour Passport Documentation Information</b></p>
+              </div>       
+              <div class="panel-body" style="padding:0 08px 10px 08px">
+                <hr>
+                <span>
+                  <img class="img-fluid thumbnail" style="border:1px solid #7c7bad" src="images/tour27.png" alt="Tour Passport Information">
+                </span>
+              </div>
+            </div>
+            
+               
+          <div class="panel panel-primary" style="margin:15px 0; border:2px solid #e4e6e8; border-radius:5px">
+              <div class="panel-heading" style="padding:10px 20px; background-color:#e3e1cf">
+                <h2 class="panel-title" style="color:#0373ec; font-size:20px; font-weight:600">Passport Documentation Information
+                </h2>   
+                <p style="color:#f20c90;font-size:20px;padding-top:0px;margin-bottom:0px">Check Customer name, Mobile , Email Id, Visa Detail, Service Cost, Tour Return Date, Passport Information(Tour Service, Tour Destination, Service Cost, Visa Documentation </p>
+              </div>
+              <div class="panel-body" style="padding:0 08px 10px 08px">
+                <hr>
+                <span>
+                  <img class="img-fluid thumbnail" style="border:1px solid #7c7bad" src="images/tour28.png" alt="Tour Passport Documentation Information odoo module">
+                </span>
+              </div>
+            </div>
+
+             <div class="panel panel-primary" style="margin:15px 0; border:2px solid #e4e6e8; border-radius:5px">
+              <div class="panel-heading" style="padding:10px 20px; background-color:#e3e1cf">
+               <p style="color:#f20c90;font-size:20px;padding-top:0px;margin-bottom:0px">Tour Custom Booking </p>
+              </div>
+              <div class="panel-body" style="padding:0 08px 10px 08px">
+               <hr>
+                <span>
+                  <img class="img-fluid thumbnail" style="border:1px solid #7c7bad" src="images/tour-custom-booking.jpg" alt="Tour Custom Booking">
+                </span>
+              </div>
+            </div>
+
+             <div class="panel panel-primary" style="margin:15px 0; border:2px solid #e4e6e8; border-radius:5px">
+              <div class="panel-heading" style="padding:10px 20px; background-color:#e3e1cf">
+               <p style="color:#f20c90;font-size:20px;padding-top:0px;margin-bottom:0px">Tour Insurance</p>
+              </div>
+              <div class="panel-body" style="padding:0 08px 10px 08px">
+              <hr>
+                <span>
+                  <img class="img-fluid thumbnail" style="border:1px solid #7c7bad" src="images/tour-insurance.jpg" alt="Tour Insurance">
+                </span>
+              </div>
+            </div>
+
+
+            <div class="panel panel-primary" style="margin:15px 0; border:2px solid #e4e6e8; border-radius:5px">
+              <div class="panel-heading" style="padding:10px 20px; background-color:#e3e1cf">
+               <p style="color:#f20c90;font-size:20px;padding-top:0px;margin-bottom:0px">Tour Agent Commission </p>
+              </div>
+              <div class="panel-body" style="padding:0 08px 10px 08px">
+             <hr>
+                <span>
+                  <img class="img-fluid thumbnail" style="border:1px solid #7c7bad" src="images/tour-agent-commission.jpg" alt="Booking Tour Agent Commission ">
+                </span>
+              </div>
+            </div>
+            
+        
+          <div class="panel panel-primary" style="margin:15px 0; border:2px solid #e4e6e8; border-radius:5px">
+              <div class="panel-heading" style="padding:10px 20px; background-color:#e3e1cf">
+                <h2 class="panel-title" style="color:#0373ec; font-size:20px; font-weight:600">Day Sheet
+                </h2>   
+                 <p style="color:#0046bf; font-size:20px;margin-bottom:0px"><b>Go to Tour Operation =&gt; Day Sheet</b></p>
+                  <p style="color:#f20c90; font-size:20px;margin-bottom:0px"><b>Check Your Day Sheet Infornation in Tree view</b></p>
+              </div>
+              <div class="panel-body" style="padding:0 08px 10px 08px">
+                <hr>
+                <span>
+                  <img class="img-fluid thumbnail" style="border:1px solid #7c7bad" src="images/tour29.png" alt="Tour Information odoo module">
+                </span>
+              </div>
+            </div>
+           
+
+          <div class="panel panel-primary" style="margin:15px 0; border:2px solid #e4e6e8; border-radius:5px">
+              <div class="panel-heading" style="padding:10px 20px; background-color:#e3e1cf">
+                <h2 class="panel-title" style="color:#0373ec; font-size:20px; font-weight:600">Tour Invoice
+                </h2>   
+                 <p style="color:#f20c90;font-size:20px;padding-top:0px;margin-bottom:0px">Go to Tour Accounting => Tour Invoice</p>
+                  <p style="color:#f20c90;font-size:20px;padding-top:0px;margin-bottom:0px">Tour Invoice Information</p>
+              </div>
+              <div class="panel-body" style="padding:0 08px 10px 08px">
+                <hr>
+                <span>
+                  <img class="img-fluid thumbnail" style="border:1px solid #7c7bad" src="images/tour30.png" alt="Tour Invoice Information odoo module">
+                </span>
+              </div>
+            </div>
+                  
+               
+          <div class="panel panel-primary" style="margin:15px 0; border:2px solid #e4e6e8; border-radius:5px">
+              <div class="panel-heading" style="padding:10px 20px; background-color:#e3e1cf">
+                <h2 class="panel-title" style="color:#0373ec; font-size:20px; font-weight:600">Tour Invoice Details
+                </h2>   
+                 <p style="color:#f20c90;font-size:20px;padding-top:0px;margin-bottom:0px">Check Customer name, Payment Term, Payment Method, Bank Details, Invoice date, Due Date, Sales person name, sales team name, Invoice Details</p>
+            </div>
+              <div class="panel-body" style="padding:0 08px 10px 08px">
+                <hr>
+                <span>
+                  <img class="img-fluid thumbnail" style="border:1px solid #7c7bad" src="images/tour31.png" alt="Tour Invoice Details">
+                </span>
+              </div>
+            </div>
+                   
+                
+          <div class="panel panel-primary" style="margin:15px 0; border:2px solid #e4e6e8; border-radius:5px">
+              <div class="panel-heading" style="padding:10px 20px; background-color:#e3e1cf">
+                <h2 class="panel-title" style="color:#0373ec; font-size:20px; font-weight:600">Invoice Line Details
+                </h2>   
+                <p style="color:#f20c90;font-size:20px;padding-top:0px;margin-bottom:0px">Send Invoice Pdf Report and Mail to Recipients</p>
+            </div>
+              <div class="panel-body" style="padding:0 08px 10px 08px">
+                <hr>
+                <span>
+                  <img class="img-fluid thumbnail" style="border:1px solid #7c7bad" src="images/tour32.png" alt="Invoice Line Details">
+                </span>
+              </div>
+            </div>
+          
+           
+          <div class="panel panel-primary" style="margin:15px 0; border:2px solid #e4e6e8; border-radius:5px">
+              <div class="panel-heading" style="padding:10px 20px; background-color:#e3e1cf">
+                <h2 class="panel-title" style="color:#0373ec; font-size:20px; font-weight:600">Invoice Report
+                </h2>   
+                <p style="color:#f20c90; font-size:20px;margin-bottom:0px"><b>Check Invoice PDF Report Details</b></p>
+            </div>
+              <div class="panel-body" style="padding:0 08px 10px 08px">
+                <hr>
+                <span>
+                  <img class="img-fluid thumbnail" style="border:1px solid #7c7bad" src="images/tour33.png" alt="Invoice Report Details">
+                </span>
+              </div>
+            </div>
+          
+
+           <div class="panel panel-primary" style="margin:15px 0; border:2px solid #e4e6e8; border-radius:5px">
+              <div class="panel-heading" style="padding:10px 20px; background-color:#e3e1cf">
+                <h2 class="panel-title" style="color:#0373ec; font-size:20px; font-weight:600">Transfer Excursion
+                </h2>   
+                  <p style="color:#f20c90; font-size:20px;margin-bottom:0px"><b>Go to Tour Accounting =&gt; Transfer Excursion</b></p>
+            </div>
+              <div class="panel-body" style="padding:0 08px 10px 08px">
+                <hr>
+                <span>
+                  <img class="img-fluid thumbnail" style="border:1px solid #7c7bad" src="images/tour34.png" alt="Transfer Excursion tour module">
+                </span>
+              </div>
+            </div>
+          
+           
+          <div class="panel panel-primary" style="margin:15px 0; border:2px solid #e4e6e8; border-radius:5px">
+              <div class="panel-heading" style="padding:10px 20px; background-color:#e3e1cf">
+                <h2 class="panel-title" style="color:#0373ec; font-size:20px; font-weight:600">Transfer Excursion Details
+                </h2>   
+                <p style="color:#f20c90;font-size:20px;padding-top:0px;margin-bottom:0px">Add Tour Consultant, Service, Invoice Number, Entrance Fee Details, Tour Guide , Driver, Invoice Amount, Balance Amount, Transfer tour payment detail</p>
+            </div>
+              <div class="panel-body" style="padding:0 08px 10px 08px">
+                <hr>
+                <span>
+                  <img class="img-fluid thumbnail" style="border:1px solid #7c7bad" src="images/tour35.png" alt="Transfer Excursion Details tour module">
+                </span>
+              </div>
+            </div>
+          
+               
+          <div class="panel panel-primary" style="margin:15px 0; border:2px solid #e4e6e8; border-radius:5px">
+              <div class="panel-heading" style="padding:10px 20px; background-color:#e3e1cf">
+                <h2 class="panel-title" style="color:#0373ec; font-size:20px; font-weight:600">Go to Tour Accounting =&gt; Job Card
+                </h2>   
+               <p style="color:#f20c90;font-size:20px;padding-top:0px;margin-bottom:0px">View Job Card Detail</p>
+               </div>
+              <div class="panel-body" style="padding:0 08px 10px 08px">
+                <hr>
+                <span>
+                  <img class="img-fluid thumbnail" style="border:1px solid #7c7bad" src="images/tour36.png" alt="Tour Accounting tour module">
+                </span>
+              </div>
+            </div>
+          
+                
+          <div class="panel panel-primary" style="margin:15px 0; border:2px solid #e4e6e8; border-radius:5px">
+              <div class="panel-heading" style="padding:10px 20px; background-color:#e3e1cf">
+                <h2 class="panel-title" style="color:#0373ec; font-size:20px; font-weight:600">Job Card Information
+                </h2>   
+               <p style="color:#f20c90;font-size:20px;padding-top:0px;margin-bottom:0px">Check Customer name, Email, Phone, Assigned Transfer excursion Detail, Job card subject, Start date, end date, Currency Info , Job card Techincal details, task description and equipment</p>
+               </div>
+              <div class="panel-body" style="padding:0 08px 10px 08px">
+                <hr>
+                <span>
+                  <img class="img-fluid thumbnail" style="border:1px solid #7c7bad" src="images/tour37.png" alt="Job Card Information tour module">
+                </span>
+              </div>
+            </div>
+          
+
+           <div class="panel panel-primary" style="margin:15px 0; border:2px solid #e4e6e8; border-radius:5px">
+              <div class="panel-heading" style="padding:10px 20px; background-color:#e3e1cf">
+                <h2 class="panel-title" style="color:#0373ec; font-size:20px; font-weight:600">Tour Agent
+                </h2>   
+              <p style="color:#f20c90; font-size:20px; margin-bottom: 0;margin-bottom:0px"><b>Tour Agent Information</b></p>
+              </div>
+              <div class="panel-body" style="padding:0 08px 10px 08px">
+                <hr>
+                <span>
+                  <img class="img-fluid thumbnail" style="border:1px solid #7c7bad" src="images/tour38.png" alt="Tour Agent Information tour module">
+                </span>
+              </div>
+            </div>
+          
+    
+          <div class="panel panel-primary" style="margin:15px 0; border:2px solid #e4e6e8; border-radius:5px">
+              <div class="panel-heading" style="padding:10px 20px; background-color:#e3e1cf">
+                <h2 class="panel-title" style="color:#0373ec; font-size:20px; font-weight:600">Agent Details in Contacts Form view
+                </h2>
+              </div> 
+              <div class="panel-body" style="padding:0 08px 10px 08px">
+                <hr>
+                <span>
+                  <img class="img-fluid thumbnail" style="border:1px solid #7c7bad" src="images/tour39.png" alt="Tour Agent Information tour module">
+                </span>
+              </div>
+            </div>
+          
+
+          <div class="panel panel-primary" style="margin:15px 0; border:2px solid #e4e6e8; border-radius:5px">
+              <div class="panel-heading" style="padding:10px 20px; background-color:#e3e1cf">
+                <h2 class="panel-title" style="color:#0373ec; font-size:20px; font-weight:600">Tour Sub Agent
+                </h2>   
+             <p style="color: #f20c90;font-size: 22px;text-align:center;margin-bottom:0px">Tour Sub Agent Information</p>
+             </div>
+              <div class="panel-body" style="padding:0 08px 10px 08px">
+                <hr>
+                <span>
+                  <img class="img-fluid thumbnail" style="border:1px solid #7c7bad" src="images/tour40.png" alt="Tour sub Agent Information tour module">
+                </span>
+              </div>
+            </div>
+            
+
+          <div class="panel panel-primary" style="margin:15px 0; border:2px solid #e4e6e8; border-radius:5px">
+              <div class="panel-heading" style="padding:10px 20px; background-color:#e3e1cf">
+                <h2 class="panel-title" style="color:#0373ec; font-size:20px; font-weight:600">Sub Agent Details in Contacts Form view
+                </h2>   
+           </div>
+              <div class="panel-body" style="padding:0 08px 10px 08px">
+                <hr>
+                <span>
+                  <img class="img-fluid thumbnail" style="border:1px solid #7c7bad" src="images/tour41.png" alt="Tour sub Agent Contacts Information tour module">
+                </span>
+              </div>
+            </div>
+          
+                
+          <div class="panel panel-primary" style="margin:15px 0; border:2px solid #e4e6e8; border-radius:5px">
+              <div class="panel-heading" style="padding:10px 20px; background-color:#e3e1cf">
+                <h2 class="panel-title" style="color:#0373ec; font-size:20px; font-weight:600">Tour Guide
+                </h2>   
+           <p style="color: #f20c90;font-size: 22px;text-align:center;margin-bottom:0px">Go to Contacts =&gt; Guide</p>
+           </div>
+              <div class="panel-body" style="padding:0 08px 10px 08px">
+                <hr>
+                <span>
+                  <img class="img-fluid thumbnail" style="border:1px solid #7c7bad" src="images/tour42.png" alt="Tour guide Information tour module">
+                </span>
+              </div>
+            </div>
+            
+
+          <div class="panel panel-primary" style="margin:15px 0; border:2px solid #e4e6e8; border-radius:5px">
+              <div class="panel-heading" style="padding:10px 20px; background-color:#e3e1cf">
+                <h2 class="panel-title" style="color:#0373ec; font-size:20px; font-weight:600">Guide Details in Form view
+                </h2>   
+         </div>
+              <div class="panel-body" style="padding:0 08px 10px 08px">
+                <hr>
+                <span>
+                  <img class="img-fluid thumbnail" style="border:1px solid #7c7bad" src="images/tour43.png" alt="Tour guide Information tour module">
+                </span>
+              </div>
+            </div>
+                      
+
+          <div class="panel panel-primary" style="margin:15px 0; border:2px solid #e4e6e8; border-radius:5px">
+              <div class="panel-heading" style="padding:10px 20px; background-color:#e3e1cf">
+                <h2 class="panel-title" style="color:#0373ec; font-size:20px; font-weight:600">Tour Driver
+                </h2>   
+          <p style="color: #f20c90;font-size: 22px;text-align:center;margin-bottom:0px">Go to Contacts =&gt; Driver</p>
+          </div>
+              <div class="panel-body" style="padding:0 08px 10px 08px">
+                <hr>
+                <span>
+                  <img class="img-fluid thumbnail" style="border:1px solid #7c7bad" src="images/tour44.png" alt="Tour guide Information tour module">
+                </span>
+              </div>
+            </div>
+                  
+
+          <div class="panel panel-primary" style="margin:15px 0; border:2px solid #e4e6e8; border-radius:5px">
+              <div class="panel-heading" style="padding:10px 20px; background-color:#e3e1cf">
+                <h2 class="panel-title" style="color:#0373ec; font-size:20px; font-weight:600">Driver Details in Form view
+                </h2> 
+            </div>            
+              <div class="panel-body" style="padding:0 08px 10px 08px">
+                <hr>
+                <span>
+                  <img class="img-fluid thumbnail" style="border:1px solid #7c7bad" src="images/tour45.png" alt="Driver Details in Form view tour module">
+                </span>
+              </div>
+            </div>
+                 
+
+          <div class="panel panel-primary" style="margin:15px 0; border:2px solid #e4e6e8; border-radius:5px">
+              <div class="panel-heading" style="padding:10px 20px; background-color:#e3e1cf">
+                <h2 class="panel-title" style="color:#0373ec; font-size:20px; font-weight:600">Tour Consultant
+                </h2>   
+         <p style="color: #f20c90;font-size: 22px;text-align:center;margin-bottom:0px">Go to Contacts =&gt; Tour Consultant</p>
+         </div>
+              <div class="panel-body" style="padding:0 08px 10px 08px">
+                <hr>
+                <span>
+                  <img class="img-fluid thumbnail" style="border:1px solid #7c7bad" src="images/tour46.png" alt="Tour Consultant view tour module">
+                </span>
+              </div>
+            </div>
+           
+              
+           <div class="panel panel-primary" style="margin:15px 0; border:2px solid #e4e6e8; border-radius:5px">
+              <div class="panel-heading" style="padding:10px 20px; background-color:#e3e1cf">
+                <h2 class="panel-title" style="color:#0373ec; font-size:20px; font-weight:600">Tour Consultant Details in Form view
+                </h2>   
+         <p style="color: #f20c90;font-size: 22px;text-align:center;margin-bottom:0px">Go to Contacts =&gt; Tour Consultant</p>
+         </div>
+              <div class="panel-body" style="padding:0 08px 10px 08px">
+                <hr>
+                <span>
+                  <img class="img-fluid thumbnail" style="border:1px solid #7c7bad" src="images/tour47.png" alt="Tour Consultant view tour module">
+                </span>
+              </div>
+            </div>
+           
+                
+          <div class="panel panel-primary" style="margin:15px 0; border:2px solid #e4e6e8; border-radius:5px">
+              <div class="panel-heading" style="padding:10px 20px; background-color:#e3e1cf">
+                <h2 class="panel-title" style="color:#0373ec; font-size:20px; font-weight:600">Go to Contacts =&gt; All Contacts
+                </h2>   
+        <p style="color:#f20c90;font-size:20px;padding-top:0px;margin-bottom:0px">Display All contacts in One (Agent, Sub Agent, Guide, Driver, Tour Consultant)</p>
+        </div> 
+              <div class="panel-body" style="padding:0 08px 10px 08px">
+                <hr>
+                <span>
+                  <img class="img-fluid thumbnail" style="border:1px solid #7c7bad" src="images/tour48.png" alt="Tour Consultant view tour module">
+                </span>
+              </div>
+            </div>
+               
+
+          <div class="panel panel-primary" style="margin:15px 0; border:2px solid #e4e6e8; border-radius:5px">
+              <div class="panel-heading" style="padding:10px 20px; background-color:#e3e1cf">
+                <h2 class="panel-title" style="color:#0373ec; font-size:20px; font-weight:600">Travel Information
+                </h2>   
+       <p style="color: #f20c90;font-size: 22px;text-align:center;margin-bottom:0px">Go to Configuration =&gt; Travel Information</p>
+       </div> 
+              <div class="panel-body" style="padding:0 08px 10px 08px">
+                <hr>
+                <span>
+                  <img class="img-fluid thumbnail" style="border:1px solid #7c7bad" src="images/tour49.png" alt="Travel Information tour module">
+                </span>
+              </div>
+            </div>
+            
+
+          <div class="panel panel-primary" style="margin:15px 0; border:2px solid #e4e6e8; border-radius:5px">
+              <div class="panel-heading" style="padding:10px 20px; background-color:#e3e1cf">
+                <h2 class="panel-title" style="color:#0373ec; font-size:20px; font-weight:600">Travel Information Details
+                </h2>   
+        <p style="color:#f20c90;font-size:20px;padding-top:0px;margin-bottom:0px">Travel Information Details(Destination FROM to TO, Transport Type, Travel Class, Distance in KM, Duration time in Hr)</p>
+        </div> 
+              <div class="panel-body" style="padding:0 08px 10px 08px">
+                <hr>
+                <span>
+                  <img class="img-fluid thumbnail" style="border:1px solid #7c7bad" src="images/tour50.png" alt="Travel Information tour module">
+                </span>
+              </div>
+            </div>
+            
+
+          <div class="panel panel-primary" style="margin:15px 0; border:2px solid #e4e6e8; border-radius:5px">
+              <div class="panel-heading" style="padding:10px 20px; background-color:#e3e1cf">
+                <h2 class="panel-title" style="color:#0373ec; font-size:20px; font-weight:600">Go to Configuration =&gt; Tour Details
+                </h2>   
+        </div>
+              <div class="panel-body" style="padding:0 08px 10px 08px">
+                <hr>
+                <span>
+                  <img class="img-fluid thumbnail" style="border:1px solid #7c7bad" src="images/tour51.png" alt="Travel Information tour module">
+                </span>
+              </div>
+            </div>
+             
+               
+          <div class="panel panel-primary" style="margin:15px 0; border:2px solid #e4e6e8; border-radius:5px">
+              <div class="panel-heading" style="padding:10px 20px; background-color:#e3e1cf">
+                <h2 class="panel-title" style="color:#0373ec; font-size:20px; font-weight:600">Tour Information in Form Detail
+                </h2>   
+        <p style="color:#f20c90;font-size:20px;padding-top:0px;margin-bottom:0px">Check Tour detail (Tour Season, Tour Start date, Last date of Booking, Payment due Date, Total and available seats, Tour status)</p>
+        </div>
+              <div class="panel-body" style="padding:0 08px 10px 08px">
+                <hr>
+                <span>
+                  <img class="img-fluid thumbnail" style="border:1px solid #7c7bad" src="images/tour52.png" alt="Travel Information tour module">
+                </span>
+              </div>
+            </div>
+             
+
+          <div class="panel panel-primary" style="margin:15px 0; border:2px solid #e4e6e8; border-radius:5px">
+              <div class="panel-heading" style="padding:10px 20px; background-color:#e3e1cf">
+                <h2 class="panel-title" style="color:#0373ec; font-size:20px; font-weight:600">Tour Place
+                </h2>   
+        <p style="color:#f20c90;font-size:20px;padding-top:0px;margin-bottom:0px">Go to Configuration =&gt; Place</p>
+        <p style="color:#f20c90;font-size:20px;padding-top:0px;margin-bottom:0px">Create Places for Tour</p>
+        </div>
+              <div class="panel-body" style="padding:0 08px 10px 08px">
+                <hr>
+                <span>
+                  <img class="img-fluid thumbnail" style="border:1px solid #7c7bad" src="images/tour53.png" alt="Tour Place tour module">
+                </span>
+              </div>
+            </div>
+          
+
+          <div class="panel panel-primary" style="margin:15px 0; border:2px solid #e4e6e8; border-radius:5px">
+              <div class="panel-heading" style="padding:10px 20px; background-color:#e3e1cf">
+                <h2 class="panel-title" style="color:#0373ec; font-size:20px; font-weight:600">Tour Documentation List
+                </h2>   
+       <p style="color: #0046bf;font-size: 22px;text-align:center;margin-bottom:0px">Go to Configuration =&gt; Visa Documentation List</p>
+                <p style="color:#f20c90;font-size:20px;padding-top:0px;margin-bottom:0px">Check Visa Documentation detail for Book Tour </p>
+          </div>
+              <div class="panel-body" style="padding:0 08px 10px 08px">
+                <hr>
+                <span>
+                  <img class="img-fluid thumbnail" style="border:1px solid #7c7bad" src="images/tour54.png" alt="Tour Place tour module">
+                </span>
+              </div>
+            </div>
+           
+        <div class="panel panel-primary" style="margin:15px 0; border:2px solid #e4e6e8; border-radius:5px">
+              <div class="panel-heading" style="padding:10px 20px; background-color:#e3e1cf">
+                <h2 class="panel-title" style="color:#0373ec; font-size:20px; font-weight:600">Tour Reports
+                </h2>   
+            <p style="color:#f20c90;font-size:20px;padding-top:0px;margin-bottom:0px">Tour Report Print </p>
+            </div>
+              <div class="panel-body" style="padding:0 08px 10px 08px">
+                <hr>
+                <span>
+                  <img class="img-fluid thumbnail" style="border:1px solid #7c7bad" src="images/tour-create-print.jpg" alt="Tour Report Print">
+                </span>
+                <hr>
+                <p style="color:#f20c90;font-size:20px;padding-top:0px;margin-bottom:0px">Tour Report PDF format </p>
+                 <span>
+                  <img class="img-fluid thumbnail" style="border:1px solid #7c7bad" src="images/tour-report-view-pdf.jpg" alt="Tour Report PDF format">
+                </span>
+<hr>
+<p style="color:#f20c90;font-size:20px;padding-top:0px;margin-bottom:0px">Tour Itinerary Report Print </p>
+                <span>
+                  <img class="img-fluid thumbnail" style="border:1px solid #7c7bad" src="images/tour-itinery-print.jpg" alt="Tour Itinerary Report Print">
+                </span>
+                <hr>
+<p style="color:#f20c90;font-size:20px;padding-top:0px;margin-bottom:0px">Tour Itinerary Email </p>
+                <span>
+                  <img class="img-fluid thumbnail" style="border:1px solid #7c7bad" src="images/itinery-email.jpg" alt="Tour Itinerary Email">
+                </span>
+
+                <hr>
+<p style="color:#f20c90;font-size:20px;padding-top:0px;margin-bottom:0px">Tour Booking Accommodation Print </p>
+                <span>
+                  <img class="img-fluid thumbnail" style="border:1px solid #7c7bad" src="images/booking-accomodation-print.jpg" alt="Tour Accomodation Print">
+                </span>
+
+                <hr>
+<p style="color:#f20c90;font-size:20px;padding-top:0px;margin-bottom:0px">Tour Booking Accommodation Email </p>
+                <span>
+                  <img class="img-fluid thumbnail" style="border:1px solid #7c7bad" src="images/booking-accomodation-email.jpg" alt="Tour Booking Accommodation Email">
+                </span>
+
+                <hr>
+<p style="color:#f20c90;font-size:20px;padding-top:0px;margin-bottom:0px">Tour Booking Information Print </p>
+                <span>
+                  <img class="img-fluid thumbnail" style="border:1px solid #7c7bad" src="images/tour-booking-report-print.jpg" alt="Tour Booking Information Print">
+                </span>        
+
+                <hr>
+<p style="color:#f20c90;font-size:20px;padding-top:0px;margin-bottom:0px">Tour Flights details Print </p>
+                <span>
+                  <img class="img-fluid thumbnail" style="border:1px solid #7c7bad" src="images/tour-flight-print.jpg" alt="Tour Custom Booking">
+                </span>
+               
+
+              </div>
+        </div>
+
+        <div class="panel panel-primary" style="margin:15px 0; border:2px solid #e4e6e8; border-radius:5px">
+              <div class="panel-heading" style="padding:10px 20px; background-color:#e3e1cf">
+                <h2 class="panel-title" style="color:#007bff; font-size:26px; padding:5px; border-radius:6px">Tour Management Configuration, Functional Steps Videos
+                </h2>                 
+              </div>
+             
+      <div class="row">
+        <div class="col-lg-6 col-sm-6 col-12" style="margin-bottom:10px">
+          <div class="shadow" style="border-radius:10px; padding:10px 0px; background-color:#dfdff5; border:1px solid #a4ad19">
+            <div class="row" style="margin:0">              
+              <div class="col-12" style="padding-left:0; padding-right:0px">
+                <h2 style="font-weight:500; font-size:18px; color:#f20c90; text-align:center"><a href="https://youtu.be/WoLjj2znOPs" target="_blank">Tour Management Configuration, Functional Step 1</a></h2>
+                <p style="color:#000000"><a href="https://youtu.be/WoLjj2znOPs" target="_blank" style="font-size:24px; padding-top:12px; padding-bottom:2px; line-height:normal; border-radius:5px; color:#fff; text-transform:uppercase; display:inline-block; width:100%; margin-top:3px; margin-bottom:3px">
+                  <img src="images/tour travel video app thumbnail step 1.png" alt="Tour Management Configuration, Functional Steps Videos in odoo" style="max-width:100%; text-align:center; margin:0 auto; display:block"></a></p>
+              </div>
+            </div>  
+          </div>
+        </div>
+        <div class="col-lg-6 col-sm-6 col-12" style="margin-bottom:10px">
+         <div class="shadow" style="border-radius:10px; padding:10px 0px; background-color:#dfdff5; border:1px solid #a4ad19">
+            <div class="row" style="margin:0">             
+              <div class="col-12" style="padding-left:0; padding-right:0px">
+                <h2 style="font-weight:500; font-size:18px; color:#f20c90; text-align:center"><a href="https://youtu.be/E2fVzXZ_GhY" target="_blank">Tour Management Configuration, Functional Step 2</a></h2>
+                <p style="color:#000000"><a href="https://youtu.be/E2fVzXZ_GhY" target="_blank" style="font-size:24px; padding-top:12px; padding-bottom:2px; line-height:normal; border-radius:5px; color:#fff; text-transform:uppercase; display:inline-block; width:100%; margin-top:3px; margin-bottom:3px"><img src="images/tour travel video app thumbnail step 2.png" alt="Tour Management Configuration, Functional Steps Videos in odoo" style="max-width:100%; text-align:center; margin:0 auto; display:block"></a></p>
+              </div>         
+          </div>
+        </div>
+      </div>
+        <div class="col-lg-6 col-sm-6 col-12" style="margin-bottom:10px">
+        <div class="shadow" style="border-radius:10px; padding:10px 0px; background-color:#dfdff5; border:1px solid #a4ad19">
+            <div class="row" style="margin:0">
+              <div class="col-12" style="padding-left:0; padding-right:0px">
+                <h2 style="font-weight:500; font-size:18px; color:#f20c90; text-align:center"><a href="https://youtu.be/GtsavXf8iIo" target="_blank"> Tour Management Configuration, Functional Step 3</a></h2>
+                <p style="color:#000000"><a href="https://youtu.be/GtsavXf8iIo" target="_blank" style="font-size:24px; padding-top:12px; padding-bottom:2px; line-height:normal; border-radius:5px; color:#fff; text-transform:uppercase; display:inline-block; width:100%; margin-top:3px; margin-bottom:3px"><img src="images/tour travel video app thumbnail step 3.png" alt="Tour Management Configuration, Functional Steps Videos in odoo" style="max-width:100%; text-align:center; margin:0 auto; display:block"></a></p>
+              </div>
+            </div>  
+          </div>
+        </div>
+      <div class="col-lg-6 col-sm-6 col-12" style="margin-bottom:10px">
+        <div class="shadow" style="border-radius:10px; padding:10px 0px; background-color:#dfdff5; border:1px solid #a4ad19">
+            <div class="row" style="margin:0">
+              <div class="col-12" style="padding-left:0; padding-right:0px">
+                <h2 style="font-weight:500; font-size:18px; color:#f20c90; text-align:center"><a href="https://youtu.be/66dMuwp4K54" target="_blank"> Tour Management Configuration, Functional Step 4 </a></h2>
+                <p style="color:#000000"><a href="https://youtu.be/66dMuwp4K54" target="_blank" style="font-size:24px; padding-top:12px; padding-bottom:2px; line-height:normal; border-radius:5px; color:#fff; text-transform:uppercase; display:inline-block; width:100%; margin-top:3px; margin-bottom:3px"><img src="images/tour travel video app thumbnail step 4.png" alt="Tour Management Configuration, Functional Steps Videos in odoo" style="max-width:100%; text-align:center; margin:0 auto; display:block"></a></p>
+              </div>
+            </div>  
+          </div>
+        </div>
+        
+        
+      </div>
+  </div>
+
+
+                 <div class="text-center" style="margin-bottom:40px; margin-top:70px">
+                        <h1 style="color:#875a7b; font-size:36px; margin-bottom:10px">You may also like other Aagam Odoo Modules</h1>                       
+                    </div>
+                    <div class="row justify-content-center">
+                                    <div class="col-lg-4 col-md-6" style="margin-bottom:30px">
+              <div class="page_design_portfolio">
+                  <div class="page_design_title" style="border-bottom: 1px solid #f0f0f0;margin-bottom: 10px;    padding: 8px;background-color: #bdbcbc;border-radius: 5px;">
+                      <h2 style="margin-bottom:0; color:#333; font-size:16px">Advance Data Import Sales Orders, Purchase Orders, POS Orders, Chart Account data, Invoice, Stock Inventory, Products, Product attributes etc.</h2>
+                  </div>
+                  <a href="https://apps.odoo.com/apps/modules/15.0/import_bridge_adv_aagam/">
+                      <div class="shadow overflow-hidden" style="width:100%; height:180px">
+                          <img class="img-fluid" alt="" src="images/adv-import-Banner.png" style="height:auto; width:100%">
+                      </div></a>
+                      <a href="https://apps.odoo.com/apps/modules/15.0/import_bridge_adv_aagam/" target="_blank" style="font-size:24px; padding-top:12px; padding-bottom:15px; line-height:normal; border-radius:5px; color:#fff; text-transform:uppercase; display:inline-block; max-width:366px; width:100%; margin-top:30px; margin-bottom:30px; background-color:#00a1b1;text-align: center;">Buy Now</a>
+                  </div>
+              </div>
+
+              <div class="col-lg-4 col-md-6" style="margin-bottom:30px">
+              <div class="page_design_portfolio">
+                  <div class="page_design_title" style="border-bottom: 1px solid #f0f0f0;margin-bottom: 10px;    padding: 8px;background-color: #bdbcbc;border-radius: 5px;">
+                      <h2 style="margin-bottom:0; color:#333; font-size:16px">Odoo Website Helpdesk Support Ticket Management Module, Issue Management for Customers, Helpdesk with Ticket Support System</h2>
+                  </div>
+                  <a href="https://apps.odoo.com/apps/modules/15.0/website_support_ticket_odoo_aagam/">
+                      <div class="shadow overflow-hidden" style="width:100%; height:180px">
+                          <img class="img-fluid" alt="" src="images/website-helpdesk-Banner.png" style="height:auto; width:100%">
+                      </div></a>
+                      <a href="https://apps.odoo.com/apps/modules/15.0/website_support_ticket_odoo_aagam/" target="_blank" style="font-size:24px; padding-top:12px; padding-bottom:15px; line-height:normal; border-radius:5px; color:#fff; text-transform:uppercase; display:inline-block; max-width:366px; width:100%; margin-top:30px; margin-bottom:30px; background-color:#00a1b1;text-align: center;">Buy Now</a>
+                  </div>
+              </div>
+
+              <div class="col-lg-4 col-md-6" style="margin-bottom:30px">
+              <div class="page_design_portfolio">
+                  <div class="page_design_title" style="border-bottom: 1px solid #f0f0f0;margin-bottom: 10px;    padding: 8px;background-color: #bdbcbc;border-radius: 5px;">
+                      <h2 style="margin-bottom:0; color:#333; font-size:16px">Sales Commission Based On Sale Order, Invoice, Payment, Products, Product Category, Product Margin</h2>
+                  </div>
+                  <a href="https://apps.odoo.com/apps/modules/15.0/sale_commission_aagam/">
+                      <div class="shadow overflow-hidden" style="width:100%; height:180px">
+                          <img class="img-fluid" alt="" src="images/Sales-commission-banner.jpg" style="height:auto; width:100%">
+                      </div></a>
+                      <a href="https://apps.odoo.com/apps/modules/15.0/sale_commission_aagam/" target="_blank" style="font-size:24px; padding-top:12px; padding-bottom:15px; line-height:normal; border-radius:5px; color:#fff; text-transform:uppercase; display:inline-block; max-width:366px; width:100%; margin-top:30px; margin-bottom:30px; background-color:#00a1b1;text-align: center;">Buy Now</a>
+                  </div>
+              </div>
+
+<div class="col-lg-4 col-md-6 text-center" style="margin-bottom:30px">
+  <div class="page_design_portfolio">
+     <div class="page_design_title" style="border-bottom: 1px solid #f0f0f0;margin-bottom: 10px;    padding: 8px;background-color: #bdbcbc;border-radius: 5px;">
+          <h2 style="margin-bottom:0; color:#333; font-size:16px">URL Redirection in odoo</h2>
+      </div>
+      <a href="https://apps.odoo.com/apps/modules/14.0/website_url_redirect_rewrite/">
+          <div class="shadow overflow-hidden" style="width:100%; height:180px">
+              <img class="img-fluid" alt="URL Redirection in odoo, SEO URL Redirect in odoo" src="images/url_image.png" style="height:auto; width:100%">
+          </div></a>
+          <a href="https://apps.odoo.com/apps/modules/14.0/website_url_redirect_rewrite/" target="_blank" style="font-size:24px; padding-top:12px; padding-bottom:15px; line-height:normal; border-radius:5px; color:#fff; text-transform:uppercase; display:inline-block; max-width:366px; width:100%; margin-top:30px; margin-bottom:30px; background-color:#00a1b1">Buy Now</a>
+      </div>
+  </div>
+  <div class="col-lg-4 col-md-6 text-center" style="margin-bottom:30px">
+      <div class="page_design_portfolio">
+          <div class="page_design_title" style="border-bottom: 1px solid #f0f0f0;margin-bottom: 10px;    padding: 8px;background-color: #bdbcbc;border-radius: 5px;">
+              <h2 style="margin-bottom:0; color:#333; font-size:16px">Instagram Feed Snippet in odoo</h2>
+          </div>
+          <a href="https://apps.odoo.com/apps/modules/14.0/instagram_feeds_snippet_aagam/">
+              <div class="shadow overflow-hidden" style="width:100%; height:180px">
+                  <img class="img-fluid" alt="Instagram Feed Snippet in odoo, instagram in odoo website odoo 14 13 12 11" src="images/insta_image.png">
+              </div></a>
+              <a href="https://apps.odoo.com/apps/modules/14.0/instagram_feeds_snippet_aagam/" target="_blank" style="font-size:24px; padding-top:12px; padding-bottom:15px; line-height:normal; border-radius:5px; color:#fff; text-transform:uppercase; display:inline-block; max-width:366px; width:100%; margin-top:30px; margin-bottom:30px; background-color:#00a1b1">Buy Now</a>
+          </div>
+      </div>
+      <div class="col-lg-4 col-md-6 text-center" style="margin-bottom:30px">
+          <div class="page_design_portfolio">
+              <div class="page_design_title" style="border-bottom: 1px solid #f0f0f0;margin-bottom: 10px;    padding: 8px;background-color: #bdbcbc;border-radius: 5px;">
+                  <h6 style="margin-bottom:0; color:#333; font-size:16px">Two factor authentication(2FA) in odoo</h6>
+              </div>
+              <a href="https://apps.odoo.com/apps/modules/14.0/aagam_google_2fa_auth/">
+                  <div class="shadow overflow-hidden" style="width:100%; height:180px">
+                      <img class="img-fluid" alt="Two factor authentication(2FA) in odoo, 2FA in odoo, Google authenticator in odoo" src="images/2fa_image.png" style="height:auto; width:100%">
+                  </div></a>
+                  <a href="https://apps.odoo.com/apps/modules/14.0/aagam_google_2fa_auth/" target="_blank" style="font-size:24px; padding-top:12px; padding-bottom:15px; line-height:normal; border-radius:5px; color:#fff; text-transform:uppercase; display:inline-block; max-width:366px; width:100%; margin-top:30px; margin-bottom:30px; background-color:#00a1b1">Buy Now</a>
+              </div>
+          </div>
+          <div class="col-lg-4 col-md-6" style="margin-bottom:30px">
+          <div class="page_design_portfolio">
+              <div class="page_design_title" style="border-bottom: 1px solid #f0f0f0;margin-bottom: 10px;    padding: 8px;background-color: #bdbcbc;border-radius: 5px;">
+                  <h6 style="margin-bottom:0; color:#333; font-size:16px">Amaze Dynamic odoo dashboard, Invoice , Sales, CRM, POS, Inventory dashboards in odoo</h6>
+              </div>
+              <a href="https://apps.odoo.com/apps/modules/14.0/amaze_odoo_dashboard_aagam//">
+                  <div class="shadow overflow-hidden" style="width:100%; height:180px">
+                      <img class="img-fluid" alt="" src="images/Dynamic_odoo_dashboard.jpg" style="height:auto; width:100%">
+                  </div></a>
+                  <a href="https://apps.odoo.com/apps/modules/14.0/amaze_odoo_dashboard_aagam/" target="_blank" style="font-size:24px; padding-top:12px; padding-bottom:15px; line-height:normal; border-radius:5px; color:#fff; text-transform:uppercase; display:inline-block; max-width:366px; width:100%; margin-top:30px; margin-bottom:30px; background-color:#00a1b1">Buy Now</a>
+              </div>
+          </div>
+          <div class="col-lg-4 col-md-6" style="margin-bottom:30px">
+          <div class="page_design_portfolio">
+              <div class="page_design_title" style="border-bottom: 1px solid #f0f0f0;margin-bottom: 10px;    padding: 8px;background-color: #bdbcbc;border-radius: 5px;">
+                  <h6 style="margin-bottom:0; color:#333; font-size:16px">Asset Equipment Maintenance, Machine Repair/Maintenance, Auto parts, Dashboard - MRO module</h6>
+              </div>
+              <a href="https://apps.odoo.com/apps/modules/14.0/asset_equipment_maintenance_aagam/">
+                  <div class="shadow overflow-hidden" style="width:100%; height:180px">
+                      <img class="img-fluid" alt="" src="images/Asset-Equipment-Maintenance.jpg" style="height:auto; width:100%">
+                  </div></a>
+                  <a href="https://apps.odoo.com/apps/modules/14.0/asset_equipment_maintenance_aagam/" target="_blank" style="font-size:24px; padding-top:12px; padding-bottom:15px; line-height:normal; border-radius:5px; color:#fff; text-transform:uppercase; display:inline-block; max-width:366px; width:100%; margin-top:30px; margin-bottom:30px; background-color:#00a1b1">Buy Now</a>
+              </div>
+          </div>
+          <div class="col-lg-4 col-md-6" style="margin-bottom:30px">
+          <div class="page_design_portfolio">
+              <div class="page_design_title" style="border-bottom: 1px solid #f0f0f0;margin-bottom: 10px;    padding: 8px;background-color: #bdbcbc;border-radius: 5px;">
+                  <h6 style="margin-bottom:0; color:#333; font-size:16px">Odoo Woocommerce Connector, Multiple Woocommerce store connection, Import/export Customer, Orders, Products data</h6>
+              </div>
+              <a href="https://apps.odoo.com/apps/modules/14.0/odoo_multi_connect_bridge_aagam/">
+                  <div class="shadow overflow-hidden" style="width:100%; height:180px">
+                      <img class="img-fluid" alt="" src="images/odoo-woocommerce-connector.jpg" style="height:auto; width:100%">
+                  </div></a>
+                  <a href="https://apps.odoo.com/apps/modules/14.0/odoo_multi_connect_bridge_aagam/" target="_blank" style="font-size:24px; padding-top:12px; padding-bottom:15px; line-height:normal; border-radius:5px; color:#fff; text-transform:uppercase; display:inline-block; max-width:366px; width:100%; margin-top:30px; margin-bottom:30px; background-color:#00a1b1">Buy Now</a>
+              </div>
+          </div>
+
+      </div>
+
+    <div class="text-center" style="margin-bottom:40px; margin-top:20px">
+        <h1 style="color:#875a7b; font-size:36px; margin-bottom:10px">You may also like other Aagam Odoo Themes</h1>
+        <p style="color:#333; margin-bottom:10px">All these Aagam odoo themes contain the latest design &amp; templates for eCommerce websites, online shopping theme, online marketplace, corporate websites, online grocery store etc. Beside a large number of features, this theme is the perfect theme/ template for transmitting a positive impact on your customers.</p>
+    </div>
+<div class="row justify-content-center">
+    <div class="col-lg-4 col-md-6 text-center" style="margin-bottom:30px">
+        <div class="page_design_portfolio">
+            <div class="page_design_title" style="border-bottom: 1px solid #f0f0f0;margin-bottom: 10px;    padding: 8px;background-color: #bdbcbc;border-radius: 5px;">
+                <h2 style="margin-bottom:0; color:#333; font-size:16px">Amaze eCommerce Odoo Theme</h2>
+            </div>
+            <a href="https://apps.odoo.com/apps/themes/14.0/theme_amaze_aagam/">
+                <div class="shadow overflow-hidden" style="width:100%; height:357px">
+                    <img class="img-fluid" alt="odoo bootstrap themes" src="https://apps.odoocdn.com/apps/assets/14.0/business_theme_amaze_aagam/images/amaze.gif?dce4e58" style="height:auto; width:100%">
+                </div></a>
+                <a href="https://apps.odoo.com/apps/themes/14.0/theme_amaze_aagam/" target="_blank" style="font-size:24px; padding-top:12px; padding-bottom:15px; line-height:normal; border-radius:5px; color:#fff; text-transform:uppercase; display:inline-block; max-width:366px; width:100%; margin-top:30px; margin-bottom:30px; background-color:#00a1b1">Buy Now</a>
+            </div>
+        </div>
+        <div class="col-lg-4 col-md-6 text-center" style="margin-bottom:30px">
+            <div class="page_design_portfolio">
+                <div class="page_design_title" style="border-bottom: 1px solid #f0f0f0;margin-bottom: 10px;    padding: 8px;background-color: #bdbcbc;border-radius: 5px;">
+                    <h2 style="margin-bottom:0; color:#333; font-size:16px">Amaze Flex eCommerce Odoo Theme</h2>
+                </div>
+                <a href="https://apps.odoo.com/apps/themes/14.0/theme_amaze_flex_aagam/">
+                    <div class="shadow overflow-hidden" style="width:100%; height:357px">
+                        <img class="img-fluid" alt="odoo theme for business" src="https://apps.odoocdn.com/apps/assets/14.0/business_theme_amaze_aagam/images/amazeflex.gif?dce4e58" style="height:auto; width:100%">
+                    </div></a>
+                    <a href="https://apps.odoo.com/apps/themes/14.0/theme_amaze_flex_aagam/" target="_blank" style="font-size:24px; padding-top:12px; padding-bottom:15px; line-height:normal; border-radius:5px; color:#fff; text-transform:uppercase; display:inline-block; max-width:366px; width:100%; margin-top:30px; margin-bottom:30px; background-color:#00a1b1">Buy Now</a>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 text-center" style="margin-bottom:30px">
+                <div class="page_design_portfolio">
+                   <div class="page_design_title" style="border-bottom: 1px solid #f0f0f0;margin-bottom: 10px;    padding: 8px;background-color: #bdbcbc;border-radius: 5px;">
+                        <h2 style="margin-bottom:0; color:#333; font-size:16px">Grocery Odoo Theme</h2>
+                    </div>
+                    <a href="https://apps.odoo.com/apps/themes/13.0/theme_grocery_amaze_aagam/">
+                        <div class="shadow overflow-hidden" style="width:100%; height:357px">
+                            <img class="img-fluid" alt="Odoo ERP themes" src="https://apps.odoocdn.com/apps/assets/14.0/business_theme_amaze_aagam/images/grocery.gif?dce4e58" style="height:auto; width:100%">
+                        </div></a>
+                        <a href="https://apps.odoo.com/apps/themes/13.0/theme_grocery_amaze_aagam/" target="_blank" style="font-size:24px; padding-top:12px; padding-bottom:15px; line-height:normal; border-radius:5px; color:#fff; text-transform:uppercase; display:inline-block; max-width:366px; width:100%; margin-top:30px; margin-bottom:30px; background-color:#00a1b1">Buy Now</a>
+                    </div>
+                </div>
+            </div>
+                
+    
+            </div>
+
+<section class="oe_row free-support text-center" style="padding-top: 32px;margin: auto;">
+        <div style="margin-bottom:24px;">
+          <h2 style="color:#333; font-weight: normal;margin-bottom:8px;">For Technical Help and Support</h2>
+          
+        </div>
+        <p style="margin-bottom:0;font-family:Montserrat;color:#3e3d3d;font-weight: 400;">At aagaminfotech we offer end to end solution for Odoo services. Which includes analysis &amp; consultation on the workflows and integration part.</p>
+        <p style="margin-bottom:0;font-family:Montserrat;color:#3e3d3d;font-weight: 400;line-height: 40px;">Incase of any question regarding this module feel free to email us on <a href="mailto:business@aagaminfotech.com" style="color:#ee305d;"><span class="__cf_email__">business@aagaminfotech.com</span></a></p>
+       
+        <div>
+          <a class="btn yellow-btn btn-lg" href="http://www.aagaminfotech.com/" title="Website" target="_blank" onmouseover="this.style.backgroundColor='#d61c48'" onmouseout="this.style.backgroundColor='#ee305d'" style="font-family: Montserrat; background-color: #153c80; color: rgb(255, 255, 255); font-size: 16px; margin-right: 5px;">Website</a>
+          <a class="btn yellow-btn btn-lg" href="skype:harnish.axis?chat" title="Support Request" target="_blank" onmouseover="this.style.backgroundColor='#d61c48'" onmouseout="this.style.backgroundColor='#ee305d'" style="font-family: Montserrat; background-color: #00aff0; color: rgb(255, 255, 255); font-size: 16px; margin-right: 5px;">Skype Support</a>
+          <a class="btn yellow-btn btn-lg" href="http://www.aagaminfotech.com" title="Services" target="_blank" onmouseover="this.style.backgroundColor='#d61c48'" onmouseout="this.style.backgroundColor='#ee305d'" style="font-family: Montserrat; background-color: #0c7b1a; color: rgb(255, 255, 255); font-size: 16px; margin-right: 5px;">Services</a>
+        </div>
+      </section>
+
+</div>

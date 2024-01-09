@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+        <record id="view_date_wise_price_tree" model="ir.ui.view">
+            <field name="name">date.pricelist.data.tree</field>
+            <field name="model">date.pricelist.data</field>
+            <field name="type">tree</field>
+            <field name="priority" eval="8"/>
+            <field name="arch" type="xml">
+                <tree string="DateWise Price">
+                    <field name="pricelist_id"/>
+                    <field name="date_list"/>
+                    <field name="price"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="view_date_wise_price_form" model="ir.ui.view">
+            <field name="name">date.pricelist.data.form</field>
+            <field name="model">date.pricelist.data</field>
+            <field name="type">form</field>
+            <field name="priority" eval="8"/>
+            <field name="arch" type="xml">
+                <form string="DateWise Price">
+                    <sheet>
+                        <group>
+                            <field name="pricelist_id"/>
+                            <field name="date_list"/>
+                            <field name="price"/>
+                        </group>
+                    </sheet>
+                    <div class="oe_chatter">
+                        <field name="message_follower_ids" widget="mail_followers"/>
+                        <field name="message_ids" widget="mail_thread"/>
+                    </div>
+                </form>
+            </field>
+        </record>
+
+        <record id="view_date_wise_price_search" model="ir.ui.view">
+            <field name="name">date.pricelist.data.search</field>
+            <field name="model">date.pricelist.data</field>
+            <field name="type">search</field>
+            <field name="priority" eval="8"/>
+            <field name="arch" type="xml">
+                <search string="DateWise Price">
+                    <field name="pricelist_id"/>
+                    <group expand="0" string="Group By">
+                        <filter name="group_pricelist" string="By Pricleist Price" domain="[]" context="{'group_by': 'pricelist_id'}"/>
+                    </group>
+                </search>
+            </field>
+        </record>
+
+        <record model="ir.actions.act_window" id="act_date_wise_price_view">
+            <field name="name">DateWise Price</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">date.pricelist.data</field>
+            <field name="view_mode">tree,form</field>
+            <field name="search_view_id" ref="view_date_wise_price_search"/>
+            <field name="domain">[]</field>
+            <field name="context">{}</field>
+        </record>
+
+        <record model="ir.actions.act_window.view" id="act_open_ferry_view_form">
+            <field name="act_window_id" ref="act_date_wise_price_view"/>
+            <field name="sequence" eval="20"/>
+            <field name="view_mode">form</field>
+            <field name="view_id" ref="view_date_wise_price_form"/>
+        </record>
+
+        <record model="ir.actions.act_window.view" id="act_open_ferry_view_tree">
+            <field name="act_window_id" ref="act_date_wise_price_view"/>
+            <field name="sequence" eval="10"/>
+            <field name="view_mode">tree</field>
+            <field name="view_id" ref="view_date_wise_price_tree"/>
+        </record>
+<menuitem id="tour_date_wise_price_menu" name="Date Wise Price" parent="menu_tour_reservation_config" sequence="5" action="act_date_wise_price_view"/>
+    </data>
+</odoo>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+	<data>
+
+    <record id="Tour_dashboard_action" model="ir.actions.client">
+         <field name="name">Tour Dashboard</field>
+         <field name="tag">Tour_dashboard</field>
+    </record>
+
+   </data>
+</odoo>

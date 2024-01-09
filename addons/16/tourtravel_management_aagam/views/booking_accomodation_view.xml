@@ -1,0 +1,230 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+        <record id="view_room_type_tree" model="ir.ui.view">
+            <field name="name">room.type.tree</field>
+            <field name="model">room.type</field>
+            <field name="type">tree</field>
+            <field name="priority" eval="8"/>
+            <field name="arch" type="xml">
+                <tree string="Room type">
+                    <field name="name"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="view_room_type_form" model="ir.ui.view">
+            <field name="name">room.type.form</field>
+            <field name="model">room.type</field>
+            <field name="type">form</field>
+            <field name="priority" eval="8"/>
+            <field name="arch" type="xml">
+                <form string="Room type">
+                    <sheet>
+                        <group>
+                            <field name="name" required="1"/>
+                        </group>
+                    </sheet>
+                    <div class="oe_chatter">
+                        <field name="message_follower_ids" widget="mail_followers"/>
+                        <field name="message_ids" widget="mail_thread"/>
+                    </div>
+                </form>
+            </field>
+        </record>
+
+        <record model="ir.actions.act_window" id="act_open_room_type_view">
+            <field name="name">Room type</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">room.type</field>
+<!--            <field name="view_type">form</field>-->
+            <field name="view_mode">tree,form</field>
+            <field name="domain">[]</field>
+            <field name="context">{}</field>
+        </record>
+
+        <record model="ir.actions.act_window.view" id="act_open_room_type_view_form">
+            <field name="act_window_id" ref="act_open_room_type_view"/>
+            <field name="sequence" eval="20"/>
+            <field name="view_mode">form</field>
+            <field name="view_id" ref="view_room_type_form"/>
+        </record>
+
+        <record model="ir.actions.act_window.view" id="act_open_room_type_view_tree">
+            <field name="act_window_id" ref="act_open_room_type_view"/>
+            <field name="sequence" eval="10"/>
+            <field name="view_mode">tree</field>
+            <field name="view_id" ref="view_room_type_tree"/>
+        </record>
+
+        <record id="view_meal_meal_tree" model="ir.ui.view">
+            <field name="name">meal.meal.tree</field>
+            <field name="model">meal.meal</field>
+            <field name="type">tree</field>
+            <field name="priority" eval="8"/>
+            <field name="arch" type="xml">
+                <tree string="Meal">
+                    <field name="name"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="view_meal_meal_form" model="ir.ui.view">
+            <field name="name">meal.meal.form</field>
+            <field name="model">meal.meal</field>
+            <field name="type">form</field>
+            <field name="priority" eval="8"/>
+            <field name="arch" type="xml">
+                <form string="Meal">
+                    <sheet>
+                        <group>
+                            <field name="name" required="1"/>
+                        </group>
+                    </sheet>
+                    <div class="oe_chatter">
+                        <field name="message_follower_ids" widget="mail_followers"/>
+                        <field name="message_ids" widget="mail_thread"/>
+                    </div>
+                </form>
+            </field>
+        </record>
+
+        <record model="ir.actions.act_window" id="act_open_meal_meal_view">
+            <field name="name">Meal</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">meal.meal</field>
+<!--            <field name="view_type">form</field>-->
+            <field name="view_mode">tree,form</field>
+            <field name="domain">[]</field>
+            <field name="context">{}</field>
+        </record>
+
+        <record model="ir.actions.act_window.view" id="act_open_meal_meal_view_form">
+            <field name="act_window_id" ref="act_open_meal_meal_view"/>
+            <field name="sequence" eval="20"/>
+            <field name="view_mode">form</field>
+            <field name="view_id" ref="view_meal_meal_form"/>
+        </record>
+
+        <record model="ir.actions.act_window.view" id="act_open_meal_meal_view_tree">
+            <field name="act_window_id" ref="act_open_meal_meal_view"/>
+            <field name="sequence" eval="10"/>
+            <field name="view_mode">tree</field>
+            <field name="view_id" ref="view_meal_meal_tree"/>
+        </record>
+
+        <record id="view_booking_accommodation_tree" model="ir.ui.view">
+            <field name="name">booking.accommodation.tree</field>
+            <field name="model">booking.accommodation</field>
+            <field name="type">tree</field>
+            <field name="priority" eval="8"/>
+            <field name="arch" type="xml">
+                <tree string="Booking Accommodation">
+                    <field name="hotel_id"/>
+                    <field name="date_in"/>
+                    <field name="date_out"/>
+                    <field name="room_type_id"/>
+                    <field name="no_of_pax"/>
+                    <field name="meal_id"/>
+                    <field name="booked_by_id"/>
+                    <field name="tour_id"/>
+<!--                    <field name="tour_reservation_id"/>-->
+                </tree>
+            </field>
+        </record>
+
+        <record id="view_booking_accommodation_form" model="ir.ui.view">
+            <field name="name">booking.accommodation.form</field>
+            <field name="model">booking.accommodation</field>
+            <field name="type">form</field>
+            <field name="priority" eval="8"/>
+            <field name="arch" type="xml">
+                <form string="Booking Accommodation">
+                	<header>
+                		<button name="action_send_email_to_hotel" type="object" string="Send Email To Hotel" class="oe_highlight"/>
+                	</header>
+                    <sheet>
+                        <group>
+                            <group>
+                                <field name="tour_id"/>
+<!--                                <field name="tour_reservation_id" required="1"/>-->
+                                <field name="hotel_id" required="1"/>
+                                <field name="date_in" required="1"/>
+                                <field name="date_out" required="1"/>
+                                <field name="other_detail"/>
+                                </group>
+                            <group>
+                                <field name="room_type_id"/>
+                                <field name="no_of_pax"/>
+                                <field name="meal_id"/>
+                                <field name="booked_by_id"/>
+                                <field name="cost_price"/>
+                                <field name="sale_price"/>
+                            </group>
+                            <group string="Tour Information">
+                                <field name="tour_ids"/>
+                                <field name="tour_start_date"/>
+                            </group>
+                            <field name="cost_ids" widget="one2many"/>
+                        </group>
+                    </sheet>
+                    <div class="oe_chatter">
+                        <field name="message_follower_ids" widget="mail_followers"/>
+                        <field name="message_ids" widget="mail_thread"/>
+                    </div>
+                </form>
+            </field>
+        </record>
+
+        <record id="view_booking_accommodation_search" model="ir.ui.view">
+            <field name="name">booking.accommodation.search</field>
+            <field name="model">booking.accommodation</field>
+            <field name="type">search</field>
+            <field name="priority" eval="8"/>
+            <field name="arch" type="xml">
+                <search string="Booking Accommodation">
+                    <field name="hotel_id"/>
+                    <field name="date_in"/>
+                    <field name="date_out"/>
+                    <field name="room_type_id"/>
+                    <field name="no_of_pax"/>
+                    <field name="meal_id"/>
+                    <field name="booked_by_id"/>
+                    <field name="tour_reservation_id"/>
+                    <group expand="0" string="Group By">
+                        <filter name="group_name" string="By hotel name" domain="[]" context="{'group_by': 'hotel_id'}"/>
+                        <filter name="group_room_type" string="By room type" domain="[]" context="{'group_by': 'room_type_id'}"/>
+                        <filter name="group_who_booked" string="By who booked" domain="[]" context="{'group_by': 'booked_by_id'}"/>
+                        <filter name="group_tour_reservation" string="By tour reservation" domain="[]" context="{'group_by': 'tour_reservation_id'}"/>
+                    </group>
+                </search>
+            </field>
+        </record>
+
+        <record model="ir.actions.act_window" id="act_open_booking_accommodation_view">
+            <field name="name">Booking Accommodation</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">booking.accommodation</field>
+<!--            <field name="view_type">form</field>-->
+            <field name="view_mode">tree,form</field>
+            <field name="search_view_id" ref="view_booking_accommodation_search"/>
+            <field name="domain">[]</field>
+            <field name="context">{}</field>
+        </record>
+
+        <record model="ir.actions.act_window.view" id="act_open_booking_accommodation_view_form">
+            <field name="act_window_id" ref="act_open_booking_accommodation_view"/>
+            <field name="sequence" eval="20"/>
+            <field name="view_mode">form</field>
+            <field name="view_id" ref="view_booking_accommodation_form"/>
+        </record>
+
+        <record model="ir.actions.act_window.view" id="act_open_booking_accommodation_view_tree">
+            <field name="act_window_id" ref="act_open_booking_accommodation_view"/>
+            <field name="sequence" eval="10"/>
+            <field name="view_mode">tree</field>
+            <field name="view_id" ref="view_booking_accommodation_tree"/>
+        </record>
+
+    </data>
+</odoo>

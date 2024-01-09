@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+        <record id="inherit_invoice_form" model="ir.ui.view">
+            <field name="name">account.move.form</field>
+            <field name="model">account.move</field>
+            <field name="inherit_id" ref="account.view_move_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//page[@name='other_info']" position="after">
+                    <page string="Tour info" name="tour_info">
+                        <group string="Reservation">
+                            <field name="tour_reservation_id"/>
+                            <field name="agent_id" />
+                            <field name="client_name" />
+                            <field name="agent_reference" />
+                            <field name="addition_info" />
+                        </group>
+                    </page>
+                </xpath>
+<!--                <xpath expr="//field[@name='invoice_payment_term_id']" position="after">-->
+                <xpath expr="//field[@name='partner_id']" position="after">
+                    <field name="payment_method"/>
+                    <field name="bank_detail"/>
+                </xpath>
+                <xpath expr="//field[@name='invoice_line_ids']/tree/field[@name='product_id']" position="after">
+                    <field name="service_datetime" />
+                    <field name="person_cost_id" groups="base.group_no_one"/>
+                </xpath>
+                <xpath expr="//field[@name='invoice_line_ids']/kanban/field[@name='product_id']" position="after">
+                    <field name="service_datetime" />
+                </xpath>
+            </field>
+        </record>
+
+        <record id="inherit_invoice_line_form" model="ir.ui.view">
+            <field name="name">account.move.line.form</field>
+            <field name="model">account.move.line</field>
+            <field name="inherit_id" ref="account.view_move_line_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='product_id']" position="after">
+                    <field name="service_datetime" />
+                </xpath>
+            </field>
+        </record>
+
+        <record id="action_tour_invoice" model="ir.actions.act_window">
+            <field name="name">Tour Invoices</field>
+            <field name="res_model">account.move</field>
+<!--            <field name="view_type">form</field>-->
+            <field name="view_mode">tree,form,graph</field>
+            <field name="view_id" ref="account.view_move_tree"/>
+            <field name="context">{'type': 'out_invoice'}</field>
+            <field name="domain">[('tour_reservation_id', '!=', False)]</field>
+<!--            <field name="search_view_id" ref="account.view_account_move_filter"/>-->
+        </record>
+
+        <record model="ir.actions.act_window.view" id="act_open_tour_invoice_view_tree">
+            <field name="act_window_id" ref="tourtravel_management_aagam.action_tour_invoice"/>
+            <field name="sequence" eval="10"/>
+            <field name="view_mode">tree</field>
+            <field name="view_id" ref="account.view_move_tree"/>
+        </record>
+
+        <record model="ir.actions.act_window.view" id="act_open_tour_invoice_view_form">
+            <field name="act_window_id" ref="tourtravel_management_aagam.action_tour_invoice"/>
+            <field name="sequence" eval="20"/>
+            <field name="view_mode">form</field>
+            <field name="view_id" ref="account.view_move_form"/>
+        </record>
+
+    </data>
+</odoo>

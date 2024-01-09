@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data noupdate='1'>
+        <record id="ir_seq_tour_booking" model="ir.sequence">
+            <field name="name">Tour Booking</field>
+            <field name="code">tour.booking.seq</field>
+            <field name="prefix">TRB/</field>
+            <field name="padding">4</field>
+            <field name="number_increment">1</field>
+            <field name="number_next_actual">1</field>
+            <field name="implementation">standard</field>
+            <field name="company_id" eval="False"/>
+        </record>
+
+
+         <record id="ir_seq_tour_Inquiry" model="ir.sequence">
+            <field name="name">Tour Inquiry</field>
+            <field name="code">tour.inquiry.seq</field>
+            <field name="prefix">INQ/</field>
+            <field name="padding">4</field>
+            <field name="number_increment">1</field>
+            <field name="number_next_actual">1</field>
+            <field name="implementation">standard</field>
+            <field name="company_id" eval="False"/>
+        </record>
+
+        <record id="ir_seq_tourItinerary" model="ir.sequence">
+            <field name="name">Tour Itinerary</field>
+            <field name="code">tour.itinerary.seq</field>
+            <field name="prefix">TIN/</field>
+            <field name="padding">4</field>
+            <field name="number_increment">1</field>
+            <field name="number_next_actual">1</field>
+            <field name="implementation">standard</field>
+            <field name="company_id" eval="False"/>
+        </record>
+
+        <record id="ir_seq_tourinformation" model="ir.sequence">
+            <field name="name">Tour Booking Information</field>
+            <field name="code">tour.information.seq</field>
+            <field name="prefix">TBI/</field>
+            <field name="padding">4</field>
+            <field name="number_increment">1</field>
+            <field name="number_next_actual">1</field>
+            <field name="implementation">standard</field>
+            <field name="company_id" eval="False"/>
+        </record>
+
+        <record id="ir_seq_tour_visa" model="ir.sequence">
+            <field name="name">Tour Visa</field>
+            <field name="code">tour.visa.seq</field>
+            <field name="prefix">TVB/</field>
+            <field name="padding">4</field>
+            <field name="number_increment">1</field>
+            <field name="number_next_actual">1</field>
+            <field name="implementation">standard</field>
+            <field name="company_id" eval="False"/>
+        </record>
+
+        <record id="ir_seq_tour_passport" model="ir.sequence">
+            <field name="name">Tour Passport</field>
+            <field name="code">tour.passport.seq</field>
+            <field name="prefix">PSB/</field>
+            <field name="padding">4</field>
+            <field name="number_increment">1</field>
+            <field name="number_next_actual">1</field>
+            <field name="implementation">standard</field>
+            <field name="company_id" eval="False"/>
+        </record>
+        
+        <record id="ir_seq_custom_tour_booking" model="ir.sequence">
+            <field name="name">Custom Tour Booking</field>
+            <field name="code">custom.tour.booking.seq</field>
+            <field name="prefix">CTRB/</field>
+            <field name="padding">4</field>
+            <field name="number_increment">1</field>
+            <field name="number_next_actual">1</field>
+            <field name="implementation">standard</field>
+            <field name="company_id" eval="False"/>
+        </record>
+        
+         <record id="ir_seq_agent_commission" model="ir.sequence">
+            <field name="name">Agent Commission</field>
+            <field name="code">agent.commission.seq</field>
+            <field name="prefix">AC/</field>
+            <field name="padding">4</field>
+            <field name="number_increment">1</field>
+            <field name="number_next_actual">1</field>
+            <field name="implementation">standard</field>
+            <field name="company_id" eval="False"/>
+        </record>
+        
+    </data>
+</odoo>

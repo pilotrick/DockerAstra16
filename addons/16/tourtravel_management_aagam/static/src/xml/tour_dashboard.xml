@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates id="template" xml:space="preserve">
+    <t t-name="TourDashboardView">
+        <div class="appointment_dashboard">
+            <div class="container-fluid o_appointment_dashboard">
+                <div class="sales-dashboard">
+                  <h4 class="text-primary text-center py-5">Tour Dashboard</h4>
+                  <div class="container">
+                    <div class="appointment-cards pb-5">
+                      <!-- Start: Appointment Cards -->
+                      <div class="row">
+                        <div class="col-lg-3 col-sm-6 col-12">
+                          <div class="appointment_cards position-relative overflow-hidden appointment_card1 rounded p-sm-4 p-3 more-today-appointment ">
+                            <i class="fa fa-bell position-absolute opacity_icon"></i>
+                            <div class="row align-items-center">
+                              <div class="col-3 pr-0">
+                                <h1 class="card_number_text m-0 text-white"><b class="today-booking"></b></h1>
+                              </div>
+                              <div class="col-9" style="padding-left: 0;">
+                                <h4 class="mb-1 text-white card_up_title">Tour Booking</h4>
+                                <h2 class="m-0 text-white card_main_title">Today</h2>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col-lg-3 col-sm-6 col-12">
+                          <div class="appointment_cards position-relative overflow-hidden appointment_card2 rounded p-sm-4 p-3 last-week-booking">
+                            <i class="fa fa-list position-absolute opacity_icon"></i>
+                            <div class="row align-items-center">
+                              <div class="col-3 pr-0">
+                                <h1 class="card_number_text m-0 text-white"><b class="last-week-date"></b></h1>
+                              </div>
+                              <div class="col-9" style="padding-left: 0;">
+                                <h4 class="mb-1 text-white card_up_title">Tour Booking</h4>
+                                <h2 class="m-0 text-white card_main_title">Last Week</h2>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col-lg-3 col-sm-6 col-12">
+                          <div class="appointment_cards position-relative overflow-hidden appointment_card3 rounded p-sm-4 p-3 last-month-booking">
+                            <i class="fa fa-calendar position-absolute opacity_icon"></i>
+                            <div class="row align-items-center">
+                              <div class="col-3 pr-0">
+                                <h1 class="card_number_text m-0 text-white"><b class="last-month-date"></b></h1>
+                              </div>
+                              <div class="col-9" style="padding-left: 0;">
+                                <h4 class="mb-1 text-white card_up_title">Tour Booking</h4>
+                                <h2 class="m-0 text-white card_main_title">Last Month</h2>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col-lg-3 col-sm-6 col-12">
+                          <div class="appointment_cards position-relative overflow-hidden appointment_card4 rounded p-sm-4 p-3 more-total-appointment">
+                            <i class="fa fa-trophy position-absolute opacity_icon"></i>
+                            <div class="row align-items-center">
+                              <div class="col-3 pr-0">
+                                <h1 class="card_number_text m-0 text-white"><b class="total-booking"></b></h1>
+                              </div>
+                              <div class="col-9" style="padding-left: 0;">
+                                <h4 class="mb-1 text-white card_up_title">Total</h4>
+                                <h2 class="m-0 text-white card_main_title">Booking</h2>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <!-- End: Appointment Cards -->
+<!--                       Start: Appointment Charts-->
+                      <div class="row">
+                        <div class="col-md-6">
+                          <div class="appontment_chart_cards p-sm-3 p-2 shadow-sm text-center border rounded">
+                            <h4 class="mb-2 text-dark">Weekly Booking</h4>
+                            <div class="card-body shadow">
+                              <div class="panel">
+                                  <div class="panel-heading">
+                                  </div>
+                                  <div class="panel-body">
+                                        <canvas id="weekly_booking" width="500px" height="400px"/>
+                                  </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col-md-6">
+                          <div class="appontment_chart_cards p-sm-3 p-2 shadow-sm text-center border rounded">
+                            <h4 class="mb-2 text-dark">Monthly Booking</h4>
+                            <div class="card-body shadow">
+                              <div class="panel">
+                                  <div class="panel-heading">
+                                  </div>
+                                  <div class="panel-body">
+                                        <canvas id="monthly_booking" width="500px" height="400px"/>
+                                  </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <!-- End: Appointment Charts -->
+                    </div>
+                  </div>
+                </div>
+              </div>
+          </div>
+      </t>
+</templates>

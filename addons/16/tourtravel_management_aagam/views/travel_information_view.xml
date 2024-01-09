@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+        <record id="travel_information_form_view" model="ir.ui.view">
+            <field name="name">travel.info.form</field>
+            <field name="model">travel.info</field>
+            <field name="type">form</field>
+            <field name="priority" eval="8"/>
+            <field name="arch" type="xml">
+                <form string="Travel Information">
+                    <sheet>
+                    <group>
+                        <group>
+                            <field name="from_place"/>
+                            <field name="to_place"/>
+                            <field name="transport_type"/>
+                            <field name="travel_class"/>
+                        </group>
+                        <group>
+                            <field name="distance_in_km"/>
+                            <field name="time_hrs"/>
+                        </group>
+                    </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="travel_info_tree_view" model="ir.ui.view">
+            <field name="name">travel.info.tree</field>
+            <field name="model">travel.info</field>
+             <field name="type">tree</field>
+            <field name="priority" eval="8"/>
+            <field name="arch" type="xml">
+                <tree string="Tour">
+                    <field name="from_place"/>
+                    <field name="to_place"/>
+                    <field name="transport_type"/>
+                    <field name="travel_class"/>
+                    <field name="distance_in_km"/>
+                    <field name="time_hrs"/>
+                </tree>
+            </field>
+        </record>
+
+        <record model="ir.actions.act_window" id="action_travel_info_views">
+            <field name="name">Travel Information</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">travel.info</field>
+<!--            <field name="view_type">form</field>-->
+            <field name="view_mode">tree,form</field>
+            <field name="search_view_id" ref="travel_information_form_view"/>
+            <field name="domain">[]</field>
+            <field name="context">{}</field>
+        </record>
+    </data>
+</odoo>

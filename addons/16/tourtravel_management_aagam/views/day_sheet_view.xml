@@ -1,0 +1,219 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+        <record id="view_day_sheet_tree" model="ir.ui.view">
+            <field name="name">day.sheet.tree</field>
+            <field name="model">day.sheet</field>
+            <field name="type">tree</field>
+            <field name="priority" eval="8"/>
+            <field name="arch" type="xml">
+                <tree string="Day Sheet" editable="bottom" create="0" delete="0">
+                    <field name="tour_reservation_id" invisible="1"/>
+                    <field name="file_number"/>
+                    <!-- <field name="service_id"/> -->
+                    <field name="service_date"/>
+                    <field name="service_datetime" invisible="1"/>
+                    <!-- <field name="extra_service_id"/> -->
+                    <field name="extra_service_date"/>
+                    <field name="extra_service_datetime" invisible="1"/>
+                    <field name="booking_name"/>
+                    <field name="booking_date"/>
+                    <field name="agent_id"/>
+                    <field name="driver_id" context="{'default_driver': True}"/>
+                    <field name="guide_id" context="{'default_guide': True}"/>
+                    <field name="state"/>
+                    <field name="service_start" invisible="1"/>
+                    <field name="service_end" invisible="1"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="view_day_sheet_form" model="ir.ui.view">
+            <field name="name">day.sheet.form</field>
+            <field name="model">day.sheet</field>
+            <field name="type">form</field>
+            <field name="priority" eval="8"/>
+            <field name="arch" type="xml">
+                <form string="Day Sheet" create="0" delete="0">
+                    <header>
+                        <button name="approve_booking" type="object" string="Approve booking" states="draft" class="oe_highlight"/>
+                        <button name="confirm_booking" type="object" string="Confirm booking" states="in_progress" class="oe_highlight"/>
+                        <field name="state" widget="statusbar" statusbar_visible="draft,in_progress,confirmed"/>
+                    </header>
+                    <sheet>
+                        <group>
+                            <field name="tour_reservation_id" required="1" invisible="1"/>
+                            <field name="file_number"/>
+                            <field name="booking_name"/>
+                            <field name="booking_date"/>
+                            <field name="agent_id" context="{'default_s_agent': 'parent'}"/>
+                            <field name="remarks"/>
+                            <field name="service_id" readonly="1"/>
+                            <field name="service_datetime"/>
+                            <field name="extra_service_id" readonly="1"/>
+                            <field name="extra_service_datetime"/>
+                            <field name="active" invisible="1"/>
+                            <field name="s_datetime"/>
+                            <field name="driver_id" context="{'default_driver': True}"/>
+                            <field name="guide_id" context="{'default_guide': True}"/>
+                        </group>
+                        <group groups="base.group_no_one" class="mt0" invisible="1">
+                            <group class="mt0">
+                                <field name="service_start" string="Service Start"/>
+                                <field name="service_end" string="Service End"/>
+                            </group>
+                            <group class="mt0">
+                                <field name="extra_service_start" string="Extra Service Start"/>
+                                <field name="extra_service_end" string="Extra Service End"/>
+                            </group>
+                        </group>
+                        <notebook>
+                            <page string="Services" invisible="0">
+                                <field name="service_ids" context="{'default_tour_reservation_id': tour_reservation_id}">
+                                    <tree>
+                                        <field name="name" />
+                                        <field name="service_datetime"/>
+                                        <field name="no_of_pax"/>
+                                        <field name="customer_name_ids"/>
+                                        <field name="place_from"/>
+                                        <field name="place_to"/>
+                                        <field name="driver_id" context="{'default_driver': True}"/>
+                                        <field name="guide_id" context="{'default_guide': True}"/>
+                                        <field name="tour_reservation_id" invisible="1"/>
+                                    </tree>
+                                    <form>
+                                        <sheet>
+                                            <group>
+                                                <field name="name" required="1"/>
+                                                <field name="service_datetime" required="1"/>
+                                                <field name="no_of_pax"/>
+                                                <field name="customer_name_ids" widget="many2many_tags"/>
+                                                <field name="place_from" required="1"/>
+                                                <field name="place_to" required="1"/>
+                                                <field name="driver_id" context="{'default_driver': True}"/>
+                                                <field name="guide_id" context="{'default_guide': True}"/>
+                                                <field name="service_remarks"/>
+                                                <field name="cost_ids" widget="one2many"/>
+                                                <field name="tour_reservation_id" invisible="1"/>
+                                            </group>
+                                        </sheet>
+                                    </form>
+                                </field>
+                            </page>
+                            <page string="Extra Services" invisible="0">
+                                <field name="extra_service_ids" context="{'default_tour_reservation_id': tour_reservation_id}">
+                                    <tree class="set_table">
+                                        <field name="name"/>
+                                        <field name="service_datetime"/>
+                                        <field name="no_of_pax" string="# of Pax"/>
+                                        <field name="qty_invoiced" groups="base.group_no_one"/>
+                                        <field name="agent_id"/>
+                                        <field name="sub_agent_id"/>
+                                        <field name="place_from"/>
+                                        <field name="place_to"/>
+                                        <field name="driver_id"/>
+                                        <field name="guide_id"/>
+                                        <field name="tour_consultant_id" context="{'default_tour_consultant': True}"/>
+                                        <field name="currency_id" invisible="1"/>
+                                        <field name="tour_reservation_id" invisible="1"/>
+                                    </tree>
+                                    <form>
+                                        <sheet>
+                                            <group>
+                                                <field name="name" required="1"/>
+                                                <field name="service_datetime" required="1"/>
+                                                <field name="no_of_pax"/>
+                                                <field name="qty_invoiced" groups="base.group_no_one" />
+                                                <field name="customer_name_ids" widget="many2many_tags"/>
+                                                <field name="agent_id" context="{'default_s_agent': 'parent'}"/>
+                                                <field name="sub_agent_id" context="{'default_s_agent': 'child'}"/>
+                                                <field name="place_from" required="1"/>
+                                                <field name="place_to" required="1"/>
+                                                <field name="driver_id" context="{'default_driver': True}"/>
+                                                <field name="guide_id" context="{'default_guide': True}"/>
+                                                <field name="tour_consultant_id"/>
+                                                <field name="service_remarks"/>
+                                                <field name="currency_id"/>
+                                                <field name="cost_ids" widget="one2many"/>
+                                                <field name="tour_reservation_id" invisible="1"/>
+                                            </group>
+                                        </sheet>
+                                    </form>
+                                </field>
+                            </page>
+                        </notebook>
+                    </sheet>
+                    <div class="oe_chatter">
+                        <field name="message_follower_ids" widget="mail_followers"/>
+                        <field name="message_ids" widget="mail_thread"/>
+                    </div>
+                </form>
+            </field>
+        </record>
+
+        <record id="view_day_sheet_search" model="ir.ui.view">
+            <field name="name">day.sheet.search</field>
+            <field name="model">day.sheet</field>
+            <field name="type">search</field>
+            <field name="priority" eval="8"/>
+            <field name="arch" type="xml">
+                <search string="Day Sheet">
+                    <field name="tour_reservation_id"/>
+                    <field name="booking_name"/>
+                    <field name="booking_date"/>
+                    <field name="agent_id"/>
+                    <field name="file_number"/>
+                    <field name="remarks"/>
+                    <field name="state"/>
+                    <field name="service_ids"/>
+                    <field name="service_start"/>
+                    <field name="service_end"/>
+                    <field name="extra_service_start"/>
+                    <field name="extra_service_end"/>
+                    <field name="service_date" filter_domain="['|', ('service_date', '=', self), ('extra_service_date', '=', self)]"/>
+                    <field name="extra_service_date" filter_domain="['|', ('service_date', '=', self), ('extra_service_date', '=', self)]"/>
+                    <filter string="Yesterday" name="yesterday"
+                        domain="['|', '&amp;', ('service_datetime', '>=', (context_today()-relativedelta(days=1)).strftime('%Y-%m-%d 00:00:00')),
+                        ('service_datetime', '&lt;=', (context_today()-relativedelta(days=1)).strftime('%Y-%m-%d 23:59:59')), '&amp;',
+                        ('extra_service_datetime', '>=', (context_today()-relativedelta(days=1)).strftime('%Y-%m-%d 00:00:00')),
+                        ('extra_service_datetime', '&lt;=', (context_today()-relativedelta(days=1)).strftime('%Y-%m-%d 23:59:59'))]"/>
+                    <filter string="Today" name="today"
+                        domain="['|', '&amp;', ('service_datetime','>=', time.strftime('%Y-%m-%d 00:00:00')),
+                        ('service_datetime','&lt;=', time.strftime('%Y-%m-%d 23:59:59')), '&amp;',
+                        ('extra_service_datetime','>=', time.strftime('%Y-%m-%d 00:00:00')),
+                        ('extra_service_datetime','&lt;=', time.strftime('%Y-%m-%d 23:59:59'))]"/>
+                    <group expand="0" string="Group By">
+                        <filter name="group_tour_reservation" string="By tour reservation" domain="[]" context="{'group_by': 'tour_reservation_id'}"/>
+                        <filter name="group_agent" string="By agent" domain="[]" context="{'group_by': 'agent_id'}"/>
+                    </group>
+                </search>
+            </field>
+        </record>
+
+        <record model="ir.actions.act_window" id="act_open_day_sheet_view">
+            <field name="name">Day Sheet</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">day.sheet</field>
+<!--            <field name="view_type">form</field>-->
+            <field name="view_mode">tree,form</field>
+            <field name="search_view_id" ref="view_day_sheet_search"/>
+            <field name="domain">[('state', 'in', ['confirmed', 'done']), ('active', '=', True)]</field>
+            <field name="context">{}</field>
+        </record>
+
+        <record model="ir.actions.act_window.view" id="act_open_day_sheet_view_form">
+            <field name="act_window_id" ref="act_open_day_sheet_view"/>
+            <field name="sequence" eval="20"/>
+            <field name="view_mode">form</field>
+            <field name="view_id" ref="view_day_sheet_form"/>
+        </record>
+
+        <record model="ir.actions.act_window.view" id="act_open_day_sheet_view_tree">
+            <field name="act_window_id" ref="act_open_day_sheet_view"/>
+            <field name="sequence" eval="10"/>
+            <field name="view_mode">tree</field>
+            <field name="view_id" ref="view_day_sheet_tree"/>
+        </record>
+
+    </data>
+</odoo>

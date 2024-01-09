@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="custom_tour_booking_view_template">
+            <t t-call="web.external_layout">
+                <div class="text-center">
+                <h3><b>Custom Tour Booking Report</b></h3>
+            </div>
+                <br/>
+                <br/>
+                <table class="table">
+                    <tr>
+                        <td>
+                            <h6><b>Customer:</b>
+                            <span t-field="doc.customer_id.name"/></h6>
+                        </td>
+                        <td>
+                            <h6><b>Tour Booking Date:</b>
+                            <span t-field="doc.booking_date"/></h6>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <h6><b>Email Id:</b>
+                            <span t-field="doc.email_id"/></h6>
+                        </td>
+                        <td>
+                            <h6><b>Mobile Number:</b>
+                            <span t-field="doc.mobile_num"/></h6>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <h6><b>Adult Person:</b>
+                            <span t-field="doc.total_adult"/></h6>
+                        </td>
+                        <td>
+                            <h6><b>Child:</b>
+                            <span t-field="doc.total_children"/></h6>
+                        </td>
+                        <td>
+                            <h6><b>Infant:</b>
+                            <span t-field="doc.total_infant"/></h6>
+                        </td>
+                    </tr>
+                </table>
+                <br/>
+                <div>
+                    <h3><b>Custom Tour Information</b></h3>
+                </div>
+                <table class="table">
+                    <tr>
+                        <td><h6><b>Tour:</b></h6>
+                        <span t-field="doc.tour_id"/></td>
+                        <td><h6><b>Tour Type:</b></h6>
+                        <span t-field="doc.tour_type"/></td>
+                        <td><h6><b>Payment Policy</b></h6>
+                        <span t-field="doc.payment_policy.name"/></td>
+                    </tr>
+                    <tr>
+                        <td><h6><b>Tour Start Date:</b></h6>
+                        <span t-field="doc.tour_start_date"/></td>
+                        <td><h6><b>Tour season:</b></h6>
+                        <span t-field="doc.tour_season"/></td>
+                    </tr>
+                </table>
+                <br/>
+                <div>
+                    <h3><b>Remarks</b></h3>
+                    <span t-field="doc.remarks"/>
+                </div>
+                <br/>
+                <div>
+                    <h3><b>Tour Persons</b></h3>
+                </div>
+                <table class="table">
+                    <tr style="background-color:#D3D3D3;">
+                        <th><b>Person</b></th>
+                        <th><b>Gender</b></th>
+                        <th><b>Person Type</b></th>
+                    </tr>
+                    <t t-foreach="doc.person_info_ids" t-as="person_line">
+                    <tr>
+                        <td><h6><span t-field="person_line.name"/></h6></td>
+                        <td><h6><span t-field="person_line.gender"/></h6></td>
+                        <td><h6><span t-field="person_line.person_type"/></h6></td>
+                    </tr>
+                    </t>
+                </table>
+            </t>
+    </template>
+    <template id="custom_tour_booking_information_view_template">
+	    <t t-call="web.html_container">
+	        <t t-foreach="docs" t-as="doc">
+	            <t t-call="tourtravel_management_aagam.custom_tour_booking_view_template"/>
+	        </t>
+	    </t>
+	</template>
+</odoo>
+
+

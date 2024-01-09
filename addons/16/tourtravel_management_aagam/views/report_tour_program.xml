@@ -1,0 +1,223 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+        <template id="report_tour_program">
+            <t t-call="web.html_container">
+                <t t-foreach="docs" t-as="o">
+                    <t t-call="web.external_layout">
+                        <div class="page">
+                            <style>
+                                .table-borderless tr,.table-borderless tr td{
+                                border: 0px !important;
+                                }
+                                .table-bordered thead tr,.table-bordered thead tr th{
+                                border: 1px solid gray !important;
+                                }
+                                .table-bordered tbody tr,.table-bordered tbody tr td{
+                                border: 1px solid gray !important;
+                                }
+                            </style>
+                            <h2>Tour Program</h2>
+                            <h3 class="mt0">
+                                <span t-field="o.file_number"/>
+                            </h3>
+                            <div class="row" t-foreach="o.booking_info_ids" t-as="booking">
+                                <div class="col-xs-6">
+                                    <table class="table table-condensed table-borderless mt16">
+                                        <tr>
+                                            <td>Total number of Pax: </td>
+                                            <td>
+                                                <span t-field="booking.total_no_of_pax"/>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>Remarks: </td>
+                                            <td>
+                                                <span t-field="booking.remarks"/>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </div>
+                                <div class="col-xs-6">
+                                    <table class="table table-condensed table-borderless mt16">
+                                        <tr>
+                                            <td>Total number of Adult: </td>
+                                            <td>
+                                                <span t-field="booking.total_adult"/>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>Total number of Children: </td>
+                                            <td>
+                                                <span t-field="booking.total_children"/>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>Total number of Infant: </td>
+                                            <td>
+                                                <span t-field="booking.total_infant"/>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </div>
+                                <div class="col-xs-12">
+                                    <table>
+                                        <tr>
+                                            <table class="table table-condensed table-bordered mt24">
+                                                <thead>
+                                                    <tr>
+                                                        <th colspan="3" class="text-center">Person Information</th>
+                                                    </tr>
+                                                    <tr>
+                                                        <th>Name</th>
+                                                        <th>Gender</th>
+                                                        <th>Person Type</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr t-foreach="booking.person_info_ids" t-as="person">
+                                                        <td>
+                                                            <span t-field="person.name.name"/>
+                                                        </td>
+                                                        <td>
+                                                            <span t-field="person.gender"/>
+                                                        </td>
+                                                        <td>
+                                                            <span t-field="person.person_type"/>
+                                                        </td>
+                                                    </tr>
+                                                    <t t-if="not booking.person_info_ids">
+                                                        <t foreach="booking.total_no_of_pax" t-as="t_pax">
+                                                            <tr>
+                                                                <td>&amp;nbsp;</td>
+                                                                <td>&amp;nbsp;</td>
+                                                                <td>&amp;nbsp;</td>
+                                                            </tr>
+                                                        </t>
+                                                    </t>
+                                                </tbody>
+                                            </table>
+                                        </tr>
+                                    </table>
+                                </div>
+                            </div>
+                            <table class="table table-condensed table-bordered" t-if="o.service_ids">
+                                <thead>
+                                    <tr>
+                                        <th colspan="10" class="text-center">Services</th>
+                                    </tr>
+                                    <tr>
+                                        <th>Service</th>
+                                        <th>Datetime</th>
+                                        <th># of Pax</th>
+                                        <th>Passenger</th>
+                                        <th>From</th>
+                                        <th>To</th>
+                                        <th>Driver</th>
+                                        <th>Guide</th>
+                                        <!-- <th>Cost</th> -->
+                                        <th>Remarks</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr t-foreach="o.service_ids" t-as="s">
+                                        <td>
+                                            <span t-field="s.name"/>
+                                        </td>
+                                        <td>
+                                            <span t-field="s.service_datetime"/>
+                                        </td>
+                                        <td class="text-right">
+                                            <span t-field="s.no_of_pax"/>
+                                        </td>
+                                        <td>
+                                            <t t-foreach="s.customer_name_ids" t-as="cn">
+                                                <span t-field="cn.name"/><t t-if="not cn_last"><span>,</span></t>
+                                            </t>
+                                        </td>
+                                        <td>
+                                            <span t-field="s.place_from.name"/>
+                                        </td>
+                                        <td>
+                                            <span t-field="s.place_to.name"/>
+                                        </td>
+                                        <td>
+                                            <span t-field="s.driver_id.name"/>
+                                        </td>
+                                        <td>
+                                            <span t-field="s.guide_id.name"/>
+                                        </td>
+                                        <!-- <td class="text-right">
+                                            <span t-field="s.cost" t-options='{"widget": "monetary", "display_currency": o.currency_id}'/>
+                                        </td> -->
+                                        <td>
+                                            <span t-field="s.service_remarks"/>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <table class="table table-condensed table-bordered" t-if="o.extra_service_ids">
+                                <thead>
+                                    <tr>
+                                        <th colspan="11" class="text-center">Extra Services</th>
+                                    </tr>
+                                    <tr>
+                                        <th>Service Name</th>
+                                        <th>Datetime</th>
+                                        <th># of Pax</th>
+                                        <th>Qty Invoiced</th>
+                                        <th>Agent</th>
+                                        <th>Sub Agent</th>
+                                        <th>From</th>
+                                        <th>To</th>
+                                        <th>Driver</th>
+                                        <th>Guide</th>
+                                        <!-- <th>Cost</th> -->
+                                        <th>Tour Consultant</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr t-foreach="o.extra_service_ids" t-as="a">
+                                        <td>
+                                            <span t-field="a.name"/>
+                                        </td>
+                                        <td>
+                                            <span t-field="a.service_datetime"/>
+                                        </td>
+                                        <td>
+                                            <span t-field="a.no_of_pax"/>
+                                        </td>
+                                        <td>
+                                           <span t-field="a.qty_invoiced"/>
+                                        </td>
+                                        <td class="text-right">
+                                            <span t-field="a.agent_id.name"/>
+                                        </td>
+                                        <td class="text-right">
+                                            <span t-field="a.sub_agent_id.name"/>
+                                        </td>
+                                        <td>
+                                            <span t-field="a.place_from"/>
+                                        </td>
+                                        <td>
+                                            <span t-field="a.place_to"/>
+                                        </td>
+                                        <td>
+                                            <span t-field="a.driver_id"/>
+                                        </td>
+                                        <td>
+                                            <span t-field="a.guide_id"/>
+                                        </td>
+                                        <td>
+                                            <span t-field="a.tour_consultant_id"/>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </t>
+                </t>
+            </t>
+        </template>
+    </data>
+</odoo>

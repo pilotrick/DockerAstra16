@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="assets_backend_dashboard" name="Dashboard Inherit" inherit_id="web.assets_backend">
+        <xpath expr="." position="inside">
+                <script type="text/javascript" src="/tourtravel_management_aagam/static/src/js/tour_dashboard.js"/>
+                <script type="text/javascript" src="/tourtravel_management_aagam/static/src/js/Chart.js"/>
+                <link rel="stylesheet" href="/tourtravel_management_aagam/static/src/css/nv.d3.css"/>
+        </xpath>
+    </template>
+</odoo>

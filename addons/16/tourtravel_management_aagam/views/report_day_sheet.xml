@@ -1,0 +1,251 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <template id="report_day_sheet">
+        <t t-call="web.html_container">
+            <t t-call="web.external_layout">
+                <t t-set="rec_data" t-value="env['day.sheet'].get_day_sheet_data(docs)"/>
+                <t t-foreach="rec_data" t-as="mon">
+                    <p style="page-break-before:always;"></p>
+                    <div class="page">
+                        <style>
+                            .table-bordered thead tr,.table-bordered thead tr th{
+                                background-color: lightgray;
+                                border: 1px solid black !important;
+                            }
+                            .table-bordered tbody tr,.table-bordered tbody tr td{
+                                border: 1px solid black !important;
+                            }
+                        </style>
+                        <h1>&amp;nbsp;</h1>
+                        <div class="row">
+                            <div class="col-xs-12 text-left">
+                                <span t-esc="mon"/>
+                            </div>
+                        </div>
+                        <table class="table table-bordered table-condensed">
+                            <thead>
+                                <tr>
+                                    <th>FILE</th>
+                                    <th>DATE-TIME</th>
+                                    <th>BOOKING NAME</th>
+                                    <th>GUEST NAMES</th>
+                                    <th>AGENT</th>
+                                    <th>SERVICE NAME</th>
+                                    <th>FROM</th>
+                                    <th>TO</th>
+                                    <th>DRIVER</th>
+                                    <th>GUIDE</th>
+                                    <th>Comment</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr t-foreach="rec_data[mon].get('services')" t-as="d">
+                                    <td>
+                                        <span t-field="d.tour_reservation_id.file_number"/>
+                                    </td>
+                                    <td>
+                                        <t t-if="d.service_id">
+                                            <span t-field="d.service_datetime"/>
+                                        </t>
+                                        <t t-if="not d.service_id">
+                                            <span t-field="d.extra_service_datetime"/>
+                                        </t>
+                                    </td>
+                                    <td>
+                                        <span t-field="d.tour_reservation_id.booking_name"/>
+                                    </td>
+                                    <td>
+                                        <t t-if="d.service_id">
+                                            <span t-field="c.name" t-foreach="d.service_id.customer_name_ids" t-as="c"/>
+                                        </t>
+                                        <t t-if="not d.service_id and d.extra_service_id">
+                                            <span t-field="c.name" t-foreach="d.extra_service_id.customer_name_ids" t-as="c"/>
+                                        </t>
+                                    </td>
+                                    <td>
+                                        <span t-field="d.tour_reservation_id.agent_id and d.tour_reservation_id.agent_id.name"/>
+                                    </td>
+                                    <td>
+                                        <t t-if="d.service_id">
+                                            <span t-field="d.service_id.name"/>
+                                        </t>
+                                        <t t-if="not d.service_id and d.extra_service_id">
+                                            <span t-field="d.extra_service_id.name"/>
+                                        </t>
+                                    </td>
+                                    <td>
+                                        <t t-if="d.service_id">
+                                            <span t-field="d.service_id.place_from.name"/>
+                                        </t>
+                                        <t t-if="not d.service_id and d.extra_service_id">
+                                            <span t-field="d.extra_service_id.place_from.name"/>
+                                        </t>
+                                    </td>
+                                    <td>
+                                        <t t-if="d.service_id">
+                                            <span t-field="d.service_id.place_to.name"/>
+                                        </t>
+                                        <t t-if="not d.service_id and d.extra_service_id">
+                                            <span t-field="d.extra_service_id.place_to.name"/>
+                                        </t>
+                                    </td>
+                                    <td>
+                                        <t t-if="d.service_id">
+                                            <span t-field="d.service_id.driver_id and d.service_id.driver_id.name"/>
+                                        </t>
+                                        <t t-if="not d.service_id and d.extra_service_id">
+                                            <span t-field="d.extra_service_id.driver_id and d.extra_service_id.driver_id.name"/>
+                                        </t>
+                                    </td>
+                                    <td>
+                                        <t t-if="d.service_id">
+                                            <span t-field="d.service_id.guide_id and d.service_id.guide_id.name"/>
+                                        </t>
+                                        <t t-if="not d.service_id and d.extra_service_id">
+                                            <span t-field="d.extra_service_id.guide_id and d.extra_service_id.guide_id.name"/>
+                                        </t>
+                                    </td>
+                                    <td>
+                                        <t t-if="d.service_id">
+                                            <span t-field="d.service_id.tour_reservation_id.remarks"/>
+                                        </t>
+                                        <t t-if="not d.service_id and d.extra_service_id">
+                                            <span t-field="d.extra_service_id.tour_reservation_id.remarks"/>
+                                        </t>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </t>
+                <t t-if="not rec_data">
+                    <div class="page">
+                        <h2>There is no day sheet.</h2>
+                    </div>
+                </t>
+            </t>
+        </t>
+    </template>
+    <template id="report_today_day_sheet">
+        <t t-call="web.html_container">
+            <t t-call="web.external_layout">
+                <t t-set="rec_data" t-value="env['day.sheet'].get_today_day_sheet_data(docs)"/>
+                <t t-foreach="rec_data" t-as="mon">
+                    <p style="page-break-before:always;"></p>
+                    <div class="page">
+                        <style>
+                            .table-bordered thead tr,.table-bordered thead tr th{
+                                background-color: lightgray;
+                                border: 1px solid black !important;
+                            }
+                            .table-bordered tbody tr,.table-bordered tbody tr td{
+                                border: 1px solid black !important;
+                            }
+                        </style>
+                        <h1>&amp;nbsp;</h1>
+                        <div class="row">
+                            <div class="col-xs-12 text-left">
+                                <span t-esc="mon"/>
+                            </div>
+                        </div>
+                        <table class="table table-bordered table-condensed">
+                            <thead>
+                                <tr>
+                                    <th>FILE</th>
+                                    <th>DATE-TIME</th>
+                                    <th>BOOKING NAME</th>
+                                    <th>GUEST NAMES</th>
+                                    <th>AGENT</th>
+                                    <th>SERVICE NAME</th>
+                                    <th>FROM</th>
+                                    <th>TO</th>
+                                    <th>DRIVER</th>
+                                    <th>GUIDE</th>
+                                    <th>Comment</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr t-foreach="rec_data[mon].get('services')" t-as="s">
+                                    <td>
+                                        <span t-field="s.tour_reservation_id.file_number"/>
+                                    </td>
+                                    <td>
+                                        <span t-field="s.service_datetime"/>
+                                    </td>
+                                    <td>
+                                        <span t-field="s.tour_reservation_id.booking_name"/>
+                                    </td>
+                                    <td>
+                                        <span t-field="c.name" t-foreach="s.customer_name_ids" t-as="c"/>
+                                    </td>
+                                    <td>
+                                        <span t-field="s.tour_reservation_id.agent_id and s.tour_reservation_id.agent_id.name"/>
+                                    </td>
+                                    <td>
+                                        <span t-field="s.name"/>
+                                    </td>
+                                    <td>
+                                        <span t-field="s.place_from.name"/>
+                                    </td>
+                                    <td>
+                                        <span t-field="s.place_to.name"/>
+                                    </td>
+                                    <td>
+                                        <span t-field="s.driver_id and s.driver_id.name"/>
+                                    </td>
+                                    <td>
+                                        <span t-field="s.guide_id and s.guide_id.name"/>
+                                    </td>
+                                    <td>
+                                        <span t-field="s.tour_reservation_id.remarks"/>
+                                    </td>
+                                </tr>
+                                <tr t-foreach="rec_data[mon].get('extra_services')" t-as="es">
+                                    <td>
+                                        <span t-field="es.tour_reservation_id.file_number"/>
+                                    </td>
+                                    <td>
+                                        <span t-field="es.service_datetime"/>
+                                    </td>
+                                    <td>
+                                        <span t-field="es.tour_reservation_id.booking_name"/>
+                                    </td>
+                                    <td>
+                                        <span t-field="c.name" t-foreach="es.customer_name_ids" t-as="c"/>
+                                    </td>
+                                    <td>
+                                        <span t-field="es.tour_reservation_id.agent_id and es.tour_reservation_id.agent_id.name"/>
+                                    </td>
+                                    <td>
+                                        <span t-field="es.name"/>
+                                    </td>
+                                    <td>
+                                        <span t-field="es.place_from.name"/>
+                                    </td>
+                                    <td>
+                                        <span t-field="es.place_to.name"/>
+                                    </td>
+                                    <td>
+                                        <span t-field="es.driver_id and es.driver_id.name"/>
+                                    </td>
+                                    <td>
+                                        <span t-field="es.guide_id and es.guide_id.name"/>
+                                    </td>
+                                    <td>
+                                        <span t-field="es.tour_reservation_id.remarks"/>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </t>
+                <t t-if="not rec_data">
+                    <div class="page">
+                        <h2>There is no day sheet for today.</h2>
+                    </div>
+                </t>
+            </t>
+        </t>
+    </template>
+
+</odoo>

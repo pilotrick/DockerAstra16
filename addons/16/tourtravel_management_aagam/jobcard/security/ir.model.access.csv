@@ -1,0 +1,4 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_job_equipment,access_job_equipment,model_job_equipment,,1,1,1,1
+access_job_card,access_job_card,model_job_card,,1,1,1,1
+access_task_description,access_task_description,model_task_description,,1,1,1,1

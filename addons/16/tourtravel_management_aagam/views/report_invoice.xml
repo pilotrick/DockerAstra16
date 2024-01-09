@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+        <template id="report_invoice_document_inherit" inherit_id="account.report_invoice_document">
+            <xpath expr="//div[@name='reference']" position="after">
+                <div name="agent_name" class="col-xs-2" t-if="o.agent_id">
+                    <strong>Agent Name:</strong>
+                    <p t-field="o.agent_id.name"/>
+                </div>
+                <div name="client_name" class="col-xs-2" t-if="o.client_name">
+                    <strong>Client Name:</strong>
+                    <p t-field="o.client_name"/>
+                </div>
+                <div name="agent_reference" class="col-xs-2" t-if="o.agent_reference">
+                    <strong>Agent Reference:</strong>
+                    <p t-field="o.agent_reference"/>
+                </div>
+            </xpath>
+<!--            <xpath expr="//p[@t-if='o.comment']" position="after">-->
+<!--                <div>-->
+<!--                    <span>Additional Info:</span>-->
+<!--                    <span t-field="o.addition_info"/>-->
+<!--                </div>-->
+<!--            </xpath>-->
+<!--            <xpath expr="//table[@class='table table-condensed']/thead/tr" position="inside">-->
+<!--                <th t-if="o.payment_ids" class="text-right">Reference</th>-->
+<!--            </xpath>-->
+<!--            <xpath expr="//tbody[@class='invoice_tbody']/tr/td[@id='subtotal']" position="after">-->
+<!--                <td t-if="o.payment_ids" style="text-align:right;" class="text-right">-->
+<!--                    <t t-foreach="o.payment_ids[0]" t-as="d">-->
+<!--                        <span style="display:block;text-align:right" t-field="d.reference_number"/>-->
+<!--                    </t>-->
+<!--                </td>-->
+<!--            </xpath>-->
+<!--             <xpath expr="//tbody[@class='invoice_tbody']/tr[2]" position="inside">-->
+<!--                 <t t-if="o.payment_ids">-->
+<!--                    <td t-if="o.payment_ids[0].reference_number"></td>-->
+<!--                 </t>-->
+<!--            </xpath>-->
+
+<!--            <xpath expr="//div[@class='col-xs-4 pull-right']/table/tr[1]" position="after">-->
+<!--                <tr class="border-black" style="border-bottom:1px solid #dddddd;">-->
+<!--                    <td>-->
+<!--                        <strong>Amount Due</strong>-->
+<!--                    </td>-->
+<!--                    <td class="text-right">-->
+<!--                        <span t-field="o.residual"/>-->
+<!--                    </td>-->
+<!--                </tr>-->
+
+<!--                <tr class="border-black" style="border-bottom:1px solid #dddddd;">-->
+<!--                    <td>-->
+<!--                        <strong>Paid Balance</strong>-->
+<!--                    </td>-->
+<!--                    <td class="text-right">-->
+<!--                        <span t-field="o.amount_total"/>-->
+<!--                    </td>-->
+<!--                </tr>-->
+<!--            </xpath>-->
+
+
+        </template>
+    </data>
+</odoo>

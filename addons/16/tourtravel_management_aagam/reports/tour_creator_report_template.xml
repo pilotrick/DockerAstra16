@@ -1,0 +1,330 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="tour_create_template" name="Tour">
+        <t t-call="web.external_layout">
+            <div class="page">
+                <div class="text-center">
+                    <h3><b>Tour Creator Report</b></h3>
+                </div>
+                <br/>
+                <br/>
+                <table class="table">
+                    <tr>
+                        <td>
+                            <h6><b>Tour Code:</b>
+                            <span t-field="doc.tour_code"></span></h6>
+                        </td>
+                        <td>
+                            <h6><b>Tour Name:</b>
+                            <sapn t-field="doc.name"></sapn></h6>
+                        </td>
+                        <td>
+                            <h6><b>Tour Type:</b>
+                            <sapn t-field="doc.tour_type"></sapn></h6>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <h6><b>Date of publish:</b>
+                            <span t-field="doc.Date_of_publish"></span></h6>
+                        </td>
+                         <td>
+                            <h6><b>Days:</b>
+                            <span t-field="doc.days"></span></h6>
+                        </td>
+                    </tr>
+                </table>
+                <br/>
+                <div class="tour_intro">
+                    <h3><b>Tour Introduction</b></h3>
+                </div>
+                <table class="table">
+                    <tr>
+                        <h6><span t-field="doc.tour_plans"></span></h6>
+                    </tr>
+                </table>
+                <br/>
+                <div class="tour_info">
+                    <h3><b>Tour Information</b></h3>
+                </div>
+                <table class="table">
+                    <tr style="background-color:#D3D3D3;">
+                        <th><b>From</b></th>
+                        <th><b>To</b></th>
+                        <th><b>Transport Type</b></th>
+                        <th><b>Travel Class</b></th>
+                        <th><b>Distance In KM</b></th>
+                        <th><b>Time(Hrs)</b></th>
+                    </tr>
+                    <t t-foreach="doc.travel_info_ids" t-as="line">
+                    <tr>
+                        <td>
+                            <h6><span t-field="line.from_place.name"></span></h6>
+                        </td>
+                        <td>
+                            <h6><span t-field="line.to_place.name"></span></h6>
+                        </td>
+                        <td>
+                            <h6><span t-field="line.transport_type"></span></h6>
+                        </td>
+                        <td>
+                            <h6><span t-field="line.travel_class"></span></h6>
+                        </td>
+                        <td>
+                            <h6><span t-field="line.distance_in_km"></span></h6>
+                        </td>
+                         <td>
+                            <h6><span t-field="line.time_hrs"></span></h6>
+                        </td>
+                    </tr>
+                    </t>
+                </table>
+                <br/>
+                <div>
+                    <h3><b>Tour Details</b></h3>
+                </div>
+                <table class="table">
+                    <tr style="background-color:#D3D3D3;">
+                        <th><b>Season</b></th>
+                        <th><b>Start Date</b></th>
+                        <th><b>Last Date Of Booking</b></th>
+                        <th><b>Payment Due Date</b></th>
+                        <th><b>Total Seats</b></th>
+                         <th><b>Available Seats</b></th>
+                        <th><b>Status</b></th>
+                    </tr>
+                    <t t-foreach="doc.tour_details_id" t-as="details_line">
+                    <tr>
+                        <td>
+                            <h6><span t-field="details_line.season_tour"/></h6>
+                        </td>
+                        <td>
+                            <h6><span t-field="details_line.start_date"/></h6>
+                        </td>
+                        <td>
+                            <h6><span t-field="details_line.last_date_booking"/></h6>
+                        </td>
+                        <td>
+                            <h6><span t-field="details_line.payment_due_date"/></h6>
+                        </td>
+                        <td>
+                            <h6><span t-field="details_line.total_seats"/></h6>
+                        </td>
+                        <td>
+                            <h6><span t-field="details_line.available_seats"/></h6>
+                        </td>
+                        <td>
+                            <h6><span t-field="details_line.status"/></h6>
+                        </td>
+                    </tr>
+                    </t>
+                </table>
+                <div class="tour_service">
+                    <h3><b>Services</b></h3>
+                </div>
+                <table class="table">
+                    <tr style="background-color:#D3D3D3;">
+                        <th><b>Service Name</b></th>
+                        <th><b>Datetime</b></th>
+                        <th><b>Number Of Pax</b></th>
+                        <th><b>Qty Invoiced</b></th>
+                        <th><b>From</b></th>
+                        <th><b>To</b></th>
+                        <th><b>Driver</b></th>
+                        <th><b>Guide</b></th>
+                        <th><b>Service Remarks</b></th>
+                        <th><b>Currency</b></th>
+                    </tr>
+                    <t t-foreach="doc.tour_service_id" t-as="service_line">
+                    <tr>
+                        <td>
+                            <h6><span t-field="service_line.name"/></h6>
+                        </td>
+                        <td>
+                            <h6><span t-field="service_line.service_datetime"/></h6>
+                        </td>
+                        <td>
+                            <h6><span t-field="service_line.no_of_pax"/></h6>
+                        </td>
+                        <td>
+                            <h6><span t-field="service_line.qty_invoiced"/></h6>
+                        </td>
+                        <td>
+                            <h6><span t-field="service_line.place_from"/></h6>
+                        </td>
+                        <td>
+                            <h6><span t-field="service_line.place_to"/></h6>
+                        </td>
+                        <td>
+                            <h6><span t-field="service_line.driver_id"/></h6>
+                        </td>
+                        <td>
+                            <h6><span t-field="service_line.guide_id"/></h6>
+                        </td>
+                        <td>
+                            <h6><span t-field="service_line.service_remarks"/></h6>
+                        </td>
+                        <td>
+                            <h6><span t-field="service_line.currency_id"/></h6>
+                        </td>
+                    </tr>
+                    </t>
+                </table>
+                <div class="tour_accomodation">
+                    <h3><b>Accomodation</b></h3>
+                </div>
+                <table class="table">
+                    <tr style="background-color:#D3D3D3;">
+                        <th><b>Hotel Name</b></th>
+                        <th><b>Date IN</b></th>
+                        <th><b>Date Out</b></th>
+                        <th><b>Room Type</b></th>
+                        <th><b>Number of Pax</b></th>
+                        <th><b>Meal</b></th>
+                        <th><b>Booked By</b></th>
+                    </tr>
+                    <t t-foreach="doc.tour_accommodation_id" t-as="acco_line">
+                    <tr>
+                        <td>
+                            <h6><span t-field="acco_line.hotel_id"/></h6>
+                        </td>
+                        <td>
+                            <h6><span t-field="acco_line.date_in"/></h6>
+                        </td>
+                        <td>
+                            <h6><span t-field="acco_line.date_out"/></h6>
+                        </td>
+                        <td>
+                            <h6><span t-field="acco_line.room_type_id"/></h6>
+                        </td>
+                        <td>
+                            <h6><span t-field="acco_line.no_of_pax"/></h6>
+                        </td>
+                        <td>
+                            <h6><span t-field="acco_line.meal_id"/></h6>
+                        </td>
+                        <td>
+                            <h6><span t-field="acco_line.booked_by_id"/></h6>
+                        </td>
+                    </tr>
+                    </t>
+                </table>
+                <div class="tour_flight">
+                    <h3><b>Flight</b></h3>
+                </div>
+                <table class="table">
+                    <tr style="background-color:#D3D3D3;">
+                        <th><b>Flight Name</b></th>
+                        <th><b>Date IN and time</b></th>
+                        <th><b>Date Out abd time</b></th>
+                        <th><b>From</b></th>
+                        <th><b>To</b></th>
+                        <th><b>Booked By</b></th>
+                        <th><b>Other Detail</b></th>
+                    </tr>
+                    <t t-foreach="doc.tour_flight_id" t-as="flight_line">
+                    <tr>
+                        <td>
+                            <h6><span t-field="flight_line.name"/></h6>
+                        </td>
+                        <td>
+                            <h6><span t-field="flight_line.in_datetime"/></h6>
+                        </td>
+                        <td>
+                            <h6><span t-field="flight_line.out_datetime"/></h6>
+                        </td>
+                        <td>
+                            <h6><span t-field="flight_line.place_from"/></h6>
+                        </td>
+                        <td>
+                            <h6><span t-field="flight_line.place_to"/></h6>
+                        </td>
+                        <td>
+                            <h6><span t-field="flight_line.booked_by_id"/></h6>
+                        </td>
+                        <td>
+                            <h6><span t-field="flight_line.other_detail"/></h6>
+                        </td>
+                    </tr>
+                    </t>
+                </table>
+                <div class="tour_extra_services">
+                    <h3><b>Extra Services</b></h3>
+                </div>
+                <table class="table">
+                    <tr style="background-color:#D3D3D3;">
+                        <th><b>Datetime</b></th>
+                        <th><b>No Of Pax </b></th>
+                        <th><b>Qty Invoiced</b></th>
+                        <th><b>Passenger Names</b></th>
+                        <th><b>Agent</b></th>
+                        <th><b>Sub Agent</b></th>
+                        <th><b>Service</b></th>
+                        <th><b>From</b></th>
+                        <th><b>To</b></th>
+                        <th><b>Driver</b></th>
+                        <th><b>Guide</b></th>
+                        <th><b>Service Remarks</b></th>
+                        <th><b>Currency</b></th>
+                    </tr>
+                    <t t-foreach="doc.tour_extra_services_id" t-as="extra_service_line">
+                    <tr>
+                        <td>
+                            <h6><span t-field="extra_service_line.name"/></h6>
+                        </td>
+                        <td>
+                            <h6><span t-field="extra_service_line.service_datetime"/></h6>
+                        </td>
+                        <td>
+                            <h6><span t-field="extra_service_line.no_of_pax"/></h6>
+                        </td>
+                        <td>
+                            <h6><span t-field="extra_service_line.qty_invoiced"/></h6>
+                        </td>
+                        <td>
+                            <h6><span t-field="extra_service_line.customer_name_ids"/></h6>
+                        </td>
+                        <td>
+                            <h6><span t-field="extra_service_line.agent_id"/></h6>
+                        </td>
+                        <td>
+                            <h6><span t-field="extra_service_line.sub_agent_id"/></h6>
+                        </td>
+                        <td>
+                            <h6><span t-field="extra_service_line.place_from"/></h6>
+                        </td>
+                        <td>
+                            <h6><span t-field="extra_service_line.place_to"/></h6>
+                        </td>
+                        <td>
+                            <h6><span t-field="extra_service_line.driver_id"/></h6>
+                        </td>
+                        <td>
+                            <h6><span t-field="extra_service_line.guide_id"/></h6>
+                        </td>
+                        <td>
+                            <h6><span t-field="extra_service_line.service_remarks"/></h6>
+                        </td>
+                        <td>
+                            <h6><span t-field="extra_service_line.currency_id"/></h6>
+                        </td>
+                    </tr>
+                    </t>
+                </table>
+            </div>
+        </t>
+    </template>
+
+    <template id="Tour_creator_view_template">
+    <t t-call="web.html_container">
+        <t t-foreach="docs" t-as="doc">
+            <t t-call="tourtravel_management_aagam.tour_create_template"/>
+        </t>
+    </t>
+</template>
+</odoo>
+
+
+
+
+

@@ -1,0 +1,272 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+        <template id="report_job_card">
+            <t t-call="web.html_container">
+                <t t-foreach="docs" t-as="o">
+                    <t t-call="web.external_layout">
+                        <div class="page">
+                            <style>
+                                .table-borderless tr,.table-borderless tr td{
+                                    border: 0px !important;
+                                }
+                                .table-bordered thead tr,.table-bordered thead tr th{
+                                    border: 1px solid gray !important;
+                                }
+                                .table-bordered tbody tr,.table-bordered tbody tr td{
+                                    border: 1px solid gray !important;
+                                }
+                            </style>
+                            <h3 class="mt0">
+                                <span t-field="o.jobcard_number"/>
+                            </h3>
+                            <div class="row">
+                                <div class="col-xs-6">
+                                    <table class="table table-condensed table-borderless mt16">
+                                        <tr>
+                                            <td>Customer Name: </td>
+                                            <td>
+                                                <span t-field="o.customer_id.name"/>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>Customer Email: </td>
+                                            <td>
+                                                <span t-field="o.customer_email"/>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>Customer Phone: </td>
+                                            <td>
+                                                <span t-field="o.customer_phone"/>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>Assigned To: </td>
+                                            <td>
+                                                <t t-if="o.assign_to_id">
+                                                    <span t-field="o.assign_to_id.name"/>
+                                                </t>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </div>
+                                <div class="col-xs-6">
+                                    <table class="table table-condensed table-borderless mt16">
+                                        <tr>
+                                            <td>Jobcard Subject: </td>
+                                            <td>
+                                                <span t-field="o.jobcard_subject"/>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>Start Date: </td>
+                                            <td>
+                                                <span t-field="o.start_date"/>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>End Date: </td>
+                                            <td>
+                                                <span t-field="o.end_date"/>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-xs-12">
+                                    <span>Notes/Comments:</span>
+                                    <span t-field="o.notes"/>
+                                </div>
+                            </div>
+                            <table class="table table-condensed table-bordered mt24">
+                                <thead>
+                                    <tr>
+                                        <th>Task Assigned Description</th>
+                                        <th>Cost</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr t-foreach="o.task_description_ids" t-as="task_description">
+                                        <td>
+                                            <span t-field="task_description.name"/>
+                                        </td>
+                                        <td class="text-right">
+                                            <span t-field="task_description.cost" t-options='{"widget": "monetary", "display_currency": o.currency_id}'/>
+                                        </td>
+                                    </tr>
+                                    <t t-if="not o.task_description_ids">
+                                        <tr>
+                                            <td>&amp;nbsp;</td>
+                                            <td>&amp;nbsp;</td>
+                                        </tr>
+                                        <tr>
+                                            <td>&amp;nbsp;</td>
+                                            <td>&amp;nbsp;</td>
+                                        </tr>
+                                        <tr>
+                                            <td>&amp;nbsp;</td>
+                                            <td>&amp;nbsp;</td>
+                                        </tr>
+                                        <tr>
+                                            <td>&amp;nbsp;</td>
+                                            <td>&amp;nbsp;</td>
+                                        </tr>
+                                    </t>
+                                </tbody>
+                            </table>
+                            <table class="table table-condensed table-bordered">
+                                <thead>
+                                    <tr>
+                                        <th>Task Done Description</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td rowspan="4">
+                                            <t t-if="o.task_done_description">
+                                                <span t-field="o.task_done_description"/>
+                                            </t>
+                                            <t t-if="not o.task_done_description">
+                                                <span>&amp;nbsp;</span>
+                                            </t>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <table class="table table-condensed table-bordered">
+                                <thead>
+                                    <tr>
+                                        <th colspan="3">Equipment Installed</th>
+                                    </tr>
+                                    <tr>
+                                        <th width="15%">S. No</th>
+                                        <th>Equipment</th>
+                                        <th>Qty</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr t-foreach="o.equipment_installed_ids" t-as="equipment_installed">
+                                        <td>
+                                            <span t-field="equipment_installed.sequence"/>
+                                        </td>
+                                        <td>
+                                            <span t-field="equipment_installed.name"/>
+                                        </td>
+                                        <td>
+                                            <span t-field="equipment_installed.qty"/>
+                                        </td>
+                                    </tr>
+                                    <t t-if="not o.equipment_installed_ids">
+                                        <tr>
+                                            <td>&amp;nbsp;</td>
+                                            <td>&amp;nbsp;</td>
+                                            <td>&amp;nbsp;</td>
+                                        </tr>
+                                        <tr>
+                                            <td>&amp;nbsp;</td>
+                                            <td>&amp;nbsp;</td>
+                                            <td>&amp;nbsp;</td>
+                                        </tr>
+                                        <tr>
+                                            <td>&amp;nbsp;</td>
+                                            <td>&amp;nbsp;</td>
+                                            <td>&amp;nbsp;</td>
+                                        </tr>
+                                        <tr>
+                                            <td>&amp;nbsp;</td>
+                                            <td>&amp;nbsp;</td>
+                                            <td>&amp;nbsp;</td>
+                                        </tr>
+                                    </t>
+                                </tbody>
+                            </table>
+                            <table class="table table-condensed table-bordered">
+                                <thead>
+                                    <tr>
+                                        <th colspan="3">Equipment Returned</th>
+                                    </tr>
+                                    <tr>
+                                        <th width="15%">S. No</th>
+                                        <th>Equipment</th>
+                                        <th>Qty</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr t-foreach="o.equipment_returned_ids" t-as="equipment_returned">
+                                        <td>
+                                            <span t-field="equipment_returned.sequence"/>
+                                        </td>
+                                        <td>
+                                            <span t-field="equipment_returned.name"/>
+                                        </td>
+                                        <td>
+                                            <span t-field="equipment_returned.qty"/>
+                                        </td>
+                                    </tr>
+                                    <t t-if="not o.equipment_returned_ids">
+                                        <tr>
+                                            <td>&amp;nbsp;</td>
+                                            <td>&amp;nbsp;</td>
+                                            <td>&amp;nbsp;</td>
+                                        </tr>
+                                        <tr>
+                                            <td>&amp;nbsp;</td>
+                                            <td>&amp;nbsp;</td>
+                                            <td>&amp;nbsp;</td>
+                                        </tr>
+                                        <tr>
+                                            <td>&amp;nbsp;</td>
+                                            <td>&amp;nbsp;</td>
+                                            <td>&amp;nbsp;</td>
+                                        </tr>
+                                        <tr>
+                                            <td>&amp;nbsp;</td>
+                                            <td>&amp;nbsp;</td>
+                                            <td>&amp;nbsp;</td>
+                                        </tr>
+                                    </t>
+                                </tbody>
+                            </table>
+                            <div class="row">
+                                <div class="col-xs-6">
+                                    <table class="table table-condensed table-borderless">
+                                        <tr>
+                                            <td width="30%">Technician Name:</td>
+                                            <td><span t-field="o.technician_name"/></td>
+                                        </tr>
+                                        <tr>
+                                            <td>Signature:</td>
+                                            <td>______________________________</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Date:</td>
+                                            <td><span t-field="o.technician_sign_date"/></td>
+                                        </tr>
+                                    </table>
+                                </div>
+                                <div class="col-xs-6">
+                                    <table class="table table-condensed table-borderless">
+                                        <tr>
+                                            <td width="30%">Customer Representative Name:</td>
+                                            <td><span t-field="o.customer_representative_name"/></td>
+                                        </tr>
+                                        <tr>
+                                            <td>Signature:</td>
+                                            <td>______________________________</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Date:</td>
+                                            <td><span t-field="o.c_sign_date"/></td>
+                                        </tr>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </t>
+                </t>
+            </t>
+        </template>
+    </data>
+</odoo>

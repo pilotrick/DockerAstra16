@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+<!--        <report-->
+<!--            string="Tour Itinerary"-->
+<!--            id="action_tour_itinerary_report"-->
+<!--            model="tour.itinerary"-->
+<!--            report_type="qweb-pdf"-->
+<!--            name="tourtravel_management_aagam.Tour_itinerary_view_template"-->
+<!--            file="tourtravel_management_aagam.Tour_itinerary_view_template"-->
+<!--            print_report_name="'Tour Itinerary'"-->
+<!--        />-->
+
+         <record id="action_tour_itinerary_report" model="ir.actions.report">
+            <field name="name">Tour Itinerary</field>
+            <field name="model">tour.itinerary</field>
+            <field name="report_type">qweb-pdf</field>
+            <field name="report_name">tourtravel_management_aagam.Tour_itinerary_view_template</field>
+            <field name="report_file">tourtravel_management_aagam.Tour_itinerary_view_template</field>
+            <field name="print_report_name">'Tour Itinerary'</field>
+            <field name="binding_model_id" ref="model_tour_itinerary"/>
+            <field name="binding_type">report</field>
+        </record>
+    </data>
+</odoo>

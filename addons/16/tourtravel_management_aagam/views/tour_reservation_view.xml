@@ -1,0 +1,744 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+        <record id="view_tour_reservation_tree" model="ir.ui.view">
+            <field name="name">tour.reservation.tree</field>
+            <field name="model">tour.reservation</field>
+            <field name="type">tree</field>
+            <field name="priority" eval="8"/>
+            <field name="arch" type="xml">
+                <tree string="Tour Reservation">
+                    <field name="file_number"/>
+                    <field name="agent_file_number"/>
+                    <field name="agent_id"/>
+                    <field name="sub_agent_id"/>
+                    <field name="booking_date"/>
+                    <field name="booking_name"/>
+                    <field name="currency_id"/>
+                    <field name="state"/>
+                    <field name="active" widget="boolean_toggle"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="view_tour_reservation_form" model="ir.ui.view">
+            <field name="name">tour.reservation.form</field>
+            <field name="model">tour.reservation</field>
+            <field name="type">form</field>
+            <field name="priority" eval="8"/>
+            <field name="arch" type="xml">
+                <form string="Tour Reservation">
+                    <header>
+                        <button name="action_approve" type="object" string="Approve" states="draft" class="oe_highlight"/>
+                        <button name="action_confirmed" type="object" string="Confirm" states="in_progress" class="oe_highlight"/>
+                        <button name="action_done" type="object" string="Done" states="confirmed" class="oe_highlight"/>
+                        <button name="action_cancel" type="object" string="Cancel Reservation" states="draft,in_progress,confirmed" class="oe_highlight"/>
+                        <button name="action_invoice" type="object" string="Create invoice" class="oe_highlight"
+                            />
+<!--                            attrs="{'invisible': ['|', ('qty_to_invoice', '&lt;=', 0), ('state', 'not in', ['confirmed', 'done'])]}"/>-->
+                        <field name="state" widget="statusbar" statusbar_visible="draft,in_progress,confirmed,done"/>
+                    </header>
+                    <sheet>
+                        <div class="oe_button_box" name="button_box">
+                            <button name="action_view_invoice" type="object" class="oe_stat_button"
+                                icon="fa-pencil-square-o" attrs="{'invisible': [('invoice_count', '=', 0)]}">
+                                <field name="invoice_count" widget="statinfo" string="Invoices"/>
+                            </button>
+                            <button class="oe_stat_button" type="object" name="toggle_active" icon="fa-archive">
+                                <field name="active" widget="boolean_button" options='{"terminology": "archive"}'/>
+                            </button>
+                        </div>
+                        <div class="oe_title">
+                            <h1>
+                                <field name="file_number" readonly="1" required="1"/>
+                            </h1>
+                        </div>
+                        <group>
+                            <field name="agent_file_number" required="1"/>
+                            <field name="agent_id" context="{'default_s_agent': 'parent'}" required="1"/>
+                            <field name="sub_agent_id" context="{'default_s_agent': 'child'}"/>
+                            <field name="currency_id"/>
+                            <field name="booking_date"/>
+                            <field name="booking_name"/>
+                            <field name="remarks"/>
+                            <field name="qty_to_invoice" invisible="1"/>
+                        </group>
+                        <notebook name="tour_reservation" class="tour_reservation">
+                            <page string="Booking Information">
+                                <field name="booking_info_ids" mode="kanban" context="{'default_tour_reservation_id': active_id}">
+                                    <kanban>
+                                        <field name="total_no_of_pax"/>
+                                        <field name="total_adult"/>
+                                        <field name="total_children"/>
+                                        <field name="total_infant"/>
+                                        <field name="tour_reservation_id"/>
+                                        <field name="remarks"/>
+                                        <field name="person_info_ids"/>
+                                        <templates>
+                                            <t t-name="kanban-box">
+                                                <div class="oe_kanban_global_click">
+                                                    <a t-if="!read_only_mode" type="delete" class="fa fa-times pull-right"/>
+                                                    <div class="oe_kanban_details">
+                                                        <div>
+                                                            <b>Total no of Pax: </b><field name="total_no_of_pax"/>
+                                                        </div>
+                                                        <div>
+                                                            <b>Total Adult: </b><field name="total_adult"/>
+                                                        </div>
+                                                        <div>
+                                                            <b>Total Children: </b><field name="total_children"/>
+                                                        </div>
+                                                        <div>
+                                                            <b>Total Infant: </b><field name="total_infant"/>
+                                                        </div>
+                                                        <div>
+                                                            <b>Remarks: </b><field name="remarks"/>
+                                                        </div>
+                                                        <div>
+                                                            <b>Person Information: </b><field name="person_info_ids"/>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </t>
+                                        </templates>
+                                    </kanban>
+                                    <tree>
+                                        <field name="total_no_of_pax"/>
+                                        <field name="total_adult" string="Total Adult"/>
+                                        <field name="total_children" string="Total children"/>
+                                        <field name="total_infant" string="Total Infant"/>
+                                        <field name="tour_reservation_id" invisible="1"/>
+                                        <field name="person_info_ids" invisible="1"/>
+                                    </tree>
+                                    <form>
+                                        <sheet>
+                                            <group>
+                                                <field name="total_no_of_pax" required="1"/>
+                                                <field name="total_adult"/>
+                                                <field name="total_children"/>
+                                                <field name="total_infant"/>
+                                                <field name="remarks"/>
+                                                <field name="tour_reservation_id" invisible="1"/>
+                                            </group>
+                                            <notebook>
+                                                <page string="Person Information">
+                                                    <field name="person_info_ids" widget="one2many">
+                                                        <tree editable="top">
+                                                            <field name="name" required="1"/>
+                                                            <field name="gender"/>
+                                                            <field name="person_type" required="1"/>
+                                                        </tree>
+                                                        <form>
+                                                            <sheet>
+                                                                <group>
+                                                                    <field name="name" required="1"/>
+                                                                    <field name="gender"/>
+                                                                    <field name="person_type" required="1"/>
+                                                                </group>
+                                                            </sheet>
+                                                        </form>
+                                                    </field>
+                                                </page>
+                                            </notebook>
+                                        </sheet>
+                                    </form>
+                                </field>
+                            </page>
+                            <page string="Services">
+                                <field name="service_ids" context="{'default_tour_reservation_id': active_id}">
+                                    <tree>
+                                        <field name="name"/>
+                                        <field name="service_datetime"/>
+                                        <field name="no_of_pax"/>
+<!--                                        <field name="qty_invoiced" groups="base.group_no_one"/>-->
+                                        <field name="place_from"/>
+                                        <field name="place_to"/>
+                                        <field name="driver_id" context="{'default_driver': True}"/>
+                                        <field name="guide_id" context="{'default_guide': True}"/>
+                                        <field name="currency_id" invisible="1"/>
+                                        <field name="tour_reservation_id" invisible="1"/>
+                                    </tree>
+                                    <form>
+                                        <sheet>
+                                            <group>
+                                                <field name="name" required="1" />
+                                                <field name="service_datetime" required="1"/>
+                                                <field name="no_of_pax"/>
+                                                <field name="qty_invoiced" groups="base.group_no_one"/>
+                                                <field name="customer_name_ids" widget="many2many_tags"/>
+                                                <field name="place_from" required="1"/>
+                                                <field name="place_to" required="1"/>
+                                                <field name="driver_id" context="{'default_driver': True}"/>
+                                                <field name="guide_id" context="{'default_guide': True}"/>
+                                                <field name="service_remarks"/>
+                                                <field name="currency_id" invisible="1"/>
+                                                <field name="cost_ids" widget="one2many"/>
+                                                <field name="tour_reservation_id" invisible="1"/>
+                                            </group>
+                                        </sheet>
+                                    </form>
+                                </field>
+                            </page>
+                            <page string="Accomodations">
+                                <field name="booking_accomodation_ids" context="{'default_tour_reservation_id': active_id}">
+                                    <tree>
+                                        <field name="hotel_id"/>
+                                        <field name="date_in"/>
+                                        <field name="date_out"/>
+                                        <field name="room_type_id"/>
+                                        <field name="no_of_pax"/>
+                                        <field name="meal_id"/>
+                                        <field name="booked_by_id"/>
+                                        <field name="currency_id" invisible="1"/>
+                                        <field name="tour_reservation_id" invisible="1"/>
+                                    </tree>
+                                    <form>
+                                        <sheet>
+                                            <group>
+                                                <field name="hotel_id" required="1"/>
+                                                <field name="date_in" required="1"/>
+                                                <field name="date_out" required="1"/>
+                                                <field name="room_type_id"/>
+                                                <field name="no_of_pax"/>
+                                                <field name="meal_id"/>
+                                                <field name="booked_by_id"/>
+                                                <field name="other_detail"/>
+                                                <field name="currency_id" invisible="1"/>
+                                                <field name="cost_ids" widget="one2many"/>
+                                                <field name="tour_reservation_id" invisible="1"/>
+                                            </group>
+                                        </sheet>
+                                    </form>
+                                </field>
+                            </page>
+                            <page string="Flight">
+                                <field name="flight_ids" context="{'default_tour_reservation_id': active_id}">
+                                    <tree>
+                                        <field name="name"/>
+                                        <field name="in_datetime"/>
+                                        <field name="out_datetime"/>
+                                        <field name="place_from"/>
+                                        <field name="place_to"/>
+                                        <field name="booked_by_id"/>
+                                        <field name="tour_reservation_id" invisible="1"/>
+                                        <field name="currency_id" invisible="1"/>
+                                    </tree>
+                                    <form>
+                                        <sheet>
+                                            <group>
+                                                <field name="name" required="1"/>
+                                                <field name="in_datetime" required="1"/>
+                                                <field name="out_datetime" required="1"/>
+                                                <field name="place_from" required="1"/>
+                                                <field name="place_to" required="1"/>
+                                                <field name="booked_by_id" required="1"/>
+                                                <field name="other_detail"/>
+                                                <field name="tour_reservation_id" invisible="1"/>
+                                                <field name="currency_id" invisible="1"/>
+                                                <field name="cost_ids" widget="one2many"/>
+                                            </group>
+                                        </sheet>
+                                    </form>
+                                </field>
+                            </page>
+                            <page string="Ferry">
+                                <field name="ferry_ids" context="{'default_tour_reservation_id': active_id}">
+                                    <tree>
+                                        <field name="name"/>
+                                        <field name="in_datetime"/>
+                                        <field name="out_datetime"/>
+                                        <field name="place_from"/>
+                                        <field name="place_to"/>
+                                        <field name="booked_by_id"/>
+                                        <field name="tour_reservation_id" invisible="1"/>
+                                        <field name="currency_id" invisible="1"/>
+                                    </tree>
+                                    <form>
+                                        <sheet>
+                                            <group>
+                                                <field name="name" required="1"/>
+                                                <field name="in_datetime"/>
+                                                <field name="out_datetime"/>
+                                                <field name="place_from" required="1"/>
+                                                <field name="place_to" required="1"/>
+                                                <field name="booked_by_id"/>
+                                                <field name="other_detail"/>
+                                                <field name="tour_reservation_id" invisible="1"/>
+                                                <field name="currency_id" invisible="1"/>
+                                                <field name="cost_ids" widget="one2many"/>
+                                            </group>
+                                        </sheet>
+                                    </form>
+                                </field>
+                            </page>
+                            <page string="Extra Services">
+                                <field name="extra_service_ids" context="{'default_tour_reservation_id': active_id}">
+                                    <tree class="set_table">
+                                        <field name="name"/>
+                                        <field name="service_datetime"/>
+                                        <field name="no_of_pax" string="# of Pax"/>
+                                        <field name="qty_invoiced" groups="base.group_no_one"/>
+                                        <field name="agent_id"/>
+                                        <field name="sub_agent_id"/>
+                                        <field name="place_from"/>
+                                        <field name="place_to"/>
+                                        <field name="driver_id"/>
+                                        <field name="guide_id"/>
+                                        <field name="tour_consultant_id" context="{'default_tour_consultant': True}"/>
+                                        <field name="currency_id" invisible="1"/>
+                                        <field name="tour_reservation_id" invisible="1"/>
+                                    </tree>
+                                    <form>
+                                        <sheet>
+                                            <group>
+                                                <field name="name" required="1"/>
+                                                <field name="service_datetime" required="1"/>
+                                                <field name="no_of_pax"/>
+                                                <field name="qty_invoiced" groups="base.group_no_one" />
+                                                <field name="customer_name_ids" widget="many2many_tags"/>
+                                                <field name="agent_id" context="{'default_s_agent': 'parent'}"/>
+                                                <field name="sub_agent_id" context="{'default_s_agent': 'child'}"/>
+                                                <field name="place_from" required="1"/>
+                                                <field name="place_to" required="1"/>
+                                                <field name="driver_id" context="{'default_driver': True}"/>
+                                                <field name="guide_id" context="{'default_guide': True}"/>
+                                                <field name="tour_consultant_id"/>
+                                                <field name="service_remarks"/>
+                                                <field name="currency_id"/>
+                                                <field name="cost_ids" widget="one2many"/>
+                                                <field name="tour_reservation_id" invisible="1"/>
+                                            </group>
+                                        </sheet>
+                                    </form>
+                                </field>
+                            </page>
+                            <page string="Tour">
+                                <field name="tour_ids"/>
+                            </page>
+                            <page string="Tour Itinerary">
+                                <field name="tour_itinerary_ids"/>
+                            </page>
+                            <page string="Tour Visa">
+                                <field name="tour_visa_id"/>
+                            </page>
+                            <page string="Tour Passport">
+                                <field name="tour_passport_id"/>
+                            </page>
+                        </notebook>
+                    </sheet>
+                    <div class="oe_chatter">
+                        <field name="message_follower_ids" widget="mail_followers"/>
+                        <field name="message_ids" widget="mail_thread"/>
+                    </div>
+                </form>
+            </field>
+        </record>
+
+        <record id="view_tour_reservation_search" model="ir.ui.view">
+            <field name="name">tour.reservation.search</field>
+            <field name="model">tour.reservation</field>
+            <field name="type">search</field>
+            <field name="priority" eval="8"/>
+            <field name="arch" type="xml">
+                <search string="Tour Reservation">
+                    <field name="agent_file_number"/>
+                    <field name="file_number"/>
+                    <field name="agent_id"/>
+                    <field name="sub_agent_id"/>
+                    <field name="booking_date"/>
+                    <field name="booking_name"/>
+                    <field name="state"/>
+                    <field name="currency_id"/>
+                    <filter string="Yesterday" name="yesterday"
+                        domain="[('booking_date','=',(context_today()-relativedelta(days=1)).strftime('%%Y-%%m-%%d'))]"/>
+                    <filter string="Today" name="today"
+                        domain="[('booking_date','=',(context_today()).strftime('%%Y-%%m-%%d'))]"/>
+                    <filter name="active_reservation" string="Active Reservation" domain="[('active', '=', True)]"/>
+                    <filter string="Previous Month" name="prev_month"
+                        domain="[('booking_date','>=',(context_today()-relativedelta(months=1)).strftime('%%Y-%%m-01')),('booking_date','&lt;',time.strftime('%%Y-%%m-01'))]"/>
+                    <filter string="Current Month" name="current_month"
+                        domain="[('booking_date','&lt;',(context_today()+relativedelta(months=1)).strftime('%%Y-%%m-01')),('booking_date','&gt;=',time.strftime('%%Y-%%m-01'))]"/>
+                    <group expand="0" string="Group By">
+                        <filter name="group_agent" string="Agent" domain="[]" context="{'group_by': 'agent_id'}"/>
+                        <filter name="group_subagent" string="Sub Agent" domain="[]" context="{'group_by': 'sub_agent_id'}"/>
+                        <filter name="group_currency" string="Currency" domain="[]" context="{'group_by': 'currency_id'}"/>
+                        <filter name="group_bookingdate" string="Booking Date" domain="[]" context="{'group_by': 'booking_date'}"/>
+                        <filter name="groupby_booking_month" string="By Month" domain="[]" context="{'group_by': 'booking_date:month'}"/>
+                        <filter name="groupby_booking_year" string="By Year" domain="[]" context="{'group_by': 'booking_date:year'}"/>
+                    </group>
+                </search>
+            </field>
+        </record>
+
+        <record model="ir.actions.act_window" id="act_open_tour_reservation_view">
+            <field name="name">Tour Reservation</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">tour.reservation</field>
+<!--            <field name="view_type">form</field>-->
+            <field name="view_mode">tree,form</field>
+            <field name="search_view_id" ref="view_tour_reservation_search"/>
+            <field name="domain">[]</field>
+            <field name="context">{}</field>
+        </record>
+
+        <record model="ir.actions.act_window.view" id="act_open_tour_reservation_view_form">
+            <field name="act_window_id" ref="act_open_tour_reservation_view"/>
+            <field name="sequence" eval="20"/>
+            <field name="view_mode">form</field>
+            <field name="view_id" ref="view_tour_reservation_form"/>
+        </record>
+
+        <record model="ir.actions.act_window.view" id="act_open_tour_reservation_view_tree">
+            <field name="act_window_id" ref="act_open_tour_reservation_view"/>
+            <field name="sequence" eval="10"/>
+            <field name="view_mode">tree</field>
+            <field name="view_id" ref="view_tour_reservation_tree"/>
+        </record>
+
+        <!--Booking Information-->
+        <record id="view_booking_information_tree" model="ir.ui.view">
+            <field name="name">booking.information.tree</field>
+            <field name="model">booking.information</field>
+            <field name="type">tree</field>
+            <field name="priority" eval="8"/>
+            <field name="arch" type="xml">
+                <tree string="Booking Information">
+                    <field name="name"/>
+                    <field name="total_no_of_pax"/>
+                    <field name="total_adult"/>
+                    <field name="total_children"/>
+                    <field name="total_infant"/>
+                    <field name="tour_reservation_id"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="view_booking_information_form" model="ir.ui.view">
+            <field name="name">booking.information.form</field>
+            <field name="model">booking.information</field>
+            <field name="type">form</field>
+            <field name="priority" eval="8"/>
+            <field name="arch" type="xml">
+                <form string="Booking Information">
+                    <header>
+                        <button name="action_quotation_send_booking_info" type="object" string="Send By Email" class="oe_highlight"/>
+                        <button name="action_confirmed" type="object" string="Confirm" class="oe_highlight"
+                         attrs="{'invisible': [('state', '==', 'confirmed')]}"/>
+                         <field name="state" widget="statusbar" statusbar_visible="draft,confirmed"/>
+                    </header>
+                    <sheet>
+                        <group>
+                            <group>
+                            <field name="tour_reservation_id" required="1"/>
+                            <field name="total_no_of_pax" required="1"/>
+                                <field name="booking_date"/>
+                                </group>
+                            <group>
+                            <field name="total_adult"/>
+                            <field name="total_children"/>
+                            <field name="total_infant"/>
+                                </group>
+                            <group>
+                                <field name="customer_id"/>
+                                <field name="email_id"/>
+                                <field name="mobile_num"/>
+                            </group>
+                        </group>
+                        <group string="Tour Information">
+                                <group>
+                                    <field name="tour_id"/>
+                                    <field name="tour_type"/>
+                                    <field name="book_accomodation_id"/>
+                                </group>
+                                <group>
+                                    <field name="tour_start_date"/>
+                                    <field name="tour_season"/>
+                                    <field name="payment_policy"/>
+                                </group>
+                            <group>
+                            <field name="remarks"/>
+                                </group>
+                                </group>
+                        <notebook>
+                            <page string="Person Information">
+                                <field name="person_info_ids">
+                                    <tree>
+                                        <field name="name"/>
+                                        <field name="gender"/>
+                                        <field name="person_type"/>
+                                    </tree>
+                                </field>
+                            </page>
+                        </notebook>
+                    </sheet>
+                    <div class="oe_chatter">
+                        <field name="message_follower_ids" widget="mail_followers"/>
+                        <field name="message_ids" widget="mail_thread"/>
+                    </div>
+                </form>
+            </field>
+        </record>
+
+        <record id="view_booking_information_search" model="ir.ui.view">
+            <field name="name">booking.information.search</field>
+            <field name="model">booking.information</field>
+            <field name="type">search</field>
+            <field name="priority" eval="8"/>
+            <field name="arch" type="xml">
+                <search string="Booking Information">
+                    <field name="total_no_of_pax"/>
+                    <field name="total_adult"/>
+                    <field name="total_children"/>
+                    <field name="total_infant"/>
+                    <field name="tour_reservation_id"/>
+                    <group expand="0" string="Group By">
+                        <filter name="group_tour_reservation" string="By tour reservation" domain="[]" context="{'group_by': 'tour_reservation_id'}"/>
+                    </group>
+                </search>
+            </field>
+        </record>
+
+        <record model="ir.actions.act_window" id="act_open_booking_information_view">
+            <field name="name">Booking Information</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">booking.information</field>
+<!--            <field name="view_type">form</field>-->
+            <field name="view_mode">tree,form</field>
+            <field name="search_view_id" ref="view_booking_information_search"/>
+            <field name="domain">[]</field>
+            <field name="context">{}</field>
+        </record>
+
+        <record model="ir.actions.act_window.view" id="act_open_booking_information_view_form">
+            <field name="act_window_id" ref="act_open_booking_information_view"/>
+            <field name="sequence" eval="20"/>
+            <field name="view_mode">form</field>
+            <field name="view_id" ref="view_booking_information_form"/>
+        </record>
+
+        <record model="ir.actions.act_window.view" id="act_open_booking_information_view_tree">
+            <field name="act_window_id" ref="act_open_booking_information_view"/>
+            <field name="sequence" eval="10"/>
+            <field name="view_mode">tree</field>
+            <field name="view_id" ref="view_booking_information_tree"/>
+        </record>
+
+        <record id="view_booking_person_information_tree" model="ir.ui.view">
+            <field name="name">booking.person.information.tree</field>
+            <field name="model">booking.person.information</field>
+            <field name="type">tree</field>
+            <field name="priority" eval="8"/>
+            <field name="arch" type="xml">
+                <tree string="Booking Person Information">
+                    <field name="name"/>
+                    <field name="gender"/>
+                    <field name="age"/>
+                    <field name="person_type"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="view_booking_person_information_form" model="ir.ui.view">
+            <field name="name">booking.person.information.form</field>
+            <field name="model">booking.person.information</field>
+            <field name="type">form</field>
+            <field name="priority" eval="8"/>
+            <field name="arch" type="xml">
+                <form string="Booking Person Information">
+                    <sheet>
+                        <group>
+                            <field name="name" required="1"/>
+                            <field name="gender"/>
+                            <field name="age"/>
+                            <field name="person_type" required="1"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="view_booking_person_information_search" model="ir.ui.view">
+            <field name="name">booking.person.information.search</field>
+            <field name="model">booking.person.information</field>
+            <field name="type">search</field>
+            <field name="priority" eval="8"/>
+            <field name="arch" type="xml">
+                <search string="Booking Person Information">
+                    <field name="name"/>
+                    <field name="gender"/>
+                    <field name="person_type"/>
+                    <group expand="0" string="Group By">
+                        <filter name="gender" string="By gender" domain="[]" context="{'group_by': 'gender'}" />
+                        <filter name="person_type" string="By person type" domain="[]" context="{'group_by': 'person_type'}" />
+                    </group>
+                </search>
+            </field>
+        </record>
+
+        <record model="ir.actions.act_window" id="act_open_booking_person_information_view">
+            <field name="name">Booking Person Information</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">booking.person.information</field>
+<!--            <field name="view_type">form</field>-->
+            <field name="view_mode">tree,form</field>
+            <field name="search_view_id" ref="view_booking_person_information_search"/>
+            <field name="domain">[]</field>
+            <field name="context">{}</field>
+        </record>
+
+        <record model="ir.actions.act_window.view" id="act_open_booking_person_information_view_form">
+            <field name="act_window_id" ref="act_open_booking_person_information_view"/>
+            <field name="sequence" eval="20"/>
+            <field name="view_mode">form</field>
+            <field name="view_id" ref="view_booking_person_information_form"/>
+        </record>
+
+        <record model="ir.actions.act_window.view" id="act_open_booking_person_information_view_tree">
+            <field name="act_window_id" ref="act_open_booking_person_information_view"/>
+            <field name="sequence" eval="10"/>
+            <field name="view_mode">tree</field>
+            <field name="view_id" ref="view_booking_person_information_tree"/>
+        </record>
+
+        <record id="view_place_place_tree" model="ir.ui.view">
+            <field name="name">place.place.tree</field>
+            <field name="model">place.place</field>
+            <field name="type">tree</field>
+            <field name="priority" eval="8"/>
+            <field name="arch" type="xml">
+                <tree string="Place">
+                    <field name="name"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="view_place_place_form" model="ir.ui.view">
+            <field name="name">place.place.form</field>
+            <field name="model">place.place</field>
+            <field name="type">form</field>
+            <field name="priority" eval="8"/>
+            <field name="arch" type="xml">
+                <form string="Place">
+                    <sheet>
+                        <group>
+                            <field name="name"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="view_place_place_search" model="ir.ui.view">
+            <field name="name">place.place.search</field>
+            <field name="model">place.place</field>
+            <field name="type">search</field>
+            <field name="priority" eval="8"/>
+            <field name="arch" type="xml">
+                <search string="Place">
+                    <field name="name"/>
+                </search>
+            </field>
+        </record>
+
+        <record model="ir.actions.act_window" id="act_open_place_place_view">
+            <field name="name">Place</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">place.place</field>
+<!--            <field name="view_type">form</field>-->
+            <field name="view_mode">tree,form</field>
+            <field name="search_view_id" ref="view_place_place_search"/>
+            <field name="domain">[]</field>
+            <field name="context">{}</field>
+        </record>
+
+        <record model="ir.actions.act_window.view" id="act_open_place_place_view_form">
+            <field name="act_window_id" ref="act_open_place_place_view"/>
+            <field name="sequence" eval="20"/>
+            <field name="view_mode">form</field>
+            <field name="view_id" ref="view_place_place_form"/>
+        </record>
+
+        <record model="ir.actions.act_window.view" id="act_open_place_place_view_tree">
+            <field name="act_window_id" ref="act_open_place_place_view"/>
+            <field name="sequence" eval="10"/>
+            <field name="view_mode">tree</field>
+            <field name="view_id" ref="view_place_place_tree"/>
+        </record>
+
+        <record id="view_persontype_cost_tree" model="ir.ui.view">
+            <field name="name">persontype.cost.tree</field>
+            <field name="model">persontype.cost</field>
+            <field name="type">tree</field>
+            <field name="priority" eval="8"/>
+            <field name="arch" type="xml">
+                <tree string="Persontype Cost" editable="bottom">
+                    <field name="person_type"/>
+                    <field name="no_of_pax"/>
+                    <field name="cost" widget="monetary"/>
+                    <field name="currency_id" invisible="1"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="view_persontype_cost_form" model="ir.ui.view">
+            <field name="name">persontype.cost.form</field>
+            <field name="model">persontype.cost</field>
+            <field name="type">form</field>
+            <field name="priority" eval="8"/>
+            <field name="arch" type="xml">
+                <form string="Persontype Cost">
+                    <sheet>
+                        <group>
+                            <field name="person_type"/>
+                            <field name="no_of_pax"/>
+                            <field name="cost" widget="monetary"/>
+                            <field name="currency_id" invisible="1"/>
+                            <field name="invoice_line_ids" invisible="1"/>
+                            <field name="qty_invoiced" groups="base.group_no_one"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="view_persontype_cost_search" model="ir.ui.view">
+            <field name="name">persontype.cost.search</field>
+            <field name="model">persontype.cost</field>
+            <field name="type">search</field>
+            <field name="priority" eval="8"/>
+            <field name="arch" type="xml">
+                <search string="Persontype Cost">
+                    <field name="person_type"/>
+                    <field name="no_of_pax"/>
+                    <field name="cost"/>
+                </search>
+            </field>
+        </record>
+
+        <record model="ir.actions.act_window" id="act_open_persontype_cost_view">
+            <field name="name">Persontype Cost</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">persontype.cost</field>
+<!--            <field name="view_type">form</field>-->
+            <field name="view_mode">tree,form</field>
+            <field name="search_view_id" ref="view_persontype_cost_search"/>
+            <field name="domain">[]</field>
+            <field name="context">{}</field>
+        </record>
+
+        <record model="ir.actions.act_window.view" id="act_open_persontype_cost_view_form">
+            <field name="act_window_id" ref="act_open_persontype_cost_view"/>
+            <field name="sequence" eval="20"/>
+            <field name="view_mode">form</field>
+            <field name="view_id" ref="view_persontype_cost_form"/>
+        </record>
+
+        <record model="ir.actions.act_window.view" id="act_open_persontype_cost_view_tree">
+            <field name="act_window_id" ref="act_open_persontype_cost_view"/>
+            <field name="sequence" eval="10"/>
+            <field name="view_mode">tree</field>
+            <field name="view_id" ref="view_persontype_cost_tree"/>
+        </record>
+
+    </data>
+</odoo>

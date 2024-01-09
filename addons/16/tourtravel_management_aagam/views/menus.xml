@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+        <menuitem id="menu_tour_management" name="Tour Management"/>
+
+        <!--Tour Reservation-->
+<!--        <menuitem id="menu_item" namr="Tour Reservation"/>-->
+
+
+        <menuitem id="menu_tour_reservation_menu" name="Tour Reservation" parent="menu_tour_management"/>
+
+        <menuitem id="menu_tour_create" name="Tour" parent="menu_tour_reservation_menu"
+                  action="action_create_tour_views" sequence="3"/>
+
+         <menuitem id="menu_tour_iternary_create" name="Tour Iternary" parent="menu_tour_reservation_menu"
+                  action="action_tour_program_views" sequence="5"/>
+        <menuitem id="menu_booking_accommodation" name="Accommodation" parent="menu_tour_reservation_menu"
+                  action="act_open_booking_accommodation_view" sequence="7"/>
+
+        <menuitem id="menu_inquiry_create" name="Tour Inquiry" parent="menu_tour_reservation_menu"
+                  action="action_create_inquiry_views" sequence="3"/>
+        <menuitem id="menu_itinerary_create" name="Tour Booking Detail" parent="menu_tour_reservation_menu"
+                  action="action_create_itinerary_views" sequence="5"/>
+<!--        <menuitem id="menu_booking_information" name="Booking Information"-->
+<!--                  parent="menu_tour_reservation_menu" action="act_open_booking_information_view"-->
+<!--        sequence="4"/>-->
+
+
+        <menuitem id="menu_booking_service" name="Service" parent="menu_tour_reservation_menu"
+                  action="act_open_booking_service_view" sequence="5"/>
+
+        <menuitem id="menu_booking_extra_service" name="Extra Service" action="act_open_booking_extra_service_view"
+                  parent="menu_tour_reservation_menu" sequence="6"/>
+
+
+
+        <menuitem id="menu_flight_flight" name="Flight" parent="menu_tour_reservation_menu"
+                  action="act_open_flight_flight_view" sequence="8"/>
+
+        <menuitem id="menu_tour_visa" name="Tour Visa" parent="menu_tour_reservation_menu"
+                  action="action_tour_visa_view" />
+
+        <menuitem id="menu_tour_documentation" name="Tour Passport Documentation"
+                  action="action_passport_documentation_view" parent="menu_tour_reservation_menu"/>
+
+        <menuitem id="menu_ferry" name="Ferry" parent="menu_tour_reservation_menu" action="act_open_ferry_view"
+        sequence="9"/>
+         <menuitem id="menu_tour_reservation_sub_menu" name="Agent Tour Reservation" parent="menu_tour_reservation_menu"
+                  action="act_open_tour_reservation_view" />
+<!--        Tour deshboard-->
+
+        <menuitem id="tour_dashboard_menu1" name="Tour Dashboard" parent="menu_tour_management" sequence="2"/>
+
+        <menuitem id="tour_dashboard_menu" name="Tour Dashboard" parent="tour_dashboard_menu1"
+        action="Tour_dashboard_action" sequence="1" />
+
+<!--        &lt;!&ndash;Tour Operation&ndash;&gt;-->
+        <menuitem id="menu_tour_operation" name="Tour Operation" parent="menu_tour_management"
+                  />
+
+        <menuitem id="menu_day_sheet" name="Day Sheet" parent="menu_tour_operation"
+                  action="act_open_day_sheet_view"/>
+
+
+<!--        &lt;!&ndash;Tour Account&ndash;&gt;-->
+
+        <menuitem id="menu_tour_accounts" name="Tour Accounting" parent="menu_tour_management"/>
+
+<!--        <menuitem id="menu_action_tour_invoice" name="Tour Invoice" parent="menu_tour_accounts" action="account.action_move_out_invoice_type"/>-->
+            <menuitem id="menu_action_tour_invoice" name="Tour Invoice" parent="menu_tour_accounts" action="action_tour_invoice"/>
+
+        <menuitem id="menu_transfer_excursion" name="Transfer Excursion" parent="menu_tour_accounts"
+                  action="act_open_transfer_excursion_view" />
+
+        <menuitem id="menu_job_card" name="Job Card" parent="menu_tour_accounts"
+                  action="jobcard.act_open_job_card_view"/>
+
+<!--        &lt;!&ndash;Contacts&ndash;&gt;-->
+
+        <menuitem id="menu_tour_reservation_contacts" name="Contacts" parent="menu_tour_management"/>
+
+        <menuitem id="menu_agent" name="Agent" parent="menu_tour_reservation_contacts" action="action_partner_agent_form"/>
+
+        <menuitem id="menu_sub_agent" name="Sub Agent" parent="menu_tour_reservation_contacts" action="action_partner_sub_agent_form"/>
+
+        <menuitem id="menu_guide" name="Guide" parent="menu_tour_reservation_contacts" action="action_partner_guide_form"/>
+
+        <menuitem id="menu_driver" name="Driver" parent="menu_tour_reservation_contacts" action="action_partner_driver_form"/>
+
+        <menuitem id="menu_tour_consultant" name="Tour Consultant" parent="menu_tour_reservation_contacts" action="action_partner_tour_consultant_form"/>
+
+        <menuitem id="menu_other_contact" name="Other Contact" parent="menu_tour_reservation_contacts" action="action_partner_other_form"/>
+
+        <menuitem id="menu_all_contact" name="All Contact" parent="menu_tour_reservation_contacts" action="action_all_partner_form"/>
+
+<!--        &lt;!&ndash;Configurations&ndash;&gt;-->
+        <menuitem id="menu_tour_reservation_config" name="Configuration" parent="menu_tour_management"/>
+
+        <menuitem id="menu_tour_management_config" name="Settings" parent="menu_tour_reservation_config"
+                  action="action_tour_management_config" groups="base.group_system"/>
+
+        <menuitem id="menu_travel_info" name="Travel Information" parent="menu_tour_reservation_config"
+                  action="action_travel_info_views"/>
+
+       <menuitem id="menu_tour_payment_policy" name="Payment Policy" parent="menu_tour_reservation_config"
+          action="action_tour_payment_policy_views"/>
+
+        <menuitem id="menu_tour_details" name="Tour Details" parent="menu_tour_reservation_menu"
+                  action="action_tour_details_views"/>
+
+        <menuitem id="menu_visa_list" name="Visa Documentation List" parent="menu_tour_reservation_config"
+                  action="action_tour_visa_list_view"/>
+
+        <menuitem id="menu_place_place" name="Place" parent="menu_tour_reservation_config"
+                  action="act_open_place_place_view"/>
+
+         <menuitem id="menu_room_type"
+                parent="tourtravel_management_aagam.menu_tour_reservation_config"
+                sequence="10"
+                name="Room Type"
+                groups="tourtravel_management_aagam.group_reservation_user"
+                action="act_open_room_type_view"/>
+
+        <menuitem id="menu_persontype_cost" parent="menu_tour_reservation_config" action="act_open_persontype_cost_view"
+                groups="base.group_no_one"/>
+
+        <menuitem id="menu_meal_meal" name="Meal" parent="menu_tour_reservation_config"
+                  action="act_open_meal_meal_view" groups="tourtravel_management_aagam.group_reservation_user"/>
+        <menuitem id="menu_flight_name"
+                parent="tourtravel_management_aagam.menu_tour_reservation_config"
+                groups="base.group_no_one"
+                sequence="20"
+                action="act_open_flight_name_view"/>
+
+    </data>
+</odoo>

@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+        <record id="view_flight_flight_tree" model="ir.ui.view">
+            <field name="name">flight.flight.tree</field>
+            <field name="model">flight.flight</field>
+            <field name="type">tree</field>
+            <field name="priority" eval="8"/>
+            <field name="arch" type="xml">
+                <tree string="Flight">
+                    <field name="name"/>
+                    <field name="in_datetime"/>
+                    <field name="out_datetime"/>
+                    <field name="place_from"/>
+                    <field name="place_to"/>
+                    <field name="booked_by_id"/>
+                    <field name="other_detail"/>
+                    <field name="tour_id"/>
+<!--                    <field name="tour_reservation_id"/>-->
+                </tree>
+            </field>
+        </record>
+
+        <record id="view_flight_flight_form" model="ir.ui.view">
+            <field name="name">flight.flight.form</field>
+            <field name="model">flight.flight</field>
+            <field name="type">form</field>
+            <field name="priority" eval="8"/>
+            <field name="arch" type="xml">
+                <form string="Flight">
+                    <sheet>
+                        <group>
+                            <field name="name" required="1"/>
+                            <field name="in_datetime" required="1"/>
+                            <field name="out_datetime" required="1"/>
+                            <field name="place_from" required="1"/>
+                            <field name="place_to" required="1"/>
+                            <field name="booked_by_id" required="1"/>
+                            <field name="other_detail"/>
+                            <field name="tour_id"/>
+<!--                            <field name="tour_reservation_id" required="1"/>-->
+                            <field name="cost_ids" widget="one2many"/>
+                        </group>
+                    </sheet>
+                    <div class="oe_chatter">
+                        <field name="message_follower_ids" widget="mail_followers"/>
+                        <field name="message_ids" widget="mail_thread"/>
+                    </div>
+                </form>
+            </field>
+        </record>
+
+        <record id="view_flight_flight_search" model="ir.ui.view">
+            <field name="name">flight.flight.search</field>
+            <field name="model">flight.flight</field>
+            <field name="type">search</field>
+            <field name="priority" eval="8"/>
+            <field name="arch" type="xml">
+                <search string="Flight">
+                    <field name="name"/>
+                    <field name="in_datetime"/>
+                    <field name="out_datetime"/>
+                    <field name="place_from"/>
+                    <field name="place_to"/>
+                    <field name="booked_by_id"/>
+                    <field name="other_detail"/>
+<!--                    <field name="tour_reservation_id"/>-->
+                    <group expand="0" string="Group By">
+                        <filter name="group_flight" string="By flight" domain="[]" context="{'group_by': 'name'}"/>
+                        <filter name="group_place_from" string="By place from" domain="[]" context="{'group_by': 'place_from'}"/>
+                        <filter name="group_place_to" string="By place to" domain="[]" context="{'group_by': 'place_to'}"/>
+                        <filter name="group_who_booked" string="By who booked" domain="[]" context="{'group_by': 'booked_by_id'}"/>
+<!--                        <filter name="group_tour_reservation" string="By tour reservation" domain="[]" context="{'group_by': 'tour_reservation_id'}"/>-->
+                    </group>
+                </search>
+            </field>
+        </record>
+
+        <record model="ir.actions.act_window" id="act_open_flight_flight_view">
+            <field name="name">Flight</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">flight.flight</field>
+<!--            <field name="view_type">form</field>-->
+            <field name="view_mode">tree,form</field>
+            <field name="search_view_id" ref="view_flight_flight_search"/>
+            <field name="domain">[]</field>
+            <field name="context">{}</field>
+        </record>
+
+        <record model="ir.actions.act_window.view" id="act_open_flight_flight_view_form">
+            <field name="act_window_id" ref="act_open_flight_flight_view"/>
+            <field name="sequence" eval="20"/>
+            <field name="view_mode">form</field>
+            <field name="view_id" ref="view_flight_flight_form"/>
+        </record>
+
+        <record model="ir.actions.act_window.view" id="act_open_flight_flight_view_tree">
+            <field name="act_window_id" ref="act_open_flight_flight_view"/>
+            <field name="sequence" eval="10"/>
+            <field name="view_mode">tree</field>
+            <field name="view_id" ref="view_flight_flight_tree"/>
+        </record>
+
+        <!--Flight name-->
+        <record id="view_flight_name_tree" model="ir.ui.view">
+            <field name="name">flight.name.tree</field>
+            <field name="model">flight.name</field>
+            <field name="type">tree</field>
+            <field name="priority" eval="8"/>
+            <field name="arch" type="xml">
+                <tree string="Flight Name">
+                    <field name="name"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="view_flight_name_form" model="ir.ui.view">
+            <field name="name">flight.name.form</field>
+            <field name="model">flight.name</field>
+            <field name="type">form</field>
+            <field name="priority" eval="8"/>
+            <field name="arch" type="xml">
+                <form string="Flight Name">
+                    <sheet>
+                        <group>
+                            <field name="name"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record model="ir.actions.act_window" id="act_open_flight_name_view">
+            <field name="name">Flight Name</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">flight.name</field>
+<!--            <field name="view_type">form</field>-->
+            <field name="view_mode">tree,form</field>
+            <field name="domain">[]</field>
+            <field name="context">{}</field>
+        </record>
+
+        <record model="ir.actions.act_window.view" id="act_open_flight_name_view_form">
+            <field name="act_window_id" ref="act_open_flight_name_view"/>
+            <field name="sequence" eval="20"/>
+            <field name="view_mode">form</field>
+            <field name="view_id" ref="view_flight_name_form"/>
+        </record>
+
+        <record model="ir.actions.act_window.view" id="act_open_flight_name_view_tree">
+            <field name="act_window_id" ref="act_open_flight_name_view"/>
+            <field name="sequence" eval="10"/>
+            <field name="view_mode">tree</field>
+            <field name="view_id" ref="view_flight_name_tree"/>
+        </record>
+
+    </data>
+</odoo>

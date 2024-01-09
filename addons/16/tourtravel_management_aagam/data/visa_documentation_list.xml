@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+	<data noupdate="1">
+        <record id="menu_data1" model="visa.documentation.list">
+			<field name="name">Adhar Card</field>
+		</record>
+
+        <record id="menu_data2" model="visa.documentation.list">
+			<field name="name">PassPort</field>
+		</record>
+
+        <record id="menu_data3" model="visa.documentation.list">
+			<field name="name">Photo Copy</field>
+		</record>
+
+        <record id="menu_data4" model="visa.documentation.list">
+			<field name="name">National ID Card</field>
+		</record>
+
+        <record id="menu_data5" model="visa.documentation.list">
+			<field name="name">Electricity Bill</field>
+		</record>
+
+        <record id="menu_data6" model="visa.documentation.list">
+			<field name="name">Electricity Bill</field>
+		</record>
+
+        <record id="menu_data7" model="visa.documentation.list">
+			<field name="name">Identity card</field>
+		</record>
+
+    </data>
+</odoo>

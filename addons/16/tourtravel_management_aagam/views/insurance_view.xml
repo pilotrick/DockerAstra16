@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+        <record id="insurance_form_view" model="ir.ui.view">
+            <field name="name">insurance.form.view</field>
+            <field name="model">insurance.insurance</field>
+            <field name="arch" type="xml">
+                <form>
+                	<sheet>
+	                	<group>
+	                		<group>
+	                			<field name="name" required="1"/>
+	                			<field name="adult_cost"/>
+	                		</group>
+	                		<group>
+		                		<field name="code"/>
+		                		<field name="children_cost"/>
+		                	</group>
+	                	</group>
+	                </sheet>
+                </form>
+            </field>
+        </record>
+        
+        <record id="insurance_tree_view" model="ir.ui.view">
+            <field name="name">insurance.tree.view</field>
+            <field name="model">insurance.insurance</field>
+            <field name="arch" type="xml">
+            	<tree>
+            		<field name="name"/>
+            		<field name="code"/>
+            		<field name="adult_cost"/>
+            		<field name="children_cost"/>
+            	</tree>
+            </field>
+        </record>
+        
+        <record id="action_insurance_view" model="ir.actions.act_window">
+            <field name="name">Insurance</field>
+            <field name="res_model">insurance.insurance</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+        
+        <menuitem id="menu_insurance" name="Insurance" 
+        	action="action_insurance_view" parent="menu_tour_reservation_menu"/>
+        
+   </data>
+</odoo>

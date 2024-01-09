@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<odoo>
+   <data noupdate="1">
+       <!--Email template -->
+       <record id="email_template_itinerary" model="mail.template">
+            <field name="name">Tour Itinerary: Send by email</field>
+            <field name="model_id" ref="tourtravel_management_aagam.model_tour_itinerary"/>
+            <field name="email_from">${object.contact_name.email_formatted |safe}</field>
+            <field name="email_to">${object.contact_name}</field>
+            <field name="subject">Tour Itinerary (Ref ${object.name})</field>
+            <field name="body_html" type="html">
+                    <div style="margin: 0px; padding: 0px;">
+                    <p style="margin: 0px; padding: 0px; font-size: 13px;">
+                        <h5>Hello</h5>
+                        <br/>
+                        <h6>Please find your attachment of Tour Itinerary </h6>
+                    </p>
+                    </div>
+            </field>
+            <field name="report_template" ref="action_tour_itinerary_report"/>
+            <field name="report_name">${(object.name or '').replace('/','_')}</field>
+            <field name="auto_delete" eval="True"/>
+        </record>
+         
+        <record id="email_template_accomodation" model="mail.template">
+            <field name="name">Booking Accomodation: Send by email</field>
+            <field name="model_id" ref="tourtravel_management_aagam.model_booking_accommodation"/>
+            <field name="email_from">${object.hotel_id.partner_id.email_formatted |safe}</field>
+            <field name="email_to">${object.hotel_id.partner_id}</field>
+            <field name="subject">Booking Accomodation (Ref ${object.name})</field>
+            <field name="body_html" type="html">
+                    <div style="margin: 0px; padding: 0px;">
+                    <p style="margin: 0px; padding: 0px; font-size: 13px;">
+                        <h5>Hello</h5>
+                        <br/>
+                        <h6>Please find your attachment of Booking Accomodation </h6>
+                    </p>
+                    </div>
+            </field>
+            <field name="report_template" ref="action_tour_accommodation_report"/>
+            <field name="report_name">${(object.name or '').replace('/','_')}</field>
+            <field name="auto_delete" eval="True"/>
+        </record>
+
+       <record id="email_template_booking_information" model="mail.template">
+            <field name="name">Booking Information: Send by email</field>
+            <field name="model_id" ref="tourtravel_management_aagam.model_booking_information"/>
+            <field name="email_from">${object.contact_name.email_formatted |safe}</field>
+            <field name="email_to">${object.contact_name}</field>
+            <field name="subject">Booking Information (Ref ${object.name})</field>
+            <field name="body_html" type="html">
+                    <div style="margin: 0px; padding: 0px;">
+                    <p style="margin: 0px; padding: 0px; font-size: 13px;">
+                        <h5>Hello</h5>
+                        <br/>
+                        <h6>Please find your attachment of Booking Information </h6>
+                    </p>
+                    </div>
+            </field>
+            <field name="report_template" ref="action_tour_booking_report"/>
+            <field name="report_name">${(object.name or '').replace('/','_')}</field>
+            <field name="auto_delete" eval="True"/>
+       </record>
+   </data>
+</odoo>

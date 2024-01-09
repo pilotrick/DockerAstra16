@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+        <record id="view_res_partner_form" model="ir.ui.view">
+            <field name="name">res.partner.form</field>
+            <field name="model">res.partner</field>
+            <field name="inherit_id" ref="base.view_partner_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//notebook" position="inside">
+                    <page string="Tour Management">
+                        <group>
+                            <field name="s_agent"/>
+                            <field name="driver"/>
+                            <field name="guide"/>
+                            <field name="tour_consultant"/>
+                        </group>
+                    </page>
+                </xpath>
+                <xpath expr="//field[@name='child_ids']/.." position="attributes">
+                    <attribute name="attrs">{'invisible': [('s_agent', '=', 'parent'), ('parent_id', '!=', False)]}</attribute>
+                </xpath>
+                <xpath expr="//field[@name='child_ids']" position="attributes">
+                    <attribute name="context">{'default_s_agent': 'child'}</attribute>
+                </xpath>
+<!--                <xpath expr="//field[@name='child_ids']/form/sheet/group/group[last()]/field[@name='comment']" position="after">-->
+<!--                    <field name="s_agent"/>-->
+<!--                    <field name="driver"/>-->
+<!--                    <field name="guide"/>-->
+<!--                    <field name="tour_consultant"/>-->
+<!--                </xpath>-->
+                <xpath expr="//field[@name='parent_id']" position="attributes">
+                    <attribute name="attrs">{
+                        'required': [('s_agent', '=', 'child')],
+                        'invisible': ['|', '&amp;', ('is_company','=', True),('parent_id', '=', False),('company_name', '!=', False),('company_name', '!=', '')]}
+                    </attribute>
+                </xpath>
+                <field name="function" position="before">
+                    <field name="date_of_birth"/>
+                    <field name="passport_no"/>
+                    <field name="date_of_expire"/>
+                </field>
+            </field>
+        </record>
+
+        <record id="action_partner_agent_form" model="ir.actions.act_window">
+            <field name="name">Agent</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">res.partner</field>
+<!--            <field name="view_type">form</field>-->
+            <field name="domain">[('s_agent', '=', 'parent')]</field>
+            <field name="view_mode">kanban,tree,form</field>
+            <field name="context">{'default_s_agent': 'parent'}</field>
+            <field name="filter" eval="True"/>
+            <field name="help" type="html">
+              <p class="oe_view_nocontent_create">
+                Click to add a agent contact in your address book.
+              </p>
+            </field>
+        </record>
+
+        <record id="action_partner_sub_agent_form" model="ir.actions.act_window">
+            <field name="name">Sub Agent</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">res.partner</field>
+<!--            <field name="view_type">form</field>-->
+            <field name="domain">[('s_agent', '=', 'child'), ('parent_id', '!=', False)]</field>
+            <field name="view_mode">kanban,tree,form</field>
+            <field name="context">{'default_s_agent': 'child'}</field>
+            <field name="filter" eval="True"/>
+            <field name="help" type="html">
+              <p class="oe_view_nocontent_create">
+                Click to add a agent contact in your address book.
+              </p>
+            </field>
+        </record>
+
+        <record id="action_partner_driver_form" model="ir.actions.act_window">
+            <field name="name">Driver</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">res.partner</field>
+<!--            <field name="view_type">form</field>-->
+            <field name="domain">[('driver', '=', True)]</field>
+            <field name="view_mode">kanban,tree,form</field>
+            <field name="context">{'default_driver': True}</field>
+            <field name="filter" eval="True"/>
+            <field name="help" type="html">
+              <p class="oe_view_nocontent_create">
+                Click to add a driver contact in your address book.
+                </p>
+            </field>
+        </record>
+
+        <record id="action_partner_guide_form" model="ir.actions.act_window">
+            <field name="name">Guide</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">res.partner</field>
+<!--            <field name="view_type">form</field>-->
+            <field name="domain">[('guide', '=', True)]</field>
+            <field name="view_mode">kanban,tree,form</field>
+            <field name="context">{'default_guide': True}</field>
+            <field name="filter" eval="True"/>
+            <field name="help" type="html">
+              <p class="oe_view_nocontent_create">
+                Click to add a guide contact in your address book.
+                </p>
+            </field>
+        </record>
+
+        <record id="action_partner_tour_consultant_form" model="ir.actions.act_window">
+            <field name="name">Tour Consultant</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">res.partner</field>
+<!--            <field name="view_type">form</field>-->
+            <field name="domain">[('tour_consultant', '=', True)]</field>
+            <field name="view_mode">kanban,tree,form</field>
+            <field name="context">{'default_tour_consultant': True}</field>
+            <field name="filter" eval="True"/>
+            <field name="help" type="html">
+              <p class="oe_view_nocontent_create">
+                Click to add a tour consultant contact in your address book.
+                </p>
+            </field>
+        </record>
+
+        <record id="action_partner_other_form" model="ir.actions.act_window">
+            <field name="name">Other Contacts</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">res.partner</field>
+<!--            <field name="view_type">form</field>-->
+            <field name="domain">[('s_agent', 'not in', ['parent', 'child']), ('guide', '=', False), ('driver', '=', False), ('tour_consultant', '=', False)]</field>
+            <field name="view_mode">kanban,tree,form</field>
+            <field name="context">{}</field>
+            <field name="filter" eval="True"/>
+            <field name="help" type="html">
+              <p class="oe_view_nocontent_create">
+                Click to add a contact in your address book.
+                </p>
+            </field>
+        </record>
+
+        <record id="action_all_partner_form" model="ir.actions.act_window">
+            <field name="name">All Contacts</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">res.partner</field>
+<!--            <field name="view_type">form</field>-->
+            <field name="domain">[]</field>
+            <field name="view_mode">kanban,tree,form</field>
+            <field name="context">{}</field>
+            <field name="filter" eval="True"/>
+            <field name="help" type="html">
+              <p class="oe_view_nocontent_create">
+                Click to add a contact in your address book.
+                </p>
+            </field>
+        </record>
+
+    </data>
+</odoo>

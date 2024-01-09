@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+<!--        <report-->
+<!--            string="Tour Accommodation"-->
+<!--            id="action_tour_accommodation_report"-->
+<!--            model="booking.accommodation"-->
+<!--            report_type="qweb-pdf"-->
+<!--            name="tourtravel_management_aagam.tour_accommodation_view_template"-->
+<!--            file="tourtravel_management_aagam.tour_accommodation_view_template"-->
+<!--            print_report_name="'Tour Accommodation'"-->
+<!--        />-->
+
+         <record id="action_tour_accommodation_report" model="ir.actions.report">
+            <field name="name">Tour Accommodation</field>
+            <field name="model">booking.accommodation</field>
+            <field name="report_type">qweb-pdf</field>
+            <field name="report_name">tourtravel_management_aagam.tour_accommodation_view_template</field>
+            <field name="report_file">tourtravel_management_aagam.tour_accommodation_view_template</field>
+            <field name="print_report_name">'Tour Accommodation'</field>
+            <field name="binding_model_id" ref="model_booking_accommodation"/>
+            <field name="binding_type">report</field>
+        </record>
+    </data>
+</odoo>

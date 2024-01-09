@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+
+        <report id="action_report_job_card"
+            model="job.card"
+            string="Job Card Report"
+            report_type="qweb-pdf"
+            name="jobcard.report_job_card"
+            file="jobcard.report_job_card"
+            menu="True"/>
+    </data>
+</odoo>

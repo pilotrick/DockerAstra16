@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+        <record id="create_tour_form_views" model="ir.ui.view">
+            <field name="name">custom.tour.form</field>
+            <field name="model">custom.tour</field>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+                   <form string="Tour">
+                       <header>
+                           <button name="action_confirmed" type="object" string="Confirm" class="oe_highlight"
+                                   attrs="{'invisible': [('state', '==', 'confirmed')]}"/>
+                           <field name="state" widget="statusbar" statusbar_visible="draft,confirmed"/>
+                       </header>
+                       <sheet>
+                       <group>
+                           <group>
+                               <field name="name"/>
+                               <field name="tour_type"/>
+                           </group>
+                           <group>
+                               <field name="tour_code"/>
+                               <field name="Date_of_publish"/>
+                           </group>
+                           <group>
+                               <field name="days"/>
+                           </group>
+                       </group>
+                       <group string="Introduction">
+                            <field name="tour_plans"/>
+                       </group>
+<!--                           <group string="Travel Information">-->
+                                <field name="travel_info_ids"/>
+<!--                           </group>-->
+<!--                           <group string="Other Information">-->
+                           <notebook name="create tour" class="Create_tour">
+                               <page string="Tour Details">
+                                   <field name="tour_details_id"/>
+                               </page>
+                               <page string="Services">
+                                   <field name="tour_service_id"/>
+                               </page>
+                               <page string="Accommodation">
+                                   <field name="tour_accommodation_id"/>
+                               </page>
+                               <page string="Flight">
+                                   <field name="tour_flight_id"/>
+                               </page>
+                               <page string="Extra Services">
+                                   <field name="tour_extra_services_id"/>
+                               </page>
+                           </notebook>
+<!--                           </group>-->
+                       </sheet>
+                   </form>
+            </field>
+        </record>
+
+        <record id="create_tour_tree_view" model="ir.ui.view">
+            <field name="name">custom.tour.tree</field>
+            <field name="model">custom.tour</field>
+             <field name="type">tree</field>
+            <field name="arch" type="xml">
+                <tree string="Tour">
+                    <field name="name"/>
+                    <field name="tour_code"/>
+                    <field name="Date_of_publish"/>
+                    <field name="days"/>
+                    <field name="state"/>
+                </tree>
+            </field>
+        </record>
+
+        <record model="ir.actions.act_window" id="action_create_tour_views">
+            <field name="name">Tour</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">custom.tour</field>
+            <field name="view_mode">tree,form</field>
+            <field name="domain">[]</field>
+            <field name="context">{}</field>
+        </record>
+        <record model="ir.actions.act_window.view" id="act_custom_tour_view_form">
+            <field name="act_window_id" ref="action_create_tour_views"/>
+            <field name="sequence" eval="20"/>
+            <field name="view_mode">form</field>
+            <field name="view_id" ref="create_tour_form_views"/>
+        </record>
+
+        <record model="ir.actions.act_window.view" id="act_custom_tour_view_tree">
+            <field name="act_window_id" ref="action_create_tour_views"/>
+            <field name="sequence" eval="10"/>
+            <field name="view_mode">tree</field>
+            <field name="view_id" ref="create_tour_tree_view"/>
+        </record>
+
+<!--        tour details views-->
+
+        <record id="tour_details_form_views" model="ir.ui.view">
+            <field name="name">tour.details.form</field>
+            <field name="model">tour.details</field>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+                <form string="Tour Details">
+                    <sheet>
+                        <group>
+                            <group>
+                                <field name="name" invisible="1"/>
+                                <field name="tour_id"  options="{'no_create': True, 'no_create_edit':True}"/>
+                            <field name="season_tour"/>
+                            <field name="start_date"/>
+                                <field name="last_date_booking"/>
+                                </group>
+                            <group>
+                            <field name="payment_due_date"/>
+                            <field name="total_seats"/>
+                                <field name="available_seats"/>
+                                <field name="status"/>
+                                </group>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="tour_details_view" model="ir.ui.view">
+            <field name="name">tour.details.tree</field>
+            <field name="model">tour.details</field>
+             <field name="type">tree</field>
+            <field name="arch" type="xml">
+                <tree string="Tour Details">
+                    <field name="tour_id"/>
+                    <field name="season_tour"/>
+                    <field name="start_date"/>
+                    <field name="last_date_booking"/>
+                    <field name="payment_due_date"/>
+                    <field name="total_seats"/>
+                    <field name="available_seats"/>
+                    <field name="status"/>
+                </tree>
+            </field>
+        </record>
+
+
+        <record model="ir.actions.act_window" id="action_tour_details_views">
+            <field name="name">Tour Details</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">tour.details</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+         <record model="ir.actions.act_window.view" id="act_tour_details_view_form">
+            <field name="act_window_id" ref="action_tour_details_views"/>
+            <field name="sequence" eval="20"/>
+            <field name="view_mode">form</field>
+            <field name="view_id" ref="tour_details_form_views"/>
+        </record>
+
+        <record model="ir.actions.act_window.view" id="act_tour_details_view_tree">
+            <field name="act_window_id" ref="action_tour_details_views"/>
+            <field name="sequence" eval="10"/>
+            <field name="view_mode">tree</field>
+            <field name="view_id" ref="tour_details_view"/>
+        </record>
+
+
+
+    </data>
+</odoo>

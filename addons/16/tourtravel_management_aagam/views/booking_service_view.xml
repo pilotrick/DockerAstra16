@@ -1,0 +1,242 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+        <record id="view_booking_service_tree" model="ir.ui.view">
+            <field name="name">booking.service.tree</field>
+            <field name="model">booking.service</field>
+            <field name="type">tree</field>
+            <field name="priority" eval="8"/>
+            <field name="arch" type="xml">
+                <tree string="Booking Service">
+                    <field name="name"/>
+                    <field name="service_datetime"/>
+                    <field name="no_of_pax"/>
+                    <field name="qty_invoiced" groups="base.group_no_one"/>
+                    <field name="place_from"/>
+                    <field name="place_to"/>
+                    <field name="driver_id"/>
+                    <field name="guide_id"/>
+                    <field name="service_remarks"/>
+                    <field name="currency_id"/>
+                    <field name="tour_id"/>
+<!--                    <field name="tour_reservation_id"/>-->
+                </tree>
+            </field>
+        </record>
+
+        <record id="view_booking_service_form" model="ir.ui.view">
+            <field name="name">booking.service.form</field>
+            <field name="model">booking.service</field>
+            <field name="type">form</field>
+            <field name="priority" eval="8"/>
+            <field name="arch" type="xml">
+                <form string="Booking Service">
+                    <sheet>
+                        <group>
+                            <field name="name" required="1"/>
+                            <field name="service_datetime" required="1"/>
+                            <field name="no_of_pax"/>
+                            <field name="qty_invoiced" groups="base.group_no_one"/>
+                            <field name="customer_name_ids" widget="many2many_tags"/>
+                            <field name="place_from" required="1"/>
+                            <field name="place_to" required="1"/>
+                            <field name="driver_id" context="{'default_driver': True}"/>
+                            <field name="guide_id" context="{'default_guide': True}"/>
+                            <field name="service_remarks"/>
+                            <field name="currency_id" invisible="1"/>
+                            <field name="cost_ids" widget="one2many"/>
+                            <field name="tour_id"/>
+<!--                            <field name="tour_reservation_id" required="1"/>-->
+                        </group>
+                    </sheet>
+                    <div class="oe_chatter">
+                        <field name="message_follower_ids" widget="mail_followers"/>
+                        <field name="message_ids" widget="mail_thread"/>
+                    </div>
+                </form>
+            </field>
+        </record>
+
+        <record id="view_booking_service_search" model="ir.ui.view">
+            <field name="name">booking.service.search</field>
+            <field name="model">booking.service</field>
+            <field name="type">search</field>
+            <field name="priority" eval="8"/>
+            <field name="arch" type="xml">
+                <search string="Booking Service">
+                    <field name="service_datetime"/>
+                    <field name="no_of_pax"/>
+                    <field name="qty_invoiced"/>
+                    <field name="customer_name_ids"/>
+                    <field name="name"/>
+                    <field name="place_from"/>
+                    <field name="place_to"/>
+                    <field name="driver_id"/>
+                    <field name="guide_id"/>
+                    <field name="service_remarks"/>
+                    <field name="tour_reservation_id"/>
+                    <field name="currency_id"/>
+                    <group expand="0" string="Group By">
+                        <filter name="group_service_date" string="By service date" domain="[]" context="{'group_by': 'service_datetime'}"/>
+                        <filter name="groupby_service_month" string="By service month" domain="[]" context="{'group_by': 'service_datetime:month'}"/>
+                        <filter name="groupby_service_year" string="By service year" domain="[]" context="{'group_by': 'service_datetime:year'}"/>
+                        <filter name="group_service" string="By service" domain="[]" context="{'group_by': 'name'}"/>
+                        <filter name="group_place_from" string="By place from" domain="[]" context="{'group_by': 'place_from'}"/>
+                        <filter name="group_place_to" string="By place to" domain="[]" context="{'group_by': 'place_to'}"/>
+                        <filter name="group_driver" string="By driver" domain="[]" context="{'group_by': 'driver_id'}"/>
+                        <filter name="group_group" string="By guide" domain="[]" context="{'group_by': 'guide_id'}"/>
+                    </group>
+                </search>
+            </field>
+        </record>
+
+        <record model="ir.actions.act_window" id="act_open_booking_service_view">
+            <field name="name">Booking Service</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">booking.service</field>
+<!--            <field name="view_type">form</field>-->
+            <field name="view_mode">tree,form</field>
+            <field name="search_view_id" ref="view_booking_service_search"/>
+            <field name="domain">[]</field>
+            <field name="context">{}</field>
+        </record>
+
+        <record model="ir.actions.act_window.view" id="act_open_booking_service_view_form">
+            <field name="act_window_id" ref="act_open_booking_service_view"/>
+            <field name="sequence" eval="20"/>
+            <field name="view_mode">form</field>
+            <field name="view_id" ref="view_booking_service_form"/>
+        </record>
+
+        <record model="ir.actions.act_window.view" id="act_open_booking_service_view_tree">
+            <field name="act_window_id" ref="act_open_booking_service_view"/>
+            <field name="sequence" eval="10"/>
+            <field name="view_mode">tree</field>
+            <field name="view_id" ref="view_booking_service_tree"/>
+        </record>
+
+        <record id="view_booking_extra_service_tree" model="ir.ui.view">
+            <field name="name">booking.extra.service.tree</field>
+            <field name="model">booking.extra.service</field>
+            <field name="type">tree</field>
+            <field name="priority" eval="8"/>
+            <field name="arch" type="xml">
+                <tree string="Booking Extra Service">
+                    <field name="service_datetime"/>
+                    <field name="no_of_pax"/>
+                    <field name="qty_invoiced" groups="base.group_no_one"/>
+                    <field name="customer_name_ids" widget="many2many_tags"/>
+                    <field name="agent_id"/>
+                    <field name="sub_agent_id"/>
+                    <field name="name"/>
+                    <field name="place_from"/>
+                    <field name="place_to"/>
+                    <field name="driver_id"/>
+                    <field name="guide_id"/>
+                    <field name="tour_consultant_id"/>
+                    <field name="service_remarks"/>
+                    <field name="currency_id"/>
+                    <field name="tour_id"/>
+<!--                    <field name="tour_reservation_id"/>-->
+                </tree>
+            </field>
+        </record>
+
+        <record id="view_booking_extra_service_form" model="ir.ui.view">
+            <field name="name">booking.extra.service.form</field>
+            <field name="model">booking.extra.service</field>
+            <field name="type">form</field>
+            <field name="priority" eval="8"/>
+            <field name="arch" type="xml">
+                <form string="Booking Extra Service">
+                    <sheet>
+                        <group>
+                            <field name="service_datetime" required="1"/>
+                            <field name="no_of_pax"/>
+                            <field name="qty_invoiced" groups="base.group_no_one"/>
+                            <field name="customer_name_ids" widget="many2many_tags"/>
+                            <field name="agent_id" context="{'default_s_agent': 'parent'}"/>
+                            <field name="sub_agent_id" context="{'default_s_agent': 'child'}"/>
+                            <field name="name" context="{'default_type': 'service'}"/>
+                            <field name="place_from" required="1"/>
+                            <field name="place_to" required="1"/>
+                            <field name="driver_id" context="{'default_driver': True}"/>
+                            <field name="guide_id" context="{'default_guide': True}"/>
+                            <field name="tour_consultant_id" context="{'default_tour_consultant': True}"/>
+                            <field name="service_remarks"/>
+                            <field name="currency_id"/>
+                            <field name="cost_ids" widget="one2many"/>
+                            <field name="tour_id"/>
+<!--                            <field name="tour_reservation_id" required="1"/>-->
+                        </group>
+                    </sheet>
+                    <div class="oe_chatter">
+                        <field name="message_follower_ids" widget="mail_followers"/>
+                        <field name="message_ids" widget="mail_thread"/>
+                    </div>
+                </form>
+            </field>
+        </record>
+
+        <record id="view_booking_extra_service_search" model="ir.ui.view">
+            <field name="name">booking.extra.service.search</field>
+            <field name="model">booking.extra.service</field>
+            <field name="type">search</field>
+            <field name="priority" eval="8"/>
+            <field name="arch" type="xml">
+                <search string="Booking Extra Service">
+                    <field name="service_datetime"/>
+                    <field name="no_of_pax"/>
+                    <field name="qty_invoiced"/>
+                    <field name="customer_name_ids"/>
+                    <field name="agent_id"/>
+                    <field name="sub_agent_id"/>
+                    <field name="name"/>
+                    <field name="place_from"/>
+                    <field name="place_to"/>
+                    <field name="driver_id"/>
+                    <field name="guide_id"/>
+                    <field name="tour_consultant_id"/>
+                    <field name="service_remarks"/>
+<!--                    <field name="tour_reservation_id"/>-->
+                    <field name="currency_id"/>
+                    <group expand="0" string="Group By">
+                        <filter name="group_service_date" string="By service date" domain="[]" context="{'group_by': 'service_datetime'}"/>
+                        <filter name="groupby_service_month" string="By service month" domain="[]" context="{'group_by': 'service_datetime:month'}"/>
+                        <filter name="groupby_service_year" string="By service year" domain="[]" context="{'group_by': 'service_datetime:year'}"/>
+                        <filter name="group_service" string="By service" domain="[]" context="{'group_by': 'name'}"/>
+                        <filter name="group_place_from" string="By place from" domain="[]" context="{'group_by': 'place_from'}"/>
+                        <filter name="group_place_to" string="By place to" domain="[]" context="{'group_by': 'place_to'}"/>
+                        <filter name="group_driver" string="By driver" domain="[]" context="{'group_by': 'driver_id'}"/>
+                        <filter name="group_group" string="By guide" domain="[]" context="{'group_by': 'guide_id'}"/>
+                    </group>
+                </search>
+            </field>
+        </record>
+
+        <record model="ir.actions.act_window" id="act_open_booking_extra_service_view">
+            <field name="name">Booking Extra Service</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">booking.extra.service</field>
+<!--            <field name="view_type">form</field>-->
+            <field name="view_mode">tree,form</field>
+            <field name="search_view_id" ref="view_booking_extra_service_search"/>
+            <field name="domain">[]</field>
+            <field name="context">{}</field>
+        </record>
+
+        <record model="ir.actions.act_window.view" id="act_open_booking_extra_service_view_form">
+            <field name="act_window_id" ref="act_open_booking_extra_service_view"/>
+            <field name="sequence" eval="20"/>
+            <field name="view_mode">form</field>
+            <field name="view_id" ref="view_booking_extra_service_form"/>
+        </record>
+
+        <record model="ir.actions.act_window.view" id="act_open_booking_extra_service_view_tree">
+            <field name="act_window_id" ref="act_open_booking_extra_service_view"/>
+            <field name="sequence" eval="10"/>
+            <field name="view_mode">tree</field>
+            <field name="view_id" ref="view_booking_extra_service_tree"/>
+        </record>
+    </data>
+</odoo>

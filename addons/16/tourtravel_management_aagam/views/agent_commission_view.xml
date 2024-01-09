@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+        <record id="agent_commission_form_view" model="ir.ui.view">
+            <field name="name">agent.commission.form.view</field>
+            <field name="model">agent.commission</field>
+            <field name="arch" type="xml">
+                <form>
+                	<sheet>
+                		<group>
+                			<group>
+                				<field name="name" readonly="1"/>
+                				<field name="date"/>
+                			</group>
+                			<group>
+                				<field name="partner_id"/>
+                				<field name="pricelist_id"/>
+                			</group>
+                			<field name="commission_line_ids">
+                				<tree>
+                					<field name="partner_id"/>
+                					<field name="booking_information_id"/>
+                					<field name="commission"/>
+                					<field name="cost"/>
+                				</tree>
+                				<form>
+                					<group>
+	                					<group>
+	                						<field name="partner_id"/>
+	                						<field name="booking_information_id"/>
+	                					</group>
+	                					<group>
+	                						<field name="commission"/>
+	                						<field name="cost"/>
+	                					</group>
+	                				</group>
+                				</form>
+                			</field>
+                		</group>
+                	</sheet>
+                </form>
+            </field>
+        </record>
+        
+        <record id="agent_commission_tree_view" model="ir.ui.view">
+            <field name="name">agent.commission.tree.view</field>
+            <field name="model">agent.commission</field>
+            <field name="arch" type="xml">
+            	<tree>
+            		<field name="name"/>
+            		<field name="date"/>
+            		<field name="partner_id"/>
+            		<field name="pricelist_id"/>
+            	</tree>
+            </field>
+        </record>
+        
+        <record id="action_agent_commission" model="ir.actions.act_window">
+            <field name="name">Agent Commission</field>
+            <field name="res_model">agent.commission</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+        
+        <menuitem id="menu_agent_commission" name="Agent Commission" 
+        	action="action_agent_commission" parent="menu_tour_reservation_menu"/>
+    </data>
+</odoo>

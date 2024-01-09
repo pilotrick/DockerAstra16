@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+
+        <menuitem id="menu_job_card"
+            parent="base.menu_custom"
+            sequence="30"
+            action="jobcard.act_open_job_card_view"/>
+
+    </data>
+</odoo>
