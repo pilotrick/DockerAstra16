@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo noupdate="0">
+    <record id="group_internal_notes_id" model="res.groups">
+        <field name="name">POS - Habilita Botón Notas Internas</field>
+        <field name="category_id" ref="base.module_category_usability"/>
+    </record>
+    <record id="group_split_bill_id" model="res.groups">
+        <field name="name">POS - Habilita Botón Dividir Cuenta</field>
+        <field name="category_id" ref="base.module_category_usability"/>
+    </record>
+    <record id="group_transfer_order_id" model="res.groups">
+        <field name="name">POS - Habilita Botón Transferir Orden</field>
+        <field name="category_id" ref="base.module_category_usability"/>
+    </record>
+    <record id="group_guest_id" model="res.groups">
+        <field name="name">POS - Habilita Botón Huéspedes</field>
+        <field name="category_id" ref="base.module_category_usability"/>
+    </record>
+    <record id="group_print_bill_id" model="res.groups">
+        <field name="name">POS - Habilita Botón Imprimir Cuenta</field>
+        <field name="category_id" ref="base.module_category_usability"/>
+    </record>
+    <record id="group_cutlery_id" model="res.groups">
+        <field name="name">POS - Habilita Botón Imprimir Pedido</field>
+        <field name="category_id" ref="base.module_category_usability" />
+    </record>
+    <record id="group_edit_floor_id" model="res.groups">
+        <field name="name">POS - Habilita Botón Editar Piso (Rest.)</field>
+        <field name="category_id" ref="base.module_category_usability" />
+    </record>
+</odoo>

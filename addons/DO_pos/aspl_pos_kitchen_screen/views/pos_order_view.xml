@@ -1,0 +1,318 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="action_pos_payment_delivery" model="ir.actions.act_window">
+        <field name="name">Payment</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">pos.make.payment</field>
+        <field name="view_mode">form</field>
+        <field name="target">new</field>
+    </record>
+
+    <record id="view_pos_pos_form_inh" model="ir.ui.view">
+        <field name="name">pos.order.form.view.inherit</field>
+        <field name="model">pos.order</field>
+        <field name="inherit_id" ref="point_of_sale.view_pos_pos_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='name']" position="after" readonly="1">
+                <field name="order_type"/>
+            </xpath>
+            <field name="company_id" position="after">
+                <field name="waiter_id"/>
+                <field name="cancel_order_reason"/>
+            </field>
+            <xpath expr="//page[@name='products']" position='after'>
+                <page string='Product Cancel Reason' name="product_cancel_reason">
+                    <field name="line_cancel_reason_ids">
+                        <tree editable="bottom">
+                            <field name="product_id"/>
+                            <field name="reason"/>
+                            <field name="description"/>
+                        </tree>
+                    </field>
+                </page>
+            </xpath>
+            <xpath expr="//notebook" position="inside">
+                <page string="Delivery" name="Delivery" attrs="{'invisible' : [('order_type', '!=', 'delivery')]}">
+                    <group>
+                        <group>
+                            <field name="delivery_service" readonly="1"/>
+                            <field name="deliver_by" readonly="1"/>
+                            <field name="delivery_status" readonly="1"/>
+                        </group>
+                        <group>
+                            <field name="start_date"/>
+                            <field name="end_date"/>
+                            <field name="delivery_time"/>
+                        </group>
+                    </group>
+                </page>
+            </xpath>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="view_pos_order_kanban">
+        <field name="name">pos.order.kanban</field>
+        <field name="model">pos.order</field>
+        <field name="priority">1</field>
+        <field name="arch" type="xml">
+            <kanban class="o_kanban_mobile" create="0" sample="1">
+                <field name="name"/>
+                <field name="partner_id"/>
+                <field name="amount_total"/>
+                <field name="date_order"/>
+                <field name="state"/>
+                <field name="pos_reference"/>
+                <field name="partner_id"/>
+                <field name="currency_id"/>
+                <templates>
+                    <t t-name="kanban-box">
+                        <div t-attf-class="oe_kanban_card oe_kanban_global_click">
+                            <div class="o_kanban_record_top">
+                                <div class="o_kanban_record_headings">
+                                    <strong class="o_kanban_record_title">
+                                        <span t-if="record.partner_id.value">
+                                            <t t-esc="record.partner_id.value"/>
+                                        </span>
+                                        <span t-else="">
+                                            <t t-esc="record.name.value"/>
+                                        </span>
+                                    </strong>
+                                </div>
+                                <strong>
+                                    <field name="amount_total" widget="monetary"/>
+                                </strong>
+                            </div>
+                            <div class="row">
+                                <div class="col-12">
+                                    <span>
+                                        <t t-esc="record.pos_reference.value"/>
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-8 text-muted">
+                                    <span>
+                                        <t t-esc="record.date_order.value"/>
+                                    </span>
+                                </div>
+                                <div class="col-4">
+                                    <span class="float-end text-end">
+                                        <field name="state" widget="label_selection" options="{'classes': {'draft': 'default',
+                                        'invoiced': 'success', 'cancel': 'danger'}}"/>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </t>
+                </templates>
+            </kanban>
+        </field>
+    </record>
+
+    <record id="view_order_delivery_kanban" model="ir.ui.view">
+        <field name="name">Order Delivery</field>
+        <field name="model">pos.order</field>
+        <field name="priority">10</field>
+        <field name="arch" type="xml">
+            <kanban create="0" sample="1">
+                <field name="user_id"/>
+                <field name="partner_id"/>
+                <field name="mobile"/>
+                <field name="city"/>
+                <field name="street"/>
+                <field name="street2"/>
+                <field name="zip"/>
+                <field name="state_id"/>
+                <field name="country_id"/>
+                <field name="country_code"/>
+                <field name="delivery_service"/>
+                <field name="deliver_by"/>
+                <field name="delivery_status"/>
+                <field name="name"/>
+                <field name="amount_total"/>
+                <field name="date_order"/>
+                <field name="state"/>
+                <field name="pos_reference"/>
+                <field name="currency_id"/>
+                <field name="lines"/>
+                <field name="id" invisible="1"/>
+                <field name="delivery_status"/>
+                <templates>
+                    <t t-name="kanban-box">
+                        <div t-attf-class="oe_kanban_global_click">
+                            <div class="col">
+                                <strong>
+                                    <t t-esc="record.pos_reference.value"/>
+                                </strong>
+                            </div>
+                            <div class="col" t-if="record.partner_id.value">
+                                <strong>
+                                    <t t-esc="record.partner_id.value"/>
+                                </strong>
+                            </div>
+                            <div class="row" t-if="record.mobile.value">
+                                <span class="col-4">Mobile</span>
+                                <span class="col-8">
+                                    <t t-esc="record.mobile.value"/>
+                                </span>
+                            </div>
+                            <div class="row" t-if="record.street.value or record.street2.value or record.city.value or record.zip.value or record.state_id.value or
+                                    record.country_id.value">
+                                <span class="col-4">Address</span>
+                                <span class="col-8">
+                                    <t t-if="record.street.value">
+                                        <field name="street"/>
+                                    </t>
+                                    <t t-if="record.street.value">,
+                                        <br/>
+                                    </t>
+                                    <t t-if="record.street2.value">
+                                        <field name="street2"/>
+                                    </t>
+                                    <t t-if="record.street2.value">,
+                                        <br/>
+                                    </t>
+                                    <t t-if="record.city.value">
+                                        <field name="city" style="margin-right: 5px;"/>
+                                    </t>
+                                    <t t-if="record.state_id.value">
+                                        <field name="state_id" style="margin-right: 5px;"/>
+                                    </t>
+                                    <t t-if="record.zip.value">
+                                        <field name="zip"/>
+                                    </t>
+                                    <t t-if="record.zip.value">,
+                                        <br/>
+                                    </t>
+                                    <t t-if="record.country_id.value">
+                                        <field name="country_id"/>
+                                    </t>
+                                </span>
+                            </div>
+                            <div class="row">
+                                <div class="col-8 text-muted">
+                                    <span>
+                                        <t t-esc="record.date_order.value"/>
+                                    </span>
+                                </div>
+                                <div class="col-4">
+                                    <span class="float-end text-end">
+                                        <field name="state" widget="label_selection" options="{'classes': {'draft': 'default',
+                                        'invoiced': 'success', 'cancel': 'danger'}}"/>
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-8 text-muted">
+                                    <span>
+                                        Delivery Status
+                                    </span>
+                                </div>
+                                <div class="col-4">
+                                    <span class="float-end text-end">
+                                        <t t-set="track" t-value="{'in_progress': 'In Progress', 'done': 'Done'}"/>
+                                        <t t-esc="track[state.delivery_state]"/>
+                                    </span>
+                                </div>
+                            </div>
+                            <t t-if="state.lineData">
+                                <br/>
+                                <div class="o_kanban_record_top">
+                                    <div class="o_kanban_record_headings">
+                                        <strong class="o_kanban_record_title">
+                                            <span>
+                                                Items
+                                            </span>
+                                        </strong>
+                                    </div>
+                                    <strong>Qty.</strong>
+                                </div>
+                                <div class="row" t-foreach="state.lineData" t-as="line" t-key="line_index">
+                                    <div class="col-8 text-muted">
+                                        <span>
+                                            <t t-esc="line.full_product_name"/>
+                                        </span>
+                                    </div>
+                                    <div class="col-4">
+                                        <span class="float-end text-end">
+                                            <t t-esc="line.qty"/>
+                                        </span>
+                                    </div>
+                                </div>
+                                <br/>
+                                <div class="track">
+                                    <div class="step active"
+                                         t-on-click.stop.prevent="() =&gt; this.changeState('edit')">
+                                        <span class="icon">
+                                            <i class="fa fa-check" title="Placed"/>
+                                        </span>
+                                        <span class="text">PLACED</span>
+                                    </div>
+                                    <div class="step"
+                                         t-att-class="{ active: ['in_progress', 'done'].includes(state.delivery_state)}"
+                                         t-on-click.stop.prevent="() =&gt; this.changeState(record.id.value, 'in_progress')">
+                                        <span class="icon">
+                                            <i class="fa fa-user" title="Shipped"/>
+                                        </span>
+                                        <span class="text">SHIPPED</span>
+                                    </div>
+                                    <div class="step"
+                                         t-att-class="{ active: state.delivery_state == 'done'}"
+                                         t-on-click.stop.prevent="() =&gt; this.changeState(record.id.value, 'done')">
+                                        <span class="icon">
+                                            <i class="fa fa-truck" title="Delivered"/>
+                                        </span>
+                                        <span class="text">DELIVERED</span>
+                                    </div>
+                                </div>
+                                <br/>
+                                <div class="row" t-if="state.delivery_state == 'done'">
+                                    <div class="col-12 text-center">
+                                        <button name="%(action_pos_payment_delivery)d" string="Payment"
+                                                class="col-8 oe_highlight" type="action" states="draft"/>
+                                    </div>
+                                </div>
+                            </t>
+                        </div>
+                    </t>
+                </templates>
+            </kanban>
+        </field>
+    </record>
+
+    <record id="pos_order_search_view_inherit_mrp" model="ir.ui.view">
+        <field name="name">pos.order.search.inherit.mrp</field>
+        <field name="model">pos.order</field>
+        <field name="inherit_id" ref="point_of_sale.view_pos_order_filter"/>
+        <field name="arch" type="xml">
+            <xpath expr="//filter[@name='posted']" position="after">
+                <filter string="Draft" name="delivery_status" domain="[('delivery_status','=','draft')]"/>
+                <filter string="In Progress" name="delivery_status"
+                        domain="[('delivery_status','=','in_progress')]"/>
+                <filter string="Done" name="delivery_status" domain="[('delivery_status','=','done')]"/>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="action_pos_order_delivery_order_kanban" model="ir.actions.act_window">
+        <field name="name">Delivery Orders</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">pos.order</field>
+        <field name="domain">[('order_type','=','delivery'), ('order_state','=','Complete')]</field>
+        <field name="view_mode">kanban</field>
+    </record>
+
+    <record id="action_custom_kanban" model="ir.actions.act_window.view">
+        <field name="sequence">2</field>
+        <field name="view_mode">kanban</field>
+        <field name="view_id" ref="view_order_delivery_kanban"/>
+        <field name="act_window_id" ref="action_pos_order_delivery_order_kanban"/>
+    </record>
+
+    <menuitem name="Delivery Orders" id="delivery_orders_menu_id" action="action_pos_order_delivery_order_kanban"
+              parent="point_of_sale.menu_point_of_sale" groups="point_of_sale.group_pos_manager"/>
+
+    <record id="point_of_sale.action_pos_config_kanban" model="ir.actions.act_window">
+        <field name="context">{'from_pos': True}</field>
+    </record>
+</odoo>

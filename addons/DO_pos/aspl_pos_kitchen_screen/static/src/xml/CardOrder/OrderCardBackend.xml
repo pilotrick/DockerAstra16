@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<templates xml:space="preserve">
+
+    <t t-name="OrderCardBackend" owl="1">
+        <li class="card-container">
+            <div class="header" t-attf-style="background-color: {{ headerClass }};">
+                <div class="header-container">
+                    <div class="image">
+                        <img class="order-icon" t-att-src="imageUrl"/>
+                    </div>
+                    <div class="top-line">
+                        <div class="table-name">
+                            Table : <t t-if="props.order.table" t-esc="props.order.table"/>
+                        </div>
+                        <div class="floor-name">
+                            <t t-if="props.order.floor">[<t t-esc="props.order.floor"/>]</t>
+                        </div>
+                    </div>
+                    <div class="midel-line">
+                        <div class="table-guest">
+                            Guests : <t t-esc="props.order.guests"/>
+                        </div>
+                        <div class="order-time">
+                            <t t-esc="props.order.order_time"/>
+                        </div>
+                    </div>
+                    <div class="top-line">
+                        <div class="serve-name">
+                            <t t-esc="props.order.user_name"/>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="body">
+                <ul class="cardlines" style="margin:0; padding:0">
+                    <t t-foreach="props.order.order_lines" t-key="line.id" t-as="line">
+                        <OrderCardLineBackend order="props.order" line="line" popup="false"/>
+                    </t>
+                </ul>
+            </div>
+            <div class="card-footer">
+                <button class="print" t-on-click="printOrder">
+                    <i class="fa fa-print" aria-hidden="true" style="display:inline-block !important;"/>
+                </button>
+                <div class="order-ref">
+                    <t t-esc="props.order.order_reference"/>
+                </div>
+            </div>
+        </li>
+    </t>
+
+</templates>

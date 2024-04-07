@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="res_config_view_form_inherit_pos_order_type" model="ir.ui.view">
+        <field name="name">res.config.settings.view.form.inherit.pos_order_type</field>
+        <field name="model">res.config.settings</field>
+        <field name="inherit_id" ref="point_of_sale.res_config_settings_view_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//div[@id='pos_technical_section']" position="after">
+                <h2 name="order">Kitchen Screen</h2>
+                <div class="row mt16 o_settings_container" id="restaurant_mode">
+                    <div class="col-xs-12 col-md-6 o_setting_box" id="restaurant_mode">
+                        <div class="o_setting_right_pane">
+                            <label for="pos_restaurant_mode"/>
+                            <field name="pos_restaurant_mode"/>
+                        </div>
+                    </div>
+                </div>
+                <div class="row mt16 o_settings_container">
+                    <div class="col-12 col-lg-6 o_setting_box" id="pos_service_ids">
+                        <div class="o_setting_right_pane">
+                            <span class="o_form_label">Delivery Types</span>
+                            <div class="text-muted">
+                                Delivery Types available
+                            </div>
+                            <div class="content-group mt16">
+                                <field name="pos_service_ids" colspan="4" nolabel="1" widget="many2many_tags"/>
+                            </div>
+                            <br/>
+                            <span class="o_form_label">Default Order Type</span>
+                            <div class="text-muted">
+                                Configuration for Default Order Type of PoS orders
+                            </div>
+                            <div class="content-group mt16">
+                                <field name="pos_default_delivery_type" colspan="4" nolabel="1"/>
+                            </div>
+                            <br/>
+                            <span class="o_form_label">Add Delivery Product</span>
+                            <div class="text-muted">
+                                Add The delivery Product.
+                            </div>
+                            <div class="content-group mt16">
+                                <field name="pos_delivery_charge_product_id" colspan="4" nolabel="1" required="1"/>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </xpath>
+        </field>
+    </record>
+</odoo>

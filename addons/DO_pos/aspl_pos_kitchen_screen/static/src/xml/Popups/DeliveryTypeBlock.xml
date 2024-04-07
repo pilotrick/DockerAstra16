@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates id="template" xml:space="preserve">
+    <t t-name="DeliveryTypeBlock" owl="1">
+        <div class="delivery-blocks" t-on-click="() => this.trigger('click-delivery-block', props.deliveryType)">
+            <div t-attf-class="disk-block {{highlight}}">
+                <div class="delivery_content">
+                    <div class="delivery-price" t-if="props.idDeliveryCharge">
+                       <t t-esc="env.pos.currency.symbol"/><t t-esc="props.deliveryType.charges"/>
+                    </div>
+                    <img t-att-src="imageUrl" class="delivery_image"/><br/>
+                    <t t-esc="props.deliveryType.name"/>
+                </div>
+            </div>
+        </div>
+    </t>
+</templates>

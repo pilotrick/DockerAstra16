@@ -1,0 +1,152 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* an_pos_sales_person
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 16.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-05-18 15:29+0000\n"
+"PO-Revision-Date: 2023-05-18 15:29+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: an_pos_sales_person
+#: model_terms:ir.ui.view,arch_db:an_pos_sales_person.report_invoice_document_inherit_it_pos_sales_person
+msgid "<span>Salesperson</span>"
+msgstr "<span>Vendedor</span>"
+
+#. module: an_pos_sales_person
+#: model:ir.model.fields,field_description:an_pos_sales_person.field_pos_config__action_type
+#: model_terms:ir.ui.view,arch_db:an_pos_sales_person.it_pos_sales_person_config
+msgid "Action Type"
+msgstr "Tipo de acción"
+
+#. module: an_pos_sales_person
+#: model:ir.model.fields,field_description:an_pos_sales_person.field_pos_config__allow_salesperson
+msgid "Allow Salesperson"
+msgstr "Permitir vendedores"
+
+#. module: an_pos_sales_person
+#: model:ir.model.fields.selection,name:an_pos_sales_person.selection__pos_config__action_type__automatic
+msgid "Automatic"
+msgstr "Automático"
+
+#. module: an_pos_sales_person
+#. odoo-javascript
+#: code:addons/an_pos_sales_person/static/src/xml/pos.xml:0
+#, python-format
+msgid "Cajero(@):"
+msgstr ""
+
+#. module: an_pos_sales_person
+#. odoo-javascript
+#: code:addons/an_pos_sales_person/static/src/xml/pos.xml:0
+#, python-format
+msgid "Cancel"
+msgstr "Cancelar"
+
+#. module: an_pos_sales_person
+#. odoo-javascript
+#: code:addons/an_pos_sales_person/static/src/js/pos.js:0
+#, python-format
+msgid "Error !!!"
+msgstr ""
+
+#. module: an_pos_sales_person
+#: model:ir.model,name:an_pos_sales_person.model_account_move_line
+msgid "Journal Item"
+msgstr "Apunte contable"
+
+#. module: an_pos_sales_person
+#: model:ir.model.fields.selection,name:an_pos_sales_person.selection__pos_config__action_type__manual
+msgid "Manual"
+msgstr ""
+
+#. module: an_pos_sales_person
+#. odoo-javascript
+#: code:addons/an_pos_sales_person/static/src/xml/pos.xml:0
+#, python-format
+msgid "Meser/Antend(@):"
+msgstr ""
+
+#. module: an_pos_sales_person
+#: model:ir.model.fields,field_description:an_pos_sales_person.field_pos_config__group_change_salesperson_id
+#: model:res.groups,name:an_pos_sales_person.group_change_salesperson
+msgid "Point of Sale - Change Salesperson"
+msgstr "Punto de Venta - Cambiar vendedor"
+
+#. module: an_pos_sales_person
+#: model:ir.model,name:an_pos_sales_person.model_pos_config
+msgid "Point of Sale Configuration"
+msgstr "Configuración del TPV"
+
+#. module: an_pos_sales_person
+#: model:ir.model,name:an_pos_sales_person.model_pos_order_line
+msgid "Point of Sale Order Lines"
+msgstr "Líneas de Orden de Punto de Venta"
+
+#. module: an_pos_sales_person
+#: model:ir.model,name:an_pos_sales_person.model_pos_order
+msgid "Point of Sale Orders"
+msgstr "Pedidos del TPV"
+
+#. module: an_pos_sales_person
+#: model:ir.model,name:an_pos_sales_person.model_report_pos_order
+msgid "Point of Sale Orders Report"
+msgstr "Informe de Órdenes del Punto de Venta"
+
+#. module: an_pos_sales_person
+#: model:ir.model,name:an_pos_sales_person.model_pos_session
+msgid "Point of Sale Session"
+msgstr "Sesión TPV"
+
+#. module: an_pos_sales_person
+#. odoo-javascript
+#: code:addons/an_pos_sales_person/static/src/xml/pos.xml:0
+#: model:ir.model.fields,field_description:an_pos_sales_person.field_account_move_line__it_salesperson
+#: model:ir.model.fields,field_description:an_pos_sales_person.field_pos_order_line__it_salesperson
+#: model:ir.model.fields,field_description:an_pos_sales_person.field_report_pos_order__it_salesperson
+#: model_terms:ir.ui.view,arch_db:an_pos_sales_person.view_report_pos_order_search_inherit_IT
+#, python-format
+msgid "Salesperson"
+msgstr "Vendedor"
+
+#. module: an_pos_sales_person
+#. odoo-javascript
+#: code:addons/an_pos_sales_person/static/src/xml/pos.xml:0
+#, python-format
+msgid "Select Salesperson"
+msgstr ""
+
+#. module: an_pos_sales_person
+#: model_terms:ir.ui.view,arch_db:an_pos_sales_person.it_pos_sales_person_config
+msgid "Set salesperson on pos orderline"
+msgstr ""
+
+#. module: an_pos_sales_person
+#. odoo-javascript
+#: code:addons/an_pos_sales_person/static/src/js/pos.js:0
+#, python-format
+msgid "Sorry, add product to order line inorder to add salesperson."
+msgstr ""
+
+#. module: an_pos_sales_person
+#: model:ir.model.fields,help:an_pos_sales_person.field_pos_config__group_change_salesperson_id
+msgid ""
+"This field is there to pass the id of the 'PoS - Change salesperson' Group "
+"to the Point of Sale Frontend."
+msgstr ""
+
+#. module: an_pos_sales_person
+#. odoo-javascript
+#: code:addons/an_pos_sales_person/static/src/js/HeaderButton.js:0
+#: code:addons/an_pos_sales_person/static/src/js/HeaderLockButton.js:0
+#: code:addons/an_pos_sales_person/static/src/js/ProductScreen/ProductScreen.js:0
+#, python-format
+msgid "You must select a cashier in the product lines."
+msgstr "Debe seleccionar un cajero en las lineas de productos."

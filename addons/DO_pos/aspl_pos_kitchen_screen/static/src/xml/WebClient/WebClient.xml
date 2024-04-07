@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates xml:space="preserve">
+
+     <t t-name="backendKitchenScreen" owl="1">
+        <MainComponent orderData="state.orderData"/>
+    </t>
+
+    <!--    <t t-name="backendKitchenScreen" owl="1">-->
+    <!--        <body class="o_web_client">-->
+    <!--&lt;!&ndash;            <div class="main-container">&ndash;&gt;-->
+    <!--            <NotUpdatable>-->
+    <!--                <MainComponent/>-->
+    <!--            </NotUpdatable>-->
+    <!--            </div>-->
+    <!--            <div class="main-container">-->
+    <!--                <NotUpdatable>-->
+    <!--                    <KitchenScreenNavbar/>-->
+    <!--                </NotUpdatable>-->
+    <!--                <div class="main-navbar-header">-->
+    <!--                    <img class="chef-logo"-->
+    <!--                     src="/aspl_pos_kitchen_screen_backend/static/src/img/chef.png" alt="Logo" />-->
+    <!--                    <span class="custom-heading">-->
+    <!--                        KITCHEN-->
+    <!--                    </span>-->
+    <!--                    <a class="logout btn" href="/web/session/logout">-->
+    <!--                        <i class="fa fa-power-off"></i>-->
+    <!--                    </a>-->
+    <!--                    <span class="header-user-name">Michel Admin</span>-->
+    <!--                </div>-->
+    <!--                <div class="card-container">-->
+    <!--                    <div class="card border-light text-white mb-3" style="max-width: 18rem; background-color:#8ac34a;">-->
+    <!--                        <div class="card-header">-->
+    <!--                            <div style='float:left'>-->
+    <!--                                <span>Table:</span><br/>-->
+    <!--                                <span>Guests:</span>-->
+    <!--                            </div>-->
+    <!--                            <div style='float:right'>-->
+    <!--                                <span>Mitchel Admin</span><br/>-->
+    <!--                            </div>-->
+    <!--                        </div>-->
+    <!--                        <div class="card-body">-->
+    <!--                            <button class="print" t-on-click="printOrder">-->
+    <!--                                <i class="fa fa-print" aria-hidden="true"></i>-->
+    <!--                            </button>-->
+    <!--                            <BackendOrderCard  order="order"/>-->
+    <!--                        </div>-->
+    <!--                    </div>-->
+    <!--                    <div class="card border-light text-white mb-3" style="max-width: 18rem; background-color:#8ac34a;">-->
+    <!--                        <div class="card-header">-->
+    <!--                            <div style='float:left'>-->
+    <!--                                <span>Table:</span><br/>-->
+    <!--                                <span>Guests:</span>-->
+    <!--                            </div>-->
+    <!--                            <div style='float:right'>-->
+    <!--                                <span>Mitchel Admin</span><br/>-->
+    <!--                            </div>-->
+    <!--                        </div>-->
+    <!--                        <div class="card-body">-->
+    <!--                            <button class="print" t-on-click="printOrder">-->
+    <!--                                <i class="fa fa-print" aria-hidden="true"></i>-->
+    <!--                            </button>-->
+    <!--                            <div class="card-text">Order line 1</div>-->
+    <!--                            <div class="card-text">Order line 1</div>-->
+    <!--                            <div class="card-text">Order line 1</div>-->
+    <!--                            <div class="card-text">Order line 1</div>-->
+    <!--                            <div class="card-text">Order line 1</div>-->
+    <!--                            <div class="card-text">Order line 1</div>-->
+    <!--                        </div>-->
+    <!--                    </div>-->
+
+    <!--                </div>-->
+    <!--            </div>-->
+    <!--        </body>-->
+    <!--    </t>-->
+
+</templates>

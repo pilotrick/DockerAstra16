@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<templates xml:space="preserve">
+
+    <t t-name="KitchenScreenNavbar" owl="1">
+        <header>
+            <div class="pos-receipt-print"></div>
+            <div class="main-navbar-header">
+                <span class="custom-heading"> KITCHEN</span>
+                <a class="logout btn" href="/web/session/logout">
+                    <i class="fa fa-sign-out"></i>
+                </a>
+                <span class="header-user-name">
+                    <t t-esc="loginUser"/>
+                </span>
+            </div>
+      </header>
+    </t>
+
+</templates>
