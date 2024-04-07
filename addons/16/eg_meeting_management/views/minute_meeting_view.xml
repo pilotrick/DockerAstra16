@@ -1,0 +1,86 @@
+<odoo>
+    <record id="minute_meeting_tree_view" model="ir.ui.view">
+        <field name="name">minute.meeting.tree.view</field>
+        <field name="model">minute.meeting</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="create_date"/>
+                <field name="name"/>
+                <field name="meeting_members_ids" widget="many2many_tags"/>
+            </tree>
+        </field>
+    </record>
+    <record id="minute_meeting_form_view" model="ir.ui.view">
+        <field name="name">minute.meeting.form.view</field>
+        <field name="model">minute.meeting</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <div class="oe_title">
+                        <h1>
+                            <field name="name"/>
+                        </h1>
+                    </div>
+                    <div>
+                        <field name="meeting_members_ids" widget="many2many_tags" options="{'no_create_edit': True, 'no_create': True}" colspan="2"/>
+                    </div>
+                    <notebook>
+                        <page string="Meeting Details">
+                            <field name="description" widget="html"/>
+                        </page>
+                        <page string="Minute Meeting">
+                            <group>
+                                <group>
+                                    <field name="responsible_person_id" options="{'no_create_edit': True, 'no_create': True}"/>
+                                </group>
+                                <group>
+                                    <field name="note_taker_person_id" options="{'no_create_edit': True, 'no_create': True}"/>
+                                </group>
+                            </group>
+                            <group string="Absent Members">
+                                <field name="absent_members_ids" widget="many2many_tags" colspan="2"/>
+                            </group>
+                            <group string="Agenda">
+                                <field name="agenda_line" nolabel="1" colspan="2">
+                                    <tree editable="bottom">
+                                        <field name="minute_id" invisible="1"/>
+                                        <field name="topic"/>
+                                        <field name="note"/>
+                                        <field name="discuss"/>
+                                    </tree>
+                                </field>
+                            </group>
+                            <group string="Decisions">
+                                <field name="decision_line" nolabel="1" colspan="2">
+                                    <tree editable="bottom">
+                                        <field name="minute_id" invisible="1"/>
+                                        <field name="decision"/>
+                                        <field name="note"/>
+                                        <field name="responsible_person_id" options="{'no_create_edit': True, 'no_create': True}"/>
+                                        <field name="assigned_person_id" options="{'no_create_edit': True, 'no_create': True}"/>
+                                        <field name="deadline_date"/>
+                                    </tree>
+                                </field>
+                            </group>
+                            <group string="Decisions">
+                                <field name="conclusion_note" widget="html"/>
+                            </group>
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="minute_meeting_action" model="ir.actions.act_window">
+        <field name="name">Minute Meeting</field>
+        <field name="res_model">minute.meeting</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <menuitem id="minute_meeting_menu"
+              name="Minute Meeting"
+              parent="calendar.mail_menu_calendar"
+              action="minute_meeting_action"
+              sequence="1"/>
+</odoo>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_purchase_order_form_related_so" model="ir.ui.view">
+        <field name="name">purchase.order.form.related.so</field>
+        <field name="model">purchase.order</field>
+        <field name="inherit_id" ref="purchase.purchase_order_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='partner_ref']" position="after">
+                <field name="related_so_id" readonly="1"/>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="action_create_rfq_from_sale" model="ir.actions.act_window">
+        <field name="name">Create RFQ From Sale</field>
+        <field name="res_model">purchase.order</field>
+        <field name="view_mode">form,tree,graph</field>
+        <field name="domain">[('partner_id', '=', active_id)]</field>
+        <field name="context">{'search_default_partner_id': active_id, 'default_partner_id': active_id}</field>
+    </record>
+</odoo>
