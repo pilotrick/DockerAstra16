@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>						
+<odoo>
+    <data>
+        <record id="hr_calendar_monthly" model="resource.calendar">
+            <field name="name">Jornada 44 Horas</field>
+        </record>
+
+        <!-- Labor Hours -->
+        <record id="attendance_lun_dia" model="resource.calendar.attendance">
+            <field name="name">Lunes Dia</field>
+            <field name="hour_from">8</field>
+            <field name="hour_to">12</field>
+            <field name="dayofweek">0</field>
+            <field name="calendar_id"  ref="hr_calendar_monthly"/>
+        </record>
+
+        <record id="attendance_lun_tarde" model="resource.calendar.attendance">
+            <field name="name">Lunes Tarde</field>
+            <field name="hour_from">14</field>
+            <field name="hour_to">18</field>
+            <field name="dayofweek">0</field>
+            <field name="calendar_id"  ref="hr_calendar_monthly"/>
+        </record>
+
+       <record id="attendance_mar_dia" model="resource.calendar.attendance">
+            <field name="name">Martes Dia</field>
+            <field name="hour_from">8</field>
+            <field name="hour_to">12</field>
+            <field name="dayofweek">1</field>
+            <field name="calendar_id"  ref="hr_calendar_monthly"/>
+        </record>
+
+        <record id="attendance_mar_tarde" model="resource.calendar.attendance">
+            <field name="name">Martes Tarde</field>
+            <field name="hour_from">14</field>
+            <field name="hour_to">18</field>
+            <field name="dayofweek">1</field>
+            <field name="calendar_id"  ref="hr_calendar_monthly"/>
+        </record>
+
+        <record id="attendance_mie_dia" model="resource.calendar.attendance">
+            <field name="name">Miercoles Dia</field>
+            <field name="hour_from">8</field>
+            <field name="hour_to">12</field>
+            <field name="dayofweek">2</field>
+            <field name="calendar_id"  ref="hr_calendar_monthly"/>
+        </record>
+
+        <record id="attendance_mie_tarde" model="resource.calendar.attendance">
+            <field name="name">Miercoles Tarde</field>
+            <field name="hour_from">14</field>
+            <field name="hour_to">18</field>
+            <field name="dayofweek">2</field>
+            <field name="calendar_id"  ref="hr_calendar_monthly"/>
+        </record>
+
+       <record id="attendance_jue_dia" model="resource.calendar.attendance">
+            <field name="name">Jueves Dia</field>
+            <field name="hour_from">8</field>
+            <field name="hour_to">12</field>
+            <field name="dayofweek">3</field>
+            <field name="calendar_id"  ref="hr_calendar_monthly"/>
+        </record>
+
+        <record id="attendance_jue_tarde" model="resource.calendar.attendance">
+            <field name="name">Jueves Tarde</field>
+            <field name="hour_from">14</field>
+            <field name="hour_to">18</field>
+            <field name="dayofweek">3</field>
+            <field name="calendar_id"  ref="hr_calendar_monthly"/>
+        </record>
+
+        <record id="attendance_vie_dia" model="resource.calendar.attendance">
+            <field name="name">Viernes Dia</field>
+            <field name="hour_from">8</field>
+            <field name="hour_to">12</field>
+            <field name="dayofweek">4</field>
+            <field name="calendar_id"  ref="hr_calendar_monthly"/>
+        </record>
+
+        <record id="attendance_vie_tarde" model="resource.calendar.attendance">
+            <field name="name">Viernes Tarde</field>
+            <field name="hour_from">14</field>
+            <field name="hour_to">18</field>
+            <field name="dayofweek">4</field>
+            <field name="calendar_id" ref="hr_calendar_monthly"/>
+        </record>
+
+       <record id="attendance_sab_dia" model="resource.calendar.attendance">
+            <field name="name">Sabado Dia</field>
+            <field name="hour_from">8</field>
+            <field name="hour_to">12</field>
+            <field name="dayofweek">5</field>
+            <field name="calendar_id"  ref="hr_calendar_monthly"/>
+        </record>
+
+    </data>
+</odoo>
