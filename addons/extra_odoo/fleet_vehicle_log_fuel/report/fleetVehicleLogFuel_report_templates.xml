@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+	<template id="report_fleetVehicleLogFuel_document">
+	    <t t-call="web.basic_layout">
+	        <div class="container">
+	    		<div class="text-center">
+    				<h1>
+	    				<span style="color:red" t-field="doc.vehicle_id.company_id"/>
+	    			</h1>
+		    		<div>
+	    				<span style="color:red" t-field="doc.vehicle_id.company_id.street"/>
+	    				<t t-if="doc.vehicle_id.company_id.street2">
+		    				<t t-if="doc.vehicle_id.company_id.street">
+		    					<span style="color:red">, </span>
+		    				</t>
+		    				<span style="color:red" t-field="doc.vehicle_id.company_id.street2"/>
+		    			</t>
+		    		</div>
+		    		<div>
+	    				<span style="color:red" t-field="doc.vehicle_id.company_id.city"/>
+	    				<t t-if="doc.vehicle_id.company_id.state_id">
+		    				<t t-if="doc.vehicle_id.company_id.city">
+		    					<span style="color:red">, </span>
+		    				</t>
+			    			<span style="color:red" t-field="doc.vehicle_id.company_id.state_id"/>
+			    		</t>
+			    		<t t-if="doc.vehicle_id.company_id.zip">
+			    			<t t-if='doc.vehicle_id.company_id.state_id'>
+			    				<span style="color:red">, </span>
+			    			</t>
+			    			<t t-else="">
+			    				<t t-if='doc.vehicle_id.company_id.city'>
+			    					<span style="color:red">, </span>
+			    				</t>
+			    			</t>
+			    			<span style="color:red" t-field="doc.vehicle_id.company_id.zip"/>
+	    				</t>
+		    		</div>
+	    			<div>
+	    				<span style="color:red">Phone:</span>
+	    				<span style="color:red" t-field="doc.vehicle_id.company_id.phone"></span>	
+		    		</div>
+		    	</div>
+
+		    	<br/>
+	    		<br/>
+
+	    		<div class="row">
+	    			<div class="col-6">
+	    				<div class="row">
+		    				<div class="col-4">
+		    					<span style="font-size:16px">UNLEADED</span>
+		    				</div>
+		    				<div class="col-8">
+		    					<input type="checkbox" name="UNLEADED" value="unleaded"/>
+		    				</div>
+		    			</div>
+	    			</div>
+	    			<div class="col-6">
+	    				<div class="row">
+		    				<div class="col-5">
+		    					<span style="font-size:16px">UNLEADED PLUS</span>
+		    				</div>
+		    				<div class="col-7">
+		    					<input type="checkbox" name="UNLEADED PLUS" value="unleaded_plus"/>
+		    				</div>
+		    			</div>
+	    			</div>
+	    		</div>
+
+	    		<div class="row">
+	    			<div class="col-6">
+	    				<div class="row">
+		    				<div class="col-4">
+		    					<span style="font-size:16px">DIESEL</span>
+		    				</div>
+		    				<div class="col-8">
+		    					<input type="checkbox" name="DIESEL" value="diesel"/>
+		    				</div>
+		    			</div>
+	    			</div>
+	    			<div class="col-6">
+	    				<div class="row">
+		    				<div class="col-5">
+		    					<span style="font-size:16px">SUPER UNLEADED</span>
+		    				</div>
+		    				<div class="col-7">
+		    					<input type="checkbox" name="SUPER UNLEADED" value="super_unleaded"/>
+		    				</div>
+		    			</div>
+	    			</div>
+	    		</div>
+
+	    		<br/>
+
+	    		<div class="row" style="font-size:14px">
+	    			<div class="col-6">
+  						<div class="row">
+		    				<div class="col-4">
+		    					<span>DATE</span>
+		    				</div>
+		    				<div class="col-8">
+		    					<span>:</span>
+		    					<span t-field="doc.price_date"></span>
+		    				</div>
+		    			</div>
+
+	    			</div>
+	    			<div class="col-6">
+	    				<div class="row">
+	    					<div class="col-5">
+	    						<span>TIME</span>
+	    					</div>
+	    					<div class="col-7">
+	    						<span>:</span>
+	    						<span>2021/09/12T12:12:09</span>
+	    					</div>
+	    				</div>
+	    			</div>
+	    		</div>
+
+	    		<div class="row" style="font-size:14px">
+	    			<div class="col-6">
+		    			<div class="row">
+		    				<div class="col-4">
+		    					<span>VEHICLE NO</span>
+		    				</div>
+		    				<div class="col-8">
+		    					<span>:</span>
+		    					<span t-field="doc.vehicle_id"/>
+		    				</div>
+		    			</div>
+	    			</div>
+	    			<div class="col-6">
+	    				<div class="row">
+	    					<div class="col-5">
+	    						<span>OPERATOR</span>
+	    					</div>
+	    					<div class="col-7">
+	    						<span>:</span>
+	    						<span t-field="doc.vehicle_id.driver_id"/>
+	    					</div>
+	    				</div>
+	    			</div>
+	    		</div>
+
+	    		<br/>
+
+	    		<div class="row">
+                    <div class="col-12" style="text-align:center">
+                        <table class="table table-bordered" style="table-layout: fixed">
+                            <thead style="display: table-row-group">
+                                <tr>
+                                    <th class="text-center" style="width: 40%" scope="col">PRODUCT</th>
+                                    <th class="text-center" style="width: 20%" scope="col">GALLONS</th>
+                                    <th class="text-center" style="width: 20%" scope="col">PRICE</th>
+                                    <th class="text-center" style="width: 20%" scope="col">TOTAL</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <t t-if="doc.vehicle_id.fuel_id">
+                                    <tr>
+                                        <td><span t-field="doc.vehicle_id.fuel_id"/></td>
+                                        <td><span t-esc="doc.liter"/></td>
+                                        <td><span t-esc="doc.price_per_liter"/> <br/></td>
+                                        <td><span t-esc="doc.amount"/></td>
+                                    </tr>
+                                    <tr>
+                                    	<td style="border-right:1px solid white;color:red;font-size:20px"><span t-esc="doc.name_seq"/></td>
+                                    	<td style="border-left:1px solid white"></td>
+                                    	<td><span style="font-weight:bold">TOTAL</span></td>
+                                    	<td><span t-esc="doc.amount"/></td>
+                                    </tr>
+                                </t>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+	    	</div>
+	    </t>
+	</template>
+
+	<template id="report_fleetVehicleLogFuel">
+	    <t t-call="web.html_container">
+	        <t t-foreach="docs" t-as="doc">
+	            <t t-call="fleet_vehicle_log_fuel.report_fleetVehicleLogFuel_document"/>
+	        </t>
+	    </t>
+	</template>
+</odoo>
