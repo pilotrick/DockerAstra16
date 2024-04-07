@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates xml:space="preserve">
+
+    <t t-name="lc_detail_and_indicators.table_metrics" owl="1">
+        <style type="text/css">
+            .col-right {
+                text-align: right;
+                padding-left: 20px;
+                padding-right: 20px;
+            }
+            .col-center {
+                text-align: center;
+                border-bottom: 1pt solid grey;
+                padding-left: 20px;
+                padding-right: 20px;
+            }
+            .table-metrics {
+                align-self: center;
+            }
+        </style>
+        <table class="table-metrics">
+            <thead>
+                <tr>
+                    <th></th>
+                    <th class="col-center">
+                        <strong>USD</strong>
+                    </th>
+                    <th class="col-center">
+                        <strong>RD</strong>
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr t-foreach="props.value" t-as="line" t-key="line_index">
+                    <td>
+                        <strong t-out="line.string"/>
+                    </td>
+                    <td class="col-right" t-out="line.usd and line.usd.toLocaleString(undefined, {'minimumFractionDigits': 2, 'maximumFractionDigits': 2})"/>
+                    <td class="col-right" t-out="line.rd and line.rd.toLocaleString(undefined, {'minimumFractionDigits': 2, 'maximumFractionDigits': 2})"/>
+                </tr>
+            </tbody>
+        </table>
+    </t>
+
+</templates>

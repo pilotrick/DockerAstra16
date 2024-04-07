@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record forcecreate="True" id="ir_cron_update_list_price_base_on_currency_rate" model="ir.cron">
+            <field name="name">Actualizar campo costo en base a tasa monetaria</field>
+            <field name="model_id" ref="model_product_template"/>
+            <field name="state">code</field>
+            <field name="code">model._update_cost_base_on_currency_rate()</field>
+            <field name="interval_type">days</field>
+            <field name="interval_number">1</field>
+            <field name="numbercall">-1</field>
+            <field eval="False" name="doall" />
+        </record>
+    </data>
+</odoo>

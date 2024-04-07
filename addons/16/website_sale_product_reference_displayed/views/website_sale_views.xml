@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- Copyright 2020 Tecnativa - David Vidal
+     License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl). -->
+<odoo>
+    <template
+        id="products_item"
+        name="Display product reference"
+        inherit_id="website_sale.products_item"
+        customize_show="True"
+    >
+        <!-- Product title in list -->
+        <xpath expr="//a[@t-field='product.name']" position="attributes">
+            <attribute name="class" add="d-none" separator=" " />
+        </xpath>
+        <xpath expr="//a[@t-field='product.name']" position="after">
+            <a
+                itemprop="name"
+                t-att-href="product_href"
+                t-att-content="product.default_code"
+                t-field="product.default_code"
+            />
+        </xpath>
+    </template>
+    <template
+        id="product"
+        name="Display product reference"
+        inherit_id="website_sale.product"
+        customize_show="True"
+    >
+        <!-- Breadcrumb -->
+        <xpath expr="//span[@t-field='product.name']" position="attributes">
+            <attribute name="class" add="d-none" separator=" " />
+        </xpath>
+        <xpath expr="//span[@t-field='product.name']" position="after">
+            <span t-field="product.default_code" />
+        </xpath>
+        <!-- Product Title -->
+        <xpath expr="//h1[@t-field='product.name']" position="attributes">
+            <attribute name="class" add="d-none" separator=" " />
+        </xpath>
+    </template>
+</odoo>

@@ -1,0 +1,52 @@
+<?xml version='1.0' encoding='utf-8'?>
+<odoo>
+
+
+    <record id="view_forcasting_purchase_report_graph" model="ir.ui.view">
+        <field name="name">purchase.forcasting.report.report.graph</field>
+        <field name="model">purchase.forcasting.report</field>
+        <field name="arch" type="xml">
+            <graph string="Forcasting Report Analysis" type="line" sample="1" disable_linking="1">
+                <field name="forcasting_date" />
+                <field name="qty_ordered" type="measure" />
+                <field name="qty_received" type="measure" />
+                <field name="qty_billed" type="measure" />
+                <field name="forcasting_price" type="measure" />
+            </graph>
+        </field>
+    </record>
+
+    <record id="view_forcasting_purchase_report_search" model="ir.ui.view">
+        <field name="name">purchase.forcasting.report.search</field>
+        <field name="model">purchase.forcasting.report</field>
+        <field name="arch" type="xml">
+            <search string="Forcasting Report">
+
+                <field name="forcasting_date" />
+                <field name="forcasting_price" />
+                <separator />
+                <group expand="1" string="Group By">
+                    <separator orientation="vertical" />
+                    <filter string="Forcasting Date" name="forcasting_date"
+                        context="{'group_by':'forcasting_date'}" />
+                    <!-- <filter string="Forcasting Price" name="forcasting_price"
+                        context="{'group_by':'forcasting_price'}" /> -->
+                </group>
+            </search>
+        </field>
+    </record>
+
+    <record id="action_forcasting_purchase_report_details" model="ir.actions.act_window">
+        <field name="name">Forcasting Report</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">purchase.forcasting.report</field>
+        <field name="view_mode">graph</field>
+        <field name="domain">[]</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Create a Forcasting Report in your address book
+            </p>
+        </field>
+    </record>
+
+</odoo>
