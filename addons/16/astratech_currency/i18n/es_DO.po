@@ -1,0 +1,246 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* astratech_currency
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 13.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-02-05 18:55+0000\n"
+"PO-Revision-Date: 2020-02-05 18:55+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: astratech_currency
+#: model_terms:ir.ui.view,arch_db:astratech_currency.res_config_settings_view_form_inherited
+msgid "<i title=\"Update now\" class=\"fa fa-fw fa-refresh\"/>"
+msgstr "<i title=\"Actualizar ahora\" class=\"fa fa-fw fa-refresh\"/>"
+
+#. module: astratech_currency
+#: code:addons/astratech_currency/models/res_company.py:0
+#, python-format
+msgid "API requests return the following error %s"
+msgstr "La petición al API retornó el siguiente error %s"
+
+#. module: astratech_currency
+#: model:ir.model.fields.selection,name:astratech_currency.selection__res_company__l10n_do_currency_provider__bdi
+msgid "Banco BDI"
+msgstr ""
+
+#. module: astratech_currency
+#: model:ir.model.fields.selection,name:astratech_currency.selection__res_company__l10n_do_currency_provider__bcd
+msgid "Banco Central Dominicano"
+msgstr ""
+
+#. module: astratech_currency
+#: model:ir.model.fields.selection,name:astratech_currency.selection__res_company__l10n_do_currency_provider__bpd
+msgid "Banco Popular Dominicano"
+msgstr ""
+
+#. module: astratech_currency
+#: model:ir.model.fields.selection,name:astratech_currency.selection__res_company__l10n_do_currency_provider__bpm
+msgid "Banco Promerica"
+msgstr ""
+
+#. module: astratech_currency
+#: model:ir.model.fields.selection,name:astratech_currency.selection__res_company__l10n_do_currency_provider__bsc
+msgid "Banco Santa Cruz"
+msgstr ""
+
+#. module: astratech_currency
+#: model:ir.model.fields.selection,name:astratech_currency.selection__res_company__l10n_do_currency_provider__bvm
+msgid "Banco Vimenca"
+msgstr ""
+
+#. module: astratech_currency
+#: model:ir.model.fields.selection,name:astratech_currency.selection__res_company__l10n_do_currency_provider__bnr
+msgid "Banco de Reservas"
+msgstr ""
+
+#. module: astratech_currency
+#: model:ir.model.fields.selection,name:astratech_currency.selection__res_company__l10n_do_currency_provider__bpr
+msgid "Banco del Progreso"
+msgstr ""
+
+#. module: astratech_currency
+#: model:ir.model.fields,field_description:astratech_currency.field_res_company__l10n_do_currency_provider
+#: model:ir.model.fields,field_description:astratech_currency.field_res_config_settings__l10n_do_currency_provider
+#: model_terms:ir.ui.view,arch_db:astratech_currency.res_config_settings_view_form_inherited
+msgid "Bank"
+msgstr "Banco"
+
+#. module: astratech_currency
+#: model_terms:ir.ui.view,arch_db:astratech_currency.res_config_settings_view_form_inherited
+msgid "Base"
+msgstr ""
+
+#. module: astratech_currency
+#: model:ir.model.fields.selection,name:astratech_currency.selection__res_company__currency_base__purchase_rate
+msgid "Buy rate"
+msgstr "Tasa de compra"
+
+#. module: astratech_currency
+#: model:ir.model,name:astratech_currency.model_res_config_settings
+msgid "Config Settings"
+msgstr "Opciones de Configuración"
+
+#. module: astratech_currency
+#: model:ir.model.fields,field_description:astratech_currency.field_res_company_token_list__create_uid
+#: model:ir.model.fields,field_description:astratech_currency.field_res_company_token_wizard__create_uid
+msgid "Created by"
+msgstr "Creado por"
+
+#. module: astratech_currency
+#: model:ir.model.fields,field_description:astratech_currency.field_res_company_token_list__create_date
+#: model:ir.model.fields,field_description:astratech_currency.field_res_company_token_wizard__create_date
+msgid "Created on"
+msgstr "Creado en"
+
+#. module: astratech_currency
+#: model:ir.model.fields,field_description:astratech_currency.field_res_company__currency_base
+#: model:ir.model.fields,field_description:astratech_currency.field_res_config_settings__currency_base
+msgid "Currency Base"
+msgstr "Tasa base"
+
+#. module: astratech_currency
+#: model:ir.model.fields.selection,name:astratech_currency.selection__res_company__l10n_do_currency_interval_unit__daily
+msgid "Daily"
+msgstr "Diario"
+
+#. module: astratech_currency
+#: model:ir.model.fields,field_description:astratech_currency.field_res_company_token_list__display_name
+#: model:ir.model.fields,field_description:astratech_currency.field_res_company_token_wizard__display_name
+msgid "Display Name"
+msgstr "Nombre mostrado"
+
+#. module: astratech_currency
+#: model_terms:ir.ui.view,arch_db:astratech_currency.res_config_settings_view_form_inherited
+msgid "Dominican Banks Rates"
+msgstr "Tasas Bancos Dominicanos"
+
+#. module: astratech_currency
+#: model:ir.model.fields,field_description:astratech_currency.field_res_company_token_list__id
+#: model:ir.model.fields,field_description:astratech_currency.field_res_company_token_wizard__id
+msgid "ID"
+msgstr "ID (identificación)"
+
+#. module: astratech_currency
+#: model:ir.model.fields,field_description:astratech_currency.field_res_company__l10n_do_currency_interval_unit
+#: model:ir.model.fields,field_description:astratech_currency.field_res_config_settings__l10n_do_currency_interval_unit
+#: model_terms:ir.ui.view,arch_db:astratech_currency.res_config_settings_view_form_inherited
+msgid "Interval"
+msgstr "Intervalo"
+
+#. module: astratech_currency
+#: model:ir.model,name:astratech_currency.model_account_move
+msgid "Journal Entries"
+msgstr "Facturas"
+
+#. module: astratech_currency
+#: model:ir.model.fields,field_description:astratech_currency.field_res_company_token_list____last_update
+#: model:ir.model.fields,field_description:astratech_currency.field_res_company_token_wizard____last_update
+msgid "Last Modified on"
+msgstr "Última modificación en"
+
+#. module: astratech_currency
+#: model:ir.model.fields,field_description:astratech_currency.field_res_company__last_currency_sync_date
+#: model:ir.model.fields,field_description:astratech_currency.field_res_config_settings__last_currency_sync_date
+#: model_terms:ir.ui.view,arch_db:astratech_currency.res_config_settings_view_form_inherited
+msgid "Last Sync Date"
+msgstr "Última fecha de sincronización"
+
+#. module: astratech_currency
+#: model:ir.model.fields,field_description:astratech_currency.field_res_company_token_list__write_uid
+#: model:ir.model.fields,field_description:astratech_currency.field_res_company_token_wizard__write_uid
+msgid "Last Updated by"
+msgstr ""
+
+#. module: astratech_currency
+#: model:ir.model.fields,field_description:astratech_currency.field_res_company_token_list__write_date
+#: model:ir.model.fields,field_description:astratech_currency.field_res_company_token_wizard__write_date
+msgid "Last Updated on"
+msgstr "Última actualización de"
+
+#. module: astratech_currency
+#: model:ir.model.fields.selection,name:astratech_currency.selection__res_company__l10n_do_currency_interval_unit__manually
+msgid "Manually"
+msgstr "Manualmente"
+
+#. module: astratech_currency
+#: model:ir.model.fields.selection,name:astratech_currency.selection__res_company__l10n_do_currency_interval_unit__monthly
+msgid "Monthly"
+msgstr "Mensual"
+
+#. module: astratech_currency
+#: model_terms:ir.ui.view,arch_db:astratech_currency.res_config_settings_view_form_inherited
+msgid "Next Run"
+msgstr "Siguiente ejecución"
+
+#. module: astratech_currency
+#: model:ir.model.fields,field_description:astratech_currency.field_res_company__l10n_do_currency_next_execution_date
+#: model:ir.model.fields,field_description:astratech_currency.field_res_config_settings__l10n_do_currency_next_execution_date
+msgid "Next Running Date"
+msgstr "Próxima fecha ejecución"
+
+#. module: astratech_currency
+#: code:addons/astratech_currency/models/res_company.py:0
+#, python-format
+msgid "No serializable data from API response"
+msgstr "No hay data serializable en la respuesta de API"
+
+#. module: astratech_currency
+#: model:ir.model.fields,field_description:astratech_currency.field_res_company__rate_offset
+#: model:ir.model.fields,field_description:astratech_currency.field_res_config_settings__rate_offset
+#: model_terms:ir.ui.view,arch_db:astratech_currency.res_config_settings_view_form_inherited
+msgid "Offset"
+msgstr "Compensación"
+
+#. module: astratech_currency
+#: model:ir.model.fields.selection,name:astratech_currency.selection__res_company__currency_base__sale_rate
+msgid "Sell rate"
+msgstr "Tasa de venta"
+
+#. module: astratech_currency
+#: model:ir.model.fields,field_description:astratech_currency.field_res_company_token_list__token
+msgid "Token"
+msgstr ""
+
+#. module: astratech_currency
+#: model:ir.model.constraint,message:astratech_currency.constraint_res_company_token_uniq
+msgid "Token must be unique per company."
+msgstr "El Token debe ser único por compañía"
+
+#. module: astratech_currency
+#: code:addons/astratech_currency/models/res_config_settings.py:0
+#, python-format
+msgid ""
+"Unable to fetch currency from given API. The service may be temporary down. "
+"Please try again in a moment."
+msgstr "Incapaz de traer las tasas de el API suministrada. El servicio puede estar temporalmente inactivo. Por favor, intentelo más tarde."
+
+#. module: astratech_currency
+#: code:addons/astratech_currency/models/res_company.py:0
+#, python-format
+msgid "Unable to fetch new rates records from API"
+msgstr "Incapaz de traer nuevos registros de tasas desde el API"
+
+#. module: astratech_currency
+#: model:ir.model.fields.selection,name:astratech_currency.selection__res_company__l10n_do_currency_interval_unit__weekly
+msgid "Weekly"
+msgstr "Semanal"
+
+#. module: astratech_currency
+#: model:ir.model.fields,field_description:astratech_currency.field_res_company_token_list__token_wizard_id
+msgid "Wizard"
+msgstr "Asistente"
+
+#. module: astratech_currency
+#: model:ir.actions.server,name:astratech_currency.ir_cron_currency_update_ir_actions_server
+#: model:ir.cron,cron_name:astratech_currency.ir_cron_currency_update
+#: model:ir.cron,name:astratech_currency.ir_cron_currency_update
+msgid "[CURRENCY] Update l10n_do banks currency"
+msgstr "[TASAS] Actualizar tasas bancos dominicanos"

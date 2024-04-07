@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<odoo>
+  <record model="res.groups" id="group_advance_payment_access">
+    <field name="name">Great Access to Advance Payment</field>
+    <field name="comment">Group to allow confirmation with residual amount</field>
+  </record>
+</odoo>
