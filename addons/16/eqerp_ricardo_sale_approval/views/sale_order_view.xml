@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+	<record model="ir.ui.view" id="eq_inherit_sale_order_form_view">
+		<field name="name">sale.order.view.form</field>
+		<field name="model">sale.order</field>
+		<field name="inherit_id" ref="sale.view_order_form" />
+		<field name="arch" type="xml">
+			<field name='payment_term_id' position="after">
+				<field name="is_minimum_sale_margin" invisible="1" />
+				<field name="sale_approverl_id" invisible="1" />
+				<field name="is_sale_approval" invisible="1" />
+				<field name="is_sale_confirm" invisible="1" />
+				<field name="can_confirm_sale" invisible="1"/>
+			</field>
+			<xpath expr="//header/button[@name='action_confirm'][last()]" position="replace"> 
+				</xpath>
+			<xpath expr="//button[@name='action_quotation_send']" position="after">
+				<!-- <button name="action_confirm" string="Confirm" class="btn-primary"
+					type="object"
+					attrs="{'invisible': [
+                                '|',('state', 'not in', ['draft','sent','sale_approval','credit_limit']),
+                                ('is_minimum_sale_margin','=',True),('can_confirm_sale', '=', False)
+                            ]}"
+							/> -->
+
+				<button name="action_confirm" string="Confirm" class="btn-primary"
+					type="object"
+					attrs="{'invisible': [
+                                '|',('state', 'not in', ['sent','sale_approval']),
+                                ('is_sale_approval','=',False),('can_confirm_sale', '=', False)
+                            ]}"
+							groups="eqerp_ricardo_sale_approval.grp_sale_approval, base.group_erp_manager" 
+							/>
+
+			</xpath>
+			<button name="action_confirm" position="before">
+				<button name="action_approve_sale" string="Sale Approval"
+					type="object" groups="eqerp_ricardo_sale_approval.grp_sale_approval, base.group_erp_manager"
+					attrs="{'invisible': ['|',('state', 'not in', ['draft','sent','waiting_sale_approval','credit_limit']), ('is_minimum_sale_margin','=',False)]}" />
+			</button>
+			
+			<button name="action_quotation_send" position="attributes">
+			<attribute name="invisible">{'invisible': [('state', 'in', ['credit_limit','sent','waiting_sale_approval', 'decline_approval'])]}</attribute>
+			</button>
+			<!-- <button name="preview_sale_order" position="attributes">
+				<attribute name="invisible">1</attribute>
+			</button> -->
+			<xpath expr="//button[@name='action_quotation_send'][@states='draft']"
+				position="attributes">
+				<attribute name='states'>draft,sale_approval</attribute>
+			</xpath>
+			<xpath expr="//header" position="inside">
+				<button name="btn_decline_approval" string="Decline Approval"
+					class="btn-primary" type="object"
+					attrs="{'invisible': [('state', 'not in','waiting_sale_approval')]}" />
+			</xpath>
+		</field>
+	</record>
+
+	<record model="ir.ui.view" id="inherit_res_users_form_view">
+		<field name="name">res.users</field>
+		<field name="model">res.users</field>
+		<field name="inherit_id" ref="base.view_users_form" />
+		<field name="arch" type="xml">
+			<xpath expr="//field[@name='tz_offset']" position="after">
+				<field name="minimum_sales_margin" />
+				<field name="next_date_so_permission" />
+				<field name="sale_user_representative_id" options="{'no_create':True}"
+					domain="[('id','!=',id),('share','=',False)]" />
+			</xpath>
+		</field>
+	</record>
+
+	<record model="ir.ui.view" id="wizard_sales_approval_form_view">
+		<field name="name">wizard.sales.approval</field>
+		<field name="model">wizard.sales.approval</field>
+		<field name="arch" type="xml">
+			<form>
+				<sheet>
+					<group>
+						<field name="next_date_so_permission" class="oe_inline"
+							required="1" />
+					</group>
+				</sheet>
+				<footer>
+					<button name="do_confirm" string="Confirm" type="object"
+						class="oe_highlight" />
+					or
+					<button special="cancel" string="Close" type="object" class="btn-primary" />
+				</footer>
+			</form>
+		</field>
+	</record>
+
+	<record id="action_sales_order_waiting_approval" model="ir.actions.act_window">
+		<field name="name">Sales Margin Retention</field>
+		<field name="type">ir.actions.act_window</field>
+		<field name="res_model">sale.order</field>
+		<field name="view_mode">tree,kanban,form,calendar,pivot,graph,activity</field>
+		
+		<field name="search_view_id" ref="sale.sale_order_view_search_inherit_sale" />
+		<field name="context">{}</field>
+		<field name="domain">[('state', 'in', ('waiting_sale_approval',
+			'sale_approval'))]
+		</field>
+		<field name="help" type="html">
+			<p class="o_view_nocontent_smiling_face">
+				Create a new quotation, the first step of a new sale!
+			</p>
+			<p>
+				Once the quotation is confirmed, it becomes a sales order.
+				<br />
+				You will be able to create an invoice and collect the payment.
+			</p>
+		</field>
+	</record>
+
+	<record id="sale_order_approval_action_view_quotation_tree"
+		model="ir.actions.act_window.view">
+		<field name="sequence" eval="1" />
+		<field name="view_mode">tree</field>
+		<field name="view_id" ref="sale.view_quotation_tree" />
+		<field name="act_window_id" ref="action_sales_order_waiting_approval" />
+	</record>
+
+	<record id="sale_order_approval_action_view_quotation_kanban"
+		model="ir.actions.act_window.view">
+		<field name="sequence" eval="2" />
+		<field name="view_mode">kanban</field>
+		<field name="view_id" ref="sale.view_sale_order_kanban" />
+		<field name="act_window_id" ref="action_sales_order_waiting_approval" />
+	</record>
+
+	<record id="sale_order_approval_action_view_quotation_form"
+		model="ir.actions.act_window.view">
+		<field name="sequence" eval="3" />
+		<field name="view_mode">form</field>
+		<field name="view_id" ref="sale.view_order_form" />
+		<field name="act_window_id" ref="action_sales_order_waiting_approval" />
+	</record>
+
+	<record id="sale_order_approval_action_view_quotation_calendar"
+		model="ir.actions.act_window.view">
+		<field name="sequence" eval="4" />
+		<field name="view_mode">calendar</field>
+		<field name="view_id" ref="sale.view_sale_order_calendar" />
+		<field name="act_window_id" ref="action_sales_order_waiting_approval" />
+	</record>
+
+	<record id="sale_order_approval_action_view_quotation_pivot"
+		model="ir.actions.act_window.view">
+		<field name="sequence" eval="5" />
+		<field name="view_mode">pivot</field>
+		<field name="view_id" ref="sale.view_sale_order_pivot" />
+		<field name="act_window_id" ref="action_sales_order_waiting_approval" />
+	</record>
+
+	<record id="sale_order_approval_action_view_quotation_graph"
+		model="ir.actions.act_window.view">
+		<field name="sequence" eval="6" />
+		<field name="view_mode">graph</field>
+		<field name="view_id" ref="sale.view_sale_order_graph" />
+		<field name="act_window_id" ref="action_sales_order_waiting_approval" />
+	</record>
+
+	<menuitem id="menu_sales_order_waiting_approval" name="Sales Margin Retention"
+		action="action_sales_order_waiting_approval" parent="sale.sale_order_menu"
+		sequence="2" groups="eqerp_ricardo_sale_approval.grp_sale_approval" />
+
+</odoo>

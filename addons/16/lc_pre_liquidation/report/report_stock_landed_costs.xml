@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+	<data>
+		<!-- <report id="pre_stock_landed_costs_report"
+				string="Imprimir preliquidación"
+				model="pre.stock.landed.cost"
+				report_type="qweb-pdf"
+				print_report_name="('Preliquidación - %s' % (object.name))"
+				file="lc_pre_liquidation.pre_stock_landed_costs_report_template_id"
+				name="lc_pre_liquidation.pre_stock_landed_costs_report_template_id"/> -->
+
+		<record id="pre_stock_landed_costs_report" model="ir.actions.report">
+            <field name="name">Imprimir preliquidación</field>
+            <field name="model">pre.stock.landed.cost</field>
+            <field name="report_type">qweb-pdf</field>
+            <field name="report_name">lc_pre_liquidation.pre_stock_landed_costs_report_template_id</field>
+            <field name="report_file">lc_pre_liquidation.pre_stock_landed_costs_report_template_id</field>
+            <field name="print_report_name">'Preliquidación - %s' % (object.name)</field>
+            <field name="binding_model_id" ref="model_pre_stock_landed_cost"/>
+            <field name="binding_type">report</field>
+        </record>
+
+	</data>
+</odoo>
