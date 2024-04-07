@@ -1,0 +1,14 @@
+<odoo>
+    <data>
+        <record model="ir.ui.view" id="account_payment_tree_inherit">
+            <field name="name">account.payment.tree.inherit</field>
+            <field name="model">account.payment</field>
+            <field name="inherit_id" ref="account.view_account_payment_tree"/>
+            <field name="arch" type="xml">
+                <xpath expr="//tree" position="inside">
+                    <field name="invoice_user_id" string="Vendedor"/>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>

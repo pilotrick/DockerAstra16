@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="doctor_view_form" model="ir.ui.view">
+        <field name="name">hr_hospital_odooschool_doctor_view_form</field>
+        <field name="model">hr.hospital.doctor</field>
+        <field name="priority" eval="1"/>
+        <field name="arch" type="xml">
+            <form string="Doctor">
+                <sheet>
+                    <div class="oe_button_box" name="button_box"/>
+                    <field name="img" class="oe_avatar" widget="image"/>
+                    <div class="oe_title">
+                        <h1>
+                            <field name="name" default_focus="1" placeholder="e.g. Doctor name"/>
+                        </h1>
+                    </div>
+                    <group>
+                        <group>
+                            <field name="state" invisible="1"/>
+                            <field name="phone"/>
+                            <field name="email"/>
+                            <field name="sex"/>
+                        </group>
+                        <group>
+                            <field name="specialty"/>
+                            <field name="is_mentor" attrs="{'invisible': [('is_intern', '=', True)]}"/>
+                            <field name="is_intern" attrs="{'invisible': [('is_mentor', '=', True)]}"/>
+                            <field name="parent_id" domain="[('is_mentor', '=', True)]"
+                                   attrs="{'invisible': [('is_intern', '=', False)], 'required': [('is_intern', '=', True)]}"/>
+                        </group>
+                    </group>
+                    <notebook colspan="2"
+                              attrs="{'invisible': ['|',('state', '=', 'draft'),'&amp;',('is_intern', '=', False),('is_mentor', '=', False)]}">
+                        <page string="Interns" name="interns" autofocus="autofocus"
+                              attrs="{'invisible': [('is_mentor', '=', False)]}">
+                            <field name="child_ids" update="false">
+                                <kanban class="o_kanban_mobile" default_groupe_by="name" create="false">
+                                    <templates>
+                                        <t t-name="kanban-box">
+                                            <div class="oe_kanban_global_click o_kanban_record_has_image_fill o_res_partner_kanban">
+                                                <div class="o_kanban_image_fill_left o_kanban_image_full"
+                                                     t-attf-style="background-image: url(#{kanban_image('hr.hospital.patient', 'avatar_128', record.img)})"
+                                                     role="img"/>
+                                                <div class="oe_kanban_details d-flex flex-column justify-content-between">
+                                                    <field name="name"/>
+                                                    <field name="phone"/>
+                                                    <field name="email"/>
+                                                    <field name="specialty"/>
+                                                </div>
+                                            </div>
+                                        </t>
+                                    </templates>
+                                </kanban>
+                            </field>
+                        </page>
+                        <page string="Mentor" name='mentor' attrs="{'invisible': [('is_intern', '=', False)]}">
+                            <field name="parent_id">
+                                <kanban class="o_kanban_mobile" default_groupe_by="name" create="false">
+                                    <templates>
+                                        <t t-name="kanban-box">
+                                            <div class="oe_kanban_global_click o_kanban_record_has_image_fill o_res_partner_kanban">
+                                                <div class="o_kanban_image_fill_left o_kanban_image_full"
+                                                     t-attf-style="background-image: url(#{kanban_image('hr.hospital.patient', 'avatar_128', record.img)})"
+                                                     role="img"/>
+                                                <div class="oe_kanban_details d-flex flex-column justify-content-between">
+                                                    <field name="name"/>
+                                                    <field name="phone"/>
+                                                    <field name="email"/>
+                                                    <field name="specialty"/>
+                                                </div>
+                                            </div>
+                                        </t>
+                                    </templates>
+                                </kanban>
+                            </field>
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="doctor_view_tree" model="ir.ui.view">
+        <field name="name">hr_hospital_odooschool_doctor_view_tree</field>
+        <field name="model">hr.hospital.doctor</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name"/>
+                <field name="phone"/>
+                <field name="email"/>
+                <field name="sex"/>
+                <field name="specialty"/>
+                <field name="is_mentor" attrs="{'invisible': [('is_intern', '=', True)]}"/>
+                <field name="is_intern" attrs="{'invisible': [('is_mentor', '=', True)]}"/>
+                <field name="parent_id"
+                       attrs="{'invisible': [('is_intern', '=', False)], 'required': [('is_intern', '=', True)]}"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="doctor_view_kanban" model="ir.ui.view">
+        <field name="name">hr_hospital_odooschool_doctor_view_kanban</field>
+        <field name="model">hr.hospital.doctor</field>
+        <field name="arch" type="xml">
+            <kanban class="o_kanban_mobile" default_groupe_by="specialty" quick_create_view="doctor_view_form">
+                <templates>
+                    <t t-name="kanban-box">
+                        <div class="oe_kanban_global_click o_kanban_record_has_image_fill o_res_partner_kanban">
+                            <field name="img"
+                                   options="{'placeholder': '/lunch/static/img/lunch.png', 'size': [94, 94]}"
+                                   class="oe_avatar"
+                                   widget="image"
+                                   style="margin-right: 10px"/>
+                            <div class="oe_kanban_details d-flex flex-column justify-content-between">
+                                <field name="is_intern" invisible="1"/>
+                                <field name="name"/>
+                                <field name="phone"/>
+                                <field name="email"/>
+                                <field name="specialty"/>
+                                <field name="parent_id" domain="[('is_intern', '=', False)]"
+                                       attrs="{'invisible': [('is_intern', '=', False)]}"/>
+                                <button name="%(hr_hospital_odooschool.hr_hospital_odooschool_action_view_create_appointment)d"
+                                    type="action"
+                                    string="Appointment"
+                                    class="oe_highlight"
+                                    context="{'default_doctor_id': active_id}"
+                                    />
+                            </div>
+                        </div>
+                    </t>
+                </templates>
+            </kanban>
+        </field>
+    </record>
+
+    <record id="doctor_view_search" model="ir.ui.view">
+            <field name="name">doctor.view.search.search.inherited</field>
+            <field name="model">hr.hospital.doctor</field>
+            <field name="arch" type="xml">
+                <search>
+                <separator/>
+                    <filter string="Mentors" name="is_mentor" domain="[('is_mentor', '=', True)]"/>
+                    <filter string="Interns" name="is_intern" domain="[('is_intern', '=', True)]"/>
+                    <filter string="Nothing" name="nothing" domain="[('is_intern', '=', False), ('is_mentor', '=', False)]"/>
+                <separator/>
+            </search>
+            </field>
+        </record>
+
+    <record id="hr_hospital_odooschool_action_view_doctor" model="ir.actions.act_window">
+        <field name="name">Doctors</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">hr.hospital.doctor</field>
+        <field name="view_mode">kanban,tree,form</field>
+        <field name="search_view_id" ref="hr_hospital_odooschool.doctor_view_search" />
+        <field name="view_id" ref="doctor_view_kanban"/>
+    </record>
+
+    <menuitem id="hr_hospital_odooschool_doctor_menu"
+              name="Doctors" parent="hr_hospital_odooschool_main_menu"
+              action="hr_hospital_odooschool_action_view_doctor" sequence="100"/>
+
+</odoo>

@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <template
+        id="products_item"
+        name="Display product warehouse quantity"
+        inherit_id="website_sale.products_item"
+        customize_show="True">
+
+        <!-- Product title in list -->
+        <xpath expr="//a[@t-field='product.name']" position="attributes">
+            <attribute name="class" add="d-none" separator=" " />
+        </xpath>
+
+        <xpath expr="//div[@class='product_price']/*[last()]" position="after">
+            <t t-if="product.warehouse_quantity">
+                <p>   
+                    <strong><t t-esc="product.warehouse_quantity" /></strong>
+                </p>
+            </t>
+        </xpath>
+
+    </template>
+    <template
+        id="product"
+        name="Display product warehouse quantity"
+        inherit_id="website_sale.product"
+        customize_show="True">
+        
+        <!-- Breadcrumb -->
+        <xpath expr="//span[@t-field='product.name']" position="attributes">
+            <attribute name="class" add="d-none" separator=" " />
+        </xpath>
+
+        <!-- Product Title -->
+        <xpath expr="//h1[@t-field='product.name']" position="attributes">
+            <attribute name="class" add="d-none" separator=" " />
+        </xpath>
+
+        <xpath expr="//t/input[@t-att-value='product_variant.id']" position="before">
+            <t t-if="product.warehouse_quantity">
+                <p>
+                    <strong><t t-esc="product.warehouse_quantity" /></strong>
+                </p>
+            </t>
+        </xpath>
+    </template>
+</odoo>

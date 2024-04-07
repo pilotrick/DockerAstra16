@@ -1,0 +1,85 @@
+<odoo>
+
+    <!-- property types -->
+
+    <!-- kanban view -->
+    <record id="type_kanban_view" model="ir.ui.view">
+        <field name="name">type.kanban.view</field>
+        <field name="model">property.type</field>
+        <field name="arch" type="xml">
+            <kanban class="o_res_partner_kanban" default_order="name desc">
+                <field name="name" />
+                <templates>
+                    <t t-name="kanban-box">
+                        <div t-attf-class="oe_kanban_global_click">
+                            <div class="oe_kanban_details">
+                                <h1>
+                                    House Type : 
+                                    <strong>
+                                        <field name="name" />
+                                    </strong>
+                                </h1>
+                            </div>
+                        </div>
+                    </t>
+                </templates>
+            </kanban>
+        </field>
+    </record>
+
+
+    <!-- list view -->
+    <record id='property_type_list_view' model='ir.ui.view'>
+        <field name='name'>property type list view</field>
+        <field name='model'>property.type</field>
+        <field name='arch' type='xml'>
+            <tree>
+                <field name='name' />
+            </tree>
+        </field>
+    </record>
+
+
+    <!-- form view -->
+    <record id='property_type_form_view' model='ir.ui.view'>
+        <field name='name'>property type form view</field>
+        <field name='model'>property.type</field>
+        <field name='arch' type='xml'>
+            <form>
+                <div name="button_box" position="inside">
+                    <button class="oe_stat_button" type="object" name="get_offers" icon="fa-money">
+                        <field string="Offers" name="offer_count" widget="statinfo" />
+                    </button>
+                </div>
+                <group>
+                    <group>
+                        <field name='name' string='Property Type : ' class="form-control"/>
+                    </group>
+                </group>
+                <notebook>
+                    <page string="Property" >
+                        <field name='house'>
+                            <tree>
+                                <field name='name'/>
+                                <field name='expected_price'/>
+                                <field name='state'/>
+                            </tree>
+                        </field>
+                    </page>
+                </notebook>
+            </form>
+        </field>
+    </record>
+    
+
+    <!-- view actions -->
+    <record id='action_property_types' model='ir.actions.act_window'>
+        <field name='name'>Type</field>
+        <field name='res_model'>property.type</field>
+        <field name='view_mode'>kanban,tree,form</field>
+    </record>
+
+    <menuitem id='real_estate_bs.menu_2_types' action="action_property_types" parent='real_estate_bs.menu_2'
+         name='Property Types' sequence='20' />
+
+</odoo>

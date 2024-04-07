@@ -1,0 +1,77 @@
+<odoo>
+
+    <!-- property_offers -->
+
+    <!-- tree view -->
+    <record id='property_offer_list_view' model='ir.ui.view'>
+        <field name='name'>property offer list view</field>
+        <field name='model'>property.offer</field>
+        <field name='arch' type='xml'>
+            <tree decoration-success="(offer_status == 'accept')"
+                decoration-danger="(offer_status == 'reject')"
+                decoration-info="(offer_status == 'new')">
+                <field name='property_id' invisible="1" />
+                <field name='partner_id' />
+                <field name='price' />
+                <field name='expected_days' />
+                <field name='deadlines' />
+                <field name='salesman' invisible="1" />
+                <field name='offer_status' string='Status' readonly='1' />
+                <button name='on_accept' type='object' icon='fa-check'
+                    attrs="{'invisible': ['|',('offer_status','=','accept'),('offer_status','=','reject')]}" title=" " />
+                <button name='on_reject' type='object' icon='fa-times'
+                    attrs="{'invisible': ['|',('offer_status','=','accept'),('offer_status','=','reject')]}" title=" " />
+            </tree>
+        </field>
+    </record>
+
+    <!-- form view -->
+    <record id='property_offer_form_view' model='ir.ui.view'>
+        <field name='name'>property offer form view</field>
+        <field name='model'>property.offer</field>
+        <field name='arch' type='xml'>
+            <form>
+                <group>
+                    <group>
+                        <field name='property_id' invisible="1" />
+                        <field name='partner_id' class="form-control"/>
+                        <field name='email' class="form-control" placeholder='xyz@gmail.com' />
+                        <field name='expected_days' class="form-control"/>
+                        <field name='deadlines' class="form-control"/>
+                        <field name='price' class="form-control"/>
+                        <field name='offer_status' string='Status' readonly='1' class="form-control"/>
+                    </group>
+                </group>
+            </form>
+        </field>
+    </record>
+
+    <!-- search view -->
+    <record id='property_offer_search_view' model='ir.ui.view'>
+        <field name='name'>property.offer.search</field>
+        <field name='model'>property.offer</field>
+        <field name='arch' type='xml'>
+            <search>
+                <group expand="0" string="Group By">
+                    <filter string="Property" name="property_id" context="{'group_by':'property_id'}" />
+                    <filter string="Expected day" name="property_id" context="{'group_by':'property_id'}" />
+                    <filter string="Status" name="offer_status" context="{'group_by':'offer_status'}" />
+                    <filter string="Email" name="email" context="{'group_by':'email'}"/>
+                </group>
+            </search>
+        </field>
+    </record>
+
+    <!-- view actions -->
+    <record id='action_property_offer' model='ir.actions.act_window'>
+        <field name='name'>Offer</field>
+        <field name='res_model'>property.offer</field>
+        <field name='view_mode'>tree,form</field>
+    </record>
+
+    
+
+    <menuitem id='real_estate_bs.menu_2_offers' action="action_property_offer" parent='real_estate_bs.menu_2'
+         name='Property Offers' sequence='30' />
+
+</odoo>

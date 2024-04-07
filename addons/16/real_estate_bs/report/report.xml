@@ -1,0 +1,15 @@
+<odoo>
+
+    <!-- print report of property form  -->
+    <record id="action_report_real_estate" model="ir.actions.report">
+        <field name="name">Real Estate Report</field>
+        <field name="model">real.estate</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">real_estate_bs.report_real_estate</field>
+        <field name="report_file">real_estate_bs.report_real_estate</field>
+        <field name="print_report_name">'Real Estate Report - %s' % (object.name)</field>
+        <field name="binding_model_id" ref="model_real_estate" />
+        <field name="binding_type">report</field>
+    </record>
+    
+</odoo>

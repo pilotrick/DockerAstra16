@@ -1,0 +1,20 @@
+<odoo>
+    
+    <!-- inherit property in res.users to show property in user module -->
+    <record id="view_users_form_view" model="ir.ui.view">
+        <field name="name">view.users.form.inherit</field>
+        <field name="model">res.users</field>
+        <field name="inherit_id" ref="base.view_users_form" />
+        <field name="arch" type="xml">
+            <xpath expr="//page[@name='preferences']" position="after">
+                <page string='My Property' name='my_property'>
+
+                    <tree>
+                        <field name='property_ids' />
+                    </tree>
+                    
+                </page>
+            </xpath>
+        </field>
+    </record>
+</odoo>
