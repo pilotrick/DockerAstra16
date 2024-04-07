@@ -1,0 +1,230 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* astra_payment_cardnet
+# 
+# Translators:
+# Martin Trigaux, 2022
+# Friederike Fasterling-Nesselbosch, 2022
+# 
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 15.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-01-27 15:59+0000\n"
+"PO-Revision-Date: 2021-09-14 12:24+0000\n"
+"Last-Translator: Friederike Fasterling-Nesselbosch, 2022\n"
+"Language-Team: Italian (https://www.transifex.com/odoo/teams/41243/it/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Language: it\n"
+"Plural-Forms: nplurals=3; plural=n == 1 ? 0 : n != 0 && n % 1000000 == 0 ? 1 : 2;\n"
+
+#. module: astra_payment_cardnet
+#: model_terms:ir.ui.view,arch_db:astra_payment_cardnet.payment_provider_form
+msgid "Connect Cardnet"
+msgstr "Connect Cardnet"
+
+#. module: astra_payment_cardnet
+#: code:addons/astra_payment_cardnet/models/payment_provider.py:0
+#, python-format
+msgid "Could not establish the connection to the API."
+msgstr "Impossibile stabilire la connessione all'API."
+
+#. module: astra_payment_cardnet
+#: model_terms:ir.ui.view,arch_db:astra_payment_cardnet.payment_provider_form
+msgid "Generate your webhook"
+msgstr "Genera il tuo webhook"
+
+#. module: astra_payment_cardnet
+#: model_terms:ir.ui.view,arch_db:astra_payment_cardnet.payment_provider_form
+msgid "Get your Secret and Publishable keys"
+msgstr "Ottieni il tuo Secret e Publishable keys"
+
+#. module: astra_payment_cardnet
+#: model:ir.model.fields,help:astra_payment_cardnet.field_payment_provider__Cardnet_webhook_secret
+msgid ""
+"If a webhook is enabled on your Cardnet account, this signing secret must be "
+"set to authenticate the messages sent from Cardnet to Odoo."
+msgstr ""
+
+#. module: astra_payment_cardnet
+#: code:addons/astra_payment_cardnet/models/payment_transaction.py:0
+#, python-format
+msgid "No transaction found matching reference %s."
+msgstr "Nessuna transazione trovata corrispondente al riferimento %s."
+
+#. module: astra_payment_cardnet
+#: model:ir.model,name:astra_payment_cardnet.model_payment_provider
+msgid "Payment Acquirer"
+msgstr "Sistema di pagamento"
+
+#. module: astra_payment_cardnet
+#: model:ir.actions.act_window,name:astra_payment_cardnet.action_payment_provider_onboarding
+msgid "Payment Acquirers"
+msgstr "Sistemi di pagamento"
+
+#. module: astra_payment_cardnet
+#: model:ir.model,name:astra_payment_cardnet.model_account_payment_method
+msgid "Payment Methods"
+msgstr "Metodi di pagamento"
+
+#. module: astra_payment_cardnet
+#: model:ir.model,name:astra_payment_cardnet.model_payment_token
+msgid "Payment Token"
+msgstr "Token di pagamento"
+
+#. module: astra_payment_cardnet
+#: model:ir.model,name:astra_payment_cardnet.model_payment_transaction
+msgid "Payment Transaction"
+msgstr "Transazione di pagamento"
+
+#. module: astra_payment_cardnet
+#: model:ir.model.fields,field_description:astra_payment_cardnet.field_payment_provider__provider
+msgid "Provider"
+msgstr "Fornitore"
+
+#. module: astra_payment_cardnet
+#: model:ir.model.fields,field_description:astra_payment_cardnet.field_payment_provider__Cardnet_publishable_key
+msgid "Publishable Key"
+msgstr "Publishable Key"
+
+#. module: astra_payment_cardnet
+#: code:addons/astra_payment_cardnet/models/payment_transaction.py:0
+#, python-format
+msgid "Received data with invalid intent status: %s"
+msgstr ""
+
+#. module: astra_payment_cardnet
+#: code:addons/astra_payment_cardnet/models/payment_transaction.py:0
+#, python-format
+msgid "Received data with missing intent status."
+msgstr "Dati ricevuti con stato di intenzionalità mancante."
+
+#. module: astra_payment_cardnet
+#: code:addons/astra_payment_cardnet/models/payment_transaction.py:0
+#, python-format
+msgid "Received data with missing merchant reference"
+msgstr "Dati ricevuti con riferimento commerciante mancante"
+
+#. module: astra_payment_cardnet
+#: model:ir.model.fields,field_description:astra_payment_cardnet.field_payment_provider__Cardnet_secret_key
+msgid "Secret Key"
+msgstr "Chiave segreta"
+
+#. module: astra_payment_cardnet
+#: model:account.payment.method,name:astra_payment_cardnet.payment_method_Cardnet
+#: model:ir.model.fields.selection,name:astra_payment_cardnet.selection__payment_provider__provider__Cardnet
+msgid "Cardnet"
+msgstr "Cardnet"
+
+#. module: astra_payment_cardnet
+#: model:ir.model.fields,field_description:astra_payment_cardnet.field_payment_transaction__astra_payment_intent
+msgid "Cardnet Payment Intent ID"
+msgstr "ID intento di pagamento Cardnet"
+
+#. module: astra_payment_cardnet
+#: model:ir.model.fields,field_description:astra_payment_cardnet.field_payment_token__Cardnet_payment_method
+msgid "Cardnet Payment Method ID"
+msgstr "ID di metodo di pagamento Cardnet"
+
+#. module: astra_payment_cardnet
+#: code:addons/astra_payment_cardnet/models/payment_provider.py:0
+#, python-format
+msgid "Cardnet Proxy error: %(error)s"
+msgstr "Errore di Cardnet Proxy: %(error)s"
+
+#. module: astra_payment_cardnet
+#: code:addons/astra_payment_cardnet/models/payment_provider.py:0
+#, python-format
+msgid "Cardnet Proxy: An error occurred when communicating with the proxy."
+msgstr ""
+"Cardnet Proxy: Si è verificato un errore durante la comunicazione con il "
+"proxy."
+
+#. module: astra_payment_cardnet
+#: code:addons/astra_payment_cardnet/models/payment_provider.py:0
+#, python-format
+msgid "Cardnet Proxy: Could not establish the connection."
+msgstr "Proxy di Cardnet: Impossibile stabilire la connessione."
+
+#. module: astra_payment_cardnet
+#: model:ir.model.fields,help:astra_payment_cardnet.field_payment_provider__provider
+msgid "The Payment Service Provider to use with this acquirer"
+msgstr ""
+"Il fornitore di servizi di pagamento da utilizzare con questo acquirente"
+
+#. module: astra_payment_cardnet
+#: code:addons/astra_payment_cardnet/models/payment_provider.py:0
+#: code:addons/astra_payment_cardnet/models/payment_transaction.py:0
+#, python-format
+msgid ""
+"The communication with the API failed.\n"
+"Cardnet gave us the following info about the problem:\n"
+"'%s'"
+msgstr ""
+"La comunicazione con l'API è fallita.\n"
+"Cardnet ci ha dato le seguenti informazioni sul problema:\n"
+"'%s'"
+
+#. module: astra_payment_cardnet
+#: model:ir.model.fields,help:astra_payment_cardnet.field_payment_provider__Cardnet_publishable_key
+msgid "The key solely used to identify the account with Cardnet"
+msgstr ""
+"La chiave utilizzata esclusivamente per identificare l'account con Cardnet"
+
+#. module: astra_payment_cardnet
+#: code:addons/astra_payment_cardnet/models/payment_transaction.py:0
+#, python-format
+msgid "The transaction is not linked to a token."
+msgstr "La transazione non è legata a un token."
+
+#. module: astra_payment_cardnet
+#: code:addons/astra_payment_cardnet/models/payment_token.py:0
+#, python-format
+msgid "Unable to convert payment token to new API."
+msgstr "Impossibile convertire il token di pagamento nella nuova API."
+
+#. module: astra_payment_cardnet
+#: model:ir.model.fields,field_description:astra_payment_cardnet.field_payment_provider__Cardnet_webhook_secret
+msgid "Webhook Signing Secret"
+msgstr "Webhook Signing Secret"
+
+#. module: astra_payment_cardnet
+#: code:addons/astra_payment_cardnet/models/payment_provider.py:0
+#, python-format
+msgid "You Cardnet Webhook was successfully set up!"
+msgstr "Il tuo Cardnet Webhook è stato impostato con successo!"
+
+#. module: astra_payment_cardnet
+#: code:addons/astra_payment_cardnet/models/payment_provider.py:0
+#, python-format
+msgid ""
+"You cannot create a Cardnet Webhook if your Cardnet Secret Key is not set."
+msgstr ""
+"Non puoi creare uno Cardnet Webhook se il tuo Cardnet Secret Key non è "
+"impostato."
+
+#. module: astra_payment_cardnet
+#: code:addons/astra_payment_cardnet/models/payment_provider.py:0
+#, python-format
+msgid ""
+"You cannot set the acquirer state to Enabled until your onboarding to Cardnet"
+" is completed."
+msgstr ""
+
+#. module: astra_payment_cardnet
+#: code:addons/astra_payment_cardnet/models/payment_provider.py:0
+#, python-format
+msgid ""
+"You cannot set the acquirer to Test Mode while it is linked with your Cardnet"
+" account."
+msgstr ""
+"Non puoi impostare l'acquirente in modalità test mentre è collegato al tuo "
+"account Cardnet."
+
+#. module: astra_payment_cardnet
+#: code:addons/astra_payment_cardnet/models/payment_provider.py:0
+#, python-format
+msgid "Your Cardnet Webhook is already set up."
+msgstr "Il tuo Cardnet Webhook è già impostato."

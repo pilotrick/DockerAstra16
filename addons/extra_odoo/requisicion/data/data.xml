@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+    
+        <record id="pre_liquidacion" model="ir.sequence">
+            <field name="name">Pre-Liquidacion</field>
+            <field name='code'>requisicion.compra</field>
+            <field name='prefix'>PRE/</field>
+            <field name='padding'>5</field>
+            <field name='company_id' eval='False'/>
+        </record>    
+    
+    </data>
+</odoo>

@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="view_token_registet_tree" model="ir.ui.view">
+            <field name="name">token.register.tree</field>
+            <field name="model">token.register</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="name"/>
+                    <field name="bot"/>
+                </tree>
+            </field>
+        </record>
+        <record id="view_token_registet_form" model="ir.ui.view">
+            <field name="name">token.register.form</field>
+            <field name="model">token.register</field>
+            <field name="arch" type="xml">
+                <form>
+                    <header>
+                        <button name="generate_token" groups="base.group_system" string="Generar Token" type="object" class="oe_highlight"/>
+                    </header>
+                    <sheet>
+                        <group>
+                            <field name="name"/>
+                            <field name="bot"/>
+                            <field name="token"/>
+                        </group>
+                        <notebook>
+                            <!-- Agrega pestañas adicionales si es necesario -->
+                        </notebook>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+        <record id="view_token_registet_kanban" model="ir.ui.view">
+            <field name="name">token.register.kanban</field>
+            <field name="model">token.register</field>
+            <field name="arch" type="xml">
+                <kanban sample="1">
+                    <field name="name"/>
+                    <field name="bot"/>
+                    <templates>
+                        <t t-name="kanban-box">
+                            <div class="oe_kanban_global_click o_kanban_record_has_image_fill">
+                                <div class="oe_kanban_details">
+                                    <strong class="o_kanban_record_title">
+                                        <t t-if="record.name.raw_value">
+                                            <field name="name"/>
+                                        </t>
+                                    </strong>
+                                    <t t-if="record.bot.raw_value">
+                                        <field name="bot"/>
+                                    </t>
+                                </div>
+                            </div>
+                        </t>
+                    </templates>
+                </kanban>
+            </field>
+        </record>
+        <record id="view_token_registet_filter" model="ir.ui.view">
+            <field name="name">token.register.filter</field>
+            <field name="model">token.register</field>
+            <field name="arch" type="xml">
+                <search string="Search">
+                    <field name="name"/>
+                    <field name="bot"/>
+                </search>
+            </field>
+        </record>
+
+        <record id="action_token_registet_tree" model="ir.actions.act_window">
+            <field name="name">Token Registro</field>
+            <field name="res_model">token.register</field>
+            <field name="view_mode">tree,form,kanban</field>
+            <field name="view_id" ref="view_token_registet_tree"/>
+            <field name="search_view_id" ref="view_token_registet_filter"/>
+            <field name="domain"/>
+            <field name="context">{}</field>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">
+                    Create the your first Token.
+                </p>
+            </field>
+        </record>
+        <menuitem
+            id="token_registre_menu"
+            name="Registro Token"
+            parent="crm.crm_menu_config"
+            action="action_token_registet_tree"
+            sequence="10"/>
+
+
+
+        <record id="crm_lead_view_form" model="ir.ui.view">
+            <field name="name">crm.lead.form</field>
+            <field name="model">crm.lead</field>
+            <field name="inherit_id" ref="crm.crm_lead_view_form" />
+            <field name="arch" type="xml">
+                <xpath expr="//notebook/page[last()]" position="after">
+                    <page string="Informacion del Bot" name="bot_info">
+                        <group>
+                            <group col="2">
+                                <field name="pregnancy"/>
+                                <field name="height"/>
+                                <field name="weight"/>
+                                <field name="bariatric"/>
+                                <field name="birthday"/>
+                                <field name="IMC"/>
+                                <field name="appliesTo"/>
+                            </group>
+                            <label for="diseases"/>
+                            <field name="diseases" widget="html"/>
+                        </group>
+                    </page>
+                </xpath>
+            </field>
+        </record>
+
+
+        <record id="view_partner_form" model="ir.ui.view">
+            <field name="name">res.partner.form</field>
+            <field name="model">res.partner</field>
+            <field name="inherit_id" ref="base.view_partner_form" />
+            <field name="arch" type="xml">
+                <xpath expr="//notebook/page[last()]" position="after">
+                    <page string="Informacion del Bot" name="bot_info">
+                        <group>
+                            <group col="2">
+                                <field name="pregnancy"/>
+                                <field name="height"/>
+                                <field name="weight"/>
+                                <field name="bariatric"/>
+                                <field name="birthday"/>
+                                <field name="IMC"/>
+                                <field name="appliesTo"/>
+                            </group>
+                            <label for="diseases"/>
+                            <field name="diseases" widget="html"/>
+                        </group>
+                    </page>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>

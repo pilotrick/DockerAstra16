@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo noupdate="1">
+    <record id="payment_provider_cardnet" model="payment.provider">
+        <field name="code">cardnet</field>
+        <field name="name">Cardnet</field>
+        <field name="redirect_form_view_id" ref="redirect_form"/>
+        <field name="sequence">99</field>
+        <field name="module_state">installed</field>
+        <field name="display_as">Tarjeta de Credito (by Cardnet)</field>
+        <field name="allow_express_checkout">True</field>
+        <field name="support_refund"></field>
+        <field name="support_tokenization">False</field>
+        <field name="merchant_name">ASTRA TECH SRL</field>
+        <field name="merchant_number">349000000</field>
+        <field name="merchant_terminal">58585858</field>
+        <field name="merchant_terminal_amex">00000001</field>
+        <field name="merchant_type">7997</field>
+        <field name="AVS">33024 1000 ST JOHN PLACE PEMBROKE PINES FLORIDA</field>
+
+        <field name="payment_icon_ids" eval='[(6, 0, [
+                                                        ref("payment.payment_icon_cc_mastercard"),
+                                                        ref("payment.payment_icon_cc_visa")
+                                                      ]
+                                                )]'/>
+        <field
+            name="pre_msg"
+        >
+            <![CDATA[
+<p>Serás redirigido al sitio web de Cardnet después de hacer clic en el botón de pago..</p>]]>
+        </field>
+        <field
+            name="image_128"
+            type="base64"
+            file="astra_payment_cardnet/static/src/img/icon.png"
+        />
+    </record>
+    <record id="payment_method_cardnet" model="account.payment.method">
+        <field name="name">Cardnet</field>
+        <field name="code">cardnet</field>
+        <field name="payment_type">inbound</field>
+    </record>
+</odoo>

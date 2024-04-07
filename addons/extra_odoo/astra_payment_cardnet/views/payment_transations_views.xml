@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="payment_transations_form" model="ir.ui.view">
+        <field name="name">Cardnet Transaccions Form</field>
+        <field name="model">payment.transaction</field>
+        <field name="inherit_id" ref="payment.payment_transaction_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='amount']" position="after">
+                    <field name="AuthorizationCode" attrs="{'invisible': [('AuthorizationCode', '=', False)]}"/>
+                    <field name="TransactionId" attrs="{'invisible': [('TransactionId', '=', False)]}"/> 
+                     <field name="CreditCardNumber" attrs="{'invisible': [('CreditCardNumber', '=', False)]}"/> 
+                     <field name="RetrivalReferenceNumber" attrs="{'invisible': [('RetrivalReferenceNumber', '=', False)]}"/>
+                    <field name="ResponseCode" attrs="{'invisible': [('ResponseCode', '=', False)]}"/>
+                      
+            </xpath>
+        </field>
+    </record>
+</odoo>

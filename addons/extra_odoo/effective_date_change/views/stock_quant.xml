@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+	<data>
+
+		<!-- picking -->
+
+        <record id="view_stock_quant_tree_inventory_editable_extended_stock_account" model="ir.ui.view">
+            <field name="name">stock.quant.inventory.tree.editable.extended.stock.account</field>
+            <field name="model">stock.quant</field>
+            <field name="inherit_id" ref="stock.view_stock_quant_tree_inventory_editable"/>
+            <field name="arch" type="xml">
+			<field name="inventory_date" position="after">
+				<!-- <field name="is_backdated_inv" /> -->
+				<field name="inv_backdated" groups="effective_date_change.effective_date_change_group" />
+				<field name="backdated_remark" groups="effective_date_change.effective_date_change_group"/>
+			</field>
+            </field>
+        </record>
+
+	</data>
+</odoo>

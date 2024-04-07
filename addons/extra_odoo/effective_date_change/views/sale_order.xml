@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record model="ir.ui.view" id="effective_date_sale_order">
+            <field name="name">effective.date.sale.order</field>
+            <field name="model">sale.order</field>
+            <field name="inherit_id" ref="sale.view_order_form"/>
+            <field name="arch" type="xml">
+                     <xpath expr="//group[@name='order_details']/div[@class='o_td_label']" position="attributes">
+                        <attribute name="groups">base.group_no_one,effective_date_change.effective_date_change_group</attribute>
+                    </xpath>
+
+                    <xpath expr="//field[@name='date_order']" position="attributes">
+                        <attribute name="groups">base.group_no_one,effective_date_change.effective_date_change_group</attribute>
+                    </xpath>
+                </field>
+            </record>
+        </data>
+    </odoo>
