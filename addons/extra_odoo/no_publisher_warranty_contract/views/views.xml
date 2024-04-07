@@ -1,0 +1,36 @@
+<odoo>
+  <data>
+    <record id="astra_config_settings_view_form" model="ir.ui.view">
+      <field name="name">res.config.settings.view.form.inherited</field>
+      <field name="model">res.config.settings</field>
+      <field name="inherit_id" ref="base_setup.res_config_settings_view_form"/>
+      <field name="arch" type="xml">
+        <xpath expr="//widget[@name='res_config_edition']" position="attributes">
+            <attribute name="invisible">1</attribute>
+        </xpath>
+        <xpath expr="//widget[@name='res_config_edition']" position="after">
+          <div class="o_widget o_widget_res_config_edition">
+            <div class="col-12 o_setting_box" id="edition">
+              <div class="o_setting_right_pane">
+                <div class="user-heading">
+                  <h2 class="px-0"> Acerca</h2>
+                  <h3 class="px-0"> Odoo Community 16.0</h3>
+                  <h5>Astra Tech SRL Edition</h5>
+                  
+                </div>
+                <div class="tab-content">
+                  <div role="tabpanel" id="settings" class="tab-pane active text-muted o_web_settings_compact_subtitle">
+                    <small>Derechos Reservados © 2004
+                      <a target="_blank" href="https://www.odoo.com" style="text-decoration: underline;">Odoo S.A.</a>
+                      <a id="info" target="_blank" href="https://astratech.com.do" style="text-decoration: underline;">Astra Tech SRL</a>
+                    </small>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </xpath>
+      </field>
+    </record>
+  </data>
+</odoo>

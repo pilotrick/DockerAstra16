@@ -1,0 +1,28 @@
+<odoo>
+    <!-- add cost mail alert in settings -->
+    <record id="res_config_settings_form_view_add_cost_mail_alert" model="ir.ui.view">
+        <field name="name">res.config.settings.form.view</field>
+        <field name="model">res.config.settings</field>
+        <field name="inherit_id" ref="sale.res_config_settings_view_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//div[hasclass('settings')]/div[@data-key='sale_management']/div[@name='catalog_setting_container']" position="after">
+                <h2 class="mt32">Cost Mail Alert</h2>
+                    <div class="row mt16 o_settings_container" id="cost_mail_alerts">
+                        <div class="col-12 col-lg-6 o_setting_box" id="amazon_connector">
+                            <div class="o_setting_left_pane">
+                                <field name="send_cost_mail_alert"/>
+                            </div>
+                            <div class="o_setting_right_pane">
+                                <label for="send_cost_mail_alert"/>
+                                <div class="text-muted">
+                                    Allow Send Cost Mail Alert
+                                </div>
+                                <label for="partner_ids" attrs="{'invisible': [('send_cost_mail_alert','=',False)] }"/>
+                                <field name="partner_ids" widget="many2many_tags" attrs="{'invisible': [('send_cost_mail_alert','=',False)] }"/>
+                            </div>
+                        </div>
+                    </div>
+            </xpath>
+        </field>    
+    </record>
+</odoo>

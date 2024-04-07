@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+<data>  
+	<record id="view_fuel_type_form" model="ir.ui.view">
+		<field name="name">view.fuel.type.form</field>
+        <field name="model">fuel.type</field>
+		<field name="arch" type="xml">  
+			<form>
+				<sheet>
+					<!-- <group>
+						<group> -->
+							<field name='name'/>
+						<!-- </group>
+					</group> -->
+					<notebook>
+	                    <page string="Price history" name="price_history">
+	                        <field name="price_ids" widget="section_and_note_one2many" mode="tree">
+	                            <tree string="Purchase Order Lines" editable="bottom">
+	                                <field name="date"/>
+	                                <field name="price"/>
+	                            </tree>
+	                        </field>
+	                    </page>
+	                </notebook>
+				</sheet>
+			</form>
+	    </field>
+	</record>
+
+	<record id="view_fuel_type_tree" model="ir.ui.view">
+		<field name="name">view.fuel.type.tree</field>
+        <field name="model">fuel.type</field>
+		<field name="arch" type="xml">  
+			<tree>
+				<field name='name'/>
+			</tree>
+	    </field>
+	</record>
+
+	<record id="fuel_price_reporting_action" model="ir.actions.act_window">
+		<field name="name">Fuel Pricelist</field>
+		<field name="type">ir.actions.act_window</field>
+		<field name="res_model">fuel.type</field>
+		<field name="view_mode">tree,form</field>
+	</record>
+
+	<menuitem name="Fuel Pricelist" action='fuel_price_reporting_action' parent="fleet.menu_root" id="menu_fuel_pricelist" groups="fleet.fleet_group_manager"/>
+
+	<record id="view_company_form_inherited" model="ir.ui.view">
+		<field name="name">view.company.form.inherited</field>
+        <field name="model">res.company</field>
+		<field name="inherit_id" ref="base.view_company_form"/>
+        <field name="arch" type="xml">  
+        	<xpath expr="//page[@name='general_info']" position="after">
+        		<page string="Fuel Access Token" name="access_token">
+        			<sheet>
+        				<group>
+        					<group>
+        						<field name="access_token"/>
+        					</group>
+        				</group>
+        			</sheet>
+        		</page>
+	        </xpath>
+	    </field>
+	</record>
+
+	<record id="fleet_vehicle_view_form_inherited" model="ir.ui.view">
+		<field name="name">fleet.vehicle.view.form.inherited</field>
+        <field name="model">fleet.vehicle</field>
+		<field name="inherit_id" ref="fleet.fleet_vehicle_view_form"/>
+        <field name="arch" type="xml">
+        	<xpath expr="//field[@name='fuel_type']" position="after">
+        		<field name='fuel_id'/>
+        	</xpath>  
+        	<xpath expr="//field[@name='state_id']" position="after">
+        		<button type='object' string='Fetch Fuel Price' name='fetch_fuel' class='oe_highlight'></button>
+	        </xpath>
+	    </field>
+	</record>
+</data>
+</odoo>
+

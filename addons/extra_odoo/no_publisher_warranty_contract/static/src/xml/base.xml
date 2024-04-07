@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates id="template" xml:space="preserve">
+    <t t-name="astra_comunity" t-inherit="web.res_config_edition" t-inherit-mode="extension" owl="1">
+
+        <xpath expr="//h3" position="replace">
+            <h2 class="px-0">
+                Odoo Community 16.0
+            </h2>
+            <h5>Astra Tech SRL Edition</h5>
+        </xpath>
+
+        <xpath expr="//*[@id='license']" position="replace">
+            <a id="info" target="_blank" href="https://astratech.com.do" style="text-decoration: underline;">Astra Tech SRL</a>
+        </xpath>
+
+
+    </t>
+
+</templates>
