@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates id="template" xml:space="preserve">
+    <t t-extend="res_config_edition">
+        <t t-jquery=".user-heading" t-operation="replace">
+            <h3>
+            Odoo Community 15.0
+            </h3>
+            <h5>Astra Tech SRL Edition</h5>
+        </t>
+        <t t-jquery="#license" t-operation="replace">
+            <a id="info" target="_blank" href="https://astratech.com.do" style="text-decoration: underline;">Astra Tech SRL</a>
+        </t>
+    </t>
+</templates>
