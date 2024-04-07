@@ -1,5 +1,0 @@
-id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
-requisicion_compra,requisicion_compra,model_requisicion_compra,base.group_user,1,1,1,1
-requisicion_compra_productos,requisicion_compra_productos,model_requisicion_compra_productos,base.group_user,1,1,1,1
-requisicion_compra_productos_info,requisicion_compra_productos_info,model_requisicion_compra_productos_info,base.group_user,1,1,1,1
-requisicion_compra_productos_total,requisicion_compra_productos_total,model_requisicion_compra_productos_total,base.group_user,1,1,1,1

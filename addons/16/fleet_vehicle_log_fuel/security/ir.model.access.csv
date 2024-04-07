@@ -1,4 +1,0 @@
-id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
-access_fleet_vehicle_cost,access.fleet.vehicle.cost,model_fleet_vehicle_cost,base.group_user,1,1,1,1
-access_fleet_vehicle_log_fuel,access.fleet.vehicle.log.fuel,model_fleet_vehicle_log_fuel,base.group_user,1,1,1,1
-

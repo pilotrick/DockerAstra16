@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<odoo>
-
-    <record id="hr_payroll.menu_hr_payroll_payslips" model="ir.ui.menu">
-        <field name="name">Movimientos</field>
-    </record>
-
-</odoo>

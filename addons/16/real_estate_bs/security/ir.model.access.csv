@@ -1,6 +1,0 @@
-id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
-property_manager,property.manager,model_real_estate,base.group_user,1,1,1,1
-property_type,property.type,model_property_tags,base.group_user,1,1,1,1
-property_tag,property.tag,model_property_type,base.group_user,1,1,1,1
-property_offers,property.offers,model_property_offer,base.group_user,1,1,1,1
-property_user,property.user,model_res_users,base.group_user,1,1,1,1
